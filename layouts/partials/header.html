@@ -10,10 +10,10 @@
         <div class="site-meta">
             <a href="/" class="brand" rel="start">
                 <i class="logo-line"></i>
-                <h1 class="site-title">Hexo</h1>
+                <h1 class="site-title">{{ .Site.Title }}</h1>
                 <i class="logo-line"></i>
             </a>
-            <p class="site-subtitle" itemprop="description">Find the hexo</p>
+            <p class="site-subtitle" itemprop="description">{{ .Site.Params.subtitle }}</p>
         </div>
         <div class="site-nav-right">
             <div class="toggle popup-trigger">
@@ -47,8 +47,8 @@
             <div class="site-overview-wrap sidebar-panel">
                 <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
                     <img class="site-author-image" itemprop="image" alt="John Doe" src="/imgs/icons/apple-touch-icon-next.png">
-                    <p class="site-author-name" itemprop="name">John Doe</p>
-                    <div class="site-description" itemprop="description"></div>
+                    <p class="site-author-name" itemprop="name">{{ .Site.Params.author }}</p>
+                    <div class="site-description" itemprop="description">{{ .Site.Params.description }}</div>
                 </div>
                 <div class="site-state-wrap site-overview-item animated">
                     <nav class="site-state">

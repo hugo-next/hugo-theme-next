@@ -7,15 +7,15 @@
   <meta property="og:title" content="Hugo">
   <meta property="og:url" content="http://example.com/index.html">
   <meta property="og:site_name" content="Hugo">
-  <meta property="og:locale" content="zh_CN">
+  <meta property="og:locale" content="{{ .Site.Language }}">
   <meta property="article:author" content="John Doe">
 
   <link rel="canonical" href="{{ .Site.BaseURL }}">
-  <link rel="shortcut icon" type="image/x-icon" href="/imgs/icons/favicon.ico">
-  <link rel="icon" type="image/x-icon" href="/imgs/icons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="/imgs/icons/favicon-16x16-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/imgs/icons/favicon-32x32-next.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/imgs/icons/apple-touch-icon-next.png">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon.small }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.apple_touch_icon }}">
 
   <link rel="stylesheet" href="/css/main.css">
   {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
