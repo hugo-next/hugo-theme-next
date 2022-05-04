@@ -1,10 +1,53 @@
-<!DOCTYPE html>
-<html>
-  <header>
-    <title>Hugo theme of NexT</title>
-  </header>
-  <body style="text-align: center;">
-    <h1>Start a new journey for Hugo's theme of NexT.<h1>
-    <h1>Easily & powerful theme for Hugo engine.<h1>
-  </body>
-</html>
+{{ define "main" }}
+
+<article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/02/hello-world2/">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <meta itemprop="image" content="/imgs/icons/apple-touch-icon-next.png">
+        <meta itemprop="name" content="John Doe">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta itemprop="name" content="Hexo">
+        <meta itemprop="description" content="">
+    </span>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+        <meta itemprop="name" content="undefined | Hexo">
+        <meta itemprop="description" content="">
+    </span>
+    <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+            <a href="/2022/05/02/hello-world2/" class="post-title-link" itemprop="url">Hello World2</a>
+        </h2>
+        <div class="post-meta-container">
+            <div class="post-meta">
+                <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                        <i class="far fa-calendar"></i>
+                    </span>
+                    <span class="post-meta-item-text">发表于</span>
+                    <time title="创建时间：2022-05-02 21:50:19" itemprop="dateCreated datePublished" datetime="2022-05-02T21:50:19+08:00">2022-05-02</time>
+                </span>
+                <span class="post-meta-item">
+                    <span class="post-meta-item-icon">
+                        <i class="far fa-calendar-check"></i>
+                    </span>
+                    <span class="post-meta-item-text">更新于</span>
+                    <time title="修改时间：2022-05-04 11:59:28" itemprop="dateModified" datetime="2022-05-04T11:59:28+08:00">2022-05-04</time>
+                </span>
+            </div>
+        </div>
+        <div class="post-body" itemprop="articleBody">
+            <ol start="2">
+                <li>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.
+                    <div class="post-button">
+                        <a class="btn" href="/2022/05/02/hello-world2/#more" rel="contents">
+                            阅读全文 &raquo;
+                        </a>
+                    </div>
+        </div>
+        <footer class="post-footer">
+            <div class="post-eof"></div>
+        </footer>
+</article>
+
+{{ end }}

@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+<html lang="zh-CN">
+  {{ partial "partials/head.html" . }}
+  
+  <body itemscope itemtype="http://schema.org/WebPage" {{/*class="use-motion"*/}}>
+    <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      {{ partial "partials/header.html" . }}
+    </header>
+
+    <div class="main-inner index posts-expand">
+        <div class="post-block">
+          {{- block "main" . -}}
+            
+          {{- end -}}
         </div>
-        {{- partial "footer.html" . -}}
-    </body>
+        <nav class="pagination">
+            {{ partial "partials/pages.html" . }}
+        </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      {{ partial "partials/footer.html" . }}
+    </div>
+  </footer>
+
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,110 @@
+<div class="header-inner">
+    <div class="site-brand-container">
+        <div class="site-nav-toggle">
+            <div class="toggle" aria-label="切换导航栏" role="button">
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+                <span class="toggle-line"></span>
+            </div>
+        </div>
+        <div class="site-meta">
+            <a href="/" class="brand" rel="start">
+                <i class="logo-line"></i>
+                <h1 class="site-title">Hexo</h1>
+                <i class="logo-line"></i>
+            </a>
+            <p class="site-subtitle" itemprop="description">Find the hexo</p>
+        </div>
+        <div class="site-nav-right">
+            <div class="toggle popup-trigger">
+            </div>
+        </div>
+    </div>
+    <nav class="site-nav">
+        {{ partial "partials/menus.html" . }}
+    </nav>
+</div>
+<div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+</div>
+<aside class="sidebar">
+    <div class="sidebar-inner sidebar-overview-active">
+        <ul class="sidebar-nav">
+            <li class="sidebar-nav-toc">
+                文章目录
+            </li>
+            <li class="sidebar-nav-overview">
+                站点概览
+            </li>
+        </ul>
+        <div class="sidebar-panel-container">
+            
+            <div class="post-toc-wrap sidebar-panel">
+            </div>
+           
+            <div class="site-overview-wrap sidebar-panel">
+                <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <img class="site-author-image" itemprop="image" alt="John Doe" src="/imgs/icons/apple-touch-icon-next.png">
+                    <p class="site-author-name" itemprop="name">John Doe</p>
+                    <div class="site-description" itemprop="description"></div>
+                </div>
+                <div class="site-state-wrap site-overview-item animated">
+                    <nav class="site-state">
+                        <div class="site-state-item site-state-posts">
+                            <a href="/archives/">
+                                <span class="site-state-item-count">2</span>
+                                <span class="site-state-item-name">日志</span>
+                            </a>
+                        </div>
+                        <div class="site-state-item site-state-tags">
+                            <span class="site-state-item-count">3</span>
+                            <span class="site-state-item-name">标签</span>
+                        </div>
+                    </nav>
+                </div>
+                <div class="links-of-author site-overview-item animated">
+                    <span class="links-of-author-item">
+                        <a href="https://github.com/yourname" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+                    </span>
+                    <span class="links-of-author-item">
+                        <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+                    </span>
+                    <span class="links-of-author-item">
+                        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+                    </span>
+                    <span class="links-of-author-item">
+                        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
+                    </span>
+                    <span class="links-of-author-item">
+                        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+                    </span>
+                    <span class="links-of-author-item">
+                        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+                    </span>
+                </div>
+                <div class="cc-license site-overview-item animated" itemprop="license">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+                </div>
+                <div class="links-of-blogroll site-overview-item animated">
+                    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+                        Links
+                    </div>
+                    <ul class="links-of-blogroll-list">
+                        <li class="links-of-blogroll-item">
+                            <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title</a>
+                        </li>
+                        <li class="links-of-blogroll-item">
+                            <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title2</a>
+                        </li>
+                        <li class="links-of-blogroll-item">
+                            <a href="https://example.com/" title="https:&#x2F;&#x2F;example.com">Title3</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+<div class="sidebar-dimmer"></div>

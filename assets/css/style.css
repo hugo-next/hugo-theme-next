@@ -1,0 +1,13 @@
+/** User-defined style. **/
+
+.sidebar {
+  visibility: inherit;
+}
+
+.site-author-image {
+  border-radius:0;
+}
+
+.back-to-top {
+  bottom: 30px;
+}
