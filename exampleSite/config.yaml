@@ -1,0 +1,59 @@
+#--------------------------------------
+# Hugo engine internal settings
+#--------------------------------------
+baseurl: /
+
+metadataformat: yaml
+theme: hugo-theme-next
+
+#--------------------------------------
+# Hugo multilingual settings
+#--------------------------------------
+defaultContentLanguage: zh-cn
+languages:
+  zh-cn:
+    title: NexT
+    languageName: 中文
+    weight: 1
+  en-us:
+    title: NexT
+    params:
+      #------------------------------
+      # Reset Site base information
+      #------------------------------
+      author: Theme NexT
+      subtitle: Theme for Hugo
+      description: Stay easily & powerful.
+
+# -------------------------------------
+# User-define Settings
+# -------------------------------------
+params:
+# -------------------------------------
+# Scheme Settings
+# -------------------------------------
+
+# Schemes
+#scheme: Muse
+#scheme: Mist
+#scheme: Pisces
+  scheme: Gemini
+
+# Dark Mode
+  darkmode: true
+
+#--------------------------------------
+# Site Information Settings
+# -------------------------------------
+  author: NexT 主题
+  subtitle: 为 Hugo 打造的主题
+  description: 保持简单的易用性和强大的功能。
+
+  favicon:
+    icon: /imgs/icons/favicon.ico
+    small: /imgs/icons/favicon-16x16-next.png
+    medium: /imgs/icons/favicon-32x32-next.png
+    apple_touch_icon: /imgs/icons/apple-touch-icon-next.png
+
+
+
