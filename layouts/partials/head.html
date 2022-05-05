@@ -1,3 +1,5 @@
+{{ $Site := .Page.Site }}
+{{ $Params := $Site.Params }}
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
@@ -5,17 +7,17 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Hugo">
-  <meta property="og:url" content="http://example.com/index.html">
+  <meta property="og:url" content="{{ $Site.BaseURL }}">
   <meta property="og:site_name" content="Hugo">
-  <meta property="og:locale" content="{{ .Site.Language }}">
-  <meta property="article:author" content="John Doe">
+  <meta property="og:locale" content="{{ .langCode }}">
+  <meta property="article:author" content="{{ $Params.author }}">
 
-  <link rel="canonical" href="{{ .Site.BaseURL }}">
-  <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
-  <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon.small }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.apple_touch_icon }}">
+  <link rel="canonical" href="{{ $Site.BaseURL }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ $Params.favicon.icon }}">
+  <link rel="icon" type="image/x-icon" href="{{ $Params.favicon.icon }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ $Params.favicon.small }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ $Params.favicon.medium }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ $Params.favicon.appleTouchIcon }}">
 
   <link rel="stylesheet" href="/css/main.css">
   {{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
@@ -24,5 +26,5 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-  <title>{{ .Site.Title }}</title>
+  <title>{{ $Site.Title }}</title>
 </head>

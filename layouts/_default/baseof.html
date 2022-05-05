@@ -1,6 +1,8 @@
+{{ $langCode := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language }}
 <!DOCTYPE html>
-<html lang="zh-CN">
-  {{ partial "partials/head.html" . }}
+<html lang="{{ $langCode }}">
+
+  {{ partial "partials/head.html" (dict "Page" . "langCode" $langCode) }}
   
   <body itemscope itemtype="http://schema.org/WebPage" {{/*class="use-motion"*/}}>
     <div class="headband"></div>

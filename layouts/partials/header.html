@@ -55,12 +55,12 @@
                         <div class="site-state-item site-state-posts">
                             <a href="/archives/">
                                 <span class="site-state-item-count">2</span>
-                                <span class="site-state-item-name">日志</span>
+                                <span class="site-state-item-name">{{ T "SitePostsTitle" }}</span>
                             </a>
                         </div>
                         <div class="site-state-item site-state-tags">
                             <span class="site-state-item-count">3</span>
-                            <span class="site-state-item-name">标签</span>
+                            <span class="site-state-item-name">{{ T "SiteTagsTitle" }}</span>
                         </div>
                     </nav>
                 </div>
@@ -84,9 +84,15 @@
                         <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
                     </span>
                 </div>
-                <div class="cc-license site-overview-item animated" itemprop="license">
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdn.jsdelivr.net/npm/@creativecommons/vocabulary@2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
-                </div>
+                {{ $cc := .Site.Params.creativeCommons }}
+                {{ if and $cc $cc.sidebar }}
+                  <div class="cc-license site-overview-item animated" itemprop="license">
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr .Site.Language 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
+                      <img src="/imgs/cc/{{ $cc.size }}/{{ replace $cc.license "-" "_" }}.svg" alt="{{ T "CCLinkTitle" }}">
+                    </a>
+                  </div>
+                {{ end }}
+                
                 <div class="links-of-blogroll site-overview-item animated">
                     <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
                         Links

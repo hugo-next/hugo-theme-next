@@ -1,9 +1,8 @@
 #--------------------------------------
 # Hugo engine internal settings
 #--------------------------------------
-baseurl: /
+baseURL: /
 
-metadataformat: yaml
 theme: hugo-theme-next
 
 #--------------------------------------
@@ -29,22 +28,22 @@ languages:
 # User-define Settings
 # -------------------------------------
 params:
-# -------------------------------------
-# Scheme Settings
-# -------------------------------------
+  # -------------------------------------
+  # Scheme Settings
+  # -------------------------------------
 
-# Schemes
-#scheme: Muse
-#scheme: Mist
-#scheme: Pisces
+  # Schemes
+  #scheme: Muse
+  #scheme: Mist
+  #scheme: Pisces
   scheme: Gemini
 
-# Dark Mode
+  # Dark Mode
   darkmode: true
 
-#--------------------------------------
-# Site Information Settings
-# -------------------------------------
+  #--------------------------------------
+  # Site Information Settings
+  # -------------------------------------
   author: NexT 主题
   subtitle: 为 Hugo 打造的主题
   description: 保持简单的易用性和强大的功能。
@@ -53,7 +52,21 @@ params:
     icon: /imgs/icons/favicon.ico
     small: /imgs/icons/favicon-16x16-next.png
     medium: /imgs/icons/favicon-32x32-next.png
-    apple_touch_icon: /imgs/icons/apple-touch-icon-next.png
+    appleTouchIcon: /imgs/icons/apple-touch-icon-next.png
+
+  # Creative Commons 4.0 International License.
+  # See: https://creativecommons.org/about/cclicenses/
+  creativeCommons:
+    # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
+    license: by-nc-nd
+    # Available values: big | small
+    size: big
+    sidebar: true
+    post: true
+    # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
+    # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
+    # No setting is required here and can be done by multilanguage 
+    # language: deed.zh
 
 
 
