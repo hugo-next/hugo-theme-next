@@ -1,8 +1,27 @@
 {{ $langCode := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language }}
+{{ $P := .Site.Params }}
 <!DOCTYPE html>
 <html lang="{{ $langCode }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Hugo v{{ hugo.Version }}">
 
-  {{ partial "partials/head.html" (dict "Page" . "langCode" $langCode) }}
+    {{ partial "partials/head.html" . }}
+
+    <link rel="canonical" href="{{ .Site.BaseURL }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ $P.favicon.icon }}">
+    <link rel="icon" type="image/x-icon" href="{{ $P.favicon.icon }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ $P.favicon.small }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ $P.favicon.medium }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $P.favicon.appleTouchIcon }}">
+
+    <link rel="stylesheet" href="/css/main.css">
+    {{- $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <title>{{ .Site.Title }}</title>
+  </head>
   
   <body itemscope itemtype="http://schema.org/WebPage" {{/*class="use-motion"*/}}>
     <div class="headband"></div>

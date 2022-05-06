@@ -68,5 +68,12 @@ params:
     # No setting is required here and can be done by multilanguage 
     # language: deed.zh
 
-
+  # Sidebar Avatar
+  avatar:
+    # Replace the default image and set the url here.
+    url: /imgs/hugo-next-avatar.png
+    # If true, the avatar will be displayed in circle.
+    rounded: true
+    # If true, the avatar will be rotated with the cursor.
+    rotated: true
 

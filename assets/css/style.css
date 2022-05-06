@@ -1,11 +1,16 @@
 /** User-defined style. **/
-
+{{- $P := .Site.Params -}}
 .sidebar {
   visibility: inherit;
 }
 
 .site-author-image {
+{{ if $P.avatar.rounded }}
   border-radius:50%;
+{{ end }}
+{{ if $P.avatar.rotated }}
+  transition: transform 1s ease-out;
+{{ end }}
 }
 
 .back-to-top {

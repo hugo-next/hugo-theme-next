@@ -46,7 +46,7 @@
            
             <div class="site-overview-wrap sidebar-panel">
                 <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-                    <img class="site-author-image" itemprop="image" alt="John Doe" src="/imgs/hugo-next-avator.png">
+                    <img class="site-author-image" itemprop="image" alt="John Doe" src="{{ .Site.Params.avatar.url }}">
                     <p class="site-author-name" itemprop="name">{{ .Site.Params.author }}</p>
                     <div class="site-description" itemprop="description">{{ .Site.Params.description }}</div>
                 </div>
@@ -80,19 +80,7 @@
                     </span>
                     <span class="links-of-author-item">
                         <a href="mailto:yourname@gmail.com" title="E-Mail → mailto:yourname@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-                    </span>
-                    <span class="links-of-author-item">
-                        <a href="https://weibo.com/yourname" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
-                    </span>
-                    <span class="links-of-author-item">
-                        <a href="https://plus.google.com/yourname" title="Google → https:&#x2F;&#x2F;plus.google.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-google fa-fw"></i>Google</a>
-                    </span>
-                    <span class="links-of-author-item">
-                        <a href="https://twitter.com/yourname" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-                    </span>
-                    <span class="links-of-author-item">
-                        <a href="https://www.facebook.com/yourname" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;yourname" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
-                    </span>
+                    </span>                   
                 </div>
                 {{ $cc := .Site.Params.creativeCommons }}
                 {{ if and $cc $cc.sidebar }}
