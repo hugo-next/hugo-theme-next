@@ -11,3 +11,20 @@
 .back-to-top {
   bottom: 30px;
 }
+
+.rss-link {
+  border-top: 1px dotted #ccc;
+  border-bottom: 1px dotted #ccc;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+.rss-link a {
+  display: block;
+  color: #fc6423;
+  border-bottom: none;
+}
+
+.rss-link a:hover {
+  font-weight: bold;
+}

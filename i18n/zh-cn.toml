@@ -4,7 +4,11 @@
 
 [SitePostsTitle]
   other = "日志"
+[SiteCatesTitle]
+  other = "分类"
 [SiteTagsTitle]
   other = "标签"
+[RSSTitle]
+  other = "RSS 订阅"
 [CCLinkTitle]
   other = "共享知识"

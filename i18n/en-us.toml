@@ -4,7 +4,11 @@
 
 [SitePostsTitle]
   other = "Posts"
+[SiteCatesTitle]
+  other = "Categories"
 [SiteTagsTitle]
   other = "Tags"
+[RSSTitle]
+  other = "RSS Subscribe"
 [CCLinkTitle]
   other = "Creative Commons"
