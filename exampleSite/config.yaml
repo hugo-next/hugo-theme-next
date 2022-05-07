@@ -47,12 +47,39 @@ params:
   author: NexT 主题
   subtitle: 为 Hugo 打造的主题
   description: 保持简单的易用性和强大的功能。
+  # Custom logo will use in open graph image's URL
+  # Use the "show" variable to control whether it is displayed in the sidebar 
+  customLogo: 
+    show: true
+    url: /imgs/hugo-next-logo.png
 
   favicon:
     icon: /imgs/icons/favicon.ico
     small: /imgs/icons/favicon-16x16-next.png
     medium: /imgs/icons/favicon-32x32-next.png
     appleTouchIcon: /imgs/icons/apple-touch-icon-next.png
+
+  # Open graph settings
+  openGraph:
+    enable: true
+    #twitter:
+    #  card: <twitter:card>
+    #  creator: <twitter:creator>
+    #  image: <twitter:image>
+    #  site: <twitter:site>
+    #googlePlus: <g+:profile_link>
+    #facebook:
+    #  admins: <fb:admin_id>
+    #  app_id: <fb:app_id>
+
+  # Sidebar Avatar
+  avatar:
+    # Replace the default image and set the url here.
+    url: /imgs/hugo-next-avatar.png
+    # If true, the avatar will be displayed in circle.
+    rounded: true
+    # If true, the avatar will be rotated with the cursor.
+    rotated: true
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/
@@ -68,12 +95,4 @@ params:
     # No setting is required here and can be done by multilanguage 
     # language: deed.zh
 
-  # Sidebar Avatar
-  avatar:
-    # Replace the default image and set the url here.
-    url: /imgs/hugo-next-avatar.png
-    # If true, the avatar will be displayed in circle.
-    rounded: true
-    # If true, the avatar will be rotated with the cursor.
-    rotated: true
 

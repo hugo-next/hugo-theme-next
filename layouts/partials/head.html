@@ -1,9 +1,4 @@
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hugo">
-<meta property="og:url" content="{{ .Site.BaseURL }}">
-<meta property="og:site_name" content="Hugo">
-{{/*<meta property="og:locale" content="{{ .langCode }}">*/}}
-<meta property="article:author" content="{{ .Site.Params.author }}">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+{{- partial "head/favicon.html" . }}
+{{- partial "head/open_graph.html" . }}
+{{ partial "head/css.html" . }}
+{{- partial "head/analytics.html" . }}
