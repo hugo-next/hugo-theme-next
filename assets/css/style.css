@@ -35,9 +35,6 @@
   border-bottom: none;
 }
 
-/* .rss-link a:hover {
-  font-weight: bold;
-} */
 @keyframes wobble-vertical {
   16.65% {
     transform: translateX(8px);
@@ -74,4 +71,8 @@
 .rss-link a:hover > i {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
+}
+
+.cc-license {
+  margin-top: 5px;
 }

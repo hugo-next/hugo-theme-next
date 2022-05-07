@@ -84,7 +84,7 @@
                 </div>
                 {{ $cc := .Site.Params.creativeCommons }}
                 {{ if and $cc $cc.sidebar }}
-                  <div class="cc-license site-overview-item animated" itemprop="license">
+                  <div class="cc-license animated" itemprop="license">
                     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr .Site.Language 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
                       <img src="/imgs/cc/{{ $cc.size }}/{{ replace $cc.license "-" "_" }}.svg" alt="{{ T "CCLinkTitle" }}">
                     </a>
