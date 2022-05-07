@@ -1,7 +1,12 @@
 /** User-defined style. **/
 {{- $P := .Site.Params -}}
+
 .sidebar {
   visibility: inherit;
+}
+
+.sidebar-inner {
+  padding: 10px 10px 0 10px;
 }
 
 .site-author-image {
