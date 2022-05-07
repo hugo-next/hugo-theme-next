@@ -1,5 +1,6 @@
 {{- $langCode := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language -}}
 {{- $P := .Site.Params -}}
+{{- .Scratch.Set "langCode" $langCode -}}
 <!DOCTYPE html>
 <html lang="{{ $langCode }}">
   <head>

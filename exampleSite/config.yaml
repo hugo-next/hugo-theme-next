@@ -47,10 +47,10 @@ params:
   author: NexT 主题
   subtitle: 为 Hugo 打造的主题
   description: 保持简单的易用性和强大的功能。
-  # Custom logo will use in open graph image's URL
-  # Use the "show" variable to control whether it is displayed in the sidebar 
+  # Custom logo will use in open graph image meta attribute.
+  # Use the "show" variable to control whether displayed in sidebar 
   customLogo: 
-    show: true
+    show: false
     url: /imgs/hugo-next-logo.png
 
   favicon:
