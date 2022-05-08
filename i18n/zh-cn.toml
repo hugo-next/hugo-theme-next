@@ -8,6 +8,10 @@
   other = "分类"
 [SiteTagsTitle]
   other = "标签"
+[TableOfContents]
+  other = "文章目录"
+[SiteInfo]
+  other = "站点概览"
 [RSSTitle]
   other = "RSS 订阅"
 [CCLinkTitle]

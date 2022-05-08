@@ -8,6 +8,10 @@
   other = "Categories"
 [SiteTagsTitle]
   other = "Tags"
+[TableOfContents]
+  other = "TOC"
+[SiteInfo]
+  other = "Site Info"
 [RSSTitle]
   other = "RSS Subscribe"
 [CCLinkTitle]
