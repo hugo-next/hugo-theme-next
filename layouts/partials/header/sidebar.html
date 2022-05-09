@@ -17,6 +17,7 @@
                     <div class="site-description" itemprop="description">{{ $SP.description }}</div>
                 </div>
                 <div class="site-state-wrap site-overview-item animated">
+                    {{- if $SP.siteState }}
                     <nav class="site-state">
                         <div class="site-state-item site-state-posts">
                             <a href="/archives/">
@@ -33,6 +34,7 @@
                             <span class="site-state-item-name">{{ T "SiteTagsTitle" }}</span>
                         </div>
                     </nav>
+                    {{- end }}
                     <div class="rss-link">
                       <a href="/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
                           <i class="fa fa-rss"></i>

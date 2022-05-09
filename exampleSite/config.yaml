@@ -72,6 +72,28 @@ params:
     #  admins: <fb:admin_id>
     #  app_id: <fb:app_id>
 
+  sidebar:
+    # Sidebar Position.
+    #position: left | right
+    position: left
+
+    # Manual define the sidebar width. If commented, will be default for:
+    # Muse | Mist: 320
+    # Pisces | Gemini: 240
+    width: 256
+
+    # Sidebar Display (only for Muse | Mist), available values:
+    #  - post    expand on posts automatically. Default.
+    #  - always  expand for all pages automatically.
+    #  - hide    expand only when click on the sidebar toggle icon.
+    #  - remove  totally remove sidebar including sidebar toggle.
+    display: post
+
+    # Sidebar padding in pixels.
+    padding: 30
+    # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
+    offset: 18
+
   # Sidebar Avatar
   avatar:
     # Replace the default image and set the url here.
@@ -80,6 +102,9 @@ params:
     rounded: true
     # If true, the avatar will be rotated with the cursor.
     rotated: true
+
+  # Show Posts / Categories / Tags label in sidebar.
+  siteState: true
 
   # Social Links
   # Usage: `Key: permalink || icon`
@@ -104,7 +129,7 @@ params:
     # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
     license: by-nc-nd
     # Available values: big | small
-    size: small
+    size: big
     sidebar: true
     post: true
     # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh

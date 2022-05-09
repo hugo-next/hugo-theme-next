@@ -1,21 +1,34 @@
 /** User-defined style. **/
-{{- $P := .Site.Params -}}
+{{ $P := .Site.Params -}}
 
+{{- with $P.sidebar -}}
+.main {
+{{ if eq .position "right" }}
+  flex-direction: row-reverse;
+{{- end }}
+}
+.header-inner {
+  width: {{ .width }}px;
+}
+.main-inner {
+  width: calc(100% - {{ add .width .offset }}px);
+}
 .sidebar {
+  width: {{ .width }}px;
   visibility: inherit;
 }
-
 .sidebar-inner {
-  padding: 10px;
+  padding: {{ .padding }} 10px;
 }
+{{- end }}
 
 .site-author-image {
-{{ if $P.avatar.rounded }}
+{{- if $P.avatar.rounded }}
   border-radius:50%;
-{{ end }}
-{{ if $P.avatar.rotated }}
+{{- end }}
+{{- if $P.avatar.rotated }}
   transition: transform 1s ease-out;
-{{ end }}
+{{- end }}
 }
 
 .back-to-top {
@@ -74,5 +87,9 @@
 }
 
 .cc-license {
+{{ if eq $P.creativeCommons.size "big" }}
+  margin-top: 10px;
+{{ else }}
   margin-top: 5px;
+{{- end }}
 }
