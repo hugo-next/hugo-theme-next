@@ -3,36 +3,31 @@
 {{- .Scratch.Set "langCode" $langCode -}}
 <!DOCTYPE html>
 <html lang="{{ $langCode }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="generator" content="Hugo v{{ hugo.Version }}">
 
-    {{- partial "partials/head.html" . }}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="generator" content="Hugo v{{ hugo.Version }}">
+  {{- partial "partials/head.html" . }}
+  <title>{{ .Site.Title }}</title>
+</head>
 
-    <title>{{ .Site.Title }}</title>
-  </head>
-  
-  <body itemscope itemtype="http://schema.org/WebPage" {{/*class="use-motion"*/}}>
-    <div class="headband"></div>
-
+<body itemscope itemtype="http://schema.org/WebPage" {{/*class="use-motion"*/}}>
+  <div class="headband"></div>
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       {{ partial "partials/header.html" . }}
     </header>
-
     <div class="main-inner index posts-expand">
-        <div class="post-block">
-          {{- block "main" . -}}
-            
-          {{- end -}}
-        </div>
-        <nav class="pagination">
-            {{ partial "partials/pages.html" . }}
-        </nav>
+      <div class="post-block">
+        {{- block "main" . -}}
+        {{- end -}}
+      </div>
+      <nav class="pagination">
+        {{ partial "partials/pages.html" . }}
+      </nav>
     </div>
   </main>
-
   <footer class="footer">
     <div class="footer-inner">
       {{ partial "partials/footer.html" . }}

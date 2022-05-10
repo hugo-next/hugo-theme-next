@@ -1,38 +1,38 @@
 <div class="header-inner">
-    <div class="site-brand-container">
-        <div class="site-nav-toggle">
-            <div class="toggle" aria-label="切换导航栏" role="button">
-                <span class="toggle-line"></span>
-                <span class="toggle-line"></span>
-                <span class="toggle-line"></span>
-            </div>
-        </div>
-        <div class="site-meta">
-            <a href="/" class="brand" rel="start">
-                <i class="logo-line"></i>
-                <h1 class="site-title">{{ .Site.Title }}</h1>
-                <i class="logo-line"></i>
-            </a>
-            <p class="site-subtitle" itemprop="description">{{ .Site.Params.subtitle }}</p>
-            {{ with .Site.Params.customLogo }}
-            {{ if .show }}
-             <img class="custom-logo-image" src="{{ .url }}" alt="Custom Logo">
-            {{ end }}
-            {{ end }}
-        </div>
-        <div class="site-nav-right">
-            <div class="toggle popup-trigger">
-            </div>
-        </div>
+  <div class="site-brand-container">
+    <div class="site-nav-toggle">
+      <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+      </div>
     </div>
-    <nav class="site-nav">
-        {{ partial "partials/menus.html" . }}
-    </nav>
+    <div class="site-meta">
+      <a href="/" class="brand" rel="start">
+        <i class="logo-line"></i>
+        <h1 class="site-title">{{ .Site.Title }}</h1>
+        <i class="logo-line"></i>
+      </a>
+      <p class="site-subtitle" itemprop="description">{{ .Site.Params.subtitle }}</p>
+      {{ with .Site.Params.customLogo }}
+      {{ if .show }}
+      <img class="custom-logo-image" src="{{ .url }}" alt="Custom Logo">
+      {{ end }}
+      {{ end }}
+    </div>
+    <div class="site-nav-right">
+      <div class="toggle popup-trigger">
+      </div>
+    </div>
+  </div>
+  <nav class="site-nav">
+    {{ partial "partials/menus.html" . }}
+  </nav>
 </div>
 <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
+  <span class="toggle-line"></span>
+  <span class="toggle-line"></span>
+  <span class="toggle-line"></span>
 </div>
 {{ partial "header/sidebar.html" . }}
 <div class="sidebar-dimmer"></div>
