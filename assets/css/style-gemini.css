@@ -2,23 +2,29 @@
 {{ $P := .Site.Params -}}
 
 {{- with $P.sidebar -}}
+{{- $width := (int (math.Max .width 240)) -}}
+{{- $pad := (add $width .offset) }}
 .main {
 {{ if eq .position "right" }}
   flex-direction: row-reverse;
 {{- end }}
 }
 .header-inner {
-  width: {{ .width }}px;
+  width: {{ $width }}px;
 }
 .main-inner {
-  width: calc(100% - {{ add .width .offset }}px);
+  width: calc(100% - {{ $pad }}px);
 }
 .sidebar {
-  width: {{ .width }}px;
+  width: {{ $width }}px;
   visibility: inherit;
 }
 .sidebar-inner {
-  padding: {{ .padding }} 10px;
+  padding: {{ .padding }}px 10px;
+}
+.footer-inner {
+  padding-{{ .position }}: {{ $pad }}px;
+  width: calc(100% - 20px);
 }
 {{- end }}
 
@@ -31,8 +37,11 @@
 {{- end }}
 }
 
-.back-to-top {
-  bottom: 30px;
+.site-state-item {
+  border-left: 1px solid #eee;
+}
+.site-state-item:first-child {
+  border-left: none;
 }
 
 .rss-link {
@@ -92,4 +101,8 @@
 {{ else }}
   margin-top: 5px;
 {{- end }}
+}
+
+.back-to-top {
+  bottom: 30px;
 }
