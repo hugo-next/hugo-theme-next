@@ -40,14 +40,22 @@
             </a>
           </div>
         </div>
-        <div class="links-of-author site-overview-item animated">
+        <div class="links-of-social site-overview-item animated">
+          {{ $si := $SP.socialIcons }}
           {{- range $SP.socials }}
           {{- range $name,$val := . }}
           {{- $vals := split $val "||" }}
           {{- $url := trim (index $vals 0) " " }}
           {{- $icon := trim (index $vals 1) " " }}
-          <span class="links-of-author-item">
-            <a href="{{- $url }}" title="{{- $name }} → {{- $url }}" rel="noopener" target="_blank"><i class="{{- $icon }}"></i>{{- $name }}</a>
+          <span class="links-of-social-item">
+            <a href="{{- $url }}" title="{{- $name }} → {{- $url }}" rel="noopener" {{- if and $si.enable $si.transition }} class="hvr-icon-pulse" {{- end }} target="_blank">
+              {{- if $si.enable }}
+              <i class="{{- $icon }} fa-fw {{ if $si.transition }} hvr-icon {{ end }}"></i>
+              {{- end }}
+              {{- if or (not $si.enable) (not $si.iconsOnly) }}
+                 {{- $name }}
+              {{- end }} 
+            </a>
           </span>
           {{- end }}
           {{- end }}

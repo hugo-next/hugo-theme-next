@@ -2661,9 +2661,6 @@ ul.breadcrumb li:last-child {
     width: 100%;
   }
 }
-/* .footer-inner {
-  padding-left: 300px;
-} */
 @media (max-width: 991px) {
   .footer-inner {
     padding-left: 0;

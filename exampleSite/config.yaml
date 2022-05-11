@@ -89,10 +89,10 @@ params:
     #  - remove  totally remove sidebar including sidebar toggle.
     display: post
 
-    # Sidebar padding in pixels.
-    padding: 30
-    # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-    offset: 18
+    # Sidebar padding in pixels, default 18.
+    padding: 18
+    # Sidebar offset from top menubar in pixels (only for Pisces | Gemini), default 12.
+    offset: 12
 
   # Sidebar Avatar
   avatar:
@@ -122,6 +122,10 @@ params:
     # {"Instagram": "https://instagram.com/yourname || fab fa-instagram"},
     # {"Skype": "skype:yourname?call|chat || fab fa-skype"}
   ]
+  socialIcons:
+    enable: true
+    iconsOnly: false
+    transition: true
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/

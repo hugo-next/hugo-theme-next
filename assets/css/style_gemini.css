@@ -3,7 +3,9 @@
 
 {{- with $P.sidebar -}}
 {{- $width := (int (math.Max .width 240)) -}}
-{{- $pad := (add $width .offset) }}
+{{- $offset := (int (math.Max .offset 12)) -}}
+{{- $padding := (int (math.Max .padding 18)) -}}
+{{- $positPad := (add $width $offset) }}
 .main {
 {{ if eq .position "right" }}
   flex-direction: row-reverse;
@@ -13,18 +15,17 @@
   width: {{ $width }}px;
 }
 .main-inner {
-  width: calc(100% - {{ $pad }}px);
+  width: calc(100% - {{ $positPad }}px);
 }
 .sidebar {
   width: {{ $width }}px;
   visibility: inherit;
 }
 .sidebar-inner {
-  padding: {{ .padding }}px 10px;
+  padding: {{ $padding }}px 10px;
 }
 .footer-inner {
-  padding-{{ .position }}: {{ $pad }}px;
-  width: calc(100% - 20px);
+  padding-{{ .position }}: {{ $positPad }}px;
 }
 {{- end }}
 
@@ -35,6 +36,10 @@
 {{- if $P.avatar.rotated }}
   transition: transform 1s ease-out;
 {{- end }}
+}
+
+.site-author-image:hover {
+  transform: rotateZ(360deg);
 }
 
 .site-state-item {
@@ -57,32 +62,6 @@
   border-bottom: none;
 }
 
-@keyframes wobble-vertical {
-  16.65% {
-    transform: translateX(8px);
-  }
-
-  33.3% {
-    transform: translateX(-6px);
-  }
-
-  49.95% {
-    transform: translateX(4px);
-  }
-
-  66.6% {
-    transform: translateX(-2px);
-  }
-
-  83.25% {
-    transform: translateX(1px);
-  }
-
-  100% {
-      transform: translateX(0);
-  }
-}
-
 .rss-link a:hover {
   animation-name: wobble-vertical;
   animation-duration: 2s;
@@ -93,6 +72,44 @@
 .rss-link a:hover > i {
   -webkit-transform: scaleY(-1);
   transform: scaleY(-1);
+}
+
+.links-of-social a {
+  font-size: 0.8125em;
+}
+.links-of-social .fa,
+.links-of-social .fab,
+.links-of-social .far,
+.links-of-social .fas {
+  margin-right: 2px;
+}
+.links-of-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.links-of-social-item {
+  margin: 5px 0 0;
+{{- if and $P.socialIcons.enable (not $P.socialIcons.iconsOnly) }}
+  width: 50%;
+{{- end }}
+}
+.links-of-social-item a {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.links-of-social-item a {
+  border-bottom: 0;
+  border-radius: 4px;
+  display: block;
+}
+.links-of-social-item a:hover {
+  background: var(--body-bg-color);
 }
 
 .cc-license {
