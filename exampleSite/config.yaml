@@ -24,6 +24,35 @@ languages:
       subtitle: Theme for Hugo
       description: Stay easily & powerful.
 
+#--------------------------------------
+# Menus Settings
+# Attribute pre is Font Awesome icon name without prefix "fa-".
+# External url should start with http:// or https:// .
+# -------------------------------------
+menus:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      pre: home
+      weight: 1
+    - identifier: about
+      name: 关于
+      url: /ablout.html
+      pre: user
+      weight: 2
+    - identifier: archives
+      name: 归档
+      url: /archives
+      pre: archive
+      weight: 3
+    - identifier: commonweal
+      name: 公益 404
+      url: /404.html
+      pre: heartbeat
+      weight: 4
+
+
 # -------------------------------------
 # User-define Settings
 # -------------------------------------
@@ -31,8 +60,6 @@ params:
   # -------------------------------------
   # Scheme Settings
   # -------------------------------------
-
-  # Schemes
   #scheme: Muse
   #scheme: Mist
   #scheme: Pisces
@@ -72,6 +99,9 @@ params:
     #  admins: <fb:admin_id>
     #  app_id: <fb:app_id>
 
+  #--------------------------------------
+  # Sidebar Settings
+  # -------------------------------------
   sidebar:
     # Sidebar Position.
     #position: left | right

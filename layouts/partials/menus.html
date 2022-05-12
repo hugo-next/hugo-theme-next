@@ -1,23 +1,12 @@
-
 <ul class="main-menu menu">
-  <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="fa fa-home fa-fw"></i>首页
+  {{- $curP := . }}
+  {{- range .Site.Menus.main }}
+  {{ $active := or ($curP.IsMenuCurrent "main" .) ($curP.HasMenuCurrent "main" .) }}
+  {{ $active = or $active (eq .URL "/")}}
+  <li class="menu-item menu-item-{{ .Identifier }}">
+    <a href="{{ .URL }}" class="hvr-icon-pulse{{if $active }} menu-item-active{{ end }}" rel="section">
+      <i class="fa fa-{{ .Pre }} hvr-icon"></i>{{- .Name }}
     </a>
   </li>
-  <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="fa fa-user fa-fw"></i>关于
-    </a>
-  </li>    
-  <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="fa fa-archive fa-fw"></i>归档
-    </a>
-  </li>
-  <li class="menu-item menu-item-commonweal">
-    <a href="/404/" rel="section">
-      <i class="fa fa-heartbeat fa-fw"></i>公益 404
-    </a>
-  </li>
+  {{- end }}
 </ul>
