@@ -1,21 +1,12 @@
-{{ define "main" }}
-<article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/02/hello-world2/">
-  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="image" content="/imgs/icons/apple-touch-icon-next.png">
-    <meta itemprop="name" content="John Doe">
-  </span>
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Hexo">
-    <meta itemprop="description" content="">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-    <meta itemprop="name" content="undefined | Hexo">
-    <meta itemprop="description" content="">
-  </span>
+{{- define "main" }}
+{{- $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+{{- range $paginator.Pages }}
+<div class="post-block animated fadeIn">
+<article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Scratch.Get "langCode" }}">
+  <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">  
   <header class="post-header">
     <h2 class="post-title" itemprop="name headline">
-      <a href="/2022/05/02/hello-world2/" class="post-title-link" itemprop="url">Hello World2</a>
+      <a href="{{ .Permalink }}" class="post-title-link" itemprop="url">{{ .Title }}</a>
     </h2>
     <div class="post-meta-container">
       <div class="post-meta">
@@ -23,29 +14,70 @@
           <span class="post-meta-item-icon">
             <i class="far fa-calendar"></i>
           </span>
-          <span class="post-meta-item-text">发表于</span>
-          <time title="创建时间：2022-05-02 21:50:19" itemprop="dateCreated datePublished" datetime="2022-05-02T21:50:19+08:00">2022-05-02</time>
+          <span class="post-meta-item-text">{{- T "PostPublishDate" }}{{- T "ColoneFlag" }}</span>
+          <time title="{{ T "PostPublishTime" }}{{ T "ColoneFlag" }}{{ .PublishDate }}" itemprop="dateCreated datePublished" datetime="{{ .PublishDate }}">{{- .PublishDate.Format .Site.Params.DateFormat -}}</time>
         </span>
+        {{- if gt .Lastmod .PublishDate }}
         <span class="post-meta-item">
           <span class="post-meta-item-icon">
             <i class="far fa-calendar-check"></i>
           </span>
-          <span class="post-meta-item-text">更新于</span>
-          <time title="修改时间：2022-05-04 11:59:28" itemprop="dateModified" datetime="2022-05-04T11:59:28+08:00">2022-05-04</time>
+          <span class="post-meta-item-text">{{- T "PostLastModDate" }}{{- T "ColoneFlag" }}</span>
+          <time title="{{ T "PostLastModTime" }}{{ T "ColoneFlag" }}{{ .Lastmod }}" itemprop="dateModified" datetime="{{ .Lastmod }}">{{- .Lastmod.Format .Site.Params.DateFormat -}}</time>
+        </span>
+        {{- end }}
+        {{- if isset .Params "categories" }}
+        {{- if not (eq (len .Params.categories) 0) }}
+        <span class="post-meta-item">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-folder-open"></i>
+          </span>
+          <span class="post-meta-item-text">{{- T "PostCatg" }}{{- T "ColoneFlag"}}</span>
+          <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          {{- range .Params.categories }}
+          <span class="post-meta-catg" itemprop="name">
+            <a href="{{ . | urlize }}" itemprop="url" rel="index">{{ . }}</a>
+          </span>
+          {{- end }}
+          </span>
+        </span>
+        {{- end }}
+        {{- end }}
+        <span class="post-meta-item">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-file-word"></i>
+          </span>
+          <span class="post-meta-item-text">{{- T "PostWords" }}{{- T "ColoneFlag" -}}</span>
+          <span>{{- T "PostWordCount" . -}}</span>
+        </span>
+        <span class="post-meta-item">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-hourglass"></i>
+          </span>
+          <span class="post-meta-item-text">{{- T "PostReading" }}{{- T "ColoneFlag" -}}</span>
+          <span>{{- T "PostReadTime" . -}}</span>
+        </span>
+        <span class="post-meta-item">
+          <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+          </span>
+          <span class="post-meta-item-text">{{- T "PostVisitor" -}}{{ T "ColoneFlag" -}}</span>
+          <span id="busuanzi_value_site_pv">
+            <i class="fa fa-sync fa-spin"></i>
+          </span>
         </span>
       </div>
     </div>
-    <div class="post-body" itemprop="articleBody">
-      <ol start="2">
-        <li>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.
-          <div class="post-button">
-            <a class="btn" href="/2022/05/02/hello-world2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+    <div class="post-body" itemprop="articleBody">{{ .Summary }}</div>
+    <div class="post-button">
+      <a class="hvr-shutter-out-horizontal" href="{{ .Permalink }}" rel="contents">
+        {{- T "PostReadMore" }} &raquo;
+      </a>
     </div>
     <footer class="post-footer">
       <div class="post-eof"></div>
     </footer>
 </article>
-{{ end }}
+</div>    
+{{- end }}
+{{- end }}

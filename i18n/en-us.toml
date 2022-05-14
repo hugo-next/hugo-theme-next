@@ -2,6 +2,9 @@
 # English Version
 #--------------------------------------
 
+[ColoneFlag]
+  other = ":"
+
 [SitePostsTitle]
   other = "Posts"
 [SiteCatesTitle]
@@ -16,3 +19,26 @@
   other = "RSS Subscribe"
 [CCLinkTitle]
   other = "Creative Commons"
+
+[PostPublishDate]
+  other = "Publish"
+[PostPublishTime]
+  other = "Create Time"
+[PostLastModDate]
+  other = "Update"
+[PostLastModTime]
+  other = "Modify Time"
+[PostWords]
+  other = "Words"
+[PostWordCount]
+  other = "{{- .WordCount -}}"
+[PostReading]
+  other = "Read"
+[PostReadTime]
+  other = "{{- .ReadingTime -}}min"
+[PostVisitor]
+  other = "Views"
+[PostCatg]
+  other = "Categories"
+[PostReadMore]
+  other = "Read More"

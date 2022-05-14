@@ -123,3 +123,28 @@
 .back-to-top {
   bottom: 30px;
 }
+
+.posts-expand .post-meta-container {
+  margin: 10px auto;
+}
+
+.post-meta-item-icon {
+  margin: 0 0 0 -5px;
+}
+
+:not(.post-meta-break) + .post-meta-item::before {
+    content: '|';
+    margin: 0 0.3em;
+}
+
+.post-meta-catg:not(:last-child)::after {
+  content: ';';
+  margin: 0px;
+}
+
+
+/* Font A */
+.fa-spin {
+  -webkit-animation: fa-spin .8s infinite linear;
+  animation: fa-spin .8s infinite linear;
+} 

@@ -57,6 +57,8 @@ menus:
 # User-define Settings
 # -------------------------------------
 params:
+  mainSections: [ "posts" ]
+  dateFormat: 2006-01-02
   # -------------------------------------
   # Scheme Settings
   # -------------------------------------

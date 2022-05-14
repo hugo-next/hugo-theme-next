@@ -19,10 +19,7 @@
       {{ partial "partials/header.html" . }}
     </header>
     <div class="main-inner index posts-expand">
-      <div class="post-block">
-        {{- block "main" . -}}
-        {{- end -}}
-      </div>
+      {{- block "main" . -}}{{- end -}}
       <nav class="pagination">
         {{ partial "partials/pages.html" . }}
       </nav>
