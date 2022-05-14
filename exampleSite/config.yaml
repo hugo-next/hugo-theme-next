@@ -80,13 +80,13 @@ params:
   # Use the "show" variable to control whether displayed in sidebar 
   customLogo: 
     show: false
-    url: /imgs/hugo-next-logo.png
+    url: /imgs/hugo_next_logo.png
 
   favicon:
     icon: /imgs/icons/favicon.ico
-    small: /imgs/icons/favicon-16x16-next.png
-    medium: /imgs/icons/favicon-32x32-next.png
-    appleTouchIcon: /imgs/icons/apple-touch-icon-next.png
+    small: /imgs/icons/favicon_16x16_next.png
+    medium: /imgs/icons/favicon_32_32_next.png
+    appleTouchIcon: /imgs/icons/apple_touch_icon_next.png
 
   # Open graph settings
   openGraph:
