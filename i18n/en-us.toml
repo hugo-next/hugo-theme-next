@@ -44,3 +44,6 @@
   other = "Tags"
 [PostReadMore]
   other = "Read More"
+
+[FooterPowerby]
+  other = "Power by %s"

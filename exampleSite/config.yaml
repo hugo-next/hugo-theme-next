@@ -172,7 +172,31 @@ params:
     post: true
     # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
     # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
-    # No setting is required here and can be done by multilanguage 
+    # No required in here and can be done by multilanguage 
     # language: deed.zh
+  
+  footer:
+    # Specify the year when the site was setup. If not defined, current year will be used.
+    since: 2016
+
+    # Icon between year and copyright info.
+    icon:
+      # Icon name in Font Awesome. See: https://fontawesome.com/icons
+      name: fa-solid fa-heart
+      # If you want to animate the icon, set it to true.
+      animated: true
+      # Change the color of icon, using Hex Code.
+      color: "#FF0000"
+
+    # Powered by Hugo & NexT.
+    powered: true
+
+    # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
+    beian:
+      enable: true
+      icp: 粤ICP备18047355号
+      # The full num of gongan beian which use to query valid.
+      gonganNum: 11010102001808
+
 
 

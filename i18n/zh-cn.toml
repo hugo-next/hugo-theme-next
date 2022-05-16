@@ -44,3 +44,6 @@
   other = "标签"
 [PostReadMore]
   other = "阅读全文"
+
+[FooterPowerby]
+  other = "由 %s 强力驱动"

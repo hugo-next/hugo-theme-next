@@ -154,8 +154,22 @@
   text-align: center;
 }
 
+.beian img {
+  display: inline-block;
+  margin: 0 3px;
+  vertical-align: middle;
+}
 
-/* Font A */
+.with-love {
+{{- with $P.footer.icon.color }}
+  color: {{ $P.footer.icon.color  }};
+{{- end }}
+{{- if $P.footer.icon.animated }}
+  animation: icon-animate 1.33s ease-in-out infinite;
+{{- end }}
+}
+
+/* Font Awesome */
 .fa-spin {
   -webkit-animation: fa-spin .8s infinite linear;
   animation: fa-spin .8s infinite linear;
