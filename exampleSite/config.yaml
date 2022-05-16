@@ -5,6 +5,8 @@ baseURL: /
 
 theme: hugo-theme-next
 
+paginate: 3
+
 #--------------------------------------
 # Hugo multilingual settings
 #--------------------------------------
