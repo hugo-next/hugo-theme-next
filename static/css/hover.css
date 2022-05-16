@@ -95,8 +95,8 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: -1px;
-  left: -1px;
+  top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
   background: var(--btn-default-hover-bg);
@@ -148,9 +148,9 @@
   content: "";
   position: absolute;
   z-index: -1;
-  top: -1px;
+  top: 0;
   bottom: 0;
-  left: -1px;
+  left: 0;
   right: 0;
   background: var(--btn-default-hover-bg);
   -webkit-transform: scaleX(0);

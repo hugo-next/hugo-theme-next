@@ -10,7 +10,7 @@
       </div>
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" alt="John Doe" src="{{ .Site.Params.avatar.url }}">
+          <img class="site-author-image" itemprop="image" alt="{{ $SP.author }}" src="{{ $SP.avatar.url }}">
           <p class="site-author-name" itemprop="name">{{ $SP.author }}</p>
           <div class="site-description" itemprop="description">{{ $SP.description }}</div>
         </div>
