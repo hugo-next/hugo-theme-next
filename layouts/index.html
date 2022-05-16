@@ -10,73 +10,21 @@
     </h2>
     <div class="post-meta-container">
       <div class="post-meta">
-        <span class="post-meta-item">
-          <span class="post-meta-item-icon">
-            <i class="far fa-calendar"></i>
-          </span>
-          <span class="post-meta-item-text">{{- T "PostPublishDate" }}{{- T "ColoneFlag" }}</span>
-          <time title="{{ T "PostPublishTime" }}{{ T "ColoneFlag" }}{{ .PublishDate }}" itemprop="dateCreated datePublished" datetime="{{ .PublishDate }}">{{- .PublishDate.Format .Site.Params.DateFormat -}}</time>
-        </span>
-        {{- if gt .Lastmod .PublishDate }}
-        <span class="post-meta-item">
-          <span class="post-meta-item-icon">
-            <i class="far fa-calendar-check"></i>
-          </span>
-          <span class="post-meta-item-text">{{- T "PostLastModDate" }}{{- T "ColoneFlag" }}</span>
-          <time title="{{ T "PostLastModTime" }}{{ T "ColoneFlag" }}{{ .Lastmod }}" itemprop="dateModified" datetime="{{ .Lastmod }}">{{- .Lastmod.Format .Site.Params.DateFormat -}}</time>
-        </span>
-        {{- end }}
-        {{- if isset .Params "categories" }}
-        {{- if not (eq (len .Params.categories) 0) }}
-        <span class="post-meta-item">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-folder-open"></i>
-          </span>
-          <span class="post-meta-item-text">{{- T "PostCatg" }}{{- T "ColoneFlag"}}</span>
-          <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          {{- range .Params.categories }}
-          <span class="post-meta-catg" itemprop="name">
-            <a href="{{ . | urlize }}" itemprop="url" rel="index">{{ . }}</a>
-          </span>
-          {{- end }}
-          </span>
-        </span>
-        {{- end }}
-        {{- end }}
-        <span class="post-meta-item">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-file-word"></i>
-          </span>
-          <span class="post-meta-item-text">{{- T "PostWords" }}{{- T "ColoneFlag" -}}</span>
-          <span>{{- T "PostWordCount" . -}}</span>
-        </span>
-        <span class="post-meta-item">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-hourglass"></i>
-          </span>
-          <span class="post-meta-item-text">{{- T "PostReading" }}{{- T "ColoneFlag" -}}</span>
-          <span>{{- T "PostReadTime" . -}}</span>
-        </span>
-        <span class="post-meta-item">
-          <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-          </span>
-          <span class="post-meta-item-text">{{- T "PostVisitor" -}}{{ T "ColoneFlag" -}}</span>
-          <span id="busuanzi_value_site_pv">
-            <i class="fa fa-sync fa-spin"></i>
-          </span>
-        </span>
+        {{- partial "post_meta/date" . }}
+        {{- partial "post_meta/catgs" . }}
+        {{- partial "post_meta/tags" . }}
       </div>
     </div>
-    <div class="post-body" itemprop="articleBody">{{ .Summary }}</div>
-    <div class="post-button">
+  </header>
+  <div class="post-body" itemprop="articleBody">{{ .Summary }}</div>
+  <footer class="post-footer">
+    <div class="post-footer-btn">
       <a class="hvr-shutter-out-horizontal" href="{{ .Permalink }}" rel="contents">
         {{- T "PostReadMore" }} &raquo;
       </a>
     </div>
-    <footer class="post-footer">
-      <div class="post-eof"></div>
-    </footer>
+    <div class="post-eof"></div>
+  </footer>
 </article>
 </div>    
 {{- end }}

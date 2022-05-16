@@ -40,5 +40,7 @@
   other = "Views"
 [PostCatg]
   other = "Categories"
+[PostTag]
+  other = "Tags"
 [PostReadMore]
   other = "Read More"

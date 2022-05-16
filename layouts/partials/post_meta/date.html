@@ -1,0 +1,16 @@
+<span class="post-meta-item">
+  <span class="post-meta-item-icon">
+    <i class="far fa-calendar"></i>
+  </span>
+  <span class="post-meta-item-text">{{- T "PostPublishDate" }}{{- T "ColoneFlag" }}</span>
+  <time title="{{ T "PostPublishTime" }}{{ T "ColoneFlag" }}{{ .PublishDate }}" itemprop="dateCreated datePublished" datetime="{{ .PublishDate }}">{{- .PublishDate.Format .Site.Params.DateFormat -}}</time>
+</span>
+{{- if gt .Lastmod .PublishDate }}
+<span class="post-meta-item">
+  <span class="post-meta-item-icon">
+    <i class="far fa-calendar-check"></i>
+  </span>
+  <span class="post-meta-item-text">{{- T "PostLastModDate" }}{{- T "ColoneFlag" }}</span>
+  <time title="{{ T "PostLastModTime" }}{{ T "ColoneFlag" }}{{ .Lastmod }}" itemprop="dateModified" datetime="{{ .Lastmod }}">{{- .Lastmod.Format .Site.Params.DateFormat -}}</time>
+</span>
+{{- end }}

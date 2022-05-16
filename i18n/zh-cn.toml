@@ -31,14 +31,16 @@
 [PostWords]
   other = "字数"
 [PostWordCount]
-  other = "{{- .WordCount -}}字"
+  other = "{{- .WordCount -}}"
 [PostReading]
   other = "阅读"
 [PostReadTime]
   other = "{{- .ReadingTime -}}分钟"
 [PostVisitor]
-  other = "浏览次数"
+  other = "浏览数"
 [PostCatg]
   other = "分类"
+[PostTag]
+  other = "标签"
 [PostReadMore]
   other = "阅读全文"

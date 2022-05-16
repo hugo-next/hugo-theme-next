@@ -1,0 +1,17 @@
+{{- if isset .Params "categories" }}
+{{- if not (eq (len .Params.categories) 0) }}
+<span class="post-meta-item">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-open"></i>
+  </span>
+  <span class="post-meta-item-text">{{- T "PostCatg" }}{{- T "ColoneFlag"}}</span>
+  <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+    {{- range (first 3 .Params.categories) }}
+    <span class="post-meta-catg" itemprop="name">
+      <a href="{{ . | urlize }}" itemprop="url" rel="index">{{ . }}</a>
+    </span>
+    {{- end }}
+  </span>
+</span>
+{{- end }}
+{{- end }}

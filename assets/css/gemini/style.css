@@ -142,6 +142,18 @@
   margin: 0px;
 }
 
+.posts-expand .post-header {
+  margin: 0;
+}
+
+.posts-expand .post-body {
+  margin: 28px 0;
+}
+
+.post-footer-btn {
+  text-align: center;
+}
+
 
 /* Font A */
 .fa-spin {
