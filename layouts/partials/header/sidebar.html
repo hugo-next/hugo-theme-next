@@ -18,23 +18,27 @@
           {{- if $SP.siteState }}
           <nav class="site-state">
             <div class="site-state-item site-state-posts">
-              <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+              <a href="{{ "/archives/" | relLangURL }}">
+                <span class="site-state-item-count">{{ len (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}</span>
                 <span class="site-state-item-name">{{ T "SitePostsTitle" }}</span>
               </a>
             </div>
             <div class="site-state-item site-state-categories">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">{{ T "SiteCatesTitle" }}</span>
+              <a href="{{ "/categories/" | relLangURL }}">
+                <span class="site-state-item-count">{{ len .Site.Taxonomies.categories }}</span>
+                <span class="site-state-item-name">{{ T "SiteCatesTitle" }}</span>
+              </a>
             </div>
             <div class="site-state-item site-state-tags">
-              <span class="site-state-item-count">3</span>
-              <span class="site-state-item-name">{{ T "SiteTagsTitle" }}</span>
+              <a href="{{ "/tags/" | relLangURL }}">
+                <span class="site-state-item-count">{{ len .Site.Taxonomies.tags }}</span>
+                <span class="site-state-item-name">{{ T "SiteTagsTitle" }}</span>
+              </a>
             </div>
           </nav>
           {{- end }}
           <div class="rss-link">
-            <a href="/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+            <a href="{{ "/index.xml" | relLangURL }}" rel="alternate" type="application/rss+xml" target="_blank">
               <i class="fa fa-rss"></i>
               {{ T "RSSTitle" }}
             </a>
