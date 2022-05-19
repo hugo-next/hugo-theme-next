@@ -1,40 +1,38 @@
-{{ $ft := .Site.Params.footer  }}
-<footer class="footer">
-  <div class="footer-inner">
-    {{- $ba := $ft.beian }}
-    {{- if $ba.enable }}
-    <div class="beian">
-      <a href="https://beian.miit.gov.cn" target="_blank" title="">{{ $ba.icp }}</a>
-      {{- with $ba.gonganNum }}
-      <img src="/imgs/gongan.png" alt="京公网安备">
-      <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ . }}" target="_blank" title="">{{ printf "京公网安备 %d 号" . }}</a>
-      {{- end }}
-    </div>
-    {{- end }}
-    <div class="copyright">
-      &copy;
-      <span itemprop="copyrightYear">
-        {{- $year := now.Year }}
-        {{- if isset $ft "since" }}
-          {{- if gt $year $ft.since }}
-            {{ $ft.since }} - {{ $year }}
-          {{- else }}
-            {{ $year }}
-          {{- end }}
-        {{- else }}
-          {{ $year }}
-        {{- end }}      
-      </span>
-      <span class="with-love">
-        <i class="{{ $ft.icon.name }}"></i>
-      </span>
-      <span class="author" itemprop="copyrightHolder">{{ .Site.Params.author }}</span>
-    </div>    
-    {{- if $ft.powered }}
-    <div class="powered-by">
-      {{ $pb := printf "<a href='https://gohugo.io' target='_blank'>Hugo v%s</a> &amp; <a href='https://github.com/hugo-next' target='_blank'>NexT.%s</a>" hugo.Version .Site.Params.scheme }}
-      {{- printf (T "FooterPowerby") $pb | safeHTML }}
-    </div>
+{{ $ft := .Site.Params.footer }}
+<div class="footer-inner">
+  {{- $ba := $ft.beian }}
+  {{- if $ba.enable }}
+  <div class="beian">
+    <a href="https://beian.miit.gov.cn" target="_blank" title="">{{ $ba.icp }}</a>
+    {{- with $ba.gonganNum }}
+    <img src="/imgs/gongan.png" alt="京公网安备">
+    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ . }}" target="_blank" title="">{{ printf "京公网安备 %d 号" . }}</a>
     {{- end }}
   </div>
-</footer>
+  {{- end }}
+  <div class="copyright">
+    &copy;
+    <span itemprop="copyrightYear">
+      {{- $year := now.Year }}
+      {{- if isset $ft "since" }}
+      {{- if gt $year $ft.since }}
+      {{ $ft.since }} - {{ $year }}
+      {{- else }}
+      {{ $year }}
+      {{- end }}
+      {{- else }}
+      {{ $year }}
+      {{- end }}
+    </span>
+    <span class="with-love">
+      <i class="{{ $ft.icon.name }}"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">{{ .Site.Params.author }}</span>
+  </div>
+  {{- if $ft.powered }}
+  <div class="powered-by">
+    {{ $pb := printf "<a href='https://gohugo.io' target='_blank'>Hugo v%s</a> &amp; <a href='https://github.com/hugo-next' target='_blank'>NexT.%s</a>" hugo.Version .Site.Params.scheme }}
+    {{- printf (T "FooterPowerby") $pb | safeHTML }}
+  </div>
+  {{- end }}
+</div>
