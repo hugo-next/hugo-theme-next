@@ -1,0 +1,28 @@
+// All variables from site's config content. 
+// In order not to conflict with the existing variables of SCSS and better identify, 
+// add a cfg_ prefix before the variable name
+
+{{- $P := .Site.Params -}}
+
+$cfg_scheme: {{ default $P.scheme "Gemini" }};
+$cfg_darkmode: {{ $P.darkmode }};
+
+$cfg_thm_cor_light: {{ $P.themeColor.light }}; 
+$cfg_thm_cor_dark: {{ $P.themeColor.dark }}; 
+
+$cfg_font_enable: {{ default $P.font.enable false }}; 
+$cfg_font_global_size: {{ default $P.font.global.size 1 }}; 
+$cfg_font_headings_size: {{ default $P.font.headings.size 1 }}; 
+$cfg_font_title_size: {{ default $P.font.title.size 1 }}; 
+$cfg_font_codes_size: {{ default $P.font.codes.size 1 }}; 
+$cfg_font_posts_size: {{ default $P.font.posts.size 1 }}; 
+
+$cfg_hl_light_bg: #222; 
+$cfg_hl_light_fg: #000; 
+$cfg_hl_dark_bg: #000; 
+$cfg_hl_dark_fg: #222; 
+
+$cfg_sidebar_padding: {{ default $P.sidebar.padding 18 }}; 
+$cfg_sidebar_offset: {{ default $P.sidebar.offset 12 }}; 
+
+$cfg_note_light_bg_offset: 0; 
