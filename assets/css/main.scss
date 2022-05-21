@@ -7,7 +7,8 @@
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
-//@import '"_variables/" + theme.scheme';
+// TODO think how dynamic import the scheme variables
+@import '_variables/Gemini';
 //@import 'theme.injects.variable';
 
 // Mixins Layer
@@ -29,7 +30,7 @@
 // @import '_common/outline';
 
 // Components
-// @import '_common/components';
+@import '_common/components';
 
 
 // Schemes Layer

@@ -4,8 +4,8 @@
 // Base
 $scheme: {{ $P.scheme }};
 $darkmode: {{ $P.darkmode }};
-$theme_color_light: {{ $P.themeColor.light }};
 $theme_color_dark: {{ $P.themeColor.dark }};
+$theme_color_light: {{ $P.themeColor.light }};
 
 // Font
 $font_enable: {{ $P.font.enable }};
@@ -15,15 +15,40 @@ $font_title_size: {{ default $P.font.title.size 1.375 }};
 
 // Code & Code blocks
 // TODO find the configure variable
-$highlight_light_background: #000;
-$highlight_light_foreground: #222;
 $highlight_dark_background: #000;
 $highlight_dark_foreground: #222;
+$highlight_light_background: #000;
+$highlight_light_foreground: #222;
 
 // Sidebar
-$sidebar_position: {{ $P.sidebar.position }};
-$sidebar_padding: {{ $P.sidebar.padding }};
 $sidebar_offset: {{ $P.sidebar.offset }};
+$sidebar_padding: {{ $P.sidebar.padding }};
+$sidebar_position: {{ $P.sidebar.position }};
+$sidebar_width: {{ $P.sidebar.width }};
 
 // Note
 $note_light_bg_offset: {{ $P.note.lightBgOffset }};
+
+// Reading progress bar
+$reading_progress_start: {{ $P.readingProgress.start }}; 
+$reading_progress_color: {{ $P.readingProgress.color }}; 
+$reading_progress_enable: {{ $P.readingProgress.enable }}; 
+$reading_progress_height: {{ $P.readingProgress.height }}; 
+$reading_progress_position: {{ $P.readingProgress.position }}; 
+$reading_progress_reversed: {{ $P.readingProgress.reversed }}; 
+
+// Thirdparty
+$math_mathjax_enable: {{ $P.math.mathjax.enable }};
+$related_posts_enable: {{ $P.relatedPosts.enable }};
+
+// Search engine
+$algolia_search_enable: {{ $P.algoliaSearch.enable }};
+$local_search_enable: {{ $P.localSearch.enable }};
+
+// Online IM
+$gitalk_enable: {{ $P.gitalk.enable }};
+$gitter_enable: {{ $P.gitter.enable }};
+
+// Comment
+$disqusjs_enable: {{ $P.disqusjs.enable }};
+$utterances_enable: {{ $P.utterances.enable }};

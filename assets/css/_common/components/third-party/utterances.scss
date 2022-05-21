@@ -1,4 +1,4 @@
-@if hexo-config('utterances.enable') {
+@if $utterances_enable {
   .utterances {
     max-width: unset;
   }

@@ -128,7 +128,7 @@ params:
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    #width: 300
+    width: 300
 
     # Sidebar Display (only for Muse | Mist), available values:
     #  - post    expand on posts automatically. Default.
@@ -292,7 +292,7 @@ params:
 
   # Related popular posts
   # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
-  related_posts:
+  relatedPosts:
     enable: false
     title: # Custom header, leave empty to use the default one
     display_in_home: false
@@ -389,10 +389,10 @@ params:
     scrollpercent: false
 
   # Reading progress bar
-  reading_progress:
+  readingProgress:
     enable: false
     # Available values: left | right
-    start_at: left
+    start: left
     # Available values: top | bottom
     position: top
     reversed: false
@@ -739,14 +739,14 @@ params:
 
   # Algolia Search
   # For more information: https://www.algolia.com
-  algolia_search:
+  algoliaSearch:
     enable: false
     hits:
       per_page: 10
 
   # Local Search
   # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
-  local_search:
+  localSearch:
     enable: false
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
