@@ -3,7 +3,7 @@
     font-size: $font-size-smaller;
   }
 
-  @if not hexo-config('social_icons.icons_only') {
+  @if not $social_icons_only {
     .fa, .fab, .far, .fas {
       margin-right: 2px;
     }

@@ -6,6 +6,22 @@ $scheme: {{ $P.scheme }};
 $darkmode: {{ $P.darkmode }};
 $theme_color_dark: {{ $P.themeColor.dark }};
 $theme_color_light: {{ $P.themeColor.light }};
+$mobile_layout_economy: {{ $P.mobileLayoutEconomy }};
+
+// Header
+$bookmark_enable: {{ $P.bookmark.enable }};
+$bookmark_color: {{ $P.bookmark.color }};
+$github_banner_enable: {{ $P.githubBanner.enable }};
+
+// Footer
+$footer_icon_color: {{ $P.footer.icon.color }};
+$footer_icon_animated: {{ $P.footer.icon.animated }};
+$footer_beian_enable: {{ $P.footer.beian.enable }};
+
+// Counter
+$busuanzi_enable: {{ $P.busuanzi.enable }};
+$busuanzi_visitors: {{ $P.busuanzi.visitors }};
+$busuanzi_views: {{ $P.busuanzi.views }};
 
 // Font
 $font_enable: {{ $P.font.enable }};
@@ -26,8 +42,18 @@ $sidebar_padding: {{ $P.sidebar.padding }};
 $sidebar_position: {{ $P.sidebar.position }};
 $sidebar_width: {{ $P.sidebar.width }};
 
+$avatar_rotated: {{ $P.avatar.rotated }};
+$avatar_rounded: {{ $P.avatar.rounded }};
+$avatar_rounded: {{ $P.avatar.rounded }};
+$site_state: {{ $P.siteState }};
+$social_icons_only: {{ $P.socialIcons.iconsOnly }};
+$toc_enable: {{ $P.toc.enable }};
+$toc_expand_all: {{ $P.toc.expandAll }};
+$toc_wrap: {{ $P.toc.wrap }};
+
 // Note
 $note_light_bg_offset: {{ $P.note.lightBgOffset }};
+$note_icons: {{ $P.note.icons }};
 
 // Reading progress bar
 $reading_progress_start: {{ $P.readingProgress.start }}; 

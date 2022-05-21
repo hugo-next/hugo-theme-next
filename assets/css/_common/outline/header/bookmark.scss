@@ -1,4 +1,4 @@
-@if hexo-config('bookmark.enable') {
+@if $bookmark_enable {
   .book-mark-link {
     border-bottom: 0;
     position: fixed;
@@ -11,7 +11,7 @@
     }
 
     &::before {
-      color: convert(hexo-config('bookmark.color'));
+      color: convert($bookmark_color);
       font-size: 32px;
       line-height: 1;
       @include font-family-icons('\f02e');

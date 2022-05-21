@@ -3,11 +3,11 @@
   max-width: $site-author-image-width;
   padding: 2px;
 
-  @if hexo-config('avatar.rounded') {
+  @if $avatar_rounded {
     border-radius: 50%;
   }
 
-  @if hexo-config('avatar.rotated') {
+  @if $avatar_rotated {
     transition: transform 1s ease-out;
 
     &:hover {

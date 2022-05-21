@@ -152,7 +152,7 @@ params:
     rotated: false
 
   # Posts / Categories / Tags in sidebar.
-  site_state: true
+  siteState: true
 
   # Social Links
   # Usage: `Key: permalink || icon`
@@ -170,9 +170,9 @@ params:
     #Instagram: https://instagram.com/yourname || fab fa-instagram
     #Skype: skype:yourname?call|chat || fab fa-skype
 
-  social_icons:
+  socialIcons:
     enable: true
-    icons_only: false
+    iconsOnly: false
     transition: false
 
   # Blog rolls
@@ -194,9 +194,9 @@ params:
     # If true, all words will placed on next lines if header width longer then sidebar width.
     wrap: false
     # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-    expand_all: false
+    expandAll: false
     # Maximum heading depth of generated toc.
-    max_depth: 6
+    maxDepth: 6
 
 
   # ---------------------------------------------------------------
@@ -346,13 +346,13 @@ params:
   preconnect: false
 
   # Set the text alignment in posts / pages.
-  text_align:
+  textAlign:
     # Available values: start | end | left | right | center | justify | justify-all | match-parent
     desktop: justify
     mobile: justify
 
   # Reduce padding / margin indents on devices with narrow width.
-  mobile_layout_economy: false
+  mobileLayoutEconomy: false
 
   # Browser header panel color.
   themeColor:
@@ -409,7 +409,7 @@ params:
     save: auto
 
   # `Follow me on GitHub` banner in the top-right corner.
-  github_banner:
+  githubBanner:
     enable: false
     permalink: https://github.com/yourname
     title: Follow me on GitHub
@@ -722,14 +722,14 @@ params:
 
   # Show Views / Visitors of the website / page with busuanzi.
   # For more information: http://ibruce.info/2015/04/04/busuanzi/
-  busuanzi_count:
+  busuanzi:
     enable: false
-    total_visitors: true
-    total_visitors_icon: fa fa-user
-    total_views: true
-    total_views_icon: fa fa-eye
-    post_views: true
-    post_views_icon: far fa-eye
+    visitors: true
+    visitorsIcon: fa fa-user
+    views: true
+    viewsIcon: fa fa-eye
+    postViews: true
+    postViewsIcon: far fa-eye
 
 
   # ---------------------------------------------------------------

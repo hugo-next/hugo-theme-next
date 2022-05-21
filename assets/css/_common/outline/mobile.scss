@@ -5,7 +5,7 @@
 }
 */
 
-@if hexo-config('mobile_layout_economy') {
+@if $mobile_layout_economy {
   @include mobile-small() {
     // For Pisces & Gemini schemes only wider width (remove main blocks in Gemini).
     .main-inner {
@@ -56,7 +56,7 @@
         margin-bottom: 10px !important;
         padding: 10px !important;
 
-        @if hexo-config('note.icons') {
+        @if $note_icons {
           &:not(.no-icon) {
             padding-left: 35px !important;
           }

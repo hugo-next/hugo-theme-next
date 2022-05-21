@@ -66,16 +66,16 @@
 }
 
 .with-love {
-  color: hexo-config('footer.icon.color');
+  color: $footer_icon_color;
   display: inline-block;
   margin: 0 5px;
 
-  @if hexo-config('footer.icon.animated') {
+  @if $footer_icon_animated {
     animation: icon-animate 1.33s ease-in-out infinite;
   }
 }
 
-@if hexo-config('footer.beian.enable') and hexo-config('footer.beian.gongan_icon_url') {
+@if $footer_beian_enable {
   .beian img {
     display: inline-block;
     margin: 0 3px;
@@ -83,15 +83,14 @@
   }
 }
 
-@if hexo-config('busuanzi_count.enable') {
+@if $busuanzi_enable {
   .busuanzi-count {
-    @if hexo-config('busuanzi_count.total_visitors') {
+    @if $busuanzi_visitors {
       #busuanzi_container_site_uv {
         display: none;
       }
     }
-
-    @if hexo-config('busuanzi_count.total_views') {
+    @if $busuanzi_views {
       #busuanzi_container_site_pv {
         display: none;
       }
