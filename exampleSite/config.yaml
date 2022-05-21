@@ -71,6 +71,10 @@ params:
 
   # Dark Mode
   darkmode: true
+  # Browser header panel color.
+  themeColor:
+    light: "#000"
+    dark: "#222"
 
   #--------------------------------------
   # Site Information Settings
@@ -175,6 +179,19 @@ params:
     # No required in here and can be done by multilanguage 
     # language: deed.zh
   
+  # Table of Contents in the Sidebar
+  # Front-matter variable (nonsupport wrap expand_all).
+  toc:
+    enable: true
+    # Automatically add list number to toc.
+    number: true
+    # If true, all words will placed on next lines if header width longer then sidebar width.
+    wrap: false
+    # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
+    expandAll: false
+    # Maximum heading depth of generated toc.
+    maxDepth: 6
+
   footer:
     # Specify the year when the site was setup. If not defined, current year will be used.
     since: 2016
@@ -194,9 +211,141 @@ params:
     # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
       enable: true
-      icp: 粤ICP备18047355号
+      icp: 粤ICP备18047355-1号
       # The full num of gongan beian which use to query valid.
       gonganNum: 11010102001808
 
+  # Override browsers' default behavior.
+  bodyScrollbar:
+    # Place the scrollbar over the content.
+    overlay: false
+    # Present the scrollbar even if the content is not overflowing.
+    stable: false
+
+  backTop:
+    enable: true
+    # Back to top in sidebar.
+    sidebar: false
+    # Scroll percent label in b2t button.
+    scrollPercent: false
+
+  # Reading progress bar
+  readingProgress:
+    enable: false
+    # Available values: left | right
+    start: left
+    # Available values: top | bottom
+    position: top
+    reversed: false
+    color: "#37c6c0"
+    height: 3px
+
+  # Bookmark Support
+  bookmark:
+    enable: false
+    # Customize the color of the bookmark.
+    color: "#222"
+    # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
+    # If manual, only save it by clicking the bookmark-icon.
+    save: auto
+
+  # `Follow me on GitHub` banner in the top-right corner.
+  githubBanner:
+    enable: false
+    permalink: https://github.com/yourname
+    title: Follow me on GitHub
+
+  codeblock:
+    # Code Highlight theme
+    # All available themes: https://theme-next.js.org/highlight/
+    theme:
+      light: default
+      dark: stackoverflow-dark
+    prism:
+      light: prism
+      dark: prism-dark
+    # Add copy button on codeblock
+    copyBtn:
+      enable: false
+      # Available values: default | flat | mac
+      style: defalut
+
+  # Mermaid tag
+  mermaid:
+    enable: false
+    # Available themes: default | dark | forest | neutral
+    theme:
+      light: default
+      dark: dark
+
+  # Note tag (bootstrap callout)
+  note:
+    # Note tag style values:
+    #  - simple    bootstrap callout old alert style. Default.
+    #  - modern    bootstrap callout new (v2-v3) alert style.
+    #  - flat      flat callout style with background, like on Mozilla or StackOverflow.
+    #  - disabled  disable all CSS styles import of note tag.
+    style: simple
+    icons: false
+    # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
+    # Offset also applied to label tag variables. This option can work with disabled note tag.
+    light_bg_offset: 0
+
+  # Tabs tag
+  tabs:
+    # Make the nav bar of tabs with long content stick to the top.
+    sticky: false
+    transition:
+      tabs: false
+      labels: true
+
+  # PDF tag
+  # NexT will try to load pdf files natively, if failed, pdf.js will be used.
+  # So, you have to install the dependency of pdf.js if you want to use pdf tag and make it available to all browsers.
+  # Dependencies: https://github.com/next-theme/theme-next-pdf
+  pdf:
+    enable: false
+    # Default height
+    height: 500px
+
+  # Show Views / Visitors of the website / page with busuanzi.
+  # For more information: http://ibruce.info/2015/04/04/busuanzi/
+  busuanzi:
+    enable: false
+    visitors: true
+    visitorsIcon: fa fa-user
+    views: true
+    viewsIcon: fa fa-eye
+    postViews: true
+    postViewsIcon: far fa-eye
+
+  # ---------------------------------------------------------------
+  # Search Services
+  # See: https://theme-next.js.org/docs/third-party-services/search-services
+  # ---------------------------------------------------------------
+
+  # Algolia Search
+  # For more information: https://www.algolia.com
+  algoliaSearch:
+    enable: false
+    hits:
+      perPage: 10
+
+  # Local Search
+  # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
+  localSearch:
+    enable: false
+    # If auto, trigger search by changing input.
+    # If manual, trigger search by pressing enter key or search button.
+    trigger: auto
+    # Show top n results per article, show all results by setting to -1
+    #top_n_per_article: 1
+    # Unescape html strings to the readable one.
+    unescape: false
+    # Preload the search data when the page loads.
+    preload: false
+
+  # Reduce padding / margin indents on devices with narrow width.
+  mobileLayoutEconomy: false
 
 

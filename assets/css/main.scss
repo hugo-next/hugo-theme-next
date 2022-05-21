@@ -1,18 +1,19 @@
 // CSS Style Guide: https://codeguide.co/#css
 
 
-//$scheme : if(hexo-config('scheme'), hexo-config('scheme'), 'Muse');
+//$scheme : $cfg_scheme;
 
 
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
-// @import '"_variables/" + theme.scheme';
+//@import '"_variables/" + theme.scheme';
+@import "_variables/Gemini";
 // @import 'theme.injects.variable';
 
 // Mixins Layer
 // --------------------------------------------------
-// @import '_mixins';
+@import '_mixins';
 // @import 'theme.injects.mixin';
 
 // Dark mode colors
@@ -23,13 +24,13 @@
 // --------------------------------------------------
 
 // Scaffolding
-// @import '_common/scaffolding';
+@import '_common/scaffolding';
 
 // Layout
-// @import '_common/outline';
+@import '_common/outline';
 
 // Components
-// @import '_common/components';
+//@import '_common/components';
 
 
 // Schemes Layer

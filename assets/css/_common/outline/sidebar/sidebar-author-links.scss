@@ -1,0 +1,11 @@
+.links-of-author {
+  a {
+    font-size: $font-size-smaller;
+  }
+
+  @if not $cfg_social_icons_only {
+    .fa, .fab, .far, .fas {
+      margin-right: 2px;
+    }
+  }
+}

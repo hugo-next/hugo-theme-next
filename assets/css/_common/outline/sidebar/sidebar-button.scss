@@ -1,0 +1,15 @@
+.sidebar .sidebar-button {
+  &:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  button {
+    @include button($orange);
+    border: 1px solid $orange;
+    border-radius: 4px;
+
+    .fa, .fab, .far, .fas {
+      margin-right: 5px;
+    }
+  }
+}

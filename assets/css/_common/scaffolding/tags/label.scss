@@ -1,0 +1,12 @@
+//@use 'sass:map';
+
+.post-body .label {
+  color: $text-color;
+  padding: 0 2px;
+
+  @each $type in $note-types {
+    &.#{$type} {
+      background: map-get($label, $type);
+    }
+  }
+}
