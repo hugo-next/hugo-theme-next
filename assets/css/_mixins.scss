@@ -117,7 +117,7 @@
 }
 
 @function sidebar-toggle-alignment($reverse) {
-  $condition : hexo-config('sidebar.position') == 'right';
+  $condition : $sidebar_position == 'right';
   @if ($scheme == 'Muse') or ($scheme == 'Mist') {
     $condition : $condition == $reverse;
   }
@@ -125,7 +125,9 @@
 }
 
 @mixin sidebar-toggle-position($reverse) {
-  $alignment : list.nth(sidebar-toggle-alignment($reverse), 0);
+  // TODO how use nth function.
+  //$alignment : list.nth(sidebar-toggle-alignment($reverse), 0);
+  $alignment : 0;
   #{$alignment}: $b2t-position-right;
   @include tablet-mobile() {
     #{$alignment}: $b2t-position-right-mobile;

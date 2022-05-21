@@ -1,0 +1,6 @@
+{{- $scssVars := resources.Get "css/_sitevars.scss"}}
+{{- $scssVars = $scssVars | resources.ExecuteAsTemplate "sitevars.scss" . }}
+{{- $scssMain := resources.Get "css/main.scss" }}
+{{- $scss := slice $scssVars $scssMain | resources.Concat "css/main.scss" }}
+{{- $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">

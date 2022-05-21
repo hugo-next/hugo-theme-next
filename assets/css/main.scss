@@ -7,13 +7,13 @@
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
-@import '"_variables/" + theme.scheme';
-@import 'theme.injects.variable';
+//@import '"_variables/" + theme.scheme';
+//@import 'theme.injects.variable';
 
 // Mixins Layer
 // --------------------------------------------------
 @import '_mixins';
-@import 'theme.injects.mixin';
+//@import 'theme.injects.mixin';
 
 // Dark mode colors
 // --------------------------------------------------
@@ -23,20 +23,20 @@
 // --------------------------------------------------
 
 // Scaffolding
-@import '_common/scaffolding';
+// @import '_common/scaffolding';
 
 // Layout
-@import '_common/outline';
+// @import '_common/outline';
 
 // Components
-@import '_common/components';
+// @import '_common/components';
 
 
 // Schemes Layer
 // --------------------------------------------------
-@import '"_schemes/" + theme.scheme';
+// @import '"_schemes/" + theme.scheme';
 
 
 // Custom Layer
 // --------------------------------------------------
-@import 'theme.injects.style';
+// @import 'theme.injects.style';
