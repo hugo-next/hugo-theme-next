@@ -1,0 +1,26 @@
+.toggle {
+  line-height: 0;
+
+  .toggle-line {
+    background: white;
+    display: block;
+    height: 2px;
+    left: 0;
+    position: relative;
+    top: 0;
+    transition: all .4s;
+    width: 100%;
+
+    &:not(:first-child) {
+      margin-top: 3px;
+    }
+  }
+}
+
+.toggle.toggle-arrow {
+  @include toggle-arrow(hexo-config('sidebar.position'));
+}
+
+.toggle.toggle-close {
+  @include toggle-close(hexo-config('sidebar.position'));
+}

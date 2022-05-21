@@ -1,0 +1,11 @@
+.links-of-author {
+  a {
+    font-size: $font-size-smaller;
+  }
+
+  @if not hexo-config('social_icons.icons_only') {
+    .fa, .fab, .far, .fas {
+      margin-right: 2px;
+    }
+  }
+}

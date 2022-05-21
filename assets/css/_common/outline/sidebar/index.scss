@@ -1,0 +1,38 @@
+.sidebar-inner {
+  color: $grey-dark;
+  // Init Sidebar & TOC inner dimensions on all pages and for all schemes.
+  $offset : if(($scheme == 'Pisces') or ($scheme == 'Gemini'), $sidebar-offset, $sidebar-padding);
+  max-height: calc(100vh - #{$offset * 2});
+  padding: $sidebar-padding 10px;
+  text-align: center;
+  @include flex-column();
+}
+
+.site-overview-item:not(:first-child) {
+  margin-top: 10px;
+}
+
+.cc-license {
+  .cc-opacity {
+    border-bottom: 0;
+    opacity: .7;
+
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  img {
+    display: inline-block;
+  }
+}
+
+@import 'sidebar-author';
+@import 'sidebar-author-links';
+@import 'sidebar-button';
+@import 'sidebar-blogroll';
+@import 'sidebar-dimmer';
+@import 'sidebar-nav';
+@import 'sidebar-toggle';
+@import 'sidebar-toc';
+@import 'site-state';

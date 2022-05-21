@@ -1,0 +1,140 @@
+// Use `@use` to fix issue #67
+@import '(theme.highlight.enable && theme.highlight.light.file) ? theme.highlight.light.file : null';
+@import '(theme.prism.enable && theme.prism.light) ? theme.prism.light : null';
+@import '(theme.prism.enable && theme.prism.number) ? theme.prism.number : null';
+
+@media (prefers-color-scheme: dark) {
+  @import '(theme.darkmode && theme.highlight.enable && theme.highlight.dark.file) ? theme.highlight.dark.file : null';
+  @import '(theme.darkmode && theme.prism.enable && theme.prism.dark) ? theme.prism.dark : null';
+}
+
+@import 'theme.codeblock.copy_button.enable ? "copy-code" : null';
+
+// Placeholder: %code-inline %code-block
+%code-inline {
+  background: var(--highlight-background);
+  color: var(--highlight-foreground);
+}
+
+%code-block {
+  @extend %code-inline;
+  line-height: $line-height-code-block;
+  margin: 0 auto 20px;
+}
+
+%figcaption {
+  background: var(--highlight-gutter-background);
+  color: var(--highlight-foreground);
+  display: flow-root;
+  font-size: $table-font-size;
+  line-height: 1.2;
+  padding: .5em;
+
+  a {
+    color: var(--highlight-foreground);
+    float: right;
+
+    &:hover {
+      border-bottom-color: var(--highlight-foreground);
+    }
+  }
+}
+
+pre, code {
+  font-family: $code-font-family;
+}
+
+code {
+  @extend %code-inline;
+  border-radius: 3px;
+  font-size: $table-font-size;
+  padding: 2px 4px;
+  @include word-wrap();
+}
+
+kbd {
+  @extend %code-inline;
+  border: 2px solid $grey-light;
+  border-radius: .2em;
+  box-shadow: .1em .1em .2em rgba(0, 0, 0, .1);
+  font-family: inherit;
+  padding: .1em .3em;
+  white-space: nowrap;
+}
+
+// `highlight.line_number: false` and `highlight.wrap: false`
+// in Hexo config generates code.highlight elements
+figure.highlight {
+  @extend %code-block;
+  position: relative;
+
+  pre {
+    border: 0;
+    margin: 0;
+    padding: 10px 0;
+  }
+
+  table {
+    border: 0;
+    margin: 0;
+    width: auto;
+  }
+
+  td {
+    border: 0;
+    padding: 0;
+  }
+
+  figcaption {
+    @extend %figcaption;
+  }
+
+  .gutter {
+    @include disable-user-select();
+
+    pre {
+      background: var(--highlight-gutter-background);
+      color: var(--highlight-gutter-foreground);
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: right;
+    }
+  }
+
+  .code pre {
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  // See https://github.com/next-theme/hexo-theme-next/discussions/410
+  .marked {
+    background: rgba(0, 0, 0, .3);
+  }
+}
+
+// See https://github.com/hexojs/hexo-util/pull/229
+pre .caption, pre figcaption {
+  @extend %figcaption;
+  margin-bottom: 10px;
+}
+
+.gist table {
+  width: auto;
+
+  td {
+    border: 0;
+  }
+}
+
+pre {
+  @extend %code-block;
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+
+  code {
+    background: none;
+    padding: 0;
+    text-shadow: none;
+  }
+}

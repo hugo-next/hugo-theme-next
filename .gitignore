@@ -1,0 +1,6 @@
+# Ignore files in Hugo NexT theme
+
+.hugo_build.lock
+
+exampleSite/public
+exampleSite/resources

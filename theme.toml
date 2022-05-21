@@ -1,0 +1,13 @@
+name = "Hugo Theme Next"
+license = "MIT"
+licenselink = "https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE"
+description = "Easily & powerful theme for Hugo engine."
+homepage = "https://github.com/hugo-next/hugo-theme-next"
+tags = ["blog", "simple", "dark", "personal", "fast", "theme"]
+features = ["some", "awesome", "features"]
+min_version = "0.80.0"
+demosite = "https://lisenhui.cn"
+
+[author]
+  name = "lisenhui"
+  homepage = "https://lisenhui.cn"

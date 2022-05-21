@@ -1,0 +1,72 @@
+// Post Expand
+// --------------------------------------------------
+.posts-expand {
+  &.index {
+    .post-header {
+      text-align: left;
+
+      @include mobile() {
+        text-align: center;
+      }
+    }
+
+    .post-meta-container {
+      margin-top: 5px;
+    }
+
+    .post-meta {
+      justify-content: flex-start;
+
+      @include mobile() {
+        justify-content: center;
+      }
+    }
+  }
+
+  .post-eof {
+    display: none;
+  }
+
+  .post-block:not(:first-of-type) {
+    margin-top: 120px;
+  }
+
+  .post-header {
+    margin-bottom: 20px;
+  }
+
+  .post-tags {
+    text-align: left;
+
+    a {
+      background: var(--content-bg-color);
+      border-bottom: 0;
+      padding: 1px 5px;
+
+      &:hover {
+        background: var(--menu-item-bg-color);
+      }
+    }
+  }
+
+  .post-nav {
+    margin-top: 40px;
+  }
+}
+
+.post-button {
+  margin-top: 20px;
+  text-align: left;
+
+  .btn {
+    background: none;
+    border: 0;
+    border-bottom: 2px solid var(--btn-default-border-color);
+    padding: 0;
+    transition-property: border;
+
+    &:hover {
+      border-bottom-color: var(--btn-default-hover-border-color);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.site-nav-toggle, .site-nav-right {
+  display: none;
+
+  @include mobile() {
+    @include flex-column();
+  }
+
+  .toggle {
+    color: var(--text-color);
+    padding: 10px;
+    width: 22px;
+
+    .toggle-line {
+      background: var(--text-color);
+      border-radius: 1px;
+    }
+  }
+}
+
+.site-nav {
+  @include mobile() {
+    @include site-nav-hide-by-default();
+  }
+}

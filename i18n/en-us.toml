@@ -1,0 +1,49 @@
+#--------------------------------------
+# English Version
+#--------------------------------------
+
+[ColoneFlag]
+  other = ":"
+
+[SitePostsTitle]
+  other = "Posts"
+[SiteCatesTitle]
+  other = "Categories"
+[SiteTagsTitle]
+  other = "Tags"
+[TableOfContents]
+  other = "TOC"
+[SiteInfo]
+  other = "Site Info"
+[RSSTitle]
+  other = "RSS Subscribe"
+[CCLinkTitle]
+  other = "Creative Commons"
+
+[PostPublishDate]
+  other = "Publish"
+[PostPublishTime]
+  other = "Create Time"
+[PostLastModDate]
+  other = "Update"
+[PostLastModTime]
+  other = "Modify Time"
+[PostWords]
+  other = "Words"
+[PostWordCount]
+  other = "{{- .WordCount -}}"
+[PostReading]
+  other = "Read"
+[PostReadTime]
+  other = "{{- .ReadingTime -}}min"
+[PostVisitor]
+  other = "Views"
+[PostCatg]
+  other = "Categories"
+[PostTag]
+  other = "Tags"
+[PostReadMore]
+  other = "Read More"
+
+[FooterPowerby]
+  other = "Power by %s"

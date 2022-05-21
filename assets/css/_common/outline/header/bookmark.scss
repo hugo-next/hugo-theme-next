@@ -1,0 +1,24 @@
+@if hexo-config('bookmark.enable') {
+  .book-mark-link {
+    border-bottom: 0;
+    position: fixed;
+    top: -10px;
+    transition: top .3s;
+    @include sidebar-toggle-position(true);
+
+    @include tablet-mobile() {
+      display: none;
+    }
+
+    &::before {
+      color: convert(hexo-config('bookmark.color'));
+      font-size: 32px;
+      line-height: 1;
+      @include font-family-icons('\f02e');
+    }
+  }
+
+  .book-mark-link:hover, .book-mark-link-fixed {
+    top: -2px;
+  }
+}
