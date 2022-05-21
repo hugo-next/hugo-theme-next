@@ -1,9 +1,9 @@
-@use 'sass:map';
+//@use 'sass:map';
 
-@if hexo-config('note.style') != 'disabled' {
+@if $note_style != 'disabled' {
   .post-body .note {
-    $note-icons : hexo-config('note.icons');
-    $note-style : hexo-config('note.style');
+    $note-icons : $note_icons;
+    $note-style : $note_style;
 
     border-radius: $note-border-radius;
     margin-bottom: 20px;
@@ -67,44 +67,44 @@
     @each $type in $note-types {
       &.#{$type} {
         @if $note-style == 'flat' {
-          background: map.get($note-bg, $type);
-          @if hexo-config('darkmode') {
+          background: map-get($note-bg, $type);
+          @if $darkmode {
             @media (prefers-color-scheme: dark) {
-              background: mix(map.get($note-bg, $type), $body-bg-color-dark, 10%);
+              background: mix(map-get($note-bg, $type), $body-bg-color-dark, 10%);
             }
           }
         }
 
         @if $note-style == 'modern' {
-          background: map.get($note-modern-bg, $type);
-          border-color: map.get($note-modern-border, $type);
-          color: map.get($note-modern-text, $type);
+          background: map-get($note-modern-bg, $type);
+          border-color: map-get($note-modern-border, $type);
+          color: map-get($note-modern-text, $type);
 
           a:not(.btn) {
-            border-bottom-color: map.get($note-modern-text, $type);
-            color: map.get($note-modern-text, $type);
+            border-bottom-color: map-get($note-modern-text, $type);
+            color: map-get($note-modern-text, $type);
 
             &:hover {
-              border-bottom-color: map.get($note-modern-hover, $type);
-              color: map.get($note-modern-hover, $type);
+              border-bottom-color: map-get($note-modern-hover, $type);
+              color: map-get($note-modern-hover, $type);
             }
           }
         }
 
         @if $note-style != 'modern' {
-          border-left-color: map.get($note-border, $type);
+          border-left-color: map-get($note-border, $type);
 
           h2, h3, h4, h5, h6 {
-            color: map.get($note-text, $type);
+            color: map-get($note-text, $type);
           }
         }
 
         @if $note-icons {
           &:not(.no-icon)::before {
-            @include font-family-icons(map.get($note-icon, $type));
+            @include font-family-icons(map-get($note-icon, $type));
 
             @if $note-style != 'modern' {
-              color: map.get($note-text, $type);
+              color: map-get($note-text, $type);
             }
           }
         }

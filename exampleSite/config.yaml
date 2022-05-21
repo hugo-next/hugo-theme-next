@@ -360,7 +360,7 @@ params:
     dark: "#222"
 
   # Override browsers' default behavior.
-  body_scrollbar:
+  bodyScrollbar:
     # Place the scrollbar over the content.
     overlay: false
     # Present the scrollbar even if the content is not overflowing.
@@ -379,7 +379,7 @@ params:
     copyBtn:
       enable: false
       # Available values: default | flat | mac
-      style:
+      style: default
 
   back2top:
     enable: true

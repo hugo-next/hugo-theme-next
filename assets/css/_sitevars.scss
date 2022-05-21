@@ -4,9 +4,13 @@
 // Base
 $scheme: {{ $P.scheme }};
 $darkmode: {{ $P.darkmode }};
+
+$body_scrollbar_overlay: {{ $P.bodyScrollbar.overlay }};
+$body_scrollbar_stable: {{ $P.bodyScrollbar.stable }};
+$mermaid_enable: {{ $P.mermaid.enable }};
+$mobile_layout_economy: {{ $P.mobileLayoutEconomy }};
 $theme_color_dark: {{ $P.themeColor.dark }};
 $theme_color_light: {{ $P.themeColor.light }};
-$mobile_layout_economy: {{ $P.mobileLayoutEconomy }};
 
 // Header
 $bookmark_enable: {{ $P.bookmark.enable }};
@@ -36,6 +40,8 @@ $highlight_dark_foreground: #222;
 $highlight_light_background: #000;
 $highlight_light_foreground: #222;
 
+$codeblock_copy_btn_style: {{ $P.codeblock.copyBtn.style }};
+
 // Sidebar
 $sidebar_offset: {{ $P.sidebar.offset }};
 $sidebar_padding: {{ $P.sidebar.padding }};
@@ -52,8 +58,13 @@ $toc_expand_all: {{ $P.toc.expandAll }};
 $toc_wrap: {{ $P.toc.wrap }};
 
 // Note
-$note_light_bg_offset: {{ $P.note.lightBgOffset }};
 $note_icons: {{ $P.note.icons }};
+$note_light_bg_offset: {{ $P.note.lightBgOffset }};
+$note_style: {{ $P.note.style }};
+
+// Tabs
+$tabs_transition_labels: {{ $P.tabs.transition.labels }};
+$tabs_transition_tabs: {{ $P.tabs.transition.tabs }};
 
 // Reading progress bar
 $reading_progress_start: {{ $P.readingProgress.start }}; 
@@ -66,6 +77,8 @@ $reading_progress_reversed: {{ $P.readingProgress.reversed }};
 // Thirdparty
 $math_mathjax_enable: {{ $P.math.mathjax.enable }};
 $related_posts_enable: {{ $P.relatedPosts.enable }};
+$pdf_enable: {{ $P.pdf.enable }};
+$pdf_height: {{ $P.pdf.height }};
 
 // Search engine
 $algolia_search_enable: {{ $P.algoliaSearch.enable }};
