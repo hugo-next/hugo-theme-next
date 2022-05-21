@@ -42,7 +42,7 @@
         border-radius: $tbr;
       }
 
-      @if hexo-config('tabs.transition.tabs') {
+      @if $tabs_transition_tabs {
         transition: all $transition-ease-out;
       }
 
@@ -57,7 +57,7 @@
           width: (18em / 14);
         }
 
-        @if hexo-config('tabs.transition.labels') {
+        @if $tabs_transition_labels {
           transition: all $transition-ease-out;
         }
       }

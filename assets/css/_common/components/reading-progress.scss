@@ -1,24 +1,24 @@
-@if hexo-config('reading_progress.enable') {
+@if $reading_progress_enable {
   .reading-progress-bar {
     --progress: 0;
-    background: convert(hexo-config('reading_progress.color'));
-    height: convert(hexo-config('reading_progress.height'));
+    background: convert($reading_progress_color);
+    height: convert($reading_progress_height);
     position: fixed;
     z-index: $zindex-5;
 
-    @if hexo-config('reading_progress.reversed') {
+    @if $reading_progress_reversed {
       width: calc(100% - var(--progress));
     } @else {
       width: var(--progress);
     }
 
-    @if hexo-config('reading_progress.start_at') == 'right' {
+    @if $reading_progress_start == 'right' {
       right: 0;
     } @else {
       left: 0;
     }
 
-    @if hexo-config('reading_progress.position') == 'bottom' {
+    @if $reading_progress_position == 'bottom' {
       bottom: 0;
     } @else {
       top: 0;

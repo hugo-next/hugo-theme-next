@@ -1,4 +1,4 @@
-@if hexo-config('local_search.enable') or hexo-config('algolia_search.enable') {
+@if $local_search_enable or $algolia_search_enable {
   .search-active {
     overflow: hidden;
   }
@@ -56,7 +56,7 @@
 
     .search-header {
       background: $gainsboro;
-      if (hexo-config('darkmode')) {
+      @if $darkmode {
         @media (prefers-color-scheme: dark) {
           background: $grey-dim;
         }
@@ -108,7 +108,7 @@
   }
 }
 
-@if hexo-config('algolia_search.enable') {
+@if $algolia_search_enable {
   .search-input-container {
     flex-grow: 1;
 
@@ -149,7 +149,7 @@
   }
 }
 
-@if hexo-config('local_search.enable') {
+@if $local_search_enable {
   .search-popup {
     .search-input-container {
       flex-grow: 1;

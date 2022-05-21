@@ -7,13 +7,14 @@
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
-@import '"_variables/" + theme.scheme';
-@import 'theme.injects.variable';
+// TODO think how dynamic import the scheme variables
+@import '_variables/Gemini';
+//@import 'theme.injects.variable';
 
 // Mixins Layer
 // --------------------------------------------------
 @import '_mixins';
-@import 'theme.injects.mixin';
+//@import 'theme.injects.mixin';
 
 // Dark mode colors
 // --------------------------------------------------
@@ -34,9 +35,9 @@
 
 // Schemes Layer
 // --------------------------------------------------
-@import '"_schemes/" + theme.scheme';
+@import '_schemes/Gemini/';
 
 
 // Custom Layer
 // --------------------------------------------------
-@import 'theme.injects.style';
+// @import 'theme.injects.style';

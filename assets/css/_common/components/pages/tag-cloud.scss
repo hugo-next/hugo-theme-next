@@ -15,7 +15,7 @@
   }
 }
 
-@if hexo-config('darkmode') {
+@if $darkmode {
   @media (prefers-color-scheme: dark) {
     @for $tag-cloud from 0 through 10 {
       $tag-cloud-color : mix($tag-cloud-end-dark, $tag-cloud-start-dark, $tag-cloud * 10);

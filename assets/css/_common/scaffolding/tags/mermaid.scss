@@ -1,4 +1,4 @@
-@if hexo-config('mermaid.enable') {
+@if $mermaid_enable {
   .mermaid {
     margin-bottom: 20px;
     text-align: center;

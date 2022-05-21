@@ -18,7 +18,7 @@
   justify-content: space-between;
   @include main-container();
 
-  @if hexo-config('sidebar.position') == 'right' {
+  @if $sidebar_position == 'right' {
     flex-direction: row-reverse;
   }
 
@@ -40,7 +40,7 @@
 }
 
 .footer-inner {
-  @if hexo-config('sidebar.position') == 'right' {
+  @if $sidebar_position == 'right' {
     padding-right: $sidebar-desktop + $sidebar-offset;
   } @else {
     padding-left: $sidebar-desktop + $sidebar-offset;

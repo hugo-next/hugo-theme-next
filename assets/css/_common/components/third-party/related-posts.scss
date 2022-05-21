@@ -1,4 +1,4 @@
-@if hexo-config('related_posts.enable') {
+@if $related_posts_enable {
   .popular-posts-header {
     border-bottom: 1px solid $gainsboro;
     font-size: $font-size-large;

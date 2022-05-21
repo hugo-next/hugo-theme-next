@@ -41,10 +41,10 @@ params:
   # ---------------------------------------------------------------
 
   # Schemes
-  scheme: Muse
+  #scheme: Muse
   #scheme: Mist
   #scheme: Pisces
-  #scheme: Gemini
+  scheme: Gemini
 
   # Dark Mode
   darkmode: false
@@ -66,7 +66,7 @@ params:
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/
-  creative_commons:
+  creativeCommons:
     # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
     license: by-nc-sa
     # Available values: big | small
@@ -110,7 +110,7 @@ params:
     #commonweal: /404/ || fa fa-heartbeat
 
   # Enable / Disable menu icons / item badges.
-  menu_settings:
+  menuSets:
     icons: true
     badges: false
 
@@ -128,7 +128,7 @@ params:
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    #width: 300
+    width: 300
 
     # Sidebar Display (only for Muse | Mist), available values:
     #  - post    expand on posts automatically. Default.
@@ -152,7 +152,7 @@ params:
     rotated: false
 
   # Posts / Categories / Tags in sidebar.
-  site_state: true
+  siteState: true
 
   # Social Links
   # Usage: `Key: permalink || icon`
@@ -170,13 +170,13 @@ params:
     #Instagram: https://instagram.com/yourname || fab fa-instagram
     #Skype: skype:yourname?call|chat || fab fa-skype
 
-  social_icons:
+  socialIcons:
     enable: true
-    icons_only: false
+    iconsOnly: false
     transition: false
 
   # Blog rolls
-  links_settings:
+  linksSets:
     icon: fa fa-globe
     title: Links
     # Available values: block | inline
@@ -194,9 +194,9 @@ params:
     # If true, all words will placed on next lines if header width longer then sidebar width.
     wrap: false
     # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-    expand_all: false
+    expandAll: false
     # Maximum heading depth of generated toc.
-    max_depth: 6
+    maxDepth: 6
 
 
   # ---------------------------------------------------------------
@@ -251,12 +251,12 @@ params:
   read_more_btn: true
 
   # Post meta display settings
-  post_meta:
-    item_text: true
-    created_at: true
-    updated_at:
+  postMeta:
+    itemText: true
+    created: true
+    updated:
       enable: true
-      another_day: true
+      anotherDay: true
     categories: true
 
   # Post wordcount display settings
@@ -270,7 +270,7 @@ params:
 
   # Donate (Sponsor) settings
   # Front-matter variable (nonsupport animation).
-  reward_settings:
+  rewardSets:
     # If true, a donate button will be displayed in every article by default.
     enable: false
     animation: false
@@ -284,29 +284,29 @@ params:
 
   # Subscribe through Telegram Channel, Twitter, etc.
   # Usage: `Key: permalink || icon` (Font Awesome)
-  follow_me:
-    #Twitter: https://twitter.com/username || fab fa-twitter
+  followMe:
+    Twitter: https://twitter.com/username || fab fa-twitter
     #Telegram: https://t.me/channel_name || fab fa-telegram
     #WeChat: /images/wechat_channel.jpg || fab fa-weixin
     #RSS: /atom.xml || fa fa-rss
 
   # Related popular posts
   # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
-  related_posts:
+  relatedPosts:
     enable: false
     title: # Custom header, leave empty to use the default one
     display_in_home: false
 
   # Post edit
   # Easily browse and edit blog source code online.
-  post_edit:
+  postEdit:
     enable: false
     url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
     #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
   # Show previous post and next post in post footer if exists
   # Available values: left | right | false
-  post_navigation: left
+  postNavigation: left
 
 
   # ---------------------------------------------------------------
@@ -346,21 +346,21 @@ params:
   preconnect: false
 
   # Set the text alignment in posts / pages.
-  text_align:
+  textAlign:
     # Available values: start | end | left | right | center | justify | justify-all | match-parent
     desktop: justify
     mobile: justify
 
   # Reduce padding / margin indents on devices with narrow width.
-  mobile_layout_economy: false
+  mobileLayoutEconomy: false
 
   # Browser header panel color.
-  theme_color:
+  themeColor:
     light: "#222"
     dark: "#222"
 
   # Override browsers' default behavior.
-  body_scrollbar:
+  bodyScrollbar:
     # Place the scrollbar over the content.
     overlay: false
     # Present the scrollbar even if the content is not overflowing.
@@ -376,12 +376,12 @@ params:
       light: prism
       dark: prism-dark
     # Add copy button on codeblock
-    copy_button:
+    copyBtn:
       enable: false
       # Available values: default | flat | mac
-      style:
+      style: default
 
-  back2top:
+  backTop:
     enable: true
     # Back to top in sidebar.
     sidebar: false
@@ -389,10 +389,10 @@ params:
     scrollpercent: false
 
   # Reading progress bar
-  reading_progress:
+  readingProgress:
     enable: false
     # Available values: left | right
-    start_at: left
+    start: left
     # Available values: top | bottom
     position: top
     reversed: false
@@ -409,7 +409,7 @@ params:
     save: auto
 
   # `Follow me on GitHub` banner in the top-right corner.
-  github_banner:
+  githubBanner:
     enable: false
     permalink: https://github.com/yourname
     title: Follow me on GitHub
@@ -722,14 +722,14 @@ params:
 
   # Show Views / Visitors of the website / page with busuanzi.
   # For more information: http://ibruce.info/2015/04/04/busuanzi/
-  busuanzi_count:
+  busuanzi:
     enable: false
-    total_visitors: true
-    total_visitors_icon: fa fa-user
-    total_views: true
-    total_views_icon: fa fa-eye
-    post_views: true
-    post_views_icon: far fa-eye
+    visitors: true
+    visitorsIcon: fa fa-user
+    views: true
+    viewsIcon: fa fa-eye
+    postViews: true
+    postViewsIcon: far fa-eye
 
 
   # ---------------------------------------------------------------
@@ -739,14 +739,14 @@ params:
 
   # Algolia Search
   # For more information: https://www.algolia.com
-  algolia_search:
+  algoliaSearch:
     enable: false
     hits:
       per_page: 10
 
   # Local Search
   # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
-  local_search:
+  localSearch:
     enable: false
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
@@ -810,7 +810,7 @@ params:
     icons: false
     # Offset lighter of background in % for modern and flat styles (modern: -12 | 12; flat: -18 | 6).
     # Offset also applied to label tag variables. This option can work with disabled note tag.
-    light_bg_offset: 0
+    lightBgOffset: 0
 
   # Tabs tag
   tabs:
@@ -849,10 +849,10 @@ params:
     async: false
     transition:
       # All available transition variants: https://theme-next.js.org/animate/
-      post_block: fadeIn
-      post_header: fadeInDown
-      post_body: fadeInDown
-      coll_header: fadeInLeft
+      postBlock: fadeIn
+      postHeader: fadeInDown
+      postBody: fadeInDown
+      collHeader: fadeInLeft
       # Only for Pisces | Gemini.
       sidebar: fadeInUp
 

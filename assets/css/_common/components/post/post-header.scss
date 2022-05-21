@@ -10,7 +10,7 @@
   margin: initial;
   @include word-wrap();
 
-  @if hexo-config('post_edit.enable') {
+  @if $post_edit_enable {
     .post-edit-link {
       border-bottom: 0;
       color: $grey;
@@ -99,7 +99,7 @@
 }
 
 .post-meta-item-text {
-  @if not hexo-config('post_meta.item_text') {
+  @if not $post_meta_item_text {
     display: none;
   }
 
@@ -113,7 +113,7 @@
   height: 0;
 }
 
-@if hexo-config('busuanzi_count.enable') and hexo-config('busuanzi_count.post_views') {
+@if $busuanzi_enable and $busuanzi_post_views {
   #busuanzi_container_page_pv {
     display: none;
   }

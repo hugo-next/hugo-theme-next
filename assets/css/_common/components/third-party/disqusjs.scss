@@ -1,4 +1,4 @@
-if (hexo-config('disqusjs.enable') and hexo-config('darkmode')) {
+@if $disqusjs_enable and $darkmode {
   @media (prefers-color-scheme:dark) {
     html #dsqjs a {
       color: var(--link-color)

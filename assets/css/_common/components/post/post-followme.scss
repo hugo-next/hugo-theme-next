@@ -1,4 +1,4 @@
-@if hexo-config('follow_me') {
+@if $follow_me {
   .followme {
     color: $grey;
     padding: 1em 1.5em;

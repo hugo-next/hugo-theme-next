@@ -18,9 +18,9 @@
 }
 
 .toggle.toggle-arrow {
-  @include toggle-arrow(hexo-config('sidebar.position'));
+  @include toggle-arrow($sidebar_position);
 }
 
 .toggle.toggle-close {
-  @include toggle-close(hexo-config('sidebar.position'));
+  @include toggle-close($sidebar_position);
 }

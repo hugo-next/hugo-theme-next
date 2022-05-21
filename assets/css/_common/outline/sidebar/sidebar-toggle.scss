@@ -12,10 +12,10 @@
 
 @media (any-hover: hover) {
   body:not(.sidebar-active) .sidebar-toggle:hover {
-    @include toggle-arrow(hexo-config('sidebar.position'));
+    @include toggle-arrow($sidebar_position);
   }
 }
 
 .sidebar-active .sidebar-toggle {
-  @include toggle-close(hexo-config('sidebar.position'));
+  @include toggle-close($sidebar_position);
 }

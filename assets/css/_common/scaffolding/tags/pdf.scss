@@ -1,7 +1,7 @@
-@if hexo-config('pdf.enable') {
+@if $pdf_enable {
   .pdfobject-container {
     iframe, embed {
-      height: convert(hexo-config('pdf.height'));
+      height: convert($pdf_height);
       width: 100%;
     }
   }

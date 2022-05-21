@@ -1,14 +1,15 @@
 // Use `@use` to fix issue #67
-@import '(theme.highlight.enable && theme.highlight.light.file) ? theme.highlight.light.file : null';
-@import '(theme.prism.enable && theme.prism.light) ? theme.prism.light : null';
-@import '(theme.prism.enable && theme.prism.number) ? theme.prism.number : null';
+// TODO find way to import file by dynmatic
+// @import '(theme.highlight.enable && theme.highlight.light.file) ? theme.highlight.light.file : null';
+// @import '(theme.prism.enable && theme.prism.light) ? theme.prism.light : null';
+// @import '(theme.prism.enable && theme.prism.number) ? theme.prism.number : null';
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   @import '(theme.darkmode && theme.highlight.enable && theme.highlight.dark.file) ? theme.highlight.dark.file : null';
   @import '(theme.darkmode && theme.prism.enable && theme.prism.dark) ? theme.prism.dark : null';
-}
+} */
 
-@import 'theme.codeblock.copy_button.enable ? "copy-code" : null';
+// @import 'theme.codeblock.copy_button.enable ? "copy-code" : null';
 
 // Placeholder: %code-inline %code-block
 %code-inline {

@@ -1,4 +1,4 @@
-@if hexo-config('toc.enable') {
+@if $toc_enable {
   .post-toc {
     font-size: $font-size-small;
 
@@ -22,14 +22,14 @@
       overflow: hidden;
       text-overflow: ellipsis;
 
-      @if not hexo-config('toc.wrap') {
+      @if not $toc_wrap {
         white-space: nowrap;
       }
     }
 
     .nav {
       .nav-child {
-        display: if(hexo-config('toc.expand_all'), block, none);
+        display: if($toc_expand_all, block, none);
       }
 
       .active > .nav-child {

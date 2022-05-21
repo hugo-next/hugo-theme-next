@@ -1,4 +1,4 @@
-@if hexo-config('github_banner.enable') {
+@if $github_banner_enable {
   @keyframes octocat-wave {
     0%, 100% {
       transform: rotate(0);
@@ -28,7 +28,7 @@
     }
 
     @include tablet-mobile() {
-      @if hexo-config('local_search.enable') or hexo-config('algolia_search.enable') {
+      @if $local_search_enable or $algolia_search_enable {
         display: none;
       }
 
