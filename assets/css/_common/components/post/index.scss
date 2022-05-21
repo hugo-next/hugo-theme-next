@@ -17,25 +17,25 @@
 }
 
 .use-motion {
-  @if hexo-config('motion.transition.post_block') {
+  @if $motion_trans_post_block {
     .post-block, .pagination, .comments {
       visibility: hidden;
     }
   }
 
-  @if hexo-config('motion.transition.post_header') {
+  @if $motion_trans_post_header {
     .post-header {
       visibility: hidden;
     }
   }
 
-  @if hexo-config('motion.transition.post_body') {
+  @if $motion_trans_post_body {
     .post-body {
       visibility: hidden;
     }
   }
 
-  @if hexo-config('motion.transition.coll_header') {
+  @if $motion_trans_coll_header {
     .collection-header {
       visibility: hidden;
     }

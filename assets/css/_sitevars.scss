@@ -13,9 +13,10 @@ $theme_color_dark: {{ $P.themeColor.dark }};
 $theme_color_light: {{ $P.themeColor.light }};
 
 // Header
-$bookmark_enable: {{ $P.bookmark.enable }};
 $bookmark_color: {{ $P.bookmark.color }};
+$bookmark_enable: {{ $P.bookmark.enable }};
 $github_banner_enable: {{ $P.githubBanner.enable }};
+$menu_settings_badges: {{ $P.menuSets.badges }};
 
 // Footer
 $footer_icon_color: {{ $P.footer.icon.color }};
@@ -26,6 +27,7 @@ $footer_beian_enable: {{ $P.footer.beian.enable }};
 $busuanzi_enable: {{ $P.busuanzi.enable }};
 $busuanzi_visitors: {{ $P.busuanzi.visitors }};
 $busuanzi_views: {{ $P.busuanzi.views }};
+$busuanzi_post_views: {{ $P.busuanzi.postViews }};
 
 // Font
 $font_enable: {{ $P.font.enable }};
@@ -48,14 +50,38 @@ $sidebar_padding: {{ $P.sidebar.padding }};
 $sidebar_position: {{ $P.sidebar.position }};
 $sidebar_width: {{ $P.sidebar.width }};
 
+$motion_enable: {{ $P.motion.enable }};
+$motion_transition_sidebar: {{ $P.motion.transition.sidebar }};
+
+$back2top_enable: {{ $P.backTop.enable }};
+$back2top_scrollpercent: {{ $P.backTop.scrollpercent }};
+$back2top_sidebar: {{ $P.backTop.sidebar }};
+
 $avatar_rotated: {{ $P.avatar.rotated }};
 $avatar_rounded: {{ $P.avatar.rounded }};
 $avatar_rounded: {{ $P.avatar.rounded }};
 $site_state: {{ $P.siteState }};
 $social_icons_only: {{ $P.socialIcons.iconsOnly }};
+$social_icons_transition: {{ $P.socialIcons.transition }};
+$links_settings_layout: {{ $P.linksSets.layout }};
 $toc_enable: {{ $P.toc.enable }};
 $toc_expand_all: {{ $P.toc.expandAll }};
 $toc_wrap: {{ $P.toc.wrap }};
+
+// Posts
+$creative_commons_post: {{ $P.creativeCommons.post }};
+$follow_me: {{ isset $P "followMe" }};
+$motion_trans_coll_header: {{ $P.motion.transition.collHeader }};
+$motion_trans_post_block: {{ $P.motion.transition.postBlock }};
+$motion_trans_post_body: {{ $P.motion.transition.postBody }};
+$motion_trans_post_header: {{ $P.motion.transition.postHeader }};
+$post_edit_enable: {{ $P.postEdit.enable }};
+$post_meta_item_text: {{ $P.postMeta.itemText }};
+$reward_settings_animation: {{ $P.rewardSets.animation }};
+
+// TODO find the paramters
+$text_align_desktop: center;
+$text_align_mobile: center;
 
 // Note
 $note_icons: {{ $P.note.icons }};

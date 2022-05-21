@@ -66,7 +66,7 @@ params:
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/
-  creative_commons:
+  creativeCommons:
     # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
     license: by-nc-sa
     # Available values: big | small
@@ -110,7 +110,7 @@ params:
     #commonweal: /404/ || fa fa-heartbeat
 
   # Enable / Disable menu icons / item badges.
-  menu_settings:
+  menuSets:
     icons: true
     badges: false
 
@@ -176,7 +176,7 @@ params:
     transition: false
 
   # Blog rolls
-  links_settings:
+  linksSets:
     icon: fa fa-globe
     title: Links
     # Available values: block | inline
@@ -251,12 +251,12 @@ params:
   read_more_btn: true
 
   # Post meta display settings
-  post_meta:
-    item_text: true
-    created_at: true
-    updated_at:
+  postMeta:
+    itemText: true
+    created: true
+    updated:
       enable: true
-      another_day: true
+      anotherDay: true
     categories: true
 
   # Post wordcount display settings
@@ -270,7 +270,7 @@ params:
 
   # Donate (Sponsor) settings
   # Front-matter variable (nonsupport animation).
-  reward_settings:
+  rewardSets:
     # If true, a donate button will be displayed in every article by default.
     enable: false
     animation: false
@@ -284,8 +284,8 @@ params:
 
   # Subscribe through Telegram Channel, Twitter, etc.
   # Usage: `Key: permalink || icon` (Font Awesome)
-  follow_me:
-    #Twitter: https://twitter.com/username || fab fa-twitter
+  followMe:
+    Twitter: https://twitter.com/username || fab fa-twitter
     #Telegram: https://t.me/channel_name || fab fa-telegram
     #WeChat: /images/wechat_channel.jpg || fab fa-weixin
     #RSS: /atom.xml || fa fa-rss
@@ -299,14 +299,14 @@ params:
 
   # Post edit
   # Easily browse and edit blog source code online.
-  post_edit:
+  postEdit:
     enable: false
     url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
     #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
   # Show previous post and next post in post footer if exists
   # Available values: left | right | false
-  post_navigation: left
+  postNavigation: left
 
 
   # ---------------------------------------------------------------
@@ -381,7 +381,7 @@ params:
       # Available values: default | flat | mac
       style: default
 
-  back2top:
+  backTop:
     enable: true
     # Back to top in sidebar.
     sidebar: false
@@ -849,10 +849,10 @@ params:
     async: false
     transition:
       # All available transition variants: https://theme-next.js.org/animate/
-      post_block: fadeIn
-      post_header: fadeInDown
-      post_body: fadeInDown
-      coll_header: fadeInLeft
+      postBlock: fadeIn
+      postHeader: fadeInDown
+      postBody: fadeInDown
+      collHeader: fadeInLeft
       # Only for Pisces | Gemini.
       sidebar: fadeInUp
 

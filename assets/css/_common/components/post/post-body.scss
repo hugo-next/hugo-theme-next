@@ -7,11 +7,11 @@
   }
 
   @include desktop() {
-    text-align: unquote(hexo-config('text_align.desktop'));
+    text-align: unquote($text_align_desktop);
   }
 
   @include tablet-mobile() {
-    text-align: unquote(hexo-config('text_align.mobile'));
+    text-align: unquote($text_align_mobile);
   }
 
   h1, h2, h3, h4, h5, h6 {

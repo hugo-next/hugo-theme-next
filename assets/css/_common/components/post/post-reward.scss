@@ -28,7 +28,7 @@
       display: block;
     }
 
-    @if hexo-config('reward_settings.animation') {
+    @if $reward_settings_animation {
       &:hover span {
         animation: next-roll .1s infinite linear;
         // The animation may affect :hover of img in dark mode
