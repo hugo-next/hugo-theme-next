@@ -1,0 +1,7 @@
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css">
+{{- $scss := resources.Get "css/main.scss" }}
+{{- $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
+{{- $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <link rel="stylesheet" href="/css/hover.css">

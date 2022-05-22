@@ -8,6 +8,21 @@ baseURL: /
 
 theme: hugo-theme-next
 
+defaultContentLanguage: zh-cn
+languages:
+  zh-cn:
+    title: NexT
+    languageName: 中文
+    weight: 1
+  en-us:
+    title: NexT
+    languageName: English
+    weight: 2
+    params:
+      author: Theme NexT
+      subtitle: Theme for Hugo
+      description: Stay easily & powerful.
+
 params:
   # ---------------------------------------------------------------
   # Theme Core Configuration Settings
@@ -15,15 +30,15 @@ params:
   # ---------------------------------------------------------------
 
   # Allow to cache content generation.
-  cache:
-    enable: true
+  #cache:
+  #  enable: true
 
   # Remove unnecessary files after hexo generate.
-  minify: false
+  # minify: false
 
   # Define custom file paths.
   # Create your custom files in site directory `source/_data` and uncomment needed files below.
-  custom_file_path:
+  customFilePath:
     #head: source/_data/head.njk
     #header: source/_data/header.njk
     #sidebar: source/_data/sidebar.njk
@@ -47,22 +62,27 @@ params:
   scheme: Gemini
 
   # Dark Mode
-  darkmode: false
+  darkmode: true
 
 
   # ---------------------------------------------------------------
   # Site Information Settings
   # ---------------------------------------------------------------
+  author: NexT 主题
+  subtitle: 为 Hugo 打造的主题
+  description: 保持简单的易用性和强大的功能。
 
   favicon:
-    small: /images/favicon-16x16-next.png
-    medium: /images/favicon-32x32-next.png
-    apple_touch_icon: /images/apple-touch-icon-next.png
-    safari_pinned_tab: /images/logo.svg
+    icon: /imgs/icons/favicon.ico
+    small: /imgs/icons/favicon_16x16_next.png
+    medium: /imgs/icons/favicon_32_32_next.png
+    appleTouchIcon: /imgs/icons/apple_touch_icon_next.png
     #android_manifest: /manifest.json
 
   # Custom Logo (Warning: Do not support scheme Mist)
-  custom_logo: #/uploads/custom-logo.jpg
+  customLogo: 
+    show: false
+    url: /imgs/hugo_next_logo.png
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/
@@ -75,20 +95,21 @@ params:
     post: false
     # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
     # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
-    language:
+    # language:
 
   # Open graph settings
   # See: https://hexo.io/docs/helpers#open-graph
-  open_graph:
+  openGraph:
     enable: true
-    options:
-      #twitter_card: <twitter:card>
-      #twitter_id: <twitter:creator>
-      #twitter_site: <twitter:site>
-      #twitter_image: <twitter:image>
-      #google_plus: <g+:profile_link>
-      #fb_admins: <fb:admin_id>
-      #fb_app_id: <fb:app_id>
+    # twitter:
+    #   card: <twitter:card>
+    #   creator: <twitter:creator>
+    #   image: <twitter:image>
+    #   site: <twitter:site>
+    # googlePlus: <g+:profile_link>
+    # facebook:
+    #   admins: <fb:admin_id>
+    #   app_id: <fb:app_id>
 
 
   # ---------------------------------------------------------------
@@ -483,19 +504,19 @@ params:
 
   # Google Webmaster tools verification.
   # See: https://developers.google.com/search
-  google_site_verification:
+  googleSiteVerification: 5AUIVYTbHIAuz-eQtxSfZbWW5eg9_EVZMSQycIuXrG0
 
   # Bing Webmaster tools verification.
   # See: https://www.bing.com/webmasters
-  bing_site_verification:
+  bingSiteVerification:
 
   # Yandex Webmaster tools verification.
   # See: https://webmaster.yandex.ru
-  yandex_site_verification:
+  yandexSiteVerification:
 
   # Baidu Webmaster tools verification.
   # See: https://ziyuan.baidu.com/site
-  baidu_site_verification:
+  baiduSiteVerification:
 
 
   # ---------------------------------------------------------------
@@ -845,7 +866,7 @@ params:
   # Use Animate.css to animate everything.
   # For more information: https://animate.style
   motion:
-    enable: true
+    enable: false
     async: false
     transition:
       # All available transition variants: https://theme-next.js.org/animate/
