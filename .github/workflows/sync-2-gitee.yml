@@ -1,0 +1,16 @@
+name: sync-2-gitee
+
+on:
+  push
+
+jobs:
+  sync-2-gitee:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:hugo-next/hugo-theme-next.git
+          destination-repo: git@gitee.com:hugo-next/hugo-theme-next.git
