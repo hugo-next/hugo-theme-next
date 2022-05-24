@@ -2,6 +2,9 @@
 # English Version
 #--------------------------------------
 
+NavToggleLabel:
+  other: Toggle navigation bar
+
 ColoneFlag:
   other: ":"
 

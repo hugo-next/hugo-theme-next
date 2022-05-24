@@ -2,6 +2,9 @@
 # 中文版本
 #--------------------------------------
 
+NavToggleLabel:
+  other: 切换导航栏
+
 ColoneFlag:
   other: ":"
 

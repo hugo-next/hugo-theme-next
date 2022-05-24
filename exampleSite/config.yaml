@@ -80,9 +80,7 @@ params:
     #android_manifest: /manifest.json
 
   # Custom Logo (Warning: Do not support scheme Mist)
-  customLogo: 
-    show: false
-    url: /imgs/hugo_next_logo.png
+  customLogo: #/imgs/hugo_next_logo.png
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/
@@ -149,7 +147,7 @@ params:
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    width: 300
+    width: 240
 
     # Sidebar Display (only for Muse | Mist), available values:
     #  - post    expand on posts automatically. Default.

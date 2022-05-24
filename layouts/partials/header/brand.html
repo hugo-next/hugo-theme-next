@@ -1,0 +1,36 @@
+{{ $title := .Page.Site.Title }}
+<div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="{{ T "NavToggleLabel" }}" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+    {{- if and .P.customLogo (eq .P.scheme "Muse") }}
+      <img class="custom-logo-image" src="{{ .P.customLogo }}" alt="{{ $title }}">
+    {{- end }}
+
+    <a href="{{ .Page.Site.BaseURL }}" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">{{ $title }}</h1>
+      <i class="logo-line"></i>
+    </a>
+    {{ if isset .P "subtitle" }}
+      <p class="site-subtitle" itemprop="description">{{ .P.subtitle }}</p>
+    {{- end }}
+    {{- if and .P.customLogo (or (eq .P.scheme "Gemini") (eq .P.scheme "Pisces"))}}
+      <img class="custom-logo-image" src="{{ .P.customLogo }}" alt="{{ $title }}">
+    {{- end }}
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+      {{ if or .P.algoliaSearch.enable .P.localSearch.enable }}
+        <i class="fa fa-search fa-fw fa-lg"></i>
+      {{- end }}
+    </div>
+  </div>
+</div>
