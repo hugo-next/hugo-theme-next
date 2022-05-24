@@ -3,8 +3,8 @@
 {{- else }}
   <meta name="theme-color" content="{{ .P.themeColor.light }}" media="(prefers-color-scheme: light)">
 {{- end }}
-{{- if .P.googleSiteVerification }}
-  <meta name="google-site-verification" content="{{ .P.googleSiteVerification }}">
+{{- with .P.googleSiteVerification }}
+  <meta name="google-site-verification" content="{{ . }}">
 {{- end }}
 {{- with .P.bingSiteVerification }}
   <meta name="msvalidate.01" content="{{ . }}">
@@ -23,11 +23,19 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ $Page.Title }}">
   <meta property="og:description" content="{{ default $P.description $Page.Description }}">
+  <meta property="og:image" content="TODO" />
+  <meta property="og:image:width" content="TODO" />
+  <meta property="og:image:height" content="TODO" />
+  <meta property="og:image:type" content="TODO" />
   <meta property="og:image" content="{{ $P.customLogo.url }}">
   <meta property="og:url" content="{{ $Page.Permalink }}">
   <meta property="og:site_name" content="{{ default $Page.Title $Page.Site.Title }}">
   <meta property="og:locale" content="{{ $lang }}">
+  {{- if not $Page.IsHome }}    
   <meta property="article:author" content="{{ default $P.author $Page.Params.Author }}">
+  <meta property="article:published_time" content="{{ $Page.PublishDate }}" />
+  <meta property="article:modified_time" content="{{ $Page.Lastmod }}" />
+  {{- end }}
 {{- with .twitter }}
 {{- range $attr, $val := . }}
   <meta name="twitter:{{ $attr }}" content="{{ $val }}">
