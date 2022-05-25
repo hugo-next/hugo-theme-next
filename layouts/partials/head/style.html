@@ -1,17 +1,17 @@
-{{- $vendors := .Page.Site.Data.resources.vendors }}
-{{- $pluginVen := .P.vendors.plugins }}
-{{- $pluginCDN := index $vendors $pluginVen }}
 <!-- Plugin style files -->
 {{- $cssRes := .Page.Site.Data.resources.css }}
+{{- $vendor := .P.vendors.plugins }}
+{{- $vendorCDN := .Scratch.Get "pluginCDN" }}
 {{- range $css := $cssRes }}
+  {{- $pluginCSS := $vendorCDN }}
   {{- $npm := $css.name }}
   {{- $file := $css.file }}
-  {{- if eq $pluginVen "cndjs" }}
-    {{- $npm = $.css.alias }}
-    {{ $file }}
-    {{- $file = replaceRE "(dist|lib|source\\/js)\\/" "" $css.file }}
+  {{- if eq $vendor "cdnjs" }}
+    {{- with $css.alias }}
+      {{- $npm = . }}
+    {{- end }}
+    {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $css.file }}
   {{- end }}
-  {{- $pluginCSS := $pluginCDN }}
   {{- $pluginCSS = replace $pluginCSS "${name}" $npm }}
   {{- $pluginCSS = replace $pluginCSS "${version}" $css.version }}
   {{- $pluginCSS = replace $pluginCSS "${file}" $file }}

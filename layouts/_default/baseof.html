@@ -1,6 +1,10 @@
 {{- $P := .Site.Params -}}
 {{- $lang := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language -}}
 {{- .Scratch.Set "lang" $lang -}}
+{{- $vendors := .Site.Data.resources.vendors -}}
+{{- $pluginVen := $P.vendors.plugins -}}
+{{- $pluginCDN := index $vendors $pluginVen -}}
+{{- .Scratch.Set "pluginCDN" $pluginCDN -}}
 <!DOCTYPE html>
 <html lang="{{ $lang }}">
 
@@ -25,7 +29,7 @@
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">
-        {{- partial "header" (dict "P" $P "Page" .Page) }}
+        {{- partial "header" (dict "P" $P "Page" .Page "Scratch" .Scratch) }}
       </div>
       <!-- Sidebar -->
       {{- if ne $P.sidebar.display "remove" }}
@@ -42,6 +46,8 @@
       {{- partial "footer" . }}
     </div>
   </footer>
+
+  {{- partial "scripts" (dict "P" $P "Page" .Page "Scratch" .Scratch) }}
 </body>
 
 </html>

@@ -1,0 +1,19 @@
+<!-- Plugin scripts files -->
+{{- $jsRes := .Page.Site.Data.resources.js }}
+{{- $vendor := .P.vendors.plugins }}
+{{- $vendorCDN := .Scratch.Get "pluginCDN" }}
+{{- range $js := $jsRes }}
+  {{- $pluginJS := $vendorCDN }}
+  {{- $npm := $js.name }}
+  {{- $file := $js.file }}
+  {{- if eq $vendor "cdnjs" }}
+    {{- with $js.alias }}
+      {{- $npm = . }}
+    {{- end }}   
+    {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $js.file }}
+  {{- end }}
+  {{- $pluginJS = replace $pluginJS "${name}" $npm }}
+  {{- $pluginJS = replace $pluginJS "${version}" $js.version }}
+  {{- $pluginJS = replace $pluginJS "${file}" $file }}
+  <script type="text/javascript" src="{{ $pluginJS }}"></script>
+{{- end }}

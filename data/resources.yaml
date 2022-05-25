@@ -1,4 +1,4 @@
-# Public CDN vender list
+# Public CDN vendor list
 #
 vendors: {
   "cdnjs": "//cdnjs.cloudflare.com/ajax/libs/${name}/${version}/${file}",
@@ -8,7 +8,7 @@ vendors: {
 # Javascript Resources
 #
 js:
-  - name: anime
+  - name: animejs
     version: 3.2.1
     file: lib/anime.min.js
   - name: mathjax
