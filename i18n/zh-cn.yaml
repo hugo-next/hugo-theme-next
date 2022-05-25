@@ -5,6 +5,9 @@
 NavToggleLabel:
   other: 切换导航栏
 
+MSearchLabel:
+  other: 搜索
+
 ColoneFlag:
   other: ":"
 

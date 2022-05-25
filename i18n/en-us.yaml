@@ -5,6 +5,9 @@
 NavToggleLabel:
   other: Toggle navigation bar
 
+MSearchLabel:
+  other: Search
+
 ColoneFlag:
   other: ":"
 

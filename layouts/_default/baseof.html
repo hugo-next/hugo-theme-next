@@ -5,6 +5,8 @@
 {{- $pluginVen := $P.vendors.plugins -}}
 {{- $pluginCDN := index $vendors $pluginVen -}}
 {{- .Scratch.Set "pluginCDN" $pluginCDN -}}
+{{ $posts := len .Site.RegularPages }}
+{{- .Scratch.Set "posts" $posts -}}
 <!DOCTYPE html>
 <html lang="{{ $lang }}">
 

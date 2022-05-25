@@ -23,6 +23,34 @@ languages:
       subtitle: Theme for Hugo
       description: Stay easily & powerful.
 
+#--------------------------------------
+# Menus Settings
+# Attribute pre is Font Awesome icon name without prefix "fa-".
+# External url should start with http:// or https:// .
+# -------------------------------------
+menus:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      pre: home
+      weight: 1
+    - identifier: about
+      name: 关于
+      url: /ablout.html
+      pre: user
+      weight: 2
+    - identifier: archives
+      name: 归档
+      url: /archives
+      pre: archive
+      weight: 3
+    - identifier: commonweal
+      name: 公益 404
+      url: /404.html
+      pre: heartbeat
+      weight: 4
+
 params:
   # ---------------------------------------------------------------
   # Theme Core Configuration Settings
@@ -118,7 +146,7 @@ params:
   # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.
   # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
   # External url should start with http:// or https://
-  menu:
+  #menu:
     #home: / || fa fa-home
     #about: /about/ || fa fa-user
     #tags: /tags/ || fa fa-tags
@@ -131,7 +159,7 @@ params:
   # Enable / Disable menu icons / item badges.
   menuSets:
     icons: true
-    badges: false
+    badges: true
 
 
   # ---------------------------------------------------------------
@@ -766,7 +794,7 @@ params:
   # Local Search
   # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
   localSearch:
-    enable: false
+    enable: true
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
     trigger: auto
@@ -909,7 +937,7 @@ params:
     # The default CDN provider of third-party plugins.
     # Available values: local | jsdelivr | unpkg | cdnjs | custom
     # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-    plugins: cdnjs
+    plugins: unpkg
     # Custom CDN URL
     # For example:
     # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
@@ -921,6 +949,6 @@ params:
   # The js option is only valid when vendors.internal is local.
   css: css
   js: js
-  images: images
+  images: imgs
 
 
