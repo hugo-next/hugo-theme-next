@@ -11,20 +11,22 @@ MSearchLabel:
 ColoneFlag:
   other: ":"
 
-SitePostsTitle:
+SbPostsLable:
   other: "日志"
-SiteCatesTitle:
+SbCatesTitle:
   other: "分类"
-SiteTagsTitle:
+SbTagsTitle:
   other: "标签"
 TableOfContents:
   other: "文章目录"
-SiteInfo:
+SiteOverview:
   other: "站点概览"
-RSSTitle:
+RSSLable:
   other: "RSS 订阅"
 CCLinkTitle:
   other: "共享知识"
+BackTop:
+  other: "返回顶部"
 
 PostPublishDate:
   other: "发表于"

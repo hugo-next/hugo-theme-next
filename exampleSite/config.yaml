@@ -116,8 +116,8 @@ params:
     # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
     license: by-nc-sa
     # Available values: big | small
-    size: small
-    sidebar: false
+    size: big
+    sidebar: true
     post: false
     # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
     # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
@@ -175,7 +175,7 @@ params:
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    width: 240
+    width: 256
 
     # Sidebar Display (only for Muse | Mist), available values:
     #  - post    expand on posts automatically. Default.
@@ -192,11 +192,11 @@ params:
   # Sidebar Avatar
   avatar:
     # Replace the default image and set the url here.
-    url: #/images/avatar.gif
+    url: /imgs/hugo_next_avatar.png
     # If true, the avatar will be displayed in circle.
-    rounded: false
+    rounded: true
     # If true, the avatar will be rotated with the cursor.
-    rotated: false
+    rotated: true
 
   # Posts / Categories / Tags in sidebar.
   siteState: true
@@ -205,10 +205,18 @@ params:
   # Usage: `Key: permalink || icon`
   # Key is the link label showing to end users.
   # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
-  social:
-    #GitHub: https://github.com/yourname || fab fa-github
-    #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
-    #Weibo: https://weibo.com/yourname || fab fa-weibo
+  socials: 
+    # - name: GitHub
+    #   icon: fab fa-github
+    #   url: https://github.com/yourname
+    #   weight: 1
+    # - name: 微博
+    #   icon: fab fa-weibo
+    #   url: https://weibo.com/yourname
+    #   weight: 2
+    social0: Github || https://github.com/elkan1788 || fab fa-github
+    #social1: E-Mail || mailto:yourname@gmail.com || fa fa-envelope
+    social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
     #Google: https://plus.google.com/yourname || fab fa-google
     #Twitter: https://twitter.com/yourname || fab fa-twitter
     #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -220,17 +228,18 @@ params:
   socialIcons:
     enable: true
     iconsOnly: false
-    transition: false
+    transition: true
 
   # Blog rolls
   linksSets:
     icon: fa fa-globe
-    title: Links
+    title: 友情链接
     # Available values: block | inline
-    layout: block
+    layout: inline
 
-  links:
-    #Title: https://example.com
+  links: 
+    link0: Hugo-NexT || https://gitee.com/hugo-next/hugo-theme-next
+    link1: 凡梦星尘空间站 || https://lisenhui.cn
 
   # Table of Contents in the Sidebar
   # Front-matter variable (nonsupport wrap expand_all).

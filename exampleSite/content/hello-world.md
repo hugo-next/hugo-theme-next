@@ -10,10 +10,10 @@ publishDate: '2022-05-21T17:06:24+08:00'
 weight: 1
 
 categories:
- -
+ - Blog
 tags:
- -
- -
+ - Hugo
+ - Startup
 
 toc: false
 draft: true

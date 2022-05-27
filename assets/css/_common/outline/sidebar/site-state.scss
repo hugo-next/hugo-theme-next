@@ -8,12 +8,19 @@
     // Fix issue #103
     // The click area of the link becomes smaller
     padding: 0 15px;
+    border-left: 1px solid #eee;
+
+    &:first-child {
+      border-left: none;
+    }
 
     a {
       border-bottom: 0;
       display: block;
     }
   }
+
+
 
   .site-state-item-count {
     display: block;

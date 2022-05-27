@@ -35,6 +35,7 @@
       </div>
       <!-- Sidebar -->
       {{- if ne $P.sidebar.display "remove" }}
+      {{- partial "sidebar" (dict "P" $P "Page" .Page "Scratch" .Scratch) }}
       {{- end }}
     </header>
     <!-- Widgets -->

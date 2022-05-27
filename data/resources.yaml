@@ -1,9 +1,9 @@
 # Public CDN vendor list
 #
-vendors: {
-  "cdnjs": "//cdnjs.cloudflare.com/ajax/libs/${name}/${version}/${file}",
-  "unpkg": "//unpkg.com/${name}@${version}/${file}"
-}
+vendors: 
+  cdnjs: "//cdnjs.cloudflare.com/ajax/libs/${name}/${version}/${file}"
+  unpkg: "//unpkg.com/${name}@${version}/${file}"
+
 
 # Javascript Resources
 #
