@@ -446,18 +446,18 @@ params:
 
   # Reading progress bar
   readingProgress:
-    enable: false
+    enable: true
     # Available values: left | right
     start: left
     # Available values: top | bottom
-    position: top
+    position: bottom
     reversed: false
     color: "#37c6c0"
     height: 3px
 
   # Bookmark Support
   bookmark:
-    enable: false
+    enable: true
     # Customize the color of the bookmark.
     color: "#222"
     # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -466,7 +466,7 @@ params:
 
   # `Follow me on GitHub` banner in the top-right corner.
   githubBanner:
-    enable: false
+    enable: true
     permalink: https://github.com/yourname
     title: Follow me on GitHub
 

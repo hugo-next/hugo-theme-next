@@ -39,6 +39,7 @@
       {{- end }}
     </header>
     <!-- Widgets -->
+    {{ partial "widgets" (dict "P" $P) }}
     <div class="main-inner">
       <!-- Submenu,Content,Comment -->
       {{- block "main" . }}{{- end }}
