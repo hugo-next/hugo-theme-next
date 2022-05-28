@@ -53,5 +53,10 @@ PostTag:
 PostReadMore:
   other: "阅读全文"
 
+UserVistorsLabel:
+  other: 总访客量
+PageViewsLabel:
+  other: 总访问量
+
 FooterPowerby:
   other: "由 %s 强力驱动"
