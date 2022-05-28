@@ -25,9 +25,9 @@
       line-height: 1;
       @include font-family-icons('\f02e');
     }
+  }
 
-    &:hover {
-      top: 0px;
-    }
+  .book-mark-link:hover, .book-mark-link-fixed {
+    top: -2px;
   }
 }

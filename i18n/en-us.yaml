@@ -25,6 +25,8 @@ RSSTitle:
   other: "RSS Subscribe"
 CCLinkTitle:
   other: "Creative Commons"
+BackTopLabel:
+  other: "Top"
 
 PostPublishDate:
   other: "Publish"
@@ -50,6 +52,11 @@ PostTag:
   other: "Tags"
 PostReadMore:
   other: "Read More"
+
+VisitorsLabel:
+  other: Total Visitors
+PageViewsLabel:
+  other: Total Page Views
 
 FooterPowerby:
   other: "Power by %s"
