@@ -1,2 +1,61 @@
 {{- define "main" }}
+{{ $P := .P }}
+{{- $lang := .Scratch.Get "lang" }}
+{{/* $paginator := .Paginate (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) */}}
+{{- range .Paginate.Pages }}
+<div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ $lang }}">
+    <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="{{ $P.avatar.url }}">
+      <meta itemprop="name" content="{{ $P.author }}">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{{ .Title }}">
+      <meta itemprop="description" content="{{ .Description }}">
+    </span>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="{{ .Title }}">
+      <meta itemprop="description" content="{{ .Description }}">
+    </span>
+    <header class="post-header">
+      <h2 class="post-title" itemprop="name headline">
+        {{/*- with .Sticky }}
+        {{- if gt . 0 }}
+        <span class="post-sticky-flag" title="{{ T "PostStickyTitle" }}">
+          <i class="fa fa-thumbtack"></i>
+        </span>
+        {{- end }}
+        {{- end */}}
+        {{/*- if not (eq .Link "") }}
+        <a href="{{ .Link }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external">{{ .Title }}</a>
+        {{- else */}}
+        <a href="{{ .Permalink }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
+        {{/*- end */}}
+      </h2>
+      <div class="post-meta-container">
+        {{/* partial "post/meta" . */}}
+      </div>
+    </header>
+    <!-- POST BODY -->
+    <div class="post-body" itemprop="articleBody">
+      {{/*- if .Expand }}
+      {{ .Content }}
+      {{ else */}}
+      {{ .Summary }}
+      {{/*- end */}}
+    </div>
+    <footer class="post-footer">
+      {{- if and $P.readMoreBtn }}
+      <div class="post-button">
+        <a class="btn" href="{{ .Permalink }}#more" rel="contents">
+          {{ T "PostReadMore" }} &raquo;
+        </a>
+      </div>
+      {{- end }}
+      <div class="post-eof"></div>
+    </footer>
+  </article>
+</div>
+{{- end }}
 {{- end }}

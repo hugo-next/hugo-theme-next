@@ -8,6 +8,8 @@ baseURL: /
 
 theme: hugo-theme-next
 
+mainSections: ["post"]
+
 defaultContentLanguage: zh-cn
 languages:
   zh-cn:
@@ -304,7 +306,7 @@ params:
 
   # Read more button
   # If true, the read more button will be displayed in excerpt section.
-  read_more_btn: true
+  readMoreBtn: true
 
   # Post meta display settings
   postMeta:
