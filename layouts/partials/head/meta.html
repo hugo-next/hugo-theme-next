@@ -1,56 +1,22 @@
-{{- if .P.darkmode }}
-  <meta name="theme-color" content="{{ .P.themeColor.dark }}" media="(prefers-color-scheme: dark)">
+<meta itemprop="name" content="{{ .Title }}" />
+<meta itemprop="description" content="{{ .Description | default .Site.Params.description }}" />
+{{- if .IsPage }}
+{{- with .PublishDate }}
+<meta itemprop="datePublished" {{ . }} />
+{{- end }}
+{{- with .Lastmod }}
+<meta itemprop="dateModified" {{ . }} />
+{{- end }}
+{{- end }}
+{{- $img := .Site.Params.customLogo | default .Site.Params.avatar.url }}
+{{- if and .IsPage (isset .Params "images") }}
+  {{- $img := index .Params.images 0 }}
+{{- end }}
+{{- .Scratch.Set "metaImg" $img }}
+<meta itemprop="image" content="{{ $img | absURL }}" />
+<meta itemprop="keywords" content="{{ if .IsPage}}{{ delimit .Params.tags ", " }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
+{{- if .Site.Params.darkmode }}
+<meta name="theme-color" content="{{ .Site.Params.themeColor.dark }}" media="(prefers-color-scheme: dark)" />
 {{- else }}
-  <meta name="theme-color" content="{{ .P.themeColor.light }}" media="(prefers-color-scheme: light)">
-{{- end }}
-{{- with .P.googleSiteVerification }}
-  <meta name="google-site-verification" content="{{ . }}">
-{{- end }}
-{{- with .P.bingSiteVerification }}
-  <meta name="msvalidate.01" content="{{ . }}">
-{{- end }}
-{{- with .P.yandexSiteVerification }}
-  <meta name="yandex-verification" content="{{ . }}">
-{{- end }}
-{{- with .P.baiduSiteVerification }}
-  <meta name="baidu-site-verification" content="{{ . }}">
-{{- end }}
-{{- $lang := .Scratch.Get "lang" }}
-{{- $P := .P }}
-{{- $Page := .Page }}
-{{- with $P.openGraph }}
-{{- if .enable }}
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ $Page.Title }}">
-  <meta property="og:description" content="{{ default $P.description $Page.Description }}">
-  <meta property="og:image" content="TODO" />
-  <meta property="og:image:width" content="TODO" />
-  <meta property="og:image:height" content="TODO" />
-  <meta property="og:image:type" content="TODO" />
-  <meta property="og:image" content="{{ $P.customLogo }}">
-  <meta property="og:url" content="{{ $Page.Permalink }}">
-  <meta property="og:site_name" content="{{ default $Page.Title $Page.Site.Title }}">
-  <meta property="og:locale" content="{{ $lang }}">
-  {{- if not $Page.IsHome }}    
-  <meta property="article:author" content="{{ default $P.author $Page.Params.Author }}">
-  <meta property="article:published_time" content="{{ $Page.PublishDate }}" />
-  <meta property="article:modified_time" content="{{ $Page.Lastmod }}" />
-  {{- end }}
-{{- with .twitter }}
-{{- range $attr, $val := . }}
-  <meta name="twitter:{{ $attr }}" content="{{ $val }}">
-{{- end }}
-{{- end }}
-
-{{- with .googlePlus }}
-  <link rel="publisher" href=" {{ . }}">
-{{- end }}
-
-{{- with .facebook }}
-{{- range $attr, $val := . }}
-  <meta property="fb:{{ $attr }}" content="{{ $val }}">
-{{- end }}
-{{- end }}
-
-{{- end }}
+<meta name="theme-color" content="{{ .Site.Params.themeColor.light }}" media="(prefers-color-scheme: light)" />
 {{- end }}

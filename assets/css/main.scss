@@ -1,39 +1,39 @@
 // CSS Style Guide: https://codeguide.co/#css
 // All variables from site's config content.
-
+{{- $P := .Site.Params }}
 // Base
-$scheme: {{ .P.scheme }};
-$darkmode: {{ .P.darkmode }};
+$scheme: {{ $P.scheme }};
+$darkmode: {{ $P.darkmode }};
 
-$body_scrollbar_overlay: {{ .P.bodyScrollbar.overlay }};
-$body_scrollbar_stable: {{ .P.bodyScrollbar.stable }};
-$mermaid_enable: {{ .P.mermaid.enable }};
-$mobile_layout_economy: {{ .P.mobileLayoutEconomy }};
-$theme_color_dark: {{ .P.themeColor.dark }};
-$theme_color_light: {{ .P.themeColor.light }};
+$body_scrollbar_overlay: {{ $P.bodyScrollbar.overlay }};
+$body_scrollbar_stable: {{ $P.bodyScrollbar.stable }};
+$mermaid_enable: {{ $P.mermaid.enable }};
+$mobile_layout_economy: {{ $P.mobileLayoutEconomy }};
+$theme_color_dark: {{ $P.themeColor.dark }};
+$theme_color_light: {{ $P.themeColor.light }};
 
 // Header
-$bookmark_color: {{ .P.bookmark.color }};
-$bookmark_enable: {{ .P.bookmark.enable }};
-$github_banner_enable: {{ .P.githubBanner.enable }};
-$menu_settings_badges: {{ .P.menuSets.badges }};
+$bookmark_color: {{ $P.bookmark.color }};
+$bookmark_enable: {{ $P.bookmark.enable }};
+$github_banner_enable: {{ $P.githubBanner.enable }};
+$menu_settings_badges: {{ $P.menuSets.badges }};
 
 // Footer
-$footer_icon_color: {{ .P.footer.icon.color }};
-$footer_icon_animated: {{ .P.footer.icon.animated }};
-$footer_beian_enable: {{ .P.footer.beian.enable }};
+$footer_icon_color: {{ $P.footer.icon.color }};
+$footer_icon_animated: {{ $P.footer.icon.animated }};
+$footer_beian_enable: {{ $P.footer.beian.enable }};
 
 // Counter
-$busuanzi_enable: {{ .P.busuanzi.enable }};
-$busuanzi_visitors: {{ .P.busuanzi.visitors }};
-$busuanzi_views: {{ .P.busuanzi.views }};
-$busuanzi_post_views: {{ .P.busuanzi.postViews }};
+$busuanzi_enable: {{ $P.busuanzi.enable }};
+$busuanzi_visitors: {{ $P.busuanzi.visitors }};
+$busuanzi_views: {{ $P.busuanzi.views }};
+$busuanzi_post_views: {{ $P.busuanzi.postViews }};
 
 // Font
-$font_enable: {{ .P.font.enable }};
-$font_global_size: {{ default .P.font.global.size 1 }};
-$font_headings_size: {{ default .P.font.headings.size 1.625 }};
-$font_title_size: {{ default .P.font.title.size 1.375 }};
+$font_enable: {{ $P.font.enable }};
+$font_global_size: {{ default $P.font.global.size 1 }};
+$font_headings_size: {{ default $P.font.headings.size 1.625 }};
+$font_title_size: {{ default $P.font.title.size 1.375 }};
 
 // Code & Code blocks
 // TODO find the configure variable
@@ -42,88 +42,88 @@ $highlight_dark_foreground: #222;
 $highlight_light_background: #000;
 $highlight_light_foreground: #222;
 
-$codeblock_copy_btn_style: {{ .P.codeblock.copyBtn.style }};
+$codeblock_copy_btn_style: {{ $P.codeblock.copyBtn.style }};
 
 // Sidebar
-$sidebar_offset: {{ .P.sidebar.offset }};
-$sidebar_padding: {{ .P.sidebar.padding }};
-$sidebar_position: {{ .P.sidebar.position }};
-$sidebar_width: {{ .P.sidebar.width }};
+$sidebar_offset: {{ $P.sidebar.offset }};
+$sidebar_padding: {{ $P.sidebar.padding }};
+$sidebar_position: {{ $P.sidebar.position }};
+$sidebar_width: {{ $P.sidebar.width }};
 
-$motion_enable: {{ .P.motion.enable }};
-$motion_transition_sidebar: {{ .P.motion.transition.sidebar }};
+$motion_enable: {{ $P.motion.enable }};
+$motion_transition_sidebar: {{ $P.motion.transition.sidebar }};
 
-$back2top_enable: {{ .P.backTop.enable }};
-$back2top_scrollpercent: {{ .P.backTop.scrollpercent }};
-$back2top_sidebar: {{ .P.backTop.sidebar }};
+$back2top_enable: {{ $P.backTop.enable }};
+$back2top_scrollpercent: {{ $P.backTop.scrollpercent }};
+$back2top_sidebar: {{ $P.backTop.sidebar }};
 
-$avatar_rotated: {{ .P.avatar.rotated }};
-$avatar_rounded: {{ .P.avatar.rounded }};
-$avatar_rounded: {{ .P.avatar.rounded }};
-$site_state: {{ .P.siteState }};
-$social_icons_only: {{ .P.socialIcons.iconsOnly }};
-$social_icons_transition: {{ .P.socialIcons.transition }};
-$links_settings_layout: {{ .P.linksSets.layout }};
-$toc_enable: {{ .P.toc.enable }};
-$toc_expand_all: {{ .P.toc.expandAll }};
-$toc_wrap: {{ .P.toc.wrap }};
+$avatar_rotated: {{ $P.avatar.rotated }};
+$avatar_rounded: {{ $P.avatar.rounded }};
+$avatar_rounded: {{ $P.avatar.rounded }};
+$site_state: {{ $P.siteState }};
+$social_icons_only: {{ $P.socialIcons.iconsOnly }};
+$social_icons_transition: {{ $P.socialIcons.transition }};
+$links_settings_layout: {{ $P.linksSets.layout }};
+$toc_enable: {{ $P.toc.enable }};
+$toc_expand_all: {{ $P.toc.expandAll }};
+$toc_wrap: {{ $P.toc.wrap }};
 
 // Posts
-$creative_commons_post: {{ .P.creativeCommons.post }};
-$follow_me: {{ isset .P "followMe" }};
-$motion_trans_coll_header: {{ .P.motion.transition.collHeader }};
-$motion_trans_post_block: {{ .P.motion.transition.postBlock }};
-$motion_trans_post_body: {{ .P.motion.transition.postBody }};
-$motion_trans_post_header: {{ .P.motion.transition.postHeader }};
-$post_edit_enable: {{ .P.postEdit.enable }};
-$post_meta_item_text: {{ .P.postMeta.itemText }};
-$reward_settings_animation: {{ .P.rewardSets.animation }};
+$creative_commons_post: {{ $P.creativeCommons.post }};
+$follow_me: {{ isset $P "followMe" }};
+$motion_trans_coll_header: {{ $P.motion.transition.collHeader }};
+$motion_trans_post_block: {{ $P.motion.transition.postBlock }};
+$motion_trans_post_body: {{ $P.motion.transition.postBody }};
+$motion_trans_post_header: {{ $P.motion.transition.postHeader }};
+$post_edit_enable: {{ $P.postEdit.enable }};
+$post_meta_item_text: {{ $P.postMeta.itemText }};
+$reward_settings_animation: {{ $P.rewardSets.animation }};
 
 // TODO find the paramters
 $text_align_desktop: center;
 $text_align_mobile: center;
 
 // Note
-$note_icons: {{ .P.note.icons }};
-$note_light_bg_offset: {{ .P.note.lightBgOffset }};
-$note_style: {{ .P.note.style }};
+$note_icons: {{ $P.note.icons }};
+$note_light_bg_offset: {{ $P.note.lightBgOffset }};
+$note_style: {{ $P.note.style }};
 
 // Tabs
-$tabs_transition_labels: {{ .P.tabs.transition.labels }};
-$tabs_transition_tabs: {{ .P.tabs.transition.tabs }};
+$tabs_transition_labels: {{ $P.tabs.transition.labels }};
+$tabs_transition_tabs: {{ $P.tabs.transition.tabs }};
 
 // Reading progress bar
-$reading_progress_start: {{ .P.readingProgress.start }}; 
-$reading_progress_color: {{ .P.readingProgress.color }}; 
-$reading_progress_enable: {{ .P.readingProgress.enable }}; 
-$reading_progress_height: {{ .P.readingProgress.height }}; 
-$reading_progress_position: {{ .P.readingProgress.position }}; 
-$reading_progress_reversed: {{ .P.readingProgress.reversed }}; 
+$reading_progress_start: {{ $P.readingProgress.start }}; 
+$reading_progress_color: {{ $P.readingProgress.color }}; 
+$reading_progress_enable: {{ $P.readingProgress.enable }}; 
+$reading_progress_height: {{ $P.readingProgress.height }}; 
+$reading_progress_position: {{ $P.readingProgress.position }}; 
+$reading_progress_reversed: {{ $P.readingProgress.reversed }}; 
 
 // Thirdparty
-$math_mathjax_enable: {{ .P.math.mathjax.enable }};
-$related_posts_enable: {{ .P.relatedPosts.enable }};
-$pdf_enable: {{ .P.pdf.enable }};
-$pdf_height: {{ .P.pdf.height }};
+$math_mathjax_enable: {{ $P.math.mathjax.enable }};
+$related_posts_enable: {{ $P.relatedPosts.enable }};
+$pdf_enable: {{ $P.pdf.enable }};
+$pdf_height: {{ $P.pdf.height }};
 
 // Search engine
-$algolia_search_enable: {{ .P.algoliaSearch.enable }};
-$local_search_enable: {{ .P.localSearch.enable }};
+$algolia_search_enable: {{ $P.algoliaSearch.enable }};
+$local_search_enable: {{ $P.localSearch.enable }};
 
 // Online IM
-$gitalk_enable: {{ .P.gitalk.enable }};
-$gitter_enable: {{ .P.gitter.enable }};
+$gitalk_enable: {{ $P.gitalk.enable }};
+$gitter_enable: {{ $P.gitter.enable }};
 
 // Comment
-$disqusjs_enable: {{ .P.disqusjs.enable }};
-$utterances_enable: {{ .P.utterances.enable }};
+$disqusjs_enable: {{ $P.disqusjs.enable }};
+$utterances_enable: {{ $P.utterances.enable }};
 
 // 
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
-{{ printf "/* %s Scheme Style */" .P.scheme }}
-{{ printf "@import '_variables/%s';" .P.scheme }}
+{{ printf "/* %s Scheme Style */" $P.scheme }}
+{{ printf "@import '_variables/%s';" $P.scheme }}
 // TODO
 //@import 'theme.injects.variable';
 
@@ -151,7 +151,7 @@ $utterances_enable: {{ .P.utterances.enable }};
 
 // Schemes Layer
 // --------------------------------------------------
-{{ printf "@import '_schemes/%s/';" .P.scheme }}
+{{ printf "@import '_schemes/%s/';" $P.scheme }}
 
 // Custom Layer
 // TODO 

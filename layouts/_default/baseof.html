@@ -19,7 +19,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="{{ $P.favicon.small }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ $P.favicon.medium }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ $P.favicon.appleTouchIcon }}">
-  {{- partial "head.html" (dict "P" $P "Page" .Page "Scratch" .Scratch) }}
+  {{- partial "head.html" . }}
   <title>{{ .Title | default .Site.Title }}</title>
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">

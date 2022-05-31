@@ -1,0 +1,7 @@
+{{- $img := .Site.Params.openGraph.twitter.image | default (.Scratch.Get "metaImg") }}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:creator" content="{{ .Site.Params.openGraph.twitter.creator }}"/>
+<meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}"/>
+<meta name="twitter:image" content="{{ $img | absURL }}"/>
+<meta name="twitter:title" content="{{ .Title }}"/>
+<meta name="twitter:site" content="@{{ .Site.Params.openGraph.twitter.site }}"/>

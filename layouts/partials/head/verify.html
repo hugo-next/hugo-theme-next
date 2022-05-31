@@ -1,0 +1,14 @@
+{{ if .IsHome }}
+{{- with .Site.Params.googleSiteVerification }}
+<meta name="google-site-verification" content="{{ . }}">
+{{- end }}
+{{- with .Site.Params.bingSiteVerification }}
+<meta name="msvalidate.01" content="{{ . }}">
+{{- end }}
+{{- with .Site.Params.yandexSiteVerification }}
+<meta name="yandex-verification" content="{{ . }}">
+{{- end }}
+{{- with .Site.Params.baiduSiteVerification }}
+<meta name="baidu-site-verification" content="{{ . }}">
+{{- end }}
+{{ end }}

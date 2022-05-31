@@ -1,6 +1,6 @@
 <!-- Plugin style files -->
-{{- $cssRes := .Page.Site.Data.resources.css }}
-{{- $vendor := .P.vendors.plugins }}
+{{- $cssRes := .Site.Data.resources.css }}
+{{- $vendor := .Site.Params.vendors.plugins }}
 {{- $vendorCDN := .Scratch.Get "pluginCDN" }}
 {{- range $css := $cssRes }}
   {{- $pluginCSS := $vendorCDN }}
