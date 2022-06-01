@@ -1,49 +1,48 @@
-{{- $author := .P.author }}
-{{- $Site := .Page.Site }}
+{{- $author := .Site.Params.author }}
 <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  {{- with .P.avatar.url }}
+  {{- with .Site.Params.avatar.url }}
     <img class="site-author-image" itemprop="image" alt="{{ $author }}"
       src="{{ . }}">
   {{- end }}
   <p class="site-author-name" itemprop="name">{{ $author }}</p>
-  <div class="site-description" itemprop="description">{{ .P.description }}</div>
+  <div class="site-description" itemprop="description">{{ .Site.Params.description }}</div>
 </div>
 
-{{- if .P.siteState }}
+{{- if .Site.Params.siteState }}
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
     <div class="site-state-item site-state-posts">
       <a href="{{ "/archives/" | relLangURL }}">
-        <span class="site-state-item-count">{{ len $Site.RegularPages }}</span>
+        <span class="site-state-item-count">{{ len .Site.RegularPages }}</span>
         <span class="site-state-item-name">{{ T "SbPostsLable" }}</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">
       <a href="{{ "/categories/" | relLangURL }}">
-        <span class="site-state-item-count">{{ len $Site.Taxonomies.categories }}</span>
+        <span class="site-state-item-count">{{ len .Site.Taxonomies.categories }}</span>
         <span class="site-state-item-name">{{ T "SbCatesTitle" }}</span>
       </a>
     </div>
     <div class="site-state-item site-state-tags">
       <a href="{{ "/tags/" | relLangURL }}">
-        <span class="site-state-item-count">{{ len $Site.Taxonomies.tags }}</span>
+        <span class="site-state-item-count">{{ len .Site.Taxonomies.tags }}</span>
         <span class="site-state-item-name">{{ T "SbTagsTitle" }}</span>
       </a>
     </div>
   </nav>
 </div>
 {{- end }}
-{{- if and .P.chat.enable (or (or .P.chatra.enable .P.tidio.enable) .P.gitter.enable) }}
+{{- if and .Site.Params.chat.enable (or (or .Site.Params.chatra.enable .Site.Params.tidio.enable) .Site.Params.gitter.enable) }}
 <div class="sidebar-button site-overview-item animated">
-  <button {{ if .P.gitter.enable }} class="js-gitter-toggle-chat-button" {{ end }}>
-    {{- if .P.chat.icon }}<i class="{{ .P.chat.icon }}"></i>{{ end }}
-    {{ .P.chat.text }}
+  <button {{ if .Site.Params.gitter.enable }} class="js-gitter-toggle-chat-button" {{ end }}>
+    {{- if .Site.Params.chat.icon }}<i class="{{ .Site.Params.chat.icon }}"></i>{{ end }}
+    {{ .Site.Params.chat.text }}
   </button>
 </div>
 {{- end }}
 <div class="links-of-social site-overview-item animated">
-{{ $si := .P.socialIcons }}
-{{ range $key,$val := .P.socials }}
+{{ $si := .Site.Params.socialIcons }}
+{{ range $key,$val := .Site.Params.socials }}
 {{- $vals := split $val "||" }}
 {{- $name := trim (index $vals 0) " " }}
 {{- $url := trim (index $vals 1) " " }}
@@ -62,7 +61,7 @@
 </div>
 
 {{- $lang := .Scratch.Get "lang" }}
-{{- with .P.creativeCommons }}
+{{- with .Site.Params.creativeCommons }}
 {{- if .sidebar }}
 <div class="cc-license animated" itemprop="license">
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr $lang 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
@@ -72,16 +71,16 @@
 {{- end }}
 {{- end }}
 
-{{- if .P.links }}
+{{- if .Site.Params.links }}
 <div class="links-of-blogroll site-overview-item animated">
   <div class="links-of-blogroll-title">
-    {{- if .P.linksSets.icon }}
-    <i class="{{ .P.linksSets.icon }} fa-fw"></i>
+    {{- if .Site.Params.linksSets.icon }}
+    <i class="{{ .Site.Params.linksSets.icon }} fa-fw"></i>
     {{- end }}
-    {{- .P.linksSets.title }}
+    {{- .Site.Params.linksSets.title }}
   </div>
   <ul class="links-of-blogroll-list">
-    {{- range $key,$val := .P.links }}
+    {{- range $key,$val := .Site.Params.links }}
     {{- $vals := split $val "||" }}
     {{- $name := trim (index $vals 0) " " }}
     {{- $url := trim (index $vals 1) " " }}
