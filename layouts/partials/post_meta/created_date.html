@@ -1,5 +1,6 @@
 {{- if .Site.Params.postMeta.created }}
-{{ $createdTime := .PublishDate.Format .Site.Params.timeFormat }}
+{{ $timeF := .Site.Params.timeFormat }}
+{{ $createdTime := (.Date.Format $timeF) | default (.PublishDate.Format $timeF) }}
 <span class="post-meta-item">
   <span class="post-meta-item-icon">
     <i class="far fa-calendar"></i>

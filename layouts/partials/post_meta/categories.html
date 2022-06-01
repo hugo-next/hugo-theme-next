@@ -1,5 +1,5 @@
 {{- if .Site.Params.postMeta.categories }}
-{{- if gt (len .Params.categories) 0 }}
+{{- if and .Params.categories (gt (len .Params.categories) 0) }}
 <span class="post-meta-item">
   <span class="post-meta-item-icon">
     <i class="far fa-folder-open"></i>
