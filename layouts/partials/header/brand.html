@@ -1,4 +1,4 @@
-{{ $title := .Page.Site.Title }}
+{{ $title := .Site.Title }}
 <div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="{{ T "NavToggleLabel" }}" role="button">
@@ -9,27 +9,27 @@
   </div>
 
   <div class="site-meta">
-    {{- if and .P.customLogo (eq .P.scheme "Muse") }}
-      <img class="custom-logo-image" src="{{ .P.customLogo }}" alt="{{ $title }}">
+    {{- if and .Site.Params.customLogo (eq .Site.Params.scheme "Muse") }}
+      <img class="custom-logo-image" src="{{ .Site.Params.customLogo }}" alt="{{ $title }}">
     {{- end }}
 
-    <a href="{{ .Page.Site.BaseURL }}" class="brand" rel="start">
+    <a href="{{ .Site.BaseURL }}" class="brand" rel="start">
       <i class="logo-line"></i>
       <h1 class="site-title">{{ $title }}</h1>
       <i class="logo-line"></i>
     </a>
-    {{ if isset .P "subtitle" }}
-      <p class="site-subtitle" itemprop="description">{{ .P.subtitle }}</p>
+    {{ if isset .Site.Params "subtitle" }}
+      <p class="site-subtitle" itemprop="description">{{ .Site.Params.subtitle }}</p>
     {{- end }}
-    {{- if and .P.customLogo (or (eq .P.scheme "Gemini") (eq .P.scheme "Pisces"))}}
-      <img class="custom-logo-image" src="{{ .P.customLogo }}" alt="{{ $title }}">
+    {{- if and .Site.Params.customLogo (or (eq .Site.Params.scheme "Gemini") (eq .Site.Params.scheme "Pisces"))}}
+      <img class="custom-logo-image" src="{{ .Site.Params.customLogo }}" alt="{{ $title }}">
     {{- end }}
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-      {{ if or .P.algoliaSearch.enable .P.localSearch.enable }}
-        <i class="fa fa-search fa-fw fa-lg"></i>
+      {{ if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
+      <i class="fa fa-search fa-fw fa-lg"></i>
       {{- end }}
     </div>
   </div>

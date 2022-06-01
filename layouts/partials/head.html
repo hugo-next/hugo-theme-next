@@ -1,15 +1,15 @@
-{{- partial "head/meta" . }}
+{{- partial "head/meta.html" . }}
 {{- if .Site.Params.openGraph.enable }}
-{{- partial "head/opengraph" . }}
+{{- partial "head/opengraph.html" . }}
 {{- end }}
 {{ if isset .Site.Params.openGraph "twitter" }}
-{{- partial "head/twitter" . }}
+{{- partial "head/twitter.html" . }}
 {{- end }}
 {{- if isset .Site.Params.openGraph "googleplus" }}
-{{- partial "head/googleplus" . }}
+{{- partial "head/googleplus.html" . }}
 {{- end }}
 {{- if isset .Site.Params.openGraph "facebook" }}
-{{- partial "head/facebook" . }}
+{{- partial "head/facebook.html" . }}
 {{- end }}
-{{ partial "head/verify" . }}
-{{- partial "head/style" . }}
+{{ partial "head/verify.html" . }}
+{{- partial "head/style.html" . }}

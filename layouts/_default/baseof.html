@@ -5,7 +5,7 @@
 {{- $pluginVen := $P.vendors.plugins -}}
 {{- $pluginCDN := index $vendors $pluginVen -}}
 {{- .Scratch.Set "pluginCDN" $pluginCDN -}}
-{{ $posts := len .Site.RegularPages }}
+{{ $posts := len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 {{- .Scratch.Set "posts" $posts -}}
 <!DOCTYPE html>
 <html lang="{{ $lang }}">
@@ -31,7 +31,7 @@
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">
-        {{- partial "header" (dict "P" $P "Page" .Page "Scratch" .Scratch) }}
+        {{- partial "header.html" . }}
       </div>
       <!-- Sidebar -->
       {{- if ne $P.sidebar.display "remove" }}
