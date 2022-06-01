@@ -1,6 +1,6 @@
 <!-- Plugin scripts files -->
-{{- $jsRes := .Page.Site.Data.resources.js }}
-{{- $vendor := .P.vendors.plugins }}
+{{- $jsRes := .Site.Data.resources.js }}
+{{- $vendor := .Site.Params.vendors.plugins }}
 {{- $vendorCDN := .Scratch.Get "pluginCDN" }}
 {{- range $js := $jsRes }}
   {{- $pluginJS := $vendorCDN }}
