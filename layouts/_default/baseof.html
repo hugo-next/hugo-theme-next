@@ -39,7 +39,7 @@
       {{- end }}
     </header>
     <!-- Widgets -->
-    {{ partial "widgets" (dict "P" $P) }}
+    {{ partial "widgets.html" . }}
     <div class="main-inner index posts-expand">
       <!-- Submenu,Content,Comment -->
       {{- block "main" (dict "P" $P "Page" .Page "Paginate" (.Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections)) "Scratch" .Scratch) }}{{- end }}
