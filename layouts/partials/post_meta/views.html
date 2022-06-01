@@ -1,0 +1,27 @@
+{{- if .Site.Params.leancloudVisitors.enable }}
+<span id="{{ .Permalink }}" class="post-meta-item leancloud_visitors" data-flag-title="{{ .Title }}" title="{{ T "PostViews" }}">
+  <span class="post-meta-item-icon">
+    <i class="far fa-eye"></i>
+  </span>
+  <span class="post-meta-item-text">{{ print (T "PostViews") (T "SymbolColon") }}</span>
+  <span class="leancloud-visitors-count"></span>
+</span>
+{{- end }}
+{{- if .Site.Params.firestore.enable }}
+<span class="post-meta-item" title="{{ T "PostViews" }}">
+  <span class="post-meta-item-icon">
+    <i class="far fa-eye"></i>
+  </span>
+  <span class="post-meta-item-text">{{ print (T "PostViews") (T "SymbolColon") }}</span>
+  <span class="firestore-visitors-count"></span>
+</span>
+{{- end }}
+{{- if and .Site.Params.busuanzi.enable .Site.Params.busuanzi.postViews }}
+<span class="post-meta-item" title="{{ T "PostViews" }}" id="busuanzi_container_page_pv">
+  <span class="post-meta-item-icon">
+    <i class="{{ .Site.Params.busuanzi.postViewsIcon }}"></i>
+  </span>
+  <span class="post-meta-item-text">{{ print (T "PostViews") (T "SymbolColon") }}</span>
+  <span id="busuanzi_value_page_pv"></span>
+</span>
+{{- end }}

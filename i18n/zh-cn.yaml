@@ -8,7 +8,7 @@ NavToggleLabel:
 MSearchLabel:
   other: 搜索
 
-ColoneFlag:
+SymbolColon:
   other: ":"
 
 SbPostsLable:
@@ -46,11 +46,11 @@ PostReading:
   other: 阅读
 PostReadTime:
   other: "{{- .ReadingTime -}}分钟"
-PostVisitor:
+PostViews:
   other: 浏览数
-PostCatg:
+PostCatgs:
   other: 分类
-PostTag:
+PostTags:
   other: 标签
 PostReadMore:
   other: 阅读全文

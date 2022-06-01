@@ -80,8 +80,8 @@ $post_meta_item_text: {{ $P.postMeta.itemText }};
 $reward_settings_animation: {{ $P.rewardSets.animation }};
 
 // TODO find the paramters
-$text_align_desktop: center;
-$text_align_mobile: center;
+$text_align_desktop: justify;
+$text_align_mobile: justify;
 
 // Note
 $note_icons: {{ $P.note.icons }};

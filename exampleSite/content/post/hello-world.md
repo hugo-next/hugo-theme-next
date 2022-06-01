@@ -1,12 +1,12 @@
 ---
-title: 'Hugo blog Hello World'
+title: Hello World
 description: 'Short description of the article.'
 keywords: 'Key words'
-isCJKLanguage: true
+isCJKLanguage: false
 
 author: 'Author of the article'
 lastmod: '2022-05-21T17:06:24+08:00'
-publishDate: '2022-05-21T17:06:24+08:00'
+publishDate: '2022-05-21T16:06:24+08:00'
 weight: 1
 
 categories:
@@ -16,11 +16,14 @@ tags:
  - Startup
 
 toc: false
-draft: true
-url: 'hello_world.html'
+draft: false
 ---
 
+The world’s fastest framework for building websites.
+
 [Hugo](https://gohugo.io/) is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+
+<!--more-->
 
 ## Quick Start
 

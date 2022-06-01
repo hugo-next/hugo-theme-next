@@ -40,9 +40,9 @@
     </header>
     <!-- Widgets -->
     {{ partial "widgets.html" . }}
-    <div class="main-inner index posts-expand">
+    <div class="main-inner {{ if .IsHome }}index{{ else }}page{{ end }} posts-expand">
       <!-- Submenu,Content,Comment -->
-      {{- block "main" (dict "P" $P "Page" .Page "Paginate" (.Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections)) "Scratch" .Scratch) }}{{- end }}
+      {{- block "main" . }}{{- end }}
     </div>
   </main>
   <footer class="footer">

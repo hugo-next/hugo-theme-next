@@ -1,14 +1,13 @@
 {{- define "main" }}
-{{ $P := .P }}
 {{- $lang := .Scratch.Get "lang" }}
-{{/* $paginator := .Paginate (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) */}}
-{{- range .Paginate.Pages }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+{{- range $paginator.Pages }}
 <div class="post-block">
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ $lang }}">
     <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="{{ $P.avatar.url }}">
-      <meta itemprop="name" content="{{ $P.author }}">
+      <meta itemprop="image" content="{{ .Site.Params.avatar.url }}">
+      <meta itemprop="name" content="{{ .Site.Params.author }}">
     </span>
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="{{ .Title }}">
@@ -34,7 +33,10 @@
         {{/*- end */}}
       </h2>
       <div class="post-meta-container">
-        {{/* partial "post/meta" . */}}
+        {{ partial "post_meta/created_date.html" . }}
+        {{ partial "post_meta/update_date.html" . }}
+        {{ partial "post_meta/categories.html" . }}
+        {{ partial "post_meta/words.html" . }}
       </div>
     </header>
     <!-- POST BODY -->
@@ -46,7 +48,7 @@
       {{/*- end */}}
     </div>
     <footer class="post-footer">
-      {{- if and $P.readMoreBtn }}
+      {{- if and .Site.Params.readMoreBtn }}
       <div class="post-button">
         <a class="btn" href="{{ .Permalink }}#more" rel="contents">
           {{ T "PostReadMore" }} &raquo;

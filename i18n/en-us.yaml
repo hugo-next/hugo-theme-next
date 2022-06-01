@@ -8,7 +8,7 @@ NavToggleLabel:
 MSearchLabel:
   other: Search
 
-ColoneFlag:
+SymbolColon:
   other: ":"
 
 SitePostsTitle:
@@ -19,8 +19,8 @@ SiteTagsTitle:
   other: "Tags"
 TableOfContents:
   other: "TOC"
-SiteInfo:
-  other: "Site Info"
+SiteOverview:
+  other: "Overview"
 RSSTitle:
   other: "RSS Subscribe"
 CCLinkTitle:
@@ -44,7 +44,7 @@ PostReading:
   other: "Read"
 PostReadTime:
   other: "{{- .ReadingTime -}}min"
-PostVisitor:
+PostViews:
   other: "Views"
 PostCatg:
   other: "Categories"

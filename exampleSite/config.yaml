@@ -8,8 +8,6 @@ baseURL: /
 
 theme: hugo-theme-next
 
-mainSections: ["post"]
-
 defaultContentLanguage: zh-cn
 languages:
   zh-cn:
@@ -55,6 +53,9 @@ menus:
       weight: 4
 
 params:
+  mainSections: ["post"]
+  dateFormat: "2006-01-02"
+  timeFormat: "2006-01-02T15:04:05-07:00"
   # ---------------------------------------------------------------
   # Theme Core Configuration Settings
   # See: https://theme-next.js.org/docs/theme-settings/
@@ -317,12 +318,14 @@ params:
       enable: true
       anotherDay: true
     categories: true
+    wordCount: true
+    readTime: true
 
   # Post wordcount display settings
   # Dependencies: https://github.com/next-theme/hexo-word-counter
-  symbols_count_time:
-    separated_meta: true
-    item_text_total: false
+  # symbols_count_time:
+  #   separated_meta: true
+  #   item_text_total: false
 
   # Use icon instead of the symbol # to indicate the tag at the bottom of the post
   tag_icon: false
@@ -759,12 +762,12 @@ params:
 
   # Show number of visitors of each article.
   # You can visit https://www.leancloud.cn to get AppID and AppKey.
-  leancloud_visitors:
+  leancloudVisitors:
     enable: false
-    app_id: # <your app id>
-    app_key: # <your app key>
+    appId: # <your app id>
+    appKey: # <your app key>
     # Required for apps from CN region
-    server_url: # <your server url>
+    serverUrl: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     # If you don't care about security in leancloud counter and just want to use it directly
     # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
@@ -787,7 +790,7 @@ params:
     visitorsIcon: fa fa-user
     views: true
     viewsIcon: fa fa-eye
-    postViews: false
+    postViews: true
     postViewsIcon: far fa-eye
 
 
