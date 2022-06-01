@@ -287,10 +287,10 @@ params:
 
     # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
-      enable: false
+      enable: true
       icp: 粤ICP备18047355-1号
       # The digit in the num of gongan beian.
-      #gongan_id:
+      provinceAbbr: 沪
       # The full num of gongan beian.
       gonganNum: 11010102001808
       # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
@@ -782,7 +782,7 @@ params:
   # Show Views / Visitors of the website / page with busuanzi.
   # For more information: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi:
-    enable: false
+    enable: true
     visitors: true
     visitorsIcon: fa fa-user
     views: true
