@@ -1,0 +1,11 @@
+<div class="post-body" itemprop="articleBody">
+  {{- if not .IsHome }}
+    {{- if .Params.Expand }}
+    {{ .Content }}
+    {{- else }}
+    {{ .Summary }}
+    {{- end }}
+  {{- else }} 
+    {{ .Content }}
+  {{- end }}  
+</div>

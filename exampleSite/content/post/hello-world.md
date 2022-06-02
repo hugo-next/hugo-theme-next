@@ -1,13 +1,10 @@
 ---
-title: Hello World
-description: 'Short description of the article.'
-keywords: 'Key words'
+title: 'Hello World'
 isCJKLanguage: false
 
 author: 'Author of the article'
-lastmod: '2022-05-21T17:06:24+08:00'
-publishDate: '2022-05-21T16:06:24+08:00'
-weight: 1
+lastmod: '2022-06-02T11:52:03+08:00'
+publishDate: '2022-06-02T11:52:03+08:00'
 
 categories:
  - Blog
@@ -16,8 +13,8 @@ tags:
  - Startup
 
 toc: false
-draft: false
-expand: true
+draft: true
+url: 'hello-world.html'
 ---
 
 The world’s fastest framework for building websites.

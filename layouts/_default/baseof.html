@@ -1,12 +1,13 @@
-{{- $P := .Site.Params -}}
 {{- $lang := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language -}}
 {{- .Scratch.Set "lang" $lang -}}
 {{- $vendors := .Site.Data.resources.vendors -}}
-{{- $pluginVen := $P.vendors.plugins -}}
+{{- $pluginVen := .Site.Params.vendors.plugins -}}
 {{- $pluginCDN := index $vendors $pluginVen -}}
 {{- .Scratch.Set "pluginCDN" $pluginCDN -}}
 {{ $posts := len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 {{- .Scratch.Set "posts" $posts -}}
+{{/* TODO IsHome */}}
+{{- .Scratch.Set "IsHome" .IsHome }}
 <!DOCTYPE html>
 <html lang="{{ $lang }}">
 
@@ -14,11 +15,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   {{ hugo.Generator }}
-  <link rel="shortcut icon" type="image/x-icon" href="{{ $P.favicon.icon }}">
-  <link rel="icon" type="image/x-icon" href="{{ $P.favicon.icon }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ $P.favicon.small }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ $P.favicon.medium }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ $P.favicon.appleTouchIcon }}">
+  <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon.small }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
   {{- partial "head.html" . }}
   <title>{{ .Title | default .Site.Title }}</title>
   <noscript>
@@ -26,7 +27,7 @@
   </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" {{ if $P.motion.enable }} class="use-motion" {{ end }}>
+<body itemscope itemtype="http://schema.org/WebPage" {{ if .Site.Params.motion.enable }} class="use-motion" {{ end }}>
   <div class="headband"></div>
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -34,13 +35,13 @@
         {{- partial "header.html" . }}
       </div>
       <!-- Sidebar -->
-      {{- if ne $P.sidebar.display "remove" }}
+      {{- if ne .Site.Params.sidebar.display "remove" }}
       {{- partial "sidebar.html" . }}
       {{- end }}
     </header>
     <!-- Widgets -->
     {{ partial "widgets.html" . }}
-    <div class="main-inner {{ if .IsHome }}index{{ else }}page{{ end }} posts-expand">
+    <div class="main-inner {{ block "main_class" . }}{{ end }} posts-expand">
       <!-- Submenu,Content,Comment -->
       {{- block "main" . }}{{- end }}
     </div>

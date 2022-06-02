@@ -1,0 +1,10 @@
+<div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Scratch.Get "lang" }}">
+    {{ partial "post/post_header.html" . }}
+    <!-- POST BODY -->
+    {{ partial "post/post_body.html" . }}
+    <footer class="post-footer">
+      {{ partial "post/post_footer.html" . }}
+    </footer>
+  </article>
+</div>

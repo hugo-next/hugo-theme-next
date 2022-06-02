@@ -14,7 +14,7 @@
 {{- end }}
 {{- .Scratch.Set "metaImg" $img }}
 <meta itemprop="image" content="{{ $img | absURL }}" />
-<meta itemprop="keywords" content="{{ if .IsPage}}{{ delimit .Params.tags ", " }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
+<meta itemprop="keywords" content="{{ if and .IsPage (isset .Params "tags")}}{{ delimit .Params.tags "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
 {{- if .Site.Params.darkmode }}
 <meta name="theme-color" content="{{ .Site.Params.themeColor.dark }}" media="(prefers-color-scheme: dark)" />
 {{- else }}

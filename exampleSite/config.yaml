@@ -22,7 +22,7 @@ languages:
       author: Theme NexT
       subtitle: Theme for Hugo
       description: Stay easily & powerful.
-      keywords: Hugo,Theme,easily,powerful
+      keywords: Hugo,NexT,Theme,easily,powerful
 
 #--------------------------------------
 # Menus Settings
@@ -103,7 +103,7 @@ params:
   author: NexT 主题
   subtitle: 为 Hugo 打造的主题
   description: 保持简单的易用性和强大的功能。
-  keywords: Hugo,主题,简单,强大
+  keywords: Hugo,NexT,主题,简单,强大
 
   favicon:
     icon: /imgs/icons/favicon.ico
