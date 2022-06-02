@@ -7,15 +7,15 @@
     <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="{{ .Site.Params.avatar.url }}">
-      <meta itemprop="name" content="{{ .Site.Params.author }}">
+      <meta itemprop="name" content="{{ .Params.author | default .Site.Params.author }}">
     </span>
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="{{ .Title }}">
-      <meta itemprop="description" content="{{ .Description }}">
+      <meta itemprop="name" content="{{ .Site.Params.author }}">
+      <meta itemprop="description" content="{{ .Site.Params.description }}">
     </span>
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
       <meta itemprop="name" content="{{ .Title }}">
-      <meta itemprop="description" content="{{ .Description }}">
+      <meta itemprop="description" content="{{ .Description | default .Summary }}">
     </span>
     <header class="post-header">
       <h2 class="post-title" itemprop="name headline">
@@ -41,14 +41,14 @@
     </header>
     <!-- POST BODY -->
     <div class="post-body" itemprop="articleBody">
-      {{/*- if .Expand }}
+      {{- if .Params.Expand }}
       {{ .Content }}
-      {{ else */}}
+      {{- else }}
       {{ .Summary }}
-      {{/*- end */}}
+      {{- end }}
     </div>
     <footer class="post-footer">
-      {{- if and .Site.Params.readMoreBtn }}
+      {{- if and .Site.Params.readMoreBtn (not .Params.Expand) }}
       <div class="post-button">
         <a class="btn" href="{{ .Permalink }}#more" rel="contents">
           {{ T "PostReadMore" }} &raquo;
