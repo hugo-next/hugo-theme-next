@@ -1,10 +1,13 @@
-<div class="post-block">
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Scratch.Get "lang" }}">
-    {{ partial "post/post_header.html" . }}
-    <!-- POST BODY -->
-    {{ partial "post/post_body.html" . }}
-    <footer class="post-footer">
-      {{ partial "post/post_footer.html" . }}
-    </footer>
-  </article>
-</div>
+
+  <div class="post-block">
+    <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Scratch.Get "lang" }}">
+    
+      {{ partial "post/post_header.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+      <!-- POST BODY -->
+      {{ partial "post/post_body.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+      <footer class="post-footer">
+        {{ partial "post/post_footer.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+      </footer>
+    </article>
+  </div>
+

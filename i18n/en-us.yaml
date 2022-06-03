@@ -53,6 +53,19 @@ PostTag:
 PostReadMore:
   other: "Read More"
 
+PostCRAuthor:
+  other: Post Author
+PostCRLink:
+  other: Post Link
+PostCROriginAuthor:
+  other: Written By
+PostCROriginLink:
+  other: Originally From
+PostCRLicenseTitle:
+  other: Copyright Notice
+PostCRLicenseContent:
+  other: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
+
 VisitorsLabel:
   other: Total Visitors
 PageViewsLabel:

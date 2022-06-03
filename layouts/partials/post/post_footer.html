@@ -1,4 +1,5 @@
-{{- if .Scratch.Get "IsHome" }} 
+{{ with .ctx }}
+{{- if $.IsHome }} 
 {{- if and .Site.Params.readMoreBtn (not .Params.Expand) }}
 <div class="post-button">
   <a class="btn" href="{{ .Permalink }}#more" rel="contents">
@@ -8,6 +9,7 @@
 {{- end }}
 <div class="post-eof"></div>
 {{- else }}
+{{ partial "post/post_copyright.html" . }}
 <div class="post-nav">
   <div class="post-nav-next post-nav-item">
     {{- with .NextInSection }}
@@ -26,3 +28,4 @@
   </div>
 </div>
 {{- end }}
+{{ end }}

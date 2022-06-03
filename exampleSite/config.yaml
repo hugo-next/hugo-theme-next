@@ -8,6 +8,11 @@ baseURL: /
 
 theme: hugo-theme-next
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 defaultContentLanguage: zh-cn
 languages:
   zh-cn:
@@ -123,7 +128,7 @@ params:
     # Available values: big | small
     size: big
     sidebar: true
-    post: false
+    post: true
     # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
     # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
     # language:
@@ -173,7 +178,7 @@ params:
 
   sidebar:
     # Sidebar Position.
-    position: left
+    position: right
     #position: right
 
     # Manual define the sidebar width. If commented, will be default for:

@@ -1,3 +1,4 @@
+{{ with .ctx }}
 <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
 <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
   <meta itemprop="image" content="{{ .Site.Params.avatar.url }}">
@@ -13,30 +14,33 @@
 </span>
 <header class="post-header">
   <h2 class="post-title" itemprop="name headline">
-    {{- if and (isset .Params "sticky") (gt .Params.Sticky 0) }}
+    {{- if and .Weight (gt .Weight 0) }}
     <span class="post-sticky-flag" title="{{ T "PostStickyTitle" }}">
       <i class="fa fa-thumbtack"></i>
     </span>
     {{- end }}
-    {{- if and (isset .Params "link") (ne .Params.Link "") }}
-    <a href="{{ .Params.Link }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external">
-      {{ .Title }}
-      <i class="fa fa-external-link-alt"></i>
-    </a>
+    {{- if $.IsHome }}
+      {{- if and (isset .Params "link") (ne .Params.Link "") }}
+      <a href="{{ .Params.Link }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external">
+        {{ .Title }}
+        <i class="fa fa-external-link-alt"></i>
+      </a>
+      {{- else }}
+      <a href="{{ .Permalink }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
+      {{- end }}
     {{- else }}
-    <a href="{{ .Permalink }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
+      {{ .Title }}
     {{- end }}
   </h2>
-  {{/* TODO IsHome */}}
-  {{ print "Get IsHome value in pages loop: " ($.Scratch.Get "IsHome") }}
   <div class="post-meta-container">
     {{ partial "post/post_meta/created_date.html" . }}
     {{ partial "post/post_meta/update_date.html" . }}
     {{ partial "post/post_meta/categories.html" . }}
-    {{- if not (.Scratch.Get "IsHome") }}
+    {{- if not $.IsHome }}
     {{ partial "post/post_meta/words.html" . }}
     {{ partial "post/post_meta/readtime.html" . }}      
     {{ partial "post/post_meta/views.html" . }}      
     {{ end }}
   </div>
 </header>
+{{ end }}

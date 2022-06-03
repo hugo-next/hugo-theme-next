@@ -1,4 +1,4 @@
 {{- define "main_class" }}page{{- end }}
 {{- define "main" }}
-{{ partial "post_content.html" . }}
+{{ partial "post_content.html" (dict "ctx" . "IsHome" false) }}
 {{- end }}

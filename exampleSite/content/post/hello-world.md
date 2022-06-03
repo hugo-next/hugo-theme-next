@@ -1,60 +1,62 @@
 ---
-title: 'Hello World'
-isCJKLanguage: false
+title: "世界，你好！"
+description: "快速的描述下有关于 Hugo 建站的基本用法。"
+isCJKLanguage: true
 
-author: 'Author of the article'
-lastmod: '2022-06-02T11:52:03+08:00'
-publishDate: '2022-06-02T11:52:03+08:00'
+lastmod: 2022-06-03T16:43:23+08:00
+publishDate: 2022-06-02T11:52:03+08:00
 
 categories:
- - Blog
+ - 博客
 tags:
  - Hugo
- - Startup
+ - 开始
 
 toc: false
-draft: true
-url: 'hello-world.html'
+draft: false
+expand: true
+url: hello-world.html
+weight: 1
 ---
 
-The world’s fastest framework for building websites.
+“Hugo 是现今世界上最快的网站建设框架。”
 
-[Hugo](https://gohugo.io/) is one of the most popular open-source static site generators. With its amazing speed and flexibility, Hugo makes building websites fun again.
+[Hugo](https://gohugo.io/) 也是最流行的开源静态站点生成器之一。 凭借其惊人的速度和灵活性，Hugo 让建设网站再次变得有趣起来。
 
 <!--more-->
 
-## Quick Start
+## 快速开始
 
-### Create a new post
+### 发表新文章
 
 ```shell
 $ hugo new hello-world.md
 ```
 
-More info: [Content's Formats](https://gohugo.io/content-management/formats/)
+更多信息：[内容格式](https://gohugo.io/content-management/formats/)
 
-### Run server
+### 启动服务
 
 ```shell
 $ hugo server
 ```
 
-More info: [Hugo Server CLI](https://gohugo.io/commands/hugo_server/)
+更多信息：[Hugo 服务命令行](https://gohugo.io/commands/hugo_server/)
 
-### Generate static files
+### 生成静态文件
 
 ```shell
 $ hugo
 ```
 
-More info: [Hugo Build Site](https://gohugo.io/commands/hugo/)
+更多信息：[Hugo 建站](https://gohugo.io/commands/hugo/)
 
-### Deploy to remote sites
+### 部署到服务器
 
 ```language
 $ hugo deploy
 ```
 
-More info: [Hugo Deployment](https://gohugo.io/commands/hugo_deploy/)
+更多信息：[Hugo 发布](https://gohugo.io/commands/hugo_deploy/)
 
-See you will enjoy the Hugo journey and good luck for you!
+祝你好运，相信你会喜欢上 Hugo 建站的旅程！

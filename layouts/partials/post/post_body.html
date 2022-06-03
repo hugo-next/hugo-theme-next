@@ -1,5 +1,6 @@
+{{ with .ctx }}
 <div class="post-body" itemprop="articleBody">
-  {{- if not .IsHome }}
+  {{- if $.IsHome }}
     {{- if .Params.Expand }}
     {{ .Content }}
     {{- else }}
@@ -9,3 +10,4 @@
     {{ .Content }}
   {{- end }}  
 </div>
+{{ end }}

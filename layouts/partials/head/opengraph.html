@@ -9,7 +9,7 @@
 <meta property="og:site_name" content="{{ .Title | default .Site.Title }}" />
 <meta property="og:locale" content="{{ .Scratch.Get "lang" }}"/>
 {{- if .IsHome }}
-<meta property="article:author" content="{{ (delimit .Authors ",") | default .Site.Params.Author }}" />
+<meta property="article:author" content="{{ .Params.Author | default .Site.Params.Author }}" />
 <meta property="article:published_time" content="{{ .PublishDate }}" />
 <meta property="article:modified_time" content="{{ .Lastmod }}" />
 {{- end }}

@@ -19,4 +19,4 @@ EOT
 
 next V0.0.1
 
-hugo server -D -t ../.. --port 1414
+hugo server -D -t ../.. --port 1414 --panicOnWarning

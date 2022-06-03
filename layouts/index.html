@@ -1,10 +1,8 @@
 {{- define "main_class" }}index{{- end }}
 {{- define "main" }}
-{{/* TODO IsHome */}}
-{{- print "Get IsHome value from scratch before paginate: " (.Scratch.Get "IsHome") }}
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 {{- range $paginator.Pages }}
-{{ partial "post_content.html" . }}
+{{ partial "post_content.html"  (dict "ctx" . "IsHome" true) }}
 {{- end }}
 {{- partial "partials/pagination.html" . }}  
 {{- end }}

@@ -19,11 +19,31 @@
 }
 
 @if $creative_commons_post {
-  .post-copyright ul {
-    list-style: none;
-    padding: .5em 1em;
-    @include post-card();
+
+  .post-copyright {
+    border-left: 3px solid #ff2a2a;
+    background: var(--card-bg-color);
+
+    img {
+      margin: 8px;
+      opacity: .8;
+      filter: blur(.08em);
+      -webkit-transform: rotate(320deg);
+      -moz-transform: rotate(320deg);
+      -ms-transform: rotate(320deg);
+      -o-transform: rotate(320deg);
+      transform: rotate(320deg);
+    }
+
+    ul {
+      list-style: none;
+      padding: .5em 1em;
+      @include post-card();
+      border: none;
+      background: none;
+    }
   }
+
 }
 
 .post-tags {

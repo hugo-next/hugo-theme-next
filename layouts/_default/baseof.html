@@ -6,8 +6,6 @@
 {{- .Scratch.Set "pluginCDN" $pluginCDN -}}
 {{ $posts := len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 {{- .Scratch.Set "posts" $posts -}}
-{{/* TODO IsHome */}}
-{{- .Scratch.Set "IsHome" .IsHome }}
 <!DOCTYPE html>
 <html lang="{{ $lang }}">
 
