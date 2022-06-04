@@ -70,7 +70,7 @@ $toc_wrap: {{ $P.toc.wrap }};
 
 // Posts
 $creative_commons_post: {{ $P.creativeCommons.post }};
-$follow_me: {{ isset $P "followMe" }};
+$follow_me: {{ isset $P "followme" }};
 $motion_trans_coll_header: {{ $P.motion.transition.collHeader }};
 $motion_trans_post_block: {{ $P.motion.transition.postBlock }};
 $motion_trans_post_body: {{ $P.motion.transition.postBody }};

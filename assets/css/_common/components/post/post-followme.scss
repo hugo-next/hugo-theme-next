@@ -4,6 +4,8 @@
     padding: 1em 1.5em;
     text-align: center;
     @include post-card();
+    border-left: none;
+    border-bottom: #46b404 solid 5px;
 
     .social-list {
       @include flex-wrap();

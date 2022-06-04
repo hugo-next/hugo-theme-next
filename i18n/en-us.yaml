@@ -68,6 +68,9 @@ PostCRLicenseTitle:
 PostCRLicenseContent:
   other: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
 
+PostFollowMe:
+  other: Welcome to my other publishing channels
+
 VisitorsLabel:
   other: Total Visitors
 PageViewsLabel:

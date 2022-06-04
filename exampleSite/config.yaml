@@ -352,10 +352,10 @@ params:
   # Subscribe through Telegram Channel, Twitter, etc.
   # Usage: `Key: permalink || icon` (Font Awesome)
   followMe:
-    Twitter: https://twitter.com/username || fab fa-twitter
-    #Telegram: https://t.me/channel_name || fab fa-telegram
-    #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-    #RSS: /atom.xml || fa fa-rss
+    #channel0: Twitter || https://twitter.com/username || fab fa-twitter
+    #channel1: Telegram || https://t.me/channel_name || fab fa-telegram
+    channel2: WeChat || /images/wechat_channel.jpg || fab fa-weixin
+    channel3: RSS || /atom.xml || fa fa-rss
 
   # Related popular posts
   # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
