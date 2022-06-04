@@ -54,6 +54,8 @@ PostTags:
   other: 标签
 PostReadMore:
   other: 阅读全文
+PostEditTitle:
+  other: 编辑
 
 PostCRAuthor:
   other: 本文作者

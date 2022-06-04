@@ -5,7 +5,7 @@
   <span class="post-meta-item-icon">
     <i class="far fa-calendar"></i>
   </span>
-  <span class="post-meta-item-text">{{ print (T "PostPublishDate") (T "SymbolColon") }}</span>
+  <span class="post-meta-item-text">{{- print (T "PostPublishDate") (T "SymbolColon") -}}</span>
   <time title="{{ print (T "PostPublishDate") (T "SymbolColon") }}{{ .PublishDate }}" itemprop="dateCreated datePublished" datetime="{{ .PublishDate }}">
     {{- .PublishDate.Format .Site.Params.dateFormat -}}
   </time>

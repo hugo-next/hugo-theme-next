@@ -52,6 +52,8 @@ PostTag:
   other: "Tags"
 PostReadMore:
   other: "Read More"
+PostEditTitle:
+  other: Edit this post
 
 PostCRAuthor:
   other: Post Author

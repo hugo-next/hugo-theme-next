@@ -29,7 +29,11 @@
       <a href="{{ .Permalink }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
       {{- end }}
     {{- else }}
-      {{ .Title }}
+      {{- .Title }}
+      {{- if .Site.Params.postEdit.enable }}  
+      {{- $editURL := printf "%s%s" .Site.Params.postEdit.url (path.Clean .File.Path) }}
+      <a href="{{ $editURL }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-edit-link" title="{{ T "PostEditTitle" }}"><i class="fa fa-pen-nib"></i></a>
+      {{- end }}
     {{- end }}
   </h2>
   <div class="post-meta-container">

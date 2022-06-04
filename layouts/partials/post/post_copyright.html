@@ -21,7 +21,7 @@
       {{- end }}
     </li>
     <li class="post-copyright-license">
-      <strong>{{ print (T "PostCRLink") (T "SymbolColon") }} </strong>
+      <strong>{{ print (T "PostCRLicenseTitle") (T "SymbolColon") }} </strong>
       {{- $ccText := .Site.Params.creativeCommons.license | upper }}
       {{- $lang := .Scratch.Get "lang" }}
       {{- $ccLink := printf "<a target='_blank' href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.%s'>%s</a>" (substr $lang 0 2) $ccText }}

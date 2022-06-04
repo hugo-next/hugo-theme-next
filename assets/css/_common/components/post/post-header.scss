@@ -94,9 +94,10 @@
   margin: 0 .5em;
 }
 
+/* Make post meta dislay in oneline
 .post-meta-item-icon {
   margin-right: 3px;
-}
+} */
 
 .post-meta-item-text {
   @if not $post_meta_item_text {

@@ -16,11 +16,11 @@ markup:
 defaultContentLanguage: zh-cn
 languages:
   zh-cn:
-    title: NexT
+    title: Hugo NexT
     languageName: 中文
     weight: 1
   en-us:
-    title: NexT
+    title: Hugo NexT
     languageName: English
     weight: 2
     params:
@@ -178,7 +178,7 @@ params:
 
   sidebar:
     # Sidebar Position.
-    position: right
+    position: left
     #position: right
 
     # Manual define the sidebar width. If commented, will be default for:
@@ -367,7 +367,7 @@ params:
   # Post edit
   # Easily browse and edit blog source code online.
   postEdit:
-    enable: false
+    enable: true
     url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
     #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
