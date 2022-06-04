@@ -57,6 +57,8 @@ PostReadMore:
 PostEditTitle:
   other: 编辑
 
+PostCRTitle:
+  other: 文章标题
 PostCRAuthor:
   other: 本文作者
 PostCRLink:

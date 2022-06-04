@@ -55,6 +55,8 @@ PostReadMore:
 PostEditTitle:
   other: Edit this post
 
+PostCRTitle:
+  other: Post Title
 PostCRAuthor:
   other: Post Author
 PostCRLink:

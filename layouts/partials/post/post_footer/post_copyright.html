@@ -2,6 +2,10 @@
 <div class="post-copyright">
   <img src="/imgs/cc/cc.svg" width="75" height="75" align="right" />
   <ul>
+    <li class="post-copyright-title">
+      <strong>{{ print (T "PostCRTitle") (T "SymbolColon") }}</strong>
+      {{ .Title }}
+    </li>
     <li class="post-copyright-author">
       {{- if isset .Params "author" }}
       <strong>{{ print (T "PostCROriginAuthor") (T "SymbolColon") }} </strong>
