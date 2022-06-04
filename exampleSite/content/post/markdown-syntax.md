@@ -187,7 +187,7 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 
 按<kbd>X</kbd>获胜。或按<kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>F</kbd></kbd>显示 FPS 计数器。
 
-<mark>比特作为信息论中的信息单位，也被称为 shannon <mark>，以信息论领域的创始人 Claude shannon 的名字命名。
+<mark>比特作为信息论中的信息单位，也被称为 shannon </mark>，以信息论领域的创始人 Claude shannon 的名字命名。
 
 参考：
 - 来自 **Mainroad** 主题的 [Basic Elements](https://mainroad-demo.netlify.app/post/basic-elements/) 内容
