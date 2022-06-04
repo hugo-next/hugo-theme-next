@@ -71,6 +71,17 @@ PostCRLicenseContent:
 PostFollowMe:
   other: Welcome to my other publishing channels
 
+RewardDonate:
+  other: Donate
+RewardWechatpay:
+  other: Wechat Pay
+RewardAlipay:
+  other: Alipay
+RewardPaypal:
+  other: PayPal
+RewardBitcoin:
+  other: Bitcoin
+
 VisitorsLabel:
   other: Total Visitors
 PageViewsLabel:

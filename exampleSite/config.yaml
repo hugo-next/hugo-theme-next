@@ -339,13 +339,13 @@ params:
   # Front-matter variable (nonsupport animation).
   rewardSets:
     # If true, a donate button will be displayed in every article by default.
-    enable: false
-    animation: false
-    #comment: Buy me a coffee
+    enable: true
+    animation: true
+    comment: '<i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))'
 
   reward:
-    #wechatpay: /images/wechatpay.png
-    #alipay: /images/alipay.png
+    wechatpay: /imgs/wechat-pay.png
+    alipay: /imgs/ali-pay.png
     #paypal: /images/paypal.png
     #bitcoin: /images/bitcoin.png
 

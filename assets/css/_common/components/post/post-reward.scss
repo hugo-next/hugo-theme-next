@@ -3,6 +3,11 @@
   padding: 1em 0;
   text-align: center;
 
+  div>i {
+    font-size: 1.85em;
+    margin-right: 4px;
+  }
+
   button {
     @include button($sidebar-highlight);
     border: 2px solid $sidebar-highlight;
@@ -21,7 +26,7 @@
     display: block;
   }
 
-  div {
+  .post-reward-item {
     display: inline-block;
 
     span {
@@ -29,19 +34,23 @@
     }
 
     @if $reward_settings_animation {
+       
       &:hover span {
         animation: next-roll .1s infinite linear;
         // The animation may affect :hover of img in dark mode
         pointer-events: none;
       }
-    }
+      
+    }  
   }
 
   img {
     display: inline-block;
-    margin: .8em 2em 0;
+    margin: .8em 1.2em;
     max-width: 100%;
     width: 180px;
+    border: #eee 1px solid;
+    box-shadow:rgba(0,0,0,0.2) 0 1px 5px 0px;
   }
 }
 

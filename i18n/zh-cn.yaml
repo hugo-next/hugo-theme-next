@@ -73,6 +73,17 @@ PostCRLicenseContent:
 PostFollowMe:
   other: 欢迎关注我的其它发布渠道
 
+RewardDonate:
+  other: 赞赏
+RewardWechatpay:
+  other: 微信
+RewardAlipay:
+  other: 支付宝
+RewardPaypal:
+  other: PayPal
+RewardBitcoin:
+  other: 比特币
+
 UserVistorsLabel:
   other: 总访客量
 PageViewsLabel:
