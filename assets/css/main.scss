@@ -78,6 +78,8 @@ $motion_trans_post_header: {{ $P.motion.transition.postHeader }};
 $post_edit_enable: {{ $P.postEdit.enable }};
 $post_meta_item_text: {{ $P.postMeta.itemText }};
 $reward_settings_animation: {{ $P.rewardSets.animation }};
+$post_end_line_tip: "{{ $P.postFooter.endLineTip }}";
+$post_end_tag_icon: {{ $P.postFooter.tagIcon }};
 
 // TODO find the paramters
 $text_align_desktop: justify;

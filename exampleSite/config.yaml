@@ -8,6 +8,7 @@ baseURL: /
 
 theme: hugo-theme-next
 
+# Make markdown content support HTML syntax
 markup:
   goldmark:
     renderer:
@@ -331,6 +332,9 @@ params:
   # symbols_count_time:
   #   separated_meta: true
   #   item_text_total: false
+  postFooter:
+    endLineTip: "~ 我可是有底线的哟 ~"
+    tagIcon: true
 
   # Use icon instead of the symbol # to indicate the tag at the bottom of the post
   tag_icon: false

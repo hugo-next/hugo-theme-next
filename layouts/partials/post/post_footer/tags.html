@@ -1,0 +1,9 @@
+{{- with .Params.tags }}
+{{- if gt (len .) 0 }}
+<div class="post-tags">
+  {{ range . }}
+    <a href="{{ . }}">{{ . }}</a>
+  {{- end }}
+</div>
+{{- end }}
+{{- end }}

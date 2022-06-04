@@ -5,6 +5,25 @@
 // See https://caniuse.com/flexbox-gap
 .post-footer {
   @include flex-column();
+
+  hr{
+  text-align:center;
+  line-height:0px;
+  height: 0px;
+  background-image: none;
+  border-bottom: .125em dashed #999;
+  margin: 24px 0;
+
+  &:after{
+    content: $post_end_line_tip;
+    font-size: .9em;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 5px;
+    z-index:2;
+  }
+}
+
 }
 
 .post-eof {
@@ -47,12 +66,22 @@
 }
 
 .post-tags {
-  margin-top: 40px;
+  margin-bottom: 20px;
   text-align: center;
 
   a {
     display: inline-block;
     font-size: $font-size-smaller;
+
+    &:before {
+      @if $post_end_tag_icon {
+        content: "🔖";
+        font-size: 1.25em;
+      } 
+      @else {
+        content: "#";
+      }
+    }
 
     &:not(:last-child) {
       margin-right: 10px;
