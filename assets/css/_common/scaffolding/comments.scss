@@ -39,9 +39,10 @@
 }
 
 .post-comments {
-  @if $scheme != 'Gemini' {
+  @if $scheme !='Gemini' {
     margin-top: 60px;
   }
+
   overflow: hidden;
 
   .comment-head {
@@ -54,54 +55,101 @@
       font-size: 1.4em;
     }
 
-    .comment-switch {
-      display: inline-block;
-      float: right;
-      margin: 2px auto;
-      padding: 4px 16px;
-      width: max-content;
-      border-radius: 8px;
-      background: #eee;
-
-      .switch-btn {
-        position: relative;
+    @if $two_comments_enable {
+      .comment-switch {
         display: inline-block;
-        margin: -4px 8px 0;
-        width: 42px;
-        height: 22px;
-        border-radius: 34px;
-        vertical-align: middle;
-        cursor: pointer;
-        -webkit-transition: .4s;
-        -moz-transition: .4s;
-        -o-transition: .4s;
-        -ms-transition: .4s;
-        transition: .4s;
+        float: right;
+        margin: 2px auto;
+        padding: 4px 16px;
+        width: max-content;
+        border-radius: 8px;
+        background: #eee;
 
-        &:before {
-          position: absolute;
-          bottom: 4px;
-          left: 4px;
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-          content: '';
-          background-color: #fff;
+        .first-comment {
+          color: $first_comment_color;
+
+          @if $two_comments_actived==$first_comment_name {
+            font-weight: bold;
+          }
+        }
+
+        .second-comment {
+          color: $second_comment_color;
+
+          @if $two_comments_actived==$second_comment_name {
+            font-weight: bold;
+          }
+        }
+
+        $switch_btn_bg_color: $first_comment_color;
+
+        .switch-btn {
+          position: relative;
+          display: inline-block;
+          margin: -4px 8px 0;
+          width: 42px;
+          height: 22px;
+          border-radius: 34px;
+          vertical-align: middle;
+          cursor: pointer;
           -webkit-transition: .4s;
           -moz-transition: .4s;
           -o-transition: .4s;
           -ms-transition: .4s;
-          transition: .4s
-        }
+          transition: .4s;
 
-        &.move:before {
-          -webkit-transform: translateX(20px);
-          -moz-transform: translateX(20px);
-          -o-transform: translateX(20px);
-          -ms-transform: translateX(20px);
-          transform: translateX(20px);
+          @if $two_comments_actived==$second_comment_name {
+            $switch_btn_bg_color: $second_comment_color;
+          }
+
+          background-color: $switch_btn_bg_color;
+
+          &:before {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            content: '';
+            background-color: #fff;
+            -webkit-transition: .4s;
+            -moz-transition: .4s;
+            -o-transition: .4s;
+            -ms-transition: .4s;
+            transition: .4s
+          }
+
+          &.move:before {
+            -webkit-transform: translateX(20px);
+            -moz-transform: translateX(20px);
+            -o-transform: translateX(20px);
+            -ms-transform: translateX(20px);
+            transform: translateX(20px);
+          }
         }
       }
+    }
+  }
+
+  @if $two_comments_enable {
+    $first_comment_display: none;
+    $second_comment_display: none;
+
+    @if $two_comments_actived==$first_comment_name {
+      $first_comment_display: block;
+    }
+
+    @if $two_comments_actived==$second_comment_name {
+      $second_comment_display: block;
+    }
+
+    .comment-wrap>div:nth-child(1) {
+      display: $first_comment_display;
+    }
+
+    .comment-wrap>div:nth-child(2) {
+      display: $second_comment_display;
     }
   }
 }

@@ -13,6 +13,10 @@
       .social-item {
         margin: .5em 2em;
 
+        a:hover {
+          font-weight: bold;
+        }
+
         @include tablet-mobile() {
           margin: .5em .75em;
         }

@@ -1,6 +1,7 @@
+{{ $posts := len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+{{- .Scratch.Set "posts" $posts -}}
 {{- $ms := .Site.Params.menuSets }}
 {{- $curP := .Page }}
-{{- $posts := .Scratch.Get "posts" }}
 <nav class="site-nav">
   <ul class="main-menu menu">
   {{- range $curP.Site.Menus.main }}

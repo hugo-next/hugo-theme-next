@@ -121,6 +121,18 @@ $disqusjs_enable: {{ $P.disqusjs.enable }};
 $livere_enable: {{ $P.livere.enable }};
 $utterances_enable: {{ $P.utterances.enable }};
 $waline_enable: {{ $P.waline.enable }};
+{{- with .Site.Params.comments }}
+{{ $tce := and (isset . "nav") (and .storage (gt (len .nav) 1)) }}
+$two_comments_enable: {{ $tce }};
+{{- if $tce }}
+{{- $sortNav := sort .nav "weight" }}
+$two_comments_actived: {{ .active }};
+$first_comment_color: {{ (index $sortNav 0).color }};
+$first_comment_name: {{ lower (index $sortNav 0).name }};
+$second_comment_color: {{ (index $sortNav 1).color }};
+$second_comment_name: {{ lower (index $sortNav 1).name }};
+{{- end }}
+{{- end }}
 
 // 
 // Variables Layer
