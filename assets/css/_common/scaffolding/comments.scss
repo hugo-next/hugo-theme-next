@@ -37,3 +37,71 @@
     padding-top: 0;
   }
 }
+
+.post-comments {
+  @if $scheme != 'Gemini' {
+    margin-top: 60px;
+  }
+  overflow: hidden;
+
+  .comment-head {
+    margin-bottom: 20px;
+
+    .comment-headline {
+      display: inline-block;
+      vertical-align: middle;
+      font-weight: 700;
+      font-size: 1.4em;
+    }
+
+    .comment-switch {
+      display: inline-block;
+      float: right;
+      margin: 2px auto;
+      padding: 4px 16px;
+      width: max-content;
+      border-radius: 8px;
+      background: #eee;
+
+      .switch-btn {
+        position: relative;
+        display: inline-block;
+        margin: -4px 8px 0;
+        width: 42px;
+        height: 22px;
+        border-radius: 34px;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-transition: .4s;
+        -moz-transition: .4s;
+        -o-transition: .4s;
+        -ms-transition: .4s;
+        transition: .4s;
+
+        &:before {
+          position: absolute;
+          bottom: 4px;
+          left: 4px;
+          width: 14px;
+          height: 14px;
+          border-radius: 50%;
+          content: '';
+          background-color: #fff;
+          -webkit-transition: .4s;
+          -moz-transition: .4s;
+          -o-transition: .4s;
+          -ms-transition: .4s;
+          transition: .4s
+        }
+
+        &.move:before {
+          -webkit-transform: translateX(20px);
+          -moz-transform: translateX(20px);
+          -o-transform: translateX(20px);
+          -ms-transform: translateX(20px);
+          transform: translateX(20px);
+        }
+      }
+    }
+  }
+}

@@ -42,6 +42,9 @@
     <div class="main-inner {{ block "main_class" . }}{{ end }} posts-expand">
       <!-- Submenu,Content,Comment -->
       {{- block "main" . }}{{- end }}
+      {{- if .IsPage }}
+        {{- partial "comments.html" . }}
+      {{- end }}
     </div>
   </main>
   <footer class="footer">

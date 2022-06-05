@@ -118,7 +118,9 @@ $gitter_enable: {{ $P.gitter.enable }};
 
 // Comment
 $disqusjs_enable: {{ $P.disqusjs.enable }};
+$livere_enable: {{ $P.livere.enable }};
 $utterances_enable: {{ $P.utterances.enable }};
+$waline_enable: {{ $P.waline.enable }};
 
 // 
 // Variables Layer

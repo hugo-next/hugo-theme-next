@@ -644,22 +644,35 @@ params:
 
   # Multiple Comment System Support
   comments:
+    enable: true
     # Available values: tabs | buttons
-    style: tabs
+    #style: tabs
     # Choose a comment system to be displayed by default.
     # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-    active:
+    active: waline
     # Setting `true` means remembering the comment system selected by the visitor.
     storage: true
     # Lazyload all comment systems.
-    lazyload: false
+    #lazyload: false
     # Modify texts or order for any naves, here are some examples.
     nav:
-      #disqus:
-      #  text: Load Disqus
-      #  order: -1
-      #gitalk:
-      #  order: -2
+      - name: Waline
+        title: Waline
+        color: "#27ae60"
+        weight: 1
+      - name: Utterances
+        title: Utters
+        color: "#494949"
+        weight: 2
+
+  waline:
+    enable: true
+    placeholder: "请文明发言"
+    emoji: false
+    imgUploader: false
+    wordLimit: 200
+    requiredMeta: ['nick', 'mail']
+    serverURL: "https://waline.js.org"
 
   # Disqus
   # For more information: https://disqus.com
@@ -689,7 +702,9 @@ params:
 
   # LiveRe comments system
   # You can get your uid from https://livere.com/insight/myCode (General web site)
-  livere_uid: # <your_uid>
+  livere:
+    enable: true
+    uid: MTAyMC81MTM4MC8yNzg2MQ== # <your_uid>
 
   # Gitalk
   # For more information: https://gitalk.github.io
@@ -711,10 +726,11 @@ params:
   # Utterances
   # For more information: https://utteranc.es
   utterances:
-    enable: false
-    repo: user-name/repo-name # Github repository owner and name
+    enable: true
+    repo: username/repo-name # Github repository owner and name
     # Available values: pathname | url | title | og:title
-    issue_term: pathname
+    issueTerm: pathname
+    label: Comments
     # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
     theme: github-light
 

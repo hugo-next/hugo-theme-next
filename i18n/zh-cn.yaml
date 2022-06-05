@@ -86,6 +86,9 @@ RewardPaypal:
 RewardBitcoin:
   other: 比特币
 
+PostCommentTitle:
+  other: 评论交流
+
 UserVistorsLabel:
   other: 总访客量
 PageViewsLabel:
