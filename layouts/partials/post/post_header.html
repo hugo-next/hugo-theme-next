@@ -37,13 +37,17 @@
     {{- end }}
   </h2>
   <div class="post-meta-container">
-    {{ partial "post/post_meta/created_date.html" . }}
-    {{ partial "post/post_meta/update_date.html" . }}
-    {{ partial "post/post_meta/categories.html" . }}
+    <div class="post-meta-items">
+      {{ partial "post/post_meta/created_date.html" . }}
+      {{ partial "post/post_meta/update_date.html" . }}
+      {{ partial "post/post_meta/categories.html" . }}
+    </div>
     {{- if not $.IsHome }}
-    {{ partial "post/post_meta/words.html" . }}
-    {{ partial "post/post_meta/readtime.html" . }}      
-    {{ partial "post/post_meta/views.html" . }}      
+    <div class="post-meta-items">
+      {{ partial "post/post_meta/words.html" . }}
+      {{ partial "post/post_meta/readtime.html" . }}      
+      {{ partial "post/post_meta/views.html" . }}      
+    </div>
     {{ end }}
   </div>
 </header>
