@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
   {{- partial "head.html" . }}
-  <title>{{ .Title | default .Site.Title }}</title>
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -37,7 +37,7 @@
     </header>
     <!-- Widgets -->
     {{ partial "widgets.html" . }}
-    <div class="main-inner {{ block "main_class" . }}{{ end }} posts-expand">
+    <div class="main-inner {{ block "main_inner_class" . }}{{ end }}">
       <!-- Submenu,Content,Comment -->
       {{- block "main" . }}{{- end }}
       {{- if .IsPage }}

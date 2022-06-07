@@ -1,6 +1,18 @@
 #--------------------------------------
 # English Version
 #--------------------------------------
+posts:
+  other: Posts
+tag:
+  other: Tag
+tags:
+  other: Tags
+category:
+  other: Category
+categories:
+  other: Categories
+AllSome:
+  other: "All {{ .Some }}"
 
 NavToggleLabel:
   other: Toggle navigation bar
@@ -10,6 +22,10 @@ MSearchLabel:
 
 SymbolColon:
   other: ":"
+SymbolComma:
+  other: ","
+SymbolPeriod:
+  other: "."
 
 SitePostsTitle:
   other: "Posts"
@@ -28,6 +44,36 @@ CCLinkTitle:
 BackTopLabel:
   other: "Top"
 
+TagsCounterTitle:
+  zero: No tags
+  one: 1 tag in total
+  other: "{{ .Count }} tags in total"
+CatesCounterTitle:
+  zero: No categories
+  one: 1 category in total
+  other: "{{ .Count }} categories in total"
+ArchiveCounterTitle:
+  zero: No posts.
+  one: 1 post.
+  other: "{{ .Count }} posts in total."
+
+PostArchiveCheersUm:
+  other: Um..
+PostArchiveCheersOk:
+  other: Ok
+PostArchiveCheersNice:
+  other: Nice
+PostArchiveCheersGood:
+  other: Good
+PostArchiveCheersGreat:
+  other: Great
+PostArchiveCheersExcellent:
+  other: Excellent
+PostArchiveKeepOn:
+  other: Keep on posting.╰(*°▽°*)╯
+
+PostStickyTitle:
+  other: Strickys
 PostPublishDate:
   other: "Publish"
 PostPublishTime:

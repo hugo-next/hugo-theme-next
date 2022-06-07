@@ -13,7 +13,7 @@
   <meta itemprop="description" content="{{ .Description | default .Summary }}">
 </span>
 <header class="post-header">
-  <h2 class="post-title" itemprop="name headline">
+  {{- if $.IsHome }} <h2 {{ else }} <h1 {{ end -}} class="post-title" itemprop="name headline">
     {{- if and .Weight (gt .Weight 0) }}
     <span class="post-sticky-flag" title="{{ T "PostStickyTitle" }}">
       <i class="fa fa-thumbtack"></i>
@@ -35,18 +35,18 @@
       <a href="{{ $editURL }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-edit-link" title="{{ T "PostEditTitle" }}"><i class="fa fa-pen-nib"></i></a>
       {{- end }}
     {{- end }}
-  </h2>
+  {{- if $.IsHome }} </h2> {{ else }} </h1> {{ end -}}
   <div class="post-meta-container">
     <div class="post-meta-items">
-      {{ partial "post/post_meta/created_date.html" . }}
-      {{ partial "post/post_meta/update_date.html" . }}
-      {{ partial "post/post_meta/categories.html" . }}
+      {{ partial "post/header_meta/created_date.html" . }}
+      {{ partial "post/header_meta/update_date.html" . }}
+      {{ partial "post/header_meta/categories.html" . }}
     </div>
     {{- if not $.IsHome }}
     <div class="post-meta-items">
-      {{ partial "post/post_meta/words.html" . }}
-      {{ partial "post/post_meta/readtime.html" . }}      
-      {{ partial "post/post_meta/views.html" . }}      
+      {{ partial "post/header_meta/words.html" . }}
+      {{ partial "post/header_meta/readtime.html" . }}      
+      {{ partial "post/header_meta/views.html" . }}      
     </div>
     {{ end }}
   </div>

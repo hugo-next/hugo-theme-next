@@ -9,12 +9,12 @@
 {{- end }}
 <div class="post-eof"></div>
 {{- else }}
-{{ partial "post/post_footer/tags.html" . }}
+{{ partial "post/footer_meta/tags.html" . }}
 {{ partial "_thirdparty/share/addthis.html" . }}
 <hr/>
-{{ partial "post/post_footer/reward.html" . }}
-{{ partial "post/post_footer/copyright.html" . }}
-{{ partial "post/post_footer/followme.html" . }}
+{{ partial "post/footer_meta/reward.html" . }}
+{{ partial "post/footer_meta/copyright.html" . }}
+{{ partial "post/footer_meta/followme.html" . }}
 <div class="post-nav">
   <div class="post-nav-next post-nav-item">
     {{- with .NextInSection }}

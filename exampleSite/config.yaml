@@ -44,12 +44,12 @@ menus:
       weight: 1
     - identifier: about
       name: 关于
-      url: /ablout.html
+      url: /about.html
       pre: user
       weight: 2
     - identifier: archives
       name: 归档
-      url: /archives
+      url: /posts
       pre: archive
       weight: 3
     - identifier: commonweal
@@ -59,7 +59,9 @@ menus:
       weight: 4
 
 params:
-  mainSections: ["post"]
+  mainSections: ["posts"]
+  yearFormat: "2006"
+  monthFormat: "01-02"
   dateFormat: "2006-01-02"
   timeFormat: "2006-01-02T15:04:05-07:00"
   # ---------------------------------------------------------------
@@ -753,7 +755,7 @@ params:
 
   # AddThis Share. See: https://www.addthis.com
   # Go to https://www.addthis.com/dashboard to customize your tools.
-  addThisId:
+  addThisId: 
 
 
   # ---------------------------------------------------------------

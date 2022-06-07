@@ -2,6 +2,19 @@
 # 中文版本
 #--------------------------------------
 
+posts:
+  other: 文章
+tag:
+  other: 标签
+tags:
+  other: 标签
+category:
+  other: 分类
+categories:
+  other: 分类
+AllSome:
+  other: "所有 {{ .Some }}"
+
 NavToggleLabel:
   other: 切换导航栏
 
@@ -10,7 +23,11 @@ MSearchLabel:
 
 SymbolColon:
   other: "："
-
+SymbolComma:
+  other: "，"
+SymbolPeriod:
+  other: "。"
+ 
 SbPostsLable:
   other: 日志
 SbCatesTitle:
@@ -27,6 +44,34 @@ CCLinkTitle:
   other: 共享知识
 BackTopLabel:
   other: 返回顶部
+
+TagsCounterTitle:
+  zero: 暂无标签
+  one: 目前共计 1 个标签
+  other: "目前共计 %d 个标签"
+CatesCounterTitle:
+  zero: 暂无分类
+  one: 目前共计 1 个分类
+  other: "目前共计 %d 个分类"
+ArchiveCounterTitle:
+  zero: 暂无日志。
+  one: 目前共计 1 篇日志
+  other: "目前共计 {{ .Count }} 篇日志"
+
+PostArchiveCheersUm:
+  other: 嗯..
+PostArchiveCheersOk:
+  other: 还行
+PostArchiveCheersNice:
+  other: 不错
+PostArchiveCheersGood:
+  other: 很好
+PostArchiveCheersGreat:
+  other: 非常好
+PostArchiveCheersExcellent:
+  other: 太棒了
+PostArchiveKeepOn:
+  other: 继续努力哟。╰(*°▽°*)╯
 
 PostStickyTitle:
   other: 置顶
