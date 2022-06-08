@@ -1,0 +1,6 @@
+{{- define "title" -}}
+  {{- .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title -}}
+{{- end -}}
+{{ define "main" }}
+  {{ .Data.Singular }}
+{{- end }}

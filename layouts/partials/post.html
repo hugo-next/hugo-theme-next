@@ -1,0 +1,10 @@
+<div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Site.LauageCode }}">
+    {{ partial "post/header.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+    {{ partial "post/body.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+    <footer class="post-footer">
+      {{ partial "post/footer.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+    </footer>
+  </article>
+</div>
+

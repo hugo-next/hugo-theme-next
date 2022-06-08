@@ -8,6 +8,10 @@ baseURL: /
 
 theme: hugo-theme-next
 
+paginate: 8
+
+enableEmoji: true
+
 # Make markdown content support HTML syntax
 markup:
   goldmark:
@@ -19,10 +23,14 @@ languages:
   zh-cn:
     title: Hugo NexT
     languageName: 中文
+    languageCode: zh-CN
+    hasCJKLanguage: true
     weight: 1
-  en-us:
+  en:
     title: Hugo NexT
     languageName: English
+    languageCode: en
+    hasCJKLanguage: false
     weight: 2
     params:
       author: Theme NexT

@@ -2,7 +2,7 @@
 {{- define "main" }}
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 {{- range $paginator.Pages }}
-{{ partial "post/index.html"  (dict "ctx" . "IsHome" true) }}
+{{ partial "post.html"  (dict "ctx" . "IsHome" true) }}
 {{- end }}
 {{- partial "partials/pagination.html" . }}  
 {{- end }}

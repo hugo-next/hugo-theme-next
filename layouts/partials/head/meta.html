@@ -1,7 +1,7 @@
 <meta itemprop="name" content="{{ .Title }}" />
 <meta itemprop="description" content="{{ .Description | default .Site.Params.description }}" />
 {{- if .IsPage }}
-{{- with .PublishDate }}
+{{- with .Date }}
 <meta itemprop="datePublished" {{ . }} />
 {{- end }}
 {{- with .Lastmod }}

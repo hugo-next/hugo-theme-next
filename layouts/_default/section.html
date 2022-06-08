@@ -27,9 +27,8 @@
         {{- T "PostArchiveKeepOn" }}
       </span>
     </div>
-    {{ range (.Paginate (.Data.Pages.GroupByDate "2006") 5 ).PageGroups }}
-      {{- partial "post/list.html" . }}
-    {{ end }}
+
+    {{ .Render "list" }} 
     
   </div>
 </div>

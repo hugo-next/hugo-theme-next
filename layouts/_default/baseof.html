@@ -1,11 +1,9 @@
-{{- $lang := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language -}}
-{{- .Scratch.Set "lang" $lang -}}
 {{- $vendors := .Site.Data.resources.vendors -}}
 {{- $pluginVen := .Site.Params.vendors.plugins -}}
 {{- $pluginCDN := index $vendors $pluginVen -}}
 {{- .Scratch.Set "pluginCDN" $pluginCDN -}}
 <!DOCTYPE html>
-<html lang="{{ $lang }}">
+<html lang="{{ .Site.LanguageCode }}">
 
 <head>
   <meta charset="UTF-8">

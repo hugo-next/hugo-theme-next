@@ -8,10 +8,10 @@
 <meta property="og:image:type" content="image/jpeg/png/svg/jpg" />
 <meta property="og:url" content="{{ .Permalink }}"/>
 <meta property="og:site_name" content="{{ .Site.Title }}" />
-<meta property="og:locale" content="{{ .Scratch.Get "lang" }}"/>
+<meta property="og:locale" content="{{ .Site.LanguageCode }}"/>
 {{- if .IsPage }}
 <meta property="article:author" content="{{ .Params.Author | default .Site.Params.Author }}" />
-<meta property="article:published_time" content="{{ .PublishDate }}" />
+<meta property="article:published_time" content="{{ .Date }}" />
 <meta property="article:modified_time" content="{{ .Lastmod }}" />
 {{- end }}  
 {{- end }}

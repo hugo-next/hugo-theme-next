@@ -207,7 +207,7 @@ NexT.utils = {
     }, false);
   },
 
-  registerActiveMenuItem: function() {
+  /*registerActiveMenuItem: function() {
     document.querySelectorAll('.menu-item a[href]').forEach(target => {
       const isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
       const isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
@@ -228,7 +228,7 @@ NexT.utils = {
         window.location.href = target.dataset.href;
       });
     });
-  },
+  },*/
 
   registerSidebarTOC: function() {
     this.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(element => {
