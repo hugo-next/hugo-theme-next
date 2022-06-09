@@ -17,6 +17,15 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    codeFences: true
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: true
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 1
 
 defaultContentLanguage: zh-cn
 languages:
@@ -305,11 +314,11 @@ params:
     # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
       enable: true
-      icp: 粤ICP备18047355-1号
+      icp: 粤ICP备 18047355-1 号
       # The digit in the num of gongan beian.
       provinceAbbr: 沪
       # The full num of gongan beian.
-      gonganNum: 11010102001808
+      gonganNum: 31011402009770
       # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
       #gongan_icon_url:
 

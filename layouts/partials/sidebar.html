@@ -4,7 +4,7 @@
   <span class="toggle-line"></span>
 </div>
 <aside class="sidebar">
-  {{- $toc := and (isset .Page.Params "toc") .Page.Params.toc }}
+  {{- $toc := and (isset .Params "toc") .Params.toc }}
   <div class="sidebar-inner {{ if $toc }}sidebar-nav-active sidebar-toc-active{{ else }}sidebar-overview-active{{ end }}">
     <ul class="sidebar-nav">
       <li class="sidebar-nav-toc">
@@ -18,7 +18,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
         {{- if $toc }}
-        <div class="post-toc animated">{{ .Page.TableOfContents }}</div>
+        <div class="post-toc animated">{{ .TableOfContents }}</div>
         {{- end }}
       </div>
       <!--/noindex-->
