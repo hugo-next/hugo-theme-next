@@ -116,6 +116,6 @@
 
 @if $busuanzi_enable and $busuanzi_post_views {
   #busuanzi_container_page_pv {
-    display: none;
+    display: inline-block;
   }
 }

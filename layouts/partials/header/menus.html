@@ -1,5 +1,3 @@
-{{ $posts := len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
-{{- .Scratch.Set "posts" $posts -}}
 {{- $ms := .Site.Params.menuSets }}
 {{- $curP := .Page }}
 <nav class="site-nav">
@@ -11,7 +9,7 @@
       <a href="{{ .URL }}" class="hvr-icon-pulse {{if $active }} menu-item-active{{ end }}" rel="section">
         {{- if $ms.icons }}<i class="fa fa-{{ .Pre }} hvr-icon"></i>{{ end }}{{- .Name }}
         {{- if and $ms.badges (eq .Identifier "archives" ) }}
-        <span class="badge">{{ $posts }}</span>
+        <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
         {{- end }}
       </a>
     </li>

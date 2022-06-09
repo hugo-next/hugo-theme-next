@@ -1,13 +1,11 @@
 {{ with .ctx }}
-<div class="post-body" itemprop="articleBody">
-  {{- if $.IsHome }}
-    {{- if .Params.Expand }}
-    {{ .Content }}
-    {{- else }}
-    {{ .Summary }}
-    {{- end }}
-  {{- else }} 
-    {{ .Content }}
-  {{- end }}  
-</div>
+{{- if $.IsHome }}
+  {{- if .Params.Expand }}
+  {{ .Content }}
+  {{- else }}
+  {{ .Summary }}
+  {{- end }}
+{{- else }}
+  {{ .Content }}
+{{- end }}
 {{ end }}

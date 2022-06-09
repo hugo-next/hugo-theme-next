@@ -13,19 +13,19 @@
   <nav class="site-state">
     <div class="site-state-item site-state-posts">
       <a href="{{ "/posts/" | relLangURL }}">
-        <span class="site-state-item-count">{{ .Scratch.Get "posts" }}</span>
+        <span class="site-state-item-count">{{ .Scratch.Get "postsCount" }}</span>
         <span class="site-state-item-name">{{ T "SbPostsLable" }}</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">
       <a href="{{ "/categories/" | relLangURL }}">
-        <span class="site-state-item-count">{{ len .Site.Taxonomies.categories }}</span>
+        <span class="site-state-item-count">{{ .Scratch.Get "catsCount" }}</span>
         <span class="site-state-item-name">{{ T "SbCatesTitle" }}</span>
       </a>
     </div>
     <div class="site-state-item site-state-tags">
       <a href="{{ "/tags/" | relLangURL }}">
-        <span class="site-state-item-count">{{ len .Site.Taxonomies.tags }}</span>
+        <span class="site-state-item-count">{{ .Scratch.Get "tagsCount" }}</span>
         <span class="site-state-item-name">{{ T "SbTagsTitle" }}</span>
       </a>
     </div>

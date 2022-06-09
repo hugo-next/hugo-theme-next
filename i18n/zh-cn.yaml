@@ -47,16 +47,13 @@ BackTopLabel:
 
 TagsCounterTitle:
   zero: 暂无标签
-  one: 目前共计 1 个标签
-  other: "目前共计 %d 个标签"
+  other: "目前共计 <strong>{{ .Count }}</strong> 个标签"
 CatesCounterTitle:
   zero: 暂无分类
-  one: 目前共计 1 个分类
-  other: "目前共计 %d 个分类"
+  other: "目前共计 <strong>{{ .Count }}</strong> 个分类"
 ArchiveCounterTitle:
-  zero: 暂无日志。
-  one: 目前共计 1 篇日志
-  other: "目前共计 {{ .Count }} 篇日志"
+  zero: 暂无日志
+  other: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
 
 PostArchiveCheersUm:
   other: 嗯..
@@ -92,7 +89,7 @@ PostReading:
 PostReadTime:
   other: "{{- .ReadingTime -}}分钟"
 PostViews:
-  other: 浏览数
+  other: 浏览
 PostCatgs:
   other: 分类
 PostTags:

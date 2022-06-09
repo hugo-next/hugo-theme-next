@@ -7,7 +7,7 @@
   <div class="post-content">
     <div class="collection-title">
       {{- $cheers := "Um" }}
-      {{- $posts := .Scratch.Get "posts" }}
+      {{- $posts := .Scratch.Get "postsCount" }}
       {{- if gt $posts 210 }}
       {{- $cheers = "Excellent" }}
       {{- else if gt $posts 130 }}
@@ -21,9 +21,9 @@
       {{- end }}
       <span class="collection-header">
         {{- T (printf "PostArchiveCheers%s" $cheers) }}
-        {{- T "SymbolComma"}}
-        {{- T "ArchiveCounterTitle" $posts }}
-        {{- T "SymbolComma"}}
+        {{- T "SymbolComma" }}
+        {{- T "ArchiveCounterTitle" $posts | safeHTML }}
+        {{- T "SymbolComma" }}
         {{- T "PostArchiveKeepOn" }}
       </span>
     </div>

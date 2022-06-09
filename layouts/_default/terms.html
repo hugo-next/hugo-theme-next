@@ -1,6 +1,44 @@
 {{- define "title" -}}
-  {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "AllSome" }} - {{ .Site.Title -}}
+{{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "AllSome" }} - {{ .Site.Title -}}
 {{- end -}}
-{{ define "main" }}
-  {{ .Data.Terms }}
-{{ end }}
+{{- define "main_inner_class" }}{{.Data.Plural}} posts-expand{{ end -}}
+{{- define "main" }}
+<div class="post-block" lang="{{ .Site.LanguageCode }}">
+  <dive class="post-body">
+    {{- if eq .Data.Plural "categories" }}
+    {{ $cats := .Site.Taxonomies.categories }}
+    <div class="category-all-page">
+      <div class="category-all-title">
+        {{- T "CatesCounterTitle" (.Scratch.Get "catsCount") | safeHTML -}}
+      </div>
+      <div class="category-all">
+        <ul class="category-list">
+          {{- range $name, $items := $cats }}
+          <li class="category-list-item">
+            <a class="category-list-link" href="{{ "/categories/" | relLangURL }}{{ $name | urlize | lower  }}" data-pjax-state="">{{ $name }}</a>
+            <span class="category-list-count">{{ len $items }}</span>
+          </li>
+          {{- end }}
+        </ul>
+      </div>
+    </div>
+    {{- end }}
+    {{- if eq .Data.Plural "tags" }}
+    {{ $tags := .Site.Taxonomies.tags }}
+    <div class="tag-cloud">
+      <div class="tag-cloud-title">
+        {{- T "TagsCounterTitle" (.Scratch.Get "tagsCount") | safeHTML -}}
+      </div>
+      <div class="tag-cloud-tags">
+        {{ $randNums := (seq 10) }}
+        {{- range $name, $items := $tags }}
+        <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize | lower  }}">{{ $name }}
+          <span class="tag-list-count"><sup>({{ len $items }})</sup></span>
+        </a>
+        {{- end }}
+      </div>
+    </div>
+    {{- end }}
+</div>
+</div>
+{{- end }}
