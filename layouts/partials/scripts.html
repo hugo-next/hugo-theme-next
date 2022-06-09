@@ -1,0 +1,97 @@
+<!-- Plugin scripts files -->
+{{- $jsRes := .Site.Data.resources.js }}
+{{- $vendor := .Site.Params.vendors.plugins }}
+{{- $vendorCDN := .Scratch.Get "pluginCDN" }}
+{{- range $js := $jsRes }}
+  {{- $pluginJS := $vendorCDN }}
+  {{- $npm := $js.name }}
+  {{- $file := $js.file }}
+  {{- if eq $vendor "cdnjs" }}
+    {{- with $js.alias }}
+      {{- $npm = . }}
+    {{- end }}   
+    {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $js.file }}
+  {{- end }}
+  {{- $pluginJS = replace $pluginJS "${name}" $npm }}
+  {{- $pluginJS = replace $pluginJS "${version}" $js.version }}
+  {{- $pluginJS = replace $pluginJS "${file}" $file }}
+  <script type="text/javascript" src="{{ $pluginJS }}"></script>
+{{- end }}
+
+<script class="next-config" data-name="main" type="application/json">
+{
+  "hostname": "theme-next.js.org",
+  "root": "/",
+  "images": "/images",
+  "scheme": "Gemini",
+  "darkmode": true,
+  "version": "8.12.1",
+  "exturl": true,
+  "sidebar":
+  {
+    "position": "left",
+    "display": "post",
+    "padding": 18,
+    "offset": 12
+  },
+  "copycode":
+  {
+    "enable": true,
+    "style": "default"
+  },
+  "bookmark":
+  {
+    "enable": false,
+    "color": "#222",
+    "save": "auto"
+  },
+  "mediumzoom": true,
+  "lazyload": false,
+  "pangu": false,
+  "comments":
+  {
+    "style": "tabs",
+    "active": null,
+    "storage": true,
+    "lazyload": true,
+    "nav": null
+  },
+  "stickytabs": false,
+  "motion":
+  {
+    "enable": false,
+    "async": false,
+    "transition":
+    {
+      "post_block": "fadeIn",
+      "post_header": "fadeInDown",
+      "post_body": "fadeInDown",
+      "coll_header": "fadeInLeft",
+      "sidebar": "fadeInUp"
+    }
+  },
+  "prism": false,
+  "i18n":
+  {
+    "placeholder": "Searching...",
+    "empty": "We didn't find any results for the search: ${query}",
+    "hits_time": "${hits} results found in ${time} ms",
+    "hits": "${hits} results found"
+  },
+  "path": "/search.json",
+  "localsearch":
+  {
+    "enable": true,
+    "trigger": "auto",
+    "top_n_per_article": 1,
+    "unescape": false,
+    "preload": false
+  }
+}
+</script>
+
+{{ $config := resources.Get "js/config.js" }}
+{{ $boot := resources.Get "js/next-boot.js" }}
+{{ $utils := resources.Get "js/utils.js" }}
+{{ $alljs := (slice $config $boot $utils) | resources.Concat "js/all.js"}}
+<script defer src="{{ $alljs.RelPermalink }}"></script> 

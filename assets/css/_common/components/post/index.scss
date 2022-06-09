@@ -18,7 +18,7 @@
 
 .use-motion {
   @if $motion_trans_post_block {
-    .post-block, .pagination, .comments {
+    .post-block, .pagination, .comments, .post-comments {
       visibility: hidden;
     }
   }

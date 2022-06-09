@@ -1,15 +1,21 @@
 @if $follow_me {
   .followme {
     color: $grey;
-    padding: 1em 1.5em;
+    /* padding: 1em 1.5em; */
     text-align: center;
     @include post-card();
+    border-left: none;
+    border-bottom: #46b404 solid 5px;
 
     .social-list {
       @include flex-wrap();
 
       .social-item {
         margin: .5em 2em;
+
+        a:hover {
+          font-weight: bold;
+        }
 
         @include tablet-mobile() {
           margin: .5em .75em;

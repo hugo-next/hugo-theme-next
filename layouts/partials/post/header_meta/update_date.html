@@ -1,0 +1,12 @@
+{{- if and .Site.Params.postMeta.updated.enable .Site.Params.postMeta.updated.anotherDay }}
+{{- if and .Lastmod (gt .Lastmod .Date) }}
+{{ $modTime := .Lastmod.Format .Site.Params.timeFormat }}
+<span class="post-meta-item">
+  <span class="post-meta-item-icon">
+    <i class="far fa-calendar-check"></i>
+  </span>
+  <span class="post-meta-item-text">{{- print (T "PostLastModDate") (T "SymbolColon") -}}</span>
+  <time title="{{ print (T "PostLastModTime") (T "SymbolColon") }}{{ $modTime }}" itemprop="dateModified" datetime="{{ $modTime }}">{{- .Lastmod.Format .Site.Params.dateFormat -}}</time>
+</span>
+{{- end }}
+{{- end }}

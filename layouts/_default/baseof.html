@@ -1,11 +1,58 @@
+{{- .Scratch.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) -}}
+{{- .Scratch.Set "catsCount" (len .Site.Taxonomies.categories) -}}
+{{- .Scratch.Set "tagsCount" (len .Site.Taxonomies.tags)  -}}
+{{- $vendors := .Site.Data.resources.vendors -}}
+{{- $pluginVen := .Site.Params.vendors.plugins -}}
+{{- $pluginCDN := index $vendors $pluginVen -}}
+{{- .Scratch.Set "pluginCDN" $pluginCDN -}}
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
-        </div>
-        {{- partial "footer.html" . -}}
-    </body>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  {{ hugo.Generator }}
+  <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon.small }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
+  {{- partial "head.html" . }}
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" {{ if .Site.Params.motion.enable }} class="use-motion" {{ end }}>
+  <div class="headband"></div>
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner">
+        {{- partial "header.html" . }}
+      </div>
+      <!-- Sidebar -->
+      {{- if ne .Site.Params.sidebar.display "remove" }}
+      {{- partial "sidebar.html" . }}
+      {{- end }}
+    </header>
+    <!-- Widgets -->
+    {{ partial "widgets.html" . }}
+    <div class="main-inner {{ block "main_inner_class" . }}{{ end }}">
+      <!-- Submenu,Content,Comment -->
+      {{- block "main" . }}{{- end }}
+      {{- if .IsPage }}
+        {{- partial "comments.html" . }}
+      {{- end }}
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      {{- partial "footer" . }}
+    </div>
+  </footer>
+
+  {{- partial "scripts" . }}
+</body>
+
 </html>

@@ -68,8 +68,12 @@ $card-bg-color-dark           : $black-light;
 $menu-item-bg-color           : $whitesmoke;
 $menu-item-bg-color-dark      : $black-light;
 
-$theme-color                  : convert($theme_color_light);
-$theme-color-dark             : convert($theme_color_dark);
+// TODO why there need convert
+//$theme-color                  : convert($theme_color_light);
+//$theme-color-dark             : convert($theme_color_dark);
+
+$theme-color                  : $theme_color_light;
+$theme-color-dark             : $theme_color_dark;
 
 // Typography
 // Font, line-height, and elements colors.
@@ -295,7 +299,7 @@ $b2t-bg-color                 : $black-deep;
 $post-eof-margin-top          : 80px; //  or 160px for more white space;
 $post-eof-margin-bottom       : 60px; //  or 120px for less white space;
 
-$post-card-margin             : 1em 0 0;
+$post-card-margin             : 1em 0;
 
 
 // Note colors

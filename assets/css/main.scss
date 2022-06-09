@@ -1,8 +1,6 @@
 // CSS Style Guide: https://codeguide.co/#css
-
 // All variables from site's config content.
-{{- $P := .Site.Params -}}
-
+{{- $P := .Site.Params }}
 // Base
 $scheme: {{ $P.scheme }};
 $darkmode: {{ $P.darkmode }};
@@ -72,7 +70,7 @@ $toc_wrap: {{ $P.toc.wrap }};
 
 // Posts
 $creative_commons_post: {{ $P.creativeCommons.post }};
-$follow_me: {{ isset $P "followMe" }};
+$follow_me: {{ isset $P "followme" }};
 $motion_trans_coll_header: {{ $P.motion.transition.collHeader }};
 $motion_trans_post_block: {{ $P.motion.transition.postBlock }};
 $motion_trans_post_body: {{ $P.motion.transition.postBody }};
@@ -80,10 +78,12 @@ $motion_trans_post_header: {{ $P.motion.transition.postHeader }};
 $post_edit_enable: {{ $P.postEdit.enable }};
 $post_meta_item_text: {{ $P.postMeta.itemText }};
 $reward_settings_animation: {{ $P.rewardSets.animation }};
+$post_end_line_tip: "{{ $P.postFooter.endLineTip }}";
+$post_end_tag_icon: {{ $P.postFooter.tagIcon }};
 
 // TODO find the paramters
-$text_align_desktop: center;
-$text_align_mobile: center;
+$text_align_desktop: justify;
+$text_align_mobile: justify;
 
 // Note
 $note_icons: {{ $P.note.icons }};
@@ -118,7 +118,21 @@ $gitter_enable: {{ $P.gitter.enable }};
 
 // Comment
 $disqusjs_enable: {{ $P.disqusjs.enable }};
+$livere_enable: {{ $P.livere.enable }};
 $utterances_enable: {{ $P.utterances.enable }};
+$waline_enable: {{ $P.waline.enable }};
+{{- with .Site.Params.comments }}
+{{ $tce := and (isset . "nav") (and .storage (gt (len .nav) 1)) }}
+$two_comments_enable: {{ $tce }};
+{{- if $tce }}
+{{- $sortNav := sort .nav "weight" }}
+$two_comments_actived: {{ .active }};
+$first_comment_color: {{ (index $sortNav 0).color }};
+$first_comment_name: {{ lower (index $sortNav 0).name }};
+$second_comment_color: {{ (index $sortNav 1).color }};
+$second_comment_name: {{ lower (index $sortNav 1).name }};
+{{- end }}
+{{- end }}
 
 // 
 // Variables Layer

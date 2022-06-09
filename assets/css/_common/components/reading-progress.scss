@@ -1,8 +1,8 @@
 @if $reading_progress_enable {
   .reading-progress-bar {
     --progress: 0;
-    background: convert($reading_progress_color);
-    height: convert($reading_progress_height);
+    background: $reading_progress_color;
+    height: $reading_progress_height;
     position: fixed;
     z-index: $zindex-5;
 

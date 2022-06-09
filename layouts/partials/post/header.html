@@ -1,0 +1,39 @@
+{{ with .ctx }}
+{{- if $.IsHome }} <h2 {{ else }} <h1 {{ end -}} class="post-title" itemprop="name headline">
+  {{- if and .Weight (gt .Weight 0) }}
+  <span class="post-sticky-flag" title="{{ T "PostStickyTitle" }}">
+    <i class="fa fa-thumbtack"></i>
+  </span>
+  {{- end }}
+  {{- if $.IsHome }}
+  {{- if and (isset .Params "extlink") (ne .Params.Extlink "") }}
+  <a href="{{ .Params.Extlink }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external">
+    {{ .Title }}
+    <i class="fa fa-external-link-alt"></i>
+  </a>
+  {{- else }}
+  <a href="{{ .Permalink }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
+  {{- end }}
+  {{- else }}
+  {{- .Title }}
+  {{- if .Site.Params.postEdit.enable }}
+  {{- $editURL := printf "%s%s" .Site.Params.postEdit.url (path.Clean .File.Path) }}
+  <a href="{{ $editURL }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-edit-link" title="{{ T "PostEditTitle" }}"><i class="fa fa-pen-nib"></i></a>
+  {{- end }}
+  {{- end }}
+  {{- if $.IsHome }} </h2> {{ else }} </h1> {{ end -}}
+<div class="post-meta-container">
+  <div class="post-meta-items">
+    {{ partial "post/header_meta/created_date.html" . }}
+    {{ partial "post/header_meta/update_date.html" . }}
+    {{ partial "post/header_meta/categories.html" . }}
+  </div>
+  {{- if not $.IsHome }}
+  <div class="post-meta-items">
+    {{ partial "post/header_meta/words.html" . }}
+    {{ partial "post/header_meta/readtime.html" . }}
+    {{ partial "post/header_meta/views.html" . }}
+  </div>
+  {{ end }}
+</div>
+{{ end }}

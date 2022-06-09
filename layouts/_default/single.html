@@ -1,0 +1,7 @@
+{{- define "title" }}{{- .Title }} - {{ .Site.Title -}}{{- end }}
+
+{{- define "main_inner_class" }}post posts-expand{{- end }}
+
+{{- define "main" }}
+  {{ partial "post.html" (dict "ctx" . "IsHome" false) }}
+{{- end }}

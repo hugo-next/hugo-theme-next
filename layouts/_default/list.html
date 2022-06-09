@@ -1,0 +1,29 @@
+{{ range .Paginator.Pages.GroupByDate "2006" }}
+<div class="collection-year">
+  <span class="collection-header">{{ .Key }}</span>
+</div>
+{{ range .Pages }}
+<article itemscope itemtype="http://schema.org/Article">
+  <header class="post-header">
+    <div class="post-meta-container">
+      {{ $month := .Date.Format .Site.Params.monthFormat }}
+      <time itemprop="dateCreated" datetime="{{ .Date.Format .Site.Params.timeFormat }}" content="{{ $month }}">
+        {{ $month }}
+      </time>
+    </div>
+    <div class="post-title">
+      {{- if isset .Params "extlink" }}
+      <a href="{{ .Params.extlink }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external" title="">
+        <span itemprop="name">{{- .Title -}}</span>
+        <i class="fa fa-external-link-alt"></i>
+      </a>
+      {{- else }}
+      <a class="post-title-link" href="{{ .Permalink }}" itemprop="url">
+        <span itemprop="name">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </header>
+</article>
+{{ end }}
+{{ end }}

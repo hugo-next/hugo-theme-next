@@ -8,22 +8,85 @@ baseURL: /
 
 theme: hugo-theme-next
 
+paginate: 8
+
+enableEmoji: true
+
+# Make markdown content support HTML syntax
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+defaultContentLanguage: zh-cn
+languages:
+  zh-cn:
+    title: Hugo NexT
+    languageName: 中文
+    languageCode: zh-CN
+    hasCJKLanguage: true
+    weight: 1
+  en:
+    title: Hugo NexT
+    languageName: English
+    languageCode: en
+    hasCJKLanguage: false
+    weight: 2
+    params:
+      author: Theme NexT
+      subtitle: Theme for Hugo
+      description: Stay easily & powerful.
+      keywords: Hugo,NexT,Theme,easily,powerful
+
+#--------------------------------------
+# Menus Settings
+# Attribute pre is Font Awesome icon name without prefix "fa-".
+# External url should start with http:// or https:// .
+# -------------------------------------
+menus:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      pre: home
+      weight: 1
+    - identifier: about
+      name: 关于
+      url: /about.html
+      pre: user
+      weight: 2
+    - identifier: archives
+      name: 归档
+      url: /posts
+      pre: archive
+      weight: 3
+    - identifier: commonweal
+      name: 公益 404
+      url: /404.html
+      pre: heartbeat
+      weight: 4
+
 params:
+  mainSections: ["posts"]
+  yearFormat: "2006"
+  monthFormat: "01-02"
+  dateFormat: "2006-01-02"
+  timeFormat: "2006-01-02T15:04:05-07:00"
   # ---------------------------------------------------------------
   # Theme Core Configuration Settings
   # See: https://theme-next.js.org/docs/theme-settings/
   # ---------------------------------------------------------------
 
   # Allow to cache content generation.
-  cache:
-    enable: true
+  #cache:
+  #  enable: true
 
   # Remove unnecessary files after hexo generate.
-  minify: false
+  # minify: false
 
   # Define custom file paths.
   # Create your custom files in site directory `source/_data` and uncomment needed files below.
-  custom_file_path:
+  customFilePath:
     #head: source/_data/head.njk
     #header: source/_data/header.njk
     #sidebar: source/_data/sidebar.njk
@@ -47,22 +110,26 @@ params:
   scheme: Gemini
 
   # Dark Mode
-  darkmode: false
+  darkmode: true
 
 
   # ---------------------------------------------------------------
   # Site Information Settings
   # ---------------------------------------------------------------
+  author: NexT 主题
+  subtitle: 为 Hugo 打造的主题
+  description: 保持简单的易用性和强大的功能。
+  keywords: Hugo,NexT,主题,简单,强大
 
   favicon:
-    small: /images/favicon-16x16-next.png
-    medium: /images/favicon-32x32-next.png
-    apple_touch_icon: /images/apple-touch-icon-next.png
-    safari_pinned_tab: /images/logo.svg
+    icon: /imgs/icons/favicon.ico
+    small: /imgs/icons/favicon_16x16_next.png
+    medium: /imgs/icons/favicon_32_32_next.png
+    appleTouchIcon: /imgs/icons/apple_touch_icon_next.png
     #android_manifest: /manifest.json
 
   # Custom Logo (Warning: Do not support scheme Mist)
-  custom_logo: #/uploads/custom-logo.jpg
+  customLogo: #/imgs/hugo_next_logo.png
 
   # Creative Commons 4.0 International License.
   # See: https://creativecommons.org/about/cclicenses/
@@ -70,25 +137,25 @@ params:
     # Available values: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | cc-zero
     license: by-nc-sa
     # Available values: big | small
-    size: small
-    sidebar: false
-    post: false
+    size: big
+    sidebar: true
+    post: true
     # You can set a language value if you prefer a translated version of CC license, e.g. deed.zh
     # CC licenses are available in 39 languages, you can find the specific and correct abbreviation you need on https://creativecommons.org
-    language:
+    # language:
 
   # Open graph settings
   # See: https://hexo.io/docs/helpers#open-graph
-  open_graph:
+  openGraph:
     enable: true
-    options:
-      #twitter_card: <twitter:card>
-      #twitter_id: <twitter:creator>
-      #twitter_site: <twitter:site>
-      #twitter_image: <twitter:image>
-      #google_plus: <g+:profile_link>
-      #fb_admins: <fb:admin_id>
-      #fb_app_id: <fb:app_id>
+    #twitter:
+     #creator: <twitter:creator>
+     #image: <twitter:image>
+     #site: <twitter:site>
+    #googlePlus: <g+:profile_link>
+    #facebook:
+    #  admins: <fb:admin_id>
+    #  app_id: <fb:app_id>
 
 
   # ---------------------------------------------------------------
@@ -99,7 +166,7 @@ params:
   # Key is the name of menu item. If the translation for this item is available, the translated text will be loaded, otherwise the Key name will be used. Key is case-sensitive.
   # Value before `||` delimiter is the target link, value after `||` delimiter is the name of Font Awesome icon.
   # External url should start with http:// or https://
-  menu:
+  #menu:
     #home: / || fa fa-home
     #about: /about/ || fa fa-user
     #tags: /tags/ || fa fa-tags
@@ -112,7 +179,7 @@ params:
   # Enable / Disable menu icons / item badges.
   menuSets:
     icons: true
-    badges: false
+    badges: true
 
 
   # ---------------------------------------------------------------
@@ -128,7 +195,7 @@ params:
     # Manual define the sidebar width. If commented, will be default for:
     # Muse | Mist: 320
     # Pisces | Gemini: 240
-    width: 300
+    width: 256
 
     # Sidebar Display (only for Muse | Mist), available values:
     #  - post    expand on posts automatically. Default.
@@ -145,11 +212,11 @@ params:
   # Sidebar Avatar
   avatar:
     # Replace the default image and set the url here.
-    url: #/images/avatar.gif
+    url: /imgs/hugo_next_avatar.png
     # If true, the avatar will be displayed in circle.
-    rounded: false
+    rounded: true
     # If true, the avatar will be rotated with the cursor.
-    rotated: false
+    rotated: true
 
   # Posts / Categories / Tags in sidebar.
   siteState: true
@@ -158,10 +225,18 @@ params:
   # Usage: `Key: permalink || icon`
   # Key is the link label showing to end users.
   # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
-  social:
-    #GitHub: https://github.com/yourname || fab fa-github
-    #E-Mail: mailto:yourname@gmail.com || fa fa-envelope
-    #Weibo: https://weibo.com/yourname || fab fa-weibo
+  socials: 
+    # - name: GitHub
+    #   icon: fab fa-github
+    #   url: https://github.com/yourname
+    #   weight: 1
+    # - name: 微博
+    #   icon: fab fa-weibo
+    #   url: https://weibo.com/yourname
+    #   weight: 2
+    social0: Github || https://github.com/elkan1788 || fab fa-github
+    #social1: E-Mail || mailto:yourname@gmail.com || fa fa-envelope
+    social2: 知乎 || https://www.zhihu.com/people/lisenhui || fa fa-book
     #Google: https://plus.google.com/yourname || fab fa-google
     #Twitter: https://twitter.com/yourname || fab fa-twitter
     #FB Page: https://www.facebook.com/yourname || fab fa-facebook
@@ -173,17 +248,18 @@ params:
   socialIcons:
     enable: true
     iconsOnly: false
-    transition: false
+    transition: true
 
   # Blog rolls
   linksSets:
     icon: fa fa-globe
-    title: Links
+    title: 友情链接
     # Available values: block | inline
-    layout: block
+    layout: inline
 
-  links:
-    #Title: https://example.com
+  links: 
+    link0: Hugo-NexT || https://gitee.com/hugo-next/hugo-theme-next
+    link1: 凡梦星尘空间站 || https://lisenhui.cn
 
   # Table of Contents in the Sidebar
   # Front-matter variable (nonsupport wrap expand_all).
@@ -209,14 +285,14 @@ params:
 
   footer:
     # Specify the year when the site was setup. If not defined, current year will be used.
-    #since: 2021
+    since: 2010
 
     # Icon between year and copyright info.
     icon:
       # Icon name in Font Awesome. See: https://fontawesome.com/icons
       name: fa fa-heart
       # If you want to animate the icon, set it to true.
-      animated: false
+      animated: true
       # Change the color of icon, using Hex Code.
       color: "#ff0000"
 
@@ -228,14 +304,14 @@ params:
 
     # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
-      enable: false
-      icp:
+      enable: true
+      icp: 粤ICP备18047355-1号
       # The digit in the num of gongan beian.
-      gongan_id:
+      provinceAbbr: 沪
       # The full num of gongan beian.
-      gongan_num:
+      gonganNum: 11010102001808
       # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
-      gongan_icon_url:
+      #gongan_icon_url:
 
 
   # ---------------------------------------------------------------
@@ -248,7 +324,7 @@ params:
 
   # Read more button
   # If true, the read more button will be displayed in excerpt section.
-  read_more_btn: true
+  readMoreBtn: true
 
   # Post meta display settings
   postMeta:
@@ -258,12 +334,17 @@ params:
       enable: true
       anotherDay: true
     categories: true
+    wordCount: true
+    readTime: true
 
   # Post wordcount display settings
   # Dependencies: https://github.com/next-theme/hexo-word-counter
-  symbols_count_time:
-    separated_meta: true
-    item_text_total: false
+  # symbols_count_time:
+  #   separated_meta: true
+  #   item_text_total: false
+  postFooter:
+    endLineTip: "~ 我可是有底线的哟 ~"
+    tagIcon: true
 
   # Use icon instead of the symbol # to indicate the tag at the bottom of the post
   tag_icon: false
@@ -272,23 +353,23 @@ params:
   # Front-matter variable (nonsupport animation).
   rewardSets:
     # If true, a donate button will be displayed in every article by default.
-    enable: false
-    animation: false
-    #comment: Buy me a coffee
+    enable: true
+    animation: true
+    comment: '<i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))'
 
   reward:
-    #wechatpay: /images/wechatpay.png
-    #alipay: /images/alipay.png
+    wechatpay: /imgs/wechat-pay.png
+    alipay: /imgs/ali-pay.png
     #paypal: /images/paypal.png
     #bitcoin: /images/bitcoin.png
 
   # Subscribe through Telegram Channel, Twitter, etc.
   # Usage: `Key: permalink || icon` (Font Awesome)
   followMe:
-    Twitter: https://twitter.com/username || fab fa-twitter
-    #Telegram: https://t.me/channel_name || fab fa-telegram
-    #WeChat: /images/wechat_channel.jpg || fab fa-weixin
-    #RSS: /atom.xml || fa fa-rss
+    #channel0: Twitter || https://twitter.com/username || fab fa-twitter
+    #channel1: Telegram || https://t.me/channel_name || fab fa-telegram
+    channel2: WeChat || /images/wechat_channel.jpg || fab fa-weixin
+    channel3: RSS || /atom.xml || fa fa-rss
 
   # Related popular posts
   # Dependencies: https://github.com/sergeyzwezdin/hexo-related-posts
@@ -300,7 +381,7 @@ params:
   # Post edit
   # Easily browse and edit blog source code online.
   postEdit:
-    enable: false
+    enable: true
     url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
     #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
@@ -390,18 +471,18 @@ params:
 
   # Reading progress bar
   readingProgress:
-    enable: false
+    enable: true
     # Available values: left | right
     start: left
     # Available values: top | bottom
-    position: top
+    position: bottom
     reversed: false
     color: "#37c6c0"
     height: 3px
 
   # Bookmark Support
   bookmark:
-    enable: false
+    enable: true
     # Customize the color of the bookmark.
     color: "#222"
     # If auto, save the reading progress when closing the page or clicking the bookmark-icon.
@@ -410,7 +491,7 @@ params:
 
   # `Follow me on GitHub` banner in the top-right corner.
   githubBanner:
-    enable: false
+    enable: true
     permalink: https://github.com/yourname
     title: Follow me on GitHub
 
@@ -483,19 +564,19 @@ params:
 
   # Google Webmaster tools verification.
   # See: https://developers.google.com/search
-  google_site_verification:
+  googleSiteVerification: 5AUIVYTbHIAuz-eQtxSfZbWW5eg9_EVZMSQycIuXrG0
 
   # Bing Webmaster tools verification.
   # See: https://www.bing.com/webmasters
-  bing_site_verification:
+  bingSiteVerification:
 
   # Yandex Webmaster tools verification.
   # See: https://webmaster.yandex.ru
-  yandex_site_verification:
+  yandexSiteVerification:
 
   # Baidu Webmaster tools verification.
   # See: https://ziyuan.baidu.com/site
-  baidu_site_verification:
+  baiduSiteVerification:
 
 
   # ---------------------------------------------------------------
@@ -573,22 +654,35 @@ params:
 
   # Multiple Comment System Support
   comments:
+    enable: true
     # Available values: tabs | buttons
-    style: tabs
+    #style: tabs
     # Choose a comment system to be displayed by default.
     # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-    active:
+    active: waline
     # Setting `true` means remembering the comment system selected by the visitor.
     storage: true
     # Lazyload all comment systems.
-    lazyload: false
+    #lazyload: false
     # Modify texts or order for any naves, here are some examples.
     nav:
-      #disqus:
-      #  text: Load Disqus
-      #  order: -1
-      #gitalk:
-      #  order: -2
+      - name: Waline
+        title: Waline
+        color: "#27ae60"
+        weight: 1
+      - name: Utterances
+        title: Utters
+        color: "#494949"
+        weight: 2
+
+  waline:
+    enable: true
+    placeholder: "请文明发言"
+    emoji: false
+    imgUploader: false
+    wordLimit: 200
+    requiredMeta: ['nick', 'mail']
+    serverURL: "https://waline.js.org"
 
   # Disqus
   # For more information: https://disqus.com
@@ -618,7 +712,9 @@ params:
 
   # LiveRe comments system
   # You can get your uid from https://livere.com/insight/myCode (General web site)
-  livere_uid: # <your_uid>
+  livere:
+    enable: true
+    uid: MTAyMC81MTM4MC8yNzg2MQ== # <your_uid>
 
   # Gitalk
   # For more information: https://gitalk.github.io
@@ -640,10 +736,11 @@ params:
   # Utterances
   # For more information: https://utteranc.es
   utterances:
-    enable: false
-    repo: user-name/repo-name # Github repository owner and name
+    enable: true
+    repo: username/repo-name # Github repository owner and name
     # Available values: pathname | url | title | og:title
-    issue_term: pathname
+    issueTerm: pathname
+    label: Comments
     # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
     theme: github-light
 
@@ -666,7 +763,7 @@ params:
 
   # AddThis Share. See: https://www.addthis.com
   # Go to https://www.addthis.com/dashboard to customize your tools.
-  add_this_id:
+  addThisId: 
 
 
   # ---------------------------------------------------------------
@@ -700,12 +797,12 @@ params:
 
   # Show number of visitors of each article.
   # You can visit https://www.leancloud.cn to get AppID and AppKey.
-  leancloud_visitors:
+  leancloudVisitors:
     enable: false
-    app_id: # <your app id>
-    app_key: # <your app key>
+    appId: # <your app id>
+    appKey: # <your app key>
     # Required for apps from CN region
-    server_url: # <your server url>
+    serverUrl: # <your server url>
     # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security
     # If you don't care about security in leancloud counter and just want to use it directly
     # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
@@ -723,7 +820,7 @@ params:
   # Show Views / Visitors of the website / page with busuanzi.
   # For more information: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi:
-    enable: false
+    enable: true
     visitors: true
     visitorsIcon: fa fa-user
     views: true
@@ -747,7 +844,7 @@ params:
   # Local Search
   # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
   localSearch:
-    enable: false
+    enable: true
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
     trigger: auto
@@ -845,7 +942,7 @@ params:
   # Use Animate.css to animate everything.
   # For more information: https://animate.style
   motion:
-    enable: true
+    enable: false
     async: false
     transition:
       # All available transition variants: https://theme-next.js.org/animate/
@@ -890,7 +987,7 @@ params:
     # The default CDN provider of third-party plugins.
     # Available values: local | jsdelivr | unpkg | cdnjs | custom
     # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-    plugins: jsdelivr
+    plugins: unpkg
     # Custom CDN URL
     # For example:
     # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
@@ -902,6 +999,6 @@ params:
   # The js option is only valid when vendors.internal is local.
   css: css
   js: js
-  images: images
+  images: imgs
 
 

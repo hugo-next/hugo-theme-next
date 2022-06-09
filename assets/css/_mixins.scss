@@ -125,9 +125,7 @@
 }
 
 @mixin sidebar-toggle-position($reverse) {
-  // TODO how use nth function.
-  //$alignment : list.nth(sidebar-toggle-alignment($reverse), 0);
-  $alignment : 0;
+  $alignment : nth(sidebar-toggle-alignment($reverse), 1);
   #{$alignment}: $b2t-position-right;
   @include tablet-mobile() {
     #{$alignment}: $b2t-position-right-mobile;

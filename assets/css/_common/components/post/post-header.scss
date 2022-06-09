@@ -1,6 +1,6 @@
 .posts-expand .post-header {
   font-size: $font-size-large;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -94,9 +94,10 @@
   margin: 0 .5em;
 }
 
+/* Make post meta dislay in oneline
 .post-meta-item-icon {
   margin-right: 3px;
-}
+} */
 
 .post-meta-item-text {
   @if not $post_meta_item_text {
@@ -115,6 +116,6 @@
 
 @if $busuanzi_enable and $busuanzi_post_views {
   #busuanzi_container_page_pv {
-    display: none;
+    display: inline-block;
   }
 }

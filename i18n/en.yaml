@@ -1,0 +1,142 @@
+#--------------------------------------
+# English Version
+#--------------------------------------
+posts:
+  other: Posts
+tag:
+  other: Tag
+tags:
+  other: Tags
+category:
+  other: Category
+categories:
+  other: Categories
+AllSome:
+  other: "All {{ .Some }}"
+
+NavToggleLabel:
+  other: Toggle navigation bar
+
+MSearchLabel:
+  other: Search
+
+SymbolColon:
+  other: ":"
+SymbolComma:
+  other: ","
+SymbolPeriod:
+  other: "."
+
+SitePostsTitle:
+  other: "Posts"
+SiteCatesTitle:
+  other: "Categories"
+SiteTagsTitle:
+  other: "Tags"
+TableOfContents:
+  other: "TOC"
+SiteOverview:
+  other: "Overview"
+RSSTitle:
+  other: "RSS Subscribe"
+CCLinkTitle:
+  other: "Creative Commons"
+BackTopLabel:
+  other: "Top"
+
+TagsCounterTitle:
+  zero: No tags
+  one: 1 tag in total
+  other: "{{ .Count }} tags in total"
+CatesCounterTitle:
+  zero: No categories
+  one: 1 category in total
+  other: "{{ .Count }} categories in total"
+ArchiveCounterTitle:
+  zero: No posts.
+  one: 1 post.
+  other: "{{ .Count }} posts in total."
+
+PostArchiveCheersUm:
+  other: Um..
+PostArchiveCheersOk:
+  other: Ok
+PostArchiveCheersNice:
+  other: Nice
+PostArchiveCheersGood:
+  other: Good
+PostArchiveCheersGreat:
+  other: Great
+PostArchiveCheersExcellent:
+  other: Excellent
+PostArchiveKeepOn:
+  other: Keep on posting.╰(*°▽°*)╯
+
+PostStickyTitle:
+  other: Strickys
+PostPublishDate:
+  other: "Publish"
+PostPublishTime:
+  other: "Create Time"
+PostLastModDate:
+  other: "Update"
+PostLastModTime:
+  other: "Modify Time"
+PostWords:
+  other: "Words"
+PostWordCount:
+  other: "{{- .WordCount -}}"
+PostReading:
+  other: "Read"
+PostReadTime:
+  other: "{{- .ReadingTime -}}min"
+PostViews:
+  other: "Views"
+PostCatg:
+  other: "Categories"
+PostTag:
+  other: "Tags"
+PostReadMore:
+  other: "Read More"
+PostEditTitle:
+  other: Edit this post
+
+PostCRTitle:
+  other: Post Title
+PostCRAuthor:
+  other: Post Author
+PostCRLink:
+  other: Post Link
+PostCROriginAuthor:
+  other: Written By
+PostCROriginLink:
+  other: Originally From
+PostCRLicenseTitle:
+  other: Copyright Notice
+PostCRLicenseContent:
+  other: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
+
+PostFollowMe:
+  other: Welcome to my other publishing channels
+
+RewardDonate:
+  other: Donate
+RewardWechatpay:
+  other: Wechat Pay
+RewardAlipay:
+  other: Alipay
+RewardPaypal:
+  other: PayPal
+RewardBitcoin:
+  other: Bitcoin
+
+PostCommentTitle:
+  other: Comments
+
+VisitorsLabel:
+  other: Total Visitors
+PageViewsLabel:
+  other: Total Page Views
+
+FooterPowerby:
+  other: "Power by %s"

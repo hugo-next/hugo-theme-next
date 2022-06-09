@@ -1,0 +1,28 @@
+<div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Site.LauageCode }}">
+    {{- with .ctx }}
+    <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="{{ .Site.Params.avatar.url }}">
+      <meta itemprop="name" content="{{ .Params.author | default .Site.Params.author }}">
+    </span>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="{{ .Site.Params.author }}">
+      <meta itemprop="description" content="{{ .Site.Params.description }}">
+    </span>
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="{{ .Title }}">
+      <meta itemprop="description" content="{{ .Description | default .Summary }}">
+    </span>
+    {{- end }}
+    <header class="post-header">
+      {{ partial "post/header.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+    </header>
+    <div class="post-body" itemprop="articleBody">
+      {{ partial "post/body.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+    </div>
+    <footer class="post-footer">
+      {{ partial "post/footer.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
+    </footer>
+  </article>
+</div>

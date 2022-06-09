@@ -3,15 +3,24 @@
     border-bottom: 0;
     position: fixed;
     top: -10px;
+
     transition: top .3s;
-    @include sidebar-toggle-position(true);
+    -moz-transition:top .3s;
+    -webkit-transition:top .3s;
+    -o-transition:top .3s;
+
+    @if not $github_banner_enable {
+      @include sidebar-toggle-position(true);
+    } @else {
+      left: 30px;
+    }    
 
     @include tablet-mobile() {
       display: none;
     }
 
     &::before {
-      color: convert($bookmark_color);
+      color: $bookmark_color;
       font-size: 32px;
       line-height: 1;
       @include font-family-icons('\f02e');

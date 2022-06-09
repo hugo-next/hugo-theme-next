@@ -1,0 +1,11 @@
+{{ with .ctx }}
+{{- if $.IsHome }}
+  {{- if .Params.Expand }}
+  {{ .Content }}
+  {{- else }}
+  {{ .Summary }}
+  {{- end }}
+{{- else }}
+  {{ .Content }}
+{{- end }}
+{{ end }}
