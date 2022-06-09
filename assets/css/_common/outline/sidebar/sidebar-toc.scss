@@ -1,15 +1,14 @@
 @if $toc_enable {
   .post-toc {
     font-size: $font-size-small;
-    padding: 0 8px;
 
-    ul {
+    ol {
       list-style: none;
       margin: 0;
       padding: 0 2px 5px 10px;
       text-align: left;
 
-      > li {
+      > ol {
         padding-left: 0;
       }
 

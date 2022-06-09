@@ -10,18 +10,11 @@
 <div class="post-eof"></div>
 {{- else }}
 {{ partial "post/footer_meta/tags.html" . }}
-{{- if and (not (isset .Params "share")) (not .Params.share) }}
 {{ partial "_thirdparty/share/addthis.html" . }}
-{{- end }}
 <hr/>
 {{ partial "post/footer_meta/reward.html" . }}
-{{- if and (not (isset .Params "copyright")) (not .Params.copyright) }}
 {{ partial "post/footer_meta/copyright.html" . }}
-{{- end }}
-{{- if and (not (isset .Params "followme")) (not .Params.followme) }}
 {{ partial "post/footer_meta/followme.html" . }}
-{{- end }}
-{{- if and (not (isset .Params "nav")) (not .Params.nav) }}
 <div class="post-nav">
   <div class="post-nav-next post-nav-item">
     {{- with .NextInSection }}
@@ -40,5 +33,4 @@
   </div>
 </div>
 {{- end }}
-{{- end }}
-{{- end }}
+{{ end }}

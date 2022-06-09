@@ -1,13 +1,15 @@
-#:==============================================================
+# ===============================================================
 # It's recommended to use Alternate Theme Config to configure NexT
 # Modifying this file may result in merge conflict
 # See: https://theme-next.js.org/docs/getting-started/configuration
-#:==============================================================
+# ===============================================================
 
 baseURL: /
 
 theme: hugo-theme-next
-paginate: 10
+
+paginate: 8
+
 enableEmoji: true
 
 # Make markdown content support HTML syntax
@@ -15,15 +17,6 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-  highlight:
-    codeFences: true
-    lineNos: true
-    lineNumbersInTable: true
-    noClasses: true
-  tableOfContents:
-    endLevel: 3
-    ordered: false
-    startLevel: 1
 
 defaultContentLanguage: zh-cn
 languages:
@@ -312,11 +305,11 @@ params:
     # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn, http://www.beian.gov.cn
     beian:
       enable: true
-      icp: 粤ICP备 18047355-1 号
+      icp: 粤ICP备18047355-1号
       # The digit in the num of gongan beian.
       provinceAbbr: 沪
       # The full num of gongan beian.
-      gonganNum: 31011402009770
+      gonganNum: 11010102001808
       # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
       #gongan_icon_url:
 
@@ -770,7 +763,7 @@ params:
 
   # AddThis Share. See: https://www.addthis.com
   # Go to https://www.addthis.com/dashboard to customize your tools.
-  addThisId: ra-6049e46e9ee22127
+  addThisId: 
 
 
   # ---------------------------------------------------------------
