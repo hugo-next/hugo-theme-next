@@ -780,6 +780,10 @@ params:
   # See: https://theme-next.js.org/docs/third-party-services/statistics-and-analytics
   # ---------------------------------------------------------------
 
+  # 51La Analytics
+  # See: https://invite.51.la/1NUfGTS1?target=V6 
+  laId: # <app_id>  
+
   # Google Analytics
   # See: https://analytics.google.com
   google_analytics:
