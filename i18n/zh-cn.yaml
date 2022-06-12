@@ -1,0 +1,140 @@
+#--------------------------------------
+# 中文版本
+#--------------------------------------
+
+posts:
+  other: 文章
+tag:
+  other: 标签
+tags:
+  other: 标签
+category:
+  other: 分类
+categories:
+  other: 分类
+AllSome:
+  other: "所有 {{ .Some }}"
+
+NavToggleLabel:
+  other: 切换导航栏
+
+MSearchLabel:
+  other: 搜索
+
+SymbolColon:
+  other: "："
+SymbolComma:
+  other: "，"
+SymbolPeriod:
+  other: "。"
+ 
+SbPostsLable:
+  other: 日志
+SbCatesTitle:
+  other: 分类
+SbTagsTitle:
+  other: 标签
+TableOfContents:
+  other: 文章目录
+SiteOverview:
+  other: 站点概览
+RSSLable:
+  other: RSS 订阅
+CCLinkTitle:
+  other: 共享知识
+BackTopLabel:
+  other: 返回顶部
+
+TagsCounterTitle:
+  zero: 暂无标签
+  other: "目前共计 <strong>{{ .Count }}</strong> 个标签"
+CatesCounterTitle:
+  zero: 暂无分类
+  other: "目前共计 <strong>{{ .Count }}</strong> 个分类"
+ArchiveCounterTitle:
+  zero: 暂无日志
+  other: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
+
+PostArchiveCheersUm:
+  other: 嗯..
+PostArchiveCheersOk:
+  other: 还行
+PostArchiveCheersNice:
+  other: 不错
+PostArchiveCheersGood:
+  other: 很好
+PostArchiveCheersGreat:
+  other: 非常好
+PostArchiveCheersExcellent:
+  other: 太棒了
+PostArchiveKeepOn:
+  other: 继续努力哟。╰(*°▽°*)╯
+
+PostStickyTitle:
+  other: 置顶
+PostPublishDate:
+  other: 发表于
+PostPublishTime:
+  other: 创建时间
+PostLastModDate:
+  other: 更新于
+PostLastModTime:
+  other: 修改时间
+PostWords:
+  other: 字数
+PostWordCount:
+  other: "{{- .WordCount -}}"
+PostReading:
+  other: 阅读
+PostReadTime:
+  other: "{{- .ReadingTime -}}分钟"
+PostViews:
+  other: 浏览
+PostCatgs:
+  other: 分类
+PostTags:
+  other: 标签
+PostReadMore:
+  other: 阅读全文
+PostEditTitle:
+  other: 编辑
+
+PostCRTitle:
+  other: 文章标题
+PostCRAuthor:
+  other: 本文作者
+PostCRLink:
+  other: 本文链接
+PostCROriginAuthor:
+  other: 原文作者
+PostCROriginLink:
+  other: 原文链接
+PostCRLicenseTitle:
+  other: 版权声明
+PostCRLicenseContent:
+  other: "本博客所有文章除特别声明外，均采用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 许可协议。转载请注明出处！"
+
+PostFollowMe:
+  other: 欢迎关注我的其它发布渠道
+
+RewardDonate:
+  other: 赞赏
+RewardWechatpay:
+  other: 微信
+RewardAlipay:
+  other: 支付宝
+RewardPaypal:
+  other: PayPal
+RewardBitcoin:
+  other: 比特币
+
+PostCommentTitle:
+  other: 评论交流
+
+UserVistorsLabel:
+  other: 总访客量
+PageViewsLabel:
+  other: 总访问量
+
+FooterPowerby:
+  other: 由 %s 强力驱动

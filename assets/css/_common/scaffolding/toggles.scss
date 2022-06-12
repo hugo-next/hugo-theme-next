@@ -18,9 +18,7 @@
 }
 
 .toggle.toggle-arrow {
-  @include toggle-arrow($cfg_sidebar_position);
 }
 
 .toggle.toggle-close {
-  @include toggle-close($cfg_sidebar_position);
 }

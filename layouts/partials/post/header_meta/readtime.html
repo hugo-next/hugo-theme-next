@@ -1,0 +1,9 @@
+{{- if .Site.Params.postMeta.readTime }}
+<span class="post-meta-item" title="{{ T "PostReading" }}">
+  <span class="post-meta-item-icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span class="post-meta-item-text">{{- print (T "PostReading") (T "SymbolColon") -}}&asymp;</span>
+  <span>{{- T "PostReadTime" . -}}</span>
+</span>
+{{- end }}

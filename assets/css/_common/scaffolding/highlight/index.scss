@@ -1,13 +1,8 @@
 // Use `@use` to fix issue #67
-// TODO Not understand how to import dymatic variable
 // @import '(theme.highlight.enable && theme.highlight.light.file) ? theme.highlight.light.file : null';
 // @import '(theme.prism.enable && theme.prism.light) ? theme.prism.light : null';
 // @import '(theme.prism.enable && theme.prism.number) ? theme.prism.number : null';
 
-// @media (prefers-color-scheme: dark) {
-  // @import '(theme.darkmode && theme.highlight.enable && theme.highlight.dark.file) ? theme.highlight.dark.file : null';
-  // @import '(theme.darkmode && theme.prism.enable && theme.prism.dark) ? theme.prism.dark : null';
-// }
 
 // @import 'theme.codeblock.copy_button.enable ? "copy-code" : null';
 
@@ -43,6 +38,7 @@
 
 pre, code {
   font-family: $code-font-family;
+  color: #fff;
 }
 
 code {
@@ -61,6 +57,7 @@ kbd {
   font-family: inherit;
   padding: .1em .3em;
   white-space: nowrap;
+  color: #fff;
 }
 
 // `highlight.line_number: false` and `highlight.wrap: false`

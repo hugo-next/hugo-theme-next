@@ -1,0 +1,9 @@
+// Variables of Muse scheme
+// ==================================================
+
+$sidebar-width           : if(type-of($sidebar_width) == number, $sidebar_width, 320);
+$sidebar-desktop         : $sidebar-width * 1px;
+
+$content-padding-bottom     : 60px;
+$posts-first-padding        : 70px;
+$posts-first-padding-mobile : 35px;

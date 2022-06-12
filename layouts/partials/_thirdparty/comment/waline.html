@@ -1,0 +1,21 @@
+{{- with .Site.Params.waline }}
+<div id="waline"></div>
+
+<link rel="stylesheet" href="//unpkg.com/@waline/client@v2/dist/waline.css"/>
+<script src="//unpkg.com/@waline/client@v2/dist/waline.js"></script>
+<script type="text/javascript">
+  const locale = {
+    placeholder: "{{ .placeholder }}"
+  };
+  Waline.init({
+    locale,
+    el: "#waline",
+    emoji: {{ .emoji }},
+    imageUploader: {{ .imgUploader }},
+    wordLimit: {{ .wordLimit }},
+    requiredMeta: {{ .requiredMeta }},
+    serverURL: "{{ .serverURL }}",
+    lang: "{{ $.Lang }}"
+  });
+</script>
+{{- end }}  

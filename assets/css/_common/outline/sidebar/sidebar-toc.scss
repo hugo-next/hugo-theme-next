@@ -1,14 +1,14 @@
-@if $cfg_toc_enable {
   .post-toc {
     font-size: $font-size-small;
+    padding: 0 8px;
 
-    ol {
+    ul {
       list-style: none;
       margin: 0;
       padding: 0 2px 5px 10px;
       text-align: left;
 
-      > ol {
+      > li {
         padding-left: 0;
       }
 
@@ -22,14 +22,14 @@
       overflow: hidden;
       text-overflow: ellipsis;
 
-      @if not $cfg_toc_wrap {
+      @if not $toc_wrap {
         white-space: nowrap;
       }
     }
 
     .nav {
       .nav-child {
-        display: if($cfg_toc_expand_all, block, none);
+        display: if($toc_expand_all, block, none);
       }
 
       .active > .nav-child {

@@ -1,7 +1,7 @@
-@if $cfg_pdf_enable {
+@if $pdf_enable {
   .pdfobject-container {
     iframe, embed {
-      height: convert($cfg_pdf_height);
+      height: $pdf_height;
       width: 100%;
     }
   }

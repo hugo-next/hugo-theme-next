@@ -42,7 +42,6 @@
         border-radius: $tbr;
       }
 
-      @if $cfg_tabs_trans_tabs {
         transition: all $transition-ease-out;
       }
 
@@ -57,7 +56,6 @@
           width: (18em / 14);
         }
 
-        @if $cfg_tabs_trans_labels {
           transition: all $transition-ease-out;
         }
       }

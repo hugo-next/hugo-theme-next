@@ -1,0 +1,37 @@
+<div class="toggle sidebar-toggle" role="button">
+  <span class="toggle-line"></span>
+  <span class="toggle-line"></span>
+  <span class="toggle-line"></span>
+</div>
+<aside class="sidebar">
+  {{- $toc := and (isset .Params "toc") .Params.toc }}
+  <div class="sidebar-inner {{ if $toc }}sidebar-nav-active sidebar-toc-active{{ else }}sidebar-overview-active{{ end }}">
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-toc">
+        {{ T "TableOfContents" }}
+      </li>
+      <li class="sidebar-nav-overview">
+        {{ T "SiteOverview" }}
+      </li>
+    </ul>
+    <div class="sidebar-panel-container">
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+        {{- if $toc }}
+        <div class="post-toc animated">{{ .TableOfContents }}</div>
+        {{- end }}
+      </div>
+      <!--/noindex-->
+      <div class="site-overview-wrap sidebar-panel">
+        {{ partial "sidebar/overview" . }}
+      </div>
+    </div>
+    {{- if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
+    <div class="back-to-top animated" role="button" aria-label="{{ T "BackTop" }}">
+      <i class="fa fa-arrow-up"></i>
+      <span>0%</span>
+    </div>
+    {{- end }}
+  </div>
+</aside>
+<div class="sidebar-dimmer"></div>

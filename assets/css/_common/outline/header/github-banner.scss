@@ -1,4 +1,4 @@
-@if $cfg_github_banner_enable {
+@if $github_banner_enable {
   @keyframes octocat-wave {
     0%, 100% {
       transform: rotate(0);
@@ -28,7 +28,7 @@
     }
 
     @include tablet-mobile() {
-      @if $cfg_local_search_enable or $cfg_algolia_search_enable {
+      @if $local_search_enable or $algolia_search_enable {
         display: none;
       }
 

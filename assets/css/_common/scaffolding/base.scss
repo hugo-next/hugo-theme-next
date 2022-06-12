@@ -18,7 +18,6 @@ body {
   position: relative;
   transition: padding $transition-ease;
 
-  @if $cfg_bd_scrollbar_overlay {
     overflow-x: hidden;
     @supports (overflow-x: clip) {
       overflow-x: clip;
@@ -26,7 +25,6 @@ body {
     width: 100vw;
   }
 
-  @if $cfg_bd_scrollbar_stable {
     overflow-y: scroll;
   }
 }

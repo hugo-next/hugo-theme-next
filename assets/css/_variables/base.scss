@@ -68,14 +68,17 @@ $card-bg-color-dark           : $black-light;
 $menu-item-bg-color           : $whitesmoke;
 $menu-item-bg-color-dark      : $black-light;
 
-$theme-color                  : convert($cfg_thm_cor_light);
-$theme-color-dark             : convert($cfg_thm_cor_dark);
+// TODO why there need convert
+
+$theme-color                  : $theme_color_light;
+$theme-color-dark             : $theme_color_dark;
 
 // Typography
 // Font, line-height, and elements colors.
 // --------------------------------------------------
 @function get-font-family($config) {
-  /* $custom-family : hexo-config('font.' + $config + '.family'); */
+  //TODO find the way daymatic variable
+  $custom-family: $config;
   $custom-family: 'Microsoft YaHei';
   @return if(type-of($custom-family) == string, unquote($custom-family), null);
 }
@@ -110,7 +113,6 @@ $font-family-monospace    : consolas, Menlo, monospace, $font-family-chinese;
 
 
 // Font size
-$font-size-base           : if(($cfg_font_enable and type-of($cfg_font_global_size) == number), $cfg_font_global_size * 1em, 1em);
 $font-size-smallest       : .75em;
 $font-size-smaller        : .8125em;
 $font-size-small          : .875em;
@@ -122,7 +124,6 @@ $font-size-largest        : 1.5em;
 
 // Headings font size
 $font-size-headings-step  : .125em;
-$font-size-headings-base  : if(($cfg_font_enable and type-of($cfg_font_headings_size) == number), $cfg_font_headings_size * 1em, 1.625em);
 
 
 // Global line height
@@ -156,13 +157,9 @@ $table-row-hover-bg-color-dark  : #363636;
 // --------------------------------------------------
 $code-font-family               : $font-family-monospace;
 
-$highlight-background        : $cfg_hl_light_bg;
-$highlight-foreground        : $cfg_hl_light_fg;
 $highlight-gutter-background : mix($highlight-background, $highlight-foreground, 90%);
 $highlight-gutter-foreground : mix($highlight-background, $highlight-foreground, 10%);
 
-$highlight-background-dark        : $cfg_hl_dark_bg;
-$highlight-foreground-dark        : $cfg_hl_dark_bg;
 $highlight-gutter-background-dark : mix($highlight-background-dark, $highlight-foreground-dark, 90%);
 $highlight-gutter-foreground-dark : mix($highlight-background-dark, $highlight-foreground-dark, 10%);
 
@@ -229,7 +226,6 @@ $brand-hover-color              : white;
 $brand-color-dark               : $grey-lighter;
 $brand-hover-color-dark         : $grey-lighter;
 
-$font-size-title                : if(($cfg_font_enable and type-of($cfg_font_title_size) == number), $cfg_font_title_size * 1em, 1.375em);
 $font-size-subtitle             : $font-size-smaller;
 $subtitle-color                 : $grey-dark;
 $site-subtitle-color            : $grey-dark;
@@ -253,8 +249,6 @@ $tag-cloud-end-dark   : #eee;
 // Variables for sidebar section elements.
 // --------------------------------------------------
 
-$sidebar-padding                      : if(type-of($cfg_sidebar_padding) == number, $cfg_sidebar_padding * 1px, 18px);
-$sidebar-offset                       : if(type-of($cfg_sidebar_offset) == number, $cfg_sidebar_offset * 1px, 12px);
 $sidebar-nav-color                    : $grey-dim;
 $sidebar-nav-hover-color              : $whitesmoke;
 $sidebar-highlight                    : $blue-bright;
@@ -294,13 +288,11 @@ $b2t-bg-color                 : $black-deep;
 $post-eof-margin-top          : 80px; //  or 160px for more white space;
 $post-eof-margin-bottom       : 60px; //  or 120px for less white space;
 
-$post-card-margin             : 1em 0 0;
 
 
 // Note colors
 // --------------------------------------------------
 // Read note light_bg_offset from NexT config and set in '$lbg%' to use it as string variable.
-$lbg : if(type-of($cfg_note_light_bg_offset) == number, $cfg_note_light_bg_offset * 1%, 0);
 $note-types : 'default' 'primary' 'info' 'success' 'warning' 'danger';
 
 $note-border-radius : 3px;

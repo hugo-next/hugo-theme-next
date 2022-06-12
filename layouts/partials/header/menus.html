@@ -1,0 +1,26 @@
+{{- $ms := .Site.Params.menuSets }}
+{{- $curP := .Page }}
+<nav class="site-nav">
+  <ul class="main-menu menu">
+  {{- range $curP.Site.Menus.main }}
+    {{- $active := or ($curP.IsMenuCurrent "main" .) ($curP.HasMenuCurrent "main" .) }}
+    {{- $active = or $active (eq .URL "/")}}
+    <li class="menu-item menu-item-{{ .Identifier }}">
+      <a href="{{ .URL }}" class="hvr-icon-pulse {{if $active }} menu-item-active{{ end }}" rel="section">
+        {{- if $ms.icons }}<i class="fa fa-{{ .Pre }} hvr-icon"></i>{{ end }}{{- .Name }}
+        {{- if and $ms.badges (eq .Identifier "archives" ) }}
+        <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
+        {{- end }}
+      </a>
+    </li>
+  {{- end }}
+
+  {{- if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
+    <li class="menu-item menu-item-search">
+      <a role="button" class="popup-trigger hvr-icon-pulse">
+        {{- if $ms.icons }}<i class="fa fa-search fa-fw hvr-icon"></i>{{ end }}{{ T "MSearchLabel" }}
+      </a>
+    </li>
+  {{- end }}
+  </ul>
+</nav>

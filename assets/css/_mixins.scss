@@ -1,0 +1,243 @@
+@mixin mobile-smallest() {
+  @media (max-width: 413px) {
+    @content;;
+  }
+}
+
+@mixin mobile-small() {
+  @media (max-width: 567px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tablet-mobile() {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin tablet-desktop() {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin tablet() {
+  @media (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin desktop-large() {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin desktop-largest() {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+}
+
+@mixin disable-user-select() {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@mixin sidebar-inline-links-item() {
+  margin: 5px 0 0;
+
+  a {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+@mixin flex-wrap() {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin post-card() {
+  background: var(--card-bg-color);
+  border-left: 3px solid $red;
+  margin: $post-card-margin;
+}
+
+@mixin font-family-icons($icon : '') {
+  @if $icon {
+    content: $icon;
+  }
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+@mixin main-container() {
+  margin: 0 auto;
+  width: $content-desktop;
+
+  @include desktop-large() {
+    width: $content-desktop-large;
+  }
+
+  @include desktop-largest() {
+    width: $content-desktop-largest;
+  }
+}
+
+@function sidebar-toggle-alignment($reverse) {
+  $condition : $sidebar_position == 'right';
+  @if ($scheme == 'Muse') or ($scheme == 'Mist') {
+    $condition : $condition == $reverse;
+  }
+  @return if($condition, ('left' 'right'), ('right' 'left'));
+}
+
+@mixin sidebar-toggle-position($reverse) {
+  $alignment : nth(sidebar-toggle-alignment($reverse), 1);
+  #{$alignment}: $b2t-position-right;
+  @include tablet-mobile() {
+    #{$alignment}: $b2t-position-right-mobile;
+  }
+}
+
+@mixin sidebar-toggle() {
+  background: $b2t-bg-color;
+  cursor: pointer;
+  opacity: $b2t-opacity;
+  position: fixed;
+  z-index: $zindex-3;
+  @include sidebar-toggle-position(false);
+
+  &:hover {
+    opacity: $b2t-opacity-hover;
+  }
+
+  @include tablet-mobile() {
+    opacity: $b2t-opacity-hover;
+  }
+}
+
+@mixin round-icon($diameter) {
+  border-radius: 50%;
+  content: ' ';
+  height: $diameter;
+  width: $diameter;
+}
+
+@mixin toggle-arrow($position) {
+  @if $position == 'right' {
+    .toggle-line:first-child {
+      top: 2px;
+      transform: rotate(-45deg);
+      width: 50%;
+    }
+
+    .toggle-line:last-child {
+      top: -2px;
+      transform: rotate(45deg);
+      width: 50%;
+    }
+  } @else {
+    .toggle-line:first-child {
+      left: 50%;
+      top: 2px;
+      transform: rotate(45deg);
+      width: 50%;
+    }
+
+    .toggle-line:last-child {
+      left: 50%;
+      top: -2px;
+      transform: rotate(-45deg);
+      width: 50%;
+    }
+  }
+}
+
+@mixin toggle-close($position) {
+  .toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  @if $position == 'right' {
+    .toggle-line:first-child {
+      top: 5px;
+      transform: rotate(-45deg);
+    }
+
+    .toggle-line:last-child {
+      top: -5px;
+      transform: rotate(45deg);
+    }
+  } @else {
+    .toggle-line:first-child {
+      top: 5px;
+      transform: rotate(45deg);
+    }
+
+    .toggle-line:last-child {
+      top: -5px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+@mixin site-nav-hide-by-default() {
+  --scroll-height: 0;
+  height: 0;
+  overflow: hidden;
+  transition: height $transition-ease;
+
+  body:not(.site-nav-on) & .animated {
+    animation: none;
+  }
+
+  body.site-nav-on & {
+    height: var(--scroll-height);
+  }
+}
+
+@mixin button($color) {
+  background: transparent;
+  color: $color;
+  cursor: pointer;
+  line-height: 2;
+  padding: 0 15px;
+
+  &:hover {
+    background: $color;
+    color: white;
+  }
+}

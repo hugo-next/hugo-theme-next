@@ -1,0 +1,45 @@
+// Menu
+// --------------------------------------------------
+.site-nav {
+  flex-grow: 1;
+
+  @include mobile() {
+    padding: 0 10px 0;
+  }
+}
+
+.main-menu {
+  @include mobile() {
+    padding-top: 10px;
+  }
+}
+
+.menu {
+  padding: 0;
+
+  .menu-item {
+    margin: 0;
+
+    @include mobile() {
+      margin-top: 5px;
+    }
+
+    a {
+      border-radius: 2px;
+      padding: 0 10px;
+      transition-property: background;
+
+      @include mobile() {
+        text-align: left;
+      }
+    }
+
+    .badge {
+      background: white;
+      border-radius: 10px;
+      color: $black-light;
+      padding: 1px 4px;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+    }
+  }
+}

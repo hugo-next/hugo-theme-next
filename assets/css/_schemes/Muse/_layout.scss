@@ -1,0 +1,28 @@
+.main-inner {
+  @include main-container();
+
+  @include mobile() {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.header-inner, .main-inner, .footer-inner {
+  @include mobile() {
+    width: auto;
+  }
+}
+
+// Page - Container
+// --------------------------------------------------
+.main-inner {
+  padding-bottom: $content-padding-bottom;
+}
+
+.post-block:first-of-type {
+  padding-top: $posts-first-padding;
+
+  @include mobile() {
+    padding-top: $posts-first-padding-mobile;
+  }
+}

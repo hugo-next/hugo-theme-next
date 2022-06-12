@@ -1,0 +1,5 @@
+{{- with .Site.Params.openGraph.facebook }}
+{{- range $attr, $val := . }}
+<meta property="fb:{{ $attr }}" content="{{ $val }}">
+{{- end }}
+{{- end }}

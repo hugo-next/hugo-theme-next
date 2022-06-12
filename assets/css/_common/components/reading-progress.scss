@@ -1,0 +1,27 @@
+@if $reading_progress_enable {
+  .reading-progress-bar {
+    --progress: 0;
+    background: $reading_progress_color;
+    height: $reading_progress_height;
+    position: fixed;
+    z-index: $zindex-5;
+
+    @if $reading_progress_reversed {
+      width: calc(100% - var(--progress));
+    } @else {
+      width: var(--progress);
+    }
+
+    @if $reading_progress_start == 'right' {
+      right: 0;
+    } @else {
+      left: 0;
+    }
+
+    @if $reading_progress_position == 'bottom' {
+      bottom: 0;
+    } @else {
+      top: 0;
+    }
+  }
+}

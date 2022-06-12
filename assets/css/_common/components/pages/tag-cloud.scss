@@ -1,0 +1,43 @@
+.tag-cloud {
+  text-align: center;
+  min-height: 700px;
+
+  .tag-cloud-title {
+    text-align: center;
+    font-size: 1.35em;
+
+    .tag-list-count {
+      font-size: 0.56em;
+    }
+  }
+
+  .tag-cloud-tags {
+    margin-top: 40px;
+  }
+
+  a {
+    display: inline-block;
+    margin: 10px;
+  }
+}
+
+@for $tag-cloud from 0 through 10 {
+  $tag-cloud-color : mix($tag-cloud-end, $tag-cloud-start, $tag-cloud * 10);
+  .tag-cloud-#{$tag-cloud} {
+    border-bottom-color: $tag-cloud-color;
+    color: $tag-cloud-color;
+    font-size: #{0.85+($tag-cloud * 0.05)}em
+  }
+}
+
+@if $darkmode {
+  @media (prefers-color-scheme: dark) {
+    @for $tag-cloud from 0 through 10 {
+      $tag-cloud-color : mix($tag-cloud-end-dark, $tag-cloud-start-dark, $tag-cloud * 10);
+      .tag-cloud-#{$tag-cloud} {
+        border-bottom-color: $tag-cloud-color;
+        color: $tag-cloud-color;
+      }
+    }
+  }
+}

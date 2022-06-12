@@ -12,10 +12,8 @@
 
 @media (any-hover: hover) {
   body:not(.sidebar-active) .sidebar-toggle:hover {
-    @include toggle-arrow($cfg_sidebar_position);
   }
 }
 
 .sidebar-active .sidebar-toggle {
-  @include toggle-close($cfg_sidebar_position);
 }

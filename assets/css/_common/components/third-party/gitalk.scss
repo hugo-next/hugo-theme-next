@@ -1,0 +1,9 @@
+@if $gitalk_enable {
+  .gt-header a, .gt-comments a, .gt-popup a {
+    border-bottom: 0;
+  }
+
+  .gt-container .gt-popup .gt-action.is--active::before {
+    top: .7em;
+  }
+}

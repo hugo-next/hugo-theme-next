@@ -1,0 +1,90 @@
+// Flexbox layout makes it possible to reorder the child
+// elements of .post-footer through the `order` CSS property
+// Fix issue #16
+// To do: use `gap` instead of `margin`
+// See https://caniuse.com/flexbox-gap
+.post-footer {
+  @include flex-column();
+
+  hr{
+  text-align:center;
+  line-height:0px;
+  height: 0px;
+  background-image: none;
+  border-bottom: .125em dashed #999;
+  margin: 24px 0 12px 0;
+
+  &:after{
+    content: $post_end_line_tip;
+    font-size: .9em;
+    font-weight: bold;
+    background: #fff;
+    padding: 0 5px;
+    z-index:2;
+  }
+}
+
+}
+
+.post-eof {
+  background: $grey-light;
+  height: 1px;
+  margin: $post-eof-margin-top auto $post-eof-margin-bottom;
+  width: 8%;
+
+  .post-block:last-of-type & {
+    display: none;
+  }
+}
+
+@if $creative_commons_post {
+
+  .post-copyright {
+    border-left: 3px solid #ff2a2a;
+    background: var(--card-bg-color);
+
+    img {
+      margin: 8px;
+      opacity: .8;
+      filter: blur(.08em);
+      -webkit-transform: rotate(320deg);
+      -moz-transform: rotate(320deg);
+      -ms-transform: rotate(320deg);
+      -o-transform: rotate(320deg);
+      transform: rotate(320deg);
+    }
+
+    ul {
+      list-style: none;
+      padding: .5em 1em;
+      @include post-card();
+      border: none;
+      background: none;
+    }
+  }
+
+}
+
+.post-tags {
+  margin-bottom: 20px;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    font-size: $font-size-smaller;
+
+    &:before {
+      @if $post_end_tag_icon {
+        content: "🔖";
+        font-size: 1.25em;
+      } 
+      @else {
+        content: "#";
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

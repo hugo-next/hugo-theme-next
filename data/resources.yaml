@@ -1,0 +1,27 @@
+# Public CDN vendor list
+#
+vendors: 
+  cdnjs: "//cdnjs.cloudflare.com/ajax/libs/${name}/${version}/${file}"
+  unpkg: "//unpkg.com/${name}@${version}/${file}"
+
+
+# Javascript Resources
+#
+js:
+  - name: animejs
+    version: 3.2.1
+    file: lib/anime.min.js
+  - name: mathjax
+    version: 3.2.0
+    file: es5/tex-mml-chtml.js
+
+# CSS Resources
+#
+css:
+  - name: '@fortawesome/fontawesome-free'
+    version: 6.1.1
+    file: css/all.min.css
+    alias: font-awesome
+  - name: animate.css
+    version: 3.1.1
+    file: animate.min.css

@@ -1,0 +1,17 @@
+{{- if .Site.Params.postMeta.categories }}
+{{- if and .Params.categories (gt (len .Params.categories) 0) }}
+<span class="post-meta-item">
+  <span class="post-meta-item-icon">
+    <i class="far fa-folder-open"></i>
+  </span>
+  <span class="post-meta-item-text">{{- print (T "PostCatgs") (T "SymbolColon") -}}</span>
+  {{- range (first 1 .Params.categories) }}
+  <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+    <a href="/categories/{{ . | urlize }}" itemprop="url" rel="index">
+      <span itemprop="name">{{- . -}}</span>
+    </a>
+  </span>
+  {{- end }}
+</span>
+{{- end }}
+{{- end }}

@@ -1,9 +1,9 @@
-.links-of-author {
+.links-of-author, .links-of-social {
   a {
     font-size: $font-size-smaller;
   }
 
-  @if not $cfg_social_icons_only {
+  @if not $social_icons_only {
     .fa, .fab, .far, .fas {
       margin-right: 2px;
     }

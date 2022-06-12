@@ -1,0 +1,79 @@
+.post-body {
+  font-family: $font-family-posts;
+  @include word-wrap();
+
+  @include desktop-large() {
+    font-size: $font-size-large;
+  }
+
+  @include desktop() {
+    text-align: unquote($text_align_desktop);
+  }
+
+  @include tablet-mobile() {
+    text-align: unquote($text_align_mobile);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    // Supported plugins: hexo-renderer-markdown-it hexo-renderer-marked
+    .header-anchor, .headerlink {
+      border-bottom-style: none;
+      color: inherit;
+      float: right;
+      font-size: $font-size-small;
+      margin-left: 10px;
+      opacity: 0;
+
+      &::before {
+        @include font-family-icons('\f0c1');
+      }
+    }
+
+    &:hover {
+      .header-anchor, .headerlink {
+        opacity: .5;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .exturl .fa {
+    font-size: $font-size-small;
+    margin-left: 4px;
+  }
+
+  // For fancybox and pandoc
+  .image-caption, img + figcaption, .fancybox + figcaption {
+    color: $grey-dark;
+    font-size: $font-size-small;
+    font-weight: bold;
+    line-height: 1;
+    margin: -15px auto 15px;
+    text-align: center;
+  }
+
+  iframe, img, video, embed {
+    margin-bottom: 20px;
+  }
+
+  .video-container {
+    height: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding-top: 75%;
+    position: relative;
+    width: 100%;
+
+    iframe, object, embed {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}

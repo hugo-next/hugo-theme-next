@@ -1,0 +1,25 @@
+<!-- Plugin style files -->
+{{- $cssRes := .Site.Data.resources.css }}
+{{- $vendor := .Site.Params.vendors.plugins }}
+{{- $vendorCDN := .Scratch.Get "pluginCDN" }}
+{{- range $css := $cssRes }}
+  {{- $pluginCSS := $vendorCDN }}
+  {{- $npm := $css.name }}
+  {{- $file := $css.file }}
+  {{- if eq $vendor "cdnjs" }}
+    {{- with $css.alias }}
+      {{- $npm = . }}
+    {{- end }}
+    {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $css.file }}
+  {{- end }}
+  {{- $pluginCSS = replace $pluginCSS "${name}" $npm }}
+  {{- $pluginCSS = replace $pluginCSS "${version}" $css.version }}
+  {{- $pluginCSS = replace $pluginCSS "${file}" $file }}
+  <link rel="stylesheet" href="{{ $pluginCSS }}">
+{{- end }}
+<!-- Main Style file -->
+{{- $scss := resources.Get "css/main.scss" }}
+{{- $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
+{{- $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  <link rel="stylesheet" href="/css/hover.css">

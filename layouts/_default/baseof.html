@@ -1,30 +1,50 @@
-{{- $langCode := replaceRE "-([a-z]+)" (upper (substr .Site.Language -3)) .Site.Language -}}
-{{- $P := .Site.Params -}}
-{{- .Scratch.Set "langCode" $langCode -}}
+{{- .Scratch.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) -}}
+{{- .Scratch.Set "catsCount" (len .Site.Taxonomies.categories) -}}
+{{- .Scratch.Set "tagsCount" (len .Site.Taxonomies.tags)  -}}
+{{- $vendors := .Site.Data.resources.vendors -}}
+{{- $pluginVen := .Site.Params.vendors.plugins -}}
+{{- $pluginCDN := index $vendors $pluginVen -}}
+{{- .Scratch.Set "pluginCDN" $pluginCDN -}}
 <!DOCTYPE html>
-<html lang="{{ $langCode }}">
+<html lang="{{ .Site.LanguageCode }}">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <meta name="generator" content="Hugo v{{ hugo.Version }}">
-  {{- partial "partials/head.html" . }}
-  <title>{{ .Site.Title }}</title>
+  {{ hugo.Generator }}
+  <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon.small }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" {{/*class="use-motion"*/}}>
   <div class="headband"></div>
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      {{ partial "partials/header.html" . }}
+      <div class="header-inner">
+      </div>
+      <!-- Sidebar -->
+      {{- if ne .Site.Params.sidebar.display "remove" }}
+      {{- partial "sidebar.html" . }}
+      {{- end }}
     </header>
-    <div class="main-inner index posts-expand">
-      {{- block "main" . -}}{{- end -}}   
+    <!-- Widgets -->
+    {{ partial "widgets.html" . }}
+      <!-- Submenu,Content,Comment -->
+      {{- if .IsPage }}
+        {{- partial "comments.html" . }}
+      {{- end }}
     </div>
   </main>
   <footer class="footer">
-    {{- partial "partials/footer.html" . }}
+    <div class="footer-inner">
+    </div>
   </footer>
+
+  {{- partial "scripts" . }}
 </body>
 
 </html>

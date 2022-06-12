@@ -1,9 +1,9 @@
 //@use 'sass:map';
 
-@if $cfg_note_style != 'disabled' {
+@if $note_style != 'disabled' {
   .post-body .note {
-    $note-icons : $cfg_note_icons;
-    $note-style : $cfg_note_style;
+    $note-icons : $note_icons;
+    $note-style : $note_style;
 
     border-radius: $note-border-radius;
     margin-bottom: 20px;
@@ -68,7 +68,6 @@
       &.#{$type} {
         @if $note-style == 'flat' {
           background: map-get($note-bg, $type);
-          @if $cfg_darkmode {
             @media (prefers-color-scheme: dark) {
               background: mix(map-get($note-bg, $type), $body-bg-color-dark, 10%);
             }

@@ -1,0 +1,39 @@
+.category-all-page {
+
+  min-height: 700px;
+
+  .category-all-title {
+    font-size: 1.35em;
+    text-align: center;
+  }
+
+  .category-all {
+    margin-top: 40px;
+  }
+
+  .category-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .category-list-item {
+    margin: 5px 10px;
+  }
+
+  .category-list-count {
+    color: $grey;
+
+    &::before {
+      content: ' (';
+    }
+
+    &::after {
+      content: ') ';
+    }
+  }
+
+  .category-list-child {
+    padding-left: 10px;
+  }
+}

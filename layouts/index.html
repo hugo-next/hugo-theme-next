@@ -1,32 +1,8 @@
+{{- define "main_inner_class" }}index posts-expand{{- end }}
 {{- define "main" }}
-{{- $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
 {{- range $paginator.Pages }}
-<div class="post-block animated fadeIn">
-<article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Scratch.Get "langCode" }}">
-  <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">  
-  <header class="post-header">
-    <h2 class="post-title" itemprop="name headline">
-      <a href="{{ .Permalink }}" class="post-title-link" itemprop="url">{{ .Title }}</a>
-    </h2>
-    <div class="post-meta-container">
-      <div class="post-meta">
-        {{- partial "post_meta/date" . }}
-        {{- partial "post_meta/catgs" . }}
-        {{- partial "post_meta/tags" . }}
-      </div>
-    </div>
-  </header>
-  <div class="post-body" itemprop="articleBody">{{ .Summary }}</div>
-  <footer class="post-footer">
-    <div class="post-footer-btn">
-      <a class="hvr-shutter-out-horizontal" href="{{ .Permalink }}" rel="contents">
-        {{- T "PostReadMore" }} &raquo;
-      </a>
-    </div>
-    <div class="post-eof"></div>
-  </footer>
-</article>
-</div>    
+{{ partial "post.html"  (dict "ctx" . "IsHome" true) }}
 {{- end }}
-{{- partial "partials/pagination" . }}  
+{{- partial "partials/pagination.html" . }}  
 {{- end }}

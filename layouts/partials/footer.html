@@ -1,38 +1,106 @@
-{{ $ft := .Site.Params.footer }}
-<div class="footer-inner">
-  {{- $ba := $ft.beian }}
-  {{- if $ba.enable }}
-  <div class="beian">
-    <a href="https://beian.miit.gov.cn" target="_blank" title="">{{ $ba.icp }}</a>
-    {{- with $ba.gonganNum }}
-    <img src="/imgs/gongan.png" alt="京公网安备">
-    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ . }}" target="_blank" title="">{{ printf "京公网安备 %d 号" . }}</a>
+{{- $ft := .Site.Params.footer }}
+<div class="copyright">
+  &copy;
+  <span itemprop="copyrightYear">
+    {{- $year := now.Year }}
+    {{- if isset $ft "since" }}
+    {{- if gt $year $ft.since }}
+    {{ $ft.since }} - {{ $year }}
+    {{- else }}
+    {{ $year }}
     {{- end }}
-  </div>
+    {{- else }}
+    {{ $year }}
+    {{- end }}
+  </span>
+  <span class="with-love">
+    <i class="{{ $ft.icon.name }}"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">{{ $ft.copyright | default .Site.Params.author }}</span>
+</div>
+{{/* TODO
+<!--
+{{- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time }}
+<div class="wordcount">
+  {{- if config.symbols_count_time.total_symbols }}
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    {{- if .Site.Params.symbols_count_time.item_text_total }}
+    <span>{{ __('symbols_count_time.count_total') + __('symbol.colon') }}</span>
+    {{- end }}
+    <span title="{{ __('symbols_count_time.count_total') }}">{{ symbolsCountTotal(site) }}</span>
+  </span>
   {{- end }}
-  <div class="copyright">
-    &copy;
-    <span itemprop="copyrightYear">
-      {{- $year := now.Year }}
-      {{- if isset $ft "since" }}
-      {{- if gt $year $ft.since }}
-      {{ $ft.since }} - {{ $year }}
-      {{- else }}
-      {{ $year }}
-      {{- end }}
-      {{- else }}
-      {{ $year }}
-      {{- end }}
+  {{- if config.symbols_count_time.total_time }}
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
     </span>
-    <span class="with-love">
-      <i class="{{ $ft.icon.name }}"></i>
-    </span>
-    <span class="author" itemprop="copyrightHolder">{{ .Site.Params.author }}</span>
-  </div>
-  {{- if $ft.powered }}
-  <div class="powered-by">
-    {{ $pb := printf "<a href='https://gohugo.io' target='_blank'>Hugo v%s</a> &amp; <a href='https://github.com/hugo-next' target='_blank'>NexT.%s</a>" hugo.Version .Site.Params.scheme }}
-    {{- printf (T "FooterPowerby") $pb | safeHTML }}
-  </div>
+    {{- if .Site.Params.symbols_count_time.item_text_total }}
+    <span>{{ __('symbols_count_time.time_total') }} &asymp;</span>
+    {{- end }}
+    <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
+  </span>
   {{- end }}
 </div>
+{{- end }}
+-->
+*/}}
+{{- if .Site.Params.busuanzi.enable }}
+{{ with .Site.Params.busuanzi }}
+<div class="busuanzi-count">
+  {{- if .visitors }}
+  <span class="post-meta-item" id="busuanzi_container_site_uv" title="{{ T "VisitorsLabel" }}">
+    <span class="post-meta-item-icon">
+      <i class="{{ .visitorsIcon }}"></i>
+    </span>
+    <span class="site-uv" >
+      <span id="busuanzi_value_site_uv"></span>
+    </span>
+  </span>
+  {{- end }}
+  {{- if .views }}
+  <span class="post-meta-item" id="busuanzi_container_site_pv" title="{{ T "PageViewsLabel" }}">
+    <span class="post-meta-item-icon">
+      <i class="{{ .viewsIcon }}"></i>
+    </span>
+    <span class="site-pv">
+      <span id="busuanzi_value_site_pv"></span>
+    </span>
+  </span>
+  {{- end }}
+</div>
+{{- end }}
+{{- end }}
+{{- if $ft.powered }}
+<div class="powered-by">
+  {{ $pb := printf "<a href='https://gohugo.io' target='_blank'>Hugo</a> &amp; <a href='https://github.com/hugo-next' target='_blank'>NexT.%s</a>" .Site.Params.scheme }}
+  {{- printf (T "FooterPowerby") $pb | safeHTML }}
+</div>
+{{- end }}
+{{- if $ft.beian.enable }}
+{{- with $ft.beian }}
+<div class="beian">
+  <a href="https://beian.miit.gov.cn" target="_blank">{{ .icp }}</a>
+  <img src="/imgs/gongan.png" alt="{{ .provinceAbbr }}公网安备">
+  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ .gonganNum }}" target="_blank">{{ .provinceAbbr }}公网安备 {{ .gonganNum }} 号</a>
+</div>
+{{- end }}
+{{- end }}
+{{- with $ft.vendors }}
+<div class="vendors-list">
+  {{- range .list }}
+    <a target="_blank" href="{{ .link }}" title="{{ .name }}">
+      {{- if .img }}
+        {{ $img := split .img "||" }}
+        <img src="{{- trim (index $img 0) " " }}" width="{{- trim (index $img 1) " " -}}px" alt="{{ .name }}" />
+      {{- else }}
+        {{ .name }}
+      {{- end }}
+    </a>
+  {{- end }}
+   <span>{{ .title }}</span>
+</div>
+{{- end }}

@@ -1,0 +1,92 @@
+.sidebar {
+  margin-top: $sidebar-offset;
+  // https://caniuse.com/css-sticky
+  position: -webkit-sticky;
+  position: sticky;
+  top: $sidebar-offset;
+  width: $sidebar-desktop;
+
+  @include tablet-mobile() {
+    display: none;
+  }
+
+  @if $motion_enable and $motion_transition_sidebar {
+    visibility: hidden;
+  }
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
+.sidebar-inner {
+  background: var(--content-bg-color);
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+.site-state-item {
+  padding: 0 10px;
+}
+
+.sidebar .sidebar-button {
+  border-bottom: 1px dotted $grey-light;
+  border-top: 1px dotted $grey-light;
+
+  button {
+    border: 0;
+    color: $orange;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      background: none;
+      border: 0;
+      color: darken($orange, 20%);
+    }
+  }
+}
+
+.links-of-author, .links-of-social {
+  @include flex-wrap();
+}
+
+.links-of-author-item, .links-of-social-item {
+  @include sidebar-inline-links-item();
+
+  @if not $social_icons_only {
+    width: 50%;
+  }
+
+  a {
+    border-bottom: 0;
+    border-radius: 4px;
+    display: block;
+
+    &:hover {
+      background: var(--body-bg-color);
+    }
+  }
+}
+
+.links-of-blogroll-item {
+  @if $links_settings_layout == 'inline' {
+    display: inline-block;
+    max-width: 100%;
+    @include sidebar-inline-links-item();
+  }
+}
+
+@if $back2top_sidebar {
+  // Only when back2top.sidebar is true, apply the following styles
+  .back-to-top {
+    background: var(--body-bg-color);
+    margin: 8px - $sidebar-offset -10px -18px;
+
+    &.back-to-top-on {
+      margin-top: 16px;
+    }
+  }
+}

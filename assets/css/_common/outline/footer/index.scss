@@ -20,6 +20,18 @@
   text-align: center;
   @include flex-column();
   @include main-container();
+
+  @if $footer_vendors_enable {
+    .vendors-list {
+      a {
+        margin-right: 5px;
+      }
+
+      img {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .use-motion {
@@ -66,16 +78,13 @@
 }
 
 .with-love {
-  color: $cfg_footer_icon_color;
   display: inline-block;
   margin: 0 5px;
 
-  @if $cfg_footer_icon_animated {
     animation: icon-animate 1.33s ease-in-out infinite;
   }
 }
 
-@if $cfg_footer_beian_enable {
   .beian img {
     display: inline-block;
     margin: 0 3px;
@@ -83,15 +92,12 @@
   }
 }
 
-@if $cfg_busuanzi_enable {
   .busuanzi-count {
-    @if $cfg_busuanzi_visitors {
       #busuanzi_container_site_uv {
         display: none;
       }
     }
 
-    @if $cfg_busuanzi_views {
       #busuanzi_container_site_pv {
         display: none;
       }
