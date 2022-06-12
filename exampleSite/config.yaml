@@ -4,7 +4,6 @@
 # See: https://theme-next.js.org/docs/getting-started/configuration
 # ===============================================================
 
-
 baseURL: /
 
 theme: hugo-theme-next
@@ -76,7 +75,6 @@ menus:
       pre: heartbeat
       weight: 4
 
-
 params:
   mainSections: ["posts"]
   yearFormat: "2006"
@@ -123,6 +121,7 @@ params:
   # Dark Mode
   darkmode: true
 
+
   # ---------------------------------------------------------------
   # Site Information Settings
   # ---------------------------------------------------------------
@@ -162,11 +161,11 @@ params:
      #creator: <twitter:creator>
      #image: <twitter:image>
      #site: <twitter:site>
-
     #googlePlus: <g+:profile_link>
     #facebook:
     #  admins: <fb:admin_id>
     #  app_id: <fb:app_id>
+
 
   # ---------------------------------------------------------------
   # Menu Settings
@@ -217,7 +216,6 @@ params:
     # Sidebar padding in pixels.
     padding: 18
     # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
-
     offset: 12
 
   # Sidebar Avatar
@@ -284,6 +282,7 @@ params:
     expandAll: false
     # Maximum heading depth of generated toc.
     maxDepth: 6
+
 
   # ---------------------------------------------------------------
   # Footer Settings

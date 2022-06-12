@@ -29,6 +29,7 @@
   color-scheme: light;
 }
 
+@if $darkmode {
   @media (prefers-color-scheme: dark) {
     :root {
       --body-bg-color: #{$body-bg-color-dark};

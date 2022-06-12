@@ -68,6 +68,7 @@
       &.#{$type} {
         @if $note-style == 'flat' {
           background: map-get($note-bg, $type);
+          @if $darkmode {
             @media (prefers-color-scheme: dark) {
               background: mix(map-get($note-bg, $type), $body-bg-color-dark, 10%);
             }

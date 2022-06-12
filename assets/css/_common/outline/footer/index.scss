@@ -78,13 +78,16 @@
 }
 
 .with-love {
+  color: $footer_icon_color;
   display: inline-block;
   margin: 0 5px;
 
+  @if $footer_icon_animated {
     animation: icon-animate 1.33s ease-in-out infinite;
   }
 }
 
+@if $footer_beian_enable {
   .beian img {
     display: inline-block;
     margin: 0 3px;
@@ -92,12 +95,14 @@
   }
 }
 
+@if $busuanzi_enable {
   .busuanzi-count {
+    @if $busuanzi_visitors {
       #busuanzi_container_site_uv {
         display: none;
       }
     }
-
+    @if $busuanzi_views {
       #busuanzi_container_site_pv {
         display: none;
       }

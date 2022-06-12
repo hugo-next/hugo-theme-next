@@ -1,3 +1,4 @@
+@if $site_state {
   .site-state {
     @include flex-wrap();
     line-height: 1.4;

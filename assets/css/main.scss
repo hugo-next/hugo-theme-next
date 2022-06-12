@@ -139,14 +139,16 @@ $second_comment_name: {{ lower (index $sortNav 1).name }};
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
+{{ printf "/* %s Scheme Style */" $P.scheme }}
+{{ printf "@import '_variables/%s';" $P.scheme }}
 // TODO
-// @import 'theme.injects.variable';
+//@import 'theme.injects.variable';
 
 // Mixins Layer
 // --------------------------------------------------
 @import '_mixins';
 // TODO
-// @import 'theme.injects.mixin';
+//@import 'theme.injects.mixin';
 
 // Dark mode colors
 // --------------------------------------------------
@@ -162,11 +164,11 @@ $second_comment_name: {{ lower (index $sortNav 1).name }};
 @import '_common/outline';
 
 // Components
-
+@import '_common/components';
 
 // Schemes Layer
 // --------------------------------------------------
-
+{{ printf "@import '_schemes/%s/';" $P.scheme }}
 
 // Custom Layer
 // TODO 

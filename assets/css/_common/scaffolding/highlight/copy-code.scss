@@ -11,11 +11,13 @@
   position: absolute;
   transition: opacity $transition-ease;
 
+  @if $codeblock_copy_btn_style == 'flat' {
     background: white;
     border: 0;
     font-size: $font-size-smaller;
     right: 0;
     top: 0;
+  } @else if $codeblock_copy_btn_style == 'mac' {
     color: var(--highlight-foreground);
     font-size: 14px;
     right: 0;
@@ -31,6 +33,7 @@
   }
 }
 
+@if $codeblock_copy_btn_style == 'mac' {
   figure.highlight {
     border-radius: 5px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
