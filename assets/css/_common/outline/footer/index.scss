@@ -20,6 +20,18 @@
   text-align: center;
   @include flex-column();
   @include main-container();
+
+  @if $footer_vendors_enable {
+    .vendors-list {
+      a {
+        margin-right: 5px;
+      }
+
+      img {
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .use-motion {

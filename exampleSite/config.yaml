@@ -321,6 +321,17 @@ params:
       gonganNum: 31011402009770
       # The icon for gongan beian. See: http://www.beian.gov.cn/portal/download
       #gongan_icon_url:
+    vendors:
+      title: 提供CDN/云资源支持
+      list:
+        - name: CloudBase Webify
+          link: https://webify.cloudbase.net
+        - name: Vercel
+          img: /imgs/vendors/vercel.svg || 55
+          link: https://vercel.com
+        - name: 又拍云
+          img: /imgs/vendors/upyun.png || 50
+          link: https://upyun.com
 
 
   # ---------------------------------------------------------------

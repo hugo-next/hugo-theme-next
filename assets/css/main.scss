@@ -22,6 +22,7 @@ $menu_settings_badges: {{ $P.menuSets.badges }};
 $footer_icon_color: {{ $P.footer.icon.color }};
 $footer_icon_animated: {{ $P.footer.icon.animated }};
 $footer_beian_enable: {{ $P.footer.beian.enable }};
+$footer_vendors_enable: {{ isset $P.footer "vendors" }};
 
 // Counter
 $busuanzi_enable: {{ $P.busuanzi.enable }};
