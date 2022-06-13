@@ -71,6 +71,8 @@ languages:
       linksSets:
         icon: fa fa-globe
         title: Friends
+      postFooter:
+        endLineTip: "~ End of this post ~"
 
 #--------------------------------------
 # Menus Settings

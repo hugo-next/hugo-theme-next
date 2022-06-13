@@ -15,10 +15,9 @@
   margin: 24px 0 12px 0;
 
   &:after{
-    content: $post_end_line_tip;
     font-size: .9em;
     font-weight: bold;
-    background: #fff;
+    background: var(--content-bg-color);
     padding: 0 5px;
     z-index:2;
   }
