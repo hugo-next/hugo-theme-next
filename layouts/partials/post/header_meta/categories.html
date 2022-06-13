@@ -7,7 +7,7 @@
   <span class="post-meta-item-text">{{- print (T "PostCategory") (T "SymbolColon") -}}</span>
   {{- range (first 1 .Params.categories) }}
   <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-    <a href="/categories/{{ . | urlize }}" itemprop="url" rel="index">
+    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" itemprop="url" rel="index">
       <span itemprop="name">{{- . -}}</span>
     </a>
   </span>

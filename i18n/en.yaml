@@ -56,7 +56,7 @@ CatesCounterTitle:
   other: "{{ .Count }} categories in total"
 ArchiveCounterTitle:
   zero: No posts.
-  other: "{{ .Count }} posts in total."
+  other: "{{ .Count }} posts in total"
 
 PostArchiveCheersUm:
   other: Um..
@@ -84,7 +84,7 @@ PostLastModDate:
 PostLastModTime:
   other: "Modify Time"
 PostCategory:
-	other: "Classify at"
+  other: "Classify at"
 PostWords:
   other: "Words"
 PostWordCount:

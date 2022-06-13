@@ -85,7 +85,7 @@ PostLastModDate:
 PostLastModTime:
   other: 修改时间
 PostCategory:
-	other: "分类于"
+  other: "分类于"
 PostWords:
   other: 字数
 PostWordCount:
