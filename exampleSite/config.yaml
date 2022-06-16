@@ -7,6 +7,7 @@
 baseURL: /
 
 theme: hugo-theme-next
+canonifyURLs: true
 
 paginate: 8
 
