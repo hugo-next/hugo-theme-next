@@ -21,7 +21,7 @@
       <a target="_blank" href="{{ .Params.OriginLink }}" title="{{ .Title }}">{{ .Params.Link }}</a>
       {{- else }} 
       <strong>{{ print (T "PostCRLink") (T "SymbolColon") }}</strong>
-      <a href="{{ .RelPermalink | absLangURL }}" title="{{ .Title }}">{{ .RelPermalink | absLangURL }}</a>
+       <a href="{{ .Permalink | absLangURL }}" title="{{ .Title }}">{{ .Permalink | absLangURL }}</a>
       {{- end }}
     </li>
     <li class="post-copyright-license">
