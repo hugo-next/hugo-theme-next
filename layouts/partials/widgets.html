@@ -21,6 +21,10 @@
 {{- end }}
 {{- end }}
 
+{{- if .Site.Params.gitter.enable }}
+  {{ partial "_thirdparty/chat/gitter.html" . }}   
+{{- end }}
+
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
 </noscript>
