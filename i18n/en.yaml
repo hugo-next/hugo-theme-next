@@ -1,16 +1,20 @@
 #--------------------------------------
 # English Version
 #--------------------------------------
-posts:
+Posts:
   other: Posts
-tag:
+Tag:
   other: Tag
-tags:
+Tags:
   other: Tags
-category:
+TagTitle:
+  other: Tag Collection
+Category:
   other: Category
-categories:
+Categories:
   other: Categories
+CateTitle:
+  other: Classify Management
 AllSome:
   other: "All {{ .Some }}"
 
@@ -27,17 +31,17 @@ SymbolComma:
 SymbolPeriod:
   other: "."
 
-SitePostsTitle:
+SbPostsLable:
   other: "Posts"
-SiteCatesTitle:
+SbCatesTitle:
   other: "Categories"
-SiteTagsTitle:
+SbTagsTitle:
   other: "Tags"
 TableOfContents:
   other: "TOC"
 SiteOverview:
   other: "Overview"
-RSSTitle:
+RSSLable:
   other: "RSS Subscribe"
 CCLinkTitle:
   other: "Creative Commons"
@@ -46,16 +50,13 @@ BackTopLabel:
 
 TagsCounterTitle:
   zero: No tags
-  one: 1 tag in total
   other: "{{ .Count }} tags in total"
 CatesCounterTitle:
   zero: No categories
-  one: 1 category in total
   other: "{{ .Count }} categories in total"
 ArchiveCounterTitle:
   zero: No posts.
-  one: 1 post.
-  other: "{{ .Count }} posts in total."
+  other: "{{ .Count }} posts in total"
 
 PostArchiveCheersUm:
   other: Um..
@@ -75,13 +76,15 @@ PostArchiveKeepOn:
 PostStickyTitle:
   other: Strickys
 PostPublishDate:
-  other: "Publish"
+  other: "Publish on"
 PostPublishTime:
   other: "Create Time"
 PostLastModDate:
-  other: "Update"
+  other: "Update on"
 PostLastModTime:
   other: "Modify Time"
+PostCategory:
+  other: "Classify at"
 PostWords:
   other: "Words"
 PostWordCount:
@@ -92,8 +95,6 @@ PostReadTime:
   other: "{{- .ReadingTime -}}min"
 PostViews:
   other: "Views"
-PostCatg:
-  other: "Categories"
 PostTag:
   other: "Tags"
 PostReadMore:

@@ -1,7 +1,7 @@
 @if $gitter_enable {
   .gitter-open-chat-button {
-    $alignment : sidebar-toggle-alignment(false);
-    #{$alignment[0]}: auto !important;
-    #{$alignment[1]}: 10px !important;
+    $alignment: sidebar-toggle-alignment(false);
+    #{nth($alignment, 1)}: auto !important;
+    #{nth($alignment, 2)}: 10px !important;
   }
 }

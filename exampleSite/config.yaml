@@ -7,10 +7,13 @@
 baseURL: /
 
 theme: hugo-theme-next
+canonifyURLs: true
 
 paginate: 8
 
 enableEmoji: true
+
+relativeurls: true
 
 # Make markdown content support HTML syntax
 markup:
@@ -41,11 +44,38 @@ languages:
     languageCode: en
     hasCJKLanguage: false
     weight: 2
+    menus:
+      main:
+        - identifier: home
+          name: Home
+          url: /
+          pre: home
+          weight: 1
+        - identifier: about
+          name: About
+          url: /about.html
+          pre: user
+          weight: 2
+        - identifier: archives
+          name: Archives
+          url: /posts
+          pre: archive
+          weight: 3
+        - identifier: commonweal
+          name: Commonweal 404
+          url: /404.html
+          pre: heartbeat
+          weight: 4
     params:
       author: Theme NexT
       subtitle: Theme for Hugo
       description: Stay easily & powerful.
       keywords: Hugo,NexT,Theme,easily,powerful
+      linksSets:
+        icon: fa fa-globe
+        title: Friends
+      postFooter:
+        endLineTip: "~ End of this post ~"
 
 #--------------------------------------
 # Menus Settings
@@ -911,8 +941,8 @@ params:
   # Gitter Support
   # For more information: https://gitter.im
   gitter:
-    enable: false
-    room:
+    enable: true
+    room: hugo-next/community
 
 
   # ---------------------------------------------------------------

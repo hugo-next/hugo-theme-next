@@ -12,7 +12,7 @@
     <i class="fa fa-external-link-alt"></i>
   </a>
   {{- else }}
-  <a href="{{ .Permalink }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
+  <a href="{{ .RelPermalink | relLangURL }}" itemprop="url" class="post-title-link">{{ .Title }}</a>
   {{- end }}
   {{- else }}
   {{- .Title }}

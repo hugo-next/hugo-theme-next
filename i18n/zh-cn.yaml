@@ -2,16 +2,20 @@
 # 中文版本
 #--------------------------------------
 
-posts:
+Posts:
   other: 文章
-tag:
+Tag:
   other: 标签
-tags:
+Tags:
   other: 标签
-category:
+TagTitle:
+  other: 标签集锦
+Category:
   other: 分类
-categories:
+Categories:
   other: 分类
+CateTitle:
+  other: 分类管理
 AllSome:
   other: "所有 {{ .Some }}"
 
@@ -80,6 +84,8 @@ PostLastModDate:
   other: 更新于
 PostLastModTime:
   other: 修改时间
+PostCategory:
+  other: "分类于"
 PostWords:
   other: 字数
 PostWordCount:
@@ -90,8 +96,6 @@ PostReadTime:
   other: "{{- .ReadingTime -}}分钟"
 PostViews:
   other: 浏览
-PostCatgs:
-  other: 分类
 PostTags:
   other: 标签
 PostReadMore:
@@ -131,7 +135,7 @@ RewardBitcoin:
 PostCommentTitle:
   other: 评论交流
 
-UserVistorsLabel:
+VisitorsLabel:
   other: 总访客量
 PageViewsLabel:
   other: 总访问量

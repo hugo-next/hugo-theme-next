@@ -4,7 +4,16 @@
 {{- define "main_inner_class" }}{{.Data.Plural}} posts-expand{{ end -}}
 {{- define "main" }}
 <div class="post-block" lang="{{ .Site.LanguageCode }}">
-  <dive class="post-body">
+  <div class="post-header">
+    <h1>
+      {{- if eq .Data.Plural "categories" }}
+        {{- T "CateTitle" }}
+      {{- else if eq .Data.Plural "tags" }}
+        {{- T "TagTitle" }}
+      {{- end }}
+    </h1>
+  </div>
+  <div class="post-body">
     {{- if eq .Data.Plural "categories" }}
     {{ $cats := .Site.Taxonomies.categories }}
     <div class="category-all-page">
@@ -33,7 +42,9 @@
         {{ $randNums := (seq 10) }}
         {{- range $name, $items := $tags }}
         <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize | lower  }}">{{ $name }}
-          <span class="tag-list-count"><sup>({{ len $items }})</sup></span>
+          <span class="tag-list-count">
+            <sup>({{ len $items }})</sup>
+          </span>
         </a>
         {{- end }}
       </div>

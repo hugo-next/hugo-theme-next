@@ -2,7 +2,7 @@
 {{- if $.IsHome }} 
 {{- if and .Site.Params.readMoreBtn (not .Params.Expand) }}
 <div class="post-button">
-  <a class="btn" href="{{ .Permalink }}#more" rel="contents">
+  <a class="btn" href="{{ .RelPermalink | relLangURL }}#more" rel="contents">
     {{ T "PostReadMore" }} &raquo;
   </a>
 </div>
