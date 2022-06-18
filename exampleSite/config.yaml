@@ -996,8 +996,8 @@ params:
   # Use Animate.css to animate everything.
   # For more information: https://animate.style
   motion:
-    enable: false
-    async: false
+    enable: true
+    async: true
     transition:
       # All available transition variants: https://theme-next.js.org/animate/
       postBlock: fadeIn
@@ -1010,7 +1010,7 @@ params:
   # Progress bar in the top during page loading.
   # For more information: https://github.com/CodeByZach/pace
   pace:
-    enable: false
+    enable: true
     # All available colors:
     # black | blue | green | orange | pink | purple | red | silver | white | yellow
     color: blue

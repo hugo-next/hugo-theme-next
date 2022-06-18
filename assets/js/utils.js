@@ -287,7 +287,7 @@ NexT.utils = {
     if (window.innerWidth < 992 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
-    let display = CONFIG.page.sidebar;
+    let display = CONFIG.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter.
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
