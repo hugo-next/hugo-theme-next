@@ -21,6 +21,14 @@
   @include flex-column();
   @include main-container();
 
+  @include mobile() {
+    font-size: $font-size-smaller;
+  }
+  
+  @include mobile-small() {
+    font-size: $font-size-smallest;
+  }
+
   @if $footer_vendors_enable {
     .vendors-list {
       a {

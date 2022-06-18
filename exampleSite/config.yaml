@@ -483,7 +483,7 @@ params:
     mobile: justify
 
   # Reduce padding / margin indents on devices with narrow width.
-  mobileLayoutEconomy: false
+  mobileLayoutEconomy: true
 
   # Browser header panel color.
   themeColor:

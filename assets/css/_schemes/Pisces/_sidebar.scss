@@ -75,7 +75,7 @@
   @if $links_settings_layout == 'inline' {
     display: inline-block;
     max-width: 100%;
-    @include sidebar-inline-links-item();
+    margin: 5px;
   }
 }
 
