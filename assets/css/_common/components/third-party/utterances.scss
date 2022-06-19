@@ -1,5 +1,6 @@
 @if $utterances_enable {
   .utterances {
-    max-width: unset;
+    //max-width: unset;
+    min-height: 300px;
   }
 }

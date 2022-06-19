@@ -1,9 +1,11 @@
 {{- with .Site.Params.utterances }}
-<script src="https://utterances.njilc.com/client.js" 
+{{- if .enable }}
+<script src="//utterances.njilc.com/client.js" 
 repo="{{ .repo }}" 
 issue-term="{{ .issueTerm }}" 
 label="{{ .label }}" 
 crossorigin="anonymous" 
 theme="{{ .theme }}" async>
 </script>
+{{- end }}
 {{- end }}

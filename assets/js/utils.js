@@ -243,6 +243,20 @@ NexT.utils = {
     });
   },
 
+  registerCommonSwitch: function() {
+    const button = document.querySelector('.comment-switch .switch-btn');
+    if (!button) return;
+    const cwrap = document.querySelector('.comment-wrap');
+    button.addEventListener('click', () => {
+      button.classList.toggle('move');
+      const comms = document.querySelectorAll('.comment-wrap > div');
+      let len = comms.length;
+      while(len--){
+        cwrap.appendChild(comms[len]);
+      }
+    });
+  },
+
   activateNavByIndex: function(index) {
     const target = document.querySelectorAll('.post-toc li a.nav-link')[index];
     if (!target || target.classList.contains('active-current')) return;
