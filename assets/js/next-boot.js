@@ -44,7 +44,6 @@ NexT.boot.refresh = function() {
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
-  CONFIG.exturl && NexT.utils.registerExtURL();
   NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   /*NexT.utils.registerActiveMenuItem();

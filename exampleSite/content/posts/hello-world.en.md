@@ -11,7 +11,7 @@ tags:
  - Hugo
  - Startup
 
-url: hello-world.html
+url: post/hello-world.html
 weight: 2
 ---
 

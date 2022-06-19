@@ -13,7 +13,7 @@ tags:
   - 高亮
   - Chroma
 
-url: "syntax-highlighting.html"
+url: post/syntax-highlighting.html
 ---
 
 Hugo 通过 Chroma 提供非常快速的语法高亮显示，现 Hugo 中使用 Chroma 作为代码块高亮支持，它内置在 Go 语言当中，速度是真的非常、非常快，而且最为重要的是它也兼容之前我们使用的 Pygments 方式。
