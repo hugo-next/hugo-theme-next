@@ -9,7 +9,6 @@ if (!window.NexT) window.NexT = {};
     "scheme"     : "{{ .Site.Params.scheme }}",
     "darkmode"   : {{ .Site.Params.darkmode }},
     "version"    : "{{ .Site.Data.config.version }}",
-    "exturl"     : {{ .Site.Params.exturl }},
     "sidebar"    : {{ .Site.Params.sidebar | jsonify }},
     "copycode"   : {{ .Site.Params.codeblock.copyBtn | jsonify }},
     "bookmark"   : {{ .Site.Params.bookmark | jsonify }},

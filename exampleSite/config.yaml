@@ -608,9 +608,11 @@ params:
   index_with_subtitle: false
 
   # Automatically add external URL with Base64 encrypt & decrypt.
-  exturl: false
+  exturl: 
+    enable: true
+    icon: true
   # If true, an icon will be attached to each external URL
-  exturl_icon: true
+  #exturl_icon: true
 
   # Google Webmaster tools verification.
   # See: https://developers.google.com/search

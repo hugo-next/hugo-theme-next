@@ -37,7 +37,7 @@ NexT.boot.refresh = function() {
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
    */
-  CONFIG.prism && window.Prism.highlightAll();
+  //CONFIG.prism && window.Prism.highlightAll();
   /*CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
     background: 'var(--content-bg-color)'
   });*/

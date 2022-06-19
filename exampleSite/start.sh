@@ -17,6 +17,6 @@ Documentation: https://hugo-next.js.org
 EOT
 }
 
-next V0.0.1
+next `cat ../VERSION`
 
 hugo server -D -t ../.. --port 1414 --panicOnWarning
