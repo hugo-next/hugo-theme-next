@@ -61,6 +61,12 @@
     margin-top: 100px;
     text-align: center;
     font-size: 2em;
+
+    @include tablet-mobile() {
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+    }
   }
 
   .comment-head {
