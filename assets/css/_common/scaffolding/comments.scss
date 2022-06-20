@@ -53,6 +53,9 @@
       vertical-align: middle;
       font-weight: 700;
       font-size: 1.4em;
+      @include mobile-small() {
+        font-size: $font-size-smaller;
+      }
     }
 
     @if $two_comments_enable {
@@ -61,6 +64,10 @@
         float: right;
         margin: 2px auto;
         padding: 4px 16px;
+        @include mobile-small() {
+          font-size: $font-size-smaller;
+          padding: 4px;
+        }
         width: max-content;
         border-radius: 8px;
         background: #eee;
@@ -83,7 +90,7 @@
         .switch-btn {
           position: relative;
           display: inline-block;
-          margin: -4px 8px 0;
+          margin: 5px;
           width: 42px;
           height: 22px;
           border-radius: 34px;
@@ -145,6 +152,11 @@
 
     @if $two_comments_actived==$second_comment_name {
       $second_comment_display: block;
+    }
+
+    .comment-wrap .storage {
+      display: block;
+      animation: 0.5s ease 0s 1 normal none running tabshow;
     }
 
     .comment-wrap>div:nth-child(1) {

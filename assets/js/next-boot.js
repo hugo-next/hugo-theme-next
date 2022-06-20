@@ -50,6 +50,7 @@ NexT.boot.refresh = function() {
   NexT.utils.registerLangSelect();*/
   NexT.utils.registerSidebarTOC();
   NexT.utils.registerPostReward();
+  NexT.utils.initCommontesDispaly();
   NexT.utils.registerCommonSwitch();
   NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();

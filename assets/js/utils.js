@@ -243,17 +243,29 @@ NexT.utils = {
     });
   },
 
+  initCommontesDispaly: function(){
+    const comms = document.querySelectorAll('.comment-wrap > div');
+    if (comms.length<=1) return;
+    comms.forEach(function(item){
+      var dis = window.getComputedStyle(item, null).display;
+      item.style.display = dis;
+    });
+  },
+
   registerCommonSwitch: function() {
     const button = document.querySelector('.comment-switch .switch-btn');
     if (!button) return;
-    const cwrap = document.querySelector('.comment-wrap');
+    const comms = document.querySelectorAll('.comment-wrap > div');
     button.addEventListener('click', () => {
       button.classList.toggle('move');
-      const comms = document.querySelectorAll('.comment-wrap > div');
-      let len = comms.length;
-      while(len--){
-        cwrap.appendChild(comms[len]);
-      }
+      comms.forEach(function(item){
+        item.style.display = item.style.display === 'none' ? 'block' : 'none';
+        if (item.style.display === 'block') {
+          item.style.animation = "0.8s ease 0s 1 normal none running tabshow";
+        } else {
+          item.style.removeProperty('animation');
+        }
+      });
     });
   },
 
