@@ -23,6 +23,19 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  replacePostCRLink: function() {
+    if (CONFIG.hostname.startsWith('http')) return;
+    // Try to support mutli domain without base URL sets.
+    let href = window.location.href;
+    if (href.indexOf('#')>-1){
+      href = href.split('#')[0];
+    }
+    let postLink = document.getElementById('post-cr-link');
+    if (!postLink) return;
+    postLink.text = href;
+    postLink.href = href;
+  },
+
   /**
    * One-click copy code support.
    */

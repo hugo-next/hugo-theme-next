@@ -44,14 +44,15 @@ NexT.boot.refresh = function() {
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
-  NexT.utils.registerCopyCode();
+  CONFIG.isPage && NexT.utils.replacePostCRLink();
+  CONFIG.isPage && NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   /*NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();*/
-  NexT.utils.registerSidebarTOC();
-  NexT.utils.registerPostReward();
-  NexT.utils.initCommontesDispaly();
-  NexT.utils.registerCommonSwitch();
+  CONFIG.isPage && NexT.utils.registerSidebarTOC();
+  CONFIG.isPage && NexT.utils.registerPostReward();
+  CONFIG.isPage && NexT.utils.initCommontesDispaly();
+  CONFIG.isPage && NexT.utils.registerCommonSwitch();
   NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();
 };
