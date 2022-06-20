@@ -28,11 +28,15 @@
   {{- if $tc }}
   {{- range $sn }}
     <div>
+      {{- partial "_thirdparty/comment/comm_loading.html" . }}
       {{- partial (printf $cp (lower .name)) $root }}
     </div>
   {{- end }}
   {{- else }}
-    <div>{{- partial (printf $cp $fc) $root }}</div>
+    <div>      
+      {{- partial "_thirdparty/comment/comm_loading.html" . }}
+      {{- partial (printf $cp $fc) $root }}
+    </div>
   {{- end }}
   </div>
 </div>  

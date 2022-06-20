@@ -43,7 +43,25 @@
     margin-top: 60px;
   }
 
+  min-height: 300px;
   overflow: hidden;
+
+  .comment-loading {
+    @if $sidebar_position == 'right' {
+      padding-right: $sidebar-desktop + $sidebar-offset;
+    } @else {
+      padding-left: $sidebar-desktop + $sidebar-offset;
+    }
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 2em;
+  }
 
   .comment-head {
     margin-bottom: 20px;
@@ -70,7 +88,7 @@
         }
         width: max-content;
         border-radius: 8px;
-        background: #eee;
+        background: var(--card-bg-color);
 
         .first-comment {
           color: $first_comment_color;
@@ -152,11 +170,6 @@
 
     @if $two_comments_actived==$second_comment_name {
       $second_comment_display: block;
-    }
-
-    .comment-wrap .storage {
-      display: block;
-      animation: 0.5s ease 0s 1 normal none running tabshow;
     }
 
     .comment-wrap>div:nth-child(1) {
