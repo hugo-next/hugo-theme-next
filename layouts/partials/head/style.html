@@ -22,7 +22,6 @@
 {{- $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
 {{- $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-  <link rel="stylesheet" href="/css/hover.css">
 {{- if .IsPage }}
   <style type="text/css">
     .post-footer hr:after {

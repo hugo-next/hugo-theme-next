@@ -258,12 +258,11 @@ NexT.utils = {
     const comms = document.querySelectorAll('.comment-wrap > div');
     button.addEventListener('click', () => {
       button.classList.toggle('move');
-      comms.forEach(function(item){
-        item.style.display = item.style.display === 'none' ? 'block' : 'none';
-        if (item.style.display === 'block') {
-          item.style.animation = "0.8s ease 0s 1 normal none running tabshow";
+      comms.forEach(function(item){        
+        if (item.style.display === 'none') {
+          item.style.cssText = "display: block; animation: tabshow .8s";
         } else {
-          item.style.removeProperty('animation');
+          item.style.cssText = "display: none;"
         }
       });
     });
