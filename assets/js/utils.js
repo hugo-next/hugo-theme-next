@@ -40,15 +40,12 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    let figure = document.querySelectorAll('figure.highlight');
-    if (figure.length === 0) figure = document.querySelectorAll('pre:not(.mermaid)');
+    let figure = document.querySelectorAll('.highlight pre');
+    if (figure.length === 0 || !CONFIG.copycode) return;
     figure.forEach(element => {
-      element.querySelectorAll('.code .line span').forEach(span => {
-        span.classList.forEach(name => {
-          span.classList.replace(name, `hljs-${name}`);
-        });
-      });
-      if (!CONFIG.copycode) return;
+      let cn = element.querySelector('code').className;
+      // TODO seems hard code need find other ways fixed it.
+      if (cn == '') return;
       element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {

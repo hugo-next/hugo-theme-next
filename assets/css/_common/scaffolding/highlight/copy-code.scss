@@ -2,6 +2,19 @@
   opacity: 1;
 }
 
+.highlight {
+
+  background: var(--highlight-background);
+
+  .table-container, pre {
+    position: relative;
+  }
+
+  .table-container table tbody tr {
+    background: none;
+  }
+}
+
 .copy-btn {
   color: $black-dim;
   cursor: pointer;
@@ -9,32 +22,32 @@
   opacity: 0;
   padding: 2px 6px;
   position: absolute;
+  right: 8px;
+  top: 4px;
   transition: opacity $transition-ease;
+  background: var(--highlight-background);
 
   @if $codeblock_copy_btn_style == 'flat' {
     background: white;
     border: 0;
     font-size: $font-size-smaller;
-    right: 0;
-    top: 0;
+    
   } @else if $codeblock_copy_btn_style == 'mac' {
     color: var(--highlight-foreground);
     font-size: 14px;
-    right: 0;
-    top: 2px;
+    border-radius: 3px;
   } @else {
     background-color: $gainsboro;
     background-image: linear-gradient(#fcfcfc, $gainsboro);
     border: 1px solid #d5d5d5;
     border-radius: 3px;
     font-size: $font-size-smaller;
-    right: 4px;
-    top: 8px;
+    
   }
 }
 
 @if $codeblock_copy_btn_style == 'mac' {
-  figure.highlight {
+  .highlight {
     border-radius: 5px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
     padding-top: 30px;
@@ -46,8 +59,8 @@
     &::before {
       background: #fc625d;
       box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-      left: 12px;
       margin-top: -20px;
+      margin-left: 10px;
       position: absolute;
       @include round-icon(12px);
     }
