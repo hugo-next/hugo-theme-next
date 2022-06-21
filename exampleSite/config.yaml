@@ -354,14 +354,18 @@ params:
     vendors:
       title: 提供CDN/云资源支持
       list:
-        - name: Webify
-          link: https://webify.cloudbase.net
         - name: Vercel
-          img: /imgs/vendors/vercel.svg || 55
+          image: 
+            url: /imgs/vendors/vercel.svg
+            width: 50
           link: https://vercel.com
         - name: 又拍云
-          img: /imgs/vendors/upyun.png || 50
+          image: 
+            url: /imgs/vendors/upyun.png
+            width: 43
           link: https://upyun.com
+        - name: Webify
+          link: https://webify.cloudbase.net
 
 
   # ---------------------------------------------------------------
@@ -711,7 +715,7 @@ params:
     #style: tabs
     # Choose a comment system to be displayed by default.
     # Available values: disqus | disqusjs | changyan | livere | gitalk | utterances
-    active: waline
+    active: utterances
     # Setting `true` means remembering the comment system selected by the visitor.
     storage: true
     # Lazyload all comment systems.
@@ -721,11 +725,11 @@ params:
       - name: Waline
         title: Waline
         color: "#27ae60"
-        weight: 1
-      - name: Utterances
-        title: Utters
-        color: "#494949"
         weight: 2
+      - name: Utterances
+        title: Utteranc
+        color: "#886ce4"
+        weight: 1
 
   waline:
     enable: true
@@ -734,7 +738,7 @@ params:
     imgUploader: false
     wordLimit: 200
     requiredMeta: ['nick', 'mail']
-    serverURL: "https://waline.js.org"
+    serverURL: #<your waline server url>
 
   # Disqus
   # For more information: https://disqus.com
@@ -766,7 +770,7 @@ params:
   # You can get your uid from https://livere.com/insight/myCode (General web site)
   livere:
     enable: true
-    uid: MTAyMC81MTM4MC8yNzg2MQ== # <your_uid>
+    uid: # <your_uid>
 
   # Gitalk
   # For more information: https://gitalk.github.io
@@ -792,9 +796,9 @@ params:
     repo: username/repo-name # Github repository owner and name
     # Available values: pathname | url | title | og:title
     issueTerm: pathname
-    label: Comments
+    label: 
     # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
-    theme: github-light
+    theme: preferred-color-scheme
 
   # Isso
   # For more information: https://posativ.org/isso/

@@ -93,9 +93,8 @@
 <div class="vendors-list">
   {{- range .list }}
     <a target="_blank" href="{{ .link }}" title="{{ .name }}">
-      {{- if .img }}
-        {{ $img := split .img "||" }}
-        <img src="{{- trim (index $img 0) " " }}" width="{{- trim (index $img 1) " " -}}px" alt="{{ .name }}" />
+      {{- if .image }}        
+        <img src="{{ .image.url }}" alt="{{ .name }}" />
       {{- else }}
         {{ .name }}
       {{- end }}
