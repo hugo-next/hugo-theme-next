@@ -49,8 +49,8 @@ $font_title_size            : {{ default $P.font.title.size 1.375 }};
 // TODO find the configure variable
 $highlight_dark_background  : #1c1b1b;
 $highlight_dark_foreground  : #fff;
-$highlight_light_background : #fff;
-$highlight_light_foreground : #555;
+$highlight_light_background : #565656;
+$highlight_light_foreground : #fff;
 
 $codeblock_copy_btn_style   : {{ $P.codeblock.copyBtn.style }};
 

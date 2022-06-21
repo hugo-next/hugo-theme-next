@@ -5,15 +5,15 @@
   color: var(--highlight-foreground);
 }
 
-%code-block {
-  @extend %code-inline;
-  line-height: $line-height-code-block;
-  margin: 0 auto 20px;
-}
-
 pre {
   padding: 10px;
   margin: 0;
+}
+
+p > code {
+  @extend %code-inline;
+  border-radius: 3px;
+  padding: 3px 6px;
 }
 
 pre, code {
