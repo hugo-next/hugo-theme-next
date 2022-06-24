@@ -15,7 +15,7 @@ Category:
 Categories:
   other: 分类
 CateTitle:
-  other: 分类管理
+  other: 分类栏目
 AllSome:
   other: "所有 {{ .Some }}"
 
