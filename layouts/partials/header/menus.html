@@ -2,13 +2,12 @@
 {{- $curP := .Page }}
 <nav class="site-nav">
   <ul class="main-menu menu">
-  {{- range $curP.Site.Menus.main }}
-    {{- $active := or ($curP.IsMenuCurrent "main" .) ($curP.HasMenuCurrent "main" .) }}
-    {{- $active = or $active (eq .URL "/")}}
+  {{- range .Site.Menus.main }}
+    {{- $active := $curP.IsMenuCurrent "main" . }}
     <li class="menu-item menu-item-{{ .Identifier }}">
       <a href="{{ .URL | relLangURL }}" class="hvr-icon-pulse {{if $active }} menu-item-active{{ end }}" rel="section">
         {{- if $ms.icons }}<i class="fa fa-{{ .Pre }} hvr-icon"></i>{{ end }}{{- .Name }}
-        {{- if and $ms.badges (eq .Identifier "archives" ) }}
+        {{- if and $ms.badges (eq .Identifier "archives") }}
         <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
         {{- end }}
       </a>

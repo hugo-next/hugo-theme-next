@@ -48,17 +48,17 @@ languages:
       main:
         - identifier: home
           name: Home
-          url: /
+          pageref: /
           pre: home
           weight: 1
         - identifier: about
           name: About
-          url: /about.html
+          pageref: /about.html
           pre: user
           weight: 2
         - identifier: archives
           name: Archives
-          url: /posts
+          pageref: /posts
           pre: archive
           weight: 3
         - identifier: commonweal
@@ -86,17 +86,17 @@ menus:
   main:
     - identifier: home
       name: 首页
-      url: /
+      pageref: /
       pre: home
       weight: 1
     - identifier: about
       name: 关于
-      url: /about.html
+      pageref: /about.html
       pre: user
       weight: 2
     - identifier: archives
       name: 归档
-      url: /posts
+      pageref: /posts
       pre: archive
       weight: 3
     - identifier: commonweal
