@@ -740,6 +740,12 @@ params:
     requiredMeta: ['nick', 'mail']
     serverURL: #<your waline server url>
 
+  artalk:
+    enable: true
+    site: "默认站点"
+    placeholder: "请文明发言，谢谢！"
+    server: #<your artalk server url>
+
   # Disqus
   # For more information: https://disqus.com
   disqus:
