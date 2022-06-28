@@ -10,7 +10,7 @@ pre {
   margin: 0;
 }
 
-p > code {
+p > code, li > code {
   @extend %code-inline;
   border-radius: 3px;
   padding: 3px 6px;
