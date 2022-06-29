@@ -52,7 +52,8 @@ $highlight_dark_foreground  : #fff;
 $highlight_light_background : #565656;
 $highlight_light_foreground : #fff;
 
-$codeblock_copy_btn_style   : {{ $P.codeblock.copyBtn.style }};
+$codeblock_copy_btn_enable   : {{ $P.codeblock.copyBtn }};
+$codeblock_style             : {{ $P.codeblock.style }};
 
 // Sidebar
 $sidebar_offset             : {{ $P.sidebar.offset }};
@@ -113,7 +114,9 @@ $reading_progress_reversed  : {{ $P.readingProgress.reversed }};
 
 // Thirdparty
 $math_mathjax_enable        : {{ $P.math.mathjax.enable }};
-$related_posts_enable       : {{ $P.relatedPosts.enable }};
+// TODO
+//$related_posts_enable       : {{ $P.relatedPosts.enable }};
+$related_posts_enable       : false;
 $pdf_enable                 : {{ $P.pdf.enable }};
 $pdf_height                 : {{ $P.pdf.height }};
 

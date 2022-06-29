@@ -10,7 +10,7 @@ if (!window.NexT) window.NexT = {};
     "darkmode"   : {{ .Site.Params.darkmode }},
     "version"    : "{{ .Site.Data.config.version }}",
     "sidebar"    : {{ .Site.Params.sidebar | jsonify }},
-    "copycode"   : {{ .Site.Params.codeblock.copyBtn | jsonify }},
+    "copybtn"    : {{ .Site.Params.codeblock.copyBtn }},
     "bookmark"   : {{ .Site.Params.bookmark | jsonify }},
     "comments"   : {{ .Site.Params.comments | jsonify }},
     "mediumzoom" : {{ .Site.Params.mediumzoom }},
