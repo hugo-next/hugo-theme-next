@@ -1,4 +1,3 @@
-{{- if .Site.Params.artalk.enable }}
 {{- with .Site.Params.artalk }}
 <link href="//unpkg.com/artalk@2.3.4/dist/Artalk.css" rel="stylesheet">
 <script src="//unpkg.com/artalk@2.3.4/dist/Artalk.js"></script>
@@ -17,6 +16,5 @@
     placeholder : '{{ .placeholder }}'
   })
 </script>  
-{{- end }}
 {{- end }}
 
