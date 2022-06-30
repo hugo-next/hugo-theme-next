@@ -13,7 +13,6 @@ if (!window.NexT) window.NexT = {};
     "copybtn"    : {{ .Site.Params.codeblock.copyBtn }},
     "bookmark"   : {{ .Site.Params.bookmark | jsonify }},
     "comments"   : {{ .Site.Params.comments | jsonify }},
-    "mediumzoom" : {{ .Site.Params.mediumzoom }},
     "lazyload"   : {{ .Site.Params.lazyload }},
     "pangu"      : {{ .Site.Params.pangu }},
     "stickytabs" : {{ .Site.Params.tabs.sticky }},

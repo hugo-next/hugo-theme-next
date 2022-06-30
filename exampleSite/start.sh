@@ -1,5 +1,6 @@
 #!/bin/bash
-#
+# 本地快速启动脚本
+# Quick start in local.
 
 next() {
     cat << EOT
@@ -12,7 +13,7 @@ next() {
   ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝   ╚═╝
 ========================================
 NexT version $1
-Documentation: https://hugo-next.js.org
+Documentation: https://hugo-next.eu.org
 ========================================
 EOT
 }

@@ -1,4 +1,5 @@
 {{- with .Site.Params.giscus }}
+{{ printf "%t" (isset . "repo") }}
 <div class="giscus" style="position: relative;"></div>
 <script src="https://giscus.app/client.js"
         data-repo="{{ .repo }}"

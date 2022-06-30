@@ -48,8 +48,8 @@
 {{- end }}
 -->
 */}}
-{{- if .Site.Params.busuanzi.enable }}
-{{ with .Site.Params.busuanzi }}
+{{- with .Site.Params.busuanzi }}
+{{- if .enable }}
 <div class="busuanzi-count">
   {{- if .visitors }}
   <span class="post-meta-item" id="busuanzi_container_site_uv" title="{{ T "VisitorsLabel" }}">
@@ -76,12 +76,12 @@
 {{- end }}
 {{- if $ft.powered }}
 <div class="powered-by">
-  {{ $pb := printf "<a href='https://gohugo.io' target='_blank'>Hugo</a> &amp; <a href='https://github.com/hugo-next' target='_blank'>NexT.%s</a>" .Site.Params.scheme }}
+  {{ $pb := printf "<a href='https://gohugo.io' target='_blank'>Hugo</a> &amp; <a href='https://github.com/hugo-next/hugo-theme-next' target='_blank'>Hugo NexT.%s</a>" .Site.Params.scheme }}
   {{- printf (T "FooterPowerby") $pb | safeHTML }}
 </div>
 {{- end }}
-{{- if $ft.beian.enable }}
 {{- with $ft.beian }}
+{{- if .enable }}
 <div class="beian">
   <a href="https://beian.miit.gov.cn" target="_blank">{{ .icp }}</a>
   <img src="/imgs/gongan.png" alt="{{ .provinceAbbr }}公网安备">
@@ -90,6 +90,7 @@
 {{- end }}
 {{- end }}
 {{- with $ft.vendors }}
+{{ if .enable }}
 <div class="vendors-list">
   {{- range .list }}
     <a target="_blank" href="{{ .link }}" title="{{ .name }}">
@@ -102,4 +103,5 @@
   {{- end }}
    <span>{{ .title }}</span>
 </div>
+{{- end }} 
 {{- end }}
