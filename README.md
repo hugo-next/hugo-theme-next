@@ -1,4 +1,4 @@
-# Hugo theme of NexT
+# Hugo NexT
 
 ![hugo-next-primary](https://lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png)
 
