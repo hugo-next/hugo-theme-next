@@ -1,0 +1,20 @@
+{{- with .Site.Params.artalk }}
+<link href="//unpkg.com/artalk@2.3.4/dist/Artalk.css" rel="stylesheet">
+<script src="//unpkg.com/artalk@2.3.4/dist/Artalk.js"></script>
+
+<!-- Artalk -->
+<div id="Comments"></div>
+
+<script>
+  new Artalk({
+    el          : '#Comments',
+    pageKey     : '{{ $.Page.RelPermalink }}',
+    pageTitle   : '{{ $.Page.Title }}',
+    server      : '{{ .server }}',
+    site        : '{{ .site }}',
+    locale      : 'auto',
+    placeholder : '{{ .placeholder }}'
+  })
+</script>  
+{{- end }}
+

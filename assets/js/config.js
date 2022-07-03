@@ -1,66 +1,51 @@
 if (!window.NexT) window.NexT = {};
 
 (function() {
-  const className = 'next-config';
 
-  const staticConfig = {};
-  let variableConfig = {};
-
-  const parse = text => JSON.parse(text || '{}');
-
-  const update = name => {
-    const targetEle = document.querySelector(`.${className}[data-name="${name}"]`);
-    if (!targetEle) return;
-    const parsedConfig = parse(targetEle.text);
-    if (name === 'main') {
-      Object.assign(staticConfig, parsedConfig);
-    } else {
-      variableConfig[name] = parsedConfig;
+  const siteConfig = {
+    "hostname"   : "{{ .Site.BaseURL }}",
+    "root"       : "/",
+    "images"     : "{{ .Site.Params.images }}",
+    "scheme"     : "{{ .Site.Params.scheme }}",
+    "darkmode"   : {{ .Site.Params.darkmode }},
+    "version"    : "{{ .Site.Data.config.version }}",
+    "sidebar"    : {{ .Site.Params.sidebar | jsonify }},
+    "copybtn"    : {{ .Site.Params.codeblock.copyBtn }},
+    "bookmark"   : {{ .Site.Params.bookmark | jsonify }},
+    "comments"   : {{ .Site.Params.comments | jsonify }},
+    "lazyload"   : {{ .Site.Params.lazyload }},
+    "pangu"      : {{ .Site.Params.pangu }},
+    "stickytabs" : {{ .Site.Params.tabs.sticky }},
+    "motion"     : {{ .Site.Params.motion | jsonify }},
+    // TODO Find prismjs 
+    //"prism"    : "",
+    "i18n"       : {
+      "placeholder"  : "",
+      "empty"        : "${query}",
+      "hits_time"    : "'${hits}', '${time}'",
+      "hits"         : "${hits}"
+    },
+    {{- if .Site.Params.algoliaSearch.enable }}
+    // TODO
+    "algolia"    : {
+      "appID"        : "",
+      "apiKey"       : "",
+      "indexName"    : "",
+      "hits"         : ""
     }
+    {{- end }}
+    {{- if .Site.Params.localSearch.enable }}
+    // TODO
+    "path"       : "/search.json",
+    "localsearch": {{ .Site.Params.localSearch | jsonify }},
+    {{- end }}
+    "lang"       : "{{ .Site.LanguageCode }}",
+    "permalink"  : "{{ .Page.Permalink | absURL }}",
+    "title"      : "{{ .Page.Title }}",
+    "isHome"     : {{ .IsHome }},
+    "isPage"     : {{ .IsPage }}
   };
+  
+  window.CONFIG = new Proxy(siteConfig, {});
 
-  update('main');
-
-  window.CONFIG = new Proxy({}, {
-    get(overrideConfig, name) {
-      let existing;
-      if (name in staticConfig) {
-        existing = staticConfig[name];
-      } else {
-        if (!(name in variableConfig)) update(name);
-        existing = variableConfig[name];
-      }
-
-      // For unset override and mixable existing
-      if (!(name in overrideConfig) && typeof existing === 'object') {
-        // Get ready to mix.
-        overrideConfig[name] = {};
-      }
-
-      if (name in overrideConfig) {
-        const override = overrideConfig[name];
-
-        // When mixable
-        if (typeof override === 'object' && typeof existing === 'object') {
-          // Mix, proxy changes to the override.
-          return new Proxy({ ...existing, ...override }, {
-            set(target, prop, value) {
-              target[prop] = value;
-              override[prop] = value;
-              return true;
-            }
-          });
-        }
-
-        return override;
-      }
-
-      // Only when not mixable and override hasn't been set.
-      return existing;
-    }
-  });
-
-  document.addEventListener('pjax:success', () => {
-    variableConfig = {};
-  });
 })();

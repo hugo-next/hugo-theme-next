@@ -21,6 +21,14 @@
   @include flex-column();
   @include main-container();
 
+  @include mobile() {
+    font-size: $font-size-smaller;
+  }
+  
+  @include mobile-small() {
+    font-size: $font-size-smallest;
+  }
+
   @if $footer_vendors_enable {
     .vendors-list {
       a {
@@ -30,6 +38,19 @@
       img {
         display: inline-block;
       }
+      
+      $footer_vendors_imgs_len: length($footer_vendors_imgs_width);
+      @if ($footer_vendors_imgs_len>0) {
+        @for $i from 1 through $footer_vendors_imgs_len {
+          a:nth-child(#{$i}) img {
+            width: #{nth($footer_vendors_imgs_width, $i)}px;
+
+            @include mobile() {
+              width: #{nth($footer_vendors_imgs_width, $i)-10}px;
+            }
+          }
+        }
+      }      
     }
   }
 }
@@ -37,24 +58,6 @@
 .use-motion {
   .footer {
     opacity: 0;
-  }
-}
-
-@keyframes icon-animate {
-  0%, 100% {
-    transform: scale(1);
-  }
-
-  10%, 30% {
-    transform: scale(.9);
-  }
-
-  20%, 40%, 60%, 80% {
-    transform: scale(1.1);
-  }
-
-  50%, 70% {
-    transform: scale(1.1);
   }
 }
 
@@ -83,7 +86,7 @@
   margin: 0 5px;
 
   @if $footer_icon_animated {
-    animation: icon-animate 1.33s ease-in-out infinite;
+    animation: beat 1.33s ease-in-out infinite;
   }
 }
 

@@ -1,0 +1,7 @@
+{{- $extURL := and .Page.Site.Params.exturl.enable (strings.HasPrefix .Destination "http") }}
+<a href="{{ .Destination | safeURL }}" title="{{ .Text }}" {{ if $extURL }}rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"{{ end }}>
+    {{ .Text | safeHTML }}
+    {{- if and $extURL .Page.Site.Params.exturl.icon }}
+    <i class="fa fa-external-link-alt"></i>
+    {{- end }}
+</a>

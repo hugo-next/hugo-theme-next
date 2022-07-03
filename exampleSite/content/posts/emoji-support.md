@@ -13,7 +13,7 @@ tags:
  - emoji
 
 toc: false
-url: "emoji-support.html"
+url: "post/emoji-support.html"
 ---
 
 Emoji 可以通过多种方式在 Hugo 项目中启用。

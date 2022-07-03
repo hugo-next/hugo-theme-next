@@ -23,35 +23,29 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
-  registerExtURL: function() {
-    document.querySelectorAll('span.exturl').forEach(element => {
-      const link = document.createElement('a');
-      // https://stackoverflow.com/questions/30106476/using-javascripts-atob-to-decode-base64-doesnt-properly-decode-utf-8-strings
-      link.href = decodeURIComponent(atob(element.dataset.url).split('').map(c => {
-        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-      }).join(''));
-      link.rel = 'noopener external nofollow noreferrer';
-      link.target = '_blank';
-      link.className = element.className;
-      link.title = element.title;
-      link.innerHTML = element.innerHTML;
-      element.parentNode.replaceChild(link, element);
-    });
+  replacePostCRLink: function() {
+    if (CONFIG.hostname.startsWith('http')) return;
+    // Try to support mutli domain without base URL sets.
+    let href = window.location.href;
+    if (href.indexOf('#')>-1){
+      href = href.split('#')[0];
+    }
+    let postLink = document.getElementById('post-cr-link');
+    if (!postLink) return;
+    postLink.text = href;
+    postLink.href = href;
   },
 
   /**
    * One-click copy code support.
    */
   registerCopyCode: function() {
-    let figure = document.querySelectorAll('figure.highlight');
-    if (figure.length === 0) figure = document.querySelectorAll('pre:not(.mermaid)');
+    let figure = document.querySelectorAll('.highlight pre');
+    if (figure.length === 0 || !CONFIG.copybtn) return;
     figure.forEach(element => {
-      element.querySelectorAll('.code .line span').forEach(span => {
-        span.classList.forEach(name => {
-          span.classList.replace(name, `hljs-${name}`);
-        });
-      });
-      if (!CONFIG.copycode) return;
+      let cn = element.querySelector('code').className;
+      // TODO seems hard code need find other ways fixed it.
+      if (cn == '') return;
       element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
@@ -259,6 +253,31 @@ NexT.utils = {
     });
   },
 
+  initCommontesDispaly: function(){
+    const comms = document.querySelectorAll('.comment-wrap > div');
+    if (comms.length<=1) return;
+    comms.forEach(function(item){
+      var dis = window.getComputedStyle(item, null).display;
+      item.style.display = dis;
+    });
+  },
+
+  registerCommonSwitch: function() {
+    const button = document.querySelector('.comment-switch .switch-btn');
+    if (!button) return;
+    const comms = document.querySelectorAll('.comment-wrap > div');
+    button.addEventListener('click', () => {
+      button.classList.toggle('move');
+      comms.forEach(function(item){        
+        if (item.style.display === 'none') {
+          item.style.cssText = "display: block; animation: tabshow .8s";
+        } else {
+          item.style.cssText = "display: none;"
+        }
+      });
+    });
+  },
+
   activateNavByIndex: function(index) {
     const target = document.querySelectorAll('.post-toc li a.nav-link')[index];
     if (!target || target.classList.contains('active-current')) return;
@@ -287,7 +306,7 @@ NexT.utils = {
     if (window.innerWidth < 992 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
-    let display = CONFIG.page.sidebar;
+    let display = CONFIG.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter.
       display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);

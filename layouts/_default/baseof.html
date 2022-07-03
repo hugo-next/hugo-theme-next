@@ -1,22 +1,8 @@
-{{- .Scratch.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) -}}
-{{- .Scratch.Set "catsCount" (len .Site.Taxonomies.categories) -}}
-{{- .Scratch.Set "tagsCount" (len .Site.Taxonomies.tags)  -}}
-{{- $vendors := .Site.Data.resources.vendors -}}
-{{- $pluginVen := .Site.Params.vendors.plugins -}}
-{{- $pluginCDN := index $vendors $pluginVen -}}
-{{- .Scratch.Set "pluginCDN" $pluginCDN -}}
+{{- partial "init.html" . -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
-  {{ hugo.Generator }}
-  <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
-  <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ .Site.Params.favicon.small }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ .Site.Params.favicon.medium }}">
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
   {{- partial "head.html" . }}
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
   <noscript>
@@ -48,11 +34,11 @@
   </main>
   <footer class="footer">
     <div class="footer-inner">
-      {{- partial "footer" . }}
+      {{- partial "footer.html" . }}
     </div>
   </footer>
 
-  {{- partial "scripts" . }}
+  {{- partialCached "scripts.html" . }}
 </body>
 
 </html>

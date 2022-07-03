@@ -11,7 +11,7 @@ tags:
  - Hugo
  - 开始
 
-url: hello-world.html
+url: post/hello-world.html
 weight: 2
 ---
 

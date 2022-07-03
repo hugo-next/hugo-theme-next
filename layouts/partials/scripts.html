@@ -15,83 +15,32 @@
   {{- $pluginJS = replace $pluginJS "${name}" $npm }}
   {{- $pluginJS = replace $pluginJS "${version}" $js.version }}
   {{- $pluginJS = replace $pluginJS "${file}" $file }}
-  <script type="text/javascript" src="{{ $pluginJS }}"></script>
+  <script type="text/javascript" src="{{ $pluginJS }}" defer></script>
 {{- end }}
 
-<script class="next-config" data-name="main" type="application/json">
-{
-  "hostname": "theme-next.js.org",
-  "root": "/",
-  "images": "/images",
-  "scheme": "Gemini",
-  "darkmode": true,
-  "version": "8.12.1",
-  "exturl": true,
-  "sidebar":
-  {
-    "position": "left",
-    "display": "post",
-    "padding": 18,
-    "offset": 12
-  },
-  "copycode":
-  {
-    "enable": true,
-    "style": "default"
-  },
-  "bookmark":
-  {
-    "enable": false,
-    "color": "#222",
-    "save": "auto"
-  },
-  "mediumzoom": true,
-  "lazyload": false,
-  "pangu": false,
-  "comments":
-  {
-    "style": "tabs",
-    "active": null,
-    "storage": true,
-    "lazyload": true,
-    "nav": null
-  },
-  "stickytabs": false,
-  "motion":
-  {
-    "enable": false,
-    "async": false,
-    "transition":
-    {
-      "post_block": "fadeIn",
-      "post_header": "fadeInDown",
-      "post_body": "fadeInDown",
-      "coll_header": "fadeInLeft",
-      "sidebar": "fadeInUp"
-    }
-  },
-  "prism": false,
-  "i18n":
-  {
-    "placeholder": "Searching...",
-    "empty": "We didn't find any results for the search: ${query}",
-    "hits_time": "${hits} results found in ${time} ms",
-    "hits": "${hits} results found"
-  },
-  "path": "/search.json",
-  "localsearch":
-  {
-    "enable": true,
-    "trigger": "auto",
-    "top_n_per_article": 1,
-    "unescape": false,
-    "preload": false
-  }
-}
-</script>
-
-{{ $config := resources.Get "js/config.js" }}
-{{ $boot := resources.Get "js/next-boot.js" }}
-{{ $utils := resources.Get "js/utils.js" }}
-{{ $alljs := (slice $config $boot $utils) | resources.Concat "js/all.js"}}
-<script defer src="{{ $alljs.RelPermalink }}"></script> 
+{{- $config := resources.Get "js/config.js" | resources.ExecuteAsTemplate "config.js" . }}
+{{- $motion := resources.Get "js/motion.js" }}
+{{- $boot := resources.Get "js/next-boot.js" }}
+{{- $utils := resources.Get "js/utils.js" }}
+{{- $nextjs := (slice $config $utils $boot ) }}
+{{- if .Site.Params.motion.enable }}
+{{ $motionjs := resources.Get "js/motion.js" }}
+{{ $nextjs = $nextjs | append $motionjs }}
+{{- end }}
+{{- if or (eq .Site.Params.shceme "Muse") (eq .Site.Params.shceme "Mist") }}
+{{ $musejs := resources.Get "js/schemes/muse.js" }}
+{{ $nextjs = $nextjs | append $musejs }}
+{{- end }}
+{{- if .Site.Params.bookmark.enable }}
+{{- $bookmarkjs := resources.Get "js/bookmark.js" }}
+{{- $nextjs = $nextjs | append $bookmarkjs }}
+{{- end }}
+{{- if .Site.Params.pjax }}
+{{- $pjaxjs := resources.Get "js/pjax.js" }}
+{{- $nextjs = $nextjs | append $pjaxjs }}
+{{- end }}
+{{- $nextjs = $nextjs | resources.Concat "js/hugo-next.js"}}
+{{ if hugo.IsProduction }}
+{{- $nextjs = $nextjs | minify | fingerprint }}
+{{ end }}
+<script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script> 

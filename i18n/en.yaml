@@ -1,20 +1,20 @@
 #--------------------------------------
 # English Version
 #--------------------------------------
-Posts:
+posts:
   other: Posts
-Tag:
+tag:
   other: Tag
-Tags:
+tags:
   other: Tags
 TagTitle:
   other: Tag Collection
-Category:
+category:
   other: Category
-Categories:
+categories:
   other: Categories
 CateTitle:
-  other: Classify Management
+  other: Classification Items
 AllSome:
   other: "All {{ .Some }}"
 

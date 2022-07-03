@@ -82,7 +82,7 @@ NexT.motion.middleWares = {
 
   postList: function() {
     const sequence = [];
-    const { post_block, post_header, post_body, coll_header } = CONFIG.motion.transition;
+    const { postblock, postheader, postbody, collheader } = CONFIG.motion.transition;
 
     function animate(animation, selector) {
       if (!animation) return;
@@ -95,10 +95,10 @@ NexT.motion.middleWares = {
       });
     }
 
-    animate(post_block, '.post-block, .pagination, .comments');
-    animate(coll_header, '.collection-header');
-    animate(post_header, '.post-header');
-    animate(post_body, '.post-body');
+    animate(postblock, '.post-block, .pagination, .post-comments');
+    animate(collheader, '.collection-header');
+    animate(postheader, '.post-header');
+    animate(postbody, '.post-body');
 
     return sequence;
   },

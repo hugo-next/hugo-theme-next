@@ -2,20 +2,20 @@
 # 中文版本
 #--------------------------------------
 
-Posts:
+posts:
   other: 文章
-Tag:
+tag:
   other: 标签
-Tags:
+tags:
   other: 标签
 TagTitle:
   other: 标签集锦
-Category:
+category:
   other: 分类
-Categories:
+categories:
   other: 分类
 CateTitle:
-  other: 分类管理
+  other: 分类栏目
 AllSome:
   other: "所有 {{ .Some }}"
 

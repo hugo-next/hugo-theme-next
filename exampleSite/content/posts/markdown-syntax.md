@@ -17,7 +17,7 @@ tags:
 
 toc: false
 draft: false
-url: markdown-syntax.html
+url: post/markdown-syntax.html
 ---
 
 仅以此篇文章来测试下在 `NexT` 主题中在通过 `Hugo` 引擎来建站时，是否支持 `Markdown` 文件内容中所写的各种语法，并展示下实际的效果。

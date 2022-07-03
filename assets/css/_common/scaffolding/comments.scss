@@ -43,7 +43,31 @@
     margin-top: 60px;
   }
 
+  min-height: 300px;
   overflow: hidden;
+
+  .comment-loading {
+    @if $sidebar_position == 'right' {
+      padding-right: $sidebar-desktop + $sidebar-offset;
+    } @else {
+      padding-left: $sidebar-desktop + $sidebar-offset;
+    }
+    
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 2em;
+
+    @include tablet-mobile() {
+      padding-left: 0;
+      padding-right: 0;
+      width: auto;
+    }
+  }
 
   .comment-head {
     margin-bottom: 20px;
@@ -53,6 +77,9 @@
       vertical-align: middle;
       font-weight: 700;
       font-size: 1.4em;
+      @include mobile-small() {
+        font-size: $font-size-smaller;
+      }
     }
 
     @if $two_comments_enable {
@@ -61,16 +88,16 @@
         float: right;
         margin: 2px auto;
         padding: 4px 16px;
+        @include mobile-small() {
+          font-size: $font-size-smaller;
+          padding: 4px;
+        }
         width: max-content;
         border-radius: 8px;
-        background: #eee;
+        background: var(--card-bg-color);
 
         .first-comment {
           color: $first_comment_color;
-
-          @if $two_comments_actived==$first_comment_name {
-            font-weight: bold;
-          }
         }
 
         .second-comment {
@@ -82,11 +109,12 @@
         }
 
         $switch_btn_bg_color: $first_comment_color;
+        $switch_btn_move_bc: $second_comment_color;
 
         .switch-btn {
           position: relative;
           display: inline-block;
-          margin: -4px 8px 0;
+          margin: 5px;
           width: 42px;
           height: 22px;
           border-radius: 34px;
@@ -100,6 +128,7 @@
 
           @if $two_comments_actived==$second_comment_name {
             $switch_btn_bg_color: $second_comment_color;
+            $switch_btn_move_bc: $first_comment_color;
           }
 
           background-color: $switch_btn_bg_color;
@@ -120,7 +149,11 @@
             transition: .4s
           }
 
-          &.move:before {
+          &.move {
+            background-color: $switch_btn_move_bc;
+          }
+
+          &.move:before {            
             -webkit-transform: translateX(20px);
             -moz-transform: translateX(20px);
             -o-transform: translateX(20px);
@@ -129,6 +162,7 @@
           }
         }
       }
+
     }
   }
 

@@ -37,20 +37,22 @@ NexT.boot.refresh = function() {
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
    */
-  CONFIG.prism && window.Prism.highlightAll();
+  //CONFIG.prism && window.Prism.highlightAll();
   /*CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
     background: 'var(--content-bg-color)'
   });*/
   CONFIG.lazyload && window.lozad('.post-body img').observe();
   CONFIG.pangu && window.pangu.spacingPage();
 
-  CONFIG.exturl && NexT.utils.registerExtURL();
-  NexT.utils.registerCopyCode();
+  CONFIG.isPage && NexT.utils.replacePostCRLink();
+  CONFIG.isPage && CONFIG.copybtn && NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   /*NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();*/
-  NexT.utils.registerSidebarTOC();
-  NexT.utils.registerPostReward();
+  CONFIG.isPage && NexT.utils.registerSidebarTOC();
+  CONFIG.isPage && NexT.utils.registerPostReward();
+  CONFIG.isPage && NexT.utils.initCommontesDispaly();
+  CONFIG.isPage && NexT.utils.registerCommonSwitch();
   NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();
 };

@@ -60,11 +60,10 @@
 {{- end }}
 </div>
 
-{{- $lang := .Scratch.Get "lang" }}
 {{- with .Site.Params.creativeCommons }}
 {{- if .sidebar }}
 <div class="cc-license animated" itemprop="license">
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr $lang 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr $.Site.LanguageCode 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
     <img src="/imgs/cc/{{ .size }}/{{ replace .license "-" "_" }}.svg" alt="{{ T "CCLinkTitle" }}">
   </a>
 </div>
