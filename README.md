@@ -1,7 +1,7 @@
 [中文](README.zh.md) | [English](#)
 
 <a title="Hugo NexT Website" href="https://preview.hugo-next.eu.org">
-  <img align="center" alt="NexT logo" width="266" src="https://lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png">
+  <img align="right" alt="NexT logo" width="266" src="https://lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png">
 </a>
 
 ## Hugo NexT
@@ -26,8 +26,8 @@
 | Preliminary | [Gemini](https://preview.hugo-next.eu.org/) | [Muse](https://preview.hugo-next.eu.org/muse/) | [Mist](https://preview.hugo-next.eu.org/mist/) | [Pisces](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=preview-hugo-next&style=for-the-badge) |
 | Production | [Gemini](https://hugo-next.eu.org/) | [Muse](https://hugo-next.eu.org/muse/) | [Mist](https://hugo-next.eu.org/mist/) | [Pisces](https://hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
-> Preliminary: all new feature developments will be previewed as soon as possible.
-> Production: Only the features that are tested stably and meet the requirements will be officially released.
+> - Preliminary: all new feature developments will be previewed as soon as possible.
+> - Production: Only the features that are tested stably and meet the requirements will be officially released.
 
 ## Quick Start
 
@@ -44,6 +44,13 @@ $ hugo server
 ```
 
 Done that input adrress http://127.0.0.1:1313/ on browser will see the effect & good luck for you! :tada::tada::tada:
+
+Execute command as below in your site directory when the theme upgrade.
+
+```shell
+$ cd hugo-next-exmaple
+$ git submodule update --remote
+```
 
 ## New Post
 
@@ -106,6 +113,8 @@ All features development progress and new request in [Hugo NexT V4 Roadmap](http
 ## License
 
 [MIT License](LICENSE)
+
+Copyright (c) 2022, hugo-next 团队
 
 ## Thanks
 
