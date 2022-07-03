@@ -1,1 +1,5 @@
-{{- partial "_thirdparty/analytics/51la.html" . }}
+{{- with .Site.Params.analytics }}
+{{- if isset . "laid" }}
+  {{ partial "_thirdparty/analytics/51la.html" .laId }}  
+{{- end }}
+{{- end }}

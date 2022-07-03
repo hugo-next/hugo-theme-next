@@ -40,4 +40,7 @@
 {{- $nextjs = $nextjs | append $pjaxjs }}
 {{- end }}
 {{- $nextjs = $nextjs | resources.Concat "js/hugo-next.js"}}
+{{ if hugo.IsProduction }}
+{{- $nextjs = $nextjs | minify | fingerprint }}
+{{ end }}
 <script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script> 

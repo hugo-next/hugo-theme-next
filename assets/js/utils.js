@@ -41,7 +41,7 @@ NexT.utils = {
    */
   registerCopyCode: function() {
     let figure = document.querySelectorAll('.highlight pre');
-    if (figure.length === 0 || !CONFIG.copycode) return;
+    if (figure.length === 0 || !CONFIG.copybtn) return;
     figure.forEach(element => {
       let cn = element.querySelector('code').className;
       // TODO seems hard code need find other ways fixed it.

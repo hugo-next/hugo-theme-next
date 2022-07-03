@@ -45,7 +45,7 @@ NexT.boot.refresh = function() {
   CONFIG.pangu && window.pangu.spacingPage();
 
   CONFIG.isPage && NexT.utils.replacePostCRLink();
-  CONFIG.isPage && NexT.utils.registerCopyCode();
+  CONFIG.isPage && CONFIG.copybtn && NexT.utils.registerCopyCode();
   NexT.utils.registerTabsTag();
   /*NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();*/

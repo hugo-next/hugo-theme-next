@@ -21,6 +21,9 @@
 {{- $scss := resources.Get "css/main.scss" }}
 {{- $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
 {{- $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
+{{- if hugo.IsProduction }}
+{{- $css = $css | minify | fingerprint }}
+{{- end }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{- if .IsPage }}
   <style type="text/css">
