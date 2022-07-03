@@ -1,7 +1,7 @@
 [中文](#) | [English](README.md)
 
 <a title="Hugo NexT 站点" href="https://preview.hugo-next.eu.org">
-  <img align="center" alt="NexT logo" width="266" src="https://lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png">
+  <img align="right" alt="NexT logo" width="266" src="https://lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png">
 </a>
 
 ## Hugo NexT
@@ -26,8 +26,8 @@
 | 开发版本 | [双子座](https://preview.hugo-next.eu.org/) | [冥想](https://preview.hugo-next.eu.org/muse/) | [迷雾](https://preview.hugo-next.eu.org/mist/) | [双鱼座](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 | 正式版本 | [双子座](https://hugo-next.eu.org/) | [冥想](https://hugo-next.eu.org/muse/) | [迷雾](https://hugo-next.eu.org/mist/) | [双鱼座](https://hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
-> 开发版本： 所有的新功能开发都会在此第一时间发布预览
-> 正式版本： 只有测试稳定且符合要求的功能才会正式发布
+> - 开发版本： 所有的新功能开发都会在此第一时间发布预览
+> - 正式版本： 只有测试稳定且符合要求的功能才会正式发布
 
 ## 快速开始
 
@@ -43,6 +43,13 @@ $ rm -rf config.toml
 $ hugo server
 ```
 打开浏览器，在地址栏输入 http://127.0.0.1:1313/ 查看主题效果，祝你好运！:tada::tada::tada:
+
+后续更新主题只需要在你的站点目录中，执行如下命令：
+
+```shell
+$ cd hugo-next-exmaple
+$ git submodule update --remote
+```
 
 > 本主题的代码同时也同步到 `Gitee` 仓库，在国内环境可切换用 [https://gitee.com/hugo-next/hugo-theme-next.git](https://gitee.com/hugo-next/hugo-theme-next.git) 镜像速度更快，也更稳定。
 
@@ -105,6 +112,8 @@ tags:
 - [GitHub Issues](https://github.com/hugo-next/hugo-theme-next/issues/new?labels=Bug&template=bug-report.md) 提交错误报告 :bug:
 - [GitHub Feature](https://github.com/hugo-next/hugo-theme-next/issues/new?labels=Feature+Request&template=feature-request.md) 表新功能的想法 :sparkles:
 
+> 国内用户也可加入 QQ 群交流： 604710815
+
 ## 欢迎加入
 
 关于本主题的开发进度和后续的发展路线图，可访问 [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9) 查看详情，也欢迎大家参与一起来完善。
@@ -112,6 +121,8 @@ tags:
 ## 许可证
 
 [MIT License](LICENSE)
+
+Copyright (c) 2022, hugo-next teams
 
 ## 致谢
 
