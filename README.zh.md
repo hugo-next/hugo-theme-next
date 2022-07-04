@@ -37,7 +37,7 @@
 $ hugo new site hugo-next-exmaple
 $ cd hugo-next-exmaple
 $ git init
-$ hugo submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next
+$ git submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next
 $ cp -r themes/hugo-theme-next/exampleSite/* .
 $ rm -rf config.toml
 $ hugo server
@@ -61,7 +61,7 @@ $ git submodule update --remote
 $ hugo new posts/hello-world.md
 ```
 
-关于文章头部的那些标记作用的说明参考如下：
+关于文章头部那些参数作用的说明参考如下：
 
 
 ```yml
@@ -122,7 +122,7 @@ tags:
 
 [MIT License](LICENSE)
 
-Copyright (c) 2022, hugo-next teams
+Copyright (c) 2022， hugo-next 团队
 
 ## 致谢
 
@@ -133,4 +133,4 @@ Copyright (c) 2022, hugo-next teams
 | 捐助时间 | 捐助者 | 捐助方式 | 捐助内容 | 留言 |
 | :-------: | ------ | ------ | ---- | ---- |
 | 2021.12.21 | z*y | 微信支付 | ¥18.88 | / |
-| 2022.05.08 | *泉 | 微信支付 | ¥6.60 | 祝开发next顺利 |
+| 2022.05.08 | *泉 | 微信支付 | ¥6.60 | 祝开发next顺利 |顺利 |
