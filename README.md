@@ -37,7 +37,7 @@ Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extened` 
 $ hugo new site hugo-next-exmaple
 $ cd hugo-next-exmaple
 $ git init
-$ hugo submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next
+$ git submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next
 $ cp -r themes/hugo-theme-next/exampleSite/* .
 $ rm -rf config.toml
 $ hugo server
@@ -60,7 +60,7 @@ There had ready a new post template for you,  It is recommended to use the follo
 $ hugo new posts/hello-world.md
 ```
 
-Descript front matter in post as below:
+All front matter parameters's description in post as below:
 
 
 ```yml
@@ -114,7 +114,7 @@ All features development progress and new request in [Hugo NexT V4 Roadmap](http
 
 [MIT License](LICENSE)
 
-Copyright (c) 2022, hugo-next 团队
+Copyright (c) 2022, hugo-next teams.
 
 ## Thanks
 
