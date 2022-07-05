@@ -753,6 +753,7 @@ params:
   # Waline comments system
   # More info seee: https://waline.js.org/
   waline:
+    pageView: true
     placeholder: "请文明发言"
     emoji: false
     imgUploader: false
@@ -859,12 +860,11 @@ params:
   # Show Views / Visitors of the website / page with busuanzi.
   # For more information: http://ibruce.info/2015/04/04/busuanzi/
   busuanzi:
-    enable: true
-    visitors: true
+    visitors: false
     visitorsIcon: fa fa-user
-    views: true
+    views: false
     viewsIcon: fa fa-eye
-    postViews: true
+    postViews: false
     postViewsIcon: far fa-eye
 
 
@@ -968,7 +968,7 @@ params:
   # Use Animate.css to animate everything.
   # For more information: https://animate.style
   motion:
-    enable: false
+    enable: true
     async: true
     transition:
       # All available transition variants: https://theme-next.js.org/animate/

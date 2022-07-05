@@ -98,17 +98,15 @@
   }
 }
 
-@if $busuanzi_enable {
-  .busuanzi-count {
-    @if $busuanzi_visitors {
-      #busuanzi_container_site_uv {
-        display: none;
-      }
+.busuanzi-count {
+  @if $busuanzi_visitors {
+    #busuanzi_container_site_uv {
+      display: none;
     }
-    @if $busuanzi_views {
-      #busuanzi_container_site_pv {
-        display: none;
-      }
+  }
+  @if $busuanzi_views {
+    #busuanzi_container_site_pv {
+      display: none;
     }
   }
 }
