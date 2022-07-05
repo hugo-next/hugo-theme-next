@@ -2,10 +2,10 @@
 {{- if .Site.Params.leancloudVisitors.enable }}
 {{- $pageViewCls = "leancloud-visitors-count" }}  
 {{- end }}
-{{- if and .Site.Params.waline.enable .Site.Params.waline.pageView }}
+{{- if .Site.Params.waline.pageView }}
 {{- $pageViewCls = "waline-pageview-count" }}
 {{- end }}
-{{- if and .Site.Params.busuanzi.enable .Site.Params.busuanzi.postViews }}
+{{- if .Site.Params.busuanzi.postViews }}
 {{- $pageViewCls = "busuanzi_value_page_pv" }}
 {{- end }}
 <span class="post-meta-item" title="{{ T "PostViews" }}">
