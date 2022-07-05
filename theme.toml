@@ -1,10 +1,10 @@
-name = "Hugo Theme Next"
+name = "Hugo Next"
 license = "MIT"
 licenselink = "https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE"
 description = "Easily & powerful theme for Hugo engine."
 homepage = "https://github.com/hugo-next/hugo-theme-next"
-tags = ["blog", "simple", "dark", "personal", "fast", "theme"]
-features = ["some", "awesome", "features"]
+tags = ["Blog", "Simple", "Personal", "Responsive", "Documentation", "Light", "Dark"]
+features = ["Blog", "Responsive", "Documentation", "Light", "Dark"]
 min_version = "0.89.0"
 demosite = "https://preview.hugo-next.eu.org"
 
