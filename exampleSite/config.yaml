@@ -139,7 +139,7 @@ params:
     appleTouchIcon: /imgs/icons/apple_touch_icon_next.png
 
   # 自定义 Logo （目前只支持 Mist 页面模式）
-  # Custom Logo (Warning: Do not support scheme Mist)
+  # Custom Logo (Warning: Only support scheme Mist)
   customLogo: #/imgs/hugo_next_logo.png
 
   # 知识共享国际许可 4.0
