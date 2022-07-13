@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const isRight = CONFIG.sidebar.position === 'right';
+  const isRight = NexT.CONFIG.sidebar.position === 'right';
 
   const sidebarToggleMotion = {
     mouse: {},
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('sidebar-active');
     }
   };
-  if (CONFIG.sidebar.display !== 'remove') sidebarToggleMotion.init();
+  if (NexT.CONFIG.sidebar.display !== 'remove') sidebarToggleMotion.init();
 
   function updateFooterPosition() {
     const footer = document.querySelector('.footer');

@@ -7,13 +7,13 @@
     element.addEventListener('click', () => {
       commentButton.forEach(active => active.classList.toggle('active', active === element));
       document.querySelectorAll('.comment-position').forEach(active => active.classList.toggle('active', active.classList.contains(commentClass)));
-      if (CONFIG.comments.storage) {
+      if (NexT.CONFIG.comments.storage) {
         localStorage.setItem('comments_active', commentClass);
       }
     });
   });
-  let { activeClass } = CONFIG.comments;
-  if (CONFIG.comments.storage) {
+  let { activeClass } = NexT.CONFIG.comments;
+  if (NexT.CONFIG.comments.storage) {
     activeClass = localStorage.getItem('comments_active') || activeClass;
   }
   if (activeClass) {

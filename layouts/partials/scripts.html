@@ -1,9 +1,9 @@
 <!-- Plugin scripts files -->
 {{- $jsRes := .Site.Data.resources.js }}
 {{- $vendor := .Site.Params.vendors.plugins }}
-{{- $vendorCDN := .Scratch.Get "pluginCDN" }}
+{{- $router := .Scratch.Get "router" }}
+{{ $jsFmt := "%s/%s@%s/%s" }}
 {{- range $js := $jsRes }}
-  {{- $pluginJS := $vendorCDN }}
   {{- $npm := $js.name }}
   {{- $file := $js.file }}
   {{- if eq $vendor "cdnjs" }}
@@ -11,10 +11,9 @@
       {{- $npm = . }}
     {{- end }}   
     {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $js.file }}
+    {{- $jsFmt = "%s/%s/%s/%s" }}
   {{- end }}
-  {{- $pluginJS = replace $pluginJS "${name}" $npm }}
-  {{- $pluginJS = replace $pluginJS "${version}" $js.version }}
-  {{- $pluginJS = replace $pluginJS "${file}" $file }}
+  {{- $pluginJS := printf $jsFmt $router $npm $js.version $file }}
   <script type="text/javascript" src="{{ $pluginJS }}" defer></script>
 {{- end }}
 
@@ -39,8 +38,32 @@
 {{- $pjaxjs := resources.Get "js/pjax.js" }}
 {{- $nextjs = $nextjs | append $pjaxjs }}
 {{- end }}
+{{- if isset .Site.Params "addthisid" }}
+{{- $addthisjs := resources.Get "js/third-party/share/addthis.js" }}
+{{- $nextjs = $nextjs | append $addthisjs }}
+{{- end }}
+{{- if isset .Site.Params "waline" }}
+{{- $walinejs := resources.Get "js/third-party/comments/waline.js" }}
+{{- $nextjs = $nextjs | append $walinejs }}
+{{- end }}
+{{- if isset .Site.Params "giscus" }}
+{{- $giscusjs := resources.Get "js/third-party/comments/giscus.js" }}
+{{- $nextjs = $nextjs | append $giscusjs }}
+{{- end }}
+{{- if isset .Site.Params "livere" }}
+{{- $liverejs := resources.Get "js/third-party/comments/livere.js" }}
+{{- $nextjs = $nextjs | append $liverejs }}
+{{- end }}
+{{- if isset .Site.Params "artalk" }}
+{{- $artalkjs := resources.Get "js/third-party/comments/artalk.js" }}
+{{- $nextjs = $nextjs | append $artalkjs }}
+{{- end }}
+{{- if isset .Site.Params "utterances" }}
+{{- $utterancesjs := resources.Get "js/third-party/comments/utterances.js" }}
+{{- $nextjs = $nextjs | append $utterancesjs }}
+{{- end }}
 {{- $nextjs = $nextjs | resources.Concat "js/hugo-next.js"}}
 {{ if hugo.IsProduction }}
 {{- $nextjs = $nextjs | minify | fingerprint }}
 {{ end }}
-<script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script> 
+<script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script>

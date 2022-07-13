@@ -1,8 +1,8 @@
 /* global CONFIG */
 
 window.addEventListener('tabs:register', () => {
-  let { activeClass } = CONFIG.comments;
-  if (CONFIG.comments.storage) {
+  let { activeClass } = NexT.CONFIG.comments;
+  if (NexT.CONFIG.comments.storage) {
     activeClass = localStorage.getItem('comments_active') || activeClass;
   }
   if (activeClass) {
@@ -12,7 +12,7 @@ window.addEventListener('tabs:register', () => {
     }
   }
 });
-if (CONFIG.comments.storage) {
+if (NexT.CONFIG.comments.storage) {
   window.addEventListener('tabs:click', event => {
     if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
     const commentClass = event.target.classList[1];

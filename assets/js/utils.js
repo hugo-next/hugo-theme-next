@@ -23,8 +23,31 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  checkDOMExist: function(selector) {
+    return document.querySelector(selector) != null;
+  },
+
+  getCDNResource: function(res) {
+    let { plugins, router } = NexT.CONFIG.vendor;
+    let { name, version, file, alias } = res;
+
+    let npm_name = name;
+    let res_src = '';
+    switch(plugins) {
+      case 'cdnjs':
+        let cdnjs_name = alias || name;
+        let cdnjs_file = file.replace(/\.js$/, '.min.js').replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '');
+        res_src = `${router}/${cdnjs_name}/${version}/${cdnjs_file}`
+        break;
+      default:
+        res_src = `${router}/${npm_name}@${version}/${file}`
+    }
+
+    return res_src;
+  },
+
   replacePostCRLink: function() {
-    if (CONFIG.hostname.startsWith('http')) return;
+    if (NexT.CONFIG.hostname.startsWith('http')) return;
     // Try to support mutli domain without base URL sets.
     let href = window.location.href;
     if (href.indexOf('#')>-1){
@@ -41,7 +64,7 @@ NexT.utils = {
    */
   registerCopyCode: function() {
     let figure = document.querySelectorAll('.highlight pre');
-    if (figure.length === 0 || !CONFIG.copybtn) return;
+    if (figure.length === 0 || !NexT.CONFIG.copybtn) return;
     figure.forEach(element => {
       let cn = element.querySelector('code').className;
       // TODO seems hard code need find other ways fixed it.
@@ -170,13 +193,14 @@ NexT.utils = {
         // https://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
         const tActive = document.getElementById(element.querySelector('a').getAttribute('href').replace('#', ''));
         [...tActive.parentNode.children].forEach(target => {
+        // Array.prototype.slice.call(tActive.parentNode.children).forEach(target => {
           target.classList.toggle('active', target === tActive);
         });
         // Trigger event
         tActive.dispatchEvent(new Event('tabs:click', {
           bubbles: true
         }));
-        if (!CONFIG.stickytabs) return;
+        if (!NexT.CONFIG.stickytabs) return;
         const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
         window.anime({
           targets  : document.scrollingElement,
@@ -204,7 +228,7 @@ NexT.utils = {
   /*registerActiveMenuItem: function() {
     document.querySelectorAll('.menu-item a[href]').forEach(target => {
       const isSamePath = target.pathname === location.pathname || target.pathname === location.pathname.replace('index.html', '');
-      const isSubPath = !CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
+      const isSubPath = !NexT.CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       target.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
   },
@@ -212,7 +236,7 @@ NexT.utils = {
   registerLangSelect: function() {
     const selects = document.querySelectorAll('.lang-select');
     selects.forEach(sel => {
-      sel.value = CONFIG.page.lang;
+      sel.value = NexT.CONFIG.page.lang;
       sel.addEventListener('change', () => {
         const target = sel.options[sel.selectedIndex];
         document.querySelectorAll('.lang-select-label span').forEach(span => {
@@ -278,6 +302,11 @@ NexT.utils = {
     });
   },
 
+  hiddeLodingCmp: function(selector) {
+    const loadding = document.querySelector(selector).previousElementSibling;
+    loadding.style.display = 'none';
+  },
+
   activateNavByIndex: function(index) {
     const target = document.querySelectorAll('.post-toc li a.nav-link')[index];
     if (!target || target.classList.contains('active-current')) return;
@@ -303,13 +332,13 @@ NexT.utils = {
   },
 
   updateSidebarPosition: function() {
-    if (window.innerWidth < 992 || CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') return;
+    if (window.innerWidth < 992 || NexT.CONFIG.scheme === 'Pisces' || NexT.CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
-    let display = CONFIG.sidebar;
+    let display = NexT.CONFIG.sidebar;
     if (typeof display !== 'boolean') {
       // There's no definition sidebar in the page front-matter.
-      display = CONFIG.sidebar.display === 'always' || (CONFIG.sidebar.display === 'post' && hasTOC);
+      display = NexT.CONFIG.sidebar.display === 'always' || (NexT.CONFIG.sidebar.display === 'post' && hasTOC);
     }
     if (display) {
       window.dispatchEvent(new Event('sidebar:show'));
@@ -344,6 +373,15 @@ NexT.utils = {
     });
   },
 
+  getStyle: function(src, parent) {    
+    const link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('type', 'text/css');
+    link.setAttribute('href', src);
+
+    (parent || document.head).appendChild(link);
+  },
+
   getScript: function(src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
@@ -362,6 +400,7 @@ NexT.utils = {
       } = {},
       parentNode = null
     } = options;
+    
     return new Promise((resolve, reject) => {
       if (condition) {
         resolve();
@@ -401,7 +440,7 @@ NexT.utils = {
     }
     return new Promise(resolve => {
       const element = document.querySelector(selector);
-      if (!CONFIG.comments.lazyload || !element) {
+      if (!NexT.CONFIG.comments.lazyload || !element) {
         resolve();
         return;
       }

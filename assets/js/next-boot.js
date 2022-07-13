@@ -4,8 +4,8 @@ NexT.boot = {};
 
 NexT.boot.registerEvents = function() {
 
-  NexT.utils.registerScrollPercent();
-  NexT.utils.registerCanIUseTag();
+  // NexT.utils.registerScrollPercent();
+  // NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
@@ -33,33 +33,35 @@ NexT.boot.registerEvents = function() {
 
 NexT.boot.refresh = function() {
 
+  if (!NexT.CONFIG.isPage) return;
   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
    */
-  //CONFIG.prism && window.Prism.highlightAll();
-  /*CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
+  //NexT.CONFIG.prism && window.Prism.highlightAll();
+  /*NexT.CONFIG.mediumzoom && window.mediumZoom('.post-body :not(a) > img, .post-body > img', {
     background: 'var(--content-bg-color)'
   });*/
-  CONFIG.lazyload && window.lozad('.post-body img').observe();
-  CONFIG.pangu && window.pangu.spacingPage();
+  // NexT.CONFIG.lazyload && window.lozad('.post-body img').observe();
+  // NexT.CONFIG.pangu && window.pangu.spacingPage();
 
-  CONFIG.isPage && NexT.utils.replacePostCRLink();
-  CONFIG.isPage && CONFIG.copybtn && NexT.utils.registerCopyCode();
-  NexT.utils.registerTabsTag();
-  /*NexT.utils.registerActiveMenuItem();
+  NexT.utils.replacePostCRLink();
+  NexT.utils.initCommontesDispaly();
+  NexT.CONFIG.copybtn && NexT.utils.registerCopyCode();
+  /*NexT.utils.registerTabsTag();
+  NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();*/
-  CONFIG.isPage && NexT.utils.registerSidebarTOC();
-  CONFIG.isPage && NexT.utils.registerPostReward();
-  CONFIG.isPage && NexT.utils.initCommontesDispaly();
-  CONFIG.isPage && NexT.utils.registerCommonSwitch();
-  NexT.utils.wrapTableWithBox();
-  NexT.utils.registerVideoIframe();
+  NexT.utils.registerSidebarTOC();
+  NexT.utils.registerPostReward();
+  NexT.utils.registerCommonSwitch();
+  /*NexT.utils.wrapTableWithBox();
+  NexT.utils.registerVideoIframe();*/
+
 };
 
 NexT.boot.motion = function() {
   // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
+  if (NexT.CONFIG.motion.enable) {
     NexT.motion.integrator
       .add(NexT.motion.middleWares.header)
       .add(NexT.motion.middleWares.postList)
@@ -72,6 +74,6 @@ NexT.boot.motion = function() {
 
 document.addEventListener('DOMContentLoaded', () => {
   NexT.boot.registerEvents();
-  NexT.boot.refresh();
   NexT.boot.motion();
+  NexT.boot.refresh();
 });

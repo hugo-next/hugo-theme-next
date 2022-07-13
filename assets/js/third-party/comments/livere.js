@@ -1,19 +1,18 @@
-/* global NexT, CONFIG, LivereTower */
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('page:loaded', () => {
-  if (!CONFIG.page.comments) return;
+  const element = '#lv-container';
+  if (!NexT.CONFIG.comments.enable 
+    || !NexT.CONFIG.livere
+    || !NexT.utils.checkDOMExist(element)) return; 
 
-  NexT.utils.loadComments('#lv-container').then(() => {
-    window.livereOptions = {
-      refer: CONFIG.page.path.replace(/index\.html$/, '')
-    };
-
-    if (typeof LivereTower === 'function') return;
-
-    NexT.utils.getScript('https://cdn-city.livere.com/js/embed.dist.js', {
+  NexT.utils.loadComments(element).then(() => {
+    NexT.utils.getScript(NexT.CONFIG.livere.js, {
       attributes: {
         async: true
-      }
+      },
+      parentNode: document.querySelector(element)
     });
+
+    NexT.utils.hiddeLodingCmp(element);
   });
 });

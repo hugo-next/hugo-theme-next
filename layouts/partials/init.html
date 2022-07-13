@@ -8,7 +8,6 @@
 {{- .Scratch.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) -}}
 {{- .Scratch.Set "catsCount" (len .Site.Taxonomies.categories) -}}
 {{- .Scratch.Set "tagsCount" (len .Site.Taxonomies.tags)  -}}
-{{- $vendors := .Site.Data.resources.vendors -}}
-{{- $pluginVen := .Site.Params.vendors.plugins -}}
-{{- $pluginCDN := index $vendors $pluginVen -}}
-{{- .Scratch.Set "pluginCDN" $pluginCDN -}}
+{{- $vendor := .Site.Params.vendors.plugins -}}
+{{- $router := index .Site.Data.resources.vendors $vendor -}}
+{{- .Scratch.Set "router" $router -}}

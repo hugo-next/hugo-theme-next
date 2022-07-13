@@ -1,22 +1,22 @@
 <!-- Plugin style files -->
 {{- $cssRes := .Site.Data.resources.css }}
 {{- $vendor := .Site.Params.vendors.plugins }}
-{{- $vendorCDN := .Scratch.Get "pluginCDN" }}
+{{- $router := .Scratch.Get "router" }}
+{{ $cssFmt := "%s/%s@%s/%s" }}
 {{- range $css := $cssRes }}
-  {{- $pluginCSS := $vendorCDN }}
   {{- $npm := $css.name }}
   {{- $file := $css.file }}
   {{- if eq $vendor "cdnjs" }}
     {{- with $css.alias }}
       {{- $npm = . }}
-    {{- end }}
+    {{- end }}   
     {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $css.file }}
+    {{- $cssFmt = "%s/%s/%s/%s" }}
   {{- end }}
-  {{- $pluginCSS = replace $pluginCSS "${name}" $npm }}
-  {{- $pluginCSS = replace $pluginCSS "${version}" $css.version }}
-  {{- $pluginCSS = replace $pluginCSS "${file}" $file }}
-  <link rel="stylesheet" href="{{ $pluginCSS }}">
+  {{- $pluginCSS := printf $cssFmt $router $npm $css.version $file }}
+  <link type="text/css" rel="stylesheet" href="{{ $pluginCSS }}" /> 
 {{- end }}
+
 <!-- Main Style file -->
 {{- $scss := resources.Get "css/main.scss" }}
 {{- $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}

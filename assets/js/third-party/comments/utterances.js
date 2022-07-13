@@ -1,17 +1,27 @@
-/* global NexT, CONFIG */
+document.addEventListener('DOMContentLoaded', () => {
 
-document.addEventListener('page:loaded', () => {
-  if (!CONFIG.page.comments) return;
+  const element = '.utterances-container';
+  if (!NexT.CONFIG.comments.enable 
+    || !NexT.CONFIG.utterances
+    || !NexT.utils.checkDOMExist(element)) return;
 
-  NexT.utils.loadComments('.utterances-container')
-    .then(() => NexT.utils.getScript('https://utteranc.es/client.js', {
+  const { 
+    repo, 
+    issueterm, 
+    label, 
+    theme } = NexT.CONFIG.utterances.config;
+
+  NexT.utils.loadComments(element)
+    .then(() => NexT.utils.getScript(NexT.CONFIG.utterances.js, {
       attributes: {
-        async       : true,
-        crossOrigin : 'anonymous',
-        'repo'      : CONFIG.utterances.repo,
-        'issue-term': CONFIG.utterances.issue_term,
-        'theme'     : CONFIG.utterances.theme
+        'async'       : true,
+        'crossorigin' : 'anonymous',
+        'repo'        : repo,
+        'issue-term'  : issueterm,
+        'theme'       : theme
       },
-      parentNode: document.querySelector('.utterances-container')
+      parentNode: document.querySelector(element)
     }));
+
+    NexT.utils.hiddeLodingCmp(element);
 });
