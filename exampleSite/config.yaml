@@ -553,7 +553,7 @@ params:
     enable: true
     # 你的 Github 仓库地址
     # Your repository url on Github.
-    permalink: https://github.com/yourname
+    permalink: https://github.com/hugo-next
     # 关注说明
     # Show this title when cursor move on.
     title: Follow me on GitHub
@@ -765,35 +765,35 @@ params:
   # 更多配置信息请参考：https://artalk.js.org
   # Artalk comments system
   # More info see: https://artalk.js.org
-  artalk:
-    site: "默认站点"
-    placeholder: "请文明发言，谢谢！"
-    server: #<your artalk server url>
+  # artalk:
+  #   site: "默认站点"
+  #   placeholder: "请文明发言，谢谢！"
+  #   server: #<your artalk server url>
  
   # Artalk 评论插件
   # 更多配置信息请参考：
   # LiveRe comments system
   # You can get your uid from https://livere.com/
-  livere:
-    uid: # <your_uid>
+  # livere:
+  #   uid: # <your_uid>
 
   # Utterances 评论插件
   # 更多配置信息请参考：https://utteranc.es
   # Utterances comments system
   # For more information: https://utteranc.es
-  utterances:
-    # Github 仓库地址，格式：用户名/仓库名称
-    # Github repository owner and name
-    repo: username/repo-name
-    # 问题标题的模式，可选值：pathname | url | title | og:title
-    # Available values: pathname | url | title | og:title
-    issueTerm: pathname
-    # 问题的标签分类
-    # Label flag for Github issues
-    label: comments
-    # 主题可选值： github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
-    # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
-    theme: preferred-color-scheme
+  # utterances:
+  #   # Github 仓库地址，格式：用户名/仓库名称
+  #   # Github repository owner and name
+  #   repo: username/repo-name
+  #   # 问题标题的模式，可选值：pathname | url | title | og:title
+  #   # Available values: pathname | url | title | og:title
+  #   issueTerm: pathname
+  #   # 问题的标签分类
+  #   # Label flag for Github issues
+  #   label: comments
+  #   # 主题可选值： github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
+  #   # Available values: github-light | github-dark | preferred-color-scheme | github-dark-orange | icy-dark | dark-blue | photon-dark | boxy-light
+  #   theme: preferred-color-scheme
 
   # Giscus 评论插件
   # 更多配置信息请参考：https://giscus.app
@@ -802,25 +802,27 @@ params:
   giscus:
     # Github 仓库地址，格式：用户名/仓库名称
     # Github repository owner and name
-    repo: username/repo_name
+    repo: username/repo-name
     # Giscus 生成的仓库 Id
     # Generate repository Id from Giscus
-    repoId: #<repo_id>
+    repoId: #<repo-id>
     # 讨论区的分类名称
     # Github discussions category
-    category: Announcements
+    category: Comments
     # 讨论区分类 ID
     # Generate category Id from Giscus
-    categoryId: #<category_id>
-    # 讨论区帖子标题，可选值： pathname | url | title | og:title | 自定义
-    # Available values: pathname | url | title | og:title | custom
-    mapping: title
+    categoryId: #<category-id>
     # 帖子上的反应将会显示在评论前
     # The reactions for post will be shown before the comments
     reactions: false
     # 将元数据定期被发送到父页面（被嵌入的页面或控制台，用于调试）
     # Metadata will be sent periodically to the parent window
     emit: false
+    # 评论输入框的位置，可选值： top | bottom
+    # Aavilable value: top | bottom
+    # 讨论区帖子标题，可选值： pathname | url | title | og:title | 自定义
+    # Available values: pathname | url | title | og:title | custom
+    mapping: title
     # 评论输入框的位置，可选值： top | bottom
     # Aavilable value: top | bottom
     inputPosition: top
@@ -860,7 +862,7 @@ params:
     # 更多信息请参考：https://invite.51.la/1NUfGTS1?target=V6
     # 51La Analytics
     # See: https://invite.51.la/1NUfGTS1?target=V6 
-    laId: #<anaytics_id>  
+    laId: #<anaytics_id> 
 
   # TODO
   # Show Views / Visitors of the website / page with busuanzi.
