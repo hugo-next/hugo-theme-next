@@ -1,4 +1,6 @@
-{{- partial "init.html" . -}}
+{{- range $k, $v := (partialCached "init.html" .) -}}
+  {{- $.Scratch.Set $k $v -}}
+{{- end -}}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 
@@ -28,13 +30,13 @@
       <!-- Submenu,Content,Comment -->
       {{- block "main" . }}{{- end }}
       {{- if .IsPage }}
-        {{- partial "comments.html" . }}
+        {{- partialCached "comments.html" . }}
       {{- end }}
     </div>
   </main>
   <footer class="footer">
     <div class="footer-inner">
-      {{- partial "footer.html" . }}
+      {{- partialCached "footer.html" . }}
     </div>
   </footer>
 
