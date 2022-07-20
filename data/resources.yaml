@@ -28,6 +28,11 @@ css:
 # 第三方服务组件资源
 # 3rd servcies Resource
 
+# 站点统计
+# Site analytics engine
+analytics:
+  la: https://sdk.51.la/js-sdk-pro.min.js
+
 # 文章分享
 # Share
 addthis:

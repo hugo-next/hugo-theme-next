@@ -1,2 +1,15 @@
-<script charset="UTF-8" id="LA_COLLECT" src="https://sdk.51.la/js-sdk-pro.min.js"></script>
-<script>LA.init({id: "{{ . }}",ck: "{{ . }}",autoTrack:true})</script>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    var script = document.createElement('script');
+      
+    script.charset = "UTF-8";
+    script.id      = "LA_COLLECT";
+    script.src     = "{{ .ctx.Site.Data.resources.analytics.la }}";
+    script.async   = "true"
+    script.onload = function() {
+      LA.init({ id: "{{ .id }}",ck: "{{ .id }}", autoTrack:true });
+    }
+
+    document.head.appendChild(script);
+  });
+</script>
