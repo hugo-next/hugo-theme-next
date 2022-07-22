@@ -15,14 +15,11 @@
 {{ $router := index .Site.Data.resources.vendors $vendor }}
 {{ $globalVars.Set "router" $router }}
 
-{{ $vendorDict := dict
-  "plugins" $vendor
-  "router"  $router
-}}
 {{ $config := dict
   "hostname" .Site.BaseURL
   "root"     "/"
-  "vendor"   $vendorDict
+  "lang"     .Site.LanguageCode
+  "vendor"   (dict "plugins" $vendor "router"  $router)
   "darkmode" .Site.Params.darkmode
   "version"  .Site.Data.config.version
   "scheme"   .Site.Params.scheme
@@ -32,6 +29,54 @@
   "lazyload" .Site.Params.lazyload
   "motion"   .Site.Params.motion
 }}
+
+{{ with .Site.Params.waline }}
+{{ $waline := dict 
+  "js"  $.Site.Data.resources.waline.js
+  "css" $.Site.Data.resources.waline.css
+  "cfg" .
+}}
+{{ $config = merge $config (dict "waline" $waline) }}
+{{ end }} 
+
+{{ with .Site.Params.giscus }}
+{{ $giscus := dict 
+  "js"  $.Site.Data.resources.giscus.js
+  "cfg" .
+}}
+{{ $config = merge $config (dict "giscus" $giscus) }}  
+{{ end }}
+
+{{ with .Site.Params.artalk }}
+{{ $artalk := dict 
+  "js"  $.Site.Data.resources.artalk.js
+  "css" $.Site.Data.resources.artalk.css
+  "cfg" .
+}}
+{{ $config = merge $config (dict "artalk" $artalk) }}
+{{ end }}
+
+{{ with .Site.Params.livere }}
+{{ $livere := dict "js" $.Site.Data.resources.livere.js }}
+{{ $config = merge $config (dict "livere" $livere) }}
+{{ end }}
+
+{{ with .Site.Params.utterances }}
+{{ $utterances := dict 
+  "js"  $.Site.Data.resources.utterances.js
+  "cfg" .
+}}
+{{ $config = merge $config (dict "utterances" $utterances) }}
+{{ end }}
+
+{{ with .Site.Params.addThisId }}
+{{ $addthis := dict 
+  "js"  $.Site.Data.resources.addthis.js
+  "cfg" (dict "pubid" .)
+}}
+{{ $config = merge $config (dict "addthis" $addthis) }}
+{{ end }}
+
 {{ $globalVars.Set "config" $config }}
 
 {{ return $globalVars.Values }}

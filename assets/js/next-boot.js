@@ -34,7 +34,20 @@ NexT.boot.registerEvents = function() {
 NexT.boot.refresh = function() {
 
   if (!NexT.CONFIG.page.isPage) return;
-  /**
+ 
+  NexT.utils.registerSidebarTOC();
+  NexT.utils.replacePostCRLink();
+  NexT.utils.registerCopyCode();
+  NexT.utils.registerPostReward();
+  if(NexT.CONFIG.page.comments) {    
+    NexT.utils.initCommontesDispaly();
+    NexT.utils.registerCommonSwitch();
+  } else {
+    NexT.utils.hideCommontes();
+  }
+
+  //TODO
+   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.
    */
@@ -44,16 +57,9 @@ NexT.boot.refresh = function() {
   });*/
   // NexT.CONFIG.lazyload && window.lozad('.post-body img').observe();
   // NexT.CONFIG.pangu && window.pangu.spacingPage();
-
-  NexT.utils.replacePostCRLink();
-  NexT.utils.initCommontesDispaly();
-  NexT.CONFIG.copybtn && NexT.utils.registerCopyCode();
   /*NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();*/
-  NexT.utils.registerSidebarTOC();
-  NexT.utils.registerPostReward();
-  NexT.utils.registerCommonSwitch();
   /*NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();*/
 

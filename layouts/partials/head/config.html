@@ -1,63 +1,10 @@
 <script class="next-config" data-name="page" type="application/json">
-{{- $pageCnf := dict }}
-{{- $pageCnf = merge $pageCnf (dict
+{{- dict
   "isHome"    .IsHome
   "isPage"    .IsPage
-  "lang"      .Site.LanguageCode
-  "comments"  .Site.Params.comments.enable
+  "comments"  (.Params.comments | default .Site.Params.comments.enable)
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
-) }}
-{{- if .IsPage }}
-
-{{- with .Site.Params.waline }}
-{{- $waline := dict 
-  "js"  $.Site.Data.resources.waline.js
-  "css" $.Site.Data.resources.waline.css
-  "cfg" .
-}}
-{{- $pageCnf = merge $pageCnf (dict "waline" $waline) }}
-{{- end }} 
-
-{{- with .Site.Params.giscus }}
-{{- $giscus := dict 
-  "js"  $.Site.Data.resources.giscus.js
-  "cfg" .
-}}
-{{- $pageCnf = merge $pageCnf (dict "giscus" $giscus) }}  
-{{- end }}
-
-{{- with .Site.Params.artalk }}
-{{- $artalk := dict 
-  "js"  $.Site.Data.resources.artalk.js
-  "css" $.Site.Data.resources.artalk.css
-  "cfg" .
-}}
-{{- $pageCnf = merge $pageCnf (dict "artalk" $artalk) }}
-{{- end }}
-
-{{- with .Site.Params.livere }}
-{{- $livere := dict "js" $.Site.Data.resources.livere.js }}
-{{- $pageCnf = merge $pageCnf (dict "livere" $livere) }}
-{{- end }}
-
-{{- with .Site.Params.utterances }}
-{{- $utterances := dict 
-  "js"  $.Site.Data.resources.utterances.js
-  "cfg" .
-}}
-{{- $pageCnf = merge $pageCnf (dict "utterances" $utterances) }}
-{{- end }}
-
-{{- with .Site.Params.addThisId }}
-{{- $addthis := dict 
-  "js"  $.Site.Data.resources.addthis.js
-  "cfg" (dict "pubid" .)
-}}
-{{- $pageCnf = merge $pageCnf (dict "addthis" $addthis) }}
-{{- end }}
-
-{{- end }}
-{{- $pageCnf -}}
+-}}
 </script>

@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const element = '.waline-container';
   if (!NexT.CONFIG.page.comments 
-    || !NexT.CONFIG.page.waline
+    || !NexT.CONFIG.waline
     || !NexT.utils.checkDOMExist(element)) return; 
   
   const {
@@ -13,13 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     requiredmeta, 
     serverurl, 
     wordlimit
-  } = NexT.CONFIG.page.waline.cfg;
+  } = NexT.CONFIG.waline.cfg;
 
 
-  const waline_css = NexT.utils.getCDNResource(NexT.CONFIG.page.waline.css);
+  const waline_css = NexT.utils.getCDNResource(NexT.CONFIG.waline.css);
   NexT.utils.getStyle(waline_css, null);
 
-  const waline_js = NexT.utils.getCDNResource(NexT.CONFIG.page.waline.js);
+  const waline_js = NexT.utils.getCDNResource(NexT.CONFIG.waline.js);
 
   const locale = {
     placeholder: placeholder
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         wordLimit     : wordlimit,
         requiredMeta  : requiredmeta,
         serverURL     : serverurl,
-        lang          : NexT.CONFIG.page.lang,
+        lang          : NexT.CONFIG.lang,
         dark          : "auto"
       });
 

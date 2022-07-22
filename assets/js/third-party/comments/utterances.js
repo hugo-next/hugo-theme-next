@@ -2,17 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const element = '.utterances-container';
   if (!NexT.CONFIG.page.comments 
-    || !NexT.CONFIG.page.utterances
+    || !NexT.CONFIG.utterances
     || !NexT.utils.checkDOMExist(element)) return;
 
   const { 
     repo, 
     issueterm, 
     label, 
-    theme } = NexT.CONFIG.page.utterances.cfg;
+    theme } = NexT.CONFIG.utterances.cfg;
 
   NexT.utils.loadComments(element)
-    .then(() => NexT.utils.getScript(NexT.CONFIG.page.utterances.js, {
+    .then(() => NexT.utils.getScript(NexT.CONFIG.utterances.js, {
       attributes: {
         'async'       : true,
         'crossorigin' : 'anonymous',

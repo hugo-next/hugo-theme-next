@@ -63,6 +63,8 @@ NexT.utils = {
    * One-click copy code support.
    */
   registerCopyCode: function() {
+    if (!NexT.CONFIG.copybtn) return;
+
     let figure = document.querySelectorAll('.highlight pre');
     if (figure.length === 0 || !NexT.CONFIG.copybtn) return;
     figure.forEach(element => {
@@ -277,7 +279,7 @@ NexT.utils = {
     });
   },
 
-  initCommontesDispaly: function(){
+  initCommontesDispaly: function(){   
     const comms = document.querySelectorAll('.comment-wrap > div');
     if (comms.length<=1) return;
     comms.forEach(function(item){
@@ -300,6 +302,10 @@ NexT.utils = {
         }
       });
     });
+  },
+
+  hideCommontes:function() {
+    document.querySelector('.post-comments').style.display = 'none';
   },
 
   hiddeLodingCmp: function(selector) {

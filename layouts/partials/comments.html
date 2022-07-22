@@ -1,6 +1,5 @@
 {{- $root := . -}}
 {{- with .Site.Params.comments }}
-{{- if .enable }}
 {{- $tc := and .storage (gt (len .nav) 1) }}
 {{- $active := .active }}
 {{- $fc := .active }}
@@ -40,5 +39,4 @@
   {{- end }}
   </div>
 </div>  
-{{- end }}
 {{- end }}
