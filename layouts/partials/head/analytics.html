@@ -1,6 +1,3 @@
-{{ $ctx := . }}
-{{- with .Site.Params.analytics }}
-{{- if isset . "laid" }}
-  {{ partial "_thirdparty/analytics/51la.html" (dict "ctx" $ctx "id" .laId) }}  
-{{- end }}
+{{- if isset .Site.Params.analytics "laid" }}
+  {{ partial "_thirdparty/analytics/51la.html" . }}  
 {{- end }}

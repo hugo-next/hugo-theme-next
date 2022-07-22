@@ -33,7 +33,7 @@ NexT.boot.registerEvents = function() {
 
 NexT.boot.refresh = function() {
 
-  if (!NexT.CONFIG.isPage) return;
+  if (!NexT.CONFIG.page.isPage) return;
   /**
    * Register JS handlers by condition option.
    * Need to add config option in Front-End at 'scripts/helpers/next-config.js' file.

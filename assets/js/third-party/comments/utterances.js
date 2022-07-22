@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const element = '.utterances-container';
-  if (!NexT.CONFIG.comments.enable 
-    || !NexT.CONFIG.utterances
+  if (!NexT.CONFIG.page.comments 
+    || !NexT.CONFIG.page.utterances
     || !NexT.utils.checkDOMExist(element)) return;
 
   const { 
     repo, 
     issueterm, 
     label, 
-    theme } = NexT.CONFIG.utterances.config;
+    theme } = NexT.CONFIG.page.utterances.cfg;
 
   NexT.utils.loadComments(element)
-    .then(() => NexT.utils.getScript(NexT.CONFIG.utterances.js, {
+    .then(() => NexT.utils.getScript(NexT.CONFIG.page.utterances.js, {
       attributes: {
         'async'       : true,
         'crossorigin' : 'anonymous',

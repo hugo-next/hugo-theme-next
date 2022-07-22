@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   const element = '.giscus-container';
-  if (!NexT.CONFIG.comments.enable 
-    || !NexT.CONFIG.giscus
+  if (!NexT.CONFIG.page.comments 
+    || !NexT.CONFIG.page.giscus
     || !NexT.utils.checkDOMExist(element)) return;
 
   const { 
@@ -14,11 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
     reactions, 
     repo, 
     repoid, 
-    theme } = NexT.CONFIG.giscus.config;
+    theme } = NexT.CONFIG.page.giscus.cfg;
 
 
   NexT.utils.loadComments(element)
-    .then(() => NexT.utils.getScript(NexT.CONFIG.giscus.js, {
+    .then(() => NexT.utils.getScript(NexT.CONFIG.page.giscus.js, {
       attributes: {
         'async'                  : true,
         'crossorigin'            : 'anonymous',
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'data-emit-metadata'     : emit ? 1:0,
         'data-input-position'    : inputposition,
         'data-theme'             : theme,
-        'data-lang'              : NexT.CONFIG.lang,
+        'data-lang'              : NexT.CONFIG.page.lang,
         'data-loading'           : 'lazy'
       },
       parentNode: document.querySelector(element)

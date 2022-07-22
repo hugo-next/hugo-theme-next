@@ -17,7 +17,9 @@
   <script type="text/javascript" src="{{ $pluginJS }}" defer></script>
 {{- end }}
 
-{{- $config := resources.Get "js/config.js" | resources.ExecuteAsTemplate "config.js" . }}
+<script class="next-config" data-name="main" type="application/json">{{- .Scratch.Get "config" -}}</script>
+
+{{- $config := resources.Get "js/config.js" }}
 {{- $motion := resources.Get "js/motion.js" }}
 {{- $boot := resources.Get "js/next-boot.js" }}
 {{- $utils := resources.Get "js/utils.js" }}
@@ -62,7 +64,7 @@
 {{- $utterancesjs := resources.Get "js/third-party/comments/utterances.js" }}
 {{- $nextjs = $nextjs | append $utterancesjs }}
 {{- end }}
-{{- $nextjs = $nextjs | resources.Concat "js/hugo-next.js"}}
+{{- $nextjs = $nextjs | resources.Concat "js/main.js"}}
 {{ if hugo.IsProduction }}
 {{- $nextjs = $nextjs | minify | fingerprint }}
 {{ end }}

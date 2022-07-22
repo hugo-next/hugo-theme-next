@@ -1,18 +1,37 @@
 {{/* Use to defind global variables */}}
 
-{{- if not hugo.IsExtended }}
-{{- warnf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" -}}  
-{{- errorf "Because that use SCSS framework in Hugo NexT, Please download Hugo extended version on offical site: https://github.com/gohugoio/hugo/releases" -}}  
-{{- end }}
+{{ if not hugo.IsExtended }}
+{{ warnf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" }}  
+{{ errorf "Because that use SCSS framework in Hugo NexT, Please download Hugo extended version on offical site: https://github.com/gohugoio/hugo/releases" }}  
+{{ end }}
 
-{{- $globalVars := newScratch -}}
+{{ $globalVars := newScratch }}
 
-{{- $globalVars.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) -}}
-{{- $globalVars.Set "catsCount" (len .Site.Taxonomies.categories) -}}
-{{- $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  -}}
+{{ $globalVars.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) }}
+{{ $globalVars.Set "catsCount" (len .Site.Taxonomies.categories) }}
+{{ $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  }}
 
-{{- $vendor := .Site.Params.vendors.plugins -}}
-{{- $router := index .Site.Data.resources.vendors $vendor -}}
-{{- $globalVars.Set "router" $router -}}
+{{ $vendor := .Site.Params.vendors.plugins }}
+{{ $router := index .Site.Data.resources.vendors $vendor }}
+{{ $globalVars.Set "router" $router }}
 
-{{- return $globalVars.Values -}}
+{{ $vendorDict := dict
+  "plugins" $vendor
+  "router"  $router
+}}
+{{ $config := dict
+  "hostname" .Site.BaseURL
+  "root"     "/"
+  "vendor"   $vendorDict
+  "darkmode" .Site.Params.darkmode
+  "version"  .Site.Data.config.version
+  "scheme"   .Site.Params.scheme
+  "sidebar"  .Site.Params.sidebar
+  "copybtn"  .Site.Params.codeblock.copyBtn
+  "bookmark" .Site.Params.bookmark
+  "lazyload" .Site.Params.lazyload
+  "motion"   .Site.Params.motion
+}}
+{{ $globalVars.Set "config" $config }}
+
+{{ return $globalVars.Values }}

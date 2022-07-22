@@ -440,7 +440,7 @@ NexT.utils = {
     }
     return new Promise(resolve => {
       const element = document.querySelector(selector);
-      if (!NexT.CONFIG.comments.lazyload || !element) {
+      if (!element) {
         resolve();
         return;
       }
