@@ -1,6 +1,17 @@
 # Ignore files in Hugo NexT theme
 
-exampleSite/
+exampleSite/*
+
+# Exclude special files in content folder
 !exampleSite/content
-!exampleSite/start.sh
+exampleSite/content/*
+!exampleSite/content/archives
+!exampleSite/content/post
+
+# Exclude special files in static folder
+!exampleSite/static
+
+# Exclude special files
 !exampleSite/config.yaml
+!exampleSite/start.sh
+
