@@ -8,6 +8,9 @@
 {{ $globalVars := newScratch }}
 
 {{ $globalVars.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) }}
+{{ range .Site.Params.mainSections }}
+  {{ $globalVars.Set .  (len (where $.Page.Site.RegularPages "Section" .))}} 
+{{ end }}
 {{ $globalVars.Set "catsCount" (len .Site.Taxonomies.categories) }}
 {{ $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  }}
 

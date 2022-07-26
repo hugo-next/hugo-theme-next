@@ -1,0 +1,29 @@
+{{ range . }}
+<div class="collection-year">
+  <span class="collection-header">{{ .Key }}</span>
+</div>
+{{ range .Pages }}
+<article itemscope itemtype="http://schema.org/Article">
+  <header class="post-header">
+    <div class="post-meta-container">
+      {{ $month := .Date.Format "01-02" }}
+      <time itemprop="dateCreated" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}" content="{{ $month }}">
+        {{ $month }}
+      </time>
+    </div>
+    <div class="post-title">
+      {{- if isset .Params "extlink" }}
+      <a href="{{ .Params.extlink }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external" title="">
+        <span itemprop="name">{{- .Title -}}</span>
+        <i class="fa fa-external-link-alt"></i>
+      </a>
+      {{- else }}
+      <a class="post-title-link" href="{{ .Permalink }}" itemprop="url">
+        <span itemprop="name">{{ .Title }}</span>
+      </a>
+      {{- end }}
+    </div>
+  </header>
+</article>
+{{ end }}
+{{ end }}
