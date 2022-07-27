@@ -52,5 +52,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('pjax:success', scrollToMark);
   };
 
-  init(CONFIG.bookmark.save);
+  init(NexT.CONFIG.bookmark.save);
 });

@@ -1,27 +1,73 @@
+# CDN 公共资源商列表
 # Public CDN vendor list
-#
 vendors: 
-  cdnjs: "//cdnjs.cloudflare.com/ajax/libs/${name}/${version}/${file}"
-  unpkg: "//unpkg.com/${name}@${version}/${file}"
+  cdnjs: "https://cdnjs.cloudflare.com/ajax/libs"
+  unpkg: "https://unpkg.com"
 
-
-# Javascript Resources
-#
+# JavaScript 资源
+# JavaScript Resources
 js:
   - name: animejs
     version: 3.2.1
     file: lib/anime.min.js
-  - name: mathjax
-    version: 3.2.0
-    file: es5/tex-mml-chtml.js
+  # TODO
+  #- name: mathjax
+  #  version: 3.2.0
+  #  file: es5/tex-mml-chtml.js
 
+# CSS 资源
 # CSS Resources
-#
 css:
   - name: '@fortawesome/fontawesome-free'
-    version: 6.1.1
+    version: 6.1.2
     file: css/all.min.css
     alias: font-awesome
   - name: animate.css
     version: 3.1.1
     file: animate.min.css
+
+# 第三方服务组件资源
+# 3rd servcies Resource
+
+# 站点统计
+# Site analytics engine
+analytics:
+  la: https://sdk.51.la/js-sdk-pro.min.js
+
+# 文章分享
+# Share
+addthis:
+  js: https://s7.addthis.com/js/300/addthis_widget.js
+
+# 评论组件资源
+# Comment component Resources
+waline:
+  js:
+    name: '@waline/client'
+    version: 2.6.1
+    file: dist/waline.js
+    alias: waline
+  css:
+    name: '@waline/client'
+    version: 2.6.1
+    file: dist/waline.css
+    alias: waline
+
+artalk:
+  js:
+    name: artalk
+    version: 2.3.4
+    file: dist/Artalk.js
+  css:
+    name: artalk
+    version: 2.3.4
+    file: dist/Artalk.css
+
+giscus:
+  js: https://giscus.app/client.js
+
+utterances:
+  js: https://utteranc.es/client.js
+
+livere:
+  js: https://cdn-city.livere.com/js/embed.dist.js

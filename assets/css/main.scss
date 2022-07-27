@@ -131,9 +131,9 @@ $gitter_enable              : {{ $P.gitter.enable }};
 // Comment
 //$disqusjs_enable            : {{ $P.disqusjs.enable }};
 $disqusjs_enable            : false;
-$livere_enable              : {{ isset $P.livere "uid" }};
-$utterances_enable          : {{ isset $P.utterances "utterances" }};
-$waline_enable              : {{ isset $P.waline "serverurl" }};
+$livere_enable              : {{ isset $P "livere" }};
+$utterances_enable          : {{ isset $P "utterances" }};
+$waline_enable              : {{ isset $P "waline" }};
 {{- with .Site.Params.comments }}
 {{- $tce := and (isset . "nav") (and .storage (gt (len .nav) 1)) }}
 $two_comments_enable        : {{ $tce }};

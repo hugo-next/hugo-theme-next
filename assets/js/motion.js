@@ -10,12 +10,12 @@ NexT.motion.integrator = {
   },
   add: function(fn) {
     const sequence = fn();
-    if (CONFIG.motion.async) this.queue.push(sequence);
+    if (NexT.CONFIG.motion.async) this.queue.push(sequence);
     else this.queue = this.queue.concat(sequence);
     return this;
   },
   bootstrap: function() {
-    if (!CONFIG.motion.async) this.queue = [this.queue];
+    if (!NexT.CONFIG.motion.async) this.queue = [this.queue];
     this.queue.forEach(sequence => {
       const timeline = window.anime.timeline({
         duration: 200,
@@ -52,12 +52,12 @@ NexT.motion.middleWares = {
     }
 
     pushToSequence('header.header');
-    CONFIG.scheme === 'Mist' && getMistLineSettings('.logo-line');
-    CONFIG.scheme === 'Muse' && pushToSequence('.custom-logo-image');
+    NexT.CONFIG.scheme === 'Mist' && getMistLineSettings('.logo-line');
+    NexT.CONFIG.scheme === 'Muse' && pushToSequence('.custom-logo-image');
     pushToSequence('.site-title');
     pushToSequence('.site-brand-container .toggle', true);
     pushToSequence('.site-subtitle');
-    (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini') && pushToSequence('.custom-logo-image');
+    (NexT.CONFIG.scheme === 'Pisces' || NexT.CONFIG.scheme === 'Gemini') && pushToSequence('.custom-logo-image');
 
     document.querySelectorAll('.menu-item').forEach(targets => {
       sequence.push({
@@ -82,7 +82,7 @@ NexT.motion.middleWares = {
 
   postList: function() {
     const sequence = [];
-    const { postblock, postheader, postbody, collheader } = CONFIG.motion.transition;
+    const { postblock, postheader, postbody, collheader } = NexT.CONFIG.motion.transition;
 
     function animate(animation, selector) {
       if (!animation) return;
@@ -105,9 +105,9 @@ NexT.motion.middleWares = {
 
   sidebar: function() {
     const sidebar = document.querySelector('.sidebar');
-    const sidebarTransition = CONFIG.motion.transition.sidebar;
+    const sidebarTransition = NexT.CONFIG.motion.transition.sidebar;
     // Only for Pisces | Gemini.
-    if (sidebarTransition && (CONFIG.scheme === 'Pisces' || CONFIG.scheme === 'Gemini')) {
+    if (sidebarTransition && (NexT.CONFIG.scheme === 'Pisces' || NexT.CONFIG.scheme === 'Gemini')) {
       return [{
         targets : sidebar,
         complete: () => sidebar.classList.add('animated', sidebarTransition)

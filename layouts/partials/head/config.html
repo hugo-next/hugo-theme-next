@@ -1,0 +1,10 @@
+<script class="next-config" data-name="page" type="application/json">
+{{- dict
+  "isHome"    .IsHome
+  "isPage"    .IsPage
+  "comments"  (.Params.comments | default .Site.Params.comments.enable)
+  "permalink" (.Page.Permalink | absURL)
+  "path"      (.Page.Permalink | path.Base)
+  "title"     .Page.Title
+-}}
+</script>

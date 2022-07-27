@@ -1,14 +1,91 @@
 {{/* Use to defind global variables */}}
 
-{{- if not hugo.IsExtended }}
-{{- warnf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" -}}  
-{{- errorf "Because that use SCSS framework in Hugo NexT, Please download Hugo extended version on offical site: https://github.com/gohugoio/hugo/releases" -}}  
-{{- end }}
+{{ if not hugo.IsExtended }}
+{{ warnf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" }}  
+{{ errorf "Because that use SCSS framework in Hugo NexT, Please download Hugo extended version on offical site: https://github.com/gohugoio/hugo/releases" }}  
+{{ end }}
 
-{{- .Scratch.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) -}}
-{{- .Scratch.Set "catsCount" (len .Site.Taxonomies.categories) -}}
-{{- .Scratch.Set "tagsCount" (len .Site.Taxonomies.tags)  -}}
-{{- $vendors := .Site.Data.resources.vendors -}}
-{{- $pluginVen := .Site.Params.vendors.plugins -}}
-{{- $pluginCDN := index $vendors $pluginVen -}}
-{{- .Scratch.Set "pluginCDN" $pluginCDN -}}
+{{ $version := int (index (split hugo.Version ".") 1) }}
+{{ if lt $version 89 }}
+{{ warnf "当前 Hugo 版本小于 0.89.0，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases" }}  
+{{ errorf "Current Hugo version is less then 0.89.0, Please download Hugo latest version on offical site: https://github.com/gohugoio/hugo/releases" }}  
+{{ end }}
+
+{{ $globalVars := newScratch }}
+
+{{ $globalVars.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) }}
+{{ range .Site.Params.mainSections }}
+  {{ $globalVars.Set .  (len (where $.Page.Site.RegularPages "Section" .))}} 
+{{ end }}
+{{ $globalVars.Set "catsCount" (len .Site.Taxonomies.categories) }}
+{{ $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  }}
+
+{{ $vendor := .Site.Params.vendors.plugins }}
+{{ $router := index .Site.Data.resources.vendors $vendor }}
+{{ $globalVars.Set "router" $router }}
+
+{{ $config := dict
+  "hostname" .Site.BaseURL
+  "root"     "/"
+  "lang"     .Site.LanguageCode
+  "vendor"   (dict "plugins" $vendor "router"  $router)
+  "darkmode" .Site.Params.darkmode
+  "version"  .Site.Data.config.version
+  "scheme"   .Site.Params.scheme
+  "sidebar"  .Site.Params.sidebar
+  "copybtn"  .Site.Params.codeblock.copyBtn
+  "bookmark" .Site.Params.bookmark
+  "lazyload" .Site.Params.lazyload
+  "motion"   .Site.Params.motion
+}}
+
+{{ with .Site.Params.waline }}
+{{ $waline := dict 
+  "js"  $.Site.Data.resources.waline.js
+  "css" $.Site.Data.resources.waline.css
+  "cfg" .
+}}
+{{ $config = merge $config (dict "waline" $waline) }}
+{{ end }} 
+
+{{ with .Site.Params.giscus }}
+{{ $giscus := dict 
+  "js"  $.Site.Data.resources.giscus.js
+  "cfg" .
+}}
+{{ $config = merge $config (dict "giscus" $giscus) }}  
+{{ end }}
+
+{{ with .Site.Params.artalk }}
+{{ $artalk := dict 
+  "js"  $.Site.Data.resources.artalk.js
+  "css" $.Site.Data.resources.artalk.css
+  "cfg" .
+}}
+{{ $config = merge $config (dict "artalk" $artalk) }}
+{{ end }}
+
+{{ with .Site.Params.livere }}
+{{ $livere := dict "js" $.Site.Data.resources.livere.js }}
+{{ $config = merge $config (dict "livere" $livere) }}
+{{ end }}
+
+{{ with .Site.Params.utterances }}
+{{ $utterances := dict 
+  "js"  $.Site.Data.resources.utterances.js
+  "cfg" .
+}}
+{{ $config = merge $config (dict "utterances" $utterances) }}
+{{ end }}
+
+{{ with .Site.Params.addThisId }}
+{{ $addthis := dict 
+  "js"  $.Site.Data.resources.addthis.js
+  "cfg" (dict "pubid" .)
+}}
+{{ $config = merge $config (dict "addthis" $addthis) }}
+{{ end }}
+
+{{ $globalVars.Set "config" $config }}
+
+{{ return $globalVars.Values }}

@@ -8,6 +8,9 @@
     <div class="collection-title">
       {{- $cheers := "Um" }}
       {{- $posts := .Scratch.Get "postsCount" }}
+      {{- if and .Page.IsSection (ne .Section "archives") }}
+        {{- $posts = .Scratch.Get .Section }}
+      {{- end }}
       {{- if gt $posts 210 }}
       {{- $cheers = "Excellent" }}
       {{- else if gt $posts 130 }}
