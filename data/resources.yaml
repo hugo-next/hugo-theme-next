@@ -10,15 +10,16 @@ js:
   - name: animejs
     version: 3.2.1
     file: lib/anime.min.js
-  - name: mathjax
-    version: 3.2.0
-    file: es5/tex-mml-chtml.js
+  # TODO
+  #- name: mathjax
+  #  version: 3.2.0
+  #  file: es5/tex-mml-chtml.js
 
 # CSS 资源
 # CSS Resources
 css:
   - name: '@fortawesome/fontawesome-free'
-    version: 6.1.1
+    version: 6.1.2
     file: css/all.min.css
     alias: font-awesome
   - name: animate.css
