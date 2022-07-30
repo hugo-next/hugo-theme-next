@@ -1,7 +1,3 @@
-{{- if and .Page.IsSection (eq .Section "archives") }}
-  {{- $paginator := (.Paginate (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)).Pages.GroupByDate "2006" }}
-  {{ partial "list.html" $paginator }}
-{{ else }}
-  {{- $paginator := .Paginator.Pages.GroupByDate "2006" }}
-  {{ partial "list.html" $paginator }}
-{{- end }}
+{{ $paginator := .Paginator.Pages.GroupByDate "2006" }}
+{{ partial "list.html" $paginator }}
+
