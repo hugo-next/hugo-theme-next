@@ -23,18 +23,25 @@
 {{ $globalVars.Set "router" $router }}
 
 {{ $config := dict
-  "hostname" .Site.BaseURL
-  "root"     "/"
-  "lang"     .Site.LanguageCode
-  "vendor"   (dict "plugins" $vendor "router"  $router)
-  "darkmode" .Site.Params.darkmode
-  "version"  .Site.Data.config.version
-  "scheme"   .Site.Params.scheme
-  "sidebar"  .Site.Params.sidebar
-  "copybtn"  .Site.Params.codeblock.copyBtn
-  "bookmark" .Site.Params.bookmark
-  "lazyload" .Site.Params.lazyload
-  "motion"   .Site.Params.motion
+  "hostname"    .Site.BaseURL
+  "root"        "/"
+  "lang"        .Site.LanguageCode
+  "vendor"      (dict "plugins" $vendor "router" $router)
+  "darkmode"    .Site.Params.darkmode
+  "version"     .Site.Data.config.version
+  "scheme"      .Site.Params.scheme
+  "sidebar"     .Site.Params.sidebar
+  "copybtn"     .Site.Params.codeblock.copyBtn
+  "bookmark"    .Site.Params.bookmark
+  "lazyload"    .Site.Params.lazyload
+  "motion"      .Site.Params.motion
+  "localSearch" .Site.Params.localSearch
+  "i18n"        (dict 
+    "placeholder" (T "SearchPh")
+    "empty"       (T "SearchEmpty")
+    "hits_time"   (T "SearchHitsTime")
+    "hits"        (T "SearchHits")
+  )
 }}
 
 {{ with .Site.Params.waline }}

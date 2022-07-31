@@ -69,3 +69,6 @@
 {{- $nextjs = $nextjs | minify | fingerprint }}
 {{ end }}
 <script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script>
+{{- $search := resources.Get "js/third-party/search/local-search.js" }}
+<script type="text/javascript" src="{{ $search.RelPermalink }}" defer></script>
+

@@ -141,3 +141,12 @@ PageViewsLabel:
 
 FooterPowerby:
   other: "Power by %s"
+
+SearchPh:
+  other: Searching...
+SearchEmpty:
+  other: "We didn't find any results for the search: ${query}"
+SearchHits:
+  hits: "${hits} results found"
+SearchHitsTime:
+  other: "${hits} results found in ${time} ms"

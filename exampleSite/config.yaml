@@ -55,6 +55,27 @@ markup:
     endLevel: 3
     ordered: false
 
+# 站点文章导航文件
+# Site map of all articles
+sitemap:
+  filename: "sitemap.xml"
+  changefreq: "weekly"
+  priority: 0.5
+
+outputFormats:
+  RSS:
+    baseName: "rss"
+  # 自定义生成本地搜索文件
+  # Custom file of indexes for local search
+  SearchIndexes:
+    mediaType: "application/xml"
+    baseName: "searchindexes"
+    isPlainText: true
+    notAlternative: true
+
+outputs:
+  home: ["HTML", "RSS", "SearchIndexes"]
+
 #--------------------------------------
 # 菜单配置说明
 # identifier ： 唯一标识不可重复
@@ -889,16 +910,26 @@ params:
     hits:
       perPage: 10
 
+  # 本地搜索
   # Local Search
   localSearch:
+    # 是否开启搜索功能
+    # Enable search function
     enable: true
+    # 搜索索引文件路径
+    # Indexes file path for search
+    path: searchindexes.xml
+    # 是立即搜索当输入关键字时，可选值： auto | manual
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
     trigger: auto
+    # 显示头部的搜索记录，-1 表示显示所有搜索结果
     # Show top n results per article, show all results by setting to -1
-    top_n_per_article: 1
+    topNPerArticle: -1
+    # 将 html 字符串转换为可读字符串
     # Unescape html strings to the readable one.
     unescape: false
+    # 页面加载时是否要重新载入索引文件
     # Preload the search data when the page loads.
     preload: false
 

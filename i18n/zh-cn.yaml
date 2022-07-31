@@ -142,3 +142,12 @@ PageViewsLabel:
 
 FooterPowerby:
   other: 由 %s 强力驱动
+
+SearchPh:
+  other: 搜索...
+SearchEmpty:
+  other: "没有找到任何搜索结果：${query}"
+SearchHits:
+  hits: "找到 ${hits} 个搜索结果"
+SearchHitsTime:
+  other: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
