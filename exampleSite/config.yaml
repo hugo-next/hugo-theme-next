@@ -898,15 +898,17 @@ params:
 
 
   # ---------------------------------------------------------------
-  # TODO
-  # 内容搜索服务（暂时未实现）
+  # 内容搜索服务
   # Search Services
   # ---------------------------------------------------------------
 
   # Algolia Search
   # For more information: https://www.algolia.com
   algoliaSearch:
-    enable: false
+    enable: true
+    appId: #<algolia app id>
+    apiKey: #<algolia api key>
+    indexName: #<algolia index name>
     hits:
       perPage: 10
 

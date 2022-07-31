@@ -35,7 +35,6 @@
   "bookmark"    .Site.Params.bookmark
   "lazyload"    .Site.Params.lazyload
   "motion"      .Site.Params.motion
-  "localSearch" .Site.Params.localSearch
   "i18n"        (dict 
     "placeholder" (T "SearchPh")
     "empty"       (T "SearchEmpty")
@@ -43,6 +42,20 @@
     "hits"        (T "SearchHits")
   )
 }}
+
+{{ if .Site.Params.localSearch.enable }}
+  {{ $localSearch := dict "localSearch" .Site.Params.localSearch }}
+  {{ $config = merge $config $localSearch }}
+{{ end }}
+
+{{ if .Site.Params.algoliaSearch.enable }}
+  {{ $algoliaSearch := dict 
+    "js"        .Site.Data.resources.algolia
+    "instantjs" .Site.Data.resources.instant
+    "cfg"       .Site.Params.algoliaSearch
+  }}
+  {{ $config = merge $config (dict "algolia" $algoliaSearch) }}
+{{ end }}
 
 {{ with .Site.Params.waline }}
 {{ $waline := dict 
