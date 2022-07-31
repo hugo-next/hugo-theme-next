@@ -52,8 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const stats = NexT.CONFIG.i18n.hits_time
               .replace('${hits}', data.nbHits)
               .replace('${time}', data.processingTimeMS);
-            return `<span>${stats}</span>`;
-            //<img src="${CONFIG.images}/logo-algolia-nebula-blue-full.svg" alt="Algolia">`;
+            return `<span>${stats}</span><img src="/imgs/algolia-logo.svg" alt="Algolia">`;
           }
         },
         cssClasses: {
