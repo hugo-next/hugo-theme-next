@@ -68,8 +68,15 @@ outputFormats:
   # 自定义生成本地搜索文件
   # Custom file of indexes for local search
   SearchIndexes:
-    mediaType: "application/xml"
-    baseName: "searchindexes"
+    mediaType: application/xml
+    baseName: searchindexes
+    isPlainText: true
+    notAlternative: true
+  # 生成 Algolia 索引文件
+  # Build indexes of Aloglia
+  AlgoliaIndexes:
+    mediaType: application/json
+    baseName: algolia
     isPlainText: true
     notAlternative: true
 
