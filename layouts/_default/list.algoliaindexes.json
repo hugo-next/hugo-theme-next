@@ -4,7 +4,7 @@
   {
     "permalink": "{{ .Permalink | relURL }}",
     "title": {{ .Title | jsonify }},
-    "content": {{ replace .Plain | jsonify }},
+    "content": {{ .Plain | jsonify }},
     "date": {{ .Date.Format $.Site.Params.timeFormat | jsonify }},
     "updated": {{ .Lastmod.Format $.Site.Params.timeFormat | jsonify }}
   }
