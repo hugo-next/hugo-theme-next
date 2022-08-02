@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    const markKeyWords = function(content) {
+      return content.replaceAll("<mark>", '<mark class="search-keyword">');
+    };
+
     if (typeof pjax === 'object') {
       search.on('render', () => {
         pjax.refresh(document.querySelector('.algolia-hits'));
@@ -62,16 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       instantsearch.widgets.hits({
         container: '.algolia-hits',
-        escapeHTML: false,
+        escapeHTML: true,
         templates: {
           item: data => {
-            const { title, excerpt, excerptStrip, content } = data._highlightResult;
-            let result = `<a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
-            const content = excerpt || excerptStrip || content;
+            const { title, content } = data._highlightResult;
+            let result = `<a href="${data.permalink}" class="search-result-title">${markKeyWords(title.value)}</a>`;
+            //const content = excerpt || excerptStrip || content;
             if (content && content.value) {
               const div = document.createElement('div');
-              div.innerHTML = content.value;
-              result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 200)}...</p></a>`;
+              div.innerHTML = markKeyWords(content.value);
+              result += `<a href="${data.permalink}"><p class="search-result">${div.innerHTML.substring(0, 200)}...</p></a>`;
             }
             return result;
           },
