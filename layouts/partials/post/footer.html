@@ -25,7 +25,7 @@
 <div class="post-nav">
   <div class="post-nav-next post-nav-item">
     {{- with .NextInSection }}
-    <a href="{{ ..RelPermalink | relLangURL }}" rel="next" title="{{ .Title }}">
+    <a href="{{ .RelPermalink | relLangURL }}" rel="next" title="{{ .Title }}">
       <i class="fa fa-chevron-left"></i> {{ .Title }}
     </a>
     {{- end }}
