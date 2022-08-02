@@ -25,15 +25,15 @@
 <div class="post-nav">
   <div class="post-nav-next post-nav-item">
     {{- with .NextInSection }}
-    <a href="{{ .Permalink}}" rel="next" title="{{.Title}}">
-      <i class="fa fa-chevron-left"></i> {{.Title}}
+    <a href="{{ ..RelPermalink | relLangURL }}" rel="next" title="{{ .Title }}">
+      <i class="fa fa-chevron-left"></i> {{ .Title }}
     </a>
     {{- end }}
   </div>
   <div class="post-nav-prev post-nav-item">
     {{- with .PrevInSection }}
-    <a href="{{ .Permalink}}" rel="prev" title="{{.Title}}">
-      {{.Title}}
+    <a href="{{ .RelPermalink | relLangURL }}" rel="prev" title="{{ .Title }}">
+      {{ .Title }}
       <i class="fa fa-chevron-right"></i>
     </a>
     {{- end }}
