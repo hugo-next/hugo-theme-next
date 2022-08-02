@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Hide default icons of algolia search
         showReset: false,
         showSubmit: false,
-        showLoadingIndicator: false,
+        showLoadingIndicator: true,
         cssClasses: {
           input: 'search-input'
         }
@@ -65,13 +65,13 @@ document.addEventListener('DOMContentLoaded', () => {
         escapeHTML: false,
         templates: {
           item: data => {
-            const { title, excerpt, excerptStrip, contentStripTruncate } = data._highlightResult;
+            const { title, excerpt, excerptStrip, content } = data._highlightResult;
             let result = `<a href="${data.permalink}" class="search-result-title">${title.value}</a>`;
-            const content = excerpt || excerptStrip || contentStripTruncate;
+            const content = excerpt || excerptStrip || content;
             if (content && content.value) {
               const div = document.createElement('div');
               div.innerHTML = content.value;
-              result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 100)}...</p></a>`;
+              result += `<a href="${data.permalink}"><p class="search-result">${div.textContent.substring(0, 200)}...</p></a>`;
             }
             return result;
           },
@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
       instantsearch.widgets.pagination({
         container: '.algolia-pagination',
         scrollTo: false,
-        showFirst: false,
-        showLast: false,
+        showFirst: true,
+        showLast: true,
         templates: {
           first: '<i class="fa fa-angle-double-left"></i>',
           last: '<i class="fa fa-angle-double-right"></i>',
