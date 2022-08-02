@@ -18,7 +18,7 @@
         <i class="fa fa-external-link-alt"></i>
       </a>
       {{- else }}
-      <a class="post-title-link" href="{{ .Permalink }}" itemprop="url">
+      <a class="post-title-link" href="{{ .RelPermalink | relLangURL }}" itemprop="url">
         <span itemprop="name">{{ .Title }}</span>
       </a>
       {{- end }}
