@@ -95,7 +95,7 @@ NexT.motion.middleWares = {
       });
     }
 
-    animate(postblock, '.post-block, .pagination, .post-comments');
+    animate(postblock, '.post-block,.flinks-block, .pagination, .post-comments');
     animate(collheader, '.collection-header');
     animate(postheader, '.post-header');
     animate(postbody, '.post-body');

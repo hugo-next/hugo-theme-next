@@ -3,7 +3,7 @@
 // Fix issue #16
 // To do: use `gap` instead of `margin`
 // See https://caniuse.com/flexbox-gap
-.post-footer {
+.post-footer, .flinks-list-footer {
   @include flex-column();
 
   hr{
