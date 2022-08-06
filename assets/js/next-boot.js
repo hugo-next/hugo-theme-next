@@ -4,7 +4,7 @@ NexT.boot = {};
 
 NexT.boot.registerEvents = function() {
 
-  // NexT.utils.registerScrollPercent();
+  NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();
 
   // Mobile top menu bar.

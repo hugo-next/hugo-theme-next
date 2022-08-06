@@ -67,7 +67,7 @@ outputFormats:
     baseName: "rss"
   # 自定义生成本地搜索文件
   # Custom file of indexes for local search
-  SearchIndexes:
+  LocalIndexes:
     mediaType: application/xml
     baseName: searchindexes
     isPlainText: true
@@ -81,7 +81,7 @@ outputFormats:
     notAlternative: true
 
 outputs:
-  home: ["HTML", "RSS", "SearchIndexes"]
+  home: ["HTML", "RSS", "LocalIndexes"]
 
 #--------------------------------------
 # 菜单配置说明
@@ -112,16 +112,21 @@ menus:
       pageref: /about.html
       pre: user
       weight: 2
+    - identifier: flinks
+      name: 站点示例
+      pageref: /flinks.html
+      pre: thumbs-up
+      weight: 3
     - identifier: archives
       name: 归档
       pageref: /archives
       pre: archive
-      weight: 3
+      weight: 4
     - identifier: commonweal
       name: 公益 404
       url: /404.html
       pre: heartbeat
-      weight: 4
+      weight: 5
 
 #-----------------------------------------
 # Hugo NexT 主题参数配置
@@ -912,7 +917,7 @@ params:
   # Algolia Search
   # For more information: https://www.algolia.com
   algoliaSearch:
-    enable: true
+    enable: false
     appId: #<algolia app id>
     apiKey: #<algolia api key>
     indexName: #<algolia index name>
