@@ -11,6 +11,10 @@
   .table-container table tbody tr {
     background: none;
   }
+
+  pre > code span {
+    white-space: break-spaces;
+  }
 }
 
 @if $codeblock_copy_btn_enable {
