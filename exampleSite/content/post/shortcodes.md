@@ -44,16 +44,26 @@ url: "post/shortcodes.html"
 
 # 信息块
 
-支持 `default`，`info`，`success`，`warning`，`danger` 等五种不同效果的信息块展示，语法参考如下：
+支持 `default`，`info`，`success`，`warning`，`danger` 等五种不同效果的展示，语法参考如下：
 
 ```markdown
-{{</* note [class] */>}}
+{{</* note [class] [no-icon] */>}}
   书写表达的信息
   支持 Markdown 语法
 {{</* /note */>}}
 ```
 
 实际效果：
+
+{{< note default no-icon >}}
+  ### Default Header without icon
+  **Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
+{{< /note >}}
+
+{{< note default >}}
+  ### Default Header
+  **Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
+{{< /note >}}
 
 {{< note info >}}
   ### Info Header
