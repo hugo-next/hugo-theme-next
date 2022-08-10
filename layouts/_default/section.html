@@ -1,5 +1,5 @@
 {{- define "title" }}
-{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "AllSome" }} - {{ .Site.Title -}}
+{{- .Params.Title | default (T .Section) | default .Section }} - {{ .Site.Title -}}
 {{- end -}}
 {{ define "main_inner_class" }}index posts-expand{{ end }}
 
