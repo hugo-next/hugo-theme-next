@@ -80,8 +80,15 @@ outputFormats:
     isPlainText: true
     notAlternative: true
 
+# 默认使用本地搜索，如切换到 Algolia 搜索引擎，
+# 请将下面的 LocalIndexes 替换成 AlgoliaIndexes
+# By default use local search, before switch to Algolia engine
+# Please replace LocalIndexes with AlgoliaIndexes
 outputs:
   home: ["HTML", "RSS", "LocalIndexes"]
+
+# 输入
+enableRobotsTXT: true
 
 #--------------------------------------
 # 菜单配置说明
