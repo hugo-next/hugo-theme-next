@@ -1,7 +1,7 @@
 //@use 'sass:map';
 
 @if $note_style != 'disabled' {
-  .post-body .note {
+  .main .note {
     $note-icons : $note_icons;
     $note-style : $note_style;
 

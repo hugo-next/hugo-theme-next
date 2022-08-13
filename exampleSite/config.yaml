@@ -87,7 +87,8 @@ outputFormats:
 outputs:
   home: ["HTML", "RSS", "LocalIndexes"]
 
-# 输入
+# 输出 robots 文件支持爬虫扫描
+# Enable robots with support crawler scan
 enableRobotsTXT: true
 
 #--------------------------------------
