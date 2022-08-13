@@ -26,6 +26,12 @@
 
 
     .flinks-list-item {
+      @include mobile() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
       position: relative;
       float: left;
       overflow: hidden;
@@ -111,11 +117,19 @@
         font-weight: 700;
         font-size: 1em;
         font-weight: bold;
+
+        @include mobile() {
+          display: none;
+        }
       }
 
       .flinks-item-desc {
         padding: 10px 0;
         font-size: .92em;
+
+        @include mobile() {
+          display: none;
+        }
       }
 
     }
