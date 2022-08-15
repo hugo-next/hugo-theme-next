@@ -4,6 +4,12 @@
   background: var(--highlight-background);
   margin-bottom: 26px;
 
+  //TODO  Need fixed the copy button show position.
+  div:first-child {
+    display: absolute;
+    overflow-x: scroll
+  }
+
   pre {
     position: relative;
   }
@@ -11,15 +17,15 @@
   table tbody tr {
     //TODO Fixed the too long code line over
     // layout background color.
-    background: #272822;
+    background: #272822;    
   }
 
-  pre > code span {
+  /* pre > code span {
     white-space: break-spaces;
     overflow: hidden;
     word-break: break-all;
     word-wrap: break-word;
-  }
+  } */
 }
 
 @if $codeblock_copy_btn_enable {
