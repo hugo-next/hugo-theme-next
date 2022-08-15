@@ -20,4 +20,4 @@ EOT
 
 next `cat ../VERSION`
 
-hugo server -D -t ../.. --port 1414 --panicOnWarning --config config.dev.yaml
+hugo server -t ../.. --port 1414 --panicOnWarning --config config.yaml

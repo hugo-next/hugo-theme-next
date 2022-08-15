@@ -6,8 +6,8 @@
 <article itemscope itemtype="http://schema.org/Article">
   <header class="post-header">
     <div class="post-meta-container">
-      {{ $month := .Date.Format "01-02" }}
-      <time itemprop="dateCreated" datetime="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}" content="{{ $month }}">
+      {{ $month := .Date.Format .Site.Params.monthFormat }}
+      <time itemprop="dateCreated" datetime="{{ .Date.Format .Site.Params.timeFormat }}" content="{{ $month }}">
         {{ $month }}
       </time>
     </div>
@@ -18,7 +18,7 @@
         <i class="fa fa-external-link-alt"></i>
       </a>
       {{- else }}
-      <a class="post-title-link" href="{{ .Permalink }}" itemprop="url">
+      <a class="post-title-link" href="{{ .RelPermalink | relLangURL }}" itemprop="url">
         <span itemprop="name">{{ .Title }}</span>
       </a>
       {{- end }}

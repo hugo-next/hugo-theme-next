@@ -1,0 +1,18 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
+<search>
+  {{range where .Site.RegularPages "Kind" "page"}}
+  <entry>
+    <title>{{ .Title }}</title>
+    <url>{{ .Permalink }}</url>
+    <categories>
+      {{- range .Params.categories }}<category>{{ . }}</category>{{- end }}
+    </categories>
+    <tags>
+      {{- range .Params.tags }}
+      <tag>{{ . }}</tag>
+      {{- end }}
+    </tags>
+    <content type="html"><![CDATA[{{ .Content | plainify }}]]></content>
+  </entry>
+  {{ end }}
+</search>

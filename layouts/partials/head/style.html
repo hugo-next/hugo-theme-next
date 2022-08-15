@@ -27,7 +27,7 @@
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{- if .IsPage }}
   <style type="text/css">
-    .post-footer hr:after {
+    .post-footer, .flinks-list-footer hr:after {
       content: "{{ .Site.Params.postFooter.endLineTip }}";
     }
   </style>

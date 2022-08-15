@@ -39,8 +39,8 @@ analytics:
 addthis:
   js: https://s7.addthis.com/js/300/addthis_widget.js
 
-# 评论组件资源
-# Comment component Resources
+# 评论组件
+# Comment component
 waline:
   js:
     name: '@waline/client'
@@ -71,3 +71,14 @@ utterances:
 
 livere:
   js: https://cdn-city.livere.com/js/embed.dist.js
+
+# 全文搜索
+# Full text search
+algolia:
+  name: algoliasearch
+  version: 4.13.0
+  file: dist/algoliasearch-lite.umd.js
+instant:
+  name: instantsearch.js
+  version: 4.40.5
+  file: dist/instantsearch.production.min.js

@@ -2,14 +2,29 @@
 .highlight {
 
   background: var(--highlight-background);
+  margin-bottom: 26px;
 
-  .table-container, pre {
+  //TODO  Need fixed the copy button show position.
+  div:first-child {
+    overflow-x: auto;
+  }
+
+  pre {
     position: relative;
   }
 
-  .table-container table tbody tr {
-    background: none;
+  table tbody tr {
+    //TODO Fixed the too long code line over
+    // layout background color.
+    background: #272822;    
   }
+
+  /* pre > code span {
+    white-space: break-spaces;
+    overflow: hidden;
+    word-break: break-all;
+    word-wrap: break-word;
+  } */
 }
 
 @if $codeblock_copy_btn_enable {

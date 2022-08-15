@@ -1,22 +1,20 @@
 {{/* Use to defind global variables */}}
 
-{{ if not hugo.IsExtended }}
-{{ warnf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" }}  
-{{ errorf "Because that use SCSS framework in Hugo NexT, Please download Hugo extended version on offical site: https://github.com/gohugoio/hugo/releases" }}  
-{{ end }}
-
 {{ $version := int (index (split hugo.Version ".") 1) }}
 {{ if lt $version 89 }}
-{{ warnf "当前 Hugo 版本小于 0.89.0，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases" }}  
-{{ errorf "Current Hugo version is less then 0.89.0, Please download Hugo latest version on offical site: https://github.com/gohugoio/hugo/releases" }}  
+  {{ warnf "当前 Hugo 版本小于 0.89.0，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases" }}  
+  {{ errorf "Current Hugo version is less then 0.89.0, Please download Hugo latest version on offical site: https://github.com/gohugoio/hugo/releases" }}  
 {{ end }}
+
+{{ if not hugo.IsExtended }}
+  {{ warnf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" }}  
+  {{ errorf "Because that use SCSS framework in Hugo NexT, Please download Hugo extended version on offical site: https://github.com/gohugoio/hugo/releases" }}  
+{{ end }}
+
 
 {{ $globalVars := newScratch }}
 
 {{ $globalVars.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) }}
-{{ range .Site.Params.mainSections }}
-  {{ $globalVars.Set .  (len (where $.Page.Site.RegularPages "Section" .))}} 
-{{ end }}
 {{ $globalVars.Set "catsCount" (len .Site.Taxonomies.categories) }}
 {{ $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  }}
 
@@ -25,19 +23,39 @@
 {{ $globalVars.Set "router" $router }}
 
 {{ $config := dict
-  "hostname" .Site.BaseURL
-  "root"     "/"
-  "lang"     .Site.LanguageCode
-  "vendor"   (dict "plugins" $vendor "router"  $router)
-  "darkmode" .Site.Params.darkmode
-  "version"  .Site.Data.config.version
-  "scheme"   .Site.Params.scheme
-  "sidebar"  .Site.Params.sidebar
-  "copybtn"  .Site.Params.codeblock.copyBtn
-  "bookmark" .Site.Params.bookmark
-  "lazyload" .Site.Params.lazyload
-  "motion"   .Site.Params.motion
+  "hostname"    .Site.BaseURL
+  "root"        "/"
+  "lang"        .Site.LanguageCode
+  "vendor"      (dict "plugins" $vendor "router" $router)
+  "darkmode"    .Site.Params.darkmode
+  "version"     .Site.Data.config.version
+  "scheme"      .Site.Params.scheme
+  "sidebar"     .Site.Params.sidebar
+  "copybtn"     .Site.Params.codeblock.copyBtn
+  "bookmark"    .Site.Params.bookmark
+  "lazyload"    .Site.Params.lazyload
+  "motion"      .Site.Params.motion
+  "i18n"        (dict 
+    "placeholder" (T "SearchPh")
+    "empty"       (T "SearchEmpty")
+    "hits_time"   (T "SearchHitsTime")
+    "hits"        (T "SearchHits")
+  )
 }}
+
+{{ if .Site.Params.localSearch.enable }}
+  {{ $localSearch := dict "localSearch" .Site.Params.localSearch }}
+  {{ $config = merge $config $localSearch }}
+{{ end }}
+
+{{ if .Site.Params.algoliaSearch.enable }}
+  {{ $algoliaSearch := dict 
+    "js"        .Site.Data.resources.algolia
+    "instantjs" .Site.Data.resources.instant
+    "cfg"       .Site.Params.algoliaSearch
+  }}
+  {{ $config = merge $config (dict "algolia" $algoliaSearch) }}
+{{ end }}
 
 {{ with .Site.Params.waline }}
 {{ $waline := dict 

@@ -64,8 +64,17 @@
 {{- $utterancesjs := resources.Get "js/third-party/comments/utterances.js" }}
 {{- $nextjs = $nextjs | append $utterancesjs }}
 {{- end }}
+{{- if .Site.Params.localSearch.enable }}
+{{- $search := resources.Get "js/third-party/search/local.js" }}
+{{- $nextjs = $nextjs | append $search }}
+{{ end }}
+{{- if .Site.Params.algoliaSearch.enable }}
+{{- $search := resources.Get "js/third-party/search/algolia.js" }}
+{{- $nextjs = $nextjs | append $search }}
+{{ end }}
 {{- $nextjs = $nextjs | resources.Concat "js/main.js"}}
 {{ if hugo.IsProduction }}
 {{- $nextjs = $nextjs | minify | fingerprint }}
 {{ end }}
 <script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script>
+

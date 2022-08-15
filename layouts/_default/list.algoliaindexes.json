@@ -1,0 +1,12 @@
+[
+  {{- range $index, $entry := where .Site.RegularPages "Kind" "page" }}
+  {{- if $index }}, {{ end }}
+  {
+    "permalink": "{{ .Permalink | relURL }}",
+    "title": {{ .Title | jsonify }},
+    "content": {{ .Plain | jsonify }},
+    "date": {{ .Date.Format $.Site.Params.timeFormat | jsonify }},
+    "updated": {{ .Lastmod.Format $.Site.Params.timeFormat | jsonify }}
+  }
+  {{- end }}
+]

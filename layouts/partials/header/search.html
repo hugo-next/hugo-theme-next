@@ -1,0 +1,11 @@
+{{- if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+      {{- if .Site.Params.algoliaSearch.enable }}
+        {{ partial "_thirdparty/search/algolia.html" . }}
+      {{- else if .Site.Params.localSearch.enable }}
+        {{ partial "_thirdparty/search/local.html" . }}
+      {{- end }}
+    </div>
+  </div>
+{{- end }}

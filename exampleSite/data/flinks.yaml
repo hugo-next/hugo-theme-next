@@ -1,0 +1,29 @@
+# 友情链接
+# Friend's links
+
+- FLinksTitle: 官方示例
+  FLinksDesc: 来自主题官方的示例内容。
+  FLinksList:
+    - name: Hugo
+      desc: 世界上最快的网站建设框架！
+      avatar: https://gohugo.io/favicon-32x32.png
+      link: https://gohugo.io
+
+    - name: Hugo-NexT
+      desc: Hugo NexT 官方预览网站。
+      avatar: https://hugo-next.eu.org/imgs/hugo_next_avatar.png
+      link: https://hugo-next.eu.org
+
+    - name: 凡梦星尘空间站
+      desc: 再平凡的人也有属于他的梦想！
+      avatar: https://lisenhui.cn/img/avatar.png
+      link: https://lisenhui.cn
+
+    
+- FLinksTitle: Hugo NexT 粉丝群体
+  FLinksDesc: 来自 Hugo NexT 主题爱好者们的精彩呈现！
+  FLinksList:
+    - name: 阿哈吉
+      desc: 全网首个 Hugo NexT 忠实粉丝用户
+      avatar: https://a.happy2008.top/imgs/stayhome-small.png
+      link: https://a.happy2008.top/

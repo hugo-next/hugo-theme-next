@@ -3,10 +3,14 @@
 exampleSite/*
 
 # Exclude special files in content folder
+exampleSite/content/**/
 !exampleSite/content
-exampleSite/content/*
+!exmapleSite/content/about.md
 !exampleSite/content/archives
 !exampleSite/content/post
+
+# Exclude special files in data folder
+!exampleSite/data
 
 # Exclude special files in static folder
 !exampleSite/static
@@ -14,4 +18,8 @@ exampleSite/content/*
 # Exclude special files
 !exampleSite/config.yaml
 !exampleSite/start.sh
+
+data/*
+!data/config.yaml
+!data/resources.yaml
 
