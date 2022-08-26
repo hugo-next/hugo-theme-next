@@ -44,12 +44,12 @@ addthis:
 waline:
   js:
     name: '@waline/client'
-    version: 2.6.1
+    version: 2.6.3
     file: dist/waline.js
     alias: waline
   css:
     name: '@waline/client'
-    version: 2.6.1
+    version: 2.6.3
     file: dist/waline.css
     alias: waline
 
