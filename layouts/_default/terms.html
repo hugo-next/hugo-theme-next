@@ -24,7 +24,7 @@
         <ul class="category-list">
           {{- range $name, $items := $cats }}
           <li class="category-list-item">
-            <a class="category-list-link" href="{{ "/categories/" | relLangURL }}{{ $name | urlize | lower  }}" data-pjax-state="">{{ $name }}</a>
+            <a class="category-list-link" href="{{ "/categories/" | relLangURL }}{{ $name | urlize | lower  }}" data-pjax-state="">{{ .Page.Title }}</a>
             <span class="category-list-count">{{ len $items }}</span>
           </li>
           {{- end }}
@@ -41,7 +41,7 @@
       <div class="tag-cloud-tags">
         {{ $randNums := (seq 10) }}
         {{- range $name, $items := $tags }}
-        <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize | lower  }}">{{ $name }}
+        <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize | lower  }}">{{ .Page.Title }}
           <span class="tag-list-count">
             <sup>({{ len $items }})</sup>
           </span>
