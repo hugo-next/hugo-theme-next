@@ -1,3 +1,4 @@
+{{ if .Params.mathjax }}
 {{- with .Site.Params.math.mathjax.enable }}
 <script>
   window.MathJax = {
@@ -30,3 +31,4 @@
     });
 </script>
 {{- end }}
+{{ end }}
