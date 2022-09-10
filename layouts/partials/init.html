@@ -106,4 +106,10 @@
 
 {{ $globalVars.Set "config" $config }}
 
+{{ with .Site.Params.customFilePath }}
+  {{ range $k, $v := . }}
+    {{ $globalVars.Set $k $v }}
+  {{ end }}
+{{ end }}
+
 {{ return $globalVars.Values }}

@@ -24,12 +24,17 @@
 {{- if hugo.IsProduction }}
 {{- $css = $css | minify | fingerprint }}
 {{- end }}
-  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
 {{- if .IsPage }}
   <style type="text/css">
     .post-footer, .flinks-list-footer hr:after {
       content: "{{ .Site.Params.postFooter.endLineTip }}";
     }
   </style>
+{{- end }}
+
+{{- $custom := .Scratch.Get "style" }}
+{{- if $custom }}
+<link rel="stylesheet" type="text/css" href="{{ $custom }}">
 {{- end }}
   

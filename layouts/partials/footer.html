@@ -105,3 +105,8 @@
 </div>
 {{- end }} 
 {{- end }}
+
+{{- $custom := .Scratch.Get "footer" }}
+{{- if $custom }}
+  {{ partialCached $custom . }}
+{{- end }}

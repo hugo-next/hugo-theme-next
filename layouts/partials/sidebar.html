@@ -23,7 +23,12 @@
       </div>
       <!--/noindex-->
       <div class="site-overview-wrap sidebar-panel">
-        {{ partial "sidebar/overview" . }}
+        {{- partialCached "sidebar/overview.html" . -}}
+        
+        {{- $custom := .Scratch.Get "sidebar" }}
+        {{- if $custom }}
+          {{ partialCached $custom . }}
+        {{- end }}
       </div>
     </div>
     {{- if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}

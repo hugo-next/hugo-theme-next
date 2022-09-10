@@ -1,0 +1,16 @@
+/** Custom style defined file **/
+
+.mydefined {
+  font-size: 0.65em;
+  color: #ed6c24;
+}
+
+.custom-footer {
+  color: #ed6c24;
+}
+
+.custom-head5 {
+  font-size: 1.2em;
+  color: #ed6c24;
+  font-weight: bold;
+}
