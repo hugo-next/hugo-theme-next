@@ -33,9 +33,6 @@ $footer_vendors_enable      : {{ isset $P.footer "vendors" }};
 {{ printf "$footer_vendors_imgs_width:%s;" (delimit (after 1 $width) ", ") }}
 {{ end }}
 
-// Counter
-$busuanzi_post_views        : {{ $P.analytics.busuanzi.postViews }};
-
 // Font
 $font_enable                : {{ $P.font.enable }};
 $font_global_size           : {{ default $P.font.global.size 1 }};
