@@ -33,11 +33,12 @@ NexT.boot.registerEvents = function() {
 
 NexT.boot.refresh = function() {
 
+  NexT.utils.calSiteInfo();
+  
   if (!NexT.CONFIG.page.isPage) return;
  
   NexT.utils.registerSidebarTOC();
-  NexT.utils.calSiteInfo();
-  
+
   NexT.utils.replacePostCRLink();
   NexT.utils.registerCopyCode();
   NexT.utils.registerPostReward();
