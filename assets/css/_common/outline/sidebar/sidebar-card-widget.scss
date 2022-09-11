@@ -1,7 +1,7 @@
 .sidebar-card-widget {
   background: var(--content-bg-color);
-  border-radius: $border-radius;
   @if ($scheme == 'Pisces') or ($scheme == 'Gemini'){
+    border-radius: $border-radius;
     box-shadow: $box-shadow;
   }
   box-sizing: border-box;
