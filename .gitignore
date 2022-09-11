@@ -12,6 +12,9 @@ exampleSite/content/**/
 # Exclude special files in data folder
 !exampleSite/data
 
+# Exclude special files in layouts folder
+!exampleSite/layouts
+
 # Exclude special files in static folder
 !exampleSite/static
 
