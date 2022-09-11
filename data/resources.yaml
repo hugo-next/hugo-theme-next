@@ -82,3 +82,24 @@ instant:
   name: instantsearch.js
   version: 4.40.5
   file: dist/instantsearch.production.min.js
+
+plugins:
+  mathjax:
+    js:
+      - name: mathjax
+        version: 3.2.0
+        file: es5/tex-mml-chtml.js
+  katex:
+    js:
+      - name: katex
+        version: 0.16.0
+        file: dist/katex.min.js
+      - name: auto-render
+        alias: katex
+        version: 0.16.0
+        file: dist/contrib/auto-render.min.js
+    css:
+      - name: katex
+        version: 0.16.0
+        file: dist/katex.min.css
+

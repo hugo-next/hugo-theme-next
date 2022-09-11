@@ -112,7 +112,6 @@ $reading_progress_position  : {{ $P.readingProgress.position }};
 $reading_progress_reversed  : {{ $P.readingProgress.reversed }};
 
 // Thirdparty
-$math_mathjax_enable        : {{ $P.math.mathjax.enable }};
 // TODO
 //$related_posts_enable       : {{ $P.relatedPosts.enable }};
 $related_posts_enable       : false;

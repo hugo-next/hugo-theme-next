@@ -700,27 +700,11 @@ params:
   # Third Party Plugins & Services Settings
   # ---------------------------------------------------------------
 
-  # TODO
-  # 数学公式渲染支持（暂时未实现）
-  # Math Formulas Render Support
-  # Warning: Please install / uninstall the relevant renderer according to the documentation.
-  # See: https://theme-next.js.org/docs/third-party-services/math-equations
-  # Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
-  math:
-    # Default (false) will load mathjax / katex script on demand.
-    # That is it only render those page which has `mathjax: true` in front-matter.
-    # If you set it to true, it will load mathjax / katex script EVERY PAGE.
-    every_page: false
-
-    mathjax:
-      enable: false
-      # Available values: none | ams | all
-      tags: none
-
-    katex:
-      enable: false
-      # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-      copy_tex: false
+  # 数学公式渲染支持，可选值： mathjax, katex
+  # 注意这里全局配置，意味着所有页面都会加载数学公式脚本
+  # Math Formulas Render Support, options: mathjax, katex
+  # Warning: It's global settings then will load scripts in every page.
+  #math: mathjax
 
   # TODO
   # FancyBox is a tool that offers a nice and elegant way 
