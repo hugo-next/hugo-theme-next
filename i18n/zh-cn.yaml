@@ -136,9 +136,9 @@ PostCommentTitle:
   other: 评论交流
 
 VisitorsLabel:
-  other: 总访客量
+  other: 总访客数：
 PageViewsLabel:
-  other: 总访问量
+  other: 页面浏览：
 
 FooterPowerby:
   other: 由 %s 强力驱动

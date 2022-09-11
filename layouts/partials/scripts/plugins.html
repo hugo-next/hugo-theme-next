@@ -6,7 +6,7 @@
 {{ if $cssRes }}
   {{ range $cssRes }}
     {{ $css := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
-    <link rel="stylesheet" href="{{ $css }}"/>
+    <link type="text/css" rel="stylesheet" href="{{ $css }}"/>
   {{ end }}
 {{ end }}
 {{- $jsRes := $res.js }}

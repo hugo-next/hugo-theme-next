@@ -895,17 +895,19 @@ params:
     # 51La Analytics
     # See: https://invite.51.la/1NUfGTS1?target=V6 
     laId: #<anaytics_id> 
-
-  # TODO
-  # Show Views / Visitors of the website / page with busuanzi.
-  # For more information: http://ibruce.info/2015/04/04/busuanzi/
-  busuanzi:
-    visitors: false
-    visitorsIcon: fa fa-user
-    views: false
-    viewsIcon: fa fa-eye
-    postViews: false
-    postViewsIcon: far fa-eye
+    # 百度统计
+    # Baidu Analytics
+    #baidu: #<anaytics_id>
+    # 谷歌统计
+    # Google Analytics
+    #google: #<anaytics_id>
+    # 不蒜子统计
+    # Show Views / Visitors of the website / page with busuanzi.
+    # For more information: http://ibruce.info/2015/04/04/busuanzi/
+    busuanzi:
+      visitorsIcon: fa fa-user
+      viewsIcon: fa fa-eye
+      postViews: true
 
 
   # ---------------------------------------------------------------

@@ -2,19 +2,10 @@
 {{- $cssRes := .Site.Data.resources.css }}
 {{- $vendor := .Site.Params.vendors.plugins }}
 {{- $router := .Scratch.Get "router" }}
-{{ $cssFmt := "%s/%s@%s/%s" }}
+
 {{- range $css := $cssRes }}
-  {{- $npm := $css.name }}
-  {{- $file := $css.file }}
-  {{- if eq $vendor "cdnjs" }}
-    {{- with $css.alias }}
-      {{- $npm = . }}
-    {{- end }}   
-    {{- $file = replaceRE `(dist|lib|source\/js)\/` "" $css.file }}
-    {{- $cssFmt = "%s/%s/%s/%s" }}
-  {{- end }}
-  {{- $pluginCSS := printf $cssFmt $router $npm $css.version $file }}
-  <link type="text/css" rel="stylesheet" href="{{ $pluginCSS }}" /> 
+  {{ $pluginCss := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
+  <link type="text/css" rel="stylesheet" href="{{ $pluginCss }}" /> 
 {{- end }}
 
 <!-- Main Style file -->

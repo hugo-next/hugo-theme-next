@@ -17,7 +17,7 @@
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner">
-        {{- partial "header.html" . }}
+        {{- partialCached "header.html" . }}
       </div>
       <!-- Sidebar -->
       {{- if ne .Site.Params.sidebar.display "remove" }}

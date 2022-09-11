@@ -1,0 +1,34 @@
+<div class="sidebar-card-widget">
+  <div class="item-headline">
+    <i class="fas fa-chart-line"></i>
+    <span>网站资讯</span>
+  </div>
+  <div class="webinfo">
+    <!-- <div class="webinfo-item">
+      <div class="item-name">已运行时间 :</div>
+      <div class="item-count" id="runtimeshow" data-publishdate="2021-07-28T14:00:00.000Z">409 天</div>
+    </div>
+    <div class="webinfo-item">
+      <div class="item-name">本站总字数 :</div>
+      <div class="item-count">21.4k</div>
+    </div> -->
+    {{ with .Site.Params.analytics.busuanzi }}
+    <div class="webinfo-item">
+      <div class="item-name">
+        <i class="fas {{ .visitorsIcon }}"></i>{{ T "VisitorsLabel" }}
+      </div>
+      <div class="item-count" id="busuanzi_value_site_uv"></div>
+    </div>
+    <div class="webinfo-item">
+      <div class="item-name">
+        <i class="fas {{ .viewsIcon }}"></i>{{ T "PageViewsLabel" }}
+      </div>
+      <div class="item-count" id="busuanzi_value_site_pv"></div>
+    </div>
+    {{ end }}
+    <!-- <div class="webinfo-item">
+      <div class="item-name">最后更新时间 :</div>
+      <div class="item-count" id="last-push-date" data-lastpushdate="2022-05-13T03:49:57.728Z">4 个月前</div>
+    </div> -->
+  </div>
+</div>

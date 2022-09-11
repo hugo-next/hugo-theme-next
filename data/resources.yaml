@@ -10,10 +10,6 @@ js:
   - name: animejs
     version: 3.2.1
     file: lib/anime.min.js
-  # TODO
-  #- name: mathjax
-  #  version: 3.2.0
-  #  file: es5/tex-mml-chtml.js
 
 # CSS 资源
 # CSS Resources
@@ -33,6 +29,9 @@ css:
 # Site analytics engine
 analytics:
   la: https://sdk.51.la/js-sdk-pro.min.js
+  baidu: https://hm.baidu.com/hm.js?
+  google: https://www.googletagmanager.com/gtag/js?id=
+  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
 # 文章分享
 # Share
@@ -95,7 +94,7 @@ plugins:
         version: 0.16.0
         file: dist/katex.min.js
       - name: auto-render
-        alias: katex
+        alias2: katex
         version: 0.16.0
         file: dist/contrib/auto-render.min.js
     css:

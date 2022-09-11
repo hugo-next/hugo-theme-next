@@ -31,12 +31,18 @@
         {{- end }}
       </div>
     </div>
-    {{- if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
+   
+  </div>
+
+  {{ partial "sidebar/webinfo.html" . }}
+
+  {{- if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
+  <div class="sidebar-card-widget back-to-top-card">
     <div class="back-to-top animated" role="button" aria-label="{{ T "BackTop" }}">
       <i class="fa fa-arrow-up"></i>
       <span>0%</span>
     </div>
-    {{- end }}
   </div>
+  {{- end }}
 </aside>
 <div class="sidebar-dimmer"></div>

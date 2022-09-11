@@ -1,0 +1,18 @@
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    var script = document.createElement('script');
+      
+    script.charset = "UTF-8";
+    script.src     = "{{ .Site.Data.resources.analytics.google }}{{ .Site.Params.analytics.google }}";
+    script.async   = "true"
+    script.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ .Site.Params.analytics.google }} ');
+    }
+
+    document.head.appendChild(script);
+  });
+</script>

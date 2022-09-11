@@ -34,9 +34,7 @@ $footer_vendors_enable      : {{ isset $P.footer "vendors" }};
 {{ end }}
 
 // Counter
-$busuanzi_visitors          : {{ $P.busuanzi.visitors }};
-$busuanzi_views             : {{ $P.busuanzi.views }};
-$busuanzi_post_views        : {{ $P.busuanzi.postViews }};
+$busuanzi_post_views        : {{ $P.analytics.busuanzi.postViews }};
 
 // Font
 $font_enable                : {{ $P.font.enable }};
