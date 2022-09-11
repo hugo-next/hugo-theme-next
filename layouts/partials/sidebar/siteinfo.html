@@ -1,0 +1,48 @@
+{{ $scratch := partialCached "_funs/cal_siteinfo.html" . }}
+<div class="sidebar-card-widget">
+  <div class="item-headline">
+    <i class="fas fa-chart-line"></i>
+    <span>网站资讯</span>
+  </div>
+  <div class="siteinfo">
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa-solid fa-calendar-check"></i>{{ T "SiteInfoItems.runTimes" }}</div>
+      <div class="item-count" id="runTimes" data-publishdate="{{ $scratch.Get "last" }}"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa fa-font"></i>{{ T "SiteInfoItems.words" }}</div>
+      <div class="item-count">
+        {{ $words := $scratch.Get "totalWords" }}
+        {{ if gt $words 10000 }}
+          {{ div $words 10000.0 | lang.FormatNumber 2 }}w
+        {{ else if gt $words 1000 }}
+          {{ div $words 1000.0 | lang.FormatNumber 2 }}k
+        {{ else }}
+          {{ $words }}
+        {{ end }}
+      </div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa fa-mug-hot"></i>{{ T "SiteInfoItems.readTimes" }}</div>
+      <div class="item-count">{{ $scratch.Get "totalTimes" }}min</div>
+    </div>
+    {{ with .Site.Params.analytics.busuanzi }}
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fas {{ .visitorsIcon }}"></i>{{ T "SiteInfoItems.visitors" }}
+      </div>
+      <div class="item-count" id="busuanzi_value_site_uv"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fas {{ .viewsIcon }}"></i>{{ T "SiteInfoItems.pageViews" }}
+      </div>
+      <div class="item-count" id="busuanzi_value_site_pv"></div>
+    </div>
+    {{ end }}
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa fa-clock-rotate-left"></i>{{ T "SiteInfoItems.lastUpdate" }}</div>
+      <div class="item-count" id="last-push-date" data-lastpushdate="{{ $scratch.Get "first" }}"></div>
+    </div>
+  </div>
+</div>

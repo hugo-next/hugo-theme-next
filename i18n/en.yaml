@@ -135,9 +135,13 @@ PostCommentTitle:
   other: Comments
 
 VisitorsLabel:
-  other: Total Visitors
+  other: "Visitors: "
 PageViewsLabel:
-  other: Total Page Views
+  other: "Page Views: "
+WordsLabel:
+  other: "Words: "
+ReadTimesLabel:
+  other: "ReadTimes: "
 
 FooterPowerby:
   other: "Power by %s"

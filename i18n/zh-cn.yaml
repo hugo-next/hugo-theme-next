@@ -135,10 +135,13 @@ RewardBitcoin:
 PostCommentTitle:
   other: 评论交流
 
-VisitorsLabel:
-  other: 总访客数：
-PageViewsLabel:
-  other: 页面浏览：
+SiteInfoItems:
+  runTimes: "已运行："
+  words: "总字数："
+  readTimes: "耗时约："
+  visitors: "总访客数："
+  pageViews: "页面浏览："
+  lastUpdate: "最后更新于："
 
 FooterPowerby:
   other: 由 %s 强力驱动
@@ -151,3 +154,11 @@ SearchHits:
   hits: "找到 ${hits} 个搜索结果"
 SearchHitsTime:
   other: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
+
+DateSuffix:
+  days: " 天"
+  month: " 个月前"
+  day: " 天前"
+  hour: " 小时前"
+  min: " 分钟前"
+  just: "刚刚"
