@@ -36,11 +36,11 @@ NexT.utils = {
       const words = wordsCount.getAttribute('data-count');
       let wordsLabel;
       if (words > 10000) {
-        wordsLabel = Math.floor(words / 10000) + ' w';
+        wordsLabel = (words / 10000.0).toFixed(2) + ' w';
       } else if (words > 1000) {
-        wordsLabel = Math.floor(words / 1000) + ' k';
+        wordsLabel = (words / 1000.0).toFixed(2) + ' k';
       } else {
-        wordsLabel = Math.floor(words / 1000);
+        wordsLabel = words;
       }
       wordsCount.innerText = wordsLabel;
     }
@@ -52,15 +52,14 @@ NexT.utils = {
       const hour = 60;
       const day = hour * 24;
 
-      const daysCount = times / day;
-      const hoursCount = times / hour;
+      const daysCount = parseInt(times / day);
+      const hoursCount = parseInt(times / hour);
 
       let timesLabel;
       if (daysCount >= 1) {
-        timesLabel = parseInt(daysCount) + NexT.CONFIG.i18n.ds_days + Math.floor(hoursCount) + NexT.CONFIG.i18n.ds_hours;
+        timesLabel = daysCount + NexT.CONFIG.i18n.ds_days + parseInt((times - daysCount * day)/hour) + NexT.CONFIG.i18n.ds_hours;
       } else if (hoursCount >= 1) {
-        const hours = parseInt(hoursCount);
-        timesLabel = hours + NexT.CONFIG.i18n.ds_hours + (times - hours * hour) + NexT.CONFIG.i18n.ds_mins;
+        timesLabel = hoursCount + NexT.CONFIG.i18n.ds_hours + (times - hoursCount * hour) + NexT.CONFIG.i18n.ds_mins;
       } else {
         timesLabel = times + NexT.CONFIG.i18n.ds_mins;
       }
@@ -108,7 +107,7 @@ NexT.utils = {
     } else if (mode == 2) {      
       const yearCount = parseInt(dateDiff / year);
       if (yearCount >= 1) {
-        const dayCount = parseInt(dateDiff - (yearCount * year))/day;
+        const dayCount = parseInt((dateDiff - (yearCount * year))/day);
         result = yearCount + NexT.CONFIG.i18n.ds_years + dayCount + NexT.CONFIG.i18n.ds_days;
       } else {
         const dayCount = parseInt(dateDiff/day);
