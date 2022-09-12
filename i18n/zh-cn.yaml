@@ -156,7 +156,10 @@ SearchHitsTime:
   other: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
 
 DateSuffix:
-  days: " 天"
+  years: " 年 "
+  days: " 天 "
+  hours: " 小时 "
+  mins: " 分钟"
   month: " 个月前"
   day: " 天前"
   hour: " 小时前"

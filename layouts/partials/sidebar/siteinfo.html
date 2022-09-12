@@ -11,20 +11,11 @@
     </div>
     <div class="siteinfo-item">
       <div class="item-name"><i class="fa fa-font"></i>{{ T "SiteInfoItems.words" }}</div>
-      <div class="item-count">
-        {{ $words := $scratch.Get "totalWords" }}
-        {{ if gt $words 10000 }}
-          {{ div $words 10000.0 | lang.FormatNumber 2 }}w
-        {{ else if gt $words 1000 }}
-          {{ div $words 1000.0 | lang.FormatNumber 2 }}k
-        {{ else }}
-          {{ $words }}
-        {{ end }}
-      </div>
+      <div class="item-count" id="wordsCount" data-count="{{ $scratch.Get "totalWords" }}"></div>
     </div>
     <div class="siteinfo-item">
       <div class="item-name"><i class="fa fa-mug-hot"></i>{{ T "SiteInfoItems.readTimes" }}</div>
-      <div class="item-count">{{ $scratch.Get "totalTimes" }}min</div>
+      <div class="item-count" id="readTimes" data-times="{{ $scratch.Get "totalTimes" }}"></div>
     </div>
     {{ with .Site.Params.analytics.busuanzi }}
     <div class="siteinfo-item">
