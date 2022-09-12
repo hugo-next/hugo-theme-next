@@ -138,7 +138,7 @@ PostCommentTitle:
 SiteInfoItems:
   runTimes: "已运行："
   words: "总字数："
-  readTimes: "耗时约："
+  readTimes: "阅读约："
   visitors: "总访客数："
   pageViews: "页面浏览："
   lastUpdate: "最后更新于："
