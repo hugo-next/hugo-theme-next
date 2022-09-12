@@ -27,7 +27,7 @@
     {{- end }}    
     {{- if eq .Site.Params.siteState.statistic.plugin "51la" }}
     <div id="la-siteinfo-widget" style="display: none;">
-      <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="{{ .Site.Data.resources.analytics.laWidget }}"></script>
+      <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="{{ replace .Site.Data.resources.analytics.laWidget "laId" .Site.Params.analytics.laId }}"></script>
     </div>
     <div class="siteinfo-item">
       <div class="item-name">
