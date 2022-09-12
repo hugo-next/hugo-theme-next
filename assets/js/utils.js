@@ -34,15 +34,7 @@ NexT.utils = {
     const wordsCount = document.getElementById('wordsCount');
     if (wordsCount) {
       const words = wordsCount.getAttribute('data-count');
-      let wordsLabel;
-      if (words > 10000) {
-        wordsLabel = (words / 10000.0).toFixed(2) + ' w';
-      } else if (words > 1000) {
-        wordsLabel = (words / 1000.0).toFixed(2) + ' k';
-      } else {
-        wordsLabel = words;
-      }
-      wordsCount.innerText = wordsLabel;
+      wordsCount.innerText = NexT.utils.numberFormat(words);
     }
 
     const readTimes = document.getElementById('readTimes');
@@ -72,6 +64,32 @@ NexT.utils = {
       const pushDateVal = NexT.utils.diffDate(lastPushDate.getAttribute('data-lastPushDate'), 1);
       lastPushDate.innerText = pushDateVal;
     }
+
+    var statistic = document.querySelectorAll('#la-siteinfo-widget span');
+    if (statistic) {
+      const valIds = [0,2,4,6];
+      const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
+      for (var i in valIds) {
+        let pv = NexT.utils.numberFormat(statistic[valIds[i]].innerText);
+        document.getElementById(domIds[i]).innerText = pv;
+      }
+    }
+  },
+
+  numberFormat: function(number) {
+    let result;
+    if (number.indexOf(',') > 0) {
+      number = number.replaceAll(",", "");
+    }
+    
+    if (number > 10000) {
+      result = (number / 10000.0).toFixed(2) + ' w';
+    } else if (number > 1000) {
+      result = (number / 1000.0).toFixed(2) + ' k';
+    } else {
+      result = number;
+    }
+    return result;
   },
 
   diffDate: function(date, mode = 0) {

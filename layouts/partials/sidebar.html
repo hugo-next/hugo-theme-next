@@ -34,7 +34,9 @@
    
   </div>
 
-  {{ partial "sidebar/siteinfo.html" . }}
+  {{- if .Site.Params.siteState.statistic.enable }}
+    {{- partial "sidebar/siteinfo.html" . }}
+  {{- end }}
 
   {{- if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
   <div class="sidebar-card-widget back-to-top-card">

@@ -135,11 +135,16 @@ PostCommentTitle:
   other: Comments
 
 SiteInfoItems:
+  title: "Web Status"
   runTimes: "Running:"
   words: "Words:"
   readTimes: "ReadTime:"
   visitors: "Visitors:"
   pageViews: "Views:"
+  todayViews: "Today Views:"
+  yesterdayViews: "Yesterday Views:"
+  monthViews: "Month Views:"
+  totalViews: "Total Views"
   lastUpdate: "Last Update:"
 
 FooterPowerby:

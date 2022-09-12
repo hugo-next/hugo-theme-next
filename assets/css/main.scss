@@ -65,7 +65,7 @@ $back2top_sidebar           : {{ $P.backTop.sidebar }};
 $avatar_rotated             : {{ $P.avatar.rotated }};
 $avatar_rounded             : {{ $P.avatar.rounded }};
 $avatar_rounded             : {{ $P.avatar.rounded }};
-$site_state                 : {{ $P.siteState }};
+$site_state                 : {{ $P.siteState.basic }};
 $social_icons_only          : {{ $P.socialIcons.iconsOnly }};
 $social_icons_transition    : {{ $P.socialIcons.transition }};
 $links_settings_layout      : {{ $P.linksSets.layout }};

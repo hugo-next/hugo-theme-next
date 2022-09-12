@@ -29,6 +29,7 @@ css:
 # Site analytics engine
 analytics:
   la: https://sdk.51.la/js-sdk-pro.min.js
+  laWidget: https://v6-widget.51.la/v6/JiZkaipzkPyiCL8x/quote.js?theme=0&col=true&f=12&display=0,0,0,1,0,1,1,1
   baidu: https://hm.baidu.com/hm.js?
   google: https://www.googletagmanager.com/gtag/js?id=
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js

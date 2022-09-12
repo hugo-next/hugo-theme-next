@@ -39,15 +39,28 @@ markup:
     renderer:
       unsafe: true
   highlight:
+    # codeFences: true
+    # lineNos: true
+    # lineNumbersInTable: true
+    # noClasses: true
+    # # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
+    # # 更多的样式：https://xyproto.github.io/splash/docs/all.html
+    # # Highlight style: monokai | emacs | api | dracula | friendly
+    # # More: https://xyproto.github.io/splash/docs/all.html 
+    # style: "monokai"
+    anchorLineNos: true
     codeFences: true
-    lineNos: true
-    lineNumbersInTable: true
+    guessSyntax: true
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: false
     noClasses: true
-    # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
-    # 更多的样式：https://xyproto.github.io/splash/docs/all.html
-    # Highlight style: monokai | emacs | api | dracula | friendly
-    # More: https://xyproto.github.io/splash/docs/all.html 
-    style: "monokai"
+    noHl: false
+    style: monokai
+    tabWidth: 2
   tableOfContents:
     # 开始/结束标题级别：1-6
     # Heading title level of start or end: 1-6
@@ -90,6 +103,10 @@ outputs:
 # 输出 robots 文件支持爬虫扫描
 # Enable robots with support crawler scan
 enableRobotsTXT: true
+
+# 强制输出时压缩文件
+# Compress all files when output
+minify:
 
 #--------------------------------------
 # 菜单配置说明
@@ -279,10 +296,18 @@ params:
     # 开启头像随鼠标转动动画
     # If true, the avatar will be rotated with the cursor.
     rotated: true
-
-  # 是否在侧边栏显示文章、分类、标签信息
-  # Posts / Categories / Tags in sidebar.
-  siteState: true
+  siteState: 
+    # 是否在侧边栏显示文章、分类、标签信息
+    # Posts / Categories / Tags in sidebar.
+    basic: true
+    # 站点访问信息
+    # Site information
+    statistic: 
+      enable: true
+      # 组件类型，可选值为： 51la, busuanzi
+      # 使用51la时需要注册账号：https://invite.51.la/1NUfGTS1?target=V6
+      # Plguin value is: 51la, busuzazi
+      plugin: 51la
 
   # 社交链接地址
   # 用法： `Key: 名称 || 链接地址 || 图标`
