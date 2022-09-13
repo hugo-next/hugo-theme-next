@@ -34,7 +34,7 @@ NexT.boot.registerEvents = function() {
 NexT.boot.refresh = function() {
 
   NexT.utils.calSiteInfo();
-  
+
   if (!NexT.CONFIG.page.isPage) return;
  
   NexT.utils.registerSidebarTOC();

@@ -65,14 +65,27 @@ NexT.utils = {
       lastPushDate.innerText = pushDateVal;
     }
 
-    var statistic = document.querySelectorAll('#la-siteinfo-widget span');
-    if (statistic) {
+    const statisWidget = document.querySelectorAll('#la-siteinfo-widget span');
+    if (statisWidget.length > 0) {
       const valIds = [0,2,4,6];
       const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
       for (var i in valIds) {
-        let pv = NexT.utils.numberFormat(statistic[valIds[i]].innerText);
+        let pv = NexT.utils.numberFormat(statisWidget[valIds[i]].innerText);
         document.getElementById(domIds[i]).innerText = pv;
       }
+    }
+
+    setTimeout(()=>{ NexT.utils.fmtBusuanzi(); }, 500);
+  },
+
+  fmtBusuanzi: function() {
+    const bszUV = document.getElementById('busuanzi_value_site_uv');
+    if (bszUV) {
+      bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
+    }
+    const bszPV = document.getElementById('busuanzi_value_site_pv');
+    if (bszPV) {
+      bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
     }
   },
 
