@@ -307,7 +307,7 @@ params:
       # 组件类型，可选值为： 51la, busuanzi
       # 使用51la时需要注册账号：https://invite.51.la/1NUfGTS1?target=V6
       # Plguin value is: 51la, busuzazi
-      plugin: 51la
+      plugin: busuanzi
 
   # 社交链接地址
   # 用法： `Key: 名称 || 链接地址 || 图标`
@@ -778,7 +778,7 @@ params:
   comments:
     # 开启评论组件
     # If true, will show comment component in post end.
-    enable: true   
+    enable: false   
     # 设置默认使用的评论插件
     # 可选值：livere | waline | utterances | artalk | giscus
     # Choose a comment system to be displayed by default.
@@ -919,7 +919,7 @@ params:
     # 更多信息请参考：https://invite.51.la/1NUfGTS1?target=V6
     # 51La Analytics
     # See: https://invite.51.la/1NUfGTS1?target=V6 
-    laId: #<anaytics_id> 
+    #laId: #<anaytics_id> 
     # 百度统计
     # Baidu Analytics
     #baidu: #<anaytics_id>
