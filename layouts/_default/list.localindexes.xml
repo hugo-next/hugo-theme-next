@@ -3,7 +3,7 @@
   {{range where .Site.RegularPages "Kind" "page"}}
   <entry>
     <title>{{ .Title }}</title>
-    <url>{{ .Permalink }}</url>
+    <url>{{ .RelPermalink | relLangURL }}</url>
     <categories>
       {{- range .Params.categories }}<category>{{ . }}</category>{{- end }}
     </categories>

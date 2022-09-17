@@ -958,7 +958,7 @@ params:
     enable: true
     # 搜索索引文件路径
     # Indexes file path for search
-    path: searchindexes.xml
+    path: /searchindexes.xml
     # 是立即搜索当输入关键字时，可选值： auto | manual
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.
