@@ -17,8 +17,8 @@ mermaid: true
 toc: true
 ---
 
-本主题已支持 `Mermaid` 实现以纯文本的方式绘制流程图、序列图、甘特图、状态图、关系图行等等，随着 `Mermaid` 也在逐步发展，后续还会有各种各样的图被引入进来，更多的类型及使用方式可关注其官方网站：[https://mermaid-js.github.io/](https://mermaid-js.github.io/)。
 
+本主题已支持 `Mermaid` 实现以纯文本的方式绘制流程图、序列图、甘特图、状态图、关系图行等等，随着 `Mermaid` 也在逐步发展，后续还会有各种各样的图被引入进来，更多的类型及使用方式可关注其官方网站：[https://mermaid-js.github.io/](https://mermaid-js.github.io/)。
 
 <!--more-->
 
@@ -52,6 +52,8 @@ graph TD;
     C-->D;
 {{< /mermaid >}}
 
+# 时序图
+
 ```shell
 {{</* mermaid bc="#eee"  */>}}
 sequenceDiagram
@@ -83,7 +85,8 @@ sequenceDiagram
 {{< /mermaid >}}
 
 # 类图
-```mermaid
+
+```shell
 {{</* mermaid */>}}
 classDiagram
 Class01 <|-- AveryLongClass : Cool
@@ -119,7 +122,8 @@ Class08 <--> C2: Cool label
 {{< /mermaid >}}
 
 # 甘特图
-```mermaid
+
+```shell
 {{</* mermaid */>}}
 gantt
 dateFormat  YYYY-MM-DD
@@ -147,7 +151,8 @@ Future task2               :         des4, after des3, 5d
 {{< /mermaid >}}
 
 # 实体关系图
-```mermaid
+
+```shell
 {{</* mermaid */>}}
 erDiagram
     CUSTOMER ||--o{ ORDER : places
@@ -163,7 +168,8 @@ erDiagram
 {{< /mermaid >}}
 
 # 用户旅程
-```mermaid
+
+```shell
 {{</* mermaid */>}}
 journey
     title My working day
