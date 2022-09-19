@@ -1,0 +1,28 @@
+<!-- Load math render scripts -->
+{{ $math := .Params.math | default .Site.Params.math }}
+{{- partial "scripts/plugins.html" (dict "vendor" (.Scratch.Get "vendor") "router" (.Scratch.Get "router") "res" .Site.Data.resources.plugins "index" $math) }}
+{{ if eq $math "katex" }}
+  <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false},
+                {left: '\\(', right: '\\)', display: false},
+                {left: '\\[', right: '\\]', display: true}
+            ],
+            
+            throwOnError : false
+          });
+      });
+  </script>
+{{ end }}
+{{ if eq $math "mathjax" }}
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [["$", "$"]],
+      }
+    };
+  </script>
+{{ end }}

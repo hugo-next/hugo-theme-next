@@ -20,6 +20,7 @@
 
 {{ $vendor := .Site.Params.vendors.plugins }}
 {{ $router := index .Site.Data.resources.vendors $vendor }}
+{{ $globalVars.Set "vendor" $vendor }}
 {{ $globalVars.Set "router" $router }}
 
 {{ $config := dict

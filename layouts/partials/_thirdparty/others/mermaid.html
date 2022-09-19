@@ -1,0 +1,15 @@
+{{- partial "scripts/plugins.html" (dict "vendor" (.Scratch.Get "vendor") "router" (.Scratch.Get "router") "res" .Site.Data.resources.plugins "index" "mermaid") }}
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    mermaid.initialize({
+      sequence: { 
+        showSequenceNumbers: true,
+        actorMargin: 50, 
+        diagramMarginX:10, 
+        diagramMarginY:10
+      }
+    });
+  });
+</script>
+
