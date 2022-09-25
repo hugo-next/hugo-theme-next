@@ -283,6 +283,13 @@ $site-state-item-name-color           : inherit;
 
 // Components
 // --------------------------------------------------
+// Tool buttons
+$tool-btn-bg               : $black-deep;
+$tool-btn-color            : white;
+$tool-btn-hover-fore-color : $orange;
+$tool-btn-opacity          : .8;
+$tool-btn-opacity-hover    : 1;
+
 // Back to top
 $b2t-opacity                  : .8;
 $b2t-opacity-hover            : 1;

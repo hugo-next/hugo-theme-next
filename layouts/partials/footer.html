@@ -1,4 +1,10 @@
 {{- $ft := .Site.Params.footer }}
+{{ if $ft.translate }}
+<div class="google-translate">
+  <i class="fa fa-language"></i>
+  <div id="google_translate_element"></div>
+</div>
+{{ end }}
 <div class="copyright">
   &copy;
   <span itemprop="copyrightYear">
@@ -18,36 +24,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">{{ $ft.copyright | default .Site.Params.author }}</span>
 </div>
-{{/* TODO
-<!--
-{{- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time }}
-<div class="wordcount">
-  {{- if config.symbols_count_time.total_symbols }}
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
-    </span>
-    {{- if .Site.Params.symbols_count_time.item_text_total }}
-    <span>{{ __('symbols_count_time.count_total') + __('symbol.colon') }}</span>
-    {{- end }}
-    <span title="{{ __('symbols_count_time.count_total') }}">{{ symbolsCountTotal(site) }}</span>
-  </span>
-  {{- end }}
-  {{- if config.symbols_count_time.total_time }}
-  <span class="post-meta-item">
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    {{- if .Site.Params.symbols_count_time.item_text_total }}
-    <span>{{ __('symbols_count_time.time_total') }} &asymp;</span>
-    {{- end }}
-    <span title="{{ __('symbols_count_time.time_total') }}">{{ symbolsTimeTotal(site, config.symbols_count_time.awl, config.symbols_count_time.wpm, __('symbols_count_time.time_minutes')) }}</span>
-  </span>
-  {{- end }}
-</div>
-{{- end }}
--->
-*/}}
 {{- with .Site.Params.busuanzi }}
 {{- if .enable }}
 <div class="busuanzi-count">

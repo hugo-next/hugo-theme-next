@@ -45,8 +45,6 @@ RSSLable:
   other: "RSS Subscribe"
 CCLinkTitle:
   other: "Creative Commons"
-BackTopLabel:
-  other: "Top"
 
 TagsCounterTitle:
   zero: No tags
@@ -169,3 +167,9 @@ DateSuffix:
   hour: " Hour Ago"
   min: " Min Ago"
   just: "Just"
+
+ToolBtns:
+  comment: "Go to Comment"
+  theme: "Change Theme"
+  lang: "Multilingual translation"
+  backTop: "Back to Top"

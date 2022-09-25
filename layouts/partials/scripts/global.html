@@ -61,8 +61,19 @@
 {{- $search := resources.Get "js/third-party/search/algolia.js" }}
 {{- $nextjs = $nextjs | append $search }}
 {{ end }}
+{{ if .Site.Params.footer.translate }}
+{{- $gt := resources.Get "js/third-party/others/google-translate.js" }}
+{{- $nextjs = $nextjs | append $gt }}  
+
+{{ $gtCss := resources.Get "css/gt.scss" }}
+{{ $style := $gtCss | resources.ToCSS | minify }}
+<script type="text/javascript">
+  window.translateelement_styles = "{{- $style.RelPermalink -}}";
+</script>
+{{ end }}
 {{- $nextjs = $nextjs | resources.Concat "js/main.js"}}
 {{ if hugo.IsProduction }}
 {{- $nextjs = $nextjs | minify | fingerprint }}
 {{ end }}
+
 <script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script>

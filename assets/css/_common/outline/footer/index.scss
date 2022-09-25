@@ -29,6 +29,16 @@
     font-size: $font-size-smallest;
   }
 
+  .google-translate {
+    display: flex;
+    justify-content: center;
+
+    i {
+      font-size: $font-size-larger;
+      margin: auto 0;
+    }
+  }
+
   @if $footer_vendors_enable {
     .vendors-list {
       a {

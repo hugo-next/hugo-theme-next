@@ -46,8 +46,6 @@ RSSLable:
   other: RSS 订阅
 CCLinkTitle:
   other: 共享知识
-BackTopLabel:
-  other: 返回顶部
 
 TagsCounterTitle:
   zero: 暂无标签
@@ -170,3 +168,9 @@ DateSuffix:
   hour: " 小时前"
   min: " 分钟前"
   just: "刚刚"
+
+ToolBtns:
+  comment: "直达评论"
+  theme: "深浅模式切换"
+  lang: "多语言翻译"
+  backTop: "返回顶部"

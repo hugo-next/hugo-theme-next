@@ -23,6 +23,15 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  domAddClass: function(selector, cls) {
+    const doms = document.querySelectorAll(selector);
+    if (doms) {
+      doms.forEach(dom => {
+        dom.classList.add(cls);
+      });
+    }
+  },
+
   calSiteInfo: function() {
     const runtimeCount = document.getElementById('runTimes');
     if (runtimeCount) {
@@ -276,8 +285,10 @@ NexT.utils = {
         const contentHeight = document.body.scrollHeight - window.innerHeight;
         const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
         if (backToTop) {
-          backToTop.classList.toggle('back-to-top-on', Math.round(scrollPercent) >= 5);
-          backToTop.querySelector('span').innerText = Math.round(scrollPercent) + '%';
+          const scrollPercentRound = Math.round(scrollPercent)
+          const isShow = scrollPercentRound >= 5;          
+          backToTop.classList.toggle('back-to-top-on', isShow);
+          backToTop.querySelector('span').innerText = scrollPercentRound + '%';
         }
         if (readingProgressBar) {
           readingProgressBar.style.setProperty('--progress', scrollPercent.toFixed(2) + '%');
