@@ -23,6 +23,16 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  regSwitchThemeBtn: function() {
+    const switchThemeBtn = document.getElementById('switch-theme');
+    if (!switchThemeBtn) return;
+    switchThemeBtn.addEventListener('click', () => {
+      const colorTheme = document.documentElement.getAttribute('data-theme');
+      const theme = colorTheme == null ? 'dark' : colorTheme == 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    });    
+  },
+
   domAddClass: function(selector, cls) {
     const doms = document.querySelectorAll(selector);
     if (doms) {

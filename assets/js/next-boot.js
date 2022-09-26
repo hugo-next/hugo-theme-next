@@ -34,6 +34,7 @@ NexT.boot.registerEvents = function() {
 NexT.boot.refresh = function() {
 
   NexT.utils.calSiteInfo();
+  NexT.utils.regSwitchThemeBtn();
 
   if (!NexT.CONFIG.page.isPage) return;
  
