@@ -2,6 +2,10 @@
 
 NexT.boot = {};
 
+NexT.boot.activeThemeMode = function(){
+  NexT.utils.activeThemeMode();
+};
+
 NexT.boot.registerEvents = function() {
 
   NexT.utils.registerScrollPercent();
@@ -84,6 +88,7 @@ NexT.boot.motion = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  NexT.boot.activeThemeMode();
   NexT.boot.registerEvents();
   NexT.boot.motion();
   NexT.boot.refresh();

@@ -28,9 +28,72 @@ NexT.utils = {
     if (!switchThemeBtn) return;
     switchThemeBtn.addEventListener('click', () => {
       const colorTheme = document.documentElement.getAttribute('data-theme');
-      const theme = colorTheme == null ? 'dark' : colorTheme == 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', theme);
+      NexT.utils.toggleDarkMode(!(colorTheme == 'dark'));
+
     });    
+  },
+
+  activeThemeMode: function() {
+
+    const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+    let darkModeState = useDark.matches;
+    const localState = NexT.utils.getLocalStorage('theme');
+    if (localState == 'light') {
+      darkModeState = false;
+    }
+    NexT.utils.toggleDarkMode(darkModeState);
+
+    useDark.addListener(function(evt) {
+      toggleDarkMode(evt.matches);
+    });
+  },
+
+  toggleDarkMode: function(state) {
+    if(state) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      NexT.utils.setLocalStorage('theme', 'dark', 2);
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      NexT.utils.setLocalStorage('theme', 'light', 2);
+    }
+
+    const theme = state ? 'dark' : 'light';
+    NexT.utils.toggleGiscusDarkMode(theme);
+  },
+
+  toggleGiscusDarkMode: function(theme) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      const config = { setConfig: { theme: theme } };
+      iframe.contentWindow.postMessage({ giscus: config }, 'https://giscus.app');
+    }
+  },
+
+  setLocalStorage: function(key, value, ttl) {
+    if (ttl === 0) return;
+    const now = new Date();
+    const expiryDay = ttl * 86400000;
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  },
+
+  getLocalStorage: function(key) {
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) {
+      return undefined;
+    }
+
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key);
+      return undefined;
+    }
+    return item.value;
   },
 
   domAddClass: function(selector, cls) {

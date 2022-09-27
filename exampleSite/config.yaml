@@ -389,6 +389,9 @@ params:
   # Footer Settings
   # ---------------------------------------------------------------
   footer:
+    # 启动谷歌翻译功能
+    # Enable google translate in footer
+    translate: true
     # 站点开始年份，默认为当下时间的年份
     # Specify the year when the site was setup. 
     # If not defined, current year will be used.
