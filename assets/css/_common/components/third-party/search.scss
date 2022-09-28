@@ -13,7 +13,7 @@
     transition: visibility .4s, background .4s;
     visibility: hidden;
     width: 100%;
-    z-index: $zindex-4;
+    z-index: $zindex-4; 
 
     .search-active & {
       background: rgba(0, 0, 0, .3);

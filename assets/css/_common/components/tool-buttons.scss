@@ -1,9 +1,8 @@
 .tool-buttons {
 
   @include sidebar-toggle();
-  background: var(--body-bg-color);
+  background: none;
   bottom: 55px;
-  z-index: 100;
   filter: alpha(opacity=0);
   font-size: 12px;
 
