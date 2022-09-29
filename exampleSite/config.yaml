@@ -61,12 +61,6 @@ markup:
     noHl: false
     style: monokai
     tabWidth: 2
-  tableOfContents:
-    # 开始/结束标题级别：1-6
-    # Heading title level of start or end: 1-6
-    startLevel: 1
-    endLevel: 3
-    ordered: false
 
 # 站点文章导航文件
 # Site map of all articles

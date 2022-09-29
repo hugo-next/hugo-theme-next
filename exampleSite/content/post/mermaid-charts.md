@@ -22,7 +22,7 @@ toc: true
 
 <!--more-->
 
-# 使用说明
+## 使用说明
 
 {{< note info >}}
 
@@ -32,7 +32,7 @@ toc: true
 
 {{< /note >}}
 
-# 流程图
+## 流程图
 
 ```shell
 {{</* mermaid align="left" */>}}
@@ -52,7 +52,7 @@ graph TD;
     C-->D;
 {{< /mermaid >}}
 
-# 时序图
+## 时序图
 
 ```shell
 {{</* mermaid bc="#eee"  */>}}
@@ -84,7 +84,7 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 {{< /mermaid >}}
 
-# 类图
+## 类图
 
 ```shell
 {{</* mermaid */>}}
@@ -121,7 +121,7 @@ Class01 : int gorilla
 Class08 <--> C2: Cool label
 {{< /mermaid >}}
 
-# 甘特图
+## 甘特图
 
 ```shell
 {{</* mermaid */>}}
@@ -150,7 +150,7 @@ Future task               :         des3, after des2, 5d
 Future task2               :         des4, after des3, 5d
 {{< /mermaid >}}
 
-# 实体关系图
+## 实体关系图
 
 ```shell
 {{</* mermaid */>}}
@@ -167,7 +167,7 @@ erDiagram
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 {{< /mermaid >}}
 
-# 用户旅程
+## 用户旅程
 
 ```shell
 {{</* mermaid */>}}

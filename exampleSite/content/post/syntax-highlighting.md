@@ -22,9 +22,9 @@ Hugo 通过 Chroma 提供非常快速的语法高亮显示，现 Hugo 中使用 
 
 <!--more-->
 
-# 编程语言
+## 编程语言
 
-## GO
+### GO
 
 {{< highlight go "linenos=table,hl_lines=8 15-17,linenostart=199" >}}
 
@@ -41,7 +41,7 @@ func GetTitleFunc(style string) func(s string) string {
 
 {{< / highlight >}}
 
-## Java
+### Java
 
 ```java
 import javax.swing.JFrame;  //Importing class JFrame
@@ -58,13 +58,13 @@ public class HelloWorld {
 }
 ```
 
-## Python
+### Python
 
 ``` python
 print "Hello, world!"
 ```
 
-## Git 对比
+### Git 对比
 
 ``` diff {hl_lines=[4,"6-7"]， linenos=true}
 *** /path/to/original ''timestamp''
@@ -92,9 +92,9 @@ It is important to spell
 +new line
 ```
 
-# 文件
+## 文件
 
-## Make 文件
+### Make 文件
 
 ``` makefile {linenos=false}
 CC=gcc
@@ -104,7 +104,7 @@ hellomake: hellomake.o hellofunc.o
      $(CC) -o hellomake hellomake.o hellofunc.o -I.
 ```
 
-## Markdown 文档
+### Markdown 文档
 
 ``` markdown
 **bold**
@@ -112,9 +112,9 @@ hellomake: hellomake.o hellofunc.o
 [link](www.example.com)
 ```
 
-# 数据内容
+## 数据内容
 
-## JSON 数据
+### JSON 数据
 
 ``` json
 {"employees":[
@@ -122,7 +122,7 @@ hellomake: hellomake.o hellofunc.o
 ]}
 ```
 
-## XML 内容
+### XML 内容
 
 ``` xml
 <employees>
@@ -132,7 +132,7 @@ hellomake: hellomake.o hellofunc.o
 </employees>
 ```
 
-## SQL 查询
+### SQL 查询
 
 {{< highlight sql >}}
 
