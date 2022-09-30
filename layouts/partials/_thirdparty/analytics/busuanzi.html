@@ -1,0 +1,11 @@
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    var script = document.createElement('script');
+      
+    script.charset = "UTF-8";
+    script.src     = "{{ .Site.Data.resources.analytics.busuanzi }}";
+    script.async   = "true"
+
+    document.head.appendChild(script);
+  });
+</script>

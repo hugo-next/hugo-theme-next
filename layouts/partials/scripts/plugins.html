@@ -1,0 +1,17 @@
+
+{{- $vendor := .vendor }}
+{{- $router := .router }}
+{{- $res := (index .res .index)  }}
+{{- $cssRes := $res.css }}
+{{ if $cssRes }}
+  {{ range $cssRes }}
+    {{ $css := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
+    <link type="text/css" rel="stylesheet" href="{{ $css }}"/>
+  {{ end }}
+{{ end }}
+{{- $jsRes := $res.js }}
+{{ range $jsRes }}
+  {{ $js := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
+  <script type="text/javascript" src="{{ $js }}"></script>
+{{ end }}
+

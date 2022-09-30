@@ -33,11 +33,6 @@ $footer_vendors_enable      : {{ isset $P.footer "vendors" }};
 {{ printf "$footer_vendors_imgs_width:%s;" (delimit (after 1 $width) ", ") }}
 {{ end }}
 
-// Counter
-$busuanzi_visitors          : {{ $P.busuanzi.visitors }};
-$busuanzi_views             : {{ $P.busuanzi.views }};
-$busuanzi_post_views        : {{ $P.busuanzi.postViews }};
-
 // Font
 $font_enable                : {{ $P.font.enable }};
 $font_global_size           : {{ default $P.font.global.size 1 }};
@@ -70,7 +65,7 @@ $back2top_sidebar           : {{ $P.backTop.sidebar }};
 $avatar_rotated             : {{ $P.avatar.rotated }};
 $avatar_rounded             : {{ $P.avatar.rounded }};
 $avatar_rounded             : {{ $P.avatar.rounded }};
-$site_state                 : {{ $P.siteState }};
+$site_state                 : {{ $P.siteState.basic }};
 $social_icons_only          : {{ $P.socialIcons.iconsOnly }};
 $social_icons_transition    : {{ $P.socialIcons.transition }};
 $links_settings_layout      : {{ $P.linksSets.layout }};
@@ -112,7 +107,6 @@ $reading_progress_position  : {{ $P.readingProgress.position }};
 $reading_progress_reversed  : {{ $P.readingProgress.reversed }};
 
 // Thirdparty
-$math_mathjax_enable        : {{ $P.math.mathjax.enable }};
 // TODO
 //$related_posts_enable       : {{ $P.relatedPosts.enable }};
 $related_posts_enable       : false;

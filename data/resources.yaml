@@ -10,10 +10,6 @@ js:
   - name: animejs
     version: 3.2.1
     file: lib/anime.min.js
-  # TODO
-  #- name: mathjax
-  #  version: 3.2.0
-  #  file: es5/tex-mml-chtml.js
 
 # CSS 资源
 # CSS Resources
@@ -33,6 +29,10 @@ css:
 # Site analytics engine
 analytics:
   la: https://sdk.51.la/js-sdk-pro.min.js
+  laWidget: https://v6-widget.51.la/v6/laId/quote.js?theme=0&col=true&f=12&display=0,0,0,1,0,1,1,1
+  baidu: https://hm.baidu.com/hm.js?
+  google: https://www.googletagmanager.com/gtag/js?id=
+  busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
 # 文章分享
 # Share
@@ -44,12 +44,12 @@ addthis:
 waline:
   js:
     name: '@waline/client'
-    version: 2.6.1
+    version: 2.6.3
     file: dist/waline.js
     alias: waline
   css:
     name: '@waline/client'
-    version: 2.6.1
+    version: 2.6.3
     file: dist/waline.css
     alias: waline
 
@@ -82,3 +82,32 @@ instant:
   name: instantsearch.js
   version: 4.40.5
   file: dist/instantsearch.production.min.js
+
+plugins:
+  # 数学公式渲染
+  mathjax:
+    js:
+      - name: mathjax
+        version: 3.2.0
+        file: es5/tex-mml-chtml.js
+  katex:
+    js:
+      - name: katex
+        version: 0.16.0
+        file: dist/katex.min.js
+      - name: auto-render
+        alias2: katex
+        version: 0.16.0
+        file: dist/contrib/auto-render.min.js
+    css:
+      - name: katex
+        version: 0.16.0
+        file: dist/katex.min.css
+  # 画图渲染
+  mermaid:
+    js:
+      - name: mermaid
+        version: 9.1.7
+        file: dist/mermaid.min.js
+
+

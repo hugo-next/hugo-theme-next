@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requiredMeta  : requiredmeta,
         serverURL     : serverurl,
         lang          : NexT.CONFIG.lang,
-        dark          : "auto"
+        dark          : 'html[data-theme="dark"]'
       });
 
       NexT.utils.hiddeLodingCmp(element);

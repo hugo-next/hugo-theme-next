@@ -18,7 +18,8 @@
     <header class="post-header">
       {{ partial "post/header.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
     </header>
-    <div class="post-body" itemprop="articleBody">
+    {{ $tocEnable := .ctx.Params.toc | default .ctx.Site.Params.toc.enable }}
+    <div class="post-body {{ if and $tocEnable .ctx.Site.Params.toc.number }} autonumber {{ end }}" itemprop="articleBody">
       {{ partial "post/body.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
     </div>
     <footer class="post-footer">

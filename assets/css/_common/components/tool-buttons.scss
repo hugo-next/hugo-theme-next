@@ -1,6 +1,48 @@
+.tool-buttons {
+
+  @include sidebar-toggle();
+  background: none;
+  bottom: 55px;
+  filter: alpha(opacity=0);
+  font-size: 12px;
+
+  .button {
+    display: block;
+    margin-bottom: 5px;
+    width: 36px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: $tool-btn-bg;
+    color: $tool-btn-color;
+    text-align: center;
+    font-size: $font-size-larger;
+    line-height: 35px;
+    padding: 0;
+    outline: 0;
+    border: none;
+    text-transform: none;
+    cursor: pointer;
+    opacity: $tool-btn-opacity;
+    touch-action: manipulation;
+
+    &:hover {
+      color: $tool-btn-hover-fore-color;
+      opacity: $tool-btn-opacity-hover;
+    }
+  }
+
+  .goto-comments {
+      display: none;
+  }
+
+  .goto-comments-on {
+    display: block;
+  }
+}
+
 @if $back2top_enable {
   .back-to-top {
-    font-size: $b2t-font-size;
+    font-size: $font-size-smaller;
 
     @if not $back2top_scrollpercent {
       span {

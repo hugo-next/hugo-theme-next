@@ -1,0 +1,79 @@
+{{- $jsRes := .Site.Data.resources.js }}
+{{- $vendor := .Site.Params.vendors.plugins }}
+{{- $router := .Scratch.Get "router" }}
+{{- range $jsRes }} 
+  {{ $pluginJS := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
+  <script type="text/javascript" src="{{ $pluginJS }}" defer></script>
+{{- end }}
+
+<script class="next-config" data-name="main" type="application/json">{{- .Scratch.Get "config" -}}</script>
+
+{{- $config := resources.Get "js/config.js" }}
+{{- $motion := resources.Get "js/motion.js" }}
+{{- $boot := resources.Get "js/next-boot.js" }}
+{{- $utils := resources.Get "js/utils.js" }}
+{{- $nextjs := (slice $config $utils $boot ) }}
+{{- if .Site.Params.motion.enable }}
+{{ $motionjs := resources.Get "js/motion.js" }}
+{{ $nextjs = $nextjs | append $motionjs }}
+{{- end }}
+{{- if or (eq .Site.Params.shceme "Muse") (eq .Site.Params.shceme "Mist") }}
+{{ $musejs := resources.Get "js/schemes/muse.js" }}
+{{ $nextjs = $nextjs | append $musejs }}
+{{- end }}
+{{- if .Site.Params.bookmark.enable }}
+{{- $bookmarkjs := resources.Get "js/bookmark.js" }}
+{{- $nextjs = $nextjs | append $bookmarkjs }}
+{{- end }}
+{{- if .Site.Params.pjax }}
+{{- $pjaxjs := resources.Get "js/pjax.js" }}
+{{- $nextjs = $nextjs | append $pjaxjs }}
+{{- end }}
+{{- if isset .Site.Params "addthisid" }}
+{{- $addthisjs := resources.Get "js/third-party/share/addthis.js" }}
+{{- $nextjs = $nextjs | append $addthisjs }}
+{{- end }}
+{{- if isset .Site.Params "waline" }}
+{{- $walinejs := resources.Get "js/third-party/comments/waline.js" }}
+{{- $nextjs = $nextjs | append $walinejs }}
+{{- end }}
+{{- if isset .Site.Params "giscus" }}
+{{- $giscusjs := resources.Get "js/third-party/comments/giscus.js" }}
+{{- $nextjs = $nextjs | append $giscusjs }}
+{{- end }}
+{{- if isset .Site.Params "livere" }}
+{{- $liverejs := resources.Get "js/third-party/comments/livere.js" }}
+{{- $nextjs = $nextjs | append $liverejs }}
+{{- end }}
+{{- if isset .Site.Params "artalk" }}
+{{- $artalkjs := resources.Get "js/third-party/comments/artalk.js" }}
+{{- $nextjs = $nextjs | append $artalkjs }}
+{{- end }}
+{{- if isset .Site.Params "utterances" }}
+{{- $utterancesjs := resources.Get "js/third-party/comments/utterances.js" }}
+{{- $nextjs = $nextjs | append $utterancesjs }}
+{{- end }}
+{{- if .Site.Params.localSearch.enable }}
+{{- $search := resources.Get "js/third-party/search/local.js" }}
+{{- $nextjs = $nextjs | append $search }}
+{{ end }}
+{{- if .Site.Params.algoliaSearch.enable }}
+{{- $search := resources.Get "js/third-party/search/algolia.js" }}
+{{- $nextjs = $nextjs | append $search }}
+{{ end }}
+{{ if .Site.Params.footer.translate }}
+{{- $gt := resources.Get "js/third-party/others/google-translate.js" }}
+{{- $nextjs = $nextjs | append $gt }}  
+
+{{ $gtCss := resources.Get "css/gt.scss" }}
+{{ $style := $gtCss | resources.ToCSS | minify }}
+<script type="text/javascript">
+  window.translateelement_styles = "{{- $style.RelPermalink -}}";
+</script>
+{{ end }}
+{{- $nextjs = $nextjs | resources.Concat "js/main.js"}}
+{{ if hugo.IsProduction }}
+{{- $nextjs = $nextjs | minify | fingerprint }}
+{{ end }}
+
+<script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script>

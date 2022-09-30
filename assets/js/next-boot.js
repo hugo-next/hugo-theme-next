@@ -2,6 +2,10 @@
 
 NexT.boot = {};
 
+NexT.boot.activeThemeMode = function(){
+  NexT.utils.activeThemeMode();
+};
+
 NexT.boot.registerEvents = function() {
 
   NexT.utils.registerScrollPercent();
@@ -33,15 +37,20 @@ NexT.boot.registerEvents = function() {
 
 NexT.boot.refresh = function() {
 
+  NexT.utils.calSiteInfo();
+  NexT.utils.regSwitchThemeBtn();
+
   if (!NexT.CONFIG.page.isPage) return;
  
   NexT.utils.registerSidebarTOC();
+
   NexT.utils.replacePostCRLink();
   NexT.utils.registerCopyCode();
   NexT.utils.registerPostReward();
   if(NexT.CONFIG.page.comments) {    
     NexT.utils.initCommontesDispaly();
     NexT.utils.registerCommonSwitch();
+    NexT.utils.domAddClass('#goto-comments', 'goto-comments-on');
   } else {
     NexT.utils.hideCommontes();
   }
@@ -79,6 +88,7 @@ NexT.boot.motion = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  NexT.boot.activeThemeMode();
   NexT.boot.registerEvents();
   NexT.boot.motion();
   NexT.boot.refresh();

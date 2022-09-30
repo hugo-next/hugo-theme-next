@@ -1,0 +1,70 @@
+{{ $scratch := partialCached "_funs/cal_siteinfo.html" . }}
+<div class="sidebar-card-widget">
+  <div class="item-headline">
+    <i class="fas fa-chart-line"></i>
+    <span>{{ T "SiteInfoItems.title" }}</span>
+  </div>
+  <div class="siteinfo">
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa-solid fa-calendar-check"></i>{{ T "SiteInfoItems.runTimes" }}</div>
+      <div class="item-count" id="runTimes" data-publishdate="{{ $scratch.Get "last" }}"></div>
+    </div>
+    {{- if eq .Site.Params.siteState.statistic.plugin "busuanzi" }}
+      {{- with .Site.Params.analytics.busuanzi }}
+      <div class="siteinfo-item">
+        <div class="item-name">
+          <i class="fas {{ .visitorsIcon }}"></i>{{ T "SiteInfoItems.visitors" }}
+        </div>
+        <div class="item-count" id="busuanzi_value_site_uv"></div>
+      </div>
+      <div class="siteinfo-item">
+        <div class="item-name">
+          <i class="fas {{ .viewsIcon }}"></i>{{ T "SiteInfoItems.pageViews" }}
+        </div>
+        <div class="item-count" id="busuanzi_value_site_pv"></div>
+      </div>
+      {{- end }}  
+    {{- end }}    
+    {{- if eq .Site.Params.siteState.statistic.plugin "51la" }}
+    <div id="la-siteinfo-widget" style="display: none;">
+      <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="{{ replace .Site.Data.resources.analytics.laWidget "laId" .Site.Params.analytics.laId }}"></script>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fa fa-user-plus"></i>{{ T "SiteInfoItems.todayViews" }}
+      </div>
+      <div class="item-count" id="today_site_pv"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fa fa-user-clock"></i>{{ T "SiteInfoItems.yesterdayViews" }}
+      </div>
+      <div class="item-count" id="yesterday_site_pv"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fa fa-arrows-down-to-people"></i>{{ T "SiteInfoItems.monthViews" }}
+      </div>
+      <div class="item-count" id="month_site_pv"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fa fa-users"></i>{{ T "SiteInfoItems.totalViews" }}
+      </div>
+      <div class="item-count" id="total_site_pv"></div>
+    </div>
+    {{- end }}
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa fa-font"></i>{{ T "SiteInfoItems.words" }}</div>
+      <div class="item-count" id="wordsCount" data-count="{{ $scratch.Get "totalWords" }}"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa fa-mug-hot"></i>{{ T "SiteInfoItems.readTimes" }}</div>
+      <div class="item-count" id="readTimes" data-times="{{ $scratch.Get "totalTimes" }}"></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name"><i class="fa fa-clock-rotate-left"></i>{{ T "SiteInfoItems.lastUpdate" }}</div>
+      <div class="item-count" id="last-push-date" data-lastpushdate="{{ $scratch.Get "first" }}"></div>
+    </div>
+  </div>
+</div>

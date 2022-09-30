@@ -1,0 +1,21 @@
+{{/* Use to get resources path with vendor */}}
+
+{{ $fmt := "%s/%s@%s/%s" }}
+
+{{ $npm := .res.name }}
+{{ with .res.alias2 }}
+  {{ $npm = . }}
+{{ end }}   
+{{- $file := .res.file }}
+
+{{- if eq .vendor "cdnjs" }}
+  {{- with .res.alias }}
+    {{- $npm = . }}
+  {{- end }}   
+  {{- $file = replaceRE `(dist|lib|source\/js)\/` "" .res.file }}
+  {{- $fmt = "%s/%s/%s/%s" }}
+{{- end }}
+
+{{ $pluginRes := printf $fmt .router $npm .res.version $file }}
+
+{{ return $pluginRes }}

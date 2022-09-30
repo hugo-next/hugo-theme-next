@@ -20,6 +20,7 @@
 
 {{ $vendor := .Site.Params.vendors.plugins }}
 {{ $router := index .Site.Data.resources.vendors $vendor }}
+{{ $globalVars.Set "vendor" $vendor }}
 {{ $globalVars.Set "router" $router }}
 
 {{ $config := dict
@@ -40,6 +41,15 @@
     "empty"       (T "SearchEmpty")
     "hits_time"   (T "SearchHitsTime")
     "hits"        (T "SearchHits")
+    "ds_years"    (T "DateSuffix.years")
+    "ds_days"     (T "DateSuffix.days")
+    "ds_hours"    (T "DateSuffix.hours")
+    "ds_mins"     (T "DateSuffix.mins")
+    "ds_month"    (T "DateSuffix.month")
+    "ds_day"      (T "DateSuffix.day")
+    "ds_hour"     (T "DateSuffix.hour")
+    "ds_min"      (T "DateSuffix.min")
+    "ds_just"     (T "DateSuffix.just")
   )
 }}
 
@@ -105,5 +115,11 @@
 {{ end }}
 
 {{ $globalVars.Set "config" $config }}
+
+{{ with .Site.Params.customFilePath }}
+  {{ range $k, $v := . }}
+    {{ $globalVars.Set $k $v }}
+  {{ end }}
+{{ end }}
 
 {{ return $globalVars.Values }}

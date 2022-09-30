@@ -18,7 +18,7 @@ url: "post/shortcodes.html"
 
 <!--more-->
 
-# 块引用
+## 块引用
 
 在引用一些经典名言名句时，可以采用此短语，语法参考如下：
 
@@ -42,7 +42,7 @@ url: "post/shortcodes.html"
 
 {{< /quote >}}
 
-# 信息块
+## 信息块
 
 支持 `default`，`info`，`success`，`warning`，`danger` 等五种不同效果的展示，语法参考如下：
 

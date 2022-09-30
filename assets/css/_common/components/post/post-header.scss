@@ -113,9 +113,3 @@
   flex-basis: 100%;
   height: 0;
 }
-
-@if $busuanzi_post_views {
-  #busuanzi_container_page_pv {
-    display: inline-block;
-  }
-}

@@ -1,4 +1,4 @@
-.sidebar-inner {
+.sidebar-inner, .sidebar-card-widget {
   color: $grey-dark;
   // Init Sidebar & TOC inner dimensions on all pages and for all schemes.
   $offset : if(($scheme == 'Pisces') or ($scheme == 'Gemini'), $sidebar-offset, $sidebar-padding);
@@ -39,3 +39,4 @@
 @import 'sidebar-toggle';
 @import 'sidebar-toc';
 @import 'site-state';
+@import 'sidebar-card-widget';

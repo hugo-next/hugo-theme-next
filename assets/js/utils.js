@@ -23,6 +23,216 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
+  regSwitchThemeBtn: function() {
+    const switchThemeBtn = document.getElementById('switch-theme');
+    if (!switchThemeBtn) return;
+    switchThemeBtn.addEventListener('click', () => {
+      const colorTheme = document.documentElement.getAttribute('data-theme');
+      NexT.utils.toggleDarkMode(!(colorTheme == 'dark'));
+
+    });    
+  },
+
+  activeThemeMode: function() {
+
+    const useDark = window.matchMedia("(prefers-color-scheme: dark)");
+    let darkModeState = useDark.matches;
+    const localState = NexT.utils.getLocalStorage('theme');
+    if (localState == 'light') {
+      darkModeState = false;
+    }
+    NexT.utils.toggleDarkMode(darkModeState);
+
+    useDark.addListener(function(evt) {
+      toggleDarkMode(evt.matches);
+    });
+  },
+
+  toggleDarkMode: function(state) {
+    if(state) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      NexT.utils.setLocalStorage('theme', 'dark', 2);
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      NexT.utils.setLocalStorage('theme', 'light', 2);
+    }
+
+    const theme = state ? 'dark' : 'light';
+    NexT.utils.toggleGiscusDarkMode(theme);
+  },
+
+  toggleGiscusDarkMode: function(theme) {
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      const config = { setConfig: { theme: theme } };
+      iframe.contentWindow.postMessage({ giscus: config }, 'https://giscus.app');
+    }
+  },
+
+  setLocalStorage: function(key, value, ttl) {
+    if (ttl === 0) return;
+    const now = new Date();
+    const expiryDay = ttl * 86400000;
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay
+    };
+    localStorage.setItem(key, JSON.stringify(item));
+  },
+
+  getLocalStorage: function(key) {
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) {
+      return undefined;
+    }
+
+    const item = JSON.parse(itemStr);
+    const now = new Date();
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key);
+      return undefined;
+    }
+    return item.value;
+  },
+
+  domAddClass: function(selector, cls) {
+    const doms = document.querySelectorAll(selector);
+    if (doms) {
+      doms.forEach(dom => {
+        dom.classList.add(cls);
+      });
+    }
+  },
+
+  calSiteInfo: function() {
+    const runtimeCount = document.getElementById('runTimes');
+    if (runtimeCount) {
+      const publishDate = runtimeCount.getAttribute('data-publishDate');
+      const runTimes = NexT.utils.diffDate(publishDate, 2);
+      runtimeCount.innerText = runTimes;
+    }
+
+    const wordsCount = document.getElementById('wordsCount');
+    if (wordsCount) {
+      const words = wordsCount.getAttribute('data-count');
+      wordsCount.innerText = NexT.utils.numberFormat(words);
+    }
+
+    const readTimes = document.getElementById('readTimes');
+    if (readTimes) {
+      const times = readTimes.getAttribute('data-times');
+      
+      const hour = 60;
+      const day = hour * 24;
+
+      const daysCount = parseInt(times / day);
+      const hoursCount = parseInt(times / hour);
+
+      let timesLabel;
+      if (daysCount >= 1) {
+        timesLabel = daysCount + NexT.CONFIG.i18n.ds_days + parseInt((times - daysCount * day)/hour) + NexT.CONFIG.i18n.ds_hours;
+      } else if (hoursCount >= 1) {
+        timesLabel = hoursCount + NexT.CONFIG.i18n.ds_hours + (times - hoursCount * hour) + NexT.CONFIG.i18n.ds_mins;
+      } else {
+        timesLabel = times + NexT.CONFIG.i18n.ds_mins;
+      }
+
+      readTimes.innerText = timesLabel;
+    }
+
+    const lastPushDate = document.getElementById('last-push-date');
+    if (lastPushDate) {
+      const pushDateVal = NexT.utils.diffDate(lastPushDate.getAttribute('data-lastPushDate'), 1);
+      lastPushDate.innerText = pushDateVal;
+    }
+
+    const statisWidget = document.querySelectorAll('#la-siteinfo-widget span');
+    if (statisWidget.length > 0) {
+      const valIds = [0,2,4,6];
+      const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
+      for (var i in valIds) {
+        let pv = NexT.utils.numberFormat(statisWidget[valIds[i]].innerText);
+        document.getElementById(domIds[i]).innerText = pv;
+      }
+    }
+
+    setTimeout(()=>{ NexT.utils.fmtBusuanzi(); }, 500);
+  },
+
+  fmtBusuanzi: function() {
+    const bszUV = document.getElementById('busuanzi_value_site_uv');
+    if (bszUV) {
+      bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
+    }
+    const bszPV = document.getElementById('busuanzi_value_site_pv');
+    if (bszPV) {
+      bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
+    }
+  },
+
+  numberFormat: function(number) {
+    let result;
+    if (number.indexOf(',') > 0) {
+      number = number.replaceAll(",", "");
+    }
+    
+    if (number > 10000) {
+      result = (number / 10000.0).toFixed(2) + ' w';
+    } else if (number > 1000) {
+      result = (number / 1000.0).toFixed(2) + ' k';
+    } else {
+      result = number;
+    }
+    return result;
+  },
+
+  diffDate: function(date, mode = 0) {
+    const dateNow = new Date();
+    const datePost = new Date(date);
+    const dateDiff = dateNow.getTime() - datePost.getTime();
+    const minute = 1000 * 60;
+    const hour = minute * 60;
+    const day = hour * 24;
+    const month = day * 30;
+    const year = month * 12;
+
+    let result;
+    if (mode == 1) {
+      const monthCount = dateDiff / month;
+      const dayCount = dateDiff / day;
+      const hourCount = dateDiff / hour;
+      const minuteCount = dateDiff / minute;
+
+      if (monthCount > 12) {
+        result = datePost.toLocaleDateString().replace(/\//g, '-');
+      } else if (monthCount >= 1) {
+        result = parseInt(monthCount) + NexT.CONFIG.i18n.ds_month;
+      } else if (dayCount >= 1) {
+        result = parseInt(dayCount) + NexT.CONFIG.i18n.ds_day;
+      } else if (hourCount >= 1) {
+        result = parseInt(hourCount) + NexT.CONFIG.i18n.ds_hour;
+      } else if (minuteCount >= 1) {
+        result = parseInt(minuteCount) + NexT.CONFIG.i18n.ds_min;
+      } else {
+        result = NexT.CONFIG.i18n.ds_just;
+      }
+    } else if (mode == 2) {      
+      const yearCount = parseInt(dateDiff / year);
+      if (yearCount >= 1) {
+        const dayCount = parseInt((dateDiff - (yearCount * year))/day);
+        result = yearCount + NexT.CONFIG.i18n.ds_years + dayCount + NexT.CONFIG.i18n.ds_days;
+      } else {
+        const dayCount = parseInt(dateDiff/day);
+        result = dayCount + NexT.CONFIG.i18n.ds_days;
+      }      
+    } else {
+      result = parseInt(dateDiff / day);
+    }
+
+    return result;
+  },
+
   checkDOMExist: function(selector) {
     return document.querySelector(selector) != null;
   },
@@ -148,8 +358,10 @@ NexT.utils = {
         const contentHeight = document.body.scrollHeight - window.innerHeight;
         const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
         if (backToTop) {
-          backToTop.classList.toggle('back-to-top-on', Math.round(scrollPercent) >= 5);
-          backToTop.querySelector('span').innerText = Math.round(scrollPercent) + '%';
+          const scrollPercentRound = Math.round(scrollPercent)
+          const isShow = scrollPercentRound >= 5;          
+          backToTop.classList.toggle('back-to-top-on', isShow);
+          backToTop.querySelector('span').innerText = scrollPercentRound + '%';
         }
         if (readingProgressBar) {
           readingProgressBar.style.setProperty('--progress', scrollPercent.toFixed(2) + '%');

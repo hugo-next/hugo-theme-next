@@ -39,21 +39,28 @@ markup:
     renderer:
       unsafe: true
   highlight:
+    # codeFences: true
+    # lineNos: true
+    # lineNumbersInTable: true
+    # noClasses: true
+    # # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
+    # # 更多的样式：https://xyproto.github.io/splash/docs/all.html
+    # # Highlight style: monokai | emacs | api | dracula | friendly
+    # # More: https://xyproto.github.io/splash/docs/all.html 
+    # style: "monokai"
+    anchorLineNos: true
     codeFences: true
-    lineNos: true
-    lineNumbersInTable: true
+    guessSyntax: true
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: false
     noClasses: true
-    # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
-    # 更多的样式：https://xyproto.github.io/splash/docs/all.html
-    # Highlight style: monokai | emacs | api | dracula | friendly
-    # More: https://xyproto.github.io/splash/docs/all.html 
-    style: "monokai"
-  tableOfContents:
-    # 开始/结束标题级别：1-6
-    # Heading title level of start or end: 1-6
-    startLevel: 1
-    endLevel: 3
-    ordered: false
+    noHl: false
+    style: monokai
+    tabWidth: 2
 
 # 站点文章导航文件
 # Site map of all articles
@@ -90,6 +97,10 @@ outputs:
 # 输出 robots 文件支持爬虫扫描
 # Enable robots with support crawler scan
 enableRobotsTXT: true
+
+# 强制输出时压缩文件
+# Compress all files when output
+minify:
 
 #--------------------------------------
 # 菜单配置说明
@@ -183,6 +194,13 @@ params:
   # Custom Logo (Warning: Only support scheme Mist)
   customLogo: #/imgs/hugo_next_logo.png
 
+  # 用户自定义文件配置
+  # Define custom file paths.
+  # customFilePath:
+  #   sidebar: custom_sidebar.html
+  #   footer: custom_footer.html
+  #   style: /css/custom_style.css
+
   # 知识共享国际许可 4.0
   # 更多信息： https://creativecommons.org/about/cclicenses/
   # Creative Commons 4.0 International License.
@@ -272,10 +290,18 @@ params:
     # 开启头像随鼠标转动动画
     # If true, the avatar will be rotated with the cursor.
     rotated: true
-
-  # 是否在侧边栏显示文章、分类、标签信息
-  # Posts / Categories / Tags in sidebar.
-  siteState: true
+  siteState: 
+    # 是否在侧边栏显示文章、分类、标签信息
+    # Posts / Categories / Tags in sidebar.
+    basic: true
+    # 站点访问信息
+    # Site information
+    statistic: 
+      enable: true
+      # 组件类型，可选值为： 51la, busuanzi
+      # 使用51la时需要注册账号：https://invite.51.la/1NUfGTS1?target=V6
+      # Plguin value is: 51la, busuzazi
+      plugin: busuanzi
 
   # 社交链接地址
   # 用法： `Key: 名称 || 链接地址 || 图标`
@@ -357,6 +383,9 @@ params:
   # Footer Settings
   # ---------------------------------------------------------------
   footer:
+    # 启动谷歌翻译功能
+    # Enable google translate in footer
+    translate: true
     # 站点开始年份，默认为当下时间的年份
     # Specify the year when the site was setup. 
     # If not defined, current year will be used.
@@ -693,27 +722,11 @@ params:
   # Third Party Plugins & Services Settings
   # ---------------------------------------------------------------
 
-  # TODO
-  # 数学公式渲染支持（暂时未实现）
-  # Math Formulas Render Support
-  # Warning: Please install / uninstall the relevant renderer according to the documentation.
-  # See: https://theme-next.js.org/docs/third-party-services/math-equations
-  # Server-side plugin: https://github.com/next-theme/hexo-filter-mathjax
-  math:
-    # Default (false) will load mathjax / katex script on demand.
-    # That is it only render those page which has `mathjax: true` in front-matter.
-    # If you set it to true, it will load mathjax / katex script EVERY PAGE.
-    every_page: false
-
-    mathjax:
-      enable: false
-      # Available values: none | ams | all
-      tags: none
-
-    katex:
-      enable: false
-      # See: https://github.com/KaTeX/KaTeX/tree/master/contrib/copy-tex
-      copy_tex: false
+  # 数学公式渲染支持，可选值： mathjax, katex
+  # 注意这里全局配置，意味着所有页面都会加载数学公式脚本
+  # Math Formulas Render Support, options: mathjax, katex
+  # Warning: It's global settings then will load scripts in every page.
+  #math: mathjax
 
   # TODO
   # FancyBox is a tool that offers a nice and elegant way 
@@ -762,7 +775,7 @@ params:
   comments:
     # 开启评论组件
     # If true, will show comment component in post end.
-    enable: true   
+    enable: false   
     # 设置默认使用的评论插件
     # 可选值：livere | waline | utterances | artalk | giscus
     # Choose a comment system to be displayed by default.
@@ -903,18 +916,20 @@ params:
     # 更多信息请参考：https://invite.51.la/1NUfGTS1?target=V6
     # 51La Analytics
     # See: https://invite.51.la/1NUfGTS1?target=V6 
-    laId: #<anaytics_id> 
-
-  # TODO
-  # Show Views / Visitors of the website / page with busuanzi.
-  # For more information: http://ibruce.info/2015/04/04/busuanzi/
-  busuanzi:
-    visitors: false
-    visitorsIcon: fa fa-user
-    views: false
-    viewsIcon: fa fa-eye
-    postViews: false
-    postViewsIcon: far fa-eye
+    #laId: #<anaytics_id> 
+    # 百度统计
+    # Baidu Analytics
+    #baidu: #<anaytics_id>
+    # 谷歌统计
+    # Google Analytics
+    #google: #<anaytics_id>
+    # 不蒜子统计
+    # Show Views / Visitors of the website / page with busuanzi.
+    # For more information: http://ibruce.info/2015/04/04/busuanzi/
+    busuanzi:
+      visitorsIcon: fa fa-user
+      viewsIcon: fa fa-eye
+      postViews: true
 
 
   # ---------------------------------------------------------------
@@ -940,7 +955,7 @@ params:
     enable: true
     # 搜索索引文件路径
     # Indexes file path for search
-    path: searchindexes.xml
+    path: /searchindexes.xml
     # 是立即搜索当输入关键字时，可选值： auto | manual
     # If auto, trigger search by changing input.
     # If manual, trigger search by pressing enter key or search button.

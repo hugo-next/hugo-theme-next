@@ -45,8 +45,6 @@ RSSLable:
   other: "RSS Subscribe"
 CCLinkTitle:
   other: "Creative Commons"
-BackTopLabel:
-  other: "Top"
 
 TagsCounterTitle:
   zero: No tags
@@ -134,10 +132,18 @@ RewardBitcoin:
 PostCommentTitle:
   other: Comments
 
-VisitorsLabel:
-  other: Total Visitors
-PageViewsLabel:
-  other: Total Page Views
+SiteInfoItems:
+  title: "Web Status"
+  runTimes: "Running:"
+  words: "Words:"
+  readTimes: "ReadTime:"
+  visitors: "Visitors:"
+  pageViews: "Views:"
+  todayViews: "Today Views:"
+  yesterdayViews: "Yesterday Views:"
+  monthViews: "Month Views:"
+  totalViews: "Total Views"
+  lastUpdate: "Last Update:"
 
 FooterPowerby:
   other: "Power by %s"
@@ -150,3 +156,20 @@ SearchHits:
   hits: "${hits} results found"
 SearchHitsTime:
   other: "${hits} results found in ${time} ms"
+
+DateSuffix:
+  years: " Year "
+  days: " Day "
+  hours: " Hour "
+  mins: " Min"
+  month: " Month Ago"
+  day: " Day Ago"
+  hour: " Hour Ago"
+  min: " Min Ago"
+  just: "Just"
+
+ToolBtns:
+  comment: "Go to Comment"
+  theme: "Change Theme"
+  lang: "Multilingual translation"
+  backTop: "Back to Top"

@@ -1,0 +1,60 @@
+.sidebar-card-widget {
+  background: var(--content-bg-color);
+  @if ($scheme == 'Pisces') or ($scheme == 'Gemini'){
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+  }
+  box-sizing: border-box;
+  color: var(--text-color);
+  margin-top: $sidebar-offset;
+
+  .item-headline {
+    text-align: left;
+    font-size: $font-size-small;
+    font-weight: bold;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+
+  .siteinfo {
+    font-size: $font-size-small;
+    text-align: left;
+
+    .siteinfo-item {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      padding: 2px 10px 0;
+
+      i {
+        width: 16px;
+        height: 16px;
+        text-align: center;
+        margin-right: 4px;
+      }
+
+
+      div:first-child {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -o-box-flex: 1;
+        box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.back-to-top-card {
+  margin: 0;
+  padding: 0;
+
+  div:first-child {
+    margin: 0;
+  }
+}

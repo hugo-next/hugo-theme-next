@@ -46,8 +46,6 @@ RSSLable:
   other: RSS 订阅
 CCLinkTitle:
   other: 共享知识
-BackTopLabel:
-  other: 返回顶部
 
 TagsCounterTitle:
   zero: 暂无标签
@@ -135,10 +133,18 @@ RewardBitcoin:
 PostCommentTitle:
   other: 评论交流
 
-VisitorsLabel:
-  other: 总访客量
-PageViewsLabel:
-  other: 总访问量
+SiteInfoItems:
+  title: "网站资讯"
+  runTimes: "已运行："
+  words: "总字数："
+  readTimes: "阅读约："
+  visitors: "总访客数："
+  pageViews: "页面浏览："
+  todayViews: "今日访问："
+  yesterdayViews: "昨日访问："
+  monthViews: "本月访问："
+  totalViews: "总访问量："
+  lastUpdate: "最后更新于："
 
 FooterPowerby:
   other: 由 %s 强力驱动
@@ -151,3 +157,20 @@ SearchHits:
   hits: "找到 ${hits} 个搜索结果"
 SearchHitsTime:
   other: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
+
+DateSuffix:
+  years: " 年 "
+  days: " 天 "
+  hours: " 小时 "
+  mins: " 分钟"
+  month: " 个月前"
+  day: " 天前"
+  hour: " 小时前"
+  min: " 分钟前"
+  just: "刚刚"
+
+ToolBtns:
+  comment: "直达评论"
+  theme: "深浅模式切换"
+  lang: "多语言翻译"
+  backTop: "返回顶部"
