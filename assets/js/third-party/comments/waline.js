@@ -10,9 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     imguploader, 
     pageview, 
     placeholder, 
+    sofa,
     requiredmeta, 
     serverurl, 
-    wordlimit
+    wordlimit,
+    reaction,
+    reactiontext,
+    reactiontitle
   } = NexT.CONFIG.waline.cfg;
 
 
@@ -21,9 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const waline_js = NexT.utils.getCDNResource(NexT.CONFIG.waline.js);
 
-  const locale = {
-    placeholder: placeholder
+  let locale = {
+    placeholder   : placeholder,
+    sofa          : sofa,
+    reactionTitle : reactiontitle
   };
+
+  reactiontext.forEach(function(value, index){
+    locale['reaction'+index] = value;
+  });
 
   NexT.utils.loadComments(element)
     .then(() => NexT.utils.getScript(waline_js, {
@@ -38,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageUploader : imguploader,
         wordLimit     : wordlimit,
         requiredMeta  : requiredmeta,
+        reaction      : reaction,
         serverURL     : serverurl,
         lang          : NexT.CONFIG.lang,
         dark          : 'html[data-theme="dark"]'
