@@ -36,9 +36,10 @@ NexT.utils = {
   activeThemeMode: function() {
 
     const useDark = window.matchMedia("(prefers-color-scheme: dark)");
-    let darkModeState = useDark.matches;
+    let darkModeState = NexT.CONFIG.darkmode || useDark.matches;
     const localState = NexT.utils.getLocalStorage('theme');
-    if (localState == 'light') {
+    if (localState == 'light' 
+      || (localState == undefined && !NexT.CONFIG.darkmode)) {
       darkModeState = false;
     }
     NexT.utils.toggleDarkMode(darkModeState);
