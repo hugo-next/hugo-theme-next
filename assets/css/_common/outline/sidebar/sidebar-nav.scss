@@ -22,6 +22,7 @@
 
     &:hover {
       color: $sidebar-nav-hover-color;
+      border-bottom-color: $sidebar-highlight;
     }
   }
 }
@@ -29,6 +30,7 @@
 .sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview {
   border-bottom-color: $sidebar-highlight;
   color: $sidebar-highlight;
+  font-weight: bold;
 
   &:hover {
     color: $sidebar-highlight;
