@@ -61,6 +61,12 @@ markup:
     noHl: false
     style: monokai
     tabWidth: 2
+  tableOfContents:
+    # 开始/结束标题级别：1-6 (建议从2开始)
+    # Heading title level of start or end: 1-6
+    # Recommand start at 2
+    startLevel: 2
+    endLevel: 4
 
 # 站点文章导航文件
 # Site map of all articles
@@ -807,12 +813,16 @@ params:
   # Waline comments system
   # More info seee: https://waline.js.org/
   waline:
-    pageView: true
-    placeholder: "请文明发言"
+    pageView: '#waline-pageview-count'
+    placeholder: "请文明发言哟 ヾ(≧▽≦*)o"
+    sofa: "快来发表你的意见吧 (≧∀≦)ゞ"
     emoji: false
     imgUploader: false
     wordLimit: 200
     requiredMeta: ['nick', 'mail']
+    reaction: true
+    reactionText: [ '点赞', '踩一下', '得意', '不屑', '尴尬', '睡觉']
+    reactionTitle: "你认为这篇文章怎么样？"
     serverURL: #<your waline server url>
 
   # Artalk 评论插件
