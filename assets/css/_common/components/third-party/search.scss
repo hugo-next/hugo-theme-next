@@ -55,12 +55,7 @@
     }
 
     .search-header {
-      background: $gainsboro;
-      @if $darkmode {
-        @media (prefers-color-scheme: dark) {
-          background: $grey-dim;
-        }
-      }
+      background: var(--content-bg-color);      
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       display: flex;
@@ -72,6 +67,7 @@
       border: 0;
       outline: 0;
       width: 100%;
+      color: var(--text-color);
 
       &::-webkit-search-cancel-button {
         display: none;
@@ -81,7 +77,7 @@
     .search-result-container {
       height: calc(100% - 55px);
       overflow: auto;
-      padding: 5px 25px;
+      padding: 0px 25px;
 
       hr {
         margin: 5px 0 10px;
@@ -89,6 +85,37 @@
         &:first-child {
           display: none;
         }
+      }
+    }
+
+    .search-footer {
+      background: var(--content-bg-color);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      display: flex;
+      padding: 0 5px;
+
+      div {
+        color: var(--text-color);
+        padding: 5px;
+      }
+
+      .search-hit-stats {
+        width: 65%;
+        font-size: $font-size-smaller;
+        
+      }
+      .search-vendor {
+        width: 35%;
+        text-align: right;
+        font-size: $font-size-small;
+        
+        img {
+          width: 68px;
+          margin: 5px;
+          vertical-align: middle;
+          display: inline;
+        }      
       }
     }
 
@@ -140,6 +167,10 @@
     margin: 40px 0;
     opacity: 1;
     padding: 0;
+
+    .pagination {
+      visibility: visible;
+    }
 
     .pagination-item {
       display: inline-block;
