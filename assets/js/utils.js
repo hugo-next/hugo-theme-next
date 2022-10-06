@@ -464,7 +464,13 @@ NexT.utils = {
   },*/
 
   registerSidebarTOC: function() {
-    this.sections = [...document.querySelectorAll('.post-toc li a.nav-link')].map(element => {
+    const toc = document.getElementById('TableOfContents');
+    if (!toc.hasChildNodes()) {
+      const tocActive = document.querySelector('.sidebar-inner');
+      tocActive.classList.remove('sidebar-nav-active', 'sidebar-toc-active');
+      tocActive.classList.add('sidebar-overview-active');
+    }
+    this.sections = [...document.querySelectorAll('.post-toc li a')].map(element => {
       const target = document.getElementById(decodeURI(element.getAttribute('href')).replace('#', ''));
       // TOC item animation navigate.
       element.addEventListener('click', event => {
@@ -527,7 +533,7 @@ NexT.utils = {
   },
 
   activateNavByIndex: function(index) {
-    const target = document.querySelectorAll('.post-toc li a.nav-link')[index];
+    const target = document.querySelectorAll('.post-toc li a')[index];
     if (!target || target.classList.contains('active-current')) return;
 
     document.querySelectorAll('.post-toc .active').forEach(element => {

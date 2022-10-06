@@ -70,6 +70,7 @@ $social_icons_only          : {{ $P.socialIcons.iconsOnly }};
 $social_icons_transition    : {{ $P.socialIcons.transition }};
 $links_settings_layout      : {{ $P.linksSets.layout }};
 $toc_enable                 : {{ $P.toc.enable }};
+$toc_number                 : {{ $P.toc.number }};
 $toc_expand_all             : {{ $P.toc.expandAll }};
 $toc_wrap                   : {{ $P.toc.wrap }};
 
