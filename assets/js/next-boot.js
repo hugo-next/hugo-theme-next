@@ -10,6 +10,7 @@ NexT.boot.registerEvents = function() {
 
   NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();
+  NexT.utils.registerToolButtons();
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {

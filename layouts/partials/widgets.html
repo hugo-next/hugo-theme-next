@@ -1,14 +1,14 @@
 <div class="tool-buttons" >
-  <a id="goto-comments" class="button goto-comments" href="#comments"  title="{{ T "ToolBtns.comment" }}">
+  <div id="goto-comments" class="button goto-comments" title="{{ T "ToolBtns.comment" }}">
     <i class="fas fa-comments"></i>
-  </a> 
+  </div> 
   <div id="switch-theme" class="button" title="{{ T "ToolBtns.theme" }}">
     <i class="fas fa-adjust"></i>
   </div> 
   {{ if .Site.Params.footer.translate }}
-  <a class="button" href="#google_translate_element"  title="{{ T "ToolBtns.lang" }}">
+  <div id="goto-gt" class="button"  title="{{ T "ToolBtns.lang" }}">
     <i class="fas fa-globe"></i>
-  </a> 
+  </div> 
   {{ end }}
   {{- if and .Site.Params.backTop.enable (not .Site.Params.backTop.sidebar) }}
   <div class="back-to-top" role="button" title="{{ T "ToolBtns.backTop" }}">
