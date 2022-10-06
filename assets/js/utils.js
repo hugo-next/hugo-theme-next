@@ -24,23 +24,22 @@ HTMLElement.prototype.wrap = function(wrapper) {
 NexT.utils = {
 
   registerToolButtons: function() {
-    const comms_offset = document.getElementById('comments').getBoundingClientRect().top + window.scrollY;
     document.getElementById('goto-comments').addEventListener('click', () => {
        window.anime({
         targets  : document.scrollingElement,
         duration : 500,
         easing   : 'linear',
-        scrollTop: comms_offset
+        scrollTop: document.getElementById('comments').getBoundingClientRect().top + window.scrollY
       });
     });
     
-    const gt_offset = document.getElementById('google_translate_element').getBoundingClientRect().top + window.scrollY;
+
     document.getElementById('goto-gt').addEventListener('click', () => {
        window.anime({
         targets  : document.scrollingElement,
         duration : 500,
         easing   : 'linear',
-        scrollTop: gt_offset
+        scrollTop: document.getElementById('google_translate_element').getBoundingClientRect().top + window.scrollY
       });
     });
   },
