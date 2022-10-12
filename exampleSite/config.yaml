@@ -39,10 +39,6 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    # codeFences: true
-    # lineNos: true
-    # lineNumbersInTable: true
-    # noClasses: true
     # # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
     # # 更多的样式：https://xyproto.github.io/splash/docs/all.html
     # # Highlight style: monokai | emacs | api | dracula | friendly
