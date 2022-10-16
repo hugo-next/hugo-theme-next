@@ -47,7 +47,7 @@ NexT.boot.refresh = function() {
  
   NexT.utils.registerSidebarTOC();
 
-  NexT.utils.replacePostCRLink();
+  //NexT.utils.replacePostCRLink();
   NexT.utils.registerCopyCode();
   NexT.utils.registerPostReward();
   if(NexT.CONFIG.page.comments) {    
