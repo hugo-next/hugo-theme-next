@@ -2,11 +2,11 @@
 
   @include sidebar-toggle();
   background: none;
-  bottom: 55px;
+  bottom: 58px;
   filter: alpha(opacity=0);
-  font-size: $font-size-small;
+  font-size: $font-size-smaller;
   @include mobile() {
-    font-size: $font-size-smaller;
+    font-size: $font-size-smallest;
   }
 
   .button {
