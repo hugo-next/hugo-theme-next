@@ -1,12 +1,12 @@
-<div class="tool-buttons" >
+<div class="tool-buttons" > 
+  <div id="switch-theme" class="button" title="{{ T "ToolBtns.theme" }}">
+    <i class="fas fa-adjust"></i>
+  </div>
   <div id="goto-comments" class="button goto-comments" title="{{ T "ToolBtns.comment" }}">
     <i class="fas fa-comments"></i>
   </div> 
-  <div id="switch-theme" class="button" title="{{ T "ToolBtns.theme" }}">
-    <i class="fas fa-adjust"></i>
-  </div> 
   {{ if .Site.Params.footer.translate }}
-  <div id="goto-gt" class="button"  title="{{ T "ToolBtns.lang" }}">
+  <div id="goto-gtranslate" class="button"  title="{{ T "ToolBtns.lang" }}">
     <i class="fas fa-globe"></i>
   </div> 
   {{ end }}

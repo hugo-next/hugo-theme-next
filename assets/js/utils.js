@@ -1,12 +1,12 @@
 /* global NexT, CONFIG */
 
-HTMLElement.prototype.wrap = function(wrapper) {
+HTMLElement.prototype.wrap = function (wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
   wrapper.appendChild(this);
 };
 
-(function() {
+(function () {
   const onPageLoaded = () => document.dispatchEvent(
     new Event('page:loaded', {
       bubbles: true
@@ -23,55 +23,55 @@ HTMLElement.prototype.wrap = function(wrapper) {
 
 NexT.utils = {
 
-  registerToolButtons: function() {
-    document.getElementById('goto-comments').addEventListener('click', () => {
-       window.anime({
-        targets  : document.scrollingElement,
-        duration : 500,
-        easing   : 'linear',
-        scrollTop: document.getElementById('comments').getBoundingClientRect().top + window.scrollY
-      });
-    });
-    
-
-    document.getElementById('goto-gt').addEventListener('click', () => {
-       window.anime({
-        targets  : document.scrollingElement,
-        duration : 500,
-        easing   : 'linear',
-        scrollTop: document.getElementById('google_translate_element').getBoundingClientRect().top + window.scrollY
+  registerToolButtons: function () {
+    const buttons = document.querySelectorAll('.tool-buttons div:nth-child(n+2)');
+    buttons.forEach(button => {
+      let targetId = button.id;
+      if (targetId != '') {
+        targetId = targetId.substring(5);
+      }
+      button.addEventListener('click', () => {
+        NexT.utils.slidScrollBarAnime(targetId);
       });
     });
   },
 
-  regSwitchThemeBtn: function() {
+  slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
+    window.anime({
+      targets: document.scrollingElement,
+      duration: duration,
+      easing: easing,
+      scrollTop: targetId == '' ? 0 : document.getElementById(targetId).getBoundingClientRect().top + window.scrollY
+    });
+  },
+
+  regSwitchThemeBtn: function () {
     const switchThemeBtn = document.getElementById('switch-theme');
     if (!switchThemeBtn) return;
     switchThemeBtn.addEventListener('click', () => {
       const colorTheme = document.documentElement.getAttribute('data-theme');
       NexT.utils.toggleDarkMode(!(colorTheme == 'dark'));
 
-    });    
+    });
   },
 
-  activeThemeMode: function() {
-
+  activeThemeMode: function () {
     const useDark = window.matchMedia("(prefers-color-scheme: dark)");
     let darkModeState = NexT.CONFIG.darkmode || useDark.matches;
     const localState = NexT.utils.getLocalStorage('theme');
-    if (localState == 'light' 
+    if (localState == 'light'
       || (localState == undefined && !NexT.CONFIG.darkmode)) {
       darkModeState = false;
     }
     NexT.utils.toggleDarkMode(darkModeState);
 
-    useDark.addListener(function(evt) {
+    useDark.addListener(function (evt) {
       toggleDarkMode(evt.matches);
     });
   },
 
-  toggleDarkMode: function(state) {
-    if(state) {
+  toggleDarkMode: function (state) {
+    if (state) {
       document.documentElement.setAttribute('data-theme', 'dark');
       NexT.utils.setLocalStorage('theme', 'dark', 2);
     } else {
@@ -83,7 +83,7 @@ NexT.utils = {
     NexT.utils.toggleGiscusDarkMode(theme);
   },
 
-  toggleGiscusDarkMode: function(theme) {
+  toggleGiscusDarkMode: function (theme) {
     const iframe = document.querySelector('iframe.giscus-frame');
     if (iframe) {
       const config = { setConfig: { theme: theme } };
@@ -91,7 +91,7 @@ NexT.utils = {
     }
   },
 
-  setLocalStorage: function(key, value, ttl) {
+  setLocalStorage: function (key, value, ttl) {
     if (ttl === 0) return;
     const now = new Date();
     const expiryDay = ttl * 86400000;
@@ -102,7 +102,7 @@ NexT.utils = {
     localStorage.setItem(key, JSON.stringify(item));
   },
 
-  getLocalStorage: function(key) {
+  getLocalStorage: function (key) {
     const itemStr = localStorage.getItem(key);
     if (!itemStr) {
       return undefined;
@@ -118,7 +118,7 @@ NexT.utils = {
     return item.value;
   },
 
-  domAddClass: function(selector, cls) {
+  domAddClass: function (selector, cls) {
     const doms = document.querySelectorAll(selector);
     if (doms) {
       doms.forEach(dom => {
@@ -127,7 +127,7 @@ NexT.utils = {
     }
   },
 
-  calSiteInfo: function() {
+  calSiteInfo: function () {
     const runtimeCount = document.getElementById('runTimes');
     if (runtimeCount) {
       const publishDate = runtimeCount.getAttribute('data-publishDate');
@@ -144,7 +144,7 @@ NexT.utils = {
     const readTimes = document.getElementById('readTimes');
     if (readTimes) {
       const times = readTimes.getAttribute('data-times');
-      
+
       const hour = 60;
       const day = hour * 24;
 
@@ -153,7 +153,7 @@ NexT.utils = {
 
       let timesLabel;
       if (daysCount >= 1) {
-        timesLabel = daysCount + NexT.CONFIG.i18n.ds_days + parseInt((times - daysCount * day)/hour) + NexT.CONFIG.i18n.ds_hours;
+        timesLabel = daysCount + NexT.CONFIG.i18n.ds_days + parseInt((times - daysCount * day) / hour) + NexT.CONFIG.i18n.ds_hours;
       } else if (hoursCount >= 1) {
         timesLabel = hoursCount + NexT.CONFIG.i18n.ds_hours + (times - hoursCount * hour) + NexT.CONFIG.i18n.ds_mins;
       } else {
@@ -171,7 +171,7 @@ NexT.utils = {
 
     const statisWidget = document.querySelectorAll('#la-siteinfo-widget span');
     if (statisWidget.length > 0) {
-      const valIds = [0,2,4,6];
+      const valIds = [0, 2, 4, 6];
       const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
       for (var i in valIds) {
         let pv = NexT.utils.numberFormat(statisWidget[valIds[i]].innerText);
@@ -179,10 +179,10 @@ NexT.utils = {
       }
     }
 
-    setTimeout(()=>{ NexT.utils.fmtBusuanzi(); }, 500);
+    setTimeout(() => { NexT.utils.fmtBusuanzi(); }, 500);
   },
 
-  fmtBusuanzi: function() {
+  fmtBusuanzi: function () {
     const bszUV = document.getElementById('busuanzi_value_site_uv');
     if (bszUV) {
       bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
@@ -193,12 +193,12 @@ NexT.utils = {
     }
   },
 
-  numberFormat: function(number) {
+  numberFormat: function (number) {
     let result;
     if (number.indexOf(',') > 0) {
       number = number.replaceAll(",", "");
     }
-    
+
     if (number > 10000) {
       result = (number / 10000.0).toFixed(2) + ' w';
     } else if (number > 1000) {
@@ -209,7 +209,7 @@ NexT.utils = {
     return result;
   },
 
-  diffDate: function(date, mode = 0) {
+  diffDate: function (date, mode = 0) {
     const dateNow = new Date();
     const datePost = new Date(date);
     const dateDiff = dateNow.getTime() - datePost.getTime();
@@ -239,15 +239,15 @@ NexT.utils = {
       } else {
         result = NexT.CONFIG.i18n.ds_just;
       }
-    } else if (mode == 2) {      
+    } else if (mode == 2) {
       const yearCount = parseInt(dateDiff / year);
       if (yearCount >= 1) {
-        const dayCount = parseInt((dateDiff - (yearCount * year))/day);
+        const dayCount = parseInt((dateDiff - (yearCount * year)) / day);
         result = yearCount + NexT.CONFIG.i18n.ds_years + dayCount + NexT.CONFIG.i18n.ds_days;
       } else {
-        const dayCount = parseInt(dateDiff/day);
+        const dayCount = parseInt(dateDiff / day);
         result = dayCount + NexT.CONFIG.i18n.ds_days;
-      }      
+      }
     } else {
       result = parseInt(dateDiff / day);
     }
@@ -255,17 +255,17 @@ NexT.utils = {
     return result;
   },
 
-  checkDOMExist: function(selector) {
+  checkDOMExist: function (selector) {
     return document.querySelector(selector) != null;
   },
 
-  getCDNResource: function(res) {
+  getCDNResource: function (res) {
     let { plugins, router } = NexT.CONFIG.vendor;
     let { name, version, file, alias } = res;
 
     let npm_name = name;
     let res_src = '';
-    switch(plugins) {
+    switch (plugins) {
       case 'cdnjs':
         let cdnjs_name = alias || name;
         let cdnjs_file = file.replace(/\.js$/, '.min.js').replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '');
@@ -278,23 +278,10 @@ NexT.utils = {
     return res_src;
   },
 
- /* replacePostCRLink: function() {
-    if (NexT.CONFIG.hostname.startsWith('http')) return;
-    // Try to support mutli domain without base URL sets.
-    let href = window.location.href;
-    if (href.indexOf('#')>-1){
-      href = href.split('#')[0];
-    }
-    let postLink = document.getElementById('post-cr-link');
-    if (!postLink) return;
-    postLink.text = href;
-    postLink.href = href;
-  },*/
-
   /**
    * One-click copy code support.
    */
-  registerCopyCode: function() {
+  registerCopyCode: function () {
     if (!NexT.CONFIG.copybtn) return;
 
     let figure = document.querySelectorAll('.highlight pre');
@@ -341,7 +328,7 @@ NexT.utils = {
     });
   },
 
-  wrapTableWithBox: function() {
+  wrapTableWithBox: function () {
     document.querySelectorAll('table').forEach(element => {
       const box = document.createElement('div');
       box.className = 'table-container';
@@ -349,7 +336,7 @@ NexT.utils = {
     });
   },
 
-  registerVideoIframe: function() {
+  registerVideoIframe: function () {
     document.querySelectorAll('iframe').forEach(element => {
       const supported = [
         'www.youtube.com',
@@ -371,7 +358,7 @@ NexT.utils = {
     });
   },
 
-  registerScrollPercent: function() {
+  registerScrollPercent: function () {
     const backToTop = document.querySelector('.back-to-top');
     const readingProgressBar = document.querySelector('.reading-progress-bar');
     // For init back to top in sidebar if page was scrolled after page refresh.
@@ -381,7 +368,7 @@ NexT.utils = {
         const scrollPercent = contentHeight > 0 ? Math.min(100 * window.scrollY / contentHeight, 100) : 0;
         if (backToTop) {
           const scrollPercentRound = Math.round(scrollPercent)
-          const isShow = scrollPercentRound >= 5;          
+          const isShow = scrollPercentRound >= 5;
           backToTop.classList.toggle('back-to-top-on', isShow);
           backToTop.querySelector('span').innerText = scrollPercentRound + '%';
         }
@@ -400,21 +387,12 @@ NexT.utils = {
       }
       this.activateNavByIndex(index);
     }, { passive: true });
-
-    backToTop && backToTop.addEventListener('click', () => {
-      window.anime({
-        targets  : document.scrollingElement,
-        duration : 500,
-        easing   : 'linear',
-        scrollTop: 0
-      });
-    });
   },
 
   /**
    * Tabs tag listener (without twitter bootstrap).
    */
-  registerTabsTag: function() {
+  registerTabsTag: function () {
     // Binding `nav-tabs` & `tab-content` by real time permalink changing.
     document.querySelectorAll('.tabs ul.nav-tabs .tab').forEach(element => {
       element.addEventListener('click', event => {
@@ -429,7 +407,7 @@ NexT.utils = {
         // https://stackoverflow.com/questions/20306204/using-queryselector-with-ids-that-are-numbers
         const tActive = document.getElementById(element.querySelector('a').getAttribute('href').replace('#', ''));
         [...tActive.parentNode.children].forEach(target => {
-        // Array.prototype.slice.call(tActive.parentNode.children).forEach(target => {
+          // Array.prototype.slice.call(tActive.parentNode.children).forEach(target => {
           target.classList.toggle('active', target === tActive);
         });
         // Trigger event
@@ -439,9 +417,9 @@ NexT.utils = {
         if (!NexT.CONFIG.stickytabs) return;
         const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
         window.anime({
-          targets  : document.scrollingElement,
-          duration : 500,
-          easing   : 'linear',
+          targets: document.scrollingElement,
+          duration: 500,
+          easing: 'linear',
           scrollTop: offset
         });
       });
@@ -450,7 +428,7 @@ NexT.utils = {
     window.dispatchEvent(new Event('tabs:register'));
   },
 
-  registerCanIUseTag: function() {
+  registerCanIUseTag: function () {
     // Get responsive height passed from iframe.
     window.addEventListener('message', ({ data }) => {
       if (typeof data === 'string' && data.includes('ciu_embed')) {
@@ -468,7 +446,7 @@ NexT.utils = {
       target.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
   },
-
+	
   registerLangSelect: function() {
     const selects = document.querySelectorAll('.lang-select');
     selects.forEach(sel => {
@@ -484,7 +462,7 @@ NexT.utils = {
     });
   },*/
 
-  registerSidebarTOC: function() {
+  registerSidebarTOC: function () {
     const toc = document.getElementById('TableOfContents');
     if (!toc.hasChildNodes()) {
       const tocActive = document.querySelector('.sidebar-inner');
@@ -498,11 +476,11 @@ NexT.utils = {
         event.preventDefault();
         const offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
-          targets  : document.scrollingElement,
-          duration : 500,
-          easing   : 'linear',
+          targets: document.scrollingElement,
+          duration: 500,
+          easing: 'linear',
           scrollTop: offset,
-          complete : () => {
+          complete: () => {
             history.pushState(null, document.title, element.href);
           }
         });
@@ -511,7 +489,7 @@ NexT.utils = {
     });
   },
 
-  registerPostReward: function() {
+  registerPostReward: function () {
     const button = document.querySelector('.reward-container button');
     if (!button) return;
     button.addEventListener('click', () => {
@@ -519,22 +497,22 @@ NexT.utils = {
     });
   },
 
-  initCommontesDispaly: function(){   
+  initCommontesDispaly: function () {
     const comms = document.querySelectorAll('.comment-wrap > div');
-    if (comms.length<=1) return;
-    comms.forEach(function(item){
+    if (comms.length <= 1) return;
+    comms.forEach(function (item) {
       var dis = window.getComputedStyle(item, null).display;
       item.style.display = dis;
     });
   },
 
-  registerCommonSwitch: function() {
+  registerCommonSwitch: function () {
     const button = document.querySelector('.comment-switch .switch-btn');
     if (!button) return;
     const comms = document.querySelectorAll('.comment-wrap > div');
     button.addEventListener('click', () => {
       button.classList.toggle('move');
-      comms.forEach(function(item){        
+      comms.forEach(function (item) {
         if (item.style.display === 'none') {
           item.style.cssText = "display: block; animation: tabshow .8s";
         } else {
@@ -544,16 +522,16 @@ NexT.utils = {
     });
   },
 
-  hideCommontes:function() {
+  hideCommontes: function () {
     document.querySelector('.post-comments').style.display = 'none';
   },
 
-  hiddeLodingCmp: function(selector) {
+  hiddeLodingCmp: function (selector) {
     const loadding = document.querySelector(selector).previousElementSibling;
     loadding.style.display = 'none';
   },
 
-  activateNavByIndex: function(index) {
+  activateNavByIndex: function (index) {
     const target = document.querySelectorAll('.post-toc li a')[index];
     if (!target || target.classList.contains('active-current')) return;
 
@@ -570,14 +548,14 @@ NexT.utils = {
     const tocElement = document.querySelector('.sidebar-panel-container');
     if (!tocElement.parentNode.classList.contains('sidebar-toc-active')) return;
     window.anime({
-      targets  : tocElement,
-      duration : 200,
-      easing   : 'linear',
+      targets: tocElement,
+      duration: 200,
+      easing: 'linear',
       scrollTop: tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top
     });
   },
 
-  updateSidebarPosition: function() {
+  updateSidebarPosition: function () {
     if (window.innerWidth < 992 || NexT.CONFIG.scheme === 'Pisces' || NexT.CONFIG.scheme === 'Gemini') return;
     // Expand sidebar on post detail page by default, when post has a toc.
     const hasTOC = document.querySelector('.post-toc');
@@ -591,7 +569,7 @@ NexT.utils = {
     }
   },
 
-  activateSidebarPanel: function(index) {
+  activateSidebarPanel: function (index) {
     const duration = 200;
     const sidebar = document.querySelector('.sidebar-inner');
     const panel = document.querySelector('.sidebar-panel-container');
@@ -601,25 +579,25 @@ NexT.utils = {
 
     window.anime({
       duration,
-      targets   : panel,
-      easing    : 'linear',
-      opacity   : 0,
+      targets: panel,
+      easing: 'linear',
+      opacity: 0,
       translateY: [0, -20],
-      complete  : () => {
+      complete: () => {
         // Prevent adding TOC to Overview if Overview was selected when close & open sidebar.
         sidebar.classList.replace(activeClassName[1 - index], activeClassName[index]);
         window.anime({
           duration,
-          targets   : panel,
-          easing    : 'linear',
-          opacity   : [0, 1],
+          targets: panel,
+          easing: 'linear',
+          opacity: [0, 1],
           translateY: [-20, 0]
         });
       }
     });
   },
 
-  getStyle: function(src, parent) {    
+  getStyle: function (src, parent) {
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('type', 'text/css');
@@ -628,7 +606,7 @@ NexT.utils = {
     (parent || document.head).appendChild(link);
   },
 
-  getScript: function(src, options = {}, legacyCondition) {
+  getScript: function (src, options = {}, legacyCondition) {
     if (typeof options === 'function') {
       return this.getScript(src, {
         condition: legacyCondition
@@ -646,7 +624,7 @@ NexT.utils = {
       } = {},
       parentNode = null
     } = options;
-    
+
     return new Promise((resolve, reject) => {
       if (condition) {
         resolve();
@@ -680,7 +658,7 @@ NexT.utils = {
     });
   },
 
-  loadComments: function(selector, legacyCallback) {
+  loadComments: function (selector, legacyCallback) {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
     }

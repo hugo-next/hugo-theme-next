@@ -4,7 +4,6 @@
   background: none;
   bottom: 55px;
   filter: alpha(opacity=0);
-  font-size: 12px;
 
   .button {
     display: block;
@@ -25,6 +24,14 @@
     opacity: $tool-btn-opacity;
     touch-action: manipulation;
 
+    @include mobile() {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 3px;
+      font-size: $font-size-small;
+    }
+
     &:hover {
       color: $tool-btn-hover-fore-color;
       opacity: $tool-btn-opacity-hover;
@@ -42,7 +49,10 @@
 
 @if $back2top_enable {
   .back-to-top {
-    font-size: $font-size-smaller;
+    font-size: $font-size-small;
+    @include mobile() {
+      font-size: $font-size-smaller;
+    }
 
     @if not $back2top_scrollpercent {
       span {
@@ -51,7 +61,7 @@
     }
 
     @if $back2top_sidebar {
-      margin: 20px - $sidebar-offset -10px -20px;
+      margin: 20px -$sidebar-offset -10px -20px;
       opacity: 0;
       transition: opacity $transition-ease;
 
