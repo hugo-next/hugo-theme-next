@@ -4,6 +4,10 @@
   background: none;
   bottom: 55px;
   filter: alpha(opacity=0);
+  font-size: $font-size-small;
+  @include mobile() {
+    font-size: $font-size-smaller;
+  }
 
   .button {
     display: block;
@@ -14,7 +18,6 @@
     background-color: $tool-btn-bg;
     color: $tool-btn-color;
     text-align: center;
-    font-size: $font-size-larger;
     line-height: 35px;
     padding: 0;
     outline: 0;
@@ -29,7 +32,6 @@
       height: 24px;
       line-height: 24px;
       border-radius: 3px;
-      font-size: $font-size-small;
     }
 
     &:hover {
@@ -49,10 +51,6 @@
 
 @if $back2top_enable {
   .back-to-top {
-    font-size: $font-size-small;
-    @include mobile() {
-      font-size: $font-size-smaller;
-    }
 
     @if not $back2top_scrollpercent {
       span {
