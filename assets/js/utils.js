@@ -592,6 +592,27 @@ NexT.utils = {
     });
   },
 
+  lazyLoadComponent: function(selector, legacyCallback) {
+    if (legacyCallback) {
+      return this.loadComments(selector).then(legacyCallback);
+    }
+    return new Promise(resolve => {
+      const element = document.querySelector(selector);
+      if (!element) {
+        resolve();
+        return;
+      }
+      const intersectionObserver = new IntersectionObserver((entries, observer) => {
+        const entry = entries[0];
+        if (!entry.isIntersecting) return;
+
+        resolve();
+        observer.disconnect();
+      });
+      intersectionObserver.observe(element);
+    });
+  },
+
   loadComments: function (selector, legacyCallback) {
     if (legacyCallback) {
       return this.loadComments(selector).then(legacyCallback);
