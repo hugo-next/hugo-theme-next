@@ -66,7 +66,7 @@ NexT.utils = {
     NexT.utils.toggleDarkMode(darkModeState);
 
     useDark.addListener(function (evt) {
-      toggleDarkMode(evt.matches);
+      NexT.utils.toggleDarkMode(evt.matches);
     });
   },
 
