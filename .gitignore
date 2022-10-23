@@ -26,3 +26,5 @@ data/*
 !data/config.yaml
 !data/resources.yaml
 
+# vscode
+.vscode/
