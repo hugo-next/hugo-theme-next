@@ -22,10 +22,11 @@ HTMLElement.prototype.wrap = function (wrapper) {
 })();
 
 NexT.utils = {
-
   registerToolButtons: function () {
-    const buttons = document.querySelectorAll('.tool-buttons div:nth-child(n+2)');
-    buttons.forEach(button => {
+    const buttons = document.querySelector('.tool-buttons');
+    
+    const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme)');
+    scrollbar_buttons.forEach(button => {
       let targetId = button.id;
       if (targetId != '') {
         targetId = targetId.substring(5);
@@ -33,6 +34,12 @@ NexT.utils = {
       button.addEventListener('click', () => {
         NexT.utils.slidScrollBarAnime(targetId);
       });
+    });
+
+    buttons.querySelector('div#toggle-theme').addEventListener('click', () => {
+      const cur_theme = document.documentElement.getAttribute('data-theme');
+      console.log();
+      window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
     });
   },
 
@@ -43,79 +50,6 @@ NexT.utils = {
       easing: easing,
       scrollTop: targetId == '' ? 0 : document.getElementById(targetId).getBoundingClientRect().top + window.scrollY
     });
-  },
-
-  regSwitchThemeBtn: function () {
-    const switchThemeBtn = document.getElementById('switch-theme');
-    if (!switchThemeBtn) return;
-    switchThemeBtn.addEventListener('click', () => {
-      const colorTheme = document.documentElement.getAttribute('data-theme');
-      NexT.utils.toggleDarkMode(!(colorTheme == 'dark'));
-
-    });
-  },
-
-  activeThemeMode: function () {
-    const useDark = window.matchMedia("(prefers-color-scheme: dark)");
-    let darkModeState = NexT.CONFIG.darkmode || useDark.matches;
-    const localState = NexT.utils.getLocalStorage('theme');
-    if (localState == 'light'
-      || (localState == undefined && !NexT.CONFIG.darkmode)) {
-      darkModeState = false;
-    }
-    NexT.utils.toggleDarkMode(darkModeState);
-
-    useDark.addListener(function (evt) {
-      NexT.utils.toggleDarkMode(evt.matches);
-    });
-  },
-
-  toggleDarkMode: function (state) {
-    if (state) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      NexT.utils.setLocalStorage('theme', 'dark', 2);
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      NexT.utils.setLocalStorage('theme', 'light', 2);
-    }
-
-    const theme = state ? 'dark' : 'light';
-    NexT.utils.toggleGiscusDarkMode(theme);
-  },
-
-  toggleGiscusDarkMode: function (theme) {
-    const iframe = document.querySelector('iframe.giscus-frame');
-    if (iframe) {
-      const config = { setConfig: { theme: theme } };
-      iframe.contentWindow.postMessage({ giscus: config }, 'https://giscus.app');
-    }
-  },
-
-  setLocalStorage: function (key, value, ttl) {
-    if (ttl === 0) return;
-    const now = new Date();
-    const expiryDay = ttl * 86400000;
-    const item = {
-      value: value,
-      expiry: now.getTime() + expiryDay
-    };
-    localStorage.setItem(key, JSON.stringify(item));
-  },
-
-  getLocalStorage: function (key) {
-    const itemStr = localStorage.getItem(key);
-    if (!itemStr) {
-      return undefined;
-    }
-
-    const item = JSON.parse(itemStr);
-    const now = new Date();
-
-    if (now.getTime() > item.expiry) {
-      localStorage.removeItem(key);
-      return undefined;
-    }
-    return item.value;
   },
 
   domAddClass: function (selector, cls) {

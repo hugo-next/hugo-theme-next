@@ -1,7 +1,4 @@
-<div class="tool-buttons" > 
-  <div id="switch-theme" class="button" title="{{ T "ToolBtns.theme" }}">
-    <i class="fas fa-adjust"></i>
-  </div>
+<div class="tool-buttons" >
   <div id="goto-comments" class="button goto-comments" title="{{ T "ToolBtns.comment" }}">
     <i class="fas fa-comments"></i>
   </div> 
@@ -10,6 +7,9 @@
     <i class="fas fa-globe"></i>
   </div> 
   {{ end }}
+  <div id="toggle-theme" class="button" title="{{ T "ToolBtns.theme" }}">
+    <i class="fas fa-adjust"></i>
+  </div>
   {{- if and .Site.Params.backTop.enable (not .Site.Params.backTop.sidebar) }}
   <div class="back-to-top" role="button" title="{{ T "ToolBtns.backTop" }}">
     <i class="fa fa-arrow-up"></i>

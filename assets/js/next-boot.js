@@ -1,10 +1,5 @@
 /* global NexT, CONFIG */
-
 NexT.boot = {};
-
-NexT.boot.activeThemeMode = function(){
-  NexT.utils.activeThemeMode();
-};
 
 NexT.boot.registerEvents = function() {
 
@@ -39,13 +34,10 @@ NexT.boot.registerEvents = function() {
 NexT.boot.refresh = function() {
 
   NexT.utils.calSiteInfo();
-  NexT.utils.regSwitchThemeBtn();
 
   if (!NexT.CONFIG.page.isPage) return;
  
   NexT.utils.registerSidebarTOC();
-
-  //NexT.utils.replacePostCRLink();
   NexT.utils.registerCopyCode();
   NexT.utils.registerPostReward();
   if(NexT.CONFIG.page.comments) {    
@@ -89,7 +81,6 @@ NexT.boot.motion = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  NexT.boot.activeThemeMode();
   NexT.boot.registerEvents();
   NexT.boot.motion();
   NexT.boot.refresh();

@@ -2,7 +2,7 @@
   {{- $.Scratch.Set $k $v -}}
 {{- end -}}
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" data-theme="{{ .Scratch.Get "theme" }}">
 
 <head>
   {{- partial "head.html" . }}

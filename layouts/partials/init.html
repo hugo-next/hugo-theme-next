@@ -122,4 +122,10 @@
   {{ end }}
 {{ end }}
 
+{{ $theme := "light" }}
+{{ if .Site.Params.darkmode }}
+  {{ $theme = "dark" }}
+{{ end }}
+{{ $globalVars.Set "theme" $theme }}
+
 {{ return $globalVars.Values }}
