@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+NexT.comments.waline = function() {
   const element = '.waline-container';
-  if (!NexT.CONFIG.page.comments 
-    || !NexT.CONFIG.waline
+  if (!NexT.CONFIG.waline
     || !NexT.utils.checkDOMExist(element)) return; 
   
   const {
@@ -19,10 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     reactiontitle
   } = NexT.CONFIG.waline.cfg;
 
-
-  const waline_css = NexT.utils.getCDNResource(NexT.CONFIG.waline.css);
-  NexT.utils.getStyle(waline_css, null);
-
   const waline_js = NexT.utils.getCDNResource(NexT.CONFIG.waline.js);
 
   let locale = {
@@ -35,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     locale['reaction'+index] = value;
   });
 
-  NexT.utils.loadComments(element)
-    .then(() => NexT.utils.getScript(waline_js, {
-    }))
-    .then(() => {
+  NexT.utils.lazyLoadComponent(element, function () {    
+    NexT.utils.getScript(waline_js, function(){
+      const waline_css = NexT.utils.getCDNResource(NexT.CONFIG.waline.css);
+      NexT.utils.getStyle(waline_css);
 
       Waline.init({
         locale,
@@ -55,5 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       NexT.utils.hiddeLodingCmp(element);
+    })
   });
-});
+}

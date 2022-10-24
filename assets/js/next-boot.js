@@ -1,11 +1,27 @@
-/* global NexT, CONFIG */
-NexT.boot = {};
+/* boot starup */
+
+(function () {
+  const onPageLoaded = () => document.dispatchEvent(
+    new Event('page:loaded', {
+      bubbles: true
+    })
+  );
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('readystatechange', onPageLoaded, { once: true });
+  } else {
+    onPageLoaded();
+  }
+  document.addEventListener('pjax:success', onPageLoaded);
+})();
 
 NexT.boot.registerEvents = function() {
 
   NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();
   NexT.utils.registerToolButtons();
+  // Register comment's components
+  NexT.comments.register();
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {

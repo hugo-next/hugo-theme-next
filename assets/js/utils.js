@@ -1,25 +1,10 @@
-/* global NexT, CONFIG */
+/* util tools */
 
 HTMLElement.prototype.wrap = function (wrapper) {
   this.parentNode.insertBefore(wrapper, this);
   this.parentNode.removeChild(this);
   wrapper.appendChild(this);
 };
-
-(function () {
-  const onPageLoaded = () => document.dispatchEvent(
-    new Event('page:loaded', {
-      bubbles: true
-    })
-  );
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('readystatechange', onPageLoaded, { once: true });
-  } else {
-    onPageLoaded();
-  }
-  document.addEventListener('pjax:success', onPageLoaded);
-})();
 
 NexT.utils = {
   registerToolButtons: function () {
@@ -32,13 +17,12 @@ NexT.utils = {
         targetId = targetId.substring(5);
       }
       button.addEventListener('click', () => {
-        NexT.utils.slidScrollBarAnime(targetId);
+        this.slidScrollBarAnime(targetId);
       });
     });
 
     buttons.querySelector('div#toggle-theme').addEventListener('click', () => {
       const cur_theme = document.documentElement.getAttribute('data-theme');
-      console.log();
       window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
     });
   },
@@ -65,14 +49,14 @@ NexT.utils = {
     const runtimeCount = document.getElementById('runTimes');
     if (runtimeCount) {
       const publishDate = runtimeCount.getAttribute('data-publishDate');
-      const runTimes = NexT.utils.diffDate(publishDate, 2);
+      const runTimes = this.diffDate(publishDate, 2);
       runtimeCount.innerText = runTimes;
     }
 
     const wordsCount = document.getElementById('wordsCount');
     if (wordsCount) {
       const words = wordsCount.getAttribute('data-count');
-      wordsCount.innerText = NexT.utils.numberFormat(words);
+      wordsCount.innerText = this.numberFormat(words);
     }
 
     const readTimes = document.getElementById('readTimes');
@@ -99,7 +83,7 @@ NexT.utils = {
 
     const lastPushDate = document.getElementById('last-push-date');
     if (lastPushDate) {
-      const pushDateVal = NexT.utils.diffDate(lastPushDate.getAttribute('data-lastPushDate'), 1);
+      const pushDateVal = this.diffDate(lastPushDate.getAttribute('data-lastPushDate'), 1);
       lastPushDate.innerText = pushDateVal;
     }
 
@@ -108,22 +92,22 @@ NexT.utils = {
       const valIds = [0, 2, 4, 6];
       const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
       for (var i in valIds) {
-        let pv = NexT.utils.numberFormat(statisWidget[valIds[i]].innerText);
+        let pv = this.numberFormat(statisWidget[valIds[i]].innerText);
         document.getElementById(domIds[i]).innerText = pv;
       }
     }
 
-    setTimeout(() => { NexT.utils.fmtBusuanzi(); }, 500);
+    setTimeout(() => { this.fmtBusuanzi(); }, 500);
   },
 
   fmtBusuanzi: function () {
     const bszUV = document.getElementById('busuanzi_value_site_uv');
     if (bszUV) {
-      bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
+      bszUV.innerText = this.numberFormat(bszUV.innerText);
     }
     const bszPV = document.getElementById('busuanzi_value_site_pv');
     if (bszPV) {
-      bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
+      bszPV.innerText = this.numberFormat(bszPV.innerText);
     }
   },
 
@@ -594,7 +578,7 @@ NexT.utils = {
 
   lazyLoadComponent: function(selector, legacyCallback) {
     if (legacyCallback) {
-      return this.loadComments(selector).then(legacyCallback);
+      return this.lazyLoadComponent(selector).then(legacyCallback);
     }
     return new Promise(resolve => {
       const element = document.querySelector(selector);

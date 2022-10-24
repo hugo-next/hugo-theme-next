@@ -1,4 +1,15 @@
-if (!window.NexT) window.NexT = {};
+/* global NexT, boot, CONFIG */
+window.NexT = {};
+NexT.boot = {};
+NexT.comments = {};
+
+NexT.comments.register = function() {
+  if (!NexT.CONFIG.page.comments) return;
+  for(var c in NexT.comments) { 
+    if (c === 'register') continue;
+    eval('NexT.comments.'+c)();
+  };
+};
 
 (function() {
   const className = 'next-config';

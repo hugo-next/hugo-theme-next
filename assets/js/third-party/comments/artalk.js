@@ -1,12 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+NexT.comments.giscus = function() {
   const element = '.artalk-container';
-  if (!NexT.CONFIG.page.comments 
-    || !NexT.CONFIG.artalk
+  if (!NexT.CONFIG.artalk
     || !NexT.utils.checkDOMExist(element)) return; 
-
-  const artalk_css = NexT.utils.getCDNResource(NexT.CONFIG.artalk.css);
-  NexT.utils.getStyle(artalk_css, null);
 
   const artalk_js = NexT.utils.getCDNResource(NexT.CONFIG.artalk.js);
   const {
@@ -15,10 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
     server,
   } = NexT.CONFIG.artalk.cfg;
 
-  NexT.utils.loadComments(element)
-    .then(() => NexT.utils.getScript(artalk_js, {
-    }))
-    .then(() => {
+  NexT.utils.lazyLoadComponent(element, function() {
+    NexT.utils.getScript(artalk_js, function(){
+      const artalk_css = NexT.utils.getCDNResource(NexT.CONFIG.artalk.css);
+      NexT.utils.getStyle(artalk_css);
 
       new Artalk({
         el          : element,
@@ -29,8 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
         locale      : NexT.CONFIG.lang,
         placeholder : placeholder,
         darkMode    : 'auto'
-      });
+      });      
+    });
 
-      NexT.utils.hiddeLodingCmp(element);
+    NexT.utils.hiddeLodingCmp(element);
   });
-});
+}

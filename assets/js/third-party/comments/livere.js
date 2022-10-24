@@ -1,11 +1,9 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+NexT.comments.giscus = function() {
   const element = '#lv-container';
-  if (!NexT.CONFIG.page.comments 
-    || !NexT.CONFIG.livere
+  if (!NexT.CONFIG.livere
     || !NexT.utils.checkDOMExist(element)) return; 
 
-  NexT.utils.loadComments(element).then(() => {
+  NexT.utils.lazyLoadComponent(element, function() {
     NexT.utils.getScript(NexT.CONFIG.livere.js, {
       attributes: {
         async: true
@@ -15,4 +13,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     NexT.utils.hiddeLodingCmp(element);
   });
-});
+}

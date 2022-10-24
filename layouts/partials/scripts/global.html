@@ -9,9 +9,8 @@
 <script class="next-config" data-name="main" type="application/json">{{- .Scratch.Get "config" -}}</script>
 
 {{- $config := resources.Get "js/config.js" }}
-{{- $motion := resources.Get "js/motion.js" }}
-{{- $boot := resources.Get "js/next-boot.js" }}
 {{- $utils := resources.Get "js/utils.js" }}
+{{- $boot := resources.Get "js/next-boot.js" }}
 {{- $nextjs := (slice $config $utils $boot ) }}
 {{- if .Site.Params.motion.enable }}
 {{ $motionjs := resources.Get "js/motion.js" }}
@@ -40,7 +39,7 @@
 {{- if isset .Site.Params "giscus" }}
 {{- $giscusjs := resources.Get "js/third-party/comments/giscus.js" }}
 {{- $nextjs = $nextjs | append $giscusjs }}
-{{- end }}
+{{- end}}
 {{- if isset .Site.Params "livere" }}
 {{- $liverejs := resources.Get "js/third-party/comments/livere.js" }}
 {{- $nextjs = $nextjs | append $liverejs }}
