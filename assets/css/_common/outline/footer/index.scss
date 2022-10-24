@@ -32,10 +32,10 @@
   .google-translate {
     display: flex;
     justify-content: center;
-
-    i {
+    .fa {
       font-size: $font-size-larger;
       margin: auto 0;
+      line-height: normal;
     }
   }
 
