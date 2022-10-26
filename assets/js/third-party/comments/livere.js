@@ -1,4 +1,5 @@
-NexT.comments.giscus = function() {
+/* LiveRe comment plugin */
+NexT.plugins.comments.livere = function() {
   const element = '#lv-container';
   if (!NexT.CONFIG.livere
     || !NexT.utils.checkDOMExist(element)) return; 

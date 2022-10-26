@@ -1,14 +1,42 @@
 /* global NexT, boot, CONFIG */
 window.NexT = {};
 NexT.boot = {};
-NexT.comments = {};
+NexT.plugins = {};
 
-NexT.comments.register = function() {
+// Defined comment component & add register event
+NexT.plugins.comments = {};
+NexT.plugins.comments.register = function() {
   if (!NexT.CONFIG.page.comments) return;
-  for(var c in NexT.comments) { 
+  for(var c in NexT.plugins.comments) { 
     if (c === 'register') continue;
-    eval('NexT.comments.'+c)();
+    eval('NexT.plugins.comments.'+c)();
   };
+}
+
+// Defined search engine & add register event
+NexT.plugins.search = {}
+NexT.plugins.search.register = function() {
+  for(var s in NexT.plugins.search) { 
+    if (s === 'register') continue;
+    eval('NexT.plugins.search.'+s)();
+  };
+}
+
+// Defined share plugin & add register event
+NexT.plugins.share = {}
+NexT.plugins.share.register = function() {
+  for(var s in NexT.plugins.share) { 
+    if (s === 'register') continue;
+    eval('NexT.plugins.share.'+s)();
+  };
+}
+
+// Add event to register all third party plugins
+NexT.plugins.register = function() {
+  for(var p in NexT.plugins) {
+    if (p === 'register') continue;
+    eval('NexT.plugins.'+p+'.register')();
+  }
 };
 
 (function() {

@@ -1,4 +1,5 @@
-NexT.comments.giscus = function() {
+/* Utterances comment plugin */
+NexT.plugins.comments.utterances = function() {
   const element = '.utterances-container';
   if (!NexT.CONFIG.utterances
     || !NexT.utils.checkDOMExist(element)) return;

@@ -1,4 +1,4 @@
-/* global CONFIG, pjax, LocalSearch */
+/* LocalSearch engine */
 class LocalSearch {
   constructor({
     path = '',
@@ -227,7 +227,7 @@ class LocalSearch {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+NexT.plugins.search.localsearch = function() {
   if (! NexT.CONFIG.localSearch.path) {
     // Search DB path
     console.warn('`search indexes file` is not configurate!');
@@ -323,4 +323,4 @@ document.addEventListener('DOMContentLoaded', () => {
       onPopupClose();
     }
   });
-});
+}

@@ -21,7 +21,7 @@ NexT.boot.registerEvents = function() {
   // NexT.utils.registerCanIUseTag();
   NexT.utils.registerToolButtons();
   // Register comment's components
-  NexT.comments.register();
+  NexT.plugins.register();
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {

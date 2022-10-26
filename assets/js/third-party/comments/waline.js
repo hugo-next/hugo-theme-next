@@ -1,4 +1,5 @@
-NexT.comments.waline = function() {
+/* Waline comment plugin */
+NexT.plugins.comments.waline = function() {
   const element = '.waline-container';
   if (!NexT.CONFIG.waline
     || !NexT.utils.checkDOMExist(element)) return; 

@@ -1,4 +1,5 @@
-NexT.comments.giscus = function() {
+/* Giscus comment plugin */
+NexT.plugins.comments.giscus = function() {
   const element = '.giscus-container';
   if (!NexT.CONFIG.page.comments 
     || !NexT.CONFIG.giscus

@@ -1,4 +1,5 @@
-NexT.comments.giscus = function() {
+/* Artalk comment plugin */
+NexT.plugins.comments.artalk = function() {
   const element = '.artalk-container';
   if (!NexT.CONFIG.artalk
     || !NexT.utils.checkDOMExist(element)) return; 
