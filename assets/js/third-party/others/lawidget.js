@@ -10,7 +10,8 @@ NexT.plugins.others.lawidget = function() {
         crossorigin: 'anonymous',
         charset: 'UTF-8',
         defer: true
-      }
-    });
+      },
+      parentNode: document.getElementById('la-siteinfo-widget')
+    }, NexT.utils.fmtLaWidget());
   });
 }

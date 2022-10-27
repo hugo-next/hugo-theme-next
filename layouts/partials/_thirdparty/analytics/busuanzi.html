@@ -4,8 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
   script.charset = "UTF-8";
   script.src     = "{{ .Site.Data.resources.analytics.busuanzi }}";
-  script.async   = "true"
-
+  script.async   = false
+  script.defer   = true
+  
   document.head.appendChild(script);
+  script.onload = function() {
+    NexT.utils.fmtBusuanzi();
+  }
 });
 </script>

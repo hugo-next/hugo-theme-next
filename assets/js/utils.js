@@ -45,7 +45,7 @@ NexT.utils = {
     }
   },
 
-  calSiteInfo: function () {
+  fmtSiteInfo: function () {
     const runtimeCount = document.getElementById('runTimes');
     if (runtimeCount) {
       const publishDate = runtimeCount.getAttribute('data-publishDate');
@@ -86,29 +86,33 @@ NexT.utils = {
       const pushDateVal = this.diffDate(lastPushDate.getAttribute('data-lastPushDate'), 1);
       lastPushDate.innerText = pushDateVal;
     }
+  },
 
-    const statisWidget = document.querySelectorAll('#la-siteinfo-widget span');
-    if (statisWidget.length > 0) {
-      const valIds = [0, 2, 4, 6];
-      const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
-      for (var i in valIds) {
-        let pv = this.numberFormat(statisWidget[valIds[i]].innerText);
-        document.getElementById(domIds[i]).innerText = pv;
+  fmtLaWidget: function(){
+    setTimeout(function(){
+      const laWidget = document.querySelectorAll('#la-siteinfo-widget span');
+      if (laWidget.length > 0) {
+        const valIds = [0, 2, 4, 6];
+        const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
+        for (var i in valIds) {
+          let pv = NexT.utils.numberFormat(laWidget[valIds[i]].innerText);
+          document.getElementById(domIds[i]).innerText = pv;
+        }
       }
-    }
-
-    setTimeout(() => { this.fmtBusuanzi(); }, 500);
+    }, 800);
   },
 
   fmtBusuanzi: function () {
-    const bszUV = document.getElementById('busuanzi_value_site_uv');
-    if (bszUV) {
-      bszUV.innerText = this.numberFormat(bszUV.innerText);
-    }
-    const bszPV = document.getElementById('busuanzi_value_site_pv');
-    if (bszPV) {
-      bszPV.innerText = this.numberFormat(bszPV.innerText);
-    }
+    setTimeout(function(){
+      const bszUV = document.getElementById('busuanzi_value_site_uv');    
+      if (bszUV) {
+        bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
+      }
+      const bszPV = document.getElementById('busuanzi_value_site_pv');
+      if (bszPV) {
+        bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
+      }
+    }, 800);  
   },
 
   numberFormat: function (number) {
