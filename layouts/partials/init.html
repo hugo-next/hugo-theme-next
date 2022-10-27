@@ -114,6 +114,14 @@
 {{ $config = merge $config (dict "addthis" $addthis) }}
 {{ end }}
 
+{{ with .Site.Params.analytics.laId }}
+{{ $lawidget := dict
+  "js" $.Site.Data.resources.analytics.laWidget
+  "id" .
+}}
+{{ $config = merge $config (dict "lawidget" $lawidget) }}
+{{ end }}
+
 {{ $globalVars.Set "config" $config }}
 
 {{ with .Site.Params.customFilePath }}

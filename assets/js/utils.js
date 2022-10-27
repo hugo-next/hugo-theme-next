@@ -179,9 +179,10 @@ NexT.utils = {
 
   getCDNResource: function (res) {
     let { plugins, router } = NexT.CONFIG.vendor;
-    let { name, version, file, alias } = res;
+    let { name, version, file, alias, alias_name } = res;
 
     let npm_name = name;
+    if (alias_name) npm_name = alias_name;
     let res_src = '';
     switch (plugins) {
       case 'cdnjs':
@@ -522,7 +523,6 @@ NexT.utils = {
     link.setAttribute('href', src);
 
     const head = (parent || document.head);
-    console.log(head)
     if (position === 'before') {
       head.prepend(link);
     } else {

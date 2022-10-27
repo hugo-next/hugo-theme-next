@@ -1,0 +1,11 @@
+{{/* Get third party js plugins resource */}}
+
+{{ $pluginPath :=  printf "%s/%s/%s" "js/third-party" .class .plugin }}
+{{ $targetPath := printf "js/%s" .plugin }}
+{{ $plugin := resources.Get $pluginPath | resources.ExecuteAsTemplate $targetPath .ctx }}
+
+{{ if hugo.IsProduction }}
+{{ $plugin = $plugin | minify | fingerprint }}
+{{ end }}
+
+<script type="text/javascript" src="{{ $plugin.RelPermalink }}" defer></script>

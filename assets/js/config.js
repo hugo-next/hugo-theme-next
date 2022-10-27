@@ -31,6 +31,15 @@ NexT.plugins.share.register = function() {
   };
 }
 
+// Defined other plugin & add register event
+NexT.plugins.others = {}
+NexT.plugins.others.register = function() {
+  for(var o in NexT.plugins.others) { 
+    if (o === 'register') continue;
+    eval('NexT.plugins.others.'+o)();
+  };
+}
+
 // Add event to register all third party plugins
 NexT.plugins.register = function() {
   for(var p in NexT.plugins) {

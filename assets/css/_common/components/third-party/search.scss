@@ -24,11 +24,13 @@
   .search-popup {
     background: var(--card-bg-color);
     border-radius: 5px;
-    height: 80%;
+    height: 60%;
     margin: auto;
     transform: scale(0);
     transition: transform .4s;
     width: 700px;
+    //display: flex;
+    //flex-wrap: wrap;
 
     .search-active & {
       transform: scale(1);
@@ -75,7 +77,10 @@
     }
 
     .search-result-container {
-      height: calc(100% - 55px);
+     /*  height: calc(100% - 65px);
+      @include mobile() {
+        height: calc(100% - 105px); 
+      } */
       overflow: auto;
       padding: 0px 25px;
     }
@@ -89,23 +94,28 @@
 
       .search-meta-info {
         height: 26px;
-        display: flex;
         padding: 5px 0;
         
         .search-hit-stats {
-          font-size: $font-size-smaller;
-          width: 65%;
+          font-size: $font-size-smaller;          
           padding: 2px 8px;
+          float: left;
         }
 
         .search-vendor {
-          width: 34%;
           text-align: right;
           font-size: $font-size-small;
+          @include mobile() {
+            font-size: $font-size-smaller;
+          }
           font-weight: bold;
+          float: right;
           
           img {
             width: 68px;
+            @include mobile() {
+              width: 48px;
+            }
             margin: 5px;
             vertical-align: middle;
             display: inline;
