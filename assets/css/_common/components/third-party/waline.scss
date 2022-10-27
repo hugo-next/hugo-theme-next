@@ -2,16 +2,13 @@
   .wl-actions>button:nth-child(3) {
     display: none
   }
-
-  .wl-reaction-img {
-    @include mobile() {
-      width: 24px;
-      height: 24px;
+  
+  @include mobile() {
+    .wl-reaction-img {   
+      width: 32px;
+      height: 32px;    
     }
-  }
-
-  .wl-reaction-votes {
-    @include mobile() {
+    .wl-reaction-votes {
       padding: 0.85px;
       font-weight: 500;
       font-size: .65em;

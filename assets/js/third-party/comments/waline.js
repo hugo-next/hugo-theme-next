@@ -33,7 +33,7 @@ NexT.plugins.comments.waline = function() {
   NexT.utils.lazyLoadComponent(element, function () {    
     NexT.utils.getScript(waline_js, function(){
       const waline_css = NexT.utils.getCDNResource(NexT.CONFIG.waline.css);
-      NexT.utils.getStyle(waline_css);
+      NexT.utils.getStyle(waline_css, 'before');
 
       Waline.init({
         locale,

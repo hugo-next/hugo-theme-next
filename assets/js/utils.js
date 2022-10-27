@@ -515,13 +515,19 @@ NexT.utils = {
     });
   },
 
-  getStyle: function (src, parent) {
+  getStyle: function (src, position='after', parent) {
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('type', 'text/css');
     link.setAttribute('href', src);
 
-    (parent || document.head).appendChild(link);
+    const head = (parent || document.head);
+    console.log(head)
+    if (position === 'before') {
+      head.prepend(link);
+    } else {
+      head.append(link);
+    }
   },
 
   getScript: function (src, options = {}, legacyCondition) {
@@ -579,27 +585,6 @@ NexT.utils = {
   lazyLoadComponent: function(selector, legacyCallback) {
     if (legacyCallback) {
       return this.lazyLoadComponent(selector).then(legacyCallback);
-    }
-    return new Promise(resolve => {
-      const element = document.querySelector(selector);
-      if (!element) {
-        resolve();
-        return;
-      }
-      const intersectionObserver = new IntersectionObserver((entries, observer) => {
-        const entry = entries[0];
-        if (!entry.isIntersecting) return;
-
-        resolve();
-        observer.disconnect();
-      });
-      intersectionObserver.observe(element);
-    });
-  },
-
-  loadComments: function (selector, legacyCallback) {
-    if (legacyCallback) {
-      return this.loadComments(selector).then(legacyCallback);
     }
     return new Promise(resolve => {
       const element = document.querySelector(selector);
