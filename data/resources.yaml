@@ -10,6 +10,9 @@ js:
   - name: animejs
     version: 3.2.1
     file: lib/anime.min.js
+  - name: viewerjs
+    version: 1.11.0
+    file: dist/viewer.min.js
 
 # CSS 资源
 # CSS Resources
@@ -21,6 +24,9 @@ css:
   - name: animate.css
     version: 3.1.1
     file: animate.min.css
+  - name: viewerjs
+    version: 1.11.0
+    file: dist/viewer.min.css
 
 # 第三方服务组件资源
 # 3rd servcies Resource

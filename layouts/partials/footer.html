@@ -45,7 +45,7 @@
   {{- range .list }}
     <a target="_blank" href="{{ .link }}" title="{{ .name }}">
       {{- if .image }}        
-        <img src="{{ .image.url }}" alt="{{ .name }}" />
+        <img src="/imgs/img-lazy-loading.gif" data-src="{{ .image.url }}" alt="{{ .name }}" />
       {{- else }}
         {{ .name }}
       {{- end }}

@@ -17,6 +17,7 @@
 
 NexT.boot.registerEvents = function() {
 
+  NexT.utils.registerImageLoadEvent();
   NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();
   NexT.utils.registerToolButtons();
@@ -63,6 +64,7 @@ NexT.boot.refresh = function() {
   } else {
     NexT.utils.hideCommontes();
   }
+  NexT.utils.registerImageViewer();
 
   //TODO
    /**
