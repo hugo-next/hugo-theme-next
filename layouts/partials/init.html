@@ -127,6 +127,11 @@
 {{ $config = merge $config (dict "lawidget" $lawidget) }}
 {{ end }}
 
+{{ with .Site.Params.analytics.busuanzi }}
+{{ $busz := dict "pageview" .postViews }}
+{{ $config = merge $config (dict "busuanzi" $busz) }}
+{{ end }}
+
 {{ $globalVars.Set "config" $config }}
 
 {{ with .Site.Params.customFilePath }}

@@ -109,5 +109,12 @@ plugins:
       name: mermaid
       version: 9.1.7
       file: dist/mermaid.min.js
+  # 文章访问统计
+  waline:
+    js:
+      name: '@waline/client'
+      version: 2.11.3
+      file: dist/pageview.js
+      alias: waline
 
 

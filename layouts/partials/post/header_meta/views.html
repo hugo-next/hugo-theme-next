@@ -2,9 +2,6 @@
 {{- if .Site.Params.leancloudVisitors.enable }}
 {{- $pageViewId = "leancloud-visitors-count" }}  
 {{- end }}
-{{- if .Site.Params.waline.pageView }}
-{{- $pageViewId = "waline-pageview-count" }}
-{{- end }}
 {{- if .Site.Params.analytics.busuanzi.postViews }}
 {{- $pageViewId = "busuanzi_value_page_pv" }}
 {{- end }}
@@ -15,5 +12,7 @@
   <span class="post-meta-item-text">
   {{ print (T "PostViews") (T "SymbolColon") }}
   </span>
-  <span id="{{ $pageViewId }}" data-path="{{ .RelPermalink | relLangURL }}"><i class="fa fa-sync fa-spin"></i></span>
+  <span {{ with $pageViewId }}id="{{ . }}"{{end}} {{ with .Site.Params.waline.pageView }}class="waline-pageview-count"{{end}} data-path="{{ .RelPermalink | relLangURL }}">
+    <i class="fa fa-sync fa-spin"></i>
+  </span>
 </span>

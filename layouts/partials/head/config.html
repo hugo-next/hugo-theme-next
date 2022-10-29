@@ -7,6 +7,14 @@
   "title"     .Page.Title
 -}}
 
+{{/* Append waline pageview plugin */}}
+{{ if and .Site.Params.waline .Site.Params.waline.pageView }}
+{{ $pageview := dict
+  "js"  .Site.Data.resources.plugins.waline.js
+}}
+{{ $pageCfg = merge $pageCfg (dict "pageview" $pageview) }}
+{{ end }}
+
 {{/* Append mermaid plugin */}}
 {{ if .Params.mermaid }}
 {{ $mermaid := dict
