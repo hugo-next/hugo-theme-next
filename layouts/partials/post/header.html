@@ -27,8 +27,10 @@
     {{ partial "post/header_meta/created_date.html" . }}
     {{ partial "post/header_meta/update_date.html" . }}
     {{ partial "post/header_meta/categories.html" . }}
-    {{ if and $.IsHome (not (isset .Params "extlink")) }}
+    {{ if .Site.Params.waline.pageView }}
+      {{ if and $.IsHome (not (isset .Params "extlink")) }}
       {{ partial "post/header_meta/views.html" . }}
+    {{ end }}
     {{ end }}
   </div>
   {{- if not $.IsHome }}
