@@ -3,6 +3,8 @@
 vendors: 
   cdnjs: "https://cdnjs.cloudflare.com/ajax/libs"
   unpkg: "https://unpkg.com"
+  bootcdn: "https://cdn.bootcdn.net/ajax/libs"
+  qiniu: "https://cdn.staticfile.org"
 
 # JavaScript 资源
 # JavaScript Resources
@@ -82,11 +84,11 @@ livere:
 # Full text search
 algolia:
   name: algoliasearch
-  version: 4.13.0
+  version: 4.14.2
   file: dist/algoliasearch-lite.umd.js
 instant:
   name: instantsearch.js
-  version: 4.40.5
+  version: 4.49.0
   file: dist/instantsearch.production.min.js
 
 plugins:

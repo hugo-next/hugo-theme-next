@@ -8,7 +8,7 @@
 {{ end }}   
 {{- $file := .res.file }}
 
-{{- if eq .vendor "cdnjs" }}
+{{- if ne .vendor "unpkg" }}
   {{- with .res.alias }}
     {{- $npm = . }}
   {{- end }}   

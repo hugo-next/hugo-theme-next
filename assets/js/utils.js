@@ -221,8 +221,13 @@ NexT.utils = {
     let res_src = '';
     switch (plugins) {
       case 'cdnjs':
+      case 'bootcdn':
+      case 'qiniu':
         let cdnjs_name = alias || name;
-        let cdnjs_file = file.replace(/\.js$/, '.min.js').replace(/^(dist|lib|source\/js|)\/(browser\/|)/, '');
+        let cdnjs_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
+        if (cdnjs_file.indexOf('min') == -1) {          
+          cdnjs_file = cdnjs_file.replace(/\.js$/, '.min.js');
+        }
         res_src = `${router}/${cdnjs_name}/${version}/${cdnjs_file}`
         break;
       default:
