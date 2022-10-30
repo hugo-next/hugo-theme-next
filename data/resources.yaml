@@ -50,12 +50,12 @@ addthis:
 waline:
   js:
     name: '@waline/client'
-    version: 2.11.3
+    version: 2.13.0
     file: dist/waline.js
     alias: waline
   css:
     name: '@waline/client'
-    version: 2.11.3
+    version: 2.13.0
     file: dist/waline.css
     alias: waline
 
@@ -119,7 +119,7 @@ plugins:
   waline:
     js:
       name: '@waline/client'
-      version: 2.11.3
+      version: 2.13.0
       file: dist/pageview.js
       alias: waline
 
