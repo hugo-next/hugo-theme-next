@@ -1,6 +1,8 @@
 {{- range $k, $v := (partialCached "init.html" .) -}}
-  {{- $.Scratch.Set $k $v -}}
+{{- $.Scratch.Set $k $v -}}
 {{- end -}}
+{{ $commentEnable := .Params.comment.enable | default .Site.Params.comments.enable }}
+{{ .Scratch.Set "isComment" $commentEnable }}
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}" data-theme="{{ .Scratch.Get "theme" }}">
 
@@ -29,7 +31,7 @@
     <div class="main-inner {{ block "main_inner_class" . }}{{ end }}">
       <!-- Submenu,Content,Comment -->
       {{- block "main" . }}{{- end }}
-      {{- if .IsPage }}
+      {{- if and .IsPage $commentEnable }}
         {{- partialCached "comments.html" . }}
       {{- end }}
     </div>

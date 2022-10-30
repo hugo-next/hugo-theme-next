@@ -32,7 +32,7 @@
       {{ if .Site.Params.waline.pageView }}
         {{ partial "post/header_meta/views.html" . }}
       {{ end }}
-      {{ if .Site.Params.waline.comment }}
+      {{ if and (.Scratch.Get "isComment") .Site.Params.waline.comment }}
         {{ partial "post/header_meta/comments.html" . }}
       {{ end }}
     </div>
@@ -43,7 +43,7 @@
     {{ partial "post/header_meta/words.html" . }}
     {{ partial "post/header_meta/readtime.html" . }}
     {{ partial "post/header_meta/views.html" . }}
-    {{ if .Site.Params.waline.comment }}
+    {{ if and (.Scratch.Get "isComment") .Site.Params.waline.comment }}
     {{ partial "post/header_meta/comments.html" . }}
     {{ end }}
   </div>
