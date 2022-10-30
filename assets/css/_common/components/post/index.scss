@@ -42,6 +42,7 @@
   }
 }
 
+@if $toc_number {
 .autonumber {
   h2 {
     counter-reset: h3;
@@ -66,6 +67,7 @@
       content: counter(h2) "." counter(h3) "." counter(h4) ". ";
     }
   }
+}
 } 
 
 @import 'post-collapse';

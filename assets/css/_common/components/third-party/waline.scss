@@ -2,4 +2,17 @@
   .wl-actions>button:nth-child(3) {
     display: none
   }
+  
+  @include mobile() {
+    .wl-reaction-img {   
+      width: 28px;
+      height: 28px;    
+    }
+    .wl-reaction-votes {
+      padding: 0.85px;
+      font-weight: 500;
+      font-size: .65em;
+      line-height: .85;
+    }
+  }
 }

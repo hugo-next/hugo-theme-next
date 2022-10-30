@@ -114,6 +114,24 @@
 {{ $config = merge $config (dict "addthis" $addthis) }}
 {{ end }}
 
+{{ with .Site.Params.siteState.statistic }}
+{{ $statis := dict "statis" . }}
+{{ $config = merge $config $statis }}
+{{ end }}
+
+{{ with .Site.Params.analytics.laId }}
+{{ $lawidget := dict
+  "js" $.Site.Data.resources.analytics.laWidget
+  "id" .
+}}
+{{ $config = merge $config (dict "lawidget" $lawidget) }}
+{{ end }}
+
+{{ with .Site.Params.analytics.busuanzi }}
+{{ $busz := dict "pageview" .postViews }}
+{{ $config = merge $config (dict "busuanzi" $busz) }}
+{{ end }}
+
 {{ $globalVars.Set "config" $config }}
 
 {{ with .Site.Params.customFilePath }}
@@ -121,5 +139,11 @@
     {{ $globalVars.Set $k $v }}
   {{ end }}
 {{ end }}
+
+{{ $theme := "light" }}
+{{ if .Site.Params.darkmode }}
+  {{ $theme = "dark" }}
+{{ end }}
+{{ $globalVars.Set "theme" $theme }}
 
 {{ return $globalVars.Values }}

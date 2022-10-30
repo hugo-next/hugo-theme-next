@@ -8,7 +8,21 @@
   </span>
 </div>
 <div class="search-result-container">
-  <div class="algolia-stats"><hr></div>
   <div class="algolia-hits"></div>
+</div>
+<div class="search-footer">
   <div class="algolia-pagination"></div>
+  <div class="search-meta-info">
+    <div class="search-hit-stats algolia-stats"></div>
+    <div class="search-vendor">
+      <span>Search By</span>
+      {{ $domain := .Site.Data.config.domain }}
+      {{ if and .Site.BaseURL (ne .Site.BaseURL '/') }}
+        {{ $domain = .Site.BaseURL }} 
+      {{ end }}
+      <a title="Algolia" target="_blank" href="https://www.algolia.com/?utm_source=instantsearch.js&utm_medium=website&utm_content={{ (urls.Parse $domain).Host }}&utm_campaign=poweredby">
+        <img src="/imgs/algolia-logo.svg"/>
+      </a>
+    </div>
+  </div>
 </div>

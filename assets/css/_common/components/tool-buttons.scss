@@ -2,9 +2,12 @@
 
   @include sidebar-toggle();
   background: none;
-  bottom: 55px;
+  bottom: 58px;
   filter: alpha(opacity=0);
-  font-size: 12px;
+  font-size: $font-size-smaller;
+  @include mobile() {
+    font-size: $font-size-smallest;
+  }
 
   .button {
     display: block;
@@ -15,7 +18,6 @@
     background-color: $tool-btn-bg;
     color: $tool-btn-color;
     text-align: center;
-    font-size: $font-size-larger;
     line-height: 35px;
     padding: 0;
     outline: 0;
@@ -25,6 +27,13 @@
     opacity: $tool-btn-opacity;
     touch-action: manipulation;
 
+    @include mobile() {
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      border-radius: 3px;
+    }
+
     &:hover {
       color: $tool-btn-hover-fore-color;
       opacity: $tool-btn-opacity-hover;
@@ -32,7 +41,7 @@
   }
 
   .goto-comments {
-      display: none;
+    display: none;
   }
 
   .goto-comments-on {
@@ -42,7 +51,6 @@
 
 @if $back2top_enable {
   .back-to-top {
-    font-size: $font-size-smaller;
 
     @if not $back2top_scrollpercent {
       span {
@@ -51,7 +59,7 @@
     }
 
     @if $back2top_sidebar {
-      margin: 20px - $sidebar-offset -10px -20px;
+      margin: 20px -$sidebar-offset -10px -20px;
       opacity: 0;
       transition: opacity $transition-ease;
 

@@ -1,15 +1,2 @@
-{{ partialCached "scripts/global.html" . }}
-
-{{ if or .Params.math .Site.Params.math }}
-  {{ partialCached "_thirdparty/others/math.html" . }}
-{{ end }}
-
-{{ if .Params.mermaid }}
-  {{ partialCached "_thirdparty/others/mermaid.html" . }}
-{{ end }}
-
-
-
-
-
-
+{{- partialCached "scripts/global.html" . -}}
+{{- partial "scripts/plugins.html" . -}}

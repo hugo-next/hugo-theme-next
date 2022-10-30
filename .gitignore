@@ -20,9 +20,11 @@ exampleSite/content/**/
 
 # Exclude special files
 !exampleSite/config.yaml
-!exampleSite/start.sh
+!exampleSite/startup.sh
 
 data/*
 !data/config.yaml
 !data/resources.yaml
 
+# vscode
+.vscode/

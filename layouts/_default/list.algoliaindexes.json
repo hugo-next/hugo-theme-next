@@ -2,9 +2,10 @@
   {{- range $index, $entry := where .Site.RegularPages "Kind" "page" }}
   {{- if $index }}, {{ end }}
   {
+    "objectID": "{{ .Date.Unix }}",
     "permalink": "{{ .Permalink | relURL }}",
     "title": {{ .Title | jsonify }},
-    "content": {{ .Plain | jsonify }},
+    "content": {{ .Plain | jsonify | safeJS }},
     "date": {{ .Date.Format $.Site.Params.timeFormat | jsonify }},
     "updated": {{ .Lastmod.Format $.Site.Params.timeFormat | jsonify }}
   }

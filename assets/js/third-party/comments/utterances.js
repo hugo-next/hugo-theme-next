@@ -1,8 +1,7 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+/* Utterances comment plugin */
+NexT.plugins.comments.utterances = function() {
   const element = '.utterances-container';
-  if (!NexT.CONFIG.page.comments 
-    || !NexT.CONFIG.utterances
+  if (!NexT.CONFIG.utterances
     || !NexT.utils.checkDOMExist(element)) return;
 
   const { 
@@ -11,17 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
     label, 
     theme } = NexT.CONFIG.utterances.cfg;
 
-  NexT.utils.loadComments(element)
-    .then(() => NexT.utils.getScript(NexT.CONFIG.utterances.js, {
+  NexT.utils.lazyLoadComponent(element, function() {
+    NexT.utils.getScript(NexT.CONFIG.utterances.js, {
       attributes: {
         'async'       : true,
         'crossorigin' : 'anonymous',
         'repo'        : repo,
         'issue-term'  : issueterm,
+        'label'       : label,
         'theme'       : theme
       },
       parentNode: document.querySelector(element)
-    }));
+    });
 
     NexT.utils.hiddeLodingCmp(element);
-});
+  }); 
+}

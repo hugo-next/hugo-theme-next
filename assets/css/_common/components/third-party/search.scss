@@ -24,7 +24,7 @@
   .search-popup {
     background: var(--card-bg-color);
     border-radius: 5px;
-    height: 80%;
+    height: 65%;
     margin: auto;
     transform: scale(0);
     transition: transform .4s;
@@ -55,12 +55,7 @@
     }
 
     .search-header {
-      background: $gainsboro;
-      @if $darkmode {
-        @media (prefers-color-scheme: dark) {
-          background: $grey-dim;
-        }
-      }
+      background: var(--content-bg-color);      
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
       display: flex;
@@ -72,6 +67,7 @@
       border: 0;
       outline: 0;
       width: 100%;
+      color: var(--text-color);
 
       &::-webkit-search-cancel-button {
         display: none;
@@ -81,15 +77,46 @@
     .search-result-container {
       height: calc(100% - 55px);
       overflow: auto;
-      padding: 5px 25px;
+      padding: 0px 25px;
+    }
 
-      hr {
-        margin: 5px 0 10px;
+    .search-footer {
+      background: var(--content-bg-color);
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      padding: 0 5px;
+      color: var(--text-color);
 
-        &:first-child {
-          display: none;
+      .search-meta-info {
+        height: 26px;
+        display: flex;
+        padding: 5px 0;
+        
+        .search-hit-stats {
+          font-size: $font-size-smaller;
+          width: 65%;
+          padding: 2px 8px;
+        }
+
+        .search-vendor {
+          width: 34%;
+          text-align: right;
+          font-size: $font-size-small;
+          font-weight: bold;
+          
+          img {
+            width: 68px;
+            margin: 5px;
+            vertical-align: middle;
+            display: inline;
+          } 
+
+          a {
+            border: none;
+          }     
         }
       }
+
     }
 
     .search-result-list {
@@ -137,9 +164,16 @@
 
   .algolia-pagination {
     // Override default style of ul
-    margin: 40px 0;
+    //margin: 40px 0;
     opacity: 1;
     padding: 0;
+    font-size: $font-size-smallest;
+    margin-bottom: -16px;
+
+    .pagination {
+      visibility: visible;
+      margin: 0;
+    }
 
     .pagination-item {
       display: inline-block;

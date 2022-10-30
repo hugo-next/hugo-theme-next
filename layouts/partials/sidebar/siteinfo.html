@@ -1,5 +1,5 @@
 {{ $scratch := partialCached "_funs/cal_siteinfo.html" . }}
-<div class="sidebar-card-widget">
+<div id="siteinfo-card-widget" class="sidebar-card-widget">
   <div class="item-headline">
     <i class="fas fa-chart-line"></i>
     <span>{{ T "SiteInfoItems.title" }}</span>
@@ -15,43 +15,41 @@
         <div class="item-name">
           <i class="fas {{ .visitorsIcon }}"></i>{{ T "SiteInfoItems.visitors" }}
         </div>
-        <div class="item-count" id="busuanzi_value_site_uv"></div>
+        <div class="item-count" id="busuanzi_value_site_uv"><i class="fa fa-sync fa-spin"></i></div>
       </div>
       <div class="siteinfo-item">
         <div class="item-name">
           <i class="fas {{ .viewsIcon }}"></i>{{ T "SiteInfoItems.pageViews" }}
         </div>
-        <div class="item-count" id="busuanzi_value_site_pv"></div>
+        <div class="item-count" id="busuanzi_value_site_pv"><i class="fa fa-sync fa-spin"></i></div>
       </div>
       {{- end }}  
     {{- end }}    
     {{- if eq .Site.Params.siteState.statistic.plugin "51la" }}
-    <div id="la-siteinfo-widget" style="display: none;">
-      <script id="LA-DATA-WIDGET" crossorigin="anonymous" charset="UTF-8" src="{{ replace .Site.Data.resources.analytics.laWidget "laId" .Site.Params.analytics.laId }}"></script>
-    </div>
+    <div id="la-siteinfo-widget" style="display: none;"></div>
     <div class="siteinfo-item">
       <div class="item-name">
         <i class="fa fa-user-plus"></i>{{ T "SiteInfoItems.todayViews" }}
       </div>
-      <div class="item-count" id="today_site_pv"></div>
+      <div class="item-count" id="today_site_pv"><i class="fa fa-sync fa-spin"></i></div>
     </div>
     <div class="siteinfo-item">
       <div class="item-name">
         <i class="fa fa-user-clock"></i>{{ T "SiteInfoItems.yesterdayViews" }}
       </div>
-      <div class="item-count" id="yesterday_site_pv"></div>
+      <div class="item-count" id="yesterday_site_pv"><i class="fa fa-sync fa-spin"></i></div>
     </div>
     <div class="siteinfo-item">
       <div class="item-name">
         <i class="fa fa-arrows-down-to-people"></i>{{ T "SiteInfoItems.monthViews" }}
       </div>
-      <div class="item-count" id="month_site_pv"></div>
+      <div class="item-count" id="month_site_pv"><i class="fa fa-sync fa-spin"></i></div>
     </div>
     <div class="siteinfo-item">
       <div class="item-name">
         <i class="fa fa-users"></i>{{ T "SiteInfoItems.totalViews" }}
       </div>
-      <div class="item-count" id="total_site_pv"></div>
+      <div class="item-count" id="total_site_pv"><i class="fa fa-sync fa-spin"></i></div>
     </div>
     {{- end }}
     <div class="siteinfo-item">

@@ -1,15 +1,17 @@
 <div class="tool-buttons" >
-  <a id="goto-comments" class="button goto-comments" href="#comments"  title="{{ T "ToolBtns.comment" }}">
+  {{ if .Scratch.Get "isComment" }}
+  <div id="goto-comments" class="button goto-comments" title="{{ T "ToolBtns.comment" }}">
     <i class="fas fa-comments"></i>
-  </a> 
-  <div id="switch-theme" class="button" title="{{ T "ToolBtns.theme" }}">
-    <i class="fas fa-adjust"></i>
-  </div> 
+  </div>
+  {{ end }}  
   {{ if .Site.Params.footer.translate }}
-  <a class="button" href="#google_translate_element"  title="{{ T "ToolBtns.lang" }}">
+  <div id="goto-gtranslate" class="button"  title="{{ T "ToolBtns.lang" }}">
     <i class="fas fa-globe"></i>
-  </a> 
+  </div> 
   {{ end }}
+  <div id="toggle-theme" class="button" title="{{ T "ToolBtns.theme" }}">
+    <i class="fas fa-adjust"></i>
+  </div>
   {{- if and .Site.Params.backTop.enable (not .Site.Params.backTop.sidebar) }}
   <div class="back-to-top" role="button" title="{{ T "ToolBtns.backTop" }}">
     <i class="fa fa-arrow-up"></i>

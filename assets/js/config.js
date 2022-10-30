@@ -1,4 +1,52 @@
-if (!window.NexT) window.NexT = {};
+/* global NexT, boot, CONFIG */
+window.NexT = {};
+NexT.boot = {};
+NexT.plugins = {};
+
+// Defined comment component & add register event
+NexT.plugins.comments = {};
+NexT.plugins.comments.register = function() {
+  if (!NexT.CONFIG.page.comments) return;
+  for(var c in NexT.plugins.comments) { 
+    if (c === 'register') continue;
+    eval('NexT.plugins.comments.'+c)();
+  };
+}
+
+// Defined search engine & add register event
+NexT.plugins.search = {}
+NexT.plugins.search.register = function() {
+  for(var s in NexT.plugins.search) { 
+    if (s === 'register') continue;
+    eval('NexT.plugins.search.'+s)();
+  };
+}
+
+// Defined share plugin & add register event
+NexT.plugins.share = {}
+NexT.plugins.share.register = function() {
+  for(var s in NexT.plugins.share) { 
+    if (s === 'register') continue;
+    eval('NexT.plugins.share.'+s)();
+  };
+}
+
+// Defined other plugin & add register event
+NexT.plugins.others = {}
+NexT.plugins.others.register = function() {
+  for(var o in NexT.plugins.others) { 
+    if (o === 'register') continue;
+    eval('NexT.plugins.others.'+o)();
+  };
+}
+
+// Add event to register all third party plugins
+NexT.plugins.register = function() {
+  for(var p in NexT.plugins) {
+    if (p === 'register') continue;
+    eval('NexT.plugins.'+p+'.register')();
+  }
+};
 
 (function() {
   const className = 'next-config';

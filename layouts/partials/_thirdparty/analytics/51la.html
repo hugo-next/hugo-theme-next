@@ -1,17 +1,17 @@
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', () => {
-    var script = document.createElement('script');
-      
-    script.charset = "UTF-8";
-    script.id      = "LA_COLLECT";
-    script.src     = "{{ .Site.Data.resources.analytics.la }}";
-    script.async   = "true"
-    script.onload = function() {
-    {{ with .Site.Params.analytics.laId }}
-      LA.init({ id: "{{ . }}",ck: "{{ . }}", autoTrack:true });
-    {{ end }}
-    }
+document.addEventListener('DOMContentLoaded', () => {
+  var script = document.createElement('script');
+    
+  script.charset = "UTF-8";
+  script.id      = "LA_COLLECT";
+  script.src     = "{{ .Site.Data.resources.analytics.la }}";
+  script.async   = "true"
+  script.onload = function() {
+  {{ with .Site.Params.analytics.laId }}
+    LA.init({ id: "{{ . }}",ck: "{{ . }}", autoTrack:true });
+  {{ end }}
+  }
 
-    document.head.appendChild(script);
-  });
+  document.head.appendChild(script);
+});
 </script>

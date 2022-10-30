@@ -1,17 +1,9 @@
+{{/* Defind loading plugin scripts which only need in pages */}}
 
-{{- $vendor := .vendor }}
-{{- $router := .router }}
-{{- $res := (index .res .index)  }}
-{{- $cssRes := $res.css }}
-{{ if $cssRes }}
-  {{ range $cssRes }}
-    {{ $css := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
-    <link type="text/css" rel="stylesheet" href="{{ $css }}"/>
-  {{ end }}
-{{ end }}
-{{- $jsRes := $res.js }}
-{{ range $jsRes }}
-  {{ $js := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
-  <script type="text/javascript" src="{{ $js }}"></script>
+{{ if or .Params.math .Site.Params.math }}
+  {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "math.js") }}
 {{ end }}
 
+{{ if .Params.mermaid }}
+  {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "mermaid.js") }}
+{{ end }}

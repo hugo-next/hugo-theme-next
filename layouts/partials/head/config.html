@@ -1,10 +1,40 @@
-<script class="next-config" data-name="page" type="application/json">
-{{- dict
+{{- $pageCfg := dict
   "isHome"    .IsHome
   "isPage"    .IsPage
-  "comments"  (.Params.comments | default .Site.Params.comments.enable)
+  "comments"  (.Scratch.Get "isComment")
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
 -}}
-</script>
+
+{{/* Append waline pageview & comment plugin */}}
+{{ if and .Site.Params.waline ( or .Site.Params.waline.pageView .Site.Params.waline.comment) }}
+{{ $counter := dict
+  "js"  .Site.Data.resources.plugins.waline.js
+}}
+{{ $pageCfg = merge $pageCfg (dict "waline" $counter) }}
+{{ end }}
+
+{{/* Append mermaid plugin */}}
+{{ if .Params.mermaid }}
+{{ $mermaid := dict
+  "js"  .Site.Data.resources.plugins.mermaid.js
+}}
+{{ $pageCfg = merge $pageCfg (dict "mermaid" $mermaid) }}
+{{ end }}
+
+{{/* Append math render plugin */}}
+{{ with or .Params.math .Site.Params.math }}
+{{ $math := dict
+  "render" .
+  "js"  (index $.Site.Data.resources.plugins .).js
+}}
+
+{{ if eq . "katex" }}
+  {{ $math = merge $math ( dict "css" $.Site.Data.resources.plugins.katex.css ) }}
+{{ end }}
+
+{{ $pageCfg = merge $pageCfg (dict "math" $math) }}
+{{ end }}
+
+<script class="next-config" data-name="page" type="application/json">{{- $pageCfg -}}</script>

@@ -2,6 +2,10 @@
   font-size: $font-size-small;
   padding: 0 8px;
 
+  .active-current {
+    color: $orange;
+  }
+
   ul {
 
     list-style: none;
@@ -15,22 +19,22 @@
 
       > ul {
         border-left: 1px solid;
-        margin-left: 6px;
+        margin-left: 4px;
 
         li {
           position: relative;
           padding-left: 0;
-
+          
           &:before {
             position: absolute;
             content: ' ';
             top: 0.14em;
             left: -0.75em;
-            width: 0.68em;
+            width: 0.65em;
             height: 0.815em;
             border-style: none none dashed none;
             border-width: 0.05em;
-          }
+          }          
         }
       }
 
@@ -42,10 +46,11 @@
     a {
       transition: all $transition-ease;
       border: none;
-
-      &:before {
-        content: counters(item, ".") ". ";
-        counter-increment: item;
+      @if $toc_number {
+        &:before {
+          content: counters(item, ".") ". ";
+          counter-increment: item;
+        }
       }
 
       &:hover {

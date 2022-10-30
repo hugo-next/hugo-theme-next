@@ -1,15 +1,28 @@
-/* global NexT, CONFIG */
+/* boot starup */
 
-NexT.boot = {};
+(function () {
+  const onPageLoaded = () => document.dispatchEvent(
+    new Event('page:loaded', {
+      bubbles: true
+    })
+  );
 
-NexT.boot.activeThemeMode = function(){
-  NexT.utils.activeThemeMode();
-};
+  if (document.readyState === 'loading') {
+    document.addEventListener('readystatechange', onPageLoaded, { once: true });
+  } else {
+    onPageLoaded();
+  }
+  document.addEventListener('pjax:success', onPageLoaded);
+})();
 
 NexT.boot.registerEvents = function() {
 
+  NexT.utils.registerImageLoadEvent();
   NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();
+  NexT.utils.registerToolButtons();
+  // Register comment's components
+  NexT.plugins.register();
 
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
@@ -37,14 +50,11 @@ NexT.boot.registerEvents = function() {
 
 NexT.boot.refresh = function() {
 
-  NexT.utils.calSiteInfo();
-  NexT.utils.regSwitchThemeBtn();
+  NexT.utils.fmtSiteInfo();
 
   if (!NexT.CONFIG.page.isPage) return;
  
   NexT.utils.registerSidebarTOC();
-
-  NexT.utils.replacePostCRLink();
   NexT.utils.registerCopyCode();
   NexT.utils.registerPostReward();
   if(NexT.CONFIG.page.comments) {    
@@ -54,6 +64,7 @@ NexT.boot.refresh = function() {
   } else {
     NexT.utils.hideCommontes();
   }
+  NexT.utils.registerImageViewer();
 
   //TODO
    /**
@@ -88,7 +99,6 @@ NexT.boot.motion = function() {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  NexT.boot.activeThemeMode();
   NexT.boot.registerEvents();
   NexT.boot.motion();
   NexT.boot.refresh();

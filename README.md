@@ -112,10 +112,12 @@ tags:
 #expand: true
 # It's means that will redirecting to external links
 #extlink:
-# Switch to enabled or disabled comment plugins in this post
+# Disabled comment plugins in this post
 #comment:
 # enable: false
-# Enable table of content
+# Disable table of content int this post
+# Notice: By default will automatic build table of content 
+# with h2-h4 title in post and without other settings
 #toc: false
 # Absolute link for visit
 #url: "{{ lower .Name }}.html"

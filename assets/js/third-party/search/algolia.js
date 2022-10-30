@@ -1,12 +1,11 @@
-/* global instantsearch, algoliasearch, CONFIG, pjax */
+/* Algolia search engine */
+NexT.plugins.search.algolia = function() {
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  const algoiajs = NexT.utils.getCDNResource(NexT.CONFIG.algolia.js);
+  const algoliajs = NexT.utils.getCDNResource(NexT.CONFIG.algolia.js);
   const instantschjs = NexT.utils.getCDNResource(NexT.CONFIG.algolia.instantjs);
 
-  NexT.utils.getScript(algoiajs, {});
-  NexT.utils.getScript(instantschjs, {}).then(() => {
+  NexT.utils.getScript(algoliajs);
+  NexT.utils.getScript(instantschjs, function() {
     
     const { indexname, appid, apikey, hits } = NexT.CONFIG.algolia.cfg;
     const indexName = indexname;
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const stats = NexT.CONFIG.i18n.hits_time
               .replace('${hits}', data.nbHits)
               .replace('${time}', data.processingTimeMS);
-            return `<span>${stats}</span><img src="/imgs/algolia-logo.svg" alt="Algolia">`;
+            return `${stats}`;
           }
         },
         cssClasses: {
@@ -138,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         onPopupClose();
       }
     });
-  });;
+  });
 
-
-});
+}

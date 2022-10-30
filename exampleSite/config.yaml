@@ -39,10 +39,6 @@ markup:
     renderer:
       unsafe: true
   highlight:
-    # codeFences: true
-    # lineNos: true
-    # lineNumbersInTable: true
-    # noClasses: true
     # # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
     # # 更多的样式：https://xyproto.github.io/splash/docs/all.html
     # # Highlight style: monokai | emacs | api | dracula | friendly
@@ -107,6 +103,7 @@ enableRobotsTXT: true
 # 强制输出时压缩文件
 # Compress all files when output
 minify:
+  minifyOutput: true
 
 #--------------------------------------
 # 菜单配置说明
@@ -306,7 +303,7 @@ params:
       enable: true
       # 组件类型，可选值为： 51la, busuanzi
       # 使用51la时需要注册账号：https://invite.51.la/1NUfGTS1?target=V6
-      # Plguin value is: 51la, busuzazi
+      # Plguin value is: 51la, busuanzi
       plugin: busuanzi
 
   # 社交链接地址
@@ -813,7 +810,8 @@ params:
   # Waline comments system
   # More info seee: https://waline.js.org/
   waline:
-    pageView: '#waline-pageview-count'
+    pageView: true
+    comment: true
     placeholder: "请文明发言哟 ヾ(≧▽≦*)o"
     sofa: "快来发表你的意见吧 (≧∀≦)ゞ"
     emoji: false
@@ -1095,14 +1093,15 @@ params:
   # ---------------------------------------------------------------
 
   vendors:
+    vendors:
     # The CDN provider of NexT internal scripts.
-    # Available values: local | unpkg | cdnjs | custom
+    # Available values: local | unpkg | cdnjs | qiniu | bootcdn | custom
     # Warning: If you are using the latest master branch of NexT, please set `internal: local`
     internal: local
     # The default CDN provider of third-party plugins.
-    # Available values: local | unpkg | cdnjs | custom
+    # Available values: local | unpkg | cdnjs| qiniu | bootcdn | custom
     # Dependencies for `plugins: local`: https://github.com/next-theme/plugins
-    plugins: unpkg
+    plugins: qiniu
     # TODO
     # Custom CDN URL
     # For example:
