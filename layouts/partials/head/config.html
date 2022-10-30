@@ -7,12 +7,12 @@
   "title"     .Page.Title
 -}}
 
-{{/* Append waline pageview plugin */}}
-{{ if and .Site.Params.waline .Site.Params.waline.pageView }}
-{{ $pageview := dict
+{{/* Append waline pageview & comment plugin */}}
+{{ if and .Site.Params.waline ( or .Site.Params.waline.pageView .Site.Params.waline.comment) }}
+{{ $counter := dict
   "js"  .Site.Data.resources.plugins.waline.js
 }}
-{{ $pageCfg = merge $pageCfg (dict "pageview" $pageview) }}
+{{ $pageCfg = merge $pageCfg (dict "waline" $counter) }}
 {{ end }}
 
 {{/* Append mermaid plugin */}}

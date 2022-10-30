@@ -8,15 +8,15 @@ HTMLElement.prototype.wrap = function (wrapper) {
 
 NexT.utils = {
   registerImageLoadEvent: function() {
-    var images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
+    const images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
 			
-    var callback = (entries) => {
+    const callback = (entries) => {
       entries.forEach(item => {
         if (item.intersectionRatio > 0) {
-          var ele = item.target;
-          var imgSrc = ele.getAttribute('data-src');
+          let ele = item.target;
+          let imgSrc = ele.getAttribute('data-src');
           if (imgSrc) {
-            var img = new Image();
+            let img = new Image();
             img.addEventListener('load', function() {
               ele.src = imgSrc;
             }, false);
@@ -28,7 +28,7 @@ NexT.utils = {
       })
     };
       
-    var observer = new IntersectionObserver(callback);
+    const observer = new IntersectionObserver(callback);
     images.forEach(img => {
       observer.observe(img);
     });
@@ -125,7 +125,7 @@ NexT.utils = {
       if (laWidget.length > 0) {
         const valIds = [0, 2, 4, 6];
         const domIds = ['today_site_pv', 'yesterday_site_pv', 'month_site_pv', 'total_site_pv']
-        for (var i in valIds) {
+        for (let i in valIds) {
           let pv = NexT.utils.numberFormat(laWidget[valIds[i]].innerText);
           document.getElementById(domIds[i]).innerText = pv;
         }
@@ -455,7 +455,7 @@ NexT.utils = {
     const comms = document.querySelectorAll('.comment-wrap > div');
     if (comms.length <= 1) return;
     comms.forEach(function (item) {
-      var dis = window.getComputedStyle(item, null).display;
+      let dis = window.getComputedStyle(item, null).display;
       item.style.display = dis;
     });
   },

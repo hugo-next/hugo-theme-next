@@ -93,6 +93,8 @@ PostReadTime:
   other: "{{- .ReadingTime -}}min"
 PostViews:
   other: "Views"
+PostComments:
+  other: "Comments"
 PostTag:
   other: "Tags"
 PostReadMore:

@@ -1,0 +1,11 @@
+<span class="post-meta-item" title="{{ T "PostComments" }}">
+  <span class="post-meta-item-icon">
+    <i class="far fa-comments"></i>
+  </span>
+  <span class="post-meta-item-text">
+  {{ print (T "PostComments") (T "SymbolColon") }}
+  </span>
+  <span {{ with .Site.Params.waline.comment }}class="waline-comment-count"{{end}} data-path="{{ .RelPermalink | relLangURL }}">
+    <i class="fa fa-sync fa-spin"></i>
+  </span>
+</span>

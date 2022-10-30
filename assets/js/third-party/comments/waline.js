@@ -5,6 +5,7 @@ NexT.plugins.comments.waline = function() {
     || !NexT.utils.checkDOMExist(element)) return; 
   
   const {
+    comment,
     emoji, 
     imguploader, 
     pageview, 
@@ -39,6 +40,7 @@ NexT.plugins.comments.waline = function() {
         locale,
         el            : element,
         pageview      : pageview,
+        comment       : comment,
         emoji         : emoji,
         imageUploader : imguploader,
         wordLimit     : wordlimit,

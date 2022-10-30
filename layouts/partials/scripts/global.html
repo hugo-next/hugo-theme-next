@@ -49,9 +49,9 @@
 {{ if isset .Site.Params "waline" }}
 {{ $walinejs := resources.Get "js/third-party/comments/waline.js" }}
 {{ $nextjs = $nextjs | append $walinejs }}
-{{ if .Site.Params.waline.pageView }}
-  {{ $pageviewjs := resources.Get "js/third-party/others/pageview.js" }}
-  {{ $nextjs = $nextjs | append $pageviewjs }}
+{{ if or .Site.Params.waline.pageView .Site.Params.waline.comment }}
+  {{ $counterjs := resources.Get "js/third-party/others/counter.js" }}
+  {{ $nextjs = $nextjs | append $counterjs }}
   {{ end }}
 {{ end }}
 {{ if isset .Site.Params "giscus" }}
