@@ -29,7 +29,7 @@
     {{ partial "post/header_meta/categories.html" . }}
     {{ if and $.IsHome (not (isset .Params "extlink")) }}
     <div class="post-meta-items">
-      {{ if .Site.Params.waline.pageView }}
+      {{ if and (eq .Site.Params.analytis.busuanzi.enable false) .Site.Params.waline.pageView }}
         {{ partial "post/header_meta/views.html" . }}
       {{ end }}
       {{ if and (.Scratch.Get "isComment") .Site.Params.waline.comment }}
