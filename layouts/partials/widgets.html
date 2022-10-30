@@ -1,7 +1,9 @@
 <div class="tool-buttons" >
+  {{ if .Scratch.Get "isComment" }}
   <div id="goto-comments" class="button goto-comments" title="{{ T "ToolBtns.comment" }}">
     <i class="fas fa-comments"></i>
-  </div> 
+  </div>
+  {{ end }}  
   {{ if .Site.Params.footer.translate }}
   <div id="goto-gtranslate" class="button"  title="{{ T "ToolBtns.lang" }}">
     <i class="fas fa-globe"></i>

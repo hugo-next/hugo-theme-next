@@ -27,12 +27,12 @@ tags:
 # 外部链接地址，访问时直接跳转
 # It's means that will redirecting to external links
 #extlink:
-# 在当前页面开启或关闭评论功能
-# Switch to enabled or disabled comment plugins in this post
+# 在当前页面关闭评论功能
+# Disabled comment plugins in this post
 #comment:
 #  enable: false
-# 开启文章目录功能
-# Enable table of content
+# 关闭文章目录功能
+# Disable table of content
 #toc: false
 # 绝对访问路径
 # Absolute link for visit

@@ -120,10 +120,11 @@ tags:
 #expand: true
 # 外部链接地址，访问时直接跳转
 #extlink:
-# 在当前页面开启或关闭评论功能
+# 在当前页面关闭评论功能
 #comment:
 # enable: false
-# 开启文章目录功能
+# 关闭当前页面目录功能
+# 注意：正常情况下文章中有H2-H4标题会自动生成目录，无需额外配置
 #toc: false
 # 绝对访问路径
 #url: "{{ lower .Name }}.html"
