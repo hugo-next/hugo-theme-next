@@ -22,6 +22,7 @@
   {{- end }}
   {{- end }}
   {{- if $.IsHome }} </h2> {{ else }} </h1> {{ end -}}
+{{ $isComment := and (.Scratch.Get "isComment") .Site.Params.waline.comment }}
 <div class="post-meta-container">
   <div class="post-meta-items">
     {{ partial "post/header_meta/created_date.html" . }}
@@ -29,10 +30,10 @@
     {{ partial "post/header_meta/categories.html" . }}
     {{ if and $.IsHome (not (isset .Params "extlink")) }}
     <div class="post-meta-items">
-      {{ if and (eq .Site.Params.analytis.busuanzi.enable false) .Site.Params.waline.pageView }}
+      {{ if .Site.Params.waline.pageView }}
         {{ partial "post/header_meta/views.html" . }}
       {{ end }}
-      {{ if and (.Scratch.Get "isComment") .Site.Params.waline.comment }}
+      {{ if $isComment }}
         {{ partial "post/header_meta/comments.html" . }}
       {{ end }}
     </div>
@@ -43,7 +44,7 @@
     {{ partial "post/header_meta/words.html" . }}
     {{ partial "post/header_meta/readtime.html" . }}
     {{ partial "post/header_meta/views.html" . }}
-    {{ if and (.Scratch.Get "isComment") .Site.Params.waline.comment }}
+    {{ if $isComment }}
     {{ partial "post/header_meta/comments.html" . }}
     {{ end }}
   </div>
