@@ -172,6 +172,7 @@ List of Donors(Order desc by Date):
 
 | Donation time | Donors | Donation mode | Donation content | Message |
 | :-------: | ------ | ------ | ---- | ---- |
+| 2022.11.15 | f888 | xianyu | ¥6.20 | Good luck. |
 | 2022.09.30 | *軒 | wechat pay | ¥66.66 | Hope it could help more people. |
 | 2022.09.30 | N*l | wechat pay | ¥20.00 | / |
 | 2022.07.09 | *风 | wechat pay | ¥10.00 | / |
