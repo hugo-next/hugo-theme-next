@@ -9,7 +9,7 @@ HTMLElement.prototype.wrap = function (wrapper) {
 NexT.utils = {
   registerImageLoadEvent: function() {
     const images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
-			
+
     const callback = (entries) => {
       entries.forEach(item => {
         if (item.intersectionRatio > 0) {
@@ -27,7 +27,7 @@ NexT.utils = {
         }
       })
     };
-      
+
     const observer = new IntersectionObserver(callback);
     images.forEach(img => {
       observer.observe(img);
@@ -40,7 +40,7 @@ NexT.utils = {
 
   registerToolButtons: function () {
     const buttons = document.querySelector('.tool-buttons');
-    
+
     const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme)');
     scrollbar_buttons.forEach(button => {
       let targetId = button.id;
@@ -52,10 +52,13 @@ NexT.utils = {
       });
     });
 
-    buttons.querySelector('div#toggle-theme').addEventListener('click', () => {
-      const cur_theme = document.documentElement.getAttribute('data-theme');
-      window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
-    });
+    const theme_buttons = buttons.querySelector('div#toggle-theme');
+    if (theme_buttons) {
+      theme_buttons.addEventListener('click', () => {
+        const cur_theme = document.documentElement.getAttribute('data-theme');
+        window.theme.toggle(cur_theme === 'dark' ? 'light' : 'dark');
+      });
+    }
   },
 
   slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
@@ -135,7 +138,7 @@ NexT.utils = {
 
   fmtBusuanzi: function () {
     setTimeout(function(){
-      const bszUV = document.getElementById('busuanzi_value_site_uv');    
+      const bszUV = document.getElementById('busuanzi_value_site_uv');
       if (bszUV) {
         bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
       }
@@ -143,7 +146,7 @@ NexT.utils = {
       if (bszPV) {
         bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
       }
-    }, 800);  
+    }, 800);
   },
 
   numberFormat: function (number) {
@@ -225,7 +228,7 @@ NexT.utils = {
       case 'qiniu':
         let cdnjs_name = alias || name;
         let cdnjs_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
-        if (cdnjs_file.indexOf('min') == -1) {          
+        if (cdnjs_file.indexOf('min') == -1) {
           cdnjs_file = cdnjs_file.replace(/\.js$/, '.min.js');
         }
         res_src = `${router}/${cdnjs_name}/${version}/${cdnjs_file}`
@@ -405,7 +408,7 @@ NexT.utils = {
       target.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
   },
-	
+
   registerLangSelect: function() {
     const selects = document.querySelectorAll('.lang-select');
     selects.forEach(sel => {

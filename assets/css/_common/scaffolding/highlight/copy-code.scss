@@ -17,7 +17,7 @@
   table tbody tr {
     //TODO Fixed the too long code line over
     // layout background color.
-    background: #272822;    
+    background: #272822;
   }
 
   /* pre > code span {
@@ -50,7 +50,7 @@
       background: white;
       border: 0;
       font-size: $font-size-smaller;
-      
+
     } @else if $codeblock_style == 'mac' {
       color: var(--highlight-foreground);
       font-size: 14px;
@@ -61,7 +61,7 @@
       border: 1px solid #d5d5d5;
       border-radius: 3px;
       font-size: $font-size-smaller;
-      
+
     }
   }
 }

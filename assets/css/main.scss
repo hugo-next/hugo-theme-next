@@ -42,9 +42,9 @@ $font_title_size            : {{ default $P.font.title.size 1.375 }};
 // Code & Code blocks
 // TODO find the configure variable
 $highlight_dark_background  : #1c1b1b;
-$highlight_dark_foreground  : #fff;
-$highlight_light_background : #565656;
-$highlight_light_foreground : #fff;
+$highlight_dark_foreground  : #e36988;
+$highlight_light_background : #f7f7f7;
+$highlight_light_foreground : #c7254e;
 
 $codeblock_copy_btn_enable   : {{ $P.codeblock.copyBtn }};
 $codeblock_style             : {{ $P.codeblock.style }};
@@ -142,7 +142,7 @@ $second_comment_name        : {{ lower (index $sortNav 1).name }};
 {{- end }}
 {{- end }}
 
-// 
+//
 // Variables Layer
 // --------------------------------------------------
 @import '_variables/base';
@@ -178,6 +178,6 @@ $second_comment_name        : {{ lower (index $sortNav 1).name }};
 {{ printf "@import '_schemes/%s/';" $P.scheme }}
 
 // Custom Layer
-// TODO 
+// TODO
 // --------------------------------------------------
 // @import 'theme.injects.style';
