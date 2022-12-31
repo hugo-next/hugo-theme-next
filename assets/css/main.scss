@@ -176,17 +176,3 @@ $second_comment_name        : {{ lower (index $sortNav 1).name }};
 // Schemes Layer
 // --------------------------------------------------
 {{ printf "@import '_schemes/%s/';" $P.scheme }}
-
-// Custom Layer
-// TODO 
-// --------------------------------------------------
-// @import 'theme.injects.style';
-
-// BUG Fix
-li {
-    word-break: break-all;
-}
-
-a {
-    word-break: break-all;
-}

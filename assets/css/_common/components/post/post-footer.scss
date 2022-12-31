@@ -59,6 +59,10 @@
       @include post-card();
       border: none;
       background: none;
+
+      li {
+        word-break: break-all;
+      }
     }
   }
 
