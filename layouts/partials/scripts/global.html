@@ -7,7 +7,7 @@
   <script type="text/javascript" src="{{ $pluginJS }}" defer></script>
 {{ end }}
 
-<script class="next-config" data-name="main" type="application/json">{{ .Scratch.Get "config" -}}</script>
+<script class="next-config" data-name="main" type="application/json">{{ .Scratch.Get "config" }}</script>
 
 {{/* Core scripts */}}
 {{ $config := resources.Get "js/config.js" }}

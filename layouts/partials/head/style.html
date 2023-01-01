@@ -1,31 +1,31 @@
 <!-- Plugin style files -->
-{{- $cssRes := .Site.Data.resources.css }}
-{{- $vendor := .Site.Params.vendors.plugins }}
-{{- $router := .Scratch.Get "router" }}
+{{ $cssRes := .Site.Data.resources.css }}
+{{ $vendor := .Site.Params.vendors.plugins }}
+{{ $router := .Scratch.Get "router" }}
 
-{{- range $css := $cssRes }}
+{{ range $css := $cssRes }}
   {{ $pluginCss := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
   <link type="text/css" rel="stylesheet" href="{{ $pluginCss }}" /> 
-{{- end }}
+{{ end }}
 
 <!-- Main Style file -->
-{{- $scss := resources.Get "css/main.scss" }}
-{{- $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
-{{- $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
-{{- if hugo.IsProduction }}
-{{- $css = $css | minify | fingerprint }}
-{{- end }}
+{{ $scss := resources.Get "css/main.scss" }}
+{{ $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
+{{ $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
+{{ if hugo.IsProduction }}
+{{ $css = $css | minify | fingerprint }}
+{{ end }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-{{- if .IsPage }}
+{{ if .IsPage }}
   <style type="text/css">
     .post-footer, .flinks-list-footer hr:after {
       content: "{{ .Site.Params.postFooter.endLineTip }}";
     }
   </style>
-{{- end }}
+{{ end }}
 
-{{- $custom := .Scratch.Get "style" }}
-{{- if $custom }}
+{{ $custom := .Scratch.Get "style" }}
+{{ if $custom }}
 <link rel="stylesheet" type="text/css" href="{{ $custom }}">
-{{- end }}
+{{ end }}
   

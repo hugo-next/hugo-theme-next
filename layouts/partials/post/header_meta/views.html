@@ -1,10 +1,10 @@
-{{- $pageViewId := "" }}
-{{- if .Site.Params.leancloudVisitors.enable }}
-{{- $pageViewId = "leancloud-visitors-count" }}  
-{{- end }}
-{{- if .Site.Params.analytics.busuanzi.postViews }}
-{{- $pageViewId = "busuanzi_value_page_pv" }}
-{{- end }}
+{{ $pageViewId := "" }}
+{{ if .Site.Params.leancloudVisitors.enable }}
+{{ $pageViewId = "leancloud-visitors-count" }}  
+{{ end }}
+{{ if .Site.Params.analytics.busuanzi.postViews }}
+{{ $pageViewId = "busuanzi_value_page_pv" }}
+{{ end }}
 <span class="post-meta-item" title="{{ T "PostViews" }}">
   <span class="post-meta-item-icon">
     <i class="far fa-eye"></i>

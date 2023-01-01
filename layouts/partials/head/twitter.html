@@ -1,5 +1,5 @@
-{{- with .Site.Params.openGraph.twitter }}
-{{- $img := $.Params.openGraph.twitter.image | default ($.Scratch.Get "metaImg") }}
+{{ with .Site.Params.openGraph.twitter }}
+{{ $img := $.Params.openGraph.twitter.image | default ($.Scratch.Get "metaImg") }}
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:creator" content="{{ .creator }}"/>
 <meta name="twitter:description" content="{{ with $.Page.Description }}{{ . }}{{ else }}{{if $.Page.IsPage}}{{ .Summary }}{{ else }}{{ $.Params.description }}{{ end }}{{ end }}"/>

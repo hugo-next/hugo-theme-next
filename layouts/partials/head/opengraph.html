@@ -1,4 +1,4 @@
-{{- if .Site.Params.openGraph.enable }}
+{{ if .Site.Params.openGraph.enable }}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta property="og:title" content="{{  .Title | default .Site.Title }}" />
 <meta property="og:description" content="{{ .Description | default .Site.Params.Description }}" />
@@ -9,9 +9,9 @@
 <meta property="og:url" content="{{ .Permalink }}"/>
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:locale" content="{{ .Site.LanguageCode }}"/>
-{{- if .IsPage }}
+{{ if .IsPage }}
 <meta property="article:author" content="{{ .Params.Author | default .Site.Params.Author }}" />
 <meta property="article:published_time" content="{{ .Date }}" />
 <meta property="article:modified_time" content="{{ .Lastmod }}" />
-{{- end }}  
-{{- end }}
+{{ end }}  
+{{ end }}

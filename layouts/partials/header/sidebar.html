@@ -1,4 +1,4 @@
-{{- $SP := .Site.Params -}}
+{{ $SP := .Site.Params }}
 <aside class="sidebar">
   <div class="sidebar-inner sidebar-overview-active">
     <ul class="sidebar-nav">
@@ -15,7 +15,7 @@
           <div class="site-description" itemprop="description">{{ $SP.description }}</div>
         </div>
         <div class="site-state-wrap site-overview-item animated">
-          {{- if $SP.siteState }}
+          {{ if $SP.siteState }}
           <nav class="site-state">
             <div class="site-state-item site-state-posts">
               <a href="{{ "/archives/" | relLangURL }}">
@@ -36,7 +36,7 @@
               </a>
             </div>
           </nav>
-          {{- end }}
+          {{ end }}
           <div class="rss-link">
             <a href="{{ "/index.xml" | relLangURL }}" rel="alternate" type="application/rss+xml" target="_blank">
               <i class="fa fa-rss"></i>
@@ -46,26 +46,26 @@
         </div>
         <div class="links-of-social site-overview-item animated">
           {{ $si := $SP.socialIcons }}
-          {{- range $SP.socials }}
-          {{- range $name,$val := . }}
-          {{- $vals := split $val "||" }}
-          {{- $url := trim (index $vals 0) " " }}
-          {{- $icon := trim (index $vals 1) " " }}
+          {{ range $SP.socials }}
+          {{ range $name,$val := . }}
+          {{ $vals := split $val "||" }}
+          {{ $url := trim (index $vals 0) " " }}
+          {{ $icon := trim (index $vals 1) " " }}
           <span class="links-of-social-item">
-            <a href="{{- $url }}" title="{{- $name }} → {{- $url }}" rel="noopener" {{- if and $si.enable $si.transition }} class="hvr-icon-pulse" {{- end }} target="_blank">
-              {{- if $si.enable }}
-              <i class="{{- $icon }} fa-fw {{ if $si.transition }} hvr-icon {{ end }}"></i>
-              {{- end }}
-              {{- if or (not $si.enable) (not $si.iconsOnly) }}
-                 {{- $name }}
-              {{- end }} 
+            <a href="{{ $url }}" title="{{ $name }} → {{ $url }}" rel="noopener" {{ if and $si.enable $si.transition }} class="hvr-icon-pulse" {{ end }} target="_blank">
+              {{ if $si.enable }}
+              <i class="{{ $icon }} fa-fw {{ if $si.transition }} hvr-icon {{ end }}"></i>
+              {{ end }}
+              {{ if or (not $si.enable) (not $si.iconsOnly) }}
+                 {{ $name }}
+              {{ end }} 
             </a>
           </span>
-          {{- end }}
-          {{- end }}
+          {{ end }}
+          {{ end }}
         </div>
-        {{- $cc := $SP.creativeCommons }}
-        {{- if and $cc $cc.sidebar }}
+        {{ $cc := $SP.creativeCommons }}
+        {{ if and $cc $cc.sidebar }}
         <div class="cc-license animated" itemprop="license">
           <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr .Site.Language 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
             <img src="/imgs/cc/{{ $cc.size }}/{{ replace $cc.license "-" "_" }}.svg" alt="{{ T "CCLinkTitle" }}">

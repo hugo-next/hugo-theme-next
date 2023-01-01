@@ -1,10 +1,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-{{- if .Site.Params.darkmode }}
+{{ if .Site.Params.darkmode }}
 <meta name="theme-color" content="{{ .Site.Params.themeColor.dark }}" media="(prefers-color-scheme: dark)" />
-{{- else }}
+{{ else }}
 <meta name="theme-color" content="{{ .Site.Params.themeColor.light }}" media="(prefers-color-scheme: light)" />
-{{- end }}
+{{ end }}
 {{ hugo.Generator }}
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
 <link rel="icon" type="image/x-icon" href="{{ .Site.Params.favicon.icon }}">
@@ -13,18 +13,18 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
 <meta itemprop="name" content="{{ .Title }}" />
 <meta itemprop="description" content="{{ .Description | default .Site.Params.description }}" />
-{{- if .IsPage }}
-{{- with .Date }}
+{{ if .IsPage }}
+{{ with .Date }}
 <meta itemprop="datePublished" {{ . }} />
-{{- end }}
-{{- with .Lastmod }}
+{{ end }}
+{{ with .Lastmod }}
 <meta itemprop="dateModified" {{ . }} />
-{{- end }}
-{{- end }}
-{{- $img := .Site.Params.customLogo | default .Site.Params.avatar.url }}
-{{- if and .IsPage (isset .Params "images") }}
-  {{- $img := index .Params.images 0 }}
-{{- end }}
-{{- .Scratch.Set "metaImg" $img }}
+{{ end }}
+{{ end }}
+{{ $img := .Site.Params.customLogo | default .Site.Params.avatar.url }}
+{{ if and .IsPage (isset .Params "images") }}
+  {{ $img := index .Params.images 0 }}
+{{ end }}
+{{ .Scratch.Set "metaImg" $img }}
 <meta itemprop="image" content="{{ $img | absURL }}" />
 <meta itemprop="keywords" content="{{ if and .IsPage (isset .Params "tags")}}{{ delimit .Params.tags "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />

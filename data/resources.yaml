@@ -130,5 +130,3 @@ plugins:
         version: 2.13.0
         file: dist/comment.js
         alias: waline
-
-

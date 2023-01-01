@@ -1,9 +1,9 @@
-{{- $Site := .Site -}}
-{{- $Params := .Site.Params -}}
-{{- $Page := .Page -}}
-{{- $langCode := .Scratch.Get "langCode" -}}
-{{- with .Site.Params.openGraph -}}
-{{- if .enable -}}
+{{ $Site := .Site }}
+{{ $Params := .Site.Params }}
+{{ $Page := .Page }}
+{{ $langCode := .Scratch.Get "langCode" }}
+{{ with .Site.Params.openGraph }}
+{{ if .enable }}
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ $Page.Title }}">
   <meta property="og:description" content="{{ default $Params.description $Page.Description }}">
@@ -12,21 +12,21 @@
   <meta property="og:site_name" content="{{ $Site.Title }}">
   <meta property="og:locale" content="{{ $langCode }}">
   <meta property="article:author" content="{{ default $Params.author $Page.Params.Author }}">
-{{- with .twitter -}}
-{{- range $attr, $val := . }}
+{{ with .twitter }}
+{{ range $attr, $val := . }}
   <meta name="twitter:{{ $attr }}" content="{{ $val }}">
-{{- end -}}
-{{- end -}}
+{{ end }}
+{{ end }}
 
-{{- with .googlePlus }}
+{{ with .googlePlus }}
   <link rel="publisher" href=" {{ . }}">
-{{- end -}}
+{{ end }}
 
-{{- with .facebook -}}
-{{- range $attr, $val := . }}
+{{ with .facebook }}
+{{ range $attr, $val := . }}
   <meta property="fb:{{ $attr }}" content="{{ $val }}">
-{{- end -}}
-{{- end -}}
+{{ end }}
+{{ end }}
 
-{{- end -}}
-{{- end -}}
+{{ end }}
+{{ end }}

@@ -1,6 +1,6 @@
-{{- define "title" -}}
-  {{- .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title -}}
-{{- end -}}
+{{ define "title" }}
+  {{ .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title }}
+{{ end }}
 {{ define "main_inner_class" }}{{ .Data.Plural }} posts-collapse{{ end }}
 {{ define "main" }}
 <div class="post-block">
@@ -18,5 +18,5 @@
     
   </div>
 </div>
-{{- partial "pagination.html" . }}
-{{- end }}
+{{ partial "pagination.html" . }}
+{{ end }}

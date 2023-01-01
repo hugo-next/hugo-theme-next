@@ -1,6 +1,6 @@
 <div class="post-block">
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="{{ .Site.LauageCode }}">
-    {{- with .ctx }}
+    {{ with .ctx }}
     <link itemprop="mainEntityOfPage" href="{{ .Permalink }}">
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="{{ .Site.Params.avatar.url }}">
@@ -14,7 +14,7 @@
       <meta itemprop="name" content="{{ .Title }}">
       <meta itemprop="description" content="{{ .Description | default .Summary }}">
     </span>
-    {{- end }}
+    {{ end }}
     <header class="post-header">
       {{ partial "post/header.html" (dict "ctx" .ctx "IsHome" .IsHome) }}
     </header>

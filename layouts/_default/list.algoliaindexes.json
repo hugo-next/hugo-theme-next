@@ -1,6 +1,6 @@
 [
-  {{- range $index, $entry := where .Site.RegularPages "Kind" "page" }}
-  {{- if $index }}, {{ end }}
+  {{ range $index, $entry := where .Site.RegularPages "Kind" "page" }}
+  {{ if $index }}, {{ end }}
   {
     "objectID": "{{ .Date.Unix }}",
     "permalink": "{{ .Permalink | relURL }}",
@@ -9,5 +9,5 @@
     "date": {{ .Date.Format $.Site.Params.timeFormat | jsonify }},
     "updated": {{ .Lastmod.Format $.Site.Params.timeFormat | jsonify }}
   }
-  {{- end }}
+  {{ end }}
 ]

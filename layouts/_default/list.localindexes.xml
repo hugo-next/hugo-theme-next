@@ -5,12 +5,12 @@
     <title>{{ .Title }}</title>
     <url>{{ .RelPermalink | relLangURL }}</url>
     <categories>
-      {{- range .Params.categories }}<category>{{ . }}</category>{{- end }}
+      {{ range .Params.categories }}<category>{{ . }}</category>{{ end }}
     </categories>
     <tags>
-      {{- range .Params.tags }}
+      {{ range .Params.tags }}
       <tag>{{ . }}</tag>
-      {{- end }}
+      {{ end }}
     </tags>
     <content type="html"><![CDATA[{{ .Content | plainify }}]]></content>
   </entry>
