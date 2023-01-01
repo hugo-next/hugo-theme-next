@@ -102,20 +102,16 @@ PostReadMore:
 PostEditTitle:
   other: Edit this post
 
-PostCRTitle:
-  other: Post Title
-PostCRAuthor:
-  other: Post Author
-PostCRLink:
-  other: Post Link
-PostCROriginAuthor:
-  other: Written By
-PostCROriginLink:
-  other: Originally From
-PostCRLicenseTitle:
-  other: Copyright Notice
-PostCRLicenseContent:
-  other: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
+PostCopyRight:
+  title:  Post Title
+  author:  Post Author
+  link: Post Link
+  origin:
+    author: Written By
+    link: Originally From
+  license:
+    title: Copyright Notice
+    content: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
 
 PostFollowMe:
   other: Welcome to my other publishing channels

@@ -103,20 +103,16 @@ PostReadMore:
 PostEditTitle:
   other: 编辑
 
-PostCRTitle:
-  other: 文章标题
-PostCRAuthor:
-  other: 本文作者
-PostCRLink:
-  other: 本文链接
-PostCROriginAuthor:
-  other: 原文作者
-PostCROriginLink:
-  other: 原文链接
-PostCRLicenseTitle:
-  other: 版权声明
-PostCRLicenseContent:
-  other: "本博客所有文章除特别声明外，均采用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 许可协议。转载请注明出处！"
+PostCopyRight:
+  title: 文章标题
+  author: 本文作者
+  link: 本文链接
+  origin:
+    author: 原文作者
+    link: 原文链接
+  license:
+    title: 版权声明
+    content: "本博客所有文章除特别声明外，均采用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 许可协议。转载请注明出处！"
 
 PostFollowMe:
   other: 欢迎关注我的其它发布渠道
