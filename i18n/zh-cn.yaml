@@ -103,6 +103,13 @@ PostReadMore:
 PostEditTitle:
   other: 编辑
 
+Reward:
+  title: 赞赏
+  wechatpay: 微信
+  alipay: 支付宝
+  paypal: Paypal
+  bitcoin: 比特币
+
 PostCopyRight:
   title: 文章标题
   author: 本文作者
@@ -116,17 +123,6 @@ PostCopyRight:
 
 PostFollowMe:
   other: 欢迎关注我的其它发布渠道
-
-RewardDonate:
-  other: 赞赏
-RewardWechatpay:
-  other: 微信
-RewardAlipay:
-  other: 支付宝
-RewardPaypal:
-  other: PayPal
-RewardBitcoin:
-  other: 比特币
 
 PostCommentTitle:
   other: 评论交流

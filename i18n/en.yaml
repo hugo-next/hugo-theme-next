@@ -102,6 +102,13 @@ PostReadMore:
 PostEditTitle:
   other: Edit this post
 
+Reward:
+  title: Donate
+  wechatpay: Wechat Pay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
+
 PostCopyRight:
   title:  Post Title
   author:  Post Author
@@ -115,17 +122,6 @@ PostCopyRight:
 
 PostFollowMe:
   other: Welcome to my other publishing channels
-
-RewardDonate:
-  other: Donate
-RewardWechatpay:
-  other: Wechat Pay
-RewardAlipay:
-  other: Alipay
-RewardPaypal:
-  other: PayPal
-RewardBitcoin:
-  other: Bitcoin
 
 PostCommentTitle:
   other: Comments
