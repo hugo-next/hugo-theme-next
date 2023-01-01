@@ -5,8 +5,10 @@
   <span class="post-meta-item-icon">
     <i class="far fa-calendar-check"></i>
   </span>
-  <span class="post-meta-item-text">{{ print (T "PostLastModDate") (T "SymbolColon") }}</span>
-  <time title="{{ print (T "PostLastModTime") (T "SymbolColon") }}{{ $modTime }}" itemprop="dateModified" datetime="{{ $modTime }}">{{ .Lastmod.Format .Site.Params.dateFormat }}</time>
+  <span class="post-meta-item-text" title="{{ T "PostMeta.lastmod.date" }}">
+    {{ print (T "PostMeta.lastmod.date") (T "SymbolColon") }}
+  </span>
+  <time title="{{ print (T "PostMeta.lastmod.time") (T "SymbolColon") }}{{ $modTime }}" itemprop="dateModified" datetime="{{ $modTime }}">{{ .Lastmod.Format .Site.Params.dateFormat }}</time>
 </span>
 {{ end }}
 {{ end }}

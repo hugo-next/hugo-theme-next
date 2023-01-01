@@ -5,8 +5,10 @@
   <span class="post-meta-item-icon">
     <i class="far fa-calendar"></i>
   </span>
-  <span class="post-meta-item-text">{{ print (T "PostPublishDate") (T "SymbolColon") }}</span>
-  <time title="{{ print (T "PostPublishDate") (T "SymbolColon") }}{{ .Date }}" itemprop="dateCreated datePublished" datetime="{{ .Date }}">
+  <span class="post-meta-item-text" title="{{ T "PostMeta.publish.date" }}">
+    {{ print (T "PostMeta.publish.date") (T "SymbolColon") }}
+  </span>
+  <time title="{{ print (T "PostMeta.publish.time") (T "SymbolColon") }}{{ .Date }}" itemprop="dateCreated datePublished" datetime="{{ .Date }}">
     {{ .Date.Format .Site.Params.dateFormat }}
   </time>
 </span>

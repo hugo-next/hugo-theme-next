@@ -3,7 +3,7 @@
 {{ if and .Site.Params.readMoreBtn (not .Params.Expand) }}
 <div class="post-button">
   <a class="btn" href="{{ .RelPermalink | relLangURL }}#more" rel="contents">
-    {{ T "PostReadMore" }} &raquo;
+    {{ T "PostMeta.more" }} &raquo;
   </a>
 </div>
 {{ end }}

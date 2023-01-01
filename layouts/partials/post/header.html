@@ -1,7 +1,7 @@
 {{ with .ctx }}
 {{ if $.IsHome }} <h2 {{ else }} <h1 {{ end }} class="post-title" itemprop="name headline">
   {{ if and .Weight (gt .Weight 0) }}
-  <span class="post-sticky-flag" title="{{ T "PostStickyTitle" }}">
+  <span class="post-sticky-flag" title="{{ T "PostMeta.sticky" }}">
     <i class="fa fa-thumbtack"></i>
   </span>
   {{ end }}
@@ -18,7 +18,7 @@
   {{ .Title }}
   {{ if .Site.Params.postEdit.enable }}
   {{ $editURL := printf "%s%s" .Site.Params.postEdit.url (path.Clean .File.Path) }}
-  <a href="{{ $editURL }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-edit-link" title="{{ T "PostEditTitle" }}"><i class="fa fa-pen-nib"></i></a>
+  <a href="{{ $editURL }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-edit-link" title="{{ T "PostMeta.edit" }}"><i class="fa fa-pen-nib"></i></a>
   {{ end }}
   {{ end }}
   {{ if $.IsHome }} </h2> {{ else }} </h1> {{ end }}

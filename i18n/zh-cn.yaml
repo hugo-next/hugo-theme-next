@@ -72,36 +72,26 @@ PostArchiveCheersExcellent:
 PostArchiveKeepOn:
   other: 继续努力哟。╰(*°▽°*)╯
 
-PostStickyTitle:
-  other: 置顶
-PostPublishDate:
-  other: 发表于
-PostPublishTime:
-  other: 创建时间
-PostLastModDate:
-  other: 更新于
-PostLastModTime:
-  other: 修改时间
-PostCategory:
-  other: "分类于"
-PostWords:
-  other: 字数
-PostWordCount:
-  other: "{{- .WordCount -}}"
-PostReading:
-  other: 阅读
-PostReadTime:
-  other: "{{- .ReadingTime -}}分钟"
-PostViews:
-  other: 浏览
-PostComments:
-  other: 评论
-PostTags:
-  other: 标签
-PostReadMore:
-  other: 阅读全文
-PostEditTitle:
-  other: 编辑
+PostMeta:
+  sticky: 置顶
+  publish:
+    date: 发表于
+    time: 创建时间
+  lastmod:
+    date: 更新于
+    time: 修改时间
+  category: 分类于
+  words: 
+    title: 字数
+    count: "{{- .WordCount -}}"
+  reading:
+    title: 阅读
+    time: "{{- .ReadingTime -}}分钟"
+  views: 浏览
+  comments: 评论
+  tags: 标签
+  more: 阅读全文
+  edit: 编辑
 
 Reward:
   title: 赞赏

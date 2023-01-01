@@ -71,40 +71,30 @@ PostArchiveCheersExcellent:
 PostArchiveKeepOn:
   other: Keep on posting.╰(*°▽°*)╯
 
-PostStickyTitle:
-  other: Strickys
-PostPublishDate:
-  other: "Publish on"
-PostPublishTime:
-  other: "Create Time"
-PostLastModDate:
-  other: "Update on"
-PostLastModTime:
-  other: "Modify Time"
-PostCategory:
-  other: "Classify at"
-PostWords:
-  other: "Words"
-PostWordCount:
-  other: "{{- .WordCount -}}"
-PostReading:
-  other: "Read"
-PostReadTime:
-  other: "{{- .ReadingTime -}}min"
-PostViews:
-  other: "Views"
-PostComments:
-  other: "Comments"
-PostTag:
-  other: "Tags"
-PostReadMore:
-  other: "Read More"
-PostEditTitle:
-  other: Edit this post
+PostMeta:
+  sticky: Stickys
+  publish:
+    date: "Publish on"
+    time: "Create Time"
+  lastmod:
+    date: "Update on"
+    time: "Modify Time"
+  category: "Classify at"
+  words: 
+    title: Words
+    count: "{{- .WordCount -}}"
+  reading:
+    title: Read
+    time: "{{- .ReadingTime -}}mins"
+  views: Views
+  comments: Comments
+  tags: Tags
+  more: "Read More"
+  edit: "Edit this post"
 
 Reward:
   title: Donate
-  wechatpay: Wechat Pay
+  wechatpay: WechatPay
   alipay: Alipay
   paypal: Paypal
   bitcoin: Bitcoin
