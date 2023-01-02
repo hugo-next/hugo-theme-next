@@ -17,7 +17,7 @@
   {{ if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
     <li class="menu-item menu-item-search">
       <a role="button" class="popup-trigger hvr-icon-pulse">
-        {{ if $ms.icons }}<i class="fa fa-search fa-fw hvr-icon"></i>{{ end }}{{ T "MSearchLabel" }}
+        {{ if $ms.icons }}<i class="fa fa-search fa-fw hvr-icon"></i>{{ end }}{{ T "Sidebar.label.search" }}
       </a>
     </li>
   {{ end }}

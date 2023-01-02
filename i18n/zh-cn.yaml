@@ -31,21 +31,18 @@ SymbolComma:
   other: "，"
 SymbolPeriod:
   other: "。"
- 
-SbPostsLable:
-  other: 日志
-SbCatesTitle:
-  other: 分类
-SbTagsTitle:
-  other: 标签
-TableOfContents:
-  other: 文章目录
-SiteOverview:
-  other: 站点概览
-RSSLable:
-  other: RSS 订阅
-CCLinkTitle:
-  other: 共享知识
+
+Sidebar:
+  label:
+    posts: 日志
+    categories: 分类
+    tags: 标签
+    rss: RSS 订阅
+    ccommons: 共享知识
+    toc: 文章目录
+    overview: 站点概览
+    navToggle: 切换导航栏
+    search: 搜索
 
 TagsCounterTitle:
   zero: 暂无标签

@@ -18,9 +18,6 @@ CateTitle:
 AllSome:
   other: "All {{ .Some }}"
 
-NavToggleLabel:
-  other: Toggle navigation bar
-
 MSearchLabel:
   other: Search
 
@@ -31,12 +28,23 @@ SymbolComma:
 SymbolPeriod:
   other: "."
 
+Sidebar:
+  label:
+    posts: Posts
+    categories: Categories
+    tags: Tags
+    rss: RSS
+    ccommons: "Creative Commons"
+    navToggle: "Toggle Navigation Bar"
+    toc: TOC
+    overview: Overview
+    
 SbPostsLable:
-  other: "Posts"
+  other: ""
 SbCatesTitle:
-  other: "Categories"
+  other: ""
 SbTagsTitle:
-  other: "Tags"
+  other: ""
 TableOfContents:
   other: "TOC"
 SiteOverview:
