@@ -18,15 +18,11 @@ CateTitle:
 AllSome:
   other: "All {{ .Some }}"
 
-MSearchLabel:
-  other: Search
 
-SymbolColon:
-  other: ":"
-SymbolComma:
-  other: ","
-SymbolPeriod:
-  other: "."
+Symbol:
+  colon: ":"
+  comma: ","
+  period: "."
 
 Sidebar:
   label:
@@ -35,34 +31,15 @@ Sidebar:
     tags: Tags
     rss: RSS
     ccommons: "Creative Commons"
-    navToggle: "Toggle Navigation Bar"
     toc: TOC
     overview: Overview
-    
-SbPostsLable:
-  other: ""
-SbCatesTitle:
-  other: ""
-SbTagsTitle:
-  other: ""
-TableOfContents:
-  other: "TOC"
-SiteOverview:
-  other: "Overview"
-RSSLable:
-  other: "RSS Subscribe"
-CCLinkTitle:
-  other: "Creative Commons"
+    navToggle: "Toggle Navigation Bar"
+    search: Search
 
-TagsCounterTitle:
-  zero: No tags
-  other: "{{ .Count }} tags in total"
-CatesCounterTitle:
-  zero: No categories
-  other: "{{ .Count }} categories in total"
-ArchiveCounterTitle:
-  zero: No posts.
-  other: "{{ .Count }} posts in total"
+Terms:
+  archives: "{{ .Count }} posts in total"
+  categories: "{{ .Count }} categories in total"
+  tags: "{{ .Count }} tags in total"
 
 PostArchive:
   cheers:
@@ -116,8 +93,8 @@ PostCopyRight:
 PostFollowMe:
   other: Welcome to my other publishing channels
 
-PostCommentTitle:
-  other: Comments
+PostComments:
+  title: Comments
 
 SiteInfoItems:
   title: "Web Status"
@@ -132,17 +109,14 @@ SiteInfoItems:
   totalViews: "Total Views"
   lastUpdate: "Last Update:"
 
-FooterPowerby:
-  other: "Power by %s"
+Footer:
+  powerby: "Power by %s"
 
-SearchPh:
-  other: Searching...
-SearchEmpty:
-  other: "We didn't find any results for the search: ${query}"
-SearchHits:
+Search:
+  placeholder: Searching...
+  empty: "We didn't find any results for the search: ${query}"
   hits: "${hits} results found"
-SearchHitsTime:
-  other: "${hits} results found in ${time} ms"
+  time: "${hits} results found in ${time} ms"
 
 DateSuffix:
   years: " Year "

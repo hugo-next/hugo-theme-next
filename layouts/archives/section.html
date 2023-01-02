@@ -21,9 +21,9 @@
       {{ end }}
       <span class="collection-header">
         {{ T (printf "PostArchive.cheers.%s" $cheers) }}
-        {{ T "SymbolComma" }}
-        {{ T "ArchiveCounterTitle" $posts | safeHTML }}
-        {{ T "SymbolComma" }}
+        {{ T "Symbol.comma" }}
+        {{ T "Terms.archives" $posts | safeHTML }}
+        {{ T "Symbol.comma" }}
         {{ T "PostArchive.keepOn" }}
       </span>
     </div>

@@ -36,7 +36,7 @@
     {{ $tags := .Site.Taxonomies.tags }}
     <div class="tag-cloud">
       <div class="tag-cloud-title">
-        {{ T "TagsCounterTitle" (.Scratch.Get "tagsCount") | safeHTML }}
+        {{ T "Terms.tags" (.Scratch.Get "tagsCount") | safeHTML }}
       </div>
       <div class="tag-cloud-tags">
         {{ $randNums := (seq 10) }}

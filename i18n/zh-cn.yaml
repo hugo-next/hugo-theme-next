@@ -19,18 +19,10 @@ CateTitle:
 AllSome:
   other: "所有 {{ .Some }}"
 
-NavToggleLabel:
-  other: 切换导航栏
-
-MSearchLabel:
-  other: 搜索
-
-SymbolColon:
-  other: "："
-SymbolComma:
-  other: "，"
-SymbolPeriod:
-  other: "。"
+Symbol:
+  colon: "："
+  comma: "，"
+  period: "。"
 
 Sidebar:
   label:
@@ -44,15 +36,10 @@ Sidebar:
     navToggle: 切换导航栏
     search: 搜索
 
-TagsCounterTitle:
-  zero: 暂无标签
-  other: "目前共计 <strong>{{ .Count }}</strong> 个标签"
-CatesCounterTitle:
-  zero: 暂无分类
-  other: "目前共计 <strong>{{ .Count }}</strong> 个分类"
-ArchiveCounterTitle:
-  zero: 暂无日志
-  other: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
+Terms:
+  archives: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
+  categories: "目前共计 <strong>{{ .Count }}</strong> 个分类"
+  tags: "目前共计 <strong>{{ .Count }}</strong> 个标签"
 
 PostArchive:
   cheers:
@@ -106,8 +93,8 @@ PostCopyRight:
 PostFollowMe:
   other: 欢迎关注我的其它发布渠道
 
-PostCommentTitle:
-  other: 评论交流
+PostComments:
+  title: 评论交流
 
 SiteInfoItems:
   title: "网站资讯"
@@ -122,17 +109,14 @@ SiteInfoItems:
   totalViews: "总访问量："
   lastUpdate: "最后更新于："
 
-FooterPowerby:
-  other: 由 %s 强力驱动
+Footer:
+  powerby: 由 %s 强力驱动
 
-SearchPh:
-  other: 搜索...
-SearchEmpty:
-  other: "没有找到任何搜索结果：${query}"
-SearchHits:
+Search:
+  placeholder: 搜索...
+  empty: "没有找到任何搜索结果：${query}"
   hits: "找到 ${hits} 个搜索结果"
-SearchHitsTime:
-  other: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
+  time: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
 
 DateSuffix:
   years: " 年 "
