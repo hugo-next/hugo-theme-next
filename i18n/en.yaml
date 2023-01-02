@@ -56,20 +56,15 @@ ArchiveCounterTitle:
   zero: No posts.
   other: "{{ .Count }} posts in total"
 
-PostArchiveCheersUm:
-  other: Um..
-PostArchiveCheersOk:
-  other: Ok
-PostArchiveCheersNice:
-  other: Nice
-PostArchiveCheersGood:
-  other: Good
-PostArchiveCheersGreat:
-  other: Great
-PostArchiveCheersExcellent:
-  other: Excellent
-PostArchiveKeepOn:
-  other: Keep on posting.╰(*°▽°*)╯
+PostArchive:
+  cheers:
+    um: Um...
+    ok: Ok
+    nice: Nice
+    good: Good
+    great: Greate
+    excellent: Excellent
+  keepOn: Keep on posting.╰(*°▽°*)╯
 
 PostMeta:
   sticky: Stickys

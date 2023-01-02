@@ -57,20 +57,15 @@ ArchiveCounterTitle:
   zero: 暂无日志
   other: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
 
-PostArchiveCheersUm:
-  other: 嗯..
-PostArchiveCheersOk:
-  other: 还行
-PostArchiveCheersNice:
-  other: 不错
-PostArchiveCheersGood:
-  other: 很好
-PostArchiveCheersGreat:
-  other: 非常好
-PostArchiveCheersExcellent:
-  other: 太棒了
-PostArchiveKeepOn:
-  other: 继续努力哟。╰(*°▽°*)╯
+PostArchive:
+  cheers:
+    um: 嗯..
+    ok: 还行
+    nice: 不错
+    good: 很好
+    great: 非常好
+    excellent: 太棒了
+  keepOn: 继续努力哟。╰(*°▽°*)╯
 
 PostMeta:
   sticky: 置顶
