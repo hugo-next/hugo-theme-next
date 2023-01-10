@@ -43,7 +43,9 @@
   <div class="post-meta-items">
     {{ partial "post/header_meta/words.html" . }}
     {{ partial "post/header_meta/readtime.html" . }}
-    {{ partial "post/header_meta/views.html" . }}
+    {{ if .Site.Params.waline.pageView }}
+      {{ partial "post/header_meta/views.html" . }}
+    {{ end }}
     {{ if $isComment }}
     {{ partial "post/header_meta/comments.html" . }}
     {{ end }}
