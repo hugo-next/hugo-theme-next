@@ -62,7 +62,7 @@ NexT.boot.refresh = function() {
     NexT.utils.registerCommonSwitch();
     NexT.utils.domAddClass('#goto-comments', 'goto-comments-on');
   } else {
-    NexT.utils.hideCommontes();
+    NexT.utils.hideComments();
   }
   NexT.utils.registerImageViewer();
 

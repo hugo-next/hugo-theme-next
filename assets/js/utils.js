@@ -481,8 +481,11 @@ NexT.utils = {
     });
   },
 
-  hideCommontes: function () {
-    document.querySelector('.post-comments').style.display = 'none';
+  hideComments: function () {
+    let postComments = document.querySelector('.post-comments');
+    if (postComments !== null) {
+        postComments.style.display = 'none';
+    }
   },
 
   hiddeLodingCmp: function (selector) {
