@@ -298,11 +298,11 @@ params:
     # Posts / Categories / Tags in sidebar.
     basic: true
     # 站点访问信息
-    # Site information
-    statistic: 
+    # Site's view information
+    views:  
       enable: true
       # 组件类型，可选值为： 51la, busuanzi
-      # 使用51la时需要注册账号：https://invite.51.la/1NUfGTS1?target=V6
+      # 使用51la时需要注册账号：https://invite.51.la/
       # Plguin value is: 51la, busuanzi
       plugin: busuanzi
 

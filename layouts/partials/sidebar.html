@@ -29,11 +29,10 @@
         {{ end }}
       </div>
     </div>
-   
   </div>
 
-  {{ if .Site.Params.siteState.statistic.enable }}
-    {{ partial "sidebar/siteinfo.html" . }}
+  {{ if .Site.Params.siteState.views.enable }}
+    {{ partialCached "sidebar/siteinfo.html" . }}
   {{ end }}
 
   {{ if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
