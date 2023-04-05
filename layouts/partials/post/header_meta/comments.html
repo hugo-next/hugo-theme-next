@@ -5,7 +5,7 @@
   <span class="post-meta-item-text" title="{{ T "PostMeta.comments" }}">
   {{ print (T "PostMeta.comments") (T "Symbol.colon") }}
   </span>
-  <span {{ with .Site.Params.waline.comment }}class="waline-comment-count"{{end}} data-path="{{ .RelPermalink | relLangURL }}">
+  <span {{ if and .Site.Params.postMeta.comments.enable (eq .Site.Params.postMeta.comments.plugin "waline") }}class="waline-comment-count"{{end}} data-path="{{ .RelPermalink | relLangURL }}">
     <i class="fa fa-sync fa-spin"></i>
   </span>
 </span>

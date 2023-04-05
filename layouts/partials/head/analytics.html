@@ -7,6 +7,6 @@
 {{ if isset .Site.Params.analytics "google" }}
   {{ partial "_thirdparty/analytics/google.html" . }}  
 {{ end }}
-{{ if isset .Site.Params.analytics "busuanzi" }}
+{{ if or (isset .Site.Params.analytics "busuanzi") (eq .Site.Params.postMeta.views.plugin "busuanzi") }}
   {{ partial "_thirdparty/analytics/busuanzi.html" . }}  
 {{ end }}

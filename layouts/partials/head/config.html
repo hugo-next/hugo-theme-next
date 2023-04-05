@@ -8,7 +8,7 @@
 }}
 
 {{/* Append waline pageview & comment plugin */}}
-{{ if and .Site.Params.waline ( or .Site.Params.waline.pageView .Site.Params.waline.comment) }}
+{{ if or (eq .Site.Params.postMeta.views.plugin "waline") (eq .Site.Params.postMeta.comments.plugin "waline") }}
 {{ $counter := dict
   "js"  .Site.Data.resources.plugins.waline.js
 }}

@@ -49,7 +49,7 @@
 {{ if isset .Site.Params "waline" }}
 {{ $walinejs := resources.Get "js/third-party/comments/waline.js" }}
 {{ $nextjs = $nextjs | append $walinejs }}
-{{ if or .Site.Params.waline.pageView .Site.Params.waline.comment }}
+{{ if or .Site.Params.postMeta.views.enable .Site.Params.postMeta.comments.enable }}
   {{ $counterjs := resources.Get "js/third-party/others/counter.js" }}
   {{ $nextjs = $nextjs | append $counterjs }}
   {{ end }}

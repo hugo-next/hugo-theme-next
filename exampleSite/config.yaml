@@ -478,6 +478,18 @@ params:
     categories: true
     wordCount: true
     readTime: true
+    # 是否开启评论数显示
+    comments: 
+      enable: true
+      # 评论统计插件，暂只支持waline
+      # Comment counter plugin, only support waline
+      plugin: waline
+    # 是否开启页面访问数显示
+    views:
+      enable: true
+      # 页面访问统计插件，支持busuanzi, waline, leancloud
+      # Page views counter plugin, support: busuanzi, waline, leancloud
+      plugin: waline
 
   # 文章底部的设置
   # Post footer settings
@@ -937,8 +949,6 @@ params:
     busuanzi:
       visitorsIcon: fa fa-user
       viewsIcon: fa fa-eye
-      postViews: true
-
 
   # ---------------------------------------------------------------
   # 内容搜索服务

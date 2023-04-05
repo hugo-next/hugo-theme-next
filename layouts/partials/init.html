@@ -58,6 +58,16 @@
   {{ $config = merge $config $localSearch }}
 {{ end }}
 
+{{ with .Site.Params.postMeta }}
+  {{ $postmeta := dict 
+    "views" .views
+    "comments" .comments
+  }}
+  {{ $config = merge $config (dict "postmeta" $postmeta) }}
+{{ else }}
+  
+{{ end }}
+
 {{ if .Site.Params.algoliaSearch.enable }}
   {{ $algoliaSearch := dict 
     "js"        .Site.Data.resources.algolia
@@ -125,11 +135,6 @@
   "id" .
 }}
 {{ $config = merge $config (dict "lawidget" $lawidget) }}
-{{ end }}
-
-{{ with .Site.Params.analytics.busuanzi }}
-{{ $busz := dict "pageview" .postViews }}
-{{ $config = merge $config (dict "busuanzi" $busz) }}
 {{ end }}
 
 {{ $globalVars.Set "config" $config }}

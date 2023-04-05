@@ -1,8 +1,8 @@
+{{ if .Site.Params.postMeta.views.enable }}
 {{ $pageViewId := "" }}
-{{ if .Site.Params.leancloudVisitors.enable }}
+{{ if eq .Site.Params.postMeta.views.plugin "leancloud" }}
 {{ $pageViewId = "leancloud-visitors-count" }}  
-{{ end }}
-{{ if .Site.Params.analytics.busuanzi.postViews }}
+{{ else if eq .Site.Params.postMeta.views.plugin "busuanzi" }}
 {{ $pageViewId = "busuanzi_value_page_pv" }}
 {{ end }}
 <span class="post-meta-item" title="{{ T "PostMeta.views" }}">
@@ -12,7 +12,8 @@
   <span class="post-meta-item-text">
   {{ print (T "PostMeta.views") (T "Symbol.colon") }}
   </span>
-  <span {{ with $pageViewId }}id="{{ . }}"{{end}} {{ with .Site.Params.waline.pageView }}class="waline-pageview-count"{{end}} data-path="{{ .RelPermalink | relLangURL }}">
+  <span {{ with $pageViewId }}id="{{ . }}"{{end}} {{ if eq .Site.Params.postMeta.views.plugin "waline" }}class="waline-pageview-count"{{end}} data-path="{{ .RelPermalink | relLangURL }}">
     <i class="fa fa-sync fa-spin"></i>
   </span>
 </span>
+{{ end }}
