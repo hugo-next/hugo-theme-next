@@ -40,7 +40,7 @@
       </div>
       <div class="tag-cloud-tags">
         {{ $randNums := (seq 10) }}
-        {{ range $name, $items := $tags }}
+        {{- range $name, $items := $tags }}
         <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize  }}">{{ .Page.Title }}
           <span class="tag-list-count">
             <sup>({{ len $items }})</sup>
