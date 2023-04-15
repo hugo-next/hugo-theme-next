@@ -1,0 +1,175 @@
+# 繁體中文版本
+archives:
+  other: 文章
+tag:
+  other: 標籤
+tags:
+  other: 標籤
+TagTitle:
+  other: 標籤集錦
+category:
+  other: 分類
+categories:
+  other: 分類
+CateTitle:
+  other: 分類欄目
+AllSome:
+  other: "所有 {{ .Some }}"
+
+NavToggleLabel:
+  other: 切換導航欄
+
+MSearchLabel:
+  other: 搜索
+
+SymbolColon:
+  other: "："
+SymbolComma:
+  other: "，"
+SymbolPeriod:
+  other: "。"
+
+SbPostsLable:
+  other: 日誌
+SbCatesTitle:
+  other: 分類
+SbTagsTitle:
+  other: 標籤
+TableOfContents:
+  other: 文章目錄
+SiteOverview:
+  other: 站點概覽
+RSSLable:
+  other: RSS 訂閱
+CCLinkTitle:
+  other: 共享知識
+
+TagsCounterTitle:
+  zero: 暫無標籤
+  other: "目前共計 <strong>{{ .Count }}</strong> 個標籤"
+CatesCounterTitle:
+  zero: 暫無分類
+  other: "目前共計 <strong>{{ .Count }}</strong> 個分類"
+ArchiveCounterTitle:
+  zero: 暫無日誌
+  other: "目前共計 <strong>{{ .Count }}</strong> 篇日誌"
+
+PostArchiveCheersUm:
+  other: 嗯..
+PostArchiveCheersOk:
+  other: 還行
+PostArchiveCheersNice:
+  other: 不錯
+PostArchiveCheersGood:
+  other: 很好
+PostArchiveCheersGreat:
+  other: 非常好
+PostArchiveCheersExcellent:
+  other: 太棒了
+PostArchiveKeepOn:
+  other: 繼續努力喲。 ╰(*°▽°*)╯
+
+PostStickyTitle:
+  other: 置頂
+PostPublishDate:
+  other: 發表於
+PostPublishTime:
+  other: 創建時間
+PostLastModDate:
+  other: 更新於
+PostLastModTime:
+  other: 修改時間
+PostCategory:
+  other: "分類於"
+PostWords:
+  other: 字數
+PostWordCount:
+  other: "{{- .WordCount -}}"
+PostReading:
+  other: 閱讀
+PostReadTime:
+  other: "{{- .ReadingTime -}}分鐘"
+PostViews:
+  other: 瀏覽
+PostComments:
+  other: 評論
+PostTags:
+  other: 標籤
+PostReadMore:
+  other: 閱讀全文
+PostEditTitle:
+  other: 編輯
+
+PostCRTitle:
+  other: 文章標題
+PostCRAuthor:
+  other: 本文作者
+PostCRLink:
+  other: 本文鏈接
+PostCROriginAuthor:
+  other: 原文作者
+PostCROriginLink:
+  other: 原文鏈接
+PostCRLicenseTitle:
+  other: 版權聲明
+PostCRLicenseContent:
+  other: '本博客所有文章除特別聲明外，均採用 <i class="fab fa-fw fa-creative-commons"></i>%s 許可協議。轉載請註明出處！ '
+
+PostFollowMe:
+  other: 歡迎關注我的其它發布渠道
+
+RewardDonate:
+  other: 讚賞
+RewardWechatpay:
+  other: 微信
+RewardAlipay:
+  other: 支付寶
+RewardPaypal:
+  other: PayPal
+RewardBitcoin:
+  other: 比特幣
+
+PostCommentTitle:
+  other: 評論交流
+
+SiteInfoItems:
+  title: "網站資訊"
+  runTimes: "已運行："
+  words: "總字數："
+  readTimes: "閱讀約："
+  visitors: "總訪客數："
+  pageViews: "頁面瀏覽："
+  todayViews: "今日訪問："
+  yesterdayViews: "昨日訪問："
+  monthViews: "本月訪問："
+  totalViews: "總訪問量："
+  lastUpdate: "最後更新於："
+
+FooterPowerby:
+  other: 由 %s 強力驅動
+
+SearchPh:
+  other: 搜索...
+SearchEmpty:
+  other: "沒有找到任何搜索結果：${query}"
+SearchHits:
+  hits: "找到 ${hits} 個搜索結果"
+SearchHitsTime:
+  other: "找到 ${hits} 個搜索結果（用時 ${time} 毫秒）"
+
+DateSuffix:
+  years: " 年 "
+  days: " 天 "
+  hours: " 小時 "
+  mins: " 分鐘"
+  month: " 個月前"
+  day: " 天前"
+  hour: " 小時前"
+  min: " 分鐘前"
+  just: "剛剛"
+
+ToolBtns:
+  comment: "直達評論"
+  theme: "深淺模式切換"
+  lang: "多語言翻譯"
+  backTop: "返回頂部"
