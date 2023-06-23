@@ -172,10 +172,11 @@ List of Donors(Order desc by Date):
 
 | Donation time | Donors | Donation mode | Donation content | Message |
 | :-------: | ------ | ------ | ---- | ---- |
-| 2022.11.15 | f888 | xianyu | ¥6.20 | Good luck. |
-| 2022.09.30 | *軒 | wechat pay | ¥66.66 | Hope it could help more people. |
-| 2022.09.30 | N*l | wechat pay | ¥20.00 | / |
-| 2022.07.09 | *风 | wechat pay | ¥10.00 | / |
-| 2022.05.08 | *泉 | wechat pay | ¥6.60 | Good luck with next develop. |
-| 2022.02.28 | *娇 | wechat pay | ¥5.00 | / |
-| 2021.12.21 | z*y | wechat pay | ¥18.88 | / |
+| 2023.06.01 | **霖 | alipay | RMB 10.00 | / |
+| 2022.11.15 | f888 | xianyu | RMB 6.20 | Good luck. |
+| 2022.09.30 | *軒 | wechat pay | RMB 66.66 | Hope it could help more people. |
+| 2022.09.30 | N*l | wechat pay | RMB 20.00 | / |
+| 2022.07.09 | *风 | wechat pay | RMB 10.00 | / |
+| 2022.05.08 | *泉 | wechat pay | RMB 6.60 | Good luck with next develop. |
+| 2022.02.28 | *娇 | wechat pay | RMB 5.00 | / |
+| 2021.12.21 | z*y | wechat pay | RMB 18.88 | / |
