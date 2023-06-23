@@ -59,11 +59,13 @@ NexT.utils = {
   },
 
   slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
+    const targetObj = document.getElementById(targetId);
+   
     window.anime({
       targets: document.scrollingElement,
       duration: duration,
       easing: easing,
-      scrollTop: targetId == '' ? 0 : document.getElementById(targetId).getBoundingClientRect().top + window.scrollY
+      scrollTop:  targetId == '' || !targetObj ? 0 : targetObj.getBoundingClientRect().top + window.scrollY
     });
   },
 
