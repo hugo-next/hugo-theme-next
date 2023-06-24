@@ -22,7 +22,7 @@
   {{ end }}
   {{ end }}
   {{ if $.IsHome }} </h2> {{ else }} </h1> {{ end }}
-{{ $comments := .Site.Params.postMeta.comments.enable }}
+{{ $isComment := and (.Scratch.Get "isComment") .Site.Params.postMeta.comments.enable }}
 <div class="post-meta-container">
   <div class="post-meta-items">
     {{ partial "post/header_meta/created_date.html" . }}
@@ -32,7 +32,7 @@
       {{ if and .Site.Params.postMeta.views.enable (ne .Site.Params.postMeta.views.plugin "busuanzi") }}
         {{ partial "post/header_meta/views.html" . }}
       {{ end }}
-      {{ if $comments }}
+      {{ if $isComment }}
         {{ partial "post/header_meta/comments.html" . }}
       {{ end }}
     {{ end }}    
@@ -42,8 +42,8 @@
     {{ partial "post/header_meta/words.html" . }}
     {{ partial "post/header_meta/readtime.html" . }}
     {{ partial "post/header_meta/views.html" . }}
-    {{ if $comments }}
-    {{ partial "post/header_meta/comments.html" . }}
+    {{ if $isComment }}
+      {{ partial "post/header_meta/comments.html" . }}
     {{ end }}
   </div>
   {{ end }}
