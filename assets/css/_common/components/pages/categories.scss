@@ -19,7 +19,8 @@
     .category-list-item:before {
       font-family: var(--fa-style-family,"Font Awesome 6 Free");
       font-weight: var(--fa-style,900);
-      content: "\f07c"
+      content: "\f07c";
+      margin-right: 5px;
     }
   
     .category-list-item {
@@ -49,6 +50,7 @@
       font-family: var(--fa-style-family,"Font Awesome 6 Free");
       font-weight: var(--fa-style,900);
       content: "\f0ae";
+      margin-right: 5px;
     }
 
     .category-children-list-item {
