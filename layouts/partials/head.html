@@ -1,10 +1,10 @@
-{{- partial "head/meta.html" . }}
-{{- partial "head/opengraph.html" . }}
-{{- partial "head/twitter.html" . }}
-{{- partial "head/googleplus.html" . }}
-{{- partial "head/facebook.html" . }}
-{{- partialCached "head/verify.html" . }}
-{{- partialCached "head/style.html" . }}
+{{ partial "head/meta.html" . }}
+{{ partial "head/opengraph.html" . }}
+{{ partial "head/twitter.html" . }}
+{{ partial "head/googleplus.html" . }}
+{{ partial "head/facebook.html" . }}
+{{ partial "head/verify.html" . }}
+{{ partialCached "head/style.html" . }}
 <script type="text/javascript">
 (function(){
   localDB = {
@@ -60,6 +60,6 @@
   theme.active();
 })(window);
 </script>
-{{- partial "head/config.html" . }}
-{{- partialCached "head/analytics.html" . }}
+{{ partial "head/config.html" . }}
+{{ partialCached "head/analytics.html" . }}
 

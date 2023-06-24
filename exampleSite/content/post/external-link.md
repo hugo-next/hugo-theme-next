@@ -7,7 +7,7 @@ date: 2022-06-01T15:59:41+08:00
 lastmod: 2022-06-01T15:59:41+08:00
 
 categories:
- - 示例
+ - 示例文章
 tags:
  - Hugo
  - NexT

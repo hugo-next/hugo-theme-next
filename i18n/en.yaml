@@ -18,121 +18,83 @@ CateTitle:
 AllSome:
   other: "All {{ .Some }}"
 
-NavToggleLabel:
-  other: Toggle navigation bar
 
-MSearchLabel:
-  other: Search
+Symbol:
+  colon: ":"
+  comma: ","
+  period: "."
 
-SymbolColon:
-  other: ":"
-SymbolComma:
-  other: ","
-SymbolPeriod:
-  other: "."
+Sidebar:
+  label:
+    posts: Posts
+    categories: Categories
+    tags: Tags
+    rss: RSS
+    ccommons: "Creative Commons"
+    toc: TOC
+    overview: Overview
+    navToggle: "Toggle Navigation Bar"
+    search: Search
 
-SbPostsLable:
-  other: "Posts"
-SbCatesTitle:
-  other: "Categories"
-SbTagsTitle:
-  other: "Tags"
-TableOfContents:
-  other: "TOC"
-SiteOverview:
-  other: "Overview"
-RSSLable:
-  other: "RSS Subscribe"
-CCLinkTitle:
-  other: "Creative Commons"
+Terms:
+  archives: "{{ .Count }} posts in total"
+  categories: "{{ .Count }} categories in total"
+  tags: "{{ .Count }} tags in total"
 
-TagsCounterTitle:
-  zero: No tags
-  other: "{{ .Count }} tags in total"
-CatesCounterTitle:
-  zero: No categories
-  other: "{{ .Count }} categories in total"
-ArchiveCounterTitle:
-  zero: No posts.
-  other: "{{ .Count }} posts in total"
+PostArchive:
+  cheers:
+    um: Um...
+    ok: Ok
+    nice: Nice
+    good: Good
+    great: Greate
+    excellent: Excellent
+  keepOn: Keep on posting.╰(*°▽°*)╯
 
-PostArchiveCheersUm:
-  other: Um..
-PostArchiveCheersOk:
-  other: Ok
-PostArchiveCheersNice:
-  other: Nice
-PostArchiveCheersGood:
-  other: Good
-PostArchiveCheersGreat:
-  other: Great
-PostArchiveCheersExcellent:
-  other: Excellent
-PostArchiveKeepOn:
-  other: Keep on posting.╰(*°▽°*)╯
+PostMeta:
+  sticky: Stickys
+  publish:
+    date: "Publish on"
+    time: "Create Time"
+  lastmod:
+    date: "Update on"
+    time: "Modify Time"
+  category: "Classify at"
+  words: 
+    title: Words
+    count: "{{- .WordCount -}}"
+  reading:
+    title: Read
+    time: "{{- .ReadingTime -}}mins"
+  views: Views
+  comments: Comments
+  tags: Tags
+  more: "Read More"
+  edit: "Edit this post"
 
-PostStickyTitle:
-  other: Strickys
-PostPublishDate:
-  other: "Publish on"
-PostPublishTime:
-  other: "Create Time"
-PostLastModDate:
-  other: "Update on"
-PostLastModTime:
-  other: "Modify Time"
-PostCategory:
-  other: "Classify at"
-PostWords:
-  other: "Words"
-PostWordCount:
-  other: "{{- .WordCount -}}"
-PostReading:
-  other: "Read"
-PostReadTime:
-  other: "{{- .ReadingTime -}}min"
-PostViews:
-  other: "Views"
-PostComments:
-  other: "Comments"
-PostTag:
-  other: "Tags"
-PostReadMore:
-  other: "Read More"
-PostEditTitle:
-  other: Edit this post
+Reward:
+  title: Donate
+  wechatpay: WechatPay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
 
-PostCRTitle:
-  other: Post Title
-PostCRAuthor:
-  other: Post Author
-PostCRLink:
-  other: Post Link
-PostCROriginAuthor:
-  other: Written By
-PostCROriginLink:
-  other: Originally From
-PostCRLicenseTitle:
-  other: Copyright Notice
-PostCRLicenseContent:
-  other: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
+PostCopyRight:
+  title:  Post Title
+  author:  Post Author
+  link: Post Link
+  origin:
+    author: Written By
+    link: Originally From
+  license:
+    title: Copyright Notice
+    content: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
 
 PostFollowMe:
   other: Welcome to my other publishing channels
 
-RewardDonate:
-  other: Donate
-RewardWechatpay:
-  other: Wechat Pay
-RewardAlipay:
-  other: Alipay
-RewardPaypal:
-  other: PayPal
-RewardBitcoin:
-  other: Bitcoin
-
-PostCommentTitle:
-  other: Comments
+PostComments:
+  title: Comments
 
 SiteInfoItems:
   title: "Web Status"
@@ -147,17 +109,14 @@ SiteInfoItems:
   totalViews: "Total Views"
   lastUpdate: "Last Update:"
 
-FooterPowerby:
-  other: "Power by %s"
+Footer:
+  powerby: "Power by %s"
 
-SearchPh:
-  other: Searching...
-SearchEmpty:
-  other: "We didn't find any results for the search: ${query}"
-SearchHits:
+Search:
+  placeholder: Searching...
+  empty: "We didn't find any results for the search: ${query}"
   hits: "${hits} results found"
-SearchHitsTime:
-  other: "${hits} results found in ${time} ms"
+  time: "${hits} results found in ${time} ms"
 
 DateSuffix:
   years: " Year "

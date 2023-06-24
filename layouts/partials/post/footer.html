@@ -1,44 +1,44 @@
 {{ with .ctx }}
-{{- if $.IsHome }} 
-{{- if and .Site.Params.readMoreBtn (not .Params.Expand) }}
+{{ if $.IsHome }} 
+{{ if and .Site.Params.readMoreBtn (not .Params.Expand) }}
 <div class="post-button">
   <a class="btn" href="{{ .RelPermalink | relLangURL }}#more" rel="contents">
-    {{ T "PostReadMore" }} &raquo;
+    {{ T "PostMeta.more" }} &raquo;
   </a>
 </div>
-{{- end }}
+{{ end }}
 <div class="post-eof"></div>
-{{- else }}
+{{ else }}
 {{ partial "post/footer_meta/tags.html" . }}
-{{- if and (not (isset .Params "share")) (not .Params.share) }}
+{{ if and (not (isset .Params "share")) (not .Params.share) }}
 {{ partial "_thirdparty/share/addthis.html" . }}
-{{- end }}
+{{ end }}
 <hr/>
 {{ partial "post/footer_meta/reward.html" . }}
-{{- if and (not (isset .Params "copyright")) (not .Params.copyright) }}
+{{ if and (not (isset .Params "copyright")) (not .Params.copyright) }}
 {{ partial "post/footer_meta/copyright.html" . }}
-{{- end }}
-{{- if and (not (isset .Params "followme")) (not .Params.followme) }}
+{{ end }}
+{{ if and (not (isset .Params "followme")) (not .Params.followme) }}
 {{ partial "post/footer_meta/followme.html" . }}
-{{- end }}
-{{- if and (not (isset .Params "nav")) (not .Params.nav) }}
+{{ end }}
+{{ if and (not (isset .Params "nav")) (not .Params.nav) }}
 <div class="post-nav">
   <div class="post-nav-next post-nav-item">
-    {{- with .NextInSection }}
+    {{ with .NextInSection }}
     <a href="{{ .RelPermalink | relLangURL }}" rel="next" title="{{ .Title }}">
       <i class="fa fa-chevron-left"></i> {{ .Title }}
     </a>
-    {{- end }}
+    {{ end }}
   </div>
   <div class="post-nav-prev post-nav-item">
-    {{- with .PrevInSection }}
+    {{ with .PrevInSection }}
     <a href="{{ .RelPermalink | relLangURL }}" rel="prev" title="{{ .Title }}">
       {{ .Title }}
       <i class="fa fa-chevron-right"></i>
     </a>
-    {{- end }}
+    {{ end }}
   </div>
 </div>
-{{- end }}
-{{- end }}
-{{- end }}
+{{ end }}
+{{ end }}
+{{ end }}

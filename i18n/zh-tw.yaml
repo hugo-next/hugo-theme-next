@@ -1,0 +1,136 @@
+#--------------------------------------
+# 繁體版本
+#--------------------------------------
+
+archives:
+  other: 文章
+tag:
+  other: 標籤
+tags:
+  other: 標籤
+TagTitle:
+  other: 標籤集錦
+category:
+  other: 分類
+categories:
+  other: 分類
+CateTitle:
+  other: 分類欄目
+AllSome:
+  other: "所有 {{ .Some }}"
+
+Symbol:
+  colon: "："
+  comma: "，"
+  period: "。"
+
+Sidebar:
+  label:
+    posts: 日誌
+    categories: 分類
+    tags: 標籤
+    rss: RSS 訂閱
+    ccommons: 共享知識
+    toc: 文章目錄
+    overview: 站點概覽
+    navToggle: 切換導航欄
+    search: 搜索
+
+Terms:
+  archives: "目前共計 <strong>{{ .Count }}</strong> 篇日誌"
+  categories: "目前共計 <strong>{{ .Count }}</strong> 個分類"
+  tags: "目前共計 <strong>{{ .Count }}</strong> 個標籤"
+
+PostArchive:
+  cheers:
+    um: 嗯..
+    ok: 還行
+    nice: 不错
+    good: 很好
+    great: 非常好
+    excellent: 太棒了
+  keepOn: 繼續努力喲。╰(*°▽°*)╯
+
+PostMeta:
+  sticky: 置頂
+  publish:
+    date: 發表於
+    time: 創建時間
+  lastmod:
+    date: 更新於
+    time: 修改時間
+  category: 分類於
+  words: 
+    title: 字數
+    count: "{{- .WordCount -}}"
+  reading:
+    title: 閱讀
+    time: "{{- .ReadingTime -}}分鐘"
+  views: 瀏覽
+  comments: 評論
+  tags: 標籤
+  more: 閱讀全文
+  edit: 編輯
+
+Reward:
+  title: 讚賞
+  wechatpay: 微信
+  alipay: 支付寶
+  paypal: Paypal
+  bitcoin: 比特幣
+
+PostCopyRight:
+  title: 文章標題
+  author: 本文作者
+  link: 本文鏈接
+  origin:
+    author: 原文作者
+    link: 原文鏈接
+  license:
+    title: 版權聲明
+    content: "本博客所有文章除特別聲明外，均採用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 許可協議。轉載請註明出處！"
+
+PostFollowMe:
+  other: 歡迎關注我的其它發布渠道
+
+PostCommentTitle:
+  other: 評論交流
+
+SiteInfoItems:
+  title: "網站資訊"
+  runTimes: "已運行："
+  words: "總字數："
+  readTimes: "閱讀約："
+  visitors: "總訪客數："
+  pageViews: "頁面瀏覽："
+  todayViews: "今日訪問："
+  yesterdayViews: "昨日訪問："
+  monthViews: "本月訪問："
+  totalViews: "總訪問量："
+  lastUpdate: "最後更新於："
+
+FooterPowerby:
+  other: 由 %s 強力驅動
+
+Search:
+  placeholder: 搜索...
+  empty: "沒有找到任何搜索結果：${query}"
+  hits: "找到 ${hits} 個搜索結果"
+  time: "找到 ${hits} 個搜索結果（用時 ${time} 毫秒）"
+
+DateSuffix:
+  years: " 年 "
+  days: " 天 "
+  hours: " 小時 "
+  mins: " 分鐘"
+  month: " 個月前"
+  day: " 天前"
+  hour: " 小時前"
+  min: " 分鐘前"
+  just: "剛剛"
+
+ToolBtns:
+  comment: "直達評論"
+  theme: "深淺模式切換"
+  lang: "多語言翻譯"
+  backTop: "返回頂部"

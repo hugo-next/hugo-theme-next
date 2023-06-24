@@ -3,16 +3,15 @@
   <span class="toggle-line"></span>
   <span class="toggle-line"></span>
 </div>
+{{ $tocEnable := and .IsPage .Params.toc | default .Site.Params.toc.enable }}
 <aside class="sidebar">
-  {{ $tocEnable := and .IsPage .Params.toc | default .Site.Params.toc.enable }}
-
   <div class="sidebar-inner {{ if $tocEnable }}sidebar-nav-active sidebar-toc-active{{ else }}sidebar-overview-active{{ end }}">
     <ul class="sidebar-nav">
       <li class="sidebar-nav-toc">
-        {{ T "TableOfContents" }}
+        {{ T "Sidebar.label.toc" }}
       </li>
       <li class="sidebar-nav-overview">
-        {{ T "SiteOverview" }}
+        {{ T "Sidebar.label.overview" }}
       </li>
     </ul>
     <div class="sidebar-panel-container">
@@ -22,28 +21,27 @@
       </div>
       <!--/noindex-->
       <div class="site-overview-wrap sidebar-panel">
-        {{- partialCached "sidebar/overview.html" . -}}
+        {{ partialCached "sidebar/overview.html" . }}
         
-        {{- $custom := .Scratch.Get "sidebar" }}
-        {{- if $custom }}
+        {{ $custom := .Scratch.Get "sidebar" }}
+        {{ if $custom }}
           {{ partialCached $custom . }}
-        {{- end }}
+        {{ end }}
       </div>
     </div>
-   
   </div>
 
-  {{- if .Site.Params.siteState.statistic.enable }}
-    {{- partial "sidebar/siteinfo.html" . }}
-  {{- end }}
+  {{ if .Site.Params.siteState.views.enable }}
+    {{ partialCached "sidebar/siteinfo.html" . }}
+  {{ end }}
 
-  {{- if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
+  {{ if and .Site.Params.backTop.enable .Site.Params.backTop.sidebar }}
   <div class="sidebar-card-widget back-to-top-card">
     <div class="back-to-top animated" role="button" aria-label="{{ T "BackTop" }}">
       <i class="fa fa-arrow-up"></i>
       <span>0%</span>
     </div>
   </div>
-  {{- end }}
+  {{ end }}
 </aside>
 <div class="sidebar-dimmer"></div>

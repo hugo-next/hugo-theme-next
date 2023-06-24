@@ -1,25 +1,25 @@
-{{- $ms := .Site.Params.menuSets }}
-{{- $curP := .Page }}
+{{ $ms := .Site.Params.menuSets }}
+{{ $curP := .Page }}
 <nav class="site-nav">
   <ul class="main-menu menu">
-  {{- range .Site.Menus.main }}
-    {{- $active := $curP.IsMenuCurrent "main" . }}
+  {{ range .Site.Menus.main }}
+    {{ $active := $curP.IsMenuCurrent "main" . }}
     <li class="menu-item menu-item-{{ .Identifier }}">
       <a href="{{ .URL | relLangURL }}" class="hvr-icon-pulse {{if $active }} menu-item-active{{ end }}" rel="section">
-        {{- if $ms.icons }}<i class="fa fa-{{ .Pre }} hvr-icon"></i>{{ end }}{{- .Name }}
-        {{- if and $ms.badges (eq .Identifier "archives") }}
+        {{ if $ms.icons }}<i class="fa fa-{{ .Pre }} hvr-icon"></i>{{ end }}{{ .Name }}
+        {{ if and $ms.badges (eq .Identifier "archives") }}
         <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
-        {{- end }}
+        {{ end }}
       </a>
     </li>
-  {{- end }}
+  {{ end }}
 
-  {{- if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
+  {{ if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
     <li class="menu-item menu-item-search">
       <a role="button" class="popup-trigger hvr-icon-pulse">
-        {{- if $ms.icons }}<i class="fa fa-search fa-fw hvr-icon"></i>{{ end }}{{ T "MSearchLabel" }}
+        {{ if $ms.icons }}<i class="fa fa-search fa-fw hvr-icon"></i>{{ end }}{{ T "Sidebar.label.search" }}
       </a>
     </li>
-  {{- end }}
+  {{ end }}
   </ul>
 </nav>

@@ -1,6 +1,6 @@
 // CSS Style Guide          : https://codeguide.co/#css
 // All variables from site's config content.
-{{- $P := .Site.Params }}
+{{ $P := .Site.Params }}
 // Base
 $scheme                     : {{ $P.scheme }};
 $darkmode                   : {{ $P.darkmode }};
@@ -129,18 +129,18 @@ $disqusjs_enable            : false;
 $livere_enable              : {{ isset $P "livere" }};
 $utterances_enable          : {{ isset $P "utterances" }};
 $waline_enable              : {{ isset $P "waline" }};
-{{- with .Site.Params.comments }}
-{{- $tce := and (isset . "nav") (and .storage (gt (len .nav) 1)) }}
+{{ with .Site.Params.comments }}
+{{ $tce := and (isset . "nav") (and .storage (gt (len .nav) 1)) }}
 $two_comments_enable        : {{ $tce }};
-{{- if $tce }}
-{{- $sortNav  := sort .nav "weight" }}
+{{ if $tce }}
+{{ $sortNav  := sort .nav "weight" }}
 $two_comments_actived       : {{ .active }};
 $first_comment_color        : {{ (index $sortNav 0).color }};
 $first_comment_name         : {{ lower (index $sortNav 0).name }};
 $second_comment_color       : {{ (index $sortNav 1).color }};
 $second_comment_name        : {{ lower (index $sortNav 1).name }};
-{{- end }}
-{{- end }}
+{{ end }}
+{{ end }}
 
 // 
 // Variables Layer
@@ -176,8 +176,3 @@ $second_comment_name        : {{ lower (index $sortNav 1).name }};
 // Schemes Layer
 // --------------------------------------------------
 {{ printf "@import '_schemes/%s/';" $P.scheme }}
-
-// Custom Layer
-// TODO 
-// --------------------------------------------------
-// @import 'theme.injects.style';

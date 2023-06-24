@@ -1,11 +1,11 @@
-{{- define "main_inner_class" }}index posts-expand{{- end }}
+{{ define "main_inner_class" }}index posts-expand{{ end }}
 
-{{- define "main" }}
+{{ define "main" }}
 
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
-{{- range $paginator.Pages }}
+{{ range $paginator.Pages }}
   {{ partial "post.html"  (dict "ctx" . "IsHome" true) }}
-{{- end }}
+{{ end }}
 
-{{- partial "partials/pagination.html" . }}  
-{{- end }}
+{{ partial "partials/pagination.html" . }}  
+{{ end }}

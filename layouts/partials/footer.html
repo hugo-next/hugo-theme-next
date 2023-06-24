@@ -1,4 +1,4 @@
-{{- $ft := .Site.Params.footer }}
+{{ $ft := .Site.Params.footer }}
 {{ if $ft.translate }}
 <div id="gtranslate" class="google-translate">
   <i class="fa fa-language"></i>
@@ -8,55 +8,55 @@
 <div class="copyright">
   &copy;
   <span itemprop="copyrightYear">
-    {{- $year := now.Year }}
-    {{- if isset $ft "since" }}
-    {{- if gt $year $ft.since }}
+    {{ $year := now.Year }}
+    {{ if isset $ft "since" }}
+    {{ if gt $year $ft.since }}
     {{ $ft.since }} - {{ $year }}
-    {{- else }}
+    {{ else }}
     {{ $year }}
-    {{- end }}
-    {{- else }}
+    {{ end }}
+    {{ else }}
     {{ $year }}
-    {{- end }}
+    {{ end }}
   </span>
   <span class="with-love">
     <i class="{{ $ft.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ $ft.copyright | default .Site.Params.author }}</span>
 </div>
-{{- if $ft.powered }}
+{{ if $ft.powered }}
 <div class="powered-by">
   {{ $pb := printf "<a href='https://gohugo.io' title='%s' target='_blank'>Hugo</a> &amp; <a href='https://github.com/hugo-next/hugo-theme-next' title='%s' target='_blank'>Hugo NexT.%s</a>" hugo.Version .Site.Data.config.version .Site.Params.scheme }}
-  {{- printf (T "FooterPowerby") $pb | safeHTML }}
+  {{ printf (T "Footer.powerby") $pb | safeHTML }}
 </div>
-{{- end }}
-{{- with $ft.beian }}
-{{- if .enable }}
+{{ end }}
+{{ with $ft.beian }}
+{{ if .enable }}
 <div class="beian">
   <a href="https://beian.miit.gov.cn" target="_blank">{{ .icp }}</a>
   <img src="/imgs/gongan.png" alt="{{ .provinceAbbr }}公网安备">
   <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ .gonganNum }}" target="_blank">{{ .provinceAbbr }}公网安备 {{ .gonganNum }} 号</a>
 </div>
-{{- end }}
-{{- end }}
-{{- with $ft.vendors }}
+{{ end }}
+{{ end }}
+{{ with $ft.vendors }}
 {{ if .enable }}
 <div class="vendors-list">
-  {{- range .list }}
+  {{ range .list }}
     <a target="_blank" href="{{ .link }}" title="{{ .name }}">
-      {{- if .image }}        
+      {{ if .image }}        
         <img src="/imgs/img-lazy-loading.gif" data-src="{{ .image.url }}" alt="{{ .name }}" />
-      {{- else }}
+      {{ else }}
         {{ .name }}
-      {{- end }}
+      {{ end }}
     </a>
-  {{- end }}
+  {{ end }}
    <span>{{ .title }}</span>
 </div>
-{{- end }} 
-{{- end }}
+{{ end }} 
+{{ end }}
 
-{{- $custom := .Scratch.Get "footer" }}
-{{- if $custom }}
+{{ $custom := .Scratch.Get "footer" }}
+{{ if $custom }}
   {{ partialCached $custom . }}
-{{- end }}
+{{ end }}

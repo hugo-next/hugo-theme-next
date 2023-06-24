@@ -12,16 +12,16 @@
       </time>
     </div>
     <div class="post-title">
-      {{- if isset .Params "extlink" }}
+      {{ if isset .Params "extlink" }}
       <a href="{{ .Params.extlink }}" rel="noopener external nofollow noreferrer" target="_blank" class="exturl post-title-link post-title-link-external" title="">
-        <span itemprop="name">{{- .Title -}}</span>
+        <span itemprop="name">{{ .Title }}</span>
         <i class="fa fa-external-link-alt"></i>
       </a>
-      {{- else }}
+      {{ else }}
       <a class="post-title-link" href="{{ .RelPermalink | relLangURL }}" itemprop="url">
         <span itemprop="name">{{ .Title }}</span>
       </a>
-      {{- end }}
+      {{ end }}
     </div>
   </header>
 </article>

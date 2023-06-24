@@ -1,17 +1,17 @@
-{{- if .Site.Params.postMeta.categories }}
-{{- with .Params.categories }}
+{{ if .Site.Params.postMeta.categories }}
+{{ with .Params.categories }}
 <span class="post-meta-item">
   <span class="post-meta-item-icon">
     <i class="far fa-folder-open"></i>
   </span>
-  <span class="post-meta-item-text">{{- print (T "PostCategory") (T "SymbolColon") -}}</span>
-  {{- range (first 1 .) }}
+  <span class="post-meta-item-text" title="{{ T "PostMeta.category" }}">
+    {{ print (T "PostMeta.category") (T "Symbol.colon") }}
+  </span>
   <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-    <a href="{{ "/categories/" | relLangURL }}{{ . | urlize }}" itemprop="url" rel="index">
-      <span itemprop="name">{{- . -}}</span>
+    <a href="{{ "/categories/" | relLangURL }}{{ (index (last 1 .) 0) | urlize }}" itemprop="url" rel="index">
+      <span itemprop="name">{{ delimit . "/" }}</span>
     </a>
   </span>
-  {{- end }}
 </span>
-{{- end }}
-{{- end }}
+{{ end }}
+{{ end }}

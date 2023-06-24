@@ -1,35 +1,35 @@
-{{- if .Site.Params.creativeCommons.post }}
+{{ if .Site.Params.creativeCommons.post }}
 <div class="post-copyright">
-  <img src="/imgs/cc/cc.svg" width="75" height="75" align="right" />
+  <img src="/imgs/cc/cc.svg" width="75" height="75" align="right" alt="{{ T "Sidebar.label.ccommons" }}"/>
   <ul>
     <li class="post-copyright-title">
-      <strong>{{ print (T "PostCRTitle") (T "SymbolColon") }}</strong>
+      <strong>{{ print (T "PostCopyRight.title") (T "Symbol.colon") }}</strong>
       {{ .Title }}
     </li>
     <li class="post-copyright-author">
-      {{- if isset .Params "author" }}
-      <strong>{{ print (T "PostCROriginAuthor") (T "SymbolColon") }} </strong>
-      {{ .Params.Author }}
-      {{- else }}
-      <strong>{{ print (T "PostCRAuthor") (T "SymbolColon") }} </strong>
-      {{ .Site.Params.author }}
-      {{- end }}
+      {{ if isset .Params "author" }}
+        <strong>{{ print (T "PostCopyRight.origin.author") (T "Symbol.colon") }} </strong>
+        {{ .Params.Author }}
+      {{ else }}
+        <strong>{{ print (T "PostCopyRight.author") (T "Symbol.colon") }} </strong>
+        {{ .Site.Params.author }}
+      {{ end }}
     </li>
     <li class="post-copyright-link">
-      {{- if isset .Params "link" }}
-      <strong>{{ print (T "PostCROriginLink") (T "SymbolColon") }} </strong>
-      <a target="_blank" href="{{ .Params.OriginLink }}" title="{{ .Title }}">{{ .Params.Link }}</a>
-      {{- else }} 
-      <strong>{{ print (T "PostCRLink") (T "SymbolColon") }}</strong>
-       <a id="post-cr-link" href="{{ .Permalink | absLangURL }}" title="{{ .Title }}">{{ .Permalink | absLangURL }}</a>
-      {{- end }}
+      {{ if isset .Params "link" }}
+        <strong>{{ print (T "PostCopyRight.origin.link") (T "Symbol.colon") }} </strong>
+        <a target="_blank" href="{{ .Params.OriginLink }}" title="{{ .Title }}">{{ .Params.Link }}</a>
+      {{ else }} 
+        <strong>{{ print (T "PostCopyRight.link") (T "Symbol.colon") }}</strong>
+        <a id="post-cr-link" href="{{ .Permalink | absLangURL }}" title="{{ .Title }}">{{ .Permalink | absLangURL }}</a>
+      {{ end }}
     </li>
     <li class="post-copyright-license">
-      <strong>{{ print (T "PostCRLicenseTitle") (T "SymbolColon") }} </strong>
-      {{- $ccText := .Site.Params.creativeCommons.license | upper }}
-      {{- $ccLink := printf "<a target='_blank' href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.%s'>%s</a>" (substr .Site.LanguageCode 0 2) $ccText }}
-      {{ printf (T "PostCRLicenseContent") $ccLink | safeHTML }}
+      <strong>{{ print (T "PostCopyRight.license.title") (T "Symbol.colon") }} </strong>
+      {{ $ccText := .Site.Params.creativeCommons.license | upper }}
+      {{ $ccLink := printf "<a target='_blank' href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.%s'>%s</a>" (substr .Site.LanguageCode 0 2) $ccText }}
+      {{ printf (T "PostCopyRight.license.content") $ccLink | safeHTML }}
     </li>
   </ul>
 </div>
-{{- end }}
+{{ end }}

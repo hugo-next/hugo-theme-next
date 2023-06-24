@@ -1,42 +1,42 @@
-{{- $root := . -}}
-{{- with .Site.Params.comments }}
-{{- $tc := and .storage (gt (len .nav) 1) }}
-{{- $active := .active }}
-{{- $fc := .active }}
-{{- $sc := "" }}
-{{- $sn := "" }}
+{{ $root := . }}
+{{ with .Site.Params.comments }}
+{{ $tc := and .storage (gt (len .nav) 1) }}
+{{ $active := .active }}
+{{ $fc := .active }}
+{{ $sc := "" }}
+{{ $sn := "" }}
 <div id="comments" class="post-comments">
   <div class="comment-head">
     <div class="comment-headline">
       <i class="fas fa-comments fa-fw"></i>
-      <span>{{ T "PostCommentTitle" }}</span>
+      <span>{{ T "PostComments.title" }}</span>
     </div>
-    {{- if $tc }}
-    {{- $sn = (sort .nav "weight") }}
-    {{- $fc = index $sn 0 }}
-    {{- $sc = index $sn 1 }}
+    {{ if $tc }}
+    {{ $sn = (sort .nav "weight") }}
+    {{ $fc = index $sn 0 }}
+    {{ $sc = index $sn 1 }}
     <div class="comment-switch">
       <span class="first-comment">{{ $fc.title }}</span>
       <span class="switch-btn {{ if eq .active (lower $sc.name) }}move{{ end }}"></span>
       <span class="second-comment">{{ $sc.title }}</span>
     </div>  
-    {{- end }}
+    {{ end }}
   </div>
   <div class="comment-wrap">
   {{ $cp := "_thirdparty/comment/%s.html" }}
-  {{- if $tc }}
-  {{- range $sn }}
+  {{ if $tc }}
+  {{ range $sn }}
     <div>
-      {{- partial "_thirdparty/comment/comm_loading.html" . }}
-      {{- partial (printf $cp (lower .name)) $root }}
+      {{ partial "_thirdparty/comment/comm_loading.html" . }}
+      {{ partial (printf $cp (lower .name)) $root }}
     </div>
-  {{- end }}
-  {{- else }}
+  {{ end }}
+  {{ else }}
     <div>      
-      {{- partial "_thirdparty/comment/comm_loading.html" . }}
-      {{- partial (printf $cp $fc) $root }}
+      {{ partial "_thirdparty/comment/comm_loading.html" . }}
+      {{ partial (printf $cp $fc) $root }}
     </div>
-  {{- end }}
+  {{ end }}
   </div>
 </div>  
-{{- end }}
+{{ end }}

@@ -9,9 +9,9 @@
   </div>
 
   <div class="site-meta">
-    {{- if and .Site.Params.customLogo (eq .Site.Params.scheme "Muse") }}
+    {{ if and .Site.Params.customLogo (eq .Site.Params.scheme "Muse") }}
       <img class="custom-logo-image" src="{{ .Site.Params.customLogo }}" alt="{{ $title }}">
-    {{- end }}
+    {{ end }}
 
     <a href="{{ "/" | relLangURL }}" class="brand" rel="start">
       <i class="logo-line"></i>
@@ -20,17 +20,17 @@
     </a>
     {{ if isset .Site.Params "subtitle" }}
       <p class="site-subtitle" itemprop="description">{{ .Site.Params.subtitle }}</p>
-    {{- end }}
-    {{- if and .Site.Params.customLogo (or (eq .Site.Params.scheme "Gemini") (eq .Site.Params.scheme "Pisces"))}}
+    {{ end }}
+    {{ if and .Site.Params.customLogo (or (eq .Site.Params.scheme "Gemini") (eq .Site.Params.scheme "Pisces"))}}
       <img class="custom-logo-image" src="{{ .Site.Params.customLogo }}" alt="{{ $title }}">
-    {{- end }}
+    {{ end }}
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
       {{ if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
       <i class="fa fa-search fa-fw fa-lg"></i>
-      {{- end }}
+      {{ end }}
     </div>
   </div>
 </div>

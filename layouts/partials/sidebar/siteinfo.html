@@ -9,23 +9,23 @@
       <div class="item-name"><i class="fa-solid fa-calendar-check"></i>{{ T "SiteInfoItems.runTimes" }}</div>
       <div class="item-count" id="runTimes" data-publishdate="{{ $scratch.Get "last" }}"></div>
     </div>
-    {{- if eq .Site.Params.siteState.statistic.plugin "busuanzi" }}
-      {{- with .Site.Params.analytics.busuanzi }}
-      <div class="siteinfo-item">
-        <div class="item-name">
-          <i class="fas {{ .visitorsIcon }}"></i>{{ T "SiteInfoItems.visitors" }}
-        </div>
-        <div class="item-count" id="busuanzi_value_site_uv"><i class="fa fa-sync fa-spin"></i></div>
+    {{ if eq .Site.Params.siteState.views.plugin "busuanzi" }}
+    {{ with .Site.Params.analytics.busuanzi }}
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fas {{ .visitorsIcon }}"></i>{{ T "SiteInfoItems.visitors" }}
       </div>
-      <div class="siteinfo-item">
-        <div class="item-name">
-          <i class="fas {{ .viewsIcon }}"></i>{{ T "SiteInfoItems.pageViews" }}
-        </div>
-        <div class="item-count" id="busuanzi_value_site_pv"><i class="fa fa-sync fa-spin"></i></div>
+      <div class="item-count" id="busuanzi_value_site_uv"><i class="fa fa-sync fa-spin"></i></div>
+    </div>
+    <div class="siteinfo-item">
+      <div class="item-name">
+        <i class="fas {{ .viewsIcon }}"></i>{{ T "SiteInfoItems.pageViews" }}
       </div>
-      {{- end }}  
-    {{- end }}    
-    {{- if eq .Site.Params.siteState.statistic.plugin "51la" }}
+      <div class="item-count" id="busuanzi_value_site_pv"><i class="fa fa-sync fa-spin"></i></div>
+    </div> 
+    {{ end }}    
+    {{ end }}    
+    {{ if eq .Site.Params.siteState.views.plugin "51la" }}
     <div id="la-siteinfo-widget" style="display: none;"></div>
     <div class="siteinfo-item">
       <div class="item-name">
@@ -51,7 +51,7 @@
       </div>
       <div class="item-count" id="total_site_pv"><i class="fa fa-sync fa-spin"></i></div>
     </div>
-    {{- end }}
+    {{ end }}
     <div class="siteinfo-item">
       <div class="item-name"><i class="fa fa-font"></i>{{ T "SiteInfoItems.words" }}</div>
       <div class="item-count" id="wordsCount" data-count="{{ $scratch.Get "totalWords" }}"></div>

@@ -1,15 +1,15 @@
-{{- define "title" }}
-{{- .Params.Title | default (T .Section) | default .Section }} - {{ .Site.Title -}}
-{{- end -}}
+{{ define "title" }}
+{{ .Params.Title | default (T .Section) | default .Section }} - {{ .Site.Title }}
+{{ end }}
 {{ define "main_inner_class" }}index posts-expand{{ end }}
 
-{{- define "main" }}
+{{ define "main" }}
 
 {{ $paginator := .Paginate (where .Site.RegularPages "Section" "==" .Section) }}
-{{- range $paginator.Pages }}
+{{ range $paginator.Pages }}
   {{ partial "post.html"  (dict "ctx" . "IsHome" true) }}
-{{- end }}
+{{ end }}
 
-{{- partial "partials/pagination.html" . }} 
+{{ partial "partials/pagination.html" . }} 
  
-{{- end }}
+{{ end }}

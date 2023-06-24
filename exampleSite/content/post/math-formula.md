@@ -7,7 +7,8 @@ date: 2022-09-11T10:16:02+08:00
 lastmod: 2022-09-11T10:16:02+08:00
 
 categories:
-  - 示例
+  - 第三方引入
+  - 数学公式
 tags:
   - 数学公式
   - mathjax
@@ -32,7 +33,7 @@ math: mathjax
 
 {{< /note >}}
 
-**注意：** 使用[支持的TeX功能](https://docs.mathjax.org/en/latest/input/tex/index.html)的联机参考资料。
+**注意：**  使用[支持的TeX功能](https://docs.mathjax.org/en/latest/input/tex/index.html)的联机参考资料。
 
 ## 例子
 
@@ -50,7 +51,7 @@ $$
 
 
 ### 几何级数之和
-我把接下来的两个例子分成了几行，这样它在手机上表现得更好。这就是为什么它们包含 `\displaystyle`。
+我把接下来的两个例子分成了几行，这样它在手机上表现得更好。这就是为什么它们包含 `\displaystyle`。或者可使用类似 `\displaylines{x = a + b \\\ y = b + c}` 语法进行截断，具体信息可见：[mathjax-issues2312](https://github.com/mathjax/MathJax/issues/2312)
 
 $$
 \displaystyle\sum_{i=1}^{k+1}i
@@ -78,7 +79,12 @@ $$
 
 ### 乘记号
 $$
-\displaystyle 1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = \displaystyle \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, \displaystyle\text{ for }\lvert q\rvert < 1.
+\displaystyle 1 + \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\cdots = 
+$$
+
+$$
+\displaystyle \prod_{j=0}^{\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})}, 
+\displaystyle\text{ for }\lvert q\rvert < 1.
 $$
 
 
@@ -88,8 +94,8 @@ $$
 
 ### 希腊字母
 $$
-\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega
-\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi \ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi
+\displaylines{\Gamma\ \Delta\ \Theta\ \Lambda\ \Xi\ \Pi\ \Sigma\ \Upsilon\ \Phi\ \Psi\ \Omega
+\alpha\ \beta\ \gamma\ \delta\ \epsilon\ \zeta\ \\\\ \eta\ \theta\ \iota\ \kappa\ \lambda\ \mu\ \nu\ \xi \ \omicron\ \pi\ \rho\ \sigma\ \tau\ \upsilon\ \phi\ \chi\ \psi\ \omega\ \varepsilon\ \vartheta\ \varpi\ \varrho\ \varsigma\ \varphi}
 $$
 
 
@@ -99,8 +105,8 @@ $$
 $$
 
 $$
-\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow
-\leftharpoonup\ \leftharpoondown\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow
+\displaylines{\Leftarrow\ \Rightarrow\ \leftrightarrow\ \Leftrightarrow\ \mapsto\ \hookleftarrow
+\leftharpoonup\ \leftharpoondown\ \\\\\ \rightleftharpoons\ \longleftarrow\ \Longleftarrow\ \longrightarrow}
 $$
 
 $$

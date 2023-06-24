@@ -1,30 +1,30 @@
-{{- define "title" }}
-{{- .Params.Title | default (T .Section) | default .Section | dict "Some" | T "AllSome" }} - {{ .Site.Title -}}
-{{- end -}}
+{{ define "title" }}
+{{ .Params.Title | default (T .Section) | default .Section | dict "Some" | T "AllSome" }} - {{ .Site.Title }}
+{{ end }}
 {{ define "main_inner_class" }}archive posts-collapse{{ end }}
-{{- define "main" }}
+{{ define "main" }}
 <div class="post-block">
   <div class="post-content">
     <div class="collection-title">
-      {{- $cheers := "Um" }}
-      {{- $posts := .Scratch.Get "postsCount" }}      
-      {{- if gt $posts 210 }}
-      {{- $cheers = "Excellent" }}
-      {{- else if gt $posts 130 }}
-      {{- $cheers = "Great" }}
-      {{- else if gt $posts 80 }}
-      {{- $cheers = "Good" }}
-      {{- else if gt $posts 50 }}
-      {{- $cheers = "Nice" }}
-      {{- else if gt $posts 30 }}
-      {{- $cheers = "Ok" }}
-      {{- end }}
+      {{ $cheers := "um" }}
+      {{ $posts := .Scratch.Get "postsCount" }}      
+      {{ if gt $posts 210 }}
+      {{ $cheers = "excellent" }}
+      {{ else if gt $posts 130 }}
+      {{ $cheers = "great" }}
+      {{ else if gt $posts 80 }}
+      {{ $cheers = "good" }}
+      {{ else if gt $posts 50 }}
+      {{ $cheers = "nice" }}
+      {{ else if gt $posts 30 }}
+      {{ $cheers = "ok" }}
+      {{ end }}
       <span class="collection-header">
-        {{- T (printf "PostArchiveCheers%s" $cheers) }}
-        {{- T "SymbolComma" }}
-        {{- T "ArchiveCounterTitle" $posts | safeHTML }}
-        {{- T "SymbolComma" }}
-        {{- T "PostArchiveKeepOn" }}
+        {{ T (printf "PostArchive.cheers.%s" $cheers) }}
+        {{ T "Symbol.comma" }}
+        {{ T "Terms.archives" $posts | safeHTML }}
+        {{ T "Symbol.comma" }}
+        {{ T "PostArchive.keepOn" }}
       </span>
     </div>
 
@@ -32,5 +32,5 @@
     
   </div>
 </div>
-{{- partial "pagination.html" . }}
-{{- end }}
+{{ partial "pagination.html" . }}
+{{ end }}

@@ -6,15 +6,15 @@
 {{ with .res.alias2 }}
   {{ $npm = . }}
 {{ end }}   
-{{- $file := .res.file }}
+{{ $file := .res.file }}
 
-{{- if ne .vendor "unpkg" }}
-  {{- with .res.alias }}
-    {{- $npm = . }}
-  {{- end }}   
-  {{- $file = replaceRE `(dist|lib|source\/js)\/` "" .res.file }}
-  {{- $fmt = "%s/%s/%s/%s" }}
-{{- end }}
+{{ if ne .vendor "unpkg" }}
+  {{ with .res.alias }}
+    {{ $npm = . }}
+  {{ end }}   
+  {{ $file = replaceRE `(dist|lib|source\/js)\/` "" .res.file }}
+  {{ $fmt = "%s/%s/%s/%s" }}
+{{ end }}
 
 {{ $pluginRes := printf $fmt .router $npm .res.version $file }}
 

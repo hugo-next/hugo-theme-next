@@ -1,14 +1,14 @@
-{{- $pageCfg := dict
+{{ $pageCfg := dict
   "isHome"    .IsHome
   "isPage"    .IsPage
   "comments"  (.Scratch.Get "isComment")
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
--}}
+}}
 
 {{/* Append waline pageview & comment plugin */}}
-{{ if and .Site.Params.waline ( or .Site.Params.waline.pageView .Site.Params.waline.comment) }}
+{{ if or (eq .Site.Params.postMeta.views.plugin "waline") (eq .Site.Params.postMeta.comments.plugin "waline") }}
 {{ $counter := dict
   "js"  .Site.Data.resources.plugins.waline.js
 }}
@@ -37,4 +37,4 @@
 {{ $pageCfg = merge $pageCfg (dict "math" $math) }}
 {{ end }}
 
-<script class="next-config" data-name="page" type="application/json">{{- $pageCfg -}}</script>
+<script class="next-config" data-name="page" type="application/json">{{ $pageCfg }}</script>

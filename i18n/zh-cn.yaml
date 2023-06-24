@@ -19,121 +19,82 @@ CateTitle:
 AllSome:
   other: "所有 {{ .Some }}"
 
-NavToggleLabel:
-  other: 切换导航栏
+Symbol:
+  colon: "："
+  comma: "，"
+  period: "。"
 
-MSearchLabel:
-  other: 搜索
+Sidebar:
+  label:
+    posts: 日志
+    categories: 分类
+    tags: 标签
+    rss: RSS 订阅
+    ccommons: 共享知识
+    toc: 文章目录
+    overview: 站点概览
+    navToggle: 切换导航栏
+    search: 搜索
 
-SymbolColon:
-  other: "："
-SymbolComma:
-  other: "，"
-SymbolPeriod:
-  other: "。"
- 
-SbPostsLable:
-  other: 日志
-SbCatesTitle:
-  other: 分类
-SbTagsTitle:
-  other: 标签
-TableOfContents:
-  other: 文章目录
-SiteOverview:
-  other: 站点概览
-RSSLable:
-  other: RSS 订阅
-CCLinkTitle:
-  other: 共享知识
+Terms:
+  archives: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
+  categories: "目前共计 <strong>{{ .Count }}</strong> 个分类"
+  tags: "目前共计 <strong>{{ .Count }}</strong> 个标签"
 
-TagsCounterTitle:
-  zero: 暂无标签
-  other: "目前共计 <strong>{{ .Count }}</strong> 个标签"
-CatesCounterTitle:
-  zero: 暂无分类
-  other: "目前共计 <strong>{{ .Count }}</strong> 个分类"
-ArchiveCounterTitle:
-  zero: 暂无日志
-  other: "目前共计 <strong>{{ .Count }}</strong> 篇日志"
+PostArchive:
+  cheers:
+    um: 嗯..
+    ok: 还行
+    nice: 不错
+    good: 很好
+    great: 非常好
+    excellent: 太棒了
+  keepOn: 继续努力哟。╰(*°▽°*)╯
 
-PostArchiveCheersUm:
-  other: 嗯..
-PostArchiveCheersOk:
-  other: 还行
-PostArchiveCheersNice:
-  other: 不错
-PostArchiveCheersGood:
-  other: 很好
-PostArchiveCheersGreat:
-  other: 非常好
-PostArchiveCheersExcellent:
-  other: 太棒了
-PostArchiveKeepOn:
-  other: 继续努力哟。╰(*°▽°*)╯
+PostMeta:
+  sticky: 置顶
+  publish:
+    date: 发表于
+    time: 创建时间
+  lastmod:
+    date: 更新于
+    time: 修改时间
+  category: 分类于
+  words: 
+    title: 字数
+    count: "{{- .WordCount -}}"
+  reading:
+    title: 阅读
+    time: "{{- .ReadingTime -}}分钟"
+  views: 浏览
+  comments: 评论
+  tags: 标签
+  more: 阅读全文
+  edit: 编辑
 
-PostStickyTitle:
-  other: 置顶
-PostPublishDate:
-  other: 发表于
-PostPublishTime:
-  other: 创建时间
-PostLastModDate:
-  other: 更新于
-PostLastModTime:
-  other: 修改时间
-PostCategory:
-  other: "分类于"
-PostWords:
-  other: 字数
-PostWordCount:
-  other: "{{- .WordCount -}}"
-PostReading:
-  other: 阅读
-PostReadTime:
-  other: "{{- .ReadingTime -}}分钟"
-PostViews:
-  other: 浏览
-PostComments:
-  other: 评论
-PostTags:
-  other: 标签
-PostReadMore:
-  other: 阅读全文
-PostEditTitle:
-  other: 编辑
+Reward:
+  title: 赞赏
+  wechatpay: 微信
+  alipay: 支付宝
+  paypal: Paypal
+  bitcoin: 比特币
 
-PostCRTitle:
-  other: 文章标题
-PostCRAuthor:
-  other: 本文作者
-PostCRLink:
-  other: 本文链接
-PostCROriginAuthor:
-  other: 原文作者
-PostCROriginLink:
-  other: 原文链接
-PostCRLicenseTitle:
-  other: 版权声明
-PostCRLicenseContent:
-  other: "本博客所有文章除特别声明外，均采用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 许可协议。转载请注明出处！"
+PostCopyRight:
+  title: 文章标题
+  author: 本文作者
+  link: 本文链接
+  origin:
+    author: 原文作者
+    link: 原文链接
+  license:
+    title: 版权声明
+    content: "本博客所有文章除特别声明外，均采用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 许可协议。转载请注明出处！"
 
 PostFollowMe:
   other: 欢迎关注我的其它发布渠道
 
-RewardDonate:
-  other: 赞赏
-RewardWechatpay:
-  other: 微信
-RewardAlipay:
-  other: 支付宝
-RewardPaypal:
-  other: PayPal
-RewardBitcoin:
-  other: 比特币
-
-PostCommentTitle:
-  other: 评论交流
+PostComments:
+  title: 评论交流
 
 SiteInfoItems:
   title: "网站资讯"
@@ -148,17 +109,14 @@ SiteInfoItems:
   totalViews: "总访问量："
   lastUpdate: "最后更新于："
 
-FooterPowerby:
-  other: 由 %s 强力驱动
+Footer:
+  powerby: 由 %s 强力驱动
 
-SearchPh:
-  other: 搜索...
-SearchEmpty:
-  other: "没有找到任何搜索结果：${query}"
-SearchHits:
+Search:
+  placeholder: 搜索...
+  empty: "没有找到任何搜索结果：${query}"
   hits: "找到 ${hits} 个搜索结果"
-SearchHitsTime:
-  other: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
+  time: "找到 ${hits} 个搜索结果（用时 ${time} 毫秒）"
 
 DateSuffix:
   years: " 年 "

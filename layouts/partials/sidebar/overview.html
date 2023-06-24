@@ -1,92 +1,92 @@
-{{- $author := .Site.Params.author }}
+{{ $author := .Site.Params.author }}
 <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  {{- with .Site.Params.avatar.url }}
+  {{ with .Site.Params.avatar.url }}
     <img class="site-author-image" itemprop="image" alt="{{ $author }}"
     src="/imgs/img-lazy-loading.gif" data-src="{{ . }}">
-  {{- end }}
+  {{ end }}
   <p class="site-author-name" itemprop="name">{{ $author }}</p>
   <div class="site-description" itemprop="description">{{ .Site.Params.description }}</div>
 </div>
 
-{{- if .Site.Params.siteState.basic }}
+{{ if .Site.Params.siteState.basic }}
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
     <div class="site-state-item site-state-posts">
       <a href="{{ "/archives/" | relLangURL }}">
         <span class="site-state-item-count">{{ .Scratch.Get "postsCount" }}</span>
-        <span class="site-state-item-name">{{ T "SbPostsLable" }}</span>
+        <span class="site-state-item-name">{{ T "Sidebar.label.posts" }}</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">
       <a href="{{ "/categories/" | relLangURL }}">
         <span class="site-state-item-count">{{ .Scratch.Get "catsCount" }}</span>
-        <span class="site-state-item-name">{{ T "SbCatesTitle" }}</span>
+        <span class="site-state-item-name">{{ T "Sidebar.label.categories" }}</span>
       </a>
     </div>
     <div class="site-state-item site-state-tags">
       <a href="{{ "/tags/" | relLangURL }}">
         <span class="site-state-item-count">{{ .Scratch.Get "tagsCount" }}</span>
-        <span class="site-state-item-name">{{ T "SbTagsTitle" }}</span>
+        <span class="site-state-item-name">{{ T "Sidebar.label.tags" }}</span>
       </a>
     </div>
   </nav>
 </div>
-{{- end }}
-{{- if and .Site.Params.chat.enable (or (or .Site.Params.chatra.enable .Site.Params.tidio.enable) .Site.Params.gitter.enable) }}
+{{ end }}
+{{ if and .Site.Params.chat.enable (or (or .Site.Params.chatra.enable .Site.Params.tidio.enable) .Site.Params.gitter.enable) }}
 <div class="sidebar-button site-overview-item animated">
   <button {{ if .Site.Params.gitter.enable }} class="js-gitter-toggle-chat-button" {{ end }}>
-    {{- if .Site.Params.chat.icon }}<i class="{{ .Site.Params.chat.icon }}"></i>{{ end }}
+    {{ if .Site.Params.chat.icon }}<i class="{{ .Site.Params.chat.icon }}"></i>{{ end }}
     {{ .Site.Params.chat.text }}
   </button>
 </div>
-{{- end }}
+{{ end }}
 <div class="links-of-social site-overview-item animated">
 {{ $si := .Site.Params.socialIcons }}
 {{ range $key,$val := .Site.Params.socials }}
-{{- $vals := split $val "||" }}
-{{- $name := trim (index $vals 0) " " }}
-{{- $url := trim (index $vals 1) " " }}
-{{- $icon := trim (index $vals 2) " " }}
+{{ $vals := split $val "||" }}
+{{ $name := trim (index $vals 0) " " }}
+{{ $url := trim (index $vals 1) " " }}
+{{ $icon := trim (index $vals 2) " " }}
   <span class="links-of-social-item">
-    <a href="{{ $url }}" title="{{ $name }} → {{ $url }}" rel="noopener" {{- if and $si.enable $si.transition }} class="hvr-icon-pulse" {{- end }} target="_blank">
-      {{- if $si.enable }}
-      <i class="{{- $icon }} fa-fw {{ if $si.transition }} hvr-icon {{ end }}"></i>
-      {{- end }}
-      {{- if or (not $si.enable) (not $si.iconsOnly) }}
-      {{- $name }}
-      {{- end }}
+    <a href="{{ $url }}" title="{{ $name }} → {{ $url }}" rel="noopener" {{ if and $si.enable $si.transition }} class="hvr-icon-pulse" {{ end }} target="_blank">
+      {{ if $si.enable }}
+      <i class="{{ $icon }} fa-fw {{ if $si.transition }} hvr-icon {{ end }}"></i>
+      {{ end }}
+      {{ if or (not $si.enable) (not $si.iconsOnly) }}
+      {{ $name }}
+      {{ end }}
     </a>
   </span>
-{{- end }}
+{{ end }}
 </div>
 
-{{- with .Site.Params.creativeCommons }}
-{{- if .sidebar }}
+{{ with .Site.Params.creativeCommons }}
+{{ if .sidebar }}
 <div class="cc-license animated" itemprop="license">
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr $.Site.LanguageCode 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "CCLinkTitle" }}">
-    <img src="/imgs/img-lazy-loading.gif" data-src="/imgs/cc/{{ .size }}/{{ replace .license "-" "_" }}.svg" alt="{{ T "CCLinkTitle" }}">
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.{{ substr $.Site.LanguageCode 0 2 }}" class="cc-opacity" rel="noopener" target="_blank" title="{{ T "Sidebar.label.ccommons" }}">
+    <img src="/imgs/img-lazy-loading.gif" data-src="/imgs/cc/{{ .size }}/{{ replace .license "-" "_" }}.svg" alt="{{ T "Sidebar.label.ccommons" }}">
   </a>
 </div>
-{{- end }}
-{{- end }}
+{{ end }}
+{{ end }}
 
-{{- if .Site.Params.links }}
+{{ if .Site.Params.links }}
 <div class="links-of-blogroll site-overview-item animated">
   <div class="links-of-blogroll-title">
-    {{- if .Site.Params.linksSets.icon }}
+    {{ if .Site.Params.linksSets.icon }}
     <i class="{{ .Site.Params.linksSets.icon }} fa-fw"></i>
-    {{- end }}
-    {{- .Site.Params.linksSets.title }}
+    {{ end }}
+    {{ .Site.Params.linksSets.title }}
   </div>
   <ul class="links-of-blogroll-list">
-    {{- range $key,$val := .Site.Params.links }}
-    {{- $vals := split $val "||" }}
-    {{- $name := trim (index $vals 0) " " }}
-    {{- $url := trim (index $vals 1) " " }}
+    {{ range $key,$val := .Site.Params.links }}
+    {{ $vals := split $val "||" }}
+    {{ $name := trim (index $vals 0) " " }}
+    {{ $url := trim (index $vals 1) " " }}
     <li class="links-of-blogroll-item">
       <a href="{{ $url }}" title="{{ $url }}" target="_blank">{{ $name }}</a>
     </li>
-    {{- end }}
+    {{ end }}
   </ul>
 </div>
-{{- end }}
+{{ end }}

@@ -1,21 +1,19 @@
-{{- with .Site.Params.rewardSets }}
-{{- if .enable }}
+{{ with .Site.Params.rewardSets }}
+{{ if .enable }}
 <div class="reward-container">
-  <div>{{- .comment | safeHTML -}}</div>
+  <div>{{ .comment | safeHTML }}</div>
   <button>
-    {{- T "RewardDonate" -}}
+    {{ T "Reward.title" }}
   </button>
   <div class="post-reward">
-    {{- range $name,$img := .reward }}
-    {{- $fw := substr $name 0 1  }}
-    {{- $pay := replace $name $fw ($fw | upper) 1 }}
-    {{- $payName := T (printf "Reward%s" $pay) }}
-    <div class="post-reward-item">
-      <img src="/imgs/img-lazy-loading.gif"  data-src="{{ $img }}" alt="{{ $.Site.Params.author }} - {{ $payName }}">
-      <span>{{ $payName }}</span>
-    </div>
-    {{- end }}
+    {{ range $name,$img := .reward }}
+      {{ $payName := T (printf "Reward.%s" $name) }}
+      <div class="post-reward-item">
+        <img src="/imgs/img-lazy-loading.gif"  data-src="{{ $img }}" alt="{{ $.Site.Params.author }} - {{ $payName }}">
+        <span>{{ $payName }}</span>
+      </div>
+    {{ end }}
   </div>
 </div>
-{{- end }}
-{{- end }}
+{{ end }}
+{{ end }}

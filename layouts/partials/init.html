@@ -14,7 +14,9 @@
 
 {{ $globalVars := newScratch }}
 
-{{ $globalVars.Set "postsCount" (len (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections)) }}
+{{ $pages := (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+{{ $globalVars.Set "pages" $pages}}
+{{ $globalVars.Set "postsCount" (len  $pages)}}
 {{ $globalVars.Set "catsCount" (len .Site.Taxonomies.categories) }}
 {{ $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  }}
 
@@ -37,10 +39,10 @@
   "lazyload"    .Site.Params.lazyload
   "motion"      .Site.Params.motion
   "i18n"        (dict 
-    "placeholder" (T "SearchPh")
-    "empty"       (T "SearchEmpty")
-    "hits_time"   (T "SearchHitsTime")
-    "hits"        (T "SearchHits")
+    "placeholder" (T "Search.placeholder")
+    "empty"       (T "Search.empty")
+    "hits_time"   (T "Search.time")
+    "hits"        (T "Search.hits")
     "ds_years"    (T "DateSuffix.years")
     "ds_days"     (T "DateSuffix.days")
     "ds_hours"    (T "DateSuffix.hours")
@@ -56,6 +58,16 @@
 {{ if .Site.Params.localSearch.enable }}
   {{ $localSearch := dict "localSearch" .Site.Params.localSearch }}
   {{ $config = merge $config $localSearch }}
+{{ end }}
+
+{{ with .Site.Params.postMeta }}
+  {{ $postmeta := dict 
+    "views" .views
+    "comments" .comments
+  }}
+  {{ $config = merge $config (dict "postmeta" $postmeta) }}
+{{ else }}
+  
 {{ end }}
 
 {{ if .Site.Params.algoliaSearch.enable }}
@@ -125,11 +137,6 @@
   "id" .
 }}
 {{ $config = merge $config (dict "lawidget" $lawidget) }}
-{{ end }}
-
-{{ with .Site.Params.analytics.busuanzi }}
-{{ $busz := dict "pageview" .postViews }}
-{{ $config = merge $config (dict "busuanzi" $busz) }}
 {{ end }}
 
 {{ $globalVars.Set "config" $config }}

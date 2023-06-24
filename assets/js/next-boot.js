@@ -24,6 +24,14 @@ NexT.boot.registerEvents = function() {
   // Register comment's components
   NexT.plugins.register();
 
+  // Register comment counter click event
+  const commentCnt = document.querySelector('#comments-count');
+  if (commentCnt && NexT.CONFIG.page.isPage) {
+    commentCnt.addEventListener('click',  event => {
+      NexT.utils.slidScrollBarAnime('comments');
+    });
+  }
+
   // Mobile top menu bar.
   document.querySelector('.site-nav-toggle .toggle').addEventListener('click', event => {
     event.currentTarget.classList.toggle('toggle-close');
@@ -62,7 +70,7 @@ NexT.boot.refresh = function() {
     NexT.utils.registerCommonSwitch();
     NexT.utils.domAddClass('#goto-comments', 'goto-comments-on');
   } else {
-    NexT.utils.hideCommontes();
+    NexT.utils.hideComments();
   }
   NexT.utils.registerImageViewer();
 

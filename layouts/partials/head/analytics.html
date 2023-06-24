@@ -1,12 +1,12 @@
-{{- if isset .Site.Params.analytics "laid" }}
+{{ if isset .Site.Params.analytics "laid" }}
   {{ partial "_thirdparty/analytics/51la.html" . }}  
-{{- end }}
-{{- if isset .Site.Params.analytics "baidu" }}
+{{ end }}
+{{ if isset .Site.Params.analytics "baidu" }}
   {{ partial "_thirdparty/analytics/baidu.html" . }}  
-{{- end }}
-{{- if isset .Site.Params.analytics "google" }}
+{{ end }}
+{{ if isset .Site.Params.analytics "google" }}
   {{ partial "_thirdparty/analytics/google.html" . }}  
-{{- end }}
-{{- if isset .Site.Params.analytics "busuanzi" }}
+{{ end }}
+{{ if or (isset .Site.Params.analytics "busuanzi") (eq .Site.Params.postMeta.views.plugin "busuanzi") }}
   {{ partial "_thirdparty/analytics/busuanzi.html" . }}  
-{{- end }}
+{{ end }}
