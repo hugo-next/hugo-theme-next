@@ -6,10 +6,11 @@ lastmod: 2022-06-03T16:43:23+08:00
 date: 2022-06-02T11:52:03+08:00
 
 categories:
- - 博客
+- 开始建站
+
 tags:
- - Hugo
- - 开始
+  - Hugo
+  - 开始
 
 url: post/hello-world.html
 toc: true
