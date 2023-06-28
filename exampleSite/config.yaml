@@ -470,6 +470,7 @@ params:
   # 开启文章头部元素显示
   # Post meta display settings
   postMeta:
+    # 是否开启各元素的文字显示 
     itemText: true
     created: true
     updated:
@@ -822,8 +823,6 @@ params:
   # Waline comments system
   # More info seee: https://waline.js.org/
   waline:
-    pageView: true
-    comment: true
     placeholder: "请文明发言哟 ヾ(≧▽≦*)o"
     sofa: "快来发表你的意见吧 (≧∀≦)ゞ"
     emoji: false
@@ -964,6 +963,9 @@ params:
     indexName: #<algolia index name>
     hits:
       perPage: 10
+    # 索引生成内容长度字数限制
+    # Index generation content length word count limit.
+    limit: 1000
 
   # 本地搜索
   # Local Search
@@ -987,6 +989,9 @@ params:
     # 页面加载时是否要重新载入索引文件
     # Preload the search data when the page loads.
     preload: false
+    # 索引生成内容长度字数限制
+    # Index generation content length word count limit.
+    limit: 1000
 
 
   # ---------------------------------------------------------------
@@ -1103,7 +1108,6 @@ params:
   # ---------------------------------------------------------------
 
   vendors:
-    vendors:
     # The CDN provider of NexT internal scripts.
     # Available values: local | unpkg | cdnjs | qiniu | bootcdn | custom
     # Warning: If you are using the latest master branch of NexT, please set `internal: local`
