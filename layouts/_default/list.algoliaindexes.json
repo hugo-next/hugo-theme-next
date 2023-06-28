@@ -1,3 +1,4 @@
+{{ $limit := .Site.Params.algoliaSearch.limit | default 1000 }}
 [
   {{ range $index, $entry := where .Site.RegularPages "Kind" "page" }}
   {{ if $index }}, {{ end }}
@@ -5,7 +6,11 @@
     "objectID": "{{ .Date.Unix }}",
     "permalink": "{{ .Permalink | relURL }}",
     "title": {{ .Title | jsonify }},
+    {{ if gt .WordCount $limit }}
+    "content": {{ .Plain | truncate $limit | jsonify | safeJS }},
+    {{ else }}
     "content": {{ .Plain | jsonify | safeJS }},
+    {{ end }}
     "date": {{ .Date.Format $.Site.Params.timeFormat | jsonify }},
     "updated": {{ .Lastmod.Format $.Site.Params.timeFormat | jsonify }}
   }
