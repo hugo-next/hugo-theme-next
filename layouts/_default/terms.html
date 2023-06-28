@@ -15,7 +15,6 @@
   </div>
   <div class="post-body">
     {{ if eq .Data.Plural "categories" }}
-    {{ $categories := .Site.Taxonomies.categories }}
     <div class="category-all-page">
       <div class="category-all-title">
         {{ T "Terms.categories" (.Scratch.Get "catsCount") | safeHTML }}
@@ -24,7 +23,7 @@
         <ul class="category-list">
           {{ $allSecondaryCats := slice }}
           {{ range .Site.Taxonomies.categories.ByCount }}
-            {{ $primaryCategory := .Name }}
+            {{ $primaryCategory := .Page.Title }}
             {{ $primaryCount := 0 }}
             {{ $secondaryCategories := slice}}
             {{ $pages := $.Scratch.Get "pages" }}

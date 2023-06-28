@@ -67,7 +67,7 @@ print "Hello, world!"
 
 ### Git 对比
 
-``` diff {hl_lines=[4,"6-7"]， linenos=true}
+```diff {hl_lines=[4,"6-7"], linenos=true}
 *** /path/to/original ''timestamp''
 --- /path/to/new  ''timestamp''
 ***************
