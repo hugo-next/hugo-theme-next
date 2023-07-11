@@ -7,6 +7,29 @@ HTMLElement.prototype.wrap = function (wrapper) {
 };
 
 NexT.utils = {
+  registerMenuClick: function() {
+    const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
+    pMenus.forEach(function(item) {
+      const icon = item.querySelector('span > i');
+      var ul = item.nextElementSibling;  
+      
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        ul.classList.toggle('expand');
+        if (ul.classList.contains('expand')) {
+          icon.className = 'fa fa-angle-down';
+        } else {
+          icon.className = 'fa fa-angle-right';
+        }
+      });
+
+      var cCls = ul.querySelectorAll('.menu-item-active');
+      if (cCls != null && cCls.length > 0) {
+        item.click();
+      }
+    });
+  },
   registerImageLoadEvent: function() {
     const images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
 			

@@ -1,12 +1,26 @@
 // Menu
 // --------------------------------------------------
-.menu {
+.menu, .menu-children {
   margin: 0;
   padding: 1em 0;
   text-align: center;
 }
 
-.menu-item {
+.menu-children {
+  max-height: 0;
+  padding: 0; 
+  overflow: hidden;
+  transition: max-height 1.5s ease-out;
+}
+
+ .menu-children {
+  &.expand {
+    max-height: 400px; 
+    transition: max-height 1.5s ease-in;
+  }
+}
+
+.menu-item, .menu-child-item {
   display: inline-block;
   list-style: none;
   margin: 0 10px;
@@ -51,6 +65,15 @@
       margin-left: 0;
     }
   }
+
+  .menu-item-shrink-icon {
+    float: right;
+  }
+}
+
+.menu-child-item {
+  display: block;
+  margin: 0;
 }
 
 .use-motion .menu-item {
