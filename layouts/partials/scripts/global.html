@@ -82,7 +82,7 @@
 {{ end }}
 
 {{/* Other not useful scripts, eg: 51la widget, translate */}}
-{{ with .Site.Params.siteState.statistic }}
+{{ with .Site.Params.siteState.views }}
   {{ if and .enable (eq .plugin "51la") }}
     {{ $lawt := resources.Get "js/third-party/others/lawidget.js" }}
     {{ $nextjs = $nextjs | append $lawt }}
