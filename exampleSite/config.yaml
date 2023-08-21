@@ -153,7 +153,6 @@ menus:
       pageref: /post/math-formula.html
       weight: 2   
       parent: example
-      parent: example
     - identifier: syntax
       name: 语法高亮
       pageref: /post/syntax-highlighting.html

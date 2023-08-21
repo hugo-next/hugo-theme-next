@@ -53,6 +53,16 @@ $ cp themes/hugo-theme-next/exampleSite/config.yaml .
 $ mv config.toml config.toml.backup
 ```
 
+Or use `Hugo module` to lead into the theme, see below commands:
+
+```shell
+$ cd hugo-next-exmaple
+$ hugo mod init hugo-next-exmaple
+$ wget -O config.yaml https://github.com/hugo-next/hugo-theme-next/raw/main/exampleSite/config.yaml
+$ sed -i 's/hugo-theme-next/github.com\/hugo-next\/hugo-theme-next\/v4/' config.yaml
+$ mv config.toml config.toml.backup
+```
+
 ### 💻 Preview on Local
 
 ```shell
@@ -72,6 +82,13 @@ Execute command as below in your site directory when the theme upgrade.
 ```shell
 $ cd hugo-next-exmaple
 $ git submodule update --remote
+```
+
+Execute command as below if you are using `Hugo module`:
+
+```shell
+$ cd hugo-next-exmaple
+$ hugo mod get -u
 ```
 
 ## 📝 New Post
