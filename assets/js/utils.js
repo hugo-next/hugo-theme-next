@@ -255,7 +255,7 @@ NexT.utils = {
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
-        const code = lines.innerText;
+        const code = lines.innerText.replace(/(\n{2,})/g, '\n');
         if (navigator.clipboard) {
           // https://caniuse.com/mdn-api_clipboard_writetext
           navigator.clipboard.writeText(code).then(() => {
