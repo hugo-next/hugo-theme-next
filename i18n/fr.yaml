@@ -1,0 +1,136 @@
+#--------------------------------------
+# French Version
+#--------------------------------------
+archives:
+  other: Posts
+tag:
+  other: Tag
+tags:
+  other: Tags
+TagTitle:
+  other: Tag Collection
+category:
+  other: Categorie
+categories:
+  other: Categories
+CateTitle:
+  other: Classification des items
+AllSome:
+  other: "All {{ .Some }}"
+
+
+Symbol:
+  colon: ":"
+  comma: ","
+  period: "."
+
+Sidebar:
+  label:
+    posts: Posts
+    categories: Categories
+    tags: Tags
+    rss: RSS
+    ccommons: "Creative Commons"
+    toc: Sommaire
+    overview: Résumée
+    navToggle: "Fermer/Ouvrire la bar de navigation"
+    search: chercher
+
+Terms:
+  archives: "{{ .Count }} posts au total"
+  categories: "{{ .Count }} categories au total"
+  tags: "{{ .Count }} tags au total"
+
+PostArchive:
+  cheers:
+    um: Um...
+    ok: Ok
+    nice: Cool
+    good: Bien
+    great: Génial
+    excellent: Excellent
+  keepOn: Continue de publier.╰(*°▽°*)╯
+
+PostMeta:
+  sticky: Stickys # a traduire
+  publish:
+    date: "Publier le"
+    time: "Date de création"
+  lastmod:
+    date: "Mise à jour le"
+    time: "Modifié le"
+  category: "Classé comme"
+  words:
+    title: Mots
+    count: "{{- .WordCount -}}"
+  reading:
+    title: Lectures
+    time: "{{- .ReadingTime -}} mins"
+  views: Vues
+  comments: Commentaires
+  tags: Tags
+  more: "Lire Plus"
+  edit: "Editer ce post"
+
+Reward:
+  title: Donner
+  wechatpay: WechatPay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
+
+PostCopyRight:
+  title:  Titre du post
+  author: Autheur di post
+  link: Lien du post
+  origin:
+    author: Écrit par
+    link: Originellement de
+  license:
+    title: Note de Copyright
+    content: "Tout les articles sont sous licence <i class=\"fab fa-fw fa-creative-commons\"></i>%s."
+
+PostFollowMe:
+  other: Bienvenue sur mon autre canal de publication
+
+PostComments:
+  title: Commentaires
+
+SiteInfoItems:
+  title: "Web Status"
+  runTimes: "En cours:"
+  words: "Mots:"
+  readTimes: "Temps de lecture:"
+  visitors: "Visiteurs:"
+  pageViews: "Vues:"
+  todayViews: "Nombre de vues du jour:"
+  yesterdayViews: "Nombre de vues d'hier:"
+  monthViews: "Vues du mois:"
+  totalViews: "Total des vues"
+  lastUpdate: "Dernière mise à jour:"
+
+Footer:
+  powerby: "Fait par %s"
+
+Search:
+  placeholder: Recherche...
+  empty: "Nous n'avons pas trouvé ce que vous cherchiez pour : ${query}"
+  hits: "${hits} resultats trouvés"
+  time: "${hits} resultats trouvés en ${time} ms"
+
+DateSuffix:
+  years: " Année "
+  days: " Jour "
+  hours: " Heure "
+  mins: " Minute "
+  month: " Month Ago" # a traduire
+  day: " Day Ago" # a traduire
+  hour: " Hour Ago" # a traduire
+  min: " Min Ago" # a traduire
+  just: "Just" # a traduire
+
+ToolBtns:
+  comment: "Pour commenter"
+  theme: "Changer le theme"
+  lang: "Traduction Multilingual"
+  backTop: "Remonter"
