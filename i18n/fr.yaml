@@ -2,7 +2,7 @@
 # French Version
 #--------------------------------------
 archives:
-  other: Posts
+  other: Billets
 tag:
   other: Tag
 tags:
@@ -26,7 +26,7 @@ Symbol:
 
 Sidebar:
   label:
-    posts: Posts
+    posts: Billets
     categories: Categories
     tags: Tags
     rss: RSS
@@ -37,7 +37,7 @@ Sidebar:
     search: Chercher
 
 Terms:
-  archives: "{{ .Count }} posts au total"
+  archives: "{{ .Count }} billets au total"
   categories: "{{ .Count }} Categories au total"
   tags: "{{ .Count }} Tags au total"
 
@@ -70,7 +70,7 @@ PostMeta:
   comments: Commentaires
   tags: Tags
   more: "Lire la suite"
-  edit: "Editer ce post"
+  edit: "Editer ce billet"
 
 Reward:
   title: Donner
@@ -80,9 +80,9 @@ Reward:
   bitcoin: Bitcoin
 
 PostCopyRight:
-  title:  Titre du post
-  author: Autheur di post
-  link: Lien du post
+  title:  Titre du billet
+  author: Autheur du billet
+  link: Lien du billet
   origin:
     author: Écrit par
     link: Originellement de
