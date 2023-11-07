@@ -32,9 +32,9 @@ Sidebar:
     rss: RSS
     ccommons: "Creative Commons"
     toc: Sommaire
-    overview: Résumée
+    overview: "Présentation"
     navToggle: "Fermer/Ouvrire la bar de navigation"
-    search: chercher
+    search: Chercher
 
 Terms:
   archives: "{{ .Count }} posts au total"
@@ -52,9 +52,9 @@ PostArchive:
   keepOn: Continue de publier.╰(*°▽°*)╯
 
 PostMeta:
-  sticky: Stickys # a traduire
+  sticky: Stickys # a traduire (?)
   publish:
-    date: "Publier le"
+    date: "Publié le "
     time: "Date de création"
   lastmod:
     date: "Mise à jour le"
