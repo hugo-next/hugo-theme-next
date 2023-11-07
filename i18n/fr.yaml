@@ -8,7 +8,7 @@ tag:
 tags:
   other: Tags
 TagTitle:
-  other: Tag Collection
+  other: Liste des Tags
 category:
   other: Categorie
 categories:
@@ -16,7 +16,7 @@ categories:
 CateTitle:
   other: Classification des items
 AllSome:
-  other: "All {{ .Some }}"
+  other: "Total :{{ .Some }}" # A vérifier
 
 
 Symbol:
@@ -38,8 +38,8 @@ Sidebar:
 
 Terms:
   archives: "{{ .Count }} posts au total"
-  categories: "{{ .Count }} categories au total"
-  tags: "{{ .Count }} tags au total"
+  categories: "{{ .Count }} Categories au total"
+  tags: "{{ .Count }} Tags au total"
 
 PostArchive:
   cheers:
@@ -64,12 +64,12 @@ PostMeta:
     title: Mots
     count: "{{- .WordCount -}}"
   reading:
-    title: Lectures
+    title: "Lectures "
     time: "{{- .ReadingTime -}} mins"
   views: Vues
   comments: Commentaires
   tags: Tags
-  more: "Lire Plus"
+  more: "Lire la suite"
   edit: "Editer ce post"
 
 Reward:
@@ -91,7 +91,7 @@ PostCopyRight:
     content: "Tout les articles sont sous licence <i class=\"fab fa-fw fa-creative-commons\"></i>%s."
 
 PostFollowMe:
-  other: Bienvenue sur mon autre canal de publication
+  other: "Autres réseaux sociaux"
 
 PostComments:
   title: Commentaires
@@ -100,7 +100,7 @@ SiteInfoItems:
   title: "Web Status"
   runTimes: "En cours:"
   words: "Mots:"
-  readTimes: "Temps de lecture:"
+  readTimes: "Temps de lecture: "
   visitors: "Visiteurs:"
   pageViews: "Vues:"
   todayViews: "Nombre de vues du jour:"
@@ -119,18 +119,18 @@ Search:
   time: "${hits} resultats trouvés en ${time} ms"
 
 DateSuffix:
-  years: " Année "
-  days: " Jour "
-  hours: " Heure "
-  mins: " Minute "
-  month: " Month Ago" # a traduire
+  years: " Années "
+  days: " Jours "
+  hours: " Heures "
+  mins: " Minutes "
+  month: " Month Ago" # a traduire 
   day: " Day Ago" # a traduire
   hour: " Hour Ago" # a traduire
   min: " Min Ago" # a traduire
   just: "Just" # a traduire
 
 ToolBtns:
-  comment: "Pour commenter"
+  comment: "Commenter"
   theme: "Changer le theme"
   lang: "Traduction Multilingual"
   backTop: "Remonter"
