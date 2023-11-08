@@ -13,6 +13,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.favicon.appleTouchIcon }}">
 <meta itemprop="name" content="{{ .Title }}" />
 <meta itemprop="description" content="{{ .Description | default .Site.Params.description }}" />
+<meta name="description" content="{{ .Description | default .Site.Params.description }}" />
 {{ if .IsPage }}
 {{ with .Date }}
 <meta itemprop="datePublished" {{ . }} />
