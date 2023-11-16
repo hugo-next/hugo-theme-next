@@ -16,7 +16,7 @@ categories:
 CateTitle:
   other: Classification des items
 AllSome:
-  other: "Total :{{ .Some }}" # A vérifier
+  other: "Total :{{ .Some }}" 
 
 
 Symbol:
@@ -37,13 +37,13 @@ Sidebar:
     search: Chercher
 
 Terms:
-  archives: "{{ .Count }} billets au total"
+  archives: "{{ .Count }} Billets au total"
   categories: "{{ .Count }} Categories au total"
   tags: "{{ .Count }} Tags au total"
 
 PostArchive:
   cheers:
-    um: Um...
+    um: Hum...
     ok: Ok
     nice: Cool
     good: Bien
@@ -52,16 +52,16 @@ PostArchive:
   keepOn: Continue de publier.╰(*°▽°*)╯
 
 PostMeta:
-  sticky: Stickys # a traduire (?)
+  sticky: Stickys
   publish:
     date: "Publié le "
     time: "Date de création"
   lastmod:
-    date: "Mise à jour le"
-    time: "Modifié le"
-  category: "Classé comme"
+    date: "Mise à jour le "
+    time: "Modifié le "
+  category: "Classé comme "
   words:
-    title: Mots
+    title: Nb. Mots
     count: "{{- .WordCount -}}"
   reading:
     title: "Lectures "
@@ -88,7 +88,7 @@ PostCopyRight:
     link: Originellement de
   license:
     title: Note de Copyright
-    content: "Tout les articles sont sous licence <i class=\"fab fa-fw fa-creative-commons\"></i>%s."
+    content: "Tous les articles sont sous licence <i class=\"fab fa-fw fa-creative-commons\"></i>%s."
 
 PostFollowMe:
   other: "Autres réseaux sociaux"
@@ -97,17 +97,17 @@ PostComments:
   title: Commentaires
 
 SiteInfoItems:
-  title: "Web Status"
+  title: "Statistiques"
   runTimes: "En cours:"
-  words: "Mots:"
+  words: "Nb. Mots:"
   readTimes: "Temps de lecture: "
-  visitors: "Visiteurs:"
-  pageViews: "Vues:"
-  todayViews: "Nombre de vues du jour:"
-  yesterdayViews: "Nombre de vues d'hier:"
-  monthViews: "Vues du mois:"
-  totalViews: "Total des vues"
-  lastUpdate: "Dernière mise à jour:"
+  visitors: "Visiteurs: "
+  pageViews: "Vues: "
+  todayViews: "Nombre de vues du jour: "
+  yesterdayViews: "Nombre de vues d'hier: "
+  monthViews: "Vues du mois: "
+  totalViews: "Total des vues: "
+  lastUpdate: "Dernière mise à jour: "
 
 Footer:
   powerby: "Fait par %s"
@@ -123,14 +123,14 @@ DateSuffix:
   days: " Jours "
   hours: " Heures "
   mins: " Minutes "
-  month: " Month Ago" # a traduire 
-  day: " Day Ago" # a traduire
-  hour: " Hour Ago" # a traduire
-  min: " Min Ago" # a traduire
-  just: "Just" # a traduire
-
+  month: " Mois"
+  day: " Jour "
+  hour: " Heur"
+  min: " Minute"
+  just: "A l'instant"
+  ilya: "Il y a "
 ToolBtns:
   comment: "Commenter"
   theme: "Changer le theme"
-  lang: "Traduction Multilingual"
+  lang: "Traduction Multilingue"
   backTop: "Remonter"
