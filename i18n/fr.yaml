@@ -119,16 +119,16 @@ Search:
   time: "${hits} resultats trouvés en ${time} ms"
 
 DateSuffix:
-  years: " Années "
-  days: " Jours "
-  hours: " Heures "
-  mins: " Minutes "
+  years: " Années"
+  days: " Jours"
+  hours: " Heures"
+  mins: " Minutes"
   month: " Mois"
-  day: " Jour "
+  day: " Jour"
   hour: " Heur"
   min: " Minute"
   just: "A l'instant"
-  ilya: "Il y a "
+
 ToolBtns:
   comment: "Commenter"
   theme: "Changer le theme"
