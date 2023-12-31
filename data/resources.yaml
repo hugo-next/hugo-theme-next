@@ -20,7 +20,7 @@ js:
 # CSS Resources
 css:
   - name: '@fortawesome/fontawesome-free'
-    version: 6.1.2
+    version: 6.4.2
     file: css/all.min.css
     alias: font-awesome
   - name: animate.css
@@ -52,12 +52,12 @@ addthis:
 waline:
   js:
     name: '@waline/client'
-    version: 2.13.0
+    version: 2.15.8
     file: dist/waline.js
     alias: waline
   css:
     name: '@waline/client'
-    version: 2.13.0
+    version: 2.15.8
     file: dist/waline.css
     alias: waline
 
