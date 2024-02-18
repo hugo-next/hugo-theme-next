@@ -66,6 +66,11 @@ url: "post/shortcodes.html"
   **Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
+{{< note primary >}}
+  ### Primary Header
+  **Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
+{{< /note >}}
+
 {{< note info >}}
   ### Info Header
   **Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)

@@ -52,6 +52,16 @@ $ cp themes/hugo-theme-next/exampleSite/config.yaml .
 $ mv config.toml config.toml.backup
 ```
 
+或通过 `Hugo module` 模式引用本主题，参考如下命令：
+
+```shell
+$ cd hugo-next-exmaple
+$ hugo mod init hugo-next-exmaple
+$ wget -O config.yaml https://github.com/hugo-next/hugo-theme-next/raw/main/exampleSite/config.yaml
+$ sed -i 's/hugo-theme-next/github.com\/hugo-next\/hugo-theme-next\/v4/' config.yaml
+$ mv config.toml config.toml.backup
+```
+
 ### 💻 本地预览
 
 ```shell
@@ -71,6 +81,13 @@ $ hugo server
 ```shell
 $ cd hugo-next-exmaple
 $ git submodule update --remote
+```
+
+如使用 `Hugo module`，执行如下命令：
+
+```shell
+$ cd hugo-next-exmaple
+$ hugo mod get -u
 ```
 
 > **Note**
