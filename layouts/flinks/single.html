@@ -13,6 +13,7 @@
     <div class="flinks-list-desc">{{ .FLinksDesc | safeHTML }}</div>
     <div class="flinks-list-items">
     {{ range .FLinksList }}
+    {{ if .visible }}
     <div class="flinks-list-item">
       <a href="{{ .link }}" rel="external nofollow noreferrer" title=" {{ .name }}" target="_blank">
         <div class="flinks-item-icon">
@@ -22,6 +23,7 @@
         <div class="flinks-item-desc" title="{{ .desc }}">{{ .desc | safeHTML }}</div>
       </a>
     </div>
+    {{ end }}
     {{ end }}
   </div>
   </div>
