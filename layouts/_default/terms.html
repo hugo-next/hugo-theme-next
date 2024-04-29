@@ -23,7 +23,7 @@
         <ul class="category-list">
           {{ $allSecondaryCats := slice }}
           {{ range .Site.Taxonomies.categories.ByCount }}
-            {{ $primaryCategory := .Page.Title }}
+            {{ $primaryCategory := .Name }}
             {{ $primaryCount := 0 }}
             {{ $secondaryCategories := slice}}
             {{ $pages := $.Scratch.Get "pages" }}
