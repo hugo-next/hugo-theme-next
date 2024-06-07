@@ -4,7 +4,7 @@ vendors:
   cdnjs: "https://cdnjs.cloudflare.com/ajax/libs"
   unpkg: "https://unpkg.com"
   bootcdn: "https://cdn.bootcdn.net/ajax/libs"
-  qiniu: "https://cdn.staticfile.org"
+  qiniu: "https://cdn.staticfile.net"
 
 # JavaScript 资源
 # JavaScript Resources
@@ -20,7 +20,7 @@ js:
 # CSS Resources
 css:
   - name: '@fortawesome/fontawesome-free'
-    version: 6.4.2
+    version: 6.5.2
     file: css/all.min.css
     alias: font-awesome
   - name: animate.css
@@ -64,11 +64,11 @@ waline:
 artalk:
   js:
     name: artalk
-    version: 2.3.4
+    version: 2.6.4
     file: dist/Artalk.js
   css:
     name: artalk
-    version: 2.3.4
+    version: 2.6.4
     file: dist/Artalk.css
 
 giscus:
@@ -122,11 +122,11 @@ plugins:
     js:
       - name: pageview
         alias_name: '@waline/client'
-        version: 2.13.0
+        version: 2.15.8
         file: dist/pageview.js
         alias: waline 
       - name: comment
         alias_name: '@waline/client'
-        version: 2.13.0
+        version: 2.15.8
         file: dist/comment.js
         alias: waline

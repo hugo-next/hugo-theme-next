@@ -812,11 +812,11 @@ params:
       - name: waline
         title: Waline
         color: "#27ae60"
-        weight: 2
+        weight: 1
       - name: giscus
         title: Giscus
         color: "#886ce4"
-        weight: 1
+        weight: 2
 
   # Waline 评论插件
   # 更多配置信息请参考：https://waline.js.org/
