@@ -23,9 +23,14 @@
         <ul class="category-list">
           {{ $allSecondaryCats := slice }}
           {{ range .Site.Taxonomies.categories.ByCount }}
-            {{ $primaryCategory := .Name }}
+            {{/*  
+              Rollback the change of the primary category name.
+              & it could not support the lowercase category name.
+              {{ $primaryCategory := .Name }}  
+            */}}
+            {{ $primaryCategory := .Page.Title }}
             {{ $primaryCount := 0 }}
-            {{ $secondaryCategories := slice}}
+            {{ $secondaryCategories := slice }}
             {{ $pages := $.Scratch.Get "pages" }}
             {{ range where $pages "Params.categories" "intersect" (slice $primaryCategory) }}
               {{ if eq (index .Params.categories 0) $primaryCategory }}
