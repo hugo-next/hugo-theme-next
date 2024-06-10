@@ -1,7 +1,7 @@
 [中文](#) | [English](https://github.com/hugo-next/hugo-theme-next/blob/main/README.md)
 
 <a title="Hugo NexT 站点" href="https://preview.hugo-next.eu.org">
-<img align="right" alt="NexT logo" width="266" src="https://imgs.lisenhui.cn/hugo-next/logo/hugo-next-primary.png">
+<img align="right" alt="NexT logo" width="266" src="images/hugo-next-primary.png">
 </a>
 
 ## Hugo NexT
@@ -11,6 +11,8 @@
 > 本主题的所有页面设计和配置项都与原来 `Hexo` 引擎的 `NexT` 主题保持了良好的兼容性，可以非常平滑的从 `Hexo` 迁移至 `Hugo` 引擎，欢迎大家使用并反馈。
 
 [![Gitter](https://img.shields.io/gitter/room/hugo-next/hugo-them-next?logo=gitter&style=flat-square&label=Gitter)](https://gitter.im/hugo-next/community) [![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.89.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
+
+![截图](images/screenshot.png)
 
 ## 🎨 4 种页面模式
 
@@ -37,7 +39,7 @@
 
 如果你是初次建站的话，可以使用 `Github` 的模板功能，一键生成你的站点仓库代码。访问 [hugo-theme-next-starter](https://github.com/hugo-next/hugo-theme-next-starter) 点击右上角的 `Use this template` 绿色按钮然后填写代码仓库的相关信息，参考如下：
 
-![使用模板创建](https://imgs.lisenhui.cn/hugo-next/use-hugo-next-starter.png)
+![使用模板创建](images/use-hugo-next-starter.png)
 
 最后点击 `Create repository from template` 绿色按钮，会直接在你的空间中生成站点代码，再把它克隆到本地进行创作。
 

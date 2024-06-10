@@ -1,7 +1,7 @@
 [中文](https://github.com/hugo-next/hugo-theme-next/blob/main/README.zh.md) | [English](#)
 
 <a title="Hugo NexT Website" href="https://preview.hugo-next.eu.org">
-<img align="right" alt="NexT logo" width="266" src="https://lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png">
+<img align="right" alt="NexT logo" width="266" src="images/hugo-next-primary.png">
 </a>
 
 ## Hugo NexT
@@ -11,6 +11,8 @@
 > All page designs & configuration compatibility with Hexo NexT, it's very easy migrate your site from Hexo to Hugo and enjoy yourself.
 
 [![Gitter](https://img.shields.io/gitter/room/hugo-next/hugo-them-next?logo=gitter&style=flat-square&label=Gitter)](https://gitter.im/hugo-next/community) [![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.89.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
+
+![Screenshot](images/screenshot.png)
 
 ## 🎨 4 Scheme
 
@@ -37,7 +39,7 @@ Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extened` 
 
 If there your first time build blog site, Recommended use template of `Github` which can easily create your site code. Click & visit this repository: [hugo-theme-next-starter](https://github.com/hugo-next/hugo-theme-next-starter), then click the green button which name call `Use this template` upper right corner on the page. Just like below image:
 
-![Use Template](https://imgs.lisenhui.cn/hugo-next/use-hugo-next-starter.png)
+![Use Template](images/use-hugo-next-starter.png)
 
 After do that click the green button which name call `Create repository from template`, then will create your site code automatic, and clone it on your PC environment.
 
