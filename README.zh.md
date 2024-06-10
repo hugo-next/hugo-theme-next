@@ -1,7 +1,7 @@
 [中文](#) | [English](https://github.com/hugo-next/hugo-theme-next/blob/main/README.md)
 
 <a title="Hugo NexT 站点" href="https://preview.hugo-next.eu.org">
-  <img align="right" alt="NexT logo" width="266" src="https://imgs.lisenhui.cn/hugo-next/logo/hugo-next-primary.png">
+<img align="right" alt="NexT logo" width="266" src="https://imgs.lisenhui.cn/hugo-next/logo/hugo-next-primary.png">
 </a>
 
 ## Hugo NexT
@@ -10,7 +10,7 @@
 
 > 本主题的所有页面设计和配置项都与原来 `Hexo` 引擎的 `NexT` 主题保持了良好的兼容性，可以非常平滑的从 `Hexo` 迁移至 `Hugo` 引擎，欢迎大家使用并反馈。
 
-[![Gitter](https://img.shields.io/gitter/room/hugo-next/hugo-them-next?logo=gitter&style=flat-square)](https://gitter.im/hugo-next/community) [![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.89.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&label=gh-pg&logo=GitHub)](https://github.com/hugo-next/hugo-theme-next) [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
+[![Gitter](https://img.shields.io/gitter/room/hugo-next/hugo-them-next?logo=gitter&style=flat-square&label=Gitter)](https://gitter.im/hugo-next/community) [![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.89.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
 
 ## 🎨 4 种页面模式
 
@@ -21,10 +21,10 @@
 
 ## 👀 在线预览
 
-| 环境 | :gemini: (**Default**) | :heart_decoration: | :six_pointed_star: | :pisces: | 状态 |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+|   环境   |           :gemini: (**Default**)           |               :heart_decoration:               |               :six_pointed_star:               |                      :pisces:                      |                                            状态                                            |
+| :------: | :-----------------------------------------: | :--------------------------------------------: | :--------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
 | 开发版本 | [双子座](https://preview.hugo-next.eu.org/) | [冥想](https://preview.hugo-next.eu.org/muse/) | [迷雾](https://preview.hugo-next.eu.org/mist/) | [双鱼座](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
-| 正式版本 | [双子座](https://hugo-next.eu.org/) | [冥想](https://hugo-next.eu.org/muse/) | [迷雾](https://hugo-next.eu.org/mist/) | [双鱼座](https://hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
+| 正式版本 |     [双子座](https://hugo-next.eu.org/)     |     [冥想](https://hugo-next.eu.org/muse/)     |     [迷雾](https://hugo-next.eu.org/mist/)     |     [双鱼座](https://hugo-next.eu.org/pisces/)     | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
 > - 开发版本： 所有的新功能开发都会在此第一时间发布预览
 > - 正式版本： 只有测试稳定且符合要求的功能才会正式发布
@@ -105,7 +105,6 @@ $ hugo new posts/hello-world.md
 > 其中 `posts` 路径是 `content` 根目录下的子文件夹，可依据自己的文件管理形态调整。
 
 关于文章头部那些参数作用的说明参考如下：
-
 
 ```yml
 ---
@@ -196,13 +195,16 @@ Copyright (c) 2022， hugo-next 团队
 
 以下是打赏名单列表（按时间倒序）：
 
-| 打赏时间 | 打赏者 | 打赏方式 | 打赏内容 | 留言 |
-| :-------: | ------ | ------ | ---- | ---- |
-| 2023.06.01 | **霖 | 支付宝 | ¥10.00 | / |
-| 2022.11.15 | f888 | 咸鱼 | ¥6.20 | 聊表心意 |
-| 2022.09.30 | *軒 | 微信支付 | ¥66.66 | 愿项目造福更多人！ |
-| 2022.09.30 | N*l | 微信支付 | ¥20.00 | / |
-| 2022.07.09 | *风 | 微信支付 | ¥10.00 | / |
-| 2022.05.08 | *泉 | 微信支付 | ¥6.60 | 祝开发next顺利 |
-| 2022.02.28 | *娇 | 微信支付 | ¥5.00 | / |
-| 2021.12.21 | z*y | 微信支付 | ¥18.88 | / |
+|  打赏时间  | 打赏者 | 打赏方式 | 打赏内容 | 留言                             |
+| :--------: | ------ | -------- | -------- | -------------------------------- |
+| 2024.05.11 | *祥    | 支付宝   | ￥66.66  | 感谢创作这么好的主题             |
+| 2023.07.25 | *五    | 微信支付 | ￥50.00  | 很喜欢next主题，感谢，请你喝咖啡 |
+| 2023.06.01 | **霖   | 支付宝   | ¥10.00  | /                                |
+| 2022.11.15 | f888   | 咸鱼     | ¥6.20   | 聊表心意                         |
+| 2022.09.30 | *軒    | 微信支付 | ¥66.66  | 愿项目造福更多人！               |
+| 2022.09.30 | N*l    | 微信支付 | ¥20.00  | /                                |
+| 2022.07.09 | *风    | 微信支付 | ¥10.00  | /                                |
+| 2022.05.08 | *泉    | 微信支付 | ¥6.60   | 祝开发next顺利                   |
+| 2022.02.28 | *娇    | 微信支付 | ¥5.00   | /                                |
+| 2021.12.21 | z*y    | 微信支付 | ¥18.88  | /                                |
+
