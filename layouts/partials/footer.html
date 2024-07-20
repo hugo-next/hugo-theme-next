@@ -43,15 +43,19 @@
 {{ if .enable }}
 <div class="vendors-list">
   {{ range .list }}
-    <a target="_blank" href="{{ .link }}" title="{{ .name }}">
-      {{ if .image }}        
-        <img src="/imgs/img-lazy-loading.gif" data-src="{{ .image.url }}" alt="{{ .name }}" />
-      {{ else }}
-        {{ .name }}
-      {{ end }}
-    </a>
+  <a target="_blank" href="{{ .link }}" title="{{ .name }}">
+    {{ if .image }}        
+      <img src="/imgs/img-lazy-loading.gif" data-src="{{ .image.url }}" alt="{{ .name }}" />
+    {{ else }}
+      {{ .name }}
+    {{ end }}
+  </a>
   {{ end }}
-   <span>{{ .title }}</span>
+  {{ $cv := $.Scratch.Get "router" }}
+  <a target="_blank" href="{{ $cv.home }}" title="{{ $cv.name }}">
+    <img src="/imgs/img-lazy-loading.gif" data-src="{{ $cv.logo }}" alt="{{ $cv.name }}" />
+  </a>
+  <span>{{ .title }}</span>
 </div>
 {{ end }} 
 {{ end }}

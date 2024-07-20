@@ -240,25 +240,24 @@ NexT.utils = {
   getCDNResource: function (res) {
     let { plugins, router } = NexT.CONFIG.vendor;
     let { name, version, file, alias, alias_name } = res;
-
+   
     let npm_name = name;
     if (alias_name) npm_name = alias_name;
     let res_src = '';
-    switch (plugins) {
-      case 'cdnjs':
-      case 'bootcdn':
-      case 'qiniu':
+    
+    switch (router.type) {
+      case 'modern':
         let cdnjs_name = alias || name;
         let cdnjs_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
         if (cdnjs_file.indexOf('min') == -1) {          
           cdnjs_file = cdnjs_file.replace(/\.js$/, '.min.js');
         }
-        res_src = `${router}/${cdnjs_name}/${version}/${cdnjs_file}`
+        res_src = `${router.url}/${cdnjs_name}/${version}/${cdnjs_file}`
         break;
       default:
-        res_src = `${router}/${npm_name}@${version}/${file}`
+        res_src = `${router.url}/${npm_name}@${version}/${file}`
     }
-
+    
     return res_src;
   },
 

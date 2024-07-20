@@ -8,7 +8,7 @@
 {{ end }}   
 {{ $file := .res.file }}
 
-{{ if ne .vendor "unpkg" }}
+{{ if ne .router.type "nodejs" }}
   {{ with .res.alias }}
     {{ $npm = . }}
   {{ end }}   
@@ -16,6 +16,6 @@
   {{ $fmt = "%s/%s/%s/%s" }}
 {{ end }}
 
-{{ $pluginRes := printf $fmt .router $npm .res.version $file }}
+{{ $pluginRes := printf $fmt .router.url $npm .res.version $file }}
 
 {{ return $pluginRes }}
