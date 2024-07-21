@@ -58,7 +58,10 @@ NexT.utils = {
   },
 
   registerImageViewer: function() {
-    new Viewer(document.querySelector('.post-body'),{ navbar:2, toolbar:2 });
+    const post_body = document.querySelector('.post-body');
+    if (post_body) {
+      new Viewer(post_body,{ navbar:2, toolbar:2 });
+    }
   },
 
   registerToolButtons: function () {
