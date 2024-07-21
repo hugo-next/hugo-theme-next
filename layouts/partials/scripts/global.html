@@ -3,8 +3,8 @@
 {{ $vendor := .Site.Params.vendors.plugins }}
 {{ $router := .Scratch.Get "router" }}
 {{ range $jsRes }} 
-  {{ $pluginJS := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
-  <script type="text/javascript" src="{{ $pluginJS }}" defer></script>
+  {{ $pluginJS := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router)  }}
+  <script type="text/javascript" src="{{ $pluginJS }}" crossorigin="anonymous" defer></script>
 {{ end }}
 
 <script class="next-config" data-name="main" type="application/json">{{ .Scratch.Get "config" }}</script>

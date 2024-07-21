@@ -7,7 +7,7 @@ lastmod: 2022-06-03T11:52:18+08:00
 publishDate: 2022-06-03T11:52:18+08:00
 
 author: Mainroad
-originLink: https://mainroad-demo.netlify.app/post/basic-elements/
+originLink: https://mainroad-demo.netlify.app/demo/basic-elements/
 
 categories:
  - 示例文章
@@ -19,7 +19,7 @@ tags:
 
 toc: false
 draft: false
-url: post/markdown-syntax.html
+url: demo/markdown-syntax.html
 ---
 
 仅以此篇文章来测试下在 `NexT` 主题中在通过 `Hugo` 引擎来建站时，是否支持 `Markdown` 文件内容中所写的各种语法，并展示下实际的效果。
@@ -208,4 +208,4 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 <mark>比特作为信息论中的信息单位，也被称为 shannon </mark>，以信息论领域的创始人 Claude shannon 的名字命名。
 
 参考：
-- 来自 **Mainroad** 主题的 [Basic Elements](https://mainroad-demo.netlify.app/post/basic-elements/) 内容
+- 来自 **Mainroad** 主题的 [Basic Elements](https://mainroad-demo.netlify.app/demo/basic-elements/) 内容

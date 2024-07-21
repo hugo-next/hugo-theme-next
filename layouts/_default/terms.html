@@ -23,9 +23,14 @@
         <ul class="category-list">
           {{ $allSecondaryCats := slice }}
           {{ range .Site.Taxonomies.categories.ByCount }}
+            {{/*  
+              Rollback the change of the primary category name.
+              & it could not support the lowercase category name.
+              {{ $primaryCategory := .Name }}  
+            */}}
             {{ $primaryCategory := .Page.Title }}
             {{ $primaryCount := 0 }}
-            {{ $secondaryCategories := slice}}
+            {{ $secondaryCategories := slice }}
             {{ $pages := $.Scratch.Get "pages" }}
             {{ range where $pages "Params.categories" "intersect" (slice $primaryCategory) }}
               {{ if eq (index .Params.categories 0) $primaryCategory }}
@@ -42,7 +47,7 @@
             
             {{ if not (in $allSecondaryCats $primaryCategory) }}
               <li class="category-list-item">
-                <a class="category-list-link" href="{{ "categories/" | relURL }}{{ $primaryCategory | urlize }}">
+                <a class="category-list-link" href="{{ "categories/" | relURL }}{{ $primaryCategory | urlize }}/">
                   {{ $primaryCategory }}
                   <span class="category-list-count">{{ $primaryCount }}</span>
                 </a>
@@ -57,7 +62,7 @@
                     {{ end }}
                   {{ end }}
                   <li class="category-children-list-item">
-                    <a class="category-list-link" href="{{ "categories/" | relURL }}{{ . | urlize }}">
+                    <a class="category-list-link" href="{{ "categories/" | relURL }}{{ . | urlize }}/">
                       {{ . }}
                       <span class="category-list-count">{{ $secondaryCount }}</span>
                     </a>
@@ -77,7 +82,7 @@
         <div class="tag-cloud-tags">
           {{ $randNums := (seq 10) }}
           {{- range $name, $items := $tags }}
-          <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize  }}">{{ .Page.Title }}
+          <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize  }}/">{{ .Page.Title }}
             <span class="tag-list-count">
               <sup>({{ len $items }})</sup>
             </span>

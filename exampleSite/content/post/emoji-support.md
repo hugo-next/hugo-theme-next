@@ -14,7 +14,7 @@ tags:
  - 表情
  - emoji
 
-url: "post/emoji-support.html"
+url: "demo/emoji-support.html"
 ---
 
 Emoji 可以通过多种方式在 Hugo 项目中启用。

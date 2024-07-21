@@ -21,7 +21,19 @@
 {{ $globalVars.Set "tagsCount" (len .Site.Taxonomies.tags)  }}
 
 {{ $vendor := .Site.Params.vendors.plugins }}
-{{ $router := index .Site.Data.resources.vendors $vendor }}
+{{ $router := dict }}
+
+{{ if eq $vendor "local" }}
+  {{ $router = dict "url" (printf "%s3rd" .Site.BaseURL) "name" $vendor "type" "modern" }}
+{{ else }}
+  {{ range .Site.Data.resources.vendors }}
+    {{ if eq .name $vendor }}
+      {{ $router = . }}
+      {{ break }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
 {{ $globalVars.Set "vendor" $vendor }}
 {{ $globalVars.Set "router" $router }}
 

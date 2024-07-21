@@ -7,6 +7,29 @@ HTMLElement.prototype.wrap = function (wrapper) {
 };
 
 NexT.utils = {
+  registerMenuClick: function() {
+    const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
+    pMenus.forEach(function(item) {
+      const icon = item.querySelector('span > i');
+      var ul = item.nextElementSibling;  
+      
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        ul.classList.toggle('expand');
+        if (ul.classList.contains('expand')) {
+          icon.className = 'fa fa-angle-down';
+        } else {
+          icon.className = 'fa fa-angle-right';
+        }
+      });
+
+      var cCls = ul.querySelectorAll('.menu-item-active');
+      if (cCls != null && cCls.length > 0) {
+        item.click();
+      }
+    });
+  },
   registerImageLoadEvent: function() {
     const images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
 			
@@ -35,7 +58,10 @@ NexT.utils = {
   },
 
   registerImageViewer: function() {
-    new Viewer(document.querySelector('.post-body'),{ navbar:2, toolbar:2 });
+    const post_body = document.querySelector('.post-body');
+    if (post_body) {
+      new Viewer(post_body,{ navbar:2, toolbar:2 });
+    }
   },
 
   registerToolButtons: function () {
@@ -215,25 +241,25 @@ NexT.utils = {
   },
 
   getCDNResource: function (res) {
-    let { plugins, router } = NexT.CONFIG.vendor;
-    let { name, version, file, alias, alias_name } = res;
 
-    let npm_name = name;
-    if (alias_name) npm_name = alias_name;
+    let router = NexT.CONFIG.vendor.router;
+    let { name, version, file, alias, alias_name } = res;
+   
     let res_src = '';
-    switch (plugins) {
-      case 'cdnjs':
-      case 'bootcdn':
-      case 'qiniu':
-        let cdnjs_name = alias || name;
-        let cdnjs_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
-        if (cdnjs_file.indexOf('min') == -1) {          
-          cdnjs_file = cdnjs_file.replace(/\.js$/, '.min.js');
+  
+    switch (router.type) {
+      case "modern":
+        if (alias_name) name = alias_name;
+        let alias_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
+        if (alias_file.indexOf('min') == -1) {          
+          alias_file = alias_file.replace(/\.js$/, '.min.js');
         }
-        res_src = `${router}/${cdnjs_name}/${version}/${cdnjs_file}`
+        res_src = `${router.url}/${name}/${version}/${alias_file}`;
         break;
       default:
-        res_src = `${router}/${npm_name}@${version}/${file}`
+        if (alias) name = alias;
+        res_src = `${router.url}/${name}@${version}/${file}`;
+        break;
     }
 
     return res_src;
@@ -255,7 +281,7 @@ NexT.utils = {
       const button = element.querySelector('.copy-btn');
       button.addEventListener('click', () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
-        const code = lines.innerText;
+        const code = lines.innerText.replace(/(\n{2,})/g, '\n');
         if (navigator.clipboard) {
           // https://caniuse.com/mdn-api_clipboard_writetext
           navigator.clipboard.writeText(code).then(() => {

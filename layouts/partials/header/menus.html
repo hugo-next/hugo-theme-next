@@ -1,18 +1,31 @@
 {{ $ms := .Site.Params.menuSets }}
 {{ $curP := .Page }}
 <nav class="site-nav">
-  <ul class="main-menu menu">
+  <ul class="main-menu menu">    
   {{ range .Site.Menus.main }}
     {{ $active := $curP.IsMenuCurrent "main" . }}
     <li class="menu-item menu-item-{{ .Identifier }}">
-      <a href="{{ .URL | relLangURL }}" class="hvr-icon-pulse {{if $active }} menu-item-active{{ end }}" rel="section">
+      <a href="{{ .URL | relLangURL }}" class="{{ if .HasChildren }}menus-parent{{ end }} hvr-icon-pulse {{if $active }} menu-item-active{{ end }}" rel="section">
         {{ if $ms.icons }}<i class="fa fa-{{ .Pre }} hvr-icon"></i>{{ end }}{{ .Name }}
+        {{ if .HasChildren }}<span class="menu-item-shrink-icon"><i class="fa fa-angle-right"></i></span>{{ end }}
         {{ if and $ms.badges (eq .Identifier "archives") }}
-        <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
+          <span class="badge">{{ $.Scratch.Get "postsCount" }}</span>
         {{ end }}
       </a>
+      {{ if .HasChildren }}
+      <ul class="menu-children">
+      {{ range .Children }}
+      {{ $active = $curP.IsMenuCurrent "main" . }}
+        <li class="menu-child-item">
+          <a href="{{ .URL | relLangURL }}" class="hvr-icon-pulse {{if $active }}menu-item-active{{ end }}" rel="section">
+            <i class="fa hvr-icon"></i>{{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+      </ul>
+      {{ end }}
     </li>
-  {{ end }}
+  {{ end }}    
 
   {{ if or .Site.Params.algoliaSearch.enable .Site.Params.localSearch.enable }}
     <li class="menu-item menu-item-search">

@@ -17,6 +17,7 @@
 
 NexT.boot.registerEvents = function() {
 
+  NexT.utils.registerMenuClick();
   NexT.utils.registerImageLoadEvent();
   NexT.utils.registerScrollPercent();
   // NexT.utils.registerCanIUseTag();

@@ -1,33 +1,79 @@
 # CDN 公共资源商列表
 # Public CDN vendor list
 vendors: 
-  cdnjs: "https://cdnjs.cloudflare.com/ajax/libs"
-  unpkg: "https://unpkg.com"
-  bootcdn: "https://cdn.bootcdn.net/ajax/libs"
-  qiniu: "https://cdn.staticfile.org"
+  - name: cdnjs
+    home: "https://cdnjs.com"
+    logo: "https://cdnjs.com/_/f7a2ebfb819c118086546e481876aef6.svg"
+    type: "modern"
+    url: "https://cdnjs.cloudflare.com/ajax/libs"
+
+  - name: unpkg
+    home: "https://unpkg.com"
+    logo: "https://unpkg.fly.dev/_client/b870d5fb04d2854d.png"
+    type: "nodejs"
+    url: "https://unpkg.com"
+
+  - name: bootcdn
+    home: "https://www.bootcdn.cn"
+    logo: "https://www.bootcdn.cn/assets/img/logo.png"
+    type: "modern"
+    url: "https://cdn.bootcdn.net/ajax/libs"
+
+  - name: staticfile
+    home: "https://staticfile.net/"
+    logo: "https://www.staticfile.net/images/logo.png"
+    type: "modern"
+    url: "https://cdn.staticfile.net"
+
+  - name: 7ed
+    home: "https://www.7ed.net"
+    logo: "https://github.com/7ednet/homepage/raw/main/_images/logo.svg"
+    type: "modern"
+    url: "https://use.sevencdn.com/ajax/libs"
+
+  - name: zstatic
+    home: "https://www.zstatic.net"
+    logo: "https://www.zstatic.net/favicon/favicon-16x16.png"
+    type: "modern"
+    url: "https://s4.zstatic.net/ajax/libs"
+
+  - name: zeyao
+    home: "https://cdn.jsdmirror.com/"
+    logo: "https://img.cuteapi.com/2023/08/29/Background.png"
+    type: "nodejs" 
+    url: "https://cdn.jsdmirror.com/npm"
+
+  - name: jsdelivr
+    home: "https://www.jsdelivr.com/"
+    logo: "https://www.jsdelivr.com/assets/0c183396fdb0079ea31849b02bc5e3429f1740de/img/jsdelivr-horizontal-regular.svg"
+    type: "nodejs"
+    url: "https://cdn.jsdelivr.net/npm"
 
 # JavaScript 资源
 # JavaScript Resources
 js:
   - name: animejs
-    version: 3.2.1
+    version: 3.2.2
     file: lib/anime.min.js
+
   - name: viewerjs
-    version: 1.11.0
+    version: 1.11.6
     file: dist/viewer.min.js
 
 # CSS 资源
 # CSS Resources
 css:
-  - name: '@fortawesome/fontawesome-free'
-    version: 6.1.2
+  - name: font-awesome
+    version: 6.6.0
     file: css/all.min.css
-    alias: font-awesome
+    alias: '@fortawesome/fontawesome-free'
+
   - name: animate.css
-    version: 3.1.1
+    version: 4.1.1
     file: animate.min.css
+
   - name: viewerjs
-    version: 1.11.0
+    version: 1.11.6
     file: dist/viewer.min.css
 
 # 第三方服务组件资源
@@ -51,25 +97,27 @@ addthis:
 # Comment component
 waline:
   js:
-    name: '@waline/client'
-    version: 2.13.0
+    name: waline
+    version: 2.15.8
     file: dist/waline.js
-    alias: waline
+    alias: "@waline/client"
+
   css:
-    name: '@waline/client'
-    version: 2.13.0
+    name: waline
+    version: 2.15.8
     file: dist/waline.css
-    alias: waline
+    alias: "@waline/client"
 
 artalk:
   js:
     name: artalk
-    version: 2.3.4
-    file: dist/Artalk.js
+    version: 2.6.4
+    file: dist/Artalk.min.js
+
   css:
     name: artalk
-    version: 2.3.4
-    file: dist/Artalk.css
+    version: 2.6.4
+    file: dist/Artalk.min.css
 
 giscus:
   js: https://giscus.app/client.js
@@ -84,11 +132,12 @@ livere:
 # Full text search
 algolia:
   name: algoliasearch
-  version: 4.14.2
+  version: 4.24.0
   file: dist/algoliasearch-lite.umd.js
+
 instant:
   name: instantsearch.js
-  version: 4.49.0
+  version: 4.73.2
   file: dist/instantsearch.production.min.js
 
 plugins:
@@ -96,37 +145,45 @@ plugins:
   mathjax:
     js:
       name: mathjax
-      version: 3.2.0
+      version: 3.2.2
       file: es5/tex-mml-chtml.js
+
   katex:
     js:
       - name: katex
-        version: 0.16.0
+        alias_name: KaTeX
+        version: 0.16.9
         file: dist/katex.min.js
+        
       - name: auto-render
-        alias_name: katex
-        version: 0.16.0
+        alias: katex
+        alias_name: KaTeX
+        version: 0.16.9
         file: dist/contrib/auto-render.min.js
+
     css:
       name: katex
-      version: 0.16.0
+      alias_name: KaTeX
+      version: 0.16.9
       file: dist/katex.min.css
+
   # 画图渲染
   mermaid:
     js:
       name: mermaid
-      version: 9.1.7
+      version: 10.9.1
       file: dist/mermaid.min.js
   # 文章访问/评论统计
   waline:
     js:
       - name: pageview
-        alias_name: '@waline/client'
-        version: 2.13.0
+        alias_name: waline
+        version: 2.15.8
         file: dist/pageview.js
-        alias: waline 
+        alias: "@waline/client" 
+
       - name: comment
-        alias_name: '@waline/client'
-        version: 2.13.0
+        alias_name: waline
+        version: 2.15.8
         file: dist/comment.js
-        alias: waline
+        alias: "@waline/client"

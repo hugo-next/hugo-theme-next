@@ -8,6 +8,7 @@ exampleSite/content/**/
 !exmapleSite/content/about.md
 !exampleSite/content/archives
 !exampleSite/content/post
+!exampleSite/content/post/image-viewer
 
 # Exclude special files in data folder
 !exampleSite/data

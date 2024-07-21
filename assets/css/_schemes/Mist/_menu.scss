@@ -34,6 +34,10 @@
       }
     }
 
+    // a + ul {
+    //   top: calc(30% + 5px); 
+    // }
+
     .badge {
       background: white;
       border-radius: 10px;
@@ -41,5 +45,24 @@
       padding: 1px 4px;
       text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
     }
+
+    .menu-item-shrink-icon {
+      margin-left: 5px;
+    }
+  }
+}
+
+.menu-children {
+  display: none;
+  transition: transform 1s ease-in-out;
+  transform: translateY(-100%);
+  // position: absolute;
+  // z-index: 999;
+
+  &.expand {
+    display: block;
+    max-height: 400px; 
+    transition: transform 1.5s ease-in;
+    transform: translateY(-100%);
   }
 }

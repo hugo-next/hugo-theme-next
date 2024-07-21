@@ -47,6 +47,14 @@
 
       img {
         display: inline-block;
+        max-width: 50px;
+        @include mobile() {
+          max-width: 40px;
+        }
+
+        &:last-child {
+          max-height: 18px;
+        }
       }
       
       $footer_vendors_imgs_len: length($footer_vendors_imgs_width);
