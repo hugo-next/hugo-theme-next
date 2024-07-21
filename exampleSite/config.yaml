@@ -388,7 +388,7 @@ params:
   footer:
     # 启动谷歌翻译功能
     # Enable google translate in footer
-    translate: true
+    translate: false
     # 站点开始年份，默认为当下时间的年份
     # Specify the year when the site was setup. 
     # If not defined, current year will be used.
@@ -1103,29 +1103,18 @@ params:
 
 
   # ---------------------------------------------------------------
-  # CDN 服务（暂时只支持 unpkg 和 cndjs）
+  # CDN 服务
   # CDN Settings
   # ---------------------------------------------------------------
 
-  vendors:
+   vendors:
     # The CDN provider of NexT internal scripts.
-    # Available values: local | unpkg | cdnjs | qiniu | bootcdn | custom
-    # Warning: If you are using the latest master branch of NexT, please set `internal: local`
+    # Available values: local | cdn
     internal: local
     # The default CDN provider of third-party plugins.
-    # Available values: local | | cdnjs | unpkg | bootcdn | staticfile | 7ed | zstatic | zeyao | jsdelivr | custom
-    plugins: jsdelivr
-    # TODO
+    # Available values: local | cdnjs | unpkg | jsdelivr | staticfile | bootcdn | 7ed | zstatic | zeyao | custom
+    plugins: local
     # Custom CDN URL
     # For example:
     # custom_cdn_url: https://cdn.jsdelivr.net/npm/${npm_name}@${version}/${minified}
     # custom_cdn_url: https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${cdnjs_file}
-    #custom_cdn_url:
-
-  # TODO
-  # Assets
-  # Accelerate delivery of static files using a CDN
-  # The js option is only valid when vendors.internal is local.
-  css: css
-  js: js
-  images: imgs

@@ -63,10 +63,10 @@ js:
 # CSS 资源
 # CSS Resources
 css:
-  - name: '@fortawesome/fontawesome-free'
+  - name: font-awesome
     version: 6.6.0
     file: css/all.min.css
-    alias: font-awesome
+    alias: '@fortawesome/fontawesome-free'
 
   - name: animate.css
     version: 4.1.1
@@ -97,16 +97,16 @@ addthis:
 # Comment component
 waline:
   js:
-    name: '@waline/client'
+    name: waline
     version: 2.15.8
     file: dist/waline.js
-    alias: waline
+    alias: "@waline/client"
 
   css:
-    name: '@waline/client'
+    name: waline
     version: 2.15.8
     file: dist/waline.css
-    alias: waline
+    alias: "@waline/client"
 
 artalk:
   js:
@@ -133,7 +133,7 @@ livere:
 algolia:
   name: algoliasearch
   version: 4.24.0
-  file: dist/algoliasearch.umd.min.js
+  file: dist/algoliasearch-lite.umd.js
 
 instant:
   name: instantsearch.js
@@ -146,22 +146,25 @@ plugins:
     js:
       name: mathjax
       version: 3.2.2
-      file: es5/tex-mml-chtml.min.js
+      file: es5/tex-mml-chtml.js
 
   katex:
     js:
       - name: katex
-        version: 0.16.11
+        alias_name: KaTeX
+        version: 0.16.9
         file: dist/katex.min.js
         
       - name: auto-render
-        alias_name: katex
-        version: 0.16.11
+        alias: katex
+        alias_name: KaTeX
+        version: 0.16.9
         file: dist/contrib/auto-render.min.js
 
     css:
       name: katex
-      version: 0.16.11
+      alias_name: KaTeX
+      version: 0.16.9
       file: dist/katex.min.css
 
   # 画图渲染
@@ -174,13 +177,13 @@ plugins:
   waline:
     js:
       - name: pageview
-        alias_name: '@waline/client'
+        alias_name: waline
         version: 2.15.8
         file: dist/pageview.js
-        alias: waline 
+        alias: "@waline/client" 
 
       - name: comment
-        alias_name: '@waline/client'
+        alias_name: waline
         version: 2.15.8
         file: dist/comment.js
-        alias: waline
+        alias: "@waline/client"
