@@ -12,7 +12,7 @@ categories:
 tags:
   - 短代码
   - 语法
-url: "post/shortcodes.html"
+url: "demo/shortcodes.html"
 ---
 
 虽然 `Markdown` 语法已经非常丰富能够满足我们写文章的绝大部分需求，但是为更好的对文章内容进行更友好的排版，为引设计一套自定义的短语，便于在使用时能够快速引用。

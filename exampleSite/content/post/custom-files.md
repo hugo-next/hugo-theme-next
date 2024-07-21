@@ -14,7 +14,7 @@ tags:
   - 个性化
   - 布局
 
-url: "post/custom-files.html"
+url: "demo/custom-files.html"
 toc: true
 ---
 

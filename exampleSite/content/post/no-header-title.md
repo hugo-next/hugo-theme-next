@@ -14,7 +14,7 @@ tags:
 
 comment:
   enable: false
-url: "post/no-header-title.html"
+url: "demo/no-header-title.html"
 ---
 
 刘慈欣2018克拉克奖获奖感言（部分内容节选）。
