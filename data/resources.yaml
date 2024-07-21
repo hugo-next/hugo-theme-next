@@ -55,6 +55,7 @@ js:
   - name: animejs
     version: 3.2.2
     file: lib/anime.min.js
+
   - name: viewerjs
     version: 1.11.6
     file: dist/viewer.min.js
@@ -66,9 +67,11 @@ css:
     version: 6.6.0
     file: css/all.min.css
     alias: font-awesome
+
   - name: animate.css
     version: 4.1.1
     file: animate.min.css
+
   - name: viewerjs
     version: 1.11.6
     file: dist/viewer.min.css
@@ -98,6 +101,7 @@ waline:
     version: 2.15.8
     file: dist/waline.js
     alias: waline
+
   css:
     name: '@waline/client'
     version: 2.15.8
@@ -108,11 +112,12 @@ artalk:
   js:
     name: artalk
     version: 2.6.4
-    file: dist/Artalk.js
+    file: dist/Artalk.min.js
+
   css:
     name: artalk
     version: 2.6.4
-    file: dist/Artalk.css
+    file: dist/Artalk.min.css
 
 giscus:
   js: https://giscus.app/client.js
@@ -129,6 +134,7 @@ algolia:
   name: algoliasearch
   version: 4.24.0
   file: dist/algoliasearch.umd.min.js
+
 instant:
   name: instantsearch.js
   version: 4.73.2
@@ -141,19 +147,23 @@ plugins:
       name: mathjax
       version: 3.2.2
       file: es5/tex-mml-chtml.min.js
+
   katex:
     js:
       - name: katex
         version: 0.16.11
         file: dist/katex.min.js
+        
       - name: auto-render
         alias_name: katex
         version: 0.16.11
         file: dist/contrib/auto-render.min.js
+
     css:
       name: katex
       version: 0.16.11
       file: dist/katex.min.css
+
   # 画图渲染
   mermaid:
     js:
@@ -168,6 +178,7 @@ plugins:
         version: 2.15.8
         file: dist/pageview.js
         alias: waline 
+
       - name: comment
         alias_name: '@waline/client'
         version: 2.15.8

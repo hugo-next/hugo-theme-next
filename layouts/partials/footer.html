@@ -52,9 +52,11 @@
   </a>
   {{ end }}
   {{ $cv := $.Scratch.Get "router" }}
+  {{ if and $cv (ne $cv.name "local") }}
   <a target="_blank" href="{{ $cv.home }}" title="{{ $cv.name }}">
     <img src="/imgs/img-lazy-loading.gif" data-src="{{ $cv.logo }}" alt="{{ $cv.name }}" />
   </a>
+  {{ end }}
   <span>{{ .title }}</span>
 </div>
 {{ end }} 

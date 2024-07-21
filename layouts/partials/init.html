@@ -22,12 +22,18 @@
 
 {{ $vendor := .Site.Params.vendors.plugins }}
 {{ $router := dict }}
-{{ range .Site.Data.resources.vendors }}
-  {{ if eq .name $vendor }}
-    {{ $router = . }}
-    {{ break }}
+
+{{ if eq $vendor "local" }}
+  {{ $router = dict "url" (printf "%s3rd" .Site.BaseURL) "name" $vendor "type" "modern" }}
+{{ else }}
+  {{ range .Site.Data.resources.vendors }}
+    {{ if eq .name $vendor }}
+      {{ $router = . }}
+      {{ break }}
+    {{ end }}
   {{ end }}
 {{ end }}
+
 {{ $globalVars.Set "vendor" $vendor }}
 {{ $globalVars.Set "router" $router }}
 
