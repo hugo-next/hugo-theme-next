@@ -447,8 +447,11 @@ params:
             url: /imgs/vendors/upyun.png
             width: 43
           link: https://upyun.com
-        - name: Webify
-          link: https://webify.cloudbase.net
+        - name: Github
+          link: https://github.com
+          image:
+            url: /imgs/vendors/github.svg
+            width: 14
 
 
   # ---------------------------------------------------------------
@@ -1106,8 +1109,7 @@ params:
   # CDN 服务
   # CDN Settings
   # ---------------------------------------------------------------
-
-   vendors:
+  vendors:
     # The CDN provider of NexT internal scripts.
     # Available values: local | cdn
     internal: local

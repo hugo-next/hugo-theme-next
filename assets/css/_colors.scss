@@ -26,6 +26,8 @@
   --highlight-gutter-background: #{$highlight-gutter-background};
   --highlight-gutter-foreground: #{$highlight-gutter-foreground};
 
+  --highlight-img-fill: brightness(1) invert(0);
+
   color-scheme: light;
 }
 
@@ -56,11 +58,14 @@
   --highlight-gutter-background: #{$highlight-gutter-background-dark};
   --highlight-gutter-foreground: #{$highlight-gutter-foreground-dark};
 
+  --highlight-img-fill: brightness(0) invert(1);
+
   color-scheme: dark;
 }
 
 img[data-theme="dark"] {
   opacity: .75;
+  filter: brightness(1) invert(0);
 
   &:hover {
     opacity: .9;
