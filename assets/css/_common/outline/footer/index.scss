@@ -47,14 +47,17 @@
 
       img {
         display: inline-block;
-        max-width: 50px;
-        filter: var(--highlight-img-fill);
+        max-width: 48px;
+        min-width: 14px;
+        max-height: 16px;
+
         @include mobile() {
           max-width: 40px;
         }
-
-        &:last-child {
-          max-height: 18px;
+        
+        // Only work for svg image
+        &[src$=".svg"] {
+          filter: var(--highlight-img-fill);
         }
       }
       
