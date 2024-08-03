@@ -100,6 +100,15 @@
 {{ $config = merge $config (dict "waline" $waline) }}
 {{ end }} 
 
+{{ with .Site.Params.waline3 }}
+{{ $waline := dict 
+  "js"  $.Site.Data.resources.waline3.js
+  "css" $.Site.Data.resources.waline3.css
+  "cfg" .
+}}
+{{ $config = merge $config (dict "waline3" $waline) }}
+{{ end }} 
+
 {{ with .Site.Params.giscus }}
 {{ $giscus := dict 
   "js"  $.Site.Data.resources.giscus.js

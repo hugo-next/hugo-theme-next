@@ -485,14 +485,14 @@ params:
     # 是否开启评论数显示
     comments: 
       enable: true
-      # 评论统计插件，暂只支持waline
-      # Comment counter plugin, only support waline
+      # 评论统计插件，暂只支持waline和waline3
+      # Comment counter plugin, only support waline and waline3
       plugin: waline
     # 是否开启页面访问数显示
     views:
       enable: true
-      # 页面访问统计插件，支持busuanzi, waline, leancloud
-      # Page views counter plugin, support: busuanzi, waline, leancloud
+      # 页面访问统计插件，支持busuanzi, waline, waline3
+      # Page views counter plugin, support: busuanzi, waline, waline3
       plugin: busuanzi
 
   # 文章底部的设置
@@ -809,7 +809,7 @@ params:
     # Lazyload all comment systems.
     # lazyload: false
     # 设置你要显示的2个评论插件，`weight` 数字越小越靠前
-    # `name` 参数名可选值：livere | waline | utterances | artalk | giscus
+    # `name` 参数名可选值：livere | waline | waline3 | utterances | artalk | giscus
     # Modify texts or order for any naves, here are some examples.
     nav:
       - name: waline
@@ -836,6 +836,19 @@ params:
     reactionText: [ '点赞', '踩一下', '得意', '不屑', '尴尬', '睡觉']
     reactionTitle: "你认为这篇文章怎么样？"
     serverURL: #<your waline server url>
+  # Waline(2) 与 Waline3 无法兼容只能是二选一
+  # Waline3 采用的是ES模块开发，需要更高版本的浏览器才能支持，如考虑兼容性建议可优先选用Waline2
+  # waline3:
+  #   placeholder: "请文明发言哟 ヾ(≧▽≦*)o"
+  #   sofa: "快来发表你的意见吧 (≧∀≦)ゞ"
+  #   emoji: false
+  #   imgUploader: false
+  #   wordLimit: 200
+  #   requiredMeta: ['nick', 'mail']
+  #   reaction: true
+  #   reactionText: [ '点赞', '踩一下', '得意', '不屑', '尴尬', '睡觉']
+  #   reactionTitle: "你认为这篇文章怎么样？"
+  #   serverURL: #<your waline server url>
 
   # Artalk 评论插件
   # 更多配置信息请参考：https://artalk.js.org
@@ -921,11 +934,11 @@ params:
     id:     # <app_id>
     color:  "#fc6423"
 
-  # AddThis文章分享功能
+  # AddThis文章分享功能（服务商已下线，不推荐使用）
   # 更多信息及配置请参考：https://www.addthis.com
-  # AddThis Share. 
+  # AddThis Share (The service provider has been offline, not recommended for use)
   # See: https://www.addthis.com
-  addThisId: #<Your addthis> 
+  # addThisId: #<Your addthis> 
 
 
   # ---------------------------------------------------------------

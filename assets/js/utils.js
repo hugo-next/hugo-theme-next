@@ -7,15 +7,15 @@ HTMLElement.prototype.wrap = function (wrapper) {
 };
 
 NexT.utils = {
-  registerMenuClick: function() {
+  registerMenuClick: function () {
     const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
-    pMenus.forEach(function(item) {
+    pMenus.forEach(function (item) {
       const icon = item.querySelector('span > i');
-      var ul = item.nextElementSibling;  
-      
-      item.addEventListener('click', function(e) {
+      var ul = item.nextElementSibling;
+
+      item.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         ul.classList.toggle('expand');
         if (ul.classList.contains('expand')) {
           icon.className = 'fa fa-angle-down';
@@ -30,9 +30,9 @@ NexT.utils = {
       }
     });
   },
-  registerImageLoadEvent: function() {
+  registerImageLoadEvent: function () {
     const images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
-			
+
     const callback = (entries) => {
       entries.forEach(item => {
         if (item.intersectionRatio > 0) {
@@ -40,7 +40,7 @@ NexT.utils = {
           let imgSrc = ele.getAttribute('data-src');
           if (imgSrc) {
             let img = new Image();
-            img.addEventListener('load', function() {
+            img.addEventListener('load', function () {
               ele.src = imgSrc;
             }, false);
             ele.src = imgSrc;
@@ -50,23 +50,23 @@ NexT.utils = {
         }
       })
     };
-      
+
     const observer = new IntersectionObserver(callback);
     images.forEach(img => {
       observer.observe(img);
     });
   },
 
-  registerImageViewer: function() {
+  registerImageViewer: function () {
     const post_body = document.querySelector('.post-body');
     if (post_body) {
-      new Viewer(post_body,{ navbar:2, toolbar:2 });
+      new Viewer(post_body, { navbar: 2, toolbar: 2 });
     }
   },
 
   registerToolButtons: function () {
     const buttons = document.querySelector('.tool-buttons');
-    
+
     const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme)');
     scrollbar_buttons.forEach(button => {
       let targetId = button.id;
@@ -86,12 +86,12 @@ NexT.utils = {
 
   slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
     const targetObj = document.getElementById(targetId);
-   
+
     window.anime({
       targets: document.scrollingElement,
       duration: duration,
       easing: easing,
-      scrollTop:  targetId == '' || !targetObj ? 0 : targetObj.getBoundingClientRect().top + window.scrollY
+      scrollTop: targetId == '' || !targetObj ? 0 : targetObj.getBoundingClientRect().top + window.scrollY
     });
   },
 
@@ -147,8 +147,8 @@ NexT.utils = {
     }
   },
 
-  fmtLaWidget: function(){
-    setTimeout(function(){
+  fmtLaWidget: function () {
+    setTimeout(function () {
       const laWidget = document.querySelectorAll('#la-siteinfo-widget span');
       if (laWidget.length > 0) {
         const valIds = [0, 2, 4, 6];
@@ -162,8 +162,8 @@ NexT.utils = {
   },
 
   fmtBusuanzi: function () {
-    setTimeout(function(){
-      const bszUV = document.getElementById('busuanzi_value_site_uv');    
+    setTimeout(function () {
+      const bszUV = document.getElementById('busuanzi_value_site_uv');
       if (bszUV) {
         bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
       }
@@ -171,7 +171,7 @@ NexT.utils = {
       if (bszPV) {
         bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
       }
-    }, 800);  
+    }, 800);
   },
 
   numberFormat: function (number) {
@@ -244,14 +244,14 @@ NexT.utils = {
 
     let router = NexT.CONFIG.vendor.router;
     let { name, version, file, alias, alias_name } = res;
-   
+
     let res_src = '';
-  
+
     switch (router.type) {
       case "modern":
         if (alias_name) name = alias_name;
         let alias_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
-        if (alias_file.indexOf('min') == -1) {          
+        if (alias_file.indexOf('min') == -1) {
           alias_file = alias_file.replace(/\.js$/, '.min.js');
         }
         res_src = `${router.url}/${name}/${version}/${alias_file}`;
@@ -512,7 +512,7 @@ NexT.utils = {
   hideComments: function () {
     let postComments = document.querySelector('.post-comments');
     if (postComments !== null) {
-        postComments.style.display = 'none';
+      postComments.style.display = 'none';
     }
   },
 
@@ -587,7 +587,7 @@ NexT.utils = {
     });
   },
 
-  getStyle: function (src, position='after', parent) {
+  getStyle: function (src, position = 'after', parent) {
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('type', 'text/css');
@@ -607,8 +607,11 @@ NexT.utils = {
         condition: legacyCondition
       }).then(options);
     }
+
     const {
       condition = false,
+      module = false,
+      textContent = undefined,
       attributes: {
         id = '',
         async = false,
@@ -628,6 +631,8 @@ NexT.utils = {
 
         if (id) script.id = id;
         if (crossOrigin) script.crossOrigin = crossOrigin;
+        if (module) script.type = 'module';
+        if (textContent != undefined) script.textContent = textContent;
         script.async = async;
         script.defer = defer;
         Object.assign(script.dataset, dataset);
@@ -638,22 +643,25 @@ NexT.utils = {
         script.onload = resolve;
         script.onerror = reject;
 
-        if (typeof src === 'object') {
-          const { url, integrity } = src;
-          script.src = url;
-          if (integrity) {
-            script.integrity = integrity;
-            script.crossOrigin = 'anonymous';
+        if (src != null && src != undefined) {
+          if (typeof src === 'object') {
+            const { url, integrity } = src;
+            script.src = url;
+            if (integrity) {
+              script.integrity = integrity;
+              script.crossOrigin = 'anonymous';
+            }
+          } else {
+            script.src = src;
           }
-        } else {
-          script.src = src;
         }
+
         (parentNode || document.head).appendChild(script);
       }
     });
   },
 
-  lazyLoadComponent: function(selector, legacyCallback) {
+  lazyLoadComponent: function (selector, legacyCallback) {
     if (legacyCallback) {
       return this.lazyLoadComponent(selector).then(legacyCallback);
     }
