@@ -108,6 +108,19 @@ waline:
     file: dist/waline.css
     alias: "@waline/client"
 
+waline3:
+  js:
+    name: waline
+    version: 3.3.0
+    file: dist/waline.js
+    alias: "@waline/client"
+
+  css:
+    name: waline
+    version: 3.3.0
+    file: dist/waline.min.css
+    alias: "@waline/client"
+
 artalk:
   js:
     name: artalk
@@ -185,5 +198,18 @@ plugins:
       - name: comment
         alias_name: waline
         version: 2.15.8
+        file: dist/comment.js
+        alias: "@waline/client"
+  waline3:
+    js:
+      - name: pageview
+        alias_name: waline
+        version: 3.3.0
+        file: dist/pageview.js
+        alias: "@waline/client" 
+
+      - name: comment
+        alias_name: waline
+        version: 3.3.0
         file: dist/comment.js
         alias: "@waline/client"

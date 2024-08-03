@@ -8,11 +8,24 @@
 }}
 
 {{/* Append waline pageview & comment plugin */}}
-{{ if or (eq .Site.Params.postMeta.views.plugin "waline") (eq .Site.Params.postMeta.comments.plugin "waline") }}
-{{ $counter := dict
-  "js"  .Site.Data.resources.plugins.waline.js
-}}
-{{ $pageCfg = merge $pageCfg (dict "waline" $counter) }}
+{{ with .Site.Params.postMeta.views }}
+  {{ if and .enable (ne .plugin "busuanzi") }}
+    {{ $plugin := .plugin }}
+    {{ $counter := dict
+      "pagecnt" (index ($.Site.Data.resources.plugins) $plugin "js" 0)
+    }}
+    {{ $pageCfg = merge $pageCfg (dict $plugin $counter) }}
+  {{ end }}
+{{ end }}
+
+{{ with .Site.Params.postMeta.comments }}
+  {{ if .enable }}
+    {{ $plugin := .plugin }}
+    {{ $counter := dict
+      "commentcnt" (index ($.Site.Data.resources.plugins) $plugin "js" 1)
+    }}
+    {{ $pageCfg = merge $pageCfg (dict $plugin $counter) }}
+  {{ end }}
 {{ end }}
 
 {{/* Append mermaid plugin */}}

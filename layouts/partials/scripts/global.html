@@ -47,12 +47,16 @@
 
 {{/* Comments scripts */}}
 {{ if isset .Site.Params "waline" }}
-{{ $walinejs := resources.Get "js/third-party/comments/waline.js" }}
-{{ $nextjs = $nextjs | append $walinejs }}
+  {{ $walinejs := resources.Get "js/third-party/comments/waline.js" }}
+  {{ $nextjs = $nextjs | append $walinejs }}
+{{ end }}
+{{ if isset .Site.Params "waline3" }}
+  {{ $walinejs3 := resources.Get "js/third-party/comments/waline3.js" }}
+  {{ $nextjs = $nextjs | append $walinejs3 }}
+{{ end }}
 {{ if or .Site.Params.postMeta.views.enable .Site.Params.postMeta.comments.enable }}
   {{ $counterjs := resources.Get "js/third-party/others/counter.js" }}
   {{ $nextjs = $nextjs | append $counterjs }}
-  {{ end }}
 {{ end }}
 {{ if isset .Site.Params "giscus" }}
 {{ $giscusjs := resources.Get "js/third-party/comments/giscus.js" }}
