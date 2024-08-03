@@ -842,6 +842,7 @@ params:
   #   placeholder: "请文明发言哟 ヾ(≧▽≦*)o"
   #   sofa: "快来发表你的意见吧 (≧∀≦)ゞ"
   #   emoji: false
+  #   search: true
   #   imgUploader: false
   #   wordLimit: 200
   #   requiredMeta: ['nick', 'mail']

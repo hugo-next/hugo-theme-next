@@ -48,6 +48,7 @@ NexT.plugins.comments.waline3 = function () {
           requiredMeta  : ${JSON.stringify(requiredmeta)},
           reaction      : ${reaction},
           serverURL     : '${serverurl}',
+          dark          : 'html[data-theme="dark"]'
         });
 
         NexT.utils.hiddeLodingCmp('${element}');
