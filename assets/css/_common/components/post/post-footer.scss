@@ -91,3 +91,21 @@
     }
   }
 }
+
+@if $post_share_enable {
+  .post-share-tools {
+    display: flex;
+    justify-content: center;
+
+    a {
+      border: 0px;
+    }
+  }
+
+  @if $post_sharethis_set {
+    .st-cmp-settings {
+      display: none;
+    }
+  }
+}
+

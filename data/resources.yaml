@@ -90,8 +90,12 @@ analytics:
 
 # 文章分享
 # Share
-addthis:
-  js: https://s7.addthis.com/js/300/addthis_widget.js
+share:
+  sharethis:
+    js: https://platform-api.sharethis.com/js/sharethis.js#property=id&product=inline-share-buttons&source=platform
+
+  addtoany:
+    js: https://static.addtoany.com/menu/page.js
 
 # 评论组件
 # Comment component
