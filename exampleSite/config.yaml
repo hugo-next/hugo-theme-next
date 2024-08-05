@@ -935,11 +935,19 @@ params:
     id:     # <app_id>
     color:  "#fc6423"
 
-  # AddThis文章分享功能（服务商已下线，不推荐使用）
-  # 更多信息及配置请参考：https://www.addthis.com
-  # AddThis Share (The service provider has been offline, not recommended for use)
-  # See: https://www.addthis.com
-  # addThisId: #<Your addthis> 
+  # 文章分享功能
+  share:
+    enable: true
+    # 更多信息与配置，请参考：https://sharethis.com
+    # For more information and configuration, please refer to:https://sharethis.com
+    # sharethis:
+    #   id: #<sharethis_id> 
+    # 简单的在线分享，没有统计数据功能，更多信息可参考：https://www.addtoany.com/
+    # Simple online sharing without statistical data function. 
+    # For more information, please refer to: https://www.addtoany.com/
+    addtoany:    
+      locale: zh-CN
+      num_services: 8 
 
 
   # ---------------------------------------------------------------

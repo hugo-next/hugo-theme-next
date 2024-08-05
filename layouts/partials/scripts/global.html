@@ -40,9 +40,22 @@
 {{ end }}
 
 {{/* Share scripts */}}
-{{ if isset .Site.Params "addthisid" }}
-{{ $addthisjs := resources.Get "js/third-party/share/addthis.js" }}
-{{ $nextjs = $nextjs | append $addthisjs }}
+{{/** if and .Site.Params.share.enable (isset .Site.Params "sharethisid") }}
+{{ $sharethisjs := resources.Get "js/third-party/share/sharethis.js" }}
+{{ $nextjs = $nextjs | append $sharethisjs }}
+{{ end **/}}
+
+{{ with .Site.Params.share }}
+{{ if or .enable .Params.share }}
+  {{ if isset . "sharethis" }}
+    {{ $sharethisjs := resources.Get "js/third-party/share/sharethis.js" }}
+    {{ $nextjs = $nextjs | append $sharethisjs }}
+  {{ end }}
+  {{ if isset . "addtoany" }}
+    {{ $addtoanyjs := resources.Get "js/third-party/share/addtoany.js" }}
+    {{ $nextjs = $nextjs | append $addtoanyjs }}
+  {{ end }}
+{{ end }}  
 {{ end }}
 
 {{/* Comments scripts */}}

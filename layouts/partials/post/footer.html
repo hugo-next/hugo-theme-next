@@ -10,8 +10,21 @@
 <div class="post-eof"></div>
 {{ else }}
 {{ partial "post/footer_meta/tags.html" . }}
-{{ if and (not (isset .Params "share")) (not .Params.share) }}
-{{ partial "_thirdparty/share/addthis.html" . }}
+{{ $enable := .Params.share | default .Site.Params.share.enable }}
+{{ with .Site.Params.share }}
+  {{ if $enable }}
+    <div class="post-share-tools"> 
+      <div class="post-share-loading">
+        <i class="fa-solid fa-ellipsis fa-spin"></i>
+      </div>  
+      {{ if isset . "sharethis" }}
+        {{ partial "_thirdparty/share/sharethis.html" }}
+      {{ end }}
+      {{ if isset . "addtoany" }}
+        {{ partial "_thirdparty/share/addtoany.html" }}
+      {{ end }}
+    </div>
+    {{ end }}
 {{ end }}
 <hr/>
 {{ partial "post/footer_meta/reward.html" . }}
