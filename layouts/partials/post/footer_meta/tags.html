@@ -1,7 +1,7 @@
 {{ with .Params.tags }}
 <div class="post-tags">
   {{ range . }}
-    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize | lower  }}">
+    <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/">
     {{ . }}
   </a>
   {{ end }}
