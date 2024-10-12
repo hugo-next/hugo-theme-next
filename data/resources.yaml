@@ -33,7 +33,7 @@ vendors:
 
   - name: zstatic
     home: "https://www.zstatic.net"
-    logo: "https://www.zstatic.net/favicon/favicon-16x16.png"
+    logo: "https://www.zstatic.net/logo.png"
     type: "modern"
     url: "https://s4.zstatic.net/ajax/libs"
 
