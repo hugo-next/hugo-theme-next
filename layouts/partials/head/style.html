@@ -13,19 +13,21 @@
 {{ $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
 {{ $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
 {{ if hugo.IsProduction }}
-{{ $css = $css | minify | fingerprint }}
+{{ $css = $css | minify }}
 {{ end }}
-<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ $unixHref := partial "_funs/add_unix_param.html" $css.RelPermalink }}
+<link rel="stylesheet" href="{{ $unixHref }}">
 {{ if .IsPage }}
-  <style type="text/css">
-    .post-footer, .flinks-list-footer hr:after {
-      content: "{{ .Site.Params.postFooter.endLineTip }}";
-    }
-  </style>
+<style type="text/css">
+  .post-footer, .flinks-list-footer hr:after {
+    content: "{{ .Site.Params.postFooter.endLineTip }}";
+  }
+</style>
 {{ end }}
 
 {{ $custom := .Scratch.Get "style" }}
 {{ if $custom }}
-<link rel="stylesheet" type="text/css" href="{{ $custom }}">
+{{ $unixHref := partial "_funs/add_unix_param.html" $custom }}
+<link rel="stylesheet" type="text/css" href="{{ $unixHref }}">
 {{ end }}
   

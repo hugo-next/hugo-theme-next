@@ -113,6 +113,7 @@
 
 {{ $nextjs = $nextjs | resources.Concat "js/main.js"}}
 {{ if hugo.IsProduction }}
-{{ $nextjs = $nextjs | minify | fingerprint }}
+{{ $nextjs = $nextjs | minify }}
 {{ end }}
-<script type="text/javascript" src="{{ $nextjs.RelPermalink }}" defer></script>
+{{ $unixSrc := partial "_funs/add_unix_param.html" $nextjs.RelPermalink }}
+<script type="text/javascript" src="{{ $unixSrc }}" defer></script>
