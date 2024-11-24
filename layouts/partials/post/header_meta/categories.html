@@ -8,7 +8,7 @@
     {{ print (T "PostMeta.category") (T "Symbol.colon") }}
   </span>
   <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-    <a href="{{ "/categories/" | relLangURL }}{{ (index (last 1 .) 0) | urlize }}" itemprop="url" rel="index">
+    <a href="{{ "/categories/" | relLangURL }}{{ add (index (last 1 .) 0) "/" | urlize }}" itemprop="url" rel="index">
       <span itemprop="name">{{ delimit . "/" }}</span>
     </a>
   </span>
