@@ -1,6 +1,6 @@
 {{ if .Site.Params.postMeta.created }}
-{{ $timeF := .Site.Params.timeFormat }}
-{{ $createdTime := (.Date.Format $timeF) | default (.Date.Format $timeF) }}
+{{ $createdDate := .Date.Format .Site.Params.dateFormat }}
+{{ $createdTime := .Date.Format .Site.Params.timeFormat }}
 <span class="post-meta-item">
   <span class="post-meta-item-icon">
     <i class="fas fa-solid fa-calendar"></i>
@@ -8,8 +8,8 @@
   <span class="post-meta-item-text" title="{{ T "PostMeta.publish.date" }}">
     {{ print (T "PostMeta.publish.date") (T "Symbol.colon") }}
   </span>
-  <time title="{{ print (T "PostMeta.publish.time") (T "Symbol.colon") }}{{ .Date }}" itemprop="dateCreated datePublished" datetime="{{ .Date }}">
-    {{ .Date.Format .Site.Params.dateFormat }}
+  <time title="{{ print (T "PostMeta.publish.time") (T "Symbol.colon") }}{{ $createdTime }}" itemprop="dateCreated datePublished" datetime="{{ .Date }}">
+    {{ $createdDate }}
   </time>
 </span>
 {{ end }}
