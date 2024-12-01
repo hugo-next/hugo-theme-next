@@ -5,7 +5,7 @@
 {{ $plugin := resources.Get $pluginPath | resources.ExecuteAsTemplate $targetPath .ctx }}
 
 {{ if hugo.IsProduction }}
-{{ $plugin = $plugin | minify | fingerprint }}
+{{ $plugin = $plugin | minify }}
 {{ end }}
-
-<script type="text/javascript" src="{{ $plugin.RelPermalink }}" defer></script>
+{{ $unixSrc := partial "_funs/add_unix_param.html" $plugin.RelPermalink }}
+<script type="text/javascript" src="{{ $unixSrc }}" defer></script>

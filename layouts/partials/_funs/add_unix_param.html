@@ -1,0 +1,4 @@
+{{/** Add unix time end of link URL. **/}}
+{{ $timeUnix := time.Now.Unix }}
+{{ $withTimeLink :=  printf "%s?=%d" . $timeUnix }}
+{{ return $withTimeLink }}
