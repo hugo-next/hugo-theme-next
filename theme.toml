@@ -5,7 +5,7 @@ description = "Easily & powerful theme for Hugo engine."
 homepage = "https://github.com/hugo-next/hugo-theme-next"
 tags = ["Blog", "Simple", "Personal", "Responsive", "Documentation", "Light", "Dark"]
 features = ["Blog", "Responsive", "Documentation", "Light", "Dark"]
-min_version = "0.89.0"
+min_version = "0.134.0"
 demosite = "https://preview.hugo-next.eu.org"
 
 [author]

@@ -6,6 +6,9 @@
   {{ .Summary }}
   {{ end }}
 {{ else }}
-  {{ .Content }}
+  {{/** Started use the read more content anchor the need Hugo framework min marjo version greater than 0.134.0 **/}}
+  {{ .Summary }}
+  <a id="more"><!-- It's an anchor point to locate read more content start. --></a>
+  {{ .ContentWithoutSummary }}
 {{ end }}
 {{ end }}
