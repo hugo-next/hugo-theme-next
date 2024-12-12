@@ -12,7 +12,7 @@ labels: bug
 
 > 请确认如下情况已检查，并将 [ ] 换成 [x] 来选择 (Change [ ] to [x] to selected which your could make sure)
 
-- [ ] 已使用 Hugo Extended 0.86.0 或更高的版本 (I'm using Hugo Extended version 0.86.0 or later)
+- [ ] 已使用 Hugo Extended 0.134.0 或更高的版本 (I'm using Hugo Extended version 0.134.0 or later)
 - [ ] 已使用 Hugo NexT 4.0 或更高的版本 (I'm using Hugo NexT version 4.0 or later)
 - [ ] 已阅读 [Hugo 故障排除](https://gohugo.io/troubleshooting/)并尝试修复无果 (I had already read the [Troubleshooting page of Hugo](https://gohugo.io/troubleshooting/))
 - [ ] 已搜索过当前所有[已知问题](https://github.com/hugo-next/hugo-theme-next/issues)和[讨论区](https://github.com/hugo-next/hugo-theme-next/discussions/categories/q-a) ，但没有找到帮助 (I had already searched for current [Issues](https://github.com/hugo-next/hugo-theme-next/issues) and [Q & A](https://github.com/hugo-next/hugo-theme-next/discussions/categories/q-a), which does not help me.)
