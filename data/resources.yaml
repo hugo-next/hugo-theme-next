@@ -163,25 +163,25 @@ plugins:
     js:
       name: mathjax
       version: 3.2.2
-      file: es5/tex-mml-chtml.js
+      file: es5/tex-mml-svg.js
 
   katex:
     js:
       - name: katex
         alias_name: KaTeX
-        version: 0.16.9
+        version: 0.16.15
         file: dist/katex.min.js
         
       - name: auto-render
         alias: katex
         alias_name: KaTeX
-        version: 0.16.9
+        version: 0.16.15
         file: dist/contrib/auto-render.min.js
 
     css:
       name: katex
       alias_name: KaTeX
-      version: 0.16.9
+      version: 0.16.15
       file: dist/katex.min.css
 
   # 画图渲染

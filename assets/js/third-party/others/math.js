@@ -4,13 +4,24 @@ NexT.plugins.others.math = function() {
   
   if (render === 'mathjax') {
     const render_js = NexT.utils.getCDNResource(NexT.CONFIG.page.math.js);
-    NexT.utils.getScript(render_js, function(){
+    const mathjaxCfg = `
       window.MathJax = {
+        // 自定义内联数学公式的分隔符号
         tex: {
-          inlineMath: [["$", "$"]],
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        // SVG 渲染配置为全局共享字体缓存
+        svg: {
+          fontCache: 'global'
+        },
+        // 排除特定的HTML标签，避免渲染
+        options: {
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
         }
       };
-    });
+    `;
+    NexT.utils.getScript(null, { textContent: mathjaxCfg });
+    NexT.utils.getScript(render_js, { attributes: { id: "MathJax-script", "async": true }});
   }
 
   if (render === 'katex') {
