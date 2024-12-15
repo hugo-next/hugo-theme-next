@@ -14,9 +14,9 @@ NexT.plugins.others.math = function() {
         svg: {
           fontCache: 'global'
         },
-        // 排除特定的HTML标签，避免渲染
+        // 排除特定的HTML标签，避免过度渲染
         options: {
-          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"],
+          skipHtmlTags: ["script", "noscript", "style", "textarea", "pre", "footer"],
         }
       };
     `;
