@@ -12,7 +12,7 @@
   @include alert-styles(#{$key}, $color);
 }
 
-.post-alert-title {
+.post-alert-title, .post-expired-title {
 
   display: flex;
   align-items: center;
@@ -31,6 +31,6 @@
   }
 }
 
-.post-alert-content {
+.post-alert-content, .post-expired-content {
   color: var(--text-color);
 }

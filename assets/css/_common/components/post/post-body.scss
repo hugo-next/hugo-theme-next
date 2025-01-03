@@ -86,5 +86,26 @@
     visibility: hidden;
   }
 
-@import 'post-alert';
+  .post-expired-tip {
+
+    font-size: 0.825em;
+    border: 1px solid #4A90E2;
+    border-left: 6px solid #4A90E2;
+    margin: 0 0 0.85em 0;
+    padding: 0.65em 0.15em 0.65em 0.95em;
+
+    .post-expired-title {
+      color: #4A90E2;
+      font-weight: bold;
+    }
+
+    .post-expired-times {
+      font-weight: bold;
+      font-size: 1.15em;
+      color: #e5534b;
+      margin: 0 3px;
+    }
+  }
+
+  @import 'post-alert';
 }

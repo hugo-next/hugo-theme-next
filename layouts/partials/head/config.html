@@ -2,10 +2,22 @@
   "isHome"    .IsHome
   "isPage"    .IsPage
   "comments"  (.Scratch.Get "isComment")
+  "toc"       (default .Site.Params.toc.enable .Params.Toc)
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
 }}
+
+{{/* Append post expired config */}}
+{{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
+{{ $pageCfg = merge $pageCfg (dict "expired" $expired) }}
+{{ if $expired }}
+{{ $expiredTips := dict
+  "info" (T "PostMeta.expired.info")
+  "warn" (T "PostMeta.expired.warn")
+}}
+{{ $pageCfg = merge $pageCfg (dict "expiredTips" $expiredTips) }}
+{{ end }}
 
 {{/* Append waline pageview & comment plugin */}}
 {{ with .Site.Params.postMeta.views }}

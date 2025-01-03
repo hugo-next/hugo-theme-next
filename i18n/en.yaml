@@ -71,6 +71,10 @@ PostMeta:
   tags: Tags
   more: "Read More"
   edit: "Edit this post"
+  expired:
+    title: "Note"
+    info: "🕰️ Hey，This article is an aged wine of over # the information may need updating, please check the best before date before reading."
+    warn: "🚀 Heads up! This article is from # ago and might not keep up with the pace of time. Bring your own time machine for reading, watch out for the time travel!"
 
 PostAlert:
   info     : "Info"

@@ -63,9 +63,13 @@ NexT.boot.refresh = function() {
 
   if (!NexT.CONFIG.page.isPage) return;
  
-  NexT.utils.registerSidebarTOC();
+  if (NexT.CONFIG.page.toc) NexT.utils.registerSidebarTOC();
+  if (NexT.CONFIG.page.expired) NexT.utils.calPostExpiredDate();
+
   NexT.utils.registerCopyCode();
+  NexT.utils.registerImageViewer();
   NexT.utils.registerPostReward();
+
   if(NexT.CONFIG.page.comments) {    
     NexT.utils.initCommontesDispaly();
     NexT.utils.registerCommonSwitch();
@@ -73,7 +77,6 @@ NexT.boot.refresh = function() {
   } else {
     NexT.utils.hideComments();
   }
-  NexT.utils.registerImageViewer();
 
   //TODO
    /**

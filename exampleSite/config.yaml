@@ -495,6 +495,34 @@ params:
       # 页面访问统计插件，支持busuanzi, waline, waline3
       # Page views counter plugin, support: busuanzi, waline, waline3
       plugin: busuanzi
+    # 是否开启过期提示
+    # Expired tip
+    expired: false
+
+  # 文章内容中的提示信息设置
+  # Alert settings in post content
+  postAlerts:
+    info:
+      icon: "circle-info"
+      color: "#4A90E2"
+    note:
+      icon: "bell"
+      color: "#17A2B8"
+    help:
+      icon: "circle-question"
+      color: "#967ADC"
+    error:
+      icon: "circle-xmark"
+      color: "#DC3545"
+    warning:
+      icon: "triangle-exclamation"
+      color: "#F39C12"
+    success:
+      icon: "circle-check"
+      color: "#32CD32"
+    important:
+      icon: "circle-plus"
+      color: "#007BFF"
 
   # 文章底部的设置
   # Post footer settings

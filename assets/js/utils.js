@@ -7,6 +7,35 @@ HTMLElement.prototype.wrap = function (wrapper) {
 };
 
 NexT.utils = {
+  calPostExpiredDate: function() {
+    const postMetaDom = document.querySelector('.post-meta-container');
+    let postTime = postMetaDom.querySelector('time[itemprop="dateCreated datePublished"]').getAttribute("datetime");
+    let postLastmodTime = postMetaDom.querySelector('time[itemprop="dateModified dateLastmod"]');
+
+    if (postLastmodTime != null) postTime = postLastmodTime.getAttribute("datetime");
+
+    const expireCfg = NexT.CONFIG.page.expiredTips;
+    let expiredTipPre = '';
+    let expiredTipSuf = '';
+    let expireTime = this.diffDate(postTime, 2);
+
+    if (expireTime == '0'+NexT.CONFIG.i18n.ds_days) {
+      document.getElementById('post-expired-tip').style.display = 'none';
+    } else {      
+      if (expireTime.indexOf(NexT.CONFIG.i18n.ds_years) > -1){
+        let expireTip = expireCfg.warn.split('#');
+        expiredTipPre = expireTip[0];
+        expiredTipSuf = expireTip[1];      
+      } else {
+        let expireTip = expireCfg.info.split('#');
+        expiredTipPre = expireTip[0];
+        expiredTipSuf = expireTip[1];
+      }
+  
+      let expiredTip = expiredTipPre + '<span class="post-expired-times">' + expireTime + '</span>' + expiredTipSuf;
+      document.getElementById('post-expired-content').innerHTML = expiredTip;
+    }
+  },
   registerMenuClick: function () {
     const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
     pMenus.forEach(function (item) {
