@@ -72,12 +72,14 @@ PostMeta:
   more: "Read More"
   edit: "Edit this post"
 
-Reward:
-  title: Donate
-  wechatpay: WechatPay
-  alipay: Alipay
-  paypal: Paypal
-  bitcoin: Bitcoin
+PostAlert:
+  info     : "Info"
+  note     : "Note"
+  help     : "Help"
+  error    : "Error"
+  warning  : "Warning"
+  success  : "Success"
+  important: "Important"
 
 PostCopyRight:
   title:  Post Title
@@ -95,6 +97,13 @@ PostFollowMe:
 
 PostComments:
   title: Comments
+
+Reward:
+  title: Donate
+  wechatpay: WechatPay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
 
 SiteInfoItems:
   title: "Web Status"

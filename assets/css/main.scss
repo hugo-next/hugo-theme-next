@@ -87,6 +87,7 @@ $reward_settings_animation  : {{ $P.rewardSets.animation }};
 $post_end_tag_icon          : {{ $P.postFooter.tagIcon }};
 $post_share_enable          : {{ $P.share.enable }};
 $post_sharethis_set         : {{ isset $P.share "sharethis" }};
+$post_alert_colors          : ({{ range $key, $value := $P.postAlerts }} {{ $key }}: {{ $value.color }}, {{ end }});
 
 // TODO find the paramters
 $text_align_desktop         : {{ $P.textAlign.desktop }};

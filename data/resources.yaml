@@ -64,7 +64,7 @@ js:
 # CSS Resources
 css:
   - name: font-awesome
-    version: 6.6.0
+    version: 6.7.2
     file: css/all.min.css
     alias: '@fortawesome/fontawesome-free'
 

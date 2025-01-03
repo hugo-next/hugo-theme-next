@@ -72,12 +72,14 @@ PostMeta:
   more: 閱讀全文
   edit: 編輯
 
-Reward:
-  title: 讚賞
-  wechatpay: 微信
-  alipay: 支付寶
-  paypal: Paypal
-  bitcoin: 比特幣
+PostAlert:
+  info     : "信息 "
+  note     : "注意"
+  help     : "幫助"
+  error    : "錯誤"
+  warning  : "警告"
+  success  : "成功"
+  important: "重要"
 
 PostCopyRight:
   title: 文章標題
@@ -95,6 +97,13 @@ PostFollowMe:
 
 PostCommentTitle:
   other: 評論交流
+
+Reward:
+  title: 讚賞
+  wechatpay: 微信
+  alipay: 支付寶
+  paypal: Paypal
+  bitcoin: 比特幣
 
 SiteInfoItems:
   title: "網站資訊"

@@ -18,7 +18,6 @@ CateTitle:
 AllSome:
   other: "Total :{{ .Some }}" 
 
-
 Symbol:
   colon: ":"
   comma: ","
@@ -72,12 +71,14 @@ PostMeta:
   more: "Lire la suite"
   edit: "Editer ce billet"
 
-Reward:
-  title: Donner
-  wechatpay: WechatPay
-  alipay: Alipay
-  paypal: Paypal
-  bitcoin: Bitcoin
+PostAlert:
+  info     : "Info"
+  note     : "Note"
+  help     : "Aide"
+  error    : "Erreur"
+  warning  : "Avertissement"
+  success  : "Succès"
+  important: "Inportant"
 
 PostCopyRight:
   title:  Titre du billet
@@ -95,6 +96,13 @@ PostFollowMe:
 
 PostComments:
   title: Commentaires
+
+Reward:
+  title: Donner
+  wechatpay: WechatPay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
 
 SiteInfoItems:
   title: "Statistiques"
