@@ -185,6 +185,10 @@ tags:
 
 关于本主题的开发进度和后续的发展路线图，可访问 [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9) 查看详情，也欢迎大家参与一起来完善。
 
+[![Contributors](https://contrib.rocks/image?repo=hugo-next/hugo-theme-next)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors)
+
+[![HugoNexT Stars](https://starchart.cc/hugo-next/hugo-theme-next.svg?variant=adaptive)](https://github.com/hugo-next/hugo-theme-next/stargazers)
+
 ## 📜 许可证
 
 [MIT License](LICENSE)

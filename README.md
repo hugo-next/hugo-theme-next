@@ -176,6 +176,10 @@ Hope could submmit your site information in this file [flinks.yaml](https://gith
 
 All features development progress and new request in [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9), welcome to join us and compelete it together.
 
+[![Contributors](https://contrib.rocks/image?repo=hugo-next/hugo-theme-next)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors)
+
+[![HugoNexT Stars](https://starchart.cc/hugo-next/hugo-theme-next.svg?variant=adaptive)](https://github.com/hugo-next/hugo-theme-next/stargazers)
+
 ## 📜 License
 
 [MIT License](LICENSE)
