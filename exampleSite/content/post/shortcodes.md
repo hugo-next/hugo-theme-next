@@ -90,3 +90,13 @@ url: "demo/shortcodes.html"
   ### Danger Header
   **Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
+
+
+## Bilibili 视频
+
+```markdown
+{{</* bilibili BV1Sx411T7QQ */>}}
+或者
+{{</* bilibili id=BV1Sx411T7QQ */>}}
+```
+{{< bilibili id=BV1Sx411T7QQ >}}
