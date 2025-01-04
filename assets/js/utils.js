@@ -14,27 +14,23 @@ NexT.utils = {
 
     if (postLastmodTime != null) postTime = postLastmodTime.getAttribute("datetime");
 
+    let expiredTip = '';
     const expireCfg = NexT.CONFIG.page.expiredTips;
-    let expiredTipPre = '';
-    let expiredTipSuf = '';
-    let expireTime = this.diffDate(postTime, 2);
+    let expiredTime = this.diffDate(postTime, 2);
 
-    if (expireTime == '0'+NexT.CONFIG.i18n.ds_days) {
-      document.getElementById('post-expired-tip').style.display = 'none';
-    } else {      
-      if (expireTime.indexOf(NexT.CONFIG.i18n.ds_years) > -1){
-        let expireTip = expireCfg.warn.split('#');
-        expiredTipPre = expireTip[0];
-        expiredTipSuf = expireTip[1];      
-      } else {
-        let expireTip = expireCfg.info.split('#');
-        expiredTipPre = expireTip[0];
-        expiredTipSuf = expireTip[1];
-      }
-  
-      let expiredTip = expiredTipPre + '<span class="post-expired-times">' + expireTime + '</span>' + expiredTipSuf;
-      document.getElementById('post-expired-content').innerHTML = expiredTip;
+    if (expiredTime.indexOf(NexT.CONFIG.i18n.ds_years) > -1) {
+      expiredTip = expireCfg.warn.split('#');
+    } else {
+      let days = parseInt(expiredTime.replace(NexT.CONFIG.i18n.ds_days, '').trim(), 10);
+      if (days < 180)  return; 
+      expiredTip = expireCfg.info.split('#');
     }
+
+    let expiredTipPre = expiredTip[0];
+    let expiredTipSuf = expiredTip[1];
+    expiredTip = expiredTipPre + '<span class="post-expired-times">' + expiredTime + '</span>' + expiredTipSuf;
+    document.getElementById('post-expired-content').innerHTML = expiredTip;
+    this.domAddClass('#post-expired-tip', 'show');
   },
   registerMenuClick: function () {
     const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
@@ -536,13 +532,6 @@ NexT.utils = {
         }
       });
     });
-  },
-
-  hideComments: function () {
-    let postComments = document.querySelector('.post-comments');
-    if (postComments !== null) {
-      postComments.style.display = 'none';
-    }
   },
 
   hiddeLodingCmp: function (selector) {

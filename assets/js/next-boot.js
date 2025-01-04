@@ -73,9 +73,9 @@ NexT.boot.refresh = function() {
   if(NexT.CONFIG.page.comments) {    
     NexT.utils.initCommontesDispaly();
     NexT.utils.registerCommonSwitch();
-    NexT.utils.domAddClass('#goto-comments', 'goto-comments-on');
+    NexT.utils.domAddClass('#goto-comments', 'show');
   } else {
-    NexT.utils.hideComments();
+    NexT.utils.domAddClass('#goto-comments', 'hidden');
   }
 
   //TODO
