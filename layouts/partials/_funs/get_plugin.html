@@ -1,6 +1,6 @@
 {{/* Get third party js plugins resource */}}
 
-{{ $pluginPath :=  printf "%s/%s/%s" "js/third-party" .class .plugin }}
+{{ $pluginPath :=  printf "%s/%s/%s" "js/3rd" .class .plugin }}
 {{ $targetPath := printf "js/%s" .plugin }}
 {{ $plugin := resources.Get $pluginPath | resources.ExecuteAsTemplate $targetPath .ctx }}
 

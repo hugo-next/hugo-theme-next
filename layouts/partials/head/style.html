@@ -4,7 +4,7 @@
 {{ $router := .Scratch.Get "router" }}
 
 {{ range $css := $cssRes }}
-  {{ $pluginCss := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
+  {{ $pluginCss := partial "_funs/get_cdn_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
   <link type="text/css" rel="stylesheet" href="{{ $pluginCss }}" /> 
 {{ end }}
 

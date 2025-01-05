@@ -3,7 +3,7 @@
 {{ $vendor := .Site.Params.vendors.plugins }}
 {{ $router := .Scratch.Get "router" }}
 {{ range $jsRes }} 
-  {{ $pluginJS := partial "_funs/get_res.html" (dict "res" . "vendor" $vendor "router" $router)  }}
+  {{ $pluginJS := partial "_funs/get_cdn_res.html" (dict "res" . "vendor" $vendor "router" $router)  }}
   <script type="text/javascript" src="{{ $pluginJS }}" crossorigin="anonymous" defer></script>
 {{ end }}
 
@@ -41,18 +41,18 @@
 
 {{/* Share scripts */}}
 {{/** if and .Site.Params.share.enable (isset .Site.Params "sharethisid") }}
-{{ $sharethisjs := resources.Get "js/third-party/share/sharethis.js" }}
+{{ $sharethisjs := resources.Get "js/3rd/share/sharethis.js" }}
 {{ $nextjs = $nextjs | append $sharethisjs }}
 {{ end **/}}
 
 {{ with .Site.Params.share }}
 {{ if or .enable .Params.share }}
   {{ if isset . "sharethis" }}
-    {{ $sharethisjs := resources.Get "js/third-party/share/sharethis.js" }}
+    {{ $sharethisjs := resources.Get "js/3rd/share/sharethis.js" }}
     {{ $nextjs = $nextjs | append $sharethisjs }}
   {{ end }}
   {{ if isset . "addtoany" }}
-    {{ $addtoanyjs := resources.Get "js/third-party/share/addtoany.js" }}
+    {{ $addtoanyjs := resources.Get "js/3rd/share/addtoany.js" }}
     {{ $nextjs = $nextjs | append $addtoanyjs }}
   {{ end }}
 {{ end }}  
@@ -60,53 +60,53 @@
 
 {{/* Comments scripts */}}
 {{ if isset .Site.Params "waline" }}
-  {{ $walinejs := resources.Get "js/third-party/comments/waline.js" }}
+  {{ $walinejs := resources.Get "js/3rd/comments/waline.js" }}
   {{ $nextjs = $nextjs | append $walinejs }}
 {{ end }}
 {{ if isset .Site.Params "waline3" }}
-  {{ $walinejs3 := resources.Get "js/third-party/comments/waline3.js" }}
+  {{ $walinejs3 := resources.Get "js/3rd/comments/waline3.js" }}
   {{ $nextjs = $nextjs | append $walinejs3 }}
 {{ end }}
 {{ if or .Site.Params.postMeta.views.enable .Site.Params.postMeta.comments.enable }}
-  {{ $counterjs := resources.Get "js/third-party/others/counter.js" }}
+  {{ $counterjs := resources.Get "js/3rd/others/counter.js" }}
   {{ $nextjs = $nextjs | append $counterjs }}
 {{ end }}
 {{ if isset .Site.Params "giscus" }}
-{{ $giscusjs := resources.Get "js/third-party/comments/giscus.js" }}
+{{ $giscusjs := resources.Get "js/3rd/comments/giscus.js" }}
 {{ $nextjs = $nextjs | append $giscusjs }}
 {{ end}}
 {{ if isset .Site.Params "livere" }}
-{{ $liverejs := resources.Get "js/third-party/comments/livere.js" }}
+{{ $liverejs := resources.Get "js/3rd/comments/livere.js" }}
 {{ $nextjs = $nextjs | append $liverejs }}
 {{ end }}
 {{ if isset .Site.Params "artalk" }}
-{{ $artalkjs := resources.Get "js/third-party/comments/artalk.js" }}
+{{ $artalkjs := resources.Get "js/3rd/comments/artalk.js" }}
 {{ $nextjs = $nextjs | append $artalkjs }}
 {{ end }}
 {{ if isset .Site.Params "utterances" }}
-{{ $utterancesjs := resources.Get "js/third-party/comments/utterances.js" }}
+{{ $utterancesjs := resources.Get "js/3rd/comments/utterances.js" }}
 {{ $nextjs = $nextjs | append $utterancesjs }}
 {{ end }}
 
 {{/* Search engin scripts */}}
 {{ if .Site.Params.localSearch.enable }}
-{{ $search := resources.Get "js/third-party/search/local.js" }}
+{{ $search := resources.Get "js/3rd/search/local.js" }}
 {{ $nextjs = $nextjs | append $search }}
 {{ end }}
 {{ if .Site.Params.algoliaSearch.enable }}
-{{ $search := resources.Get "js/third-party/search/algolia.js" }}
+{{ $search := resources.Get "js/3rd/search/algolia.js" }}
 {{ $nextjs = $nextjs | append $search }}
 {{ end }}
 
 {{/* Other not useful scripts, eg: 51la widget, translate */}}
 {{ with .Site.Params.siteState.views }}
   {{ if and .enable (eq .plugin "51la") }}
-    {{ $lawt := resources.Get "js/third-party/others/lawidget.js" }}
+    {{ $lawt := resources.Get "js/3rd/others/lawidget.js" }}
     {{ $nextjs = $nextjs | append $lawt }}
   {{ end }}
 {{ end }}
 {{ if .Site.Params.footer.translate }}
-{{ $translate := resources.Get "js/third-party/others/translate.js" }}
+{{ $translate := resources.Get "js/3rd/others/translate.js" }}
 {{ $nextjs = $nextjs | append $translate }}
 {{ end }}
 
