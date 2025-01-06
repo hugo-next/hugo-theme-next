@@ -22,7 +22,7 @@
 {{ $router := dict }}
 
 {{ if eq $vendor "local" }}
-  {{ $router = dict "url" (printf "%s3rd" .Site.BaseURL) "name" $vendor "type" "modern" }}
+  {{ $router = dict "url" (printf "%sjs/3rd" .Site.BaseURL) "name" $vendor "type" "modern" }}
 {{ else }}
   {{ range .Site.Data.resources.vendors }}
     {{ if eq .name $vendor }}

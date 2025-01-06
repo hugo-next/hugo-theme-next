@@ -217,3 +217,18 @@ plugins:
         version: 3.3.0
         file: dist/comment.js
         alias: "@waline/client"
+  # 音乐播放器
+  music:
+    js:
+      - name: aplayer
+        version: 1.10.1
+        file: dist/APlayer.min.js
+      
+      - name: meting
+        version: 2.0.1
+        file: dist/Meting.min.js
+
+    css:
+      name: aplayer
+      version: 1.10.1
+      file: dist/APlayer.min.css

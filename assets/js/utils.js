@@ -7,6 +7,16 @@ HTMLElement.prototype.wrap = function (wrapper) {
 };
 
 NexT.utils = {
+  registerAPlayer: function () {
+    this.getStyle(
+      NexT.utils.getCDNResource(NexT.CONFIG.page.aplayer.css)
+    );
+    
+    NexT.CONFIG.page.aplayer.js.forEach(function (js) {
+      NexT.utils.getScript(NexT.utils.getCDNResource(js), true);
+    });
+    
+  },
   calPostExpiredDate: function() {
     const postMetaDom = document.querySelector('.post-meta-container');
     let postTime = postMetaDom.querySelector('time[itemprop="dateCreated datePublished"]').getAttribute("datetime");

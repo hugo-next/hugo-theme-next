@@ -3,10 +3,20 @@
   "isPage"    .IsPage
   "comments"  (.Scratch.Get "isComment")
   "toc"       (default .Site.Params.toc.enable .Params.Toc)
+  "music"      .Params.music
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
 }}
+
+{{/** Append APlayer plugin */}}
+{{ if .Params.music }}
+{{ $aplayer := dict
+  "js"  $.Site.Data.resources.plugins.music.js
+  "css" $.Site.Data.resources.plugins.music.css
+}}
+{{ $pageCfg = merge $pageCfg (dict "aplayer" $aplayer) }}
+{{ end }}
 
 {{/* Append post expired config */}}
 {{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
