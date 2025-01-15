@@ -1,0 +1,13 @@
+{{/* Defind loading plugin entend style which only need in pages */}}
+{{ if .IsPage }}
+
+{{/** Short code params **/}}
+{{ $scParam := .Store.Get "scParams" }}
+
+{{ if $scParam.mermaid }}
+.post-block .post-body .mermaid {
+  background: var(--highlight-foreground);
+}
+{{ end }}
+
+{{ end }}

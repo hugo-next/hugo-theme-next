@@ -1,21 +1,24 @@
+
+{{/** Short code params **/}}
+{{ $scParam := .Store.Get "scParams" }}
+
 {{ $pageCfg := dict
   "isHome"    .IsHome
   "isPage"    .IsPage
   "comments"  (.Scratch.Get "isComment")
   "toc"       (default .Site.Params.toc.enable .Params.Toc)
-  "music"      .Params.music
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
 }}
 
 {{/** Append APlayer plugin */}}
-{{ if .Params.music }}
+{{ if $scParam.music }}
 {{ $aplayer := dict
   "js"  $.Site.Data.resources.plugins.music.js
   "css" $.Site.Data.resources.plugins.music.css
 }}
-{{ $pageCfg = merge $pageCfg (dict "aplayer" $aplayer) }}
+{{ $pageCfg = merge $pageCfg (dict "music" $aplayer) }}
 {{ end }}
 
 {{/* Append post expired config */}}
@@ -51,7 +54,7 @@
 {{ end }}
 
 {{/* Append mermaid plugin */}}
-{{ if .Params.mermaid }}
+{{ if $scParam.mermaid }}
 {{ $mermaid := dict
   "js"  .Site.Data.resources.plugins.mermaid.js
 }}
@@ -73,3 +76,14 @@
 {{ end }}
 
 <script class="next-config" data-name="page" type="application/json">{{ $pageCfg }}</script>
+
+{{/** Special CSS Style for page **/}}
+{{ if .IsPage }}
+<style type="text/css">
+  .post-footer, .flinks-list-footer hr:after {
+    content: "{{ .Site.Params.postFooter.endLineTip }}";
+  }
+
+
+</style>
+{{ end }}

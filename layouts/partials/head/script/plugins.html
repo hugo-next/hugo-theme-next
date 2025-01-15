@@ -1,9 +1,17 @@
 {{/* Defind loading plugin scripts which only need in pages */}}
+{{ if .IsPage }}
 
+{{/** Short code params **/}}
+{{ $scParam := .Store.Get "scParams" }}
+
+{{/** Append math render action **/}}
 {{ if or .Params.math .Site.Params.math }}
   {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "math.js") }}
 {{ end }}
 
-{{ if .Params.mermaid }}
+{{/** Append mermaid render action **/}}
+{{ if $scParam.mermaid }}
   {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "mermaid.js") }}
+{{ end }}
+
 {{ end }}

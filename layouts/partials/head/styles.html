@@ -17,14 +17,14 @@
 {{ end }}
 {{ $unixHref := partial "_funs/add_unix_param.html" $css.RelPermalink }}
 <link rel="stylesheet" href="{{ $unixHref }}">
-{{ if .IsPage }}
-<style type="text/css">
-  .post-footer, .flinks-list-footer hr:after {
-    content: "{{ .Site.Params.postFooter.endLineTip }}";
-  }
-</style>
-{{ end }}
 
+<!-- Extend Style  -->
+<style type="text/css">
+ {{ partialCached "head/style/global.html" . }}
+ {{ partial "head/style/plugins.html" . }}
+</style>
+
+<!-- Custom Style file -->
 {{ $custom := .Scratch.Get "style" }}
 {{ if $custom }}
 {{ $unixHref := partial "_funs/add_unix_param.html" $custom }}

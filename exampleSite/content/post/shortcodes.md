@@ -14,7 +14,6 @@ tags:
   - 语法
 url: "demo/shortcodes.html"
 toc: true
-music: true
 ---
 
 虽然 `Markdown` 语法已经非常丰富能够满足我们写文章的绝大部分需求，但是为更好的对文章内容进行更友好的排版，为引设计一套自定义的短语，便于在使用时能够快速引用。
@@ -101,7 +100,7 @@ music: true
 或者
 {{</* bilibili id=BV1Sx411T7QQ */>}}
 ```
-{{</** bilibili id=BV1Sx411T7QQ **/>}}
+{{< bilibili id=BV1Sx411T7QQ >}}
 
 ## 音乐播放器
 
@@ -131,23 +130,22 @@ music: true
 ### 单曲播放 
 
 ```markdown
-{{</* music theme="#2980b9" server="netease" type="song" id="1868553" mini="true" */>}}
+{{</* music theme="#2980b9" server="tencent" type="song" id="002u4ZTb0CXmJA" mini="true" */>}}
 ```
 
-{{< music theme="#2980b9" server="netease" type="song" id="1868553" mini="true" >}}
+{{< music theme="#2980b9" server="tencent" type="song" id="002u4ZTb0CXmJA" mini="true" >}}
 
 ### 列表播放
 
 ```markdown
-{{</* music server="netease" type="playlist" id="769332917" list-max-height="140" */>}}
+{{</* music server="netease" type="playlist" id="1982066521" list-max-height="140" */>}}
 ```
 
-{{< music server="netease" type="playlist" id="769332917" list-max-height="140px" >}}
-
+{{< music server="netease" type="playlist" id="1982066521" list-max-height="140px" >}}
 ### 自定义音乐源
 
 ```markdown
-{{</* music url="https://ri-sycdn.kuwo.cn/ea345253b94e7ad564e6fb0cdf37fee6/677b6574/resource/n1/87/56/4272600974.mp3" name="天空之城" artist="宫崎骏" cover="http://img4.kuwo.cn/star/starheads/500/27/66/2532818318.jpg" autoplay="true" */>}}
+{{</* music music url="/music/sky.mp3" name="天空之城" artist="宫崎骏" cover="/music/gongqijun.jpg" autoplay="true" */>}}
 ```
 
-{{< music url="https://ri-sycdn.kuwo.cn/ea345253b94e7ad564e6fb0cdf37fee6/677b6574/resource/n1/87/56/4272600974.mp3" name="天空之城" artist="宫崎骏" cover="http://img4.kuwo.cn/star/starheads/500/27/66/2532818318.jpg" autoplay="true" >}}
+{{< music url="/music/sky.mp3" name="天空之城" artist="宫崎骏" cover="/music/gongqijun.jpg" autoplay="true" >}}

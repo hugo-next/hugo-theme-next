@@ -20,3 +20,5 @@
   {{ with .Get "list-folded" }} list-folded="{{ . }}" {{ end  }}
   {{ with .Get "list-max-height" }} list-max-height="{{ . }}" {{ end  }}
   ></meting-js>
+
+{{ .Page.Store.SetInMap "scParams" "music" true }}

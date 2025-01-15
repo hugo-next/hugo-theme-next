@@ -4,7 +4,7 @@
 {{ partial "head/googleplus.html" . }}
 {{ partial "head/facebook.html" . }}
 {{ partial "head/verify.html" . }}
-{{ partialCached "head/style.html" . }}
+{{ partial "head/styles.html" . }}
 <script type="text/javascript">
 (function(){
   localDB = {
@@ -61,5 +61,5 @@
 })(window);
 </script>
 {{ partial "head/config.html" . }}
-{{ partialCached "head/analytics.html" . }}
+{{ partialCached "head/script/analytics.html" . }}
 
