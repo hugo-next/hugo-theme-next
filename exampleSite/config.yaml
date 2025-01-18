@@ -498,6 +498,9 @@ params:
     # 是否开启过期提示
     # Expired tip
     expired: false
+    # 是否开启摘要显示
+    # Enable summary
+    summary: false
 
   # 文章内容中的提示信息设置
   # Alert settings in post content

@@ -13,6 +13,7 @@ $grey-lighter : #ddd;
 $grey-light   : #ccc;
 $grey         : #bbb;
 $grey-dark    : #999;
+$grey-cnt     : #5c5c5c;
 $grey-dim     : #666;
 $black-light  : #555;
 $black-dim    : #333;
@@ -49,7 +50,8 @@ $blockquote-color             : $grey-dim;
 $blockquote-color-dark        : $grey;
 
 // Global border color.
-$border-color                 : $grey-light;
+$border-color                 : $grey-dark;
+$border-color-dark            : $grey-lighter;
 
 // Background color for <body>
 $body-bg-color                : white;

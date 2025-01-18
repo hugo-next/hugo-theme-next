@@ -6,6 +6,7 @@
   {{ .Summary }}
   {{ end }}
 {{ else }}
+  {{/** Post expired tip message **/}}
   {{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
   {{ if $expired }}
   <div class="post-expired-tip" id="post-expired-tip">
@@ -14,6 +15,19 @@
       <span>{{ T "PostMeta.expired.title" }}</span>
     </div>
     <div id="post-expired-content" class="post-expired-content"></div>
+  </div>
+  {{ end }}
+  {{/** Post summary **/}}
+  {{ $summary := default .Site.Params.PostMeta.summary .Params.Summary }}
+  {{ if $summary }}
+  <div class="post-summary-wrapper">
+    <div class="summary-title">
+      <span><i class="fa-solid fa-list"></i></span>
+      <span>{{ T "PostMeta.summary.title" }}</span>
+    </div>
+    <div class="summary-content">
+      {{ default .Summary .Params.Summary }}
+    </div>
   </div>
   {{ end }}
   {{/** Started use the read more content anchor the need 

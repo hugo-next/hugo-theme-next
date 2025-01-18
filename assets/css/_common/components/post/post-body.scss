@@ -86,11 +86,19 @@
     visibility: hidden;
   }
 
+  /** Defined speical border properties for top card of post **/
+  $speical-border-width: 5px;
+  $speical-border-radius: 8px;
   .post-expired-tip {
 
-    font-size: 0.825em;
+    $expired-color: #4A90E2;
+
+    font-size: var(--font-size-small);
     border: 1px solid #4A90E2;
-    border-left: 6px solid #4A90E2;
+    border-radius: $speical-border-radius;
+    border-left: $speical-border-width solid #4A90E2;
+    border-top:  $speical-border-width solid #4A90E2;
+    box-shadow: .6rem .5rem 0.3rem var(--body-bg-color);
     margin: 0 0 0.85em 0;
     padding: 0.65em 0.15em 0.65em 0.95em;
     display: none;
@@ -105,6 +113,31 @@
       font-size: 1.15em;
       color: #e5534b;
       margin: 0 3px;
+    }
+  }
+
+  .post-summary-wrapper {
+    $summary-color: #ea6733;
+
+    margin: 0 0 .85em 0;
+    border-radius: $speical-border-radius;
+    border: 1px solid $summary-color;
+    border-right: $speical-border-width solid $summary-color;
+    border-bottom: $speical-border-width solid $summary-color;
+    box-shadow: .6rem .5rem 0.3rem var(--body-bg-color);
+
+    .summary-title {
+      margin: .65em .93em 0 .93em;
+      color: $summary-color;
+      font-weight: bold;
+    }
+
+    .summary-content {
+      background-color: var(--card-bg-color);
+      border-radius: $speical-border-radius;
+      box-shadow: .08rem .06rem 0.03rem var(--body-bg-color);
+      margin: .85em;
+      padding: .85em .95em;
     }
   }
 

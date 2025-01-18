@@ -74,6 +74,8 @@ PostMeta:
     title: "Astuce bienveillante"
     info: "🕰️ Hey，This article is an aged wine of over # the information may need updating, please check the best before date before reading."
     warn: "🚀 Heads up! this article is from # ago and might not keep up with the pace of time. Bring your own time machine for reading, watch out for the time travel!"
+  summary: 
+    title: Summary
 
 PostAlert:
   info     : "Info"
