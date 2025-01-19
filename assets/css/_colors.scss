@@ -4,6 +4,8 @@
   --content-bg-color: #{$content-bg-color};
   --card-bg-color: #{$card-bg-color};
   --text-color: #{$text-color};
+  --selection-bg: #{$grey-lighter};
+  --selection-color: #{$black-deep};
   --blockquote-color: #{$blockquote-color};
   --link-color: #{$link-color};
   --link-hover-color: #{$link-hover-color};
@@ -38,6 +40,8 @@
   --content-bg-color: #{$content-bg-color-dark};
   --card-bg-color: #{$card-bg-color-dark};
   --text-color: #{$text-color-dark};
+  --selection-bg: #{$gainsboro};
+  --selection-color: #{$black-dim};
   --blockquote-color: #{$blockquote-color-dark};
   --link-color: #{$link-color-dark};
   --link-hover-color: #{$link-hover-color-dark};

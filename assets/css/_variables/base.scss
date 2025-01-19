@@ -60,8 +60,10 @@ $content-bg-color             : white;
 $content-bg-color-dark        : $black-dim;
 
 // Selection
-$selection-bg                 : $blue-deep;
+$selection-bg                 : rgba(53, 166, 247, 0.25) !default;
+$selection-bg-dark            : rgba(50, 112, 194, 0.4) !default;
 $selection-color              : $gainsboro;
+$selection-color-dark         : $grey-dark;
 
 // Dark mode color
 $card-bg-color                : $whitesmoke;
