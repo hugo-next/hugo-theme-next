@@ -27,9 +27,7 @@ expired: true
 用户可以找到如下两处配置项的位置，然后根据自己喜欢的风格和颜色进行调整：
 
 ```yaml
-
 # config.yaml 或 hugo.toml
-
 postAlerts:
   info:
     icon: "circle-info"
@@ -56,7 +54,6 @@ postAlerts:
 
 ```yaml
 # i18n/zh-cn.yaml
-
 PostAlert:
   info     : "信息"
   note     : "注意"

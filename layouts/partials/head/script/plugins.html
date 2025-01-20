@@ -1,6 +1,11 @@
 {{/* Defind loading plugin scripts which only need in pages */}}
 {{ if .IsPage }}
 
+{{/** Append codeblack render action **/}}
+{{ if .Store.Get "codeblock" }}
+  {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "clipboard.js") }}
+{{ end }}
+
 {{/** Short code params **/}}
 {{ $scParam := .Store.Get "scParams" }}
 

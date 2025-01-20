@@ -145,6 +145,7 @@ utterances:
 livere:
   js: https://cdn-city.livere.com/js/embed.dist.js
 
+
 # 全文搜索
 # Full text search
 algolia:
@@ -232,3 +233,9 @@ plugins:
       name: aplayer
       version: 1.10.1
       file: dist/APlayer.min.css
+  # 复制到剪贴板
+  clipboard:
+    js: 
+      name: clipboard
+      version: 2.0.11
+      file: dist/clipboard.min.js

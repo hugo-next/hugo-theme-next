@@ -12,6 +12,14 @@
   "title"     .Page.Title
 }}
 
+{{/** Append clipboard plugin */}}
+{{ if .Store.Get "codeblock" }}
+{{ $clipboard := dict
+  "js"  $.Site.Data.resources.plugins.clipboard.js
+}}
+{{ $pageCfg = merge $pageCfg (dict "clipboard" $clipboard) }}
+{{ end }}
+
 {{/** Append APlayer plugin */}}
 {{ if $scParam.music }}
 {{ $aplayer := dict

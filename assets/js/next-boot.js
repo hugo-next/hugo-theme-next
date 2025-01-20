@@ -67,7 +67,6 @@ NexT.boot.refresh = function() {
   if (NexT.CONFIG.page.expired) NexT.utils.calPostExpiredDate();
   if (NexT.CONFIG.page.music) NexT.utils.registerAPlayer();
 
-  NexT.utils.registerCopyCode();
   NexT.utils.registerImageViewer();
   NexT.utils.registerPostReward();
 
