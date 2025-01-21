@@ -39,25 +39,15 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  # 高亮代码的样式
+  # Highlight style of code
   highlight:
-    # # 高亮代码的样式名称，可选：monokai | emacs | api | dracula | friendly
-    # # 更多的样式：https://xyproto.github.io/splash/docs/all.html
-    # # Highlight style: monokai | emacs | api | dracula | friendly
-    # # More: https://xyproto.github.io/splash/docs/all.html 
-    # style: "monokai"
     anchorLineNos: true
     codeFences: true
     guessSyntax: true
-    hl_Lines: ""
-    hl_inline: false
-    lineAnchors: ""
-    lineNoStart: 1
-    lineNos: false
-    lineNumbersInTable: false
-    noClasses: true
-    noHl: false
-    style: monokai
-    tabWidth: 2
+    lineNos: true
+    lineNumbersInTable: true
+    noClasses: false
   tableOfContents:
     # 开始/结束标题级别：1-6 (建议从2开始)
     # Heading title level of start or end: 1-6

@@ -27,6 +27,23 @@ Hugo 通过 Chroma 提供非常快速的语法高亮显示，现 Hugo 中使用 
 
 ### GO
 
+```makrdown
+{{</* highlight go "linenos=table,hl_lines=8 15-17,linenostart=199" */>}}
+
+func GetTitleFunc(style string) func(s string) string {
+  switch strings.ToLower(style) {
+  case "go":
+    return strings.Title
+  case "chicago":
+    return transform.NewTitleConverter(transform.ChicagoStyle)
+  default:
+    return transform.NewTitleConverter(transform.APStyle)
+  }
+}
+
+{{</* / highlight */>}}
+```
+
 {{< highlight go "linenos=table,hl_lines=8 15-17,linenostart=199" >}}
 
 func GetTitleFunc(style string) func(s string) string {
@@ -48,14 +65,14 @@ func GetTitleFunc(style string) func(s string) string {
 import javax.swing.JFrame;  //Importing class JFrame
 import javax.swing.JLabel;  //Importing class JLabel
 public class HelloWorld {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame();           //Creating frame
-        frame.setTitle("Hi!");                 //Setting title frame
-        frame.add(new JLabel("Hello, world!"));//Adding text to frame
-        frame.pack();                          //Setting size to smallest
-        frame.setLocationRelativeTo(null);     //Centering frame
-        frame.setVisible(true);                //Showing frame
-    }
+  public static void main(String[] args) {
+    JFrame frame = new JFrame();           //Creating frame
+    frame.setTitle("Hi!");                 //Setting title frame
+    frame.add(new JLabel("Hello, world!"));//Adding text to frame
+    frame.pack();                          //Setting size to smallest
+    frame.setLocationRelativeTo(null);     //Centering frame
+    frame.setVisible(true);                //Showing frame
+  }
 }
 ```
 
@@ -142,6 +159,31 @@ FROM
   Table
 WHERE column_name = "condition"
 {{< / highlight >}}
+
+### 自动猜测代码高亮显示
+
+```
+.highlight {
+
+  // 其他代码
+  ......
+
+  > .chroma {
+    position: relative;
+    
+   
+      // 修复代码块溢出问题
+      pre {
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        line-break: anywhere;
+        word-break: break-all; 
+        overflow-x: auto;
+      }
+    }
+  }
+}
+```
 
 
 除以上列举的代码高亮显示外，还支持诸如：C 语言、C++、HTML、CSS、Shell脚本等各主流的代码语言高亮显示，可自行测试效果。
