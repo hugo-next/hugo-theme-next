@@ -1,20 +1,43 @@
 /* clipboard plugin */
 NexT.plugins.others.clipboard = function () {
-  const clipboard_js = NexT.utils.getCDNResource(NexT.CONFIG.page.clipboard.js);
+  if (!NexT.CONFIG.copybtn) return;
 
+  const clipboard_js = NexT.utils.getCDNResource(NexT.CONFIG.page.clipboard.js);
   NexT.utils.getScript(clipboard_js, function () {
 
-    let figure = document.querySelectorAll('.highlight pre');
-    if (figure.length === 0 || !NexT.CONFIG.copybtn) return;
-    
-    /** Add copy button DOM. **/
-    figure.forEach(element => {
-      let cn = element.querySelector('code').className;
-      if (cn === '') return;
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
-    });
+    let chromaDiv = document.querySelectorAll('div.highlight div.chroma');
+    if (chromaDiv.length === 0) return;
 
-    /** Register the clipboard event. **/
+    chromaDiv.forEach(element => {
+      // Add copy button DOM.
+      let codeblock = element.querySelector('code[class]:not([class=""]');
+      let lang = codeblock.className;
+      let copyBtn = document.createElement('div');
+      copyBtn.classList.add('copy-btn');
+      codeblock.parentNode  .appendChild(copyBtn);
+
+      element.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          copyBtn.classList.remove('copied');
+          copyBtn.classList.remove('copieduncopied');
+        }, 300);
+      });
+
+      // Add code header show
+      var ch = document.createElement('div');
+      ch.classList.add('code-header');
+      ch.classList.add(lang);
+      ch.insertAdjacentHTML('afterbegin', 
+        '<span class="code-lang"></span><span class="collapse-btn"></span>');
+      ch.addEventListener('click', function () {
+        element.classList.toggle('hidden-code');
+        ch.querySelector('.collapse-btn').classList.toggle('collapse');
+      }, false);
+
+      element.parentNode.insertBefore(ch, element);
+    });
+    
+    // Register the clipboard event. 
     var clipboard = new ClipboardJS('.copy-btn', {
       text: function (trigger) {
         // TODO: Why there clipboard default text content with enter?
@@ -24,12 +47,12 @@ NexT.plugins.others.clipboard = function () {
 
     clipboard.on('success', function (e) {
       e.clearSelection();
-      e.trigger.querySelector('i').className = 'fa fa-fw fa-check-circle';
+      e.trigger.classList.add('copied');
     });
 
     clipboard.on('error', function (e) {
-      console.error('Copy failed:', e);
-      e.trigger.querySelector('i').className = 'fa fa-fw fa-times-circle';
+      console.error('Copy failed:', e);      
+      e.trigger.classList.add('uncopied');
     });
-  });
+  }); 
 }
