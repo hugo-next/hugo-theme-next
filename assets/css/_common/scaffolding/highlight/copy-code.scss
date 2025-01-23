@@ -37,7 +37,8 @@
       font-variant: normal;
       line-height: 1;
       text-rendering: auto;
-      padding-right: .25rem;
+      padding-right: .25rem;      
+      transition: content 1s ease-in-out;
       
       &::before {
         content: "\f102";
@@ -61,9 +62,18 @@
 
   > .chroma {
     position: relative;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.8s ease-in-out, opacity 0.7s ease-in-out; 
 
     &.hidden-code {
-      display: none;
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+
+      animation-name: slideInUp;
+      animation-duration: 1s;
     }
     
     pre {

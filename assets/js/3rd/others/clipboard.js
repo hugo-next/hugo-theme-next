@@ -14,12 +14,11 @@ NexT.plugins.others.clipboard = function () {
       let lang = codeblock.className;
       let copyBtn = document.createElement('div');
       copyBtn.classList.add('copy-btn');
-      codeblock.parentNode  .appendChild(copyBtn);
+      codeblock.parentNode.appendChild(copyBtn);
 
       element.addEventListener('mouseleave', () => {
         setTimeout(() => {
-          copyBtn.classList.remove('copied');
-          copyBtn.classList.remove('copieduncopied');
+          copyBtn.classList.remove('copied','uncopied');
         }, 300);
       });
 
@@ -29,8 +28,8 @@ NexT.plugins.others.clipboard = function () {
       ch.classList.add(lang);
       ch.insertAdjacentHTML('afterbegin', 
         '<span class="code-lang"></span><span class="collapse-btn"></span>');
-      ch.addEventListener('click', function () {
-        element.classList.toggle('hidden-code');
+      ch.addEventListener('click', function () {       
+        element.classList.toggle('hidden-code');       
         ch.querySelector('.collapse-btn').classList.toggle('collapse');
       }, false);
 
