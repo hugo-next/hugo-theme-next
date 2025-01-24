@@ -105,11 +105,6 @@
     {{ $nextjs = $nextjs | append $lawt }}
   {{ end }}
 {{ end }}
-{{ if .Site.Params.footer.translate }}
-{{ $translate := resources.Get "js/3rd/others/translate.js" }}
-{{ $nextjs = $nextjs | append $translate }}
-{{ end }}
-
 
 {{ $nextjs = $nextjs | resources.Concat "js/main.js"}}
 {{ if hugo.IsProduction }}

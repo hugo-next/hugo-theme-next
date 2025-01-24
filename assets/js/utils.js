@@ -499,22 +499,59 @@ NexT.utils = {
       const isSubPath = !NexT.CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       target.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
-  },
+  },*/
 	
   registerLangSelect: function() {
-    const selects = document.querySelectorAll('.lang-select');
-    selects.forEach(sel => {
-      sel.value = NexT.CONFIG.page.lang;
-      sel.addEventListener('change', () => {
-        const target = sel.options[sel.selectedIndex];
-        document.querySelectorAll('.lang-select-label span').forEach(span => {
-          span.innerText = target.text;
-        });
-        // Disable Pjax to force refresh translation of menu item
-        window.location.href = target.dataset.href;
+    let selects = document.getElementById('lang-select');
+    if (!selects) return;
+
+    let selected = selects.querySelector('#lang-selected');
+    let selectedVal = selected.querySelectorAll('span');
+    let flagIcon = selectedVal[0];
+    let langName = selectedVal[1];
+    let selectIcon = selected.querySelector('i');
+   
+
+    let options = selects.querySelectorAll('#lang-options>div');
+    let optionsDom = options[0].parentNode;
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        let langCode = option.getAttribute('lang-code');
+        flagIcon.className = 'flag-icon flag-icon-'+langCode;
+        langName.innerHTML = option.getAttribute('lang-name');
+        selectIcon.className = 'fa fa-chevron-down';
+        optionsDom.style.opacity = '0';
+        optionsDom.style.transform = 'translateY(-10px)';
+
+        const currentUrl = window.location.href;
+        const newUrl = currentUrl.replace(/(\/[^\/]+)?(\/[^\/]+)?$/, `/${langCode}$1$2`);
+
+        setTimeout(() => {
+          optionsDom.style.display = 'none';
+          window.location.href = newUrl;
+        }, 300);
       });
+    }); 
+
+    selected.addEventListener('mouseenter', function() {
+      selectIcon.className = 'fa fa-chevron-up';
+      optionsDom.style.display = 'block';
+      optionsDom.style.opacity = '1';
+      optionsDom.style.transform = 'translateY(0)';
+      
     });
-  },*/
+
+    optionsDom.addEventListener('mouseleave', function() {
+      selectIcon.className = 'fa fa-chevron-down';
+      optionsDom.style.opacity = '0';
+      optionsDom.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        optionsDom.style.display = 'none';
+      }, 300);
+    });
+    
+  },
 
   registerSidebarTOC: function () {
     const toc = document.getElementById('TableOfContents');

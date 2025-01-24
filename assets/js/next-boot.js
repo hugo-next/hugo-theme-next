@@ -60,6 +60,7 @@ NexT.boot.registerEvents = function() {
 NexT.boot.refresh = function() {
 
   NexT.utils.fmtSiteInfo();
+  NexT.utils.registerLangSelect();
 
   if (!NexT.CONFIG.page.isPage) return;
  
