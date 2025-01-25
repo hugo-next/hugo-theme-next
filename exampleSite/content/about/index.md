@@ -24,4 +24,5 @@ url: about.html
 - [GitHub Issues](https://github.com/hugo-next/hugo-theme-next/issues/new?labels=Bug&template=bug-report.md) 提交错误报告 :bug:
 - [GitHub Feature](https://github.com/hugo-next/hugo-theme-next/issues/new?labels=Feature+Request&template=feature-request.md) 表新功能的想法 :sparkles:
 
+> [!INFO]
 > 同时国内用户也可加入 QQ 群交流： 604710815

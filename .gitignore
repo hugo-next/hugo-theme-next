@@ -5,6 +5,9 @@ exampleSite/*
 # Exclude special files in content folder
 exampleSite/content/**/
 !exampleSite/content
+!exampleSite/content/flinks
+!exmapleSite/content/flinks.md
+!exampleSite/content/about
 !exmapleSite/content/about.md
 !exampleSite/content/archives
 !exampleSite/content/post
@@ -24,6 +27,8 @@ exampleSite/content/**/
 !exampleSite/startup.sh
 
 data/*
+!data/flinks
+!data/flinks.yaml
 !data/config.yaml
 !data/resources.yaml
 
