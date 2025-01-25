@@ -40,7 +40,7 @@ languageCode: zh-CN
 #     languageCode: fr-FR
 #     languageDirection: ltr
 #     languageName: French
-#     weight: 2
+#     weight: 3
 # 是否包含中文，日语，韩文
 # Whether contains Chinese, Japanese and Korean
 hasCJKLanguage: true
@@ -1110,15 +1110,6 @@ params:
     enable: false
     # Default height
     height: 500px
-
-  # Mermaid tag
-  mermaid:
-    enable: false
-    # Available themes: default | dark | forest | neutral
-    theme:
-      light: default
-      dark: dark
-
 
   # ---------------------------------------------------------------
   # 动画效果设置

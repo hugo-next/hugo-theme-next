@@ -20,8 +20,22 @@
 
 <!-- Extend Style  -->
 <style type="text/css">
- {{ partialCached "head/style/global.html" . }}
- {{ partial "head/style/plugins.html" . }}
+  .post-footer hr:after {
+    content: "{{ .Site.Params.postFooter.endLineTip }}";
+  }
+
+  .flinks-list-footer hr:after {
+    content: "{{ .Site.Params.postFooter.endLineTip }}";
+  }
+
+  {{ $scParam := .Store.Get "scParams" }}
+  {{ if $scParam.mermaid }}
+  .post-block .post-body .mermaid {
+    background: var(--highlight-foreground);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  {{ end }}
 </style>
 
 <!-- Custom Style file -->

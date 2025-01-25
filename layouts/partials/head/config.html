@@ -84,14 +84,3 @@
 {{ end }}
 
 <script class="next-config" data-name="page" type="application/json">{{ $pageCfg }}</script>
-
-{{/** Special CSS Style for page **/}}
-{{ if .IsPage }}
-<style type="text/css">
-  .post-footer, .flinks-list-footer hr:after {
-    content: "{{ .Site.Params.postFooter.endLineTip }}";
-  }
-
-
-</style>
-{{ end }}
