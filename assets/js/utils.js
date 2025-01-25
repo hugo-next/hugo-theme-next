@@ -523,12 +523,11 @@ NexT.utils = {
         optionsDom.style.opacity = '0';
         optionsDom.style.transform = 'translateY(-10px)';
 
-        const currentUrl = window.location.href;
-        const newUrl = currentUrl.replace(/(\/[^\/]+)?(\/[^\/]+)?$/, `/${langCode}$1$2`);
-
+        let url = option.getAttribute('lang-url');
+        
         setTimeout(() => {
           optionsDom.style.display = 'none';
-          window.location.href = newUrl;
+          window.location.href = url;
         }, 300);
       });
     }); 

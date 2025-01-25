@@ -1,23 +1,4 @@
 {{ $ft := .Site.Params.footer }}
-<div class="i18n-translate">
-  <i class="fa fa-language"></i>
-  <div id="lang-select" class="lang-select">
-    <div id="lang-selected" class="selected-option">
-      <span class="flag-icon flag-icon-{{$.Site.Language.Lang}}"></span>
-      <span class="selected-language">{{ .Site.Language.LanguageName }}</span>
-      <i class="fa fa-chevron-down"></i>
-    </div>
-    <div id="lang-options" class="lang-options">
-      {{ range .Site.Languages }}
-        <div class="lang-option" lang-code="{{ .Lang }}" lang-name="{{ .LanguageName }}">
-          <span class="flag-icon flag-icon-{{ .Lang }}"></span>
-          <span class="lang-name">{{ .LanguageName }}</span>
-        </div>
-      {{ end }}
-    </div>
-  </div>
-
-</div>
 <div class="copyright">
   &copy;
   <span itemprop="copyrightYear">

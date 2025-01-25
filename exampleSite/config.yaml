@@ -23,6 +23,24 @@ theme: hugo-theme-next
 # Default laguage & code for website
 defaultContentLanguage: zh-cn
 languageCode: zh-CN
+# 多语言配置
+# Multi-language settings
+# languages:
+#   zh-cn:
+#     languageCode: zh-CN
+#     languageDirection: ltr
+#     languageName: "简体中文"
+#     weight: 1
+#   en-us:
+#     languageCode: en-US
+#     languageDirection: ltr
+#     languageName: English
+#     weight: 2
+#   fr-fr:
+#     languageCode: fr-FR
+#     languageDirection: ltr
+#     languageName: French
+#     weight: 2
 # 是否包含中文，日语，韩文
 # Whether contains Chinese, Japanese and Korean
 hasCJKLanguage: true
@@ -376,10 +394,7 @@ params:
   # 站点底部设置
   # Footer Settings
   # ---------------------------------------------------------------
-  footer:
-    # 启动谷歌翻译功能
-    # Enable google translate in footer
-    translate: false
+  footer:    
     # 站点开始年份，默认为当下时间的年份
     # Specify the year when the site was setup. 
     # If not defined, current year will be used.
