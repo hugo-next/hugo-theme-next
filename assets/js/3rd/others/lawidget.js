@@ -1,5 +1,10 @@
 /* 51La sidebar data widget */
 NexT.plugins.others.lawidget = function() {
+
+  if (!NexT.CONFIG.lawidget ) {
+    return;
+  }
+
   const element = '#siteinfo-card-widget';
   const lawt_js = NexT.CONFIG.lawidget.js.replace('laId', NexT.CONFIG.lawidget.id);
   

@@ -25,22 +25,85 @@ defaultContentLanguage: zh-cn
 languageCode: zh-CN
 # 多语言配置
 # Multi-language settings
-# languages:
-#   zh-cn:
-#     languageCode: zh-CN
-#     languageDirection: ltr
-#     languageName: "简体中文"
-#     weight: 1
-#   en-us:
-#     languageCode: en-US
-#     languageDirection: ltr
-#     languageName: English
-#     weight: 2
-#   fr-fr:
-#     languageCode: fr-FR
-#     languageDirection: ltr
-#     languageName: French
-#     weight: 3
+languages:
+  zh-cn:
+    languageCode: zh-CN
+    languageDirection: ltr
+    languageName: "简体中文"
+    weight: 1    
+  en-us:
+    languageCode: en-US
+    languageDirection: ltr
+    languageName: English
+    weight: 2
+    menus:
+      main:
+        - identifier: home
+          name: Home
+          pageref: /
+          pre: home
+          weight: 1
+        - identifier: about
+          name: About
+          pageref: /about.html
+          pre: user
+          weight: 2
+        - identifier: flinks
+          name: Friend's Links
+          pageref: /flinks.html
+          pre: thumbs-up
+          weight: 3
+        - identifier: example
+          name: Example
+          pre: angles-down
+          weight: 4
+        - identifier: flow-charts
+          name: Flow Charts
+          pageref: /post/mermaid-charts.html
+          weight: 1
+          parent: example
+        - identifier: math
+          name: Math Formula
+          pageref: /post/math-formula.html
+          weight: 2   
+          parent: example
+          parent: example
+        - identifier: syntax
+          name: Syntax Highlighting
+          pageref: /post/syntax-highlighting.html
+          weight: 3   
+          parent: example
+        - identifier: archives
+          name: Archives
+          pageref: /archives
+          pre: archive
+          weight: 5
+        - identifier: commonweal
+          name: Commonweal404
+          url: /404.html
+          pre: heartbeat
+          weight: 6
+    params:
+      yearFormat: "2006"
+      monthFormat: "01/02"
+      dateFormat: "2006/01/02"
+      timeFormat: "2006/01/02 15:04:05 -07:00"
+
+      author: NexT Theme
+      subtitle: Build for Hugo Theme
+      description: Keep it simple, keep it powerful.
+      keywords: Hugo,NexT,theme,simple,powerful
+
+      linksSets:
+        title: Links
+      
+      footer:
+        beian:
+          enable: false
+      
+      postFooter:
+        endLineTip: "~ End Line ~"
+
 # 是否包含中文，日语，韩文
 # Whether contains Chinese, Japanese and Korean
 hasCJKLanguage: true
