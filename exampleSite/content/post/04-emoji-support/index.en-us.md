@@ -1,52 +1,52 @@
 ---
-title: "支持 Emoji 表情"
-description: "Hugo 和 NexT 中的 Emoji 的用法指南。"
+title:  Support Emoji emojis
+Description: "Usage guide for emojis in Hugo and NexT. "
 keywords: "Hugo,NexT,Emoji"
 
-date: 2022-06-04T19:46:45+08:00
-lastmod: 2022-06-04T19:46:45+08:00
+date: 2025-01-25T21:18:52+08:00
+lastmod: 2025-01-25T21:18:52+08:00
 
 categories:
- - 示例文章
- - 语法
+  - Example
+  - Grammar
 
 tags:
- - 表情
- - emoji
+ - Facial expressions
+ - Emoji
+
+toc: true
 
 url: "demo/emoji-support.html"
 ---
 
-Emoji 可以通过多种方式在 Hugo 项目中启用。
+Emojis can be enabled in various ways in the Hugo project.
 
-[`emojify`](https://gohugo.io/functions/emojify/) 方法可以直接在模板中调用, 或者使用[行内 Shortcodes](https://gohugo.io/templates/shortcode-templates#inline-shortcodes).
+[`emojify`]( https://gohugo.io/functions/emojify/)The method can be called directly in the template, or use [Inline Shortcodes](https://gohugo.io/templates/shortcode-templates#inline -shortcodes).
 
-要全局使用 emoji, 需要在你的[网站配置](https://gohugo.io/getting-started/configuration/)中设置 `enableEmoji` 为 `true`，
-然后你就可以直接在文章中输入 emoji 的代码。
+To use emojis globally, you need to [configure](https://gohugo.io/getting-started/configuration/) them on your website set `enableEmoji` to `true`,Then you can directly enter the emoji code in the article.
 
 <!--more-->
 
-它们以**冒号**开头和结尾，并且包含 emoji 的 **代码**：
+They start and end with a **colon** and contain the Emoji **code**:
 
 ```markdown
-去露营啦! {:}tent: 很快就回来.
+Go camping! {:}tent:  I'll be back soon
 
-真开心! {:}joy:
+How happy! {:}joy:
 ```
 
-呈现的输出效果如下:
+The output effect presented is as follows:
 
-去露营啦! :tent: 很快就回来。
+> Let's go camping :tent:  I'll be back soon.<br/>
+> I'm so happy :joy:
 
-真开心! :joy:
+The following symbol list is a very useful reference for emoji code.
 
-以下**符号清单**是 emoji 代码的非常有用的参考。
+## Expressions and Emotions
 
-## 表情与情感
+### Smiling face expression
 
-### 笑脸表情
-
-| 图标 | 代码 | 图标 | 代码 |
+|Icon | Code | Icon | Code|
 | :-: | - | :-: | - |
 | :grinning: | `grinning` | :smiley: | `smiley` |
 | :smile: | `smile` | :grin: | `grin` |
@@ -54,28 +54,28 @@ Emoji 可以通过多种方式在 Hugo 项目中启用。
 | :rofl: | `rofl` | :joy: | `joy` |
 | :slightly_smiling_face: | `slightly_smiling_face` | :upside_down_face: | `upside_down_face` |
 | :wink: | `wink` | :blush: | `blush` |
-| :innocent: | `innocent` | | |
+| :innocent: | `innocent` |  |  |
 
-### 爱意表情
+### Love expression
 
-| 图标 | 代码 | 图标 | 代码 |
+|Icon | Code | Icon | Code|
 | :-: | - | :-: | - |
 | :heart_eyes: | `heart_eyes` | :kissing_heart: | `kissing_heart` |
 | :kissing: | `kissing` | :relaxed: | `relaxed` |
 | :kissing_closed_eyes: | `kissing_closed_eyes` | :kissing_smiling_eyes: | `kissing_smiling_eyes` |
 
-### 吐舌头表情
+### Tongue sticking expression
 
-| 图标 | 代码 | 图标 | 代码 |
+|Icon | Code | Icon | Code|
 | :-: | - | :-: | - |
 | :yum: | `yum` | :stuck_out_tongue: | `stuck_out_tongue` |
 | :stuck_out_tongue_winking_eye: | `stuck_out_tongue_winking_eye` | :stuck_out_tongue_closed_eyes: | `stuck_out_tongue_closed_eyes` |
-| :money_mouth_face: | `money_mouth_face` | | |
+| :money_mouth_face: | `money_mouth_face` | :money_mouth_face: | |
 
 
-### 国家和地区旗帜
+### National and regional flags
 
-| 图标 | 代码 | 图标 | 代码 |
+|Icon | Code | Icon | Code|
 | :-: | - | :-: | - |
 | :andorra: | `andorra` | :united_arab_emirates: | `united_arab_emirates` |
 | :afghanistan: | `afghanistan` | :antigua_barbuda: | `antigua_barbuda` |
@@ -200,4 +200,4 @@ Emoji 可以通过多种方式在 Hugo 项目中启用。
 | :samoa: | `samoa` | :kosovo: | `kosovo` |
 | :yemen: | `yemen` | :mayotte: | `mayotte` |
 | :south_africa: | `south_africa` | :zambia: | `zambia` |
-| :zimbabwe: | `zimbabwe` | | |
+| :zimbabwe: | `zimbabwe` |  |  |

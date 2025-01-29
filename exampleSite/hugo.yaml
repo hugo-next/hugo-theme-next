@@ -103,6 +103,9 @@ languages:
       
       postFooter:
         endLineTip: "~ End Line ~"
+      
+      rewardSets:
+        comment: '<i class="fa-solid fa-mug-hot"></i>  How about you buy me a coffee?ヾ(^▽^*)))'
 
 # 是否包含中文，日语，韩文
 # Whether contains Chinese, Japanese and Korean
@@ -271,10 +274,10 @@ params:
 
   # 用户自定义文件配置
   # Define custom file paths.
-  # customFilePath:
-  #   sidebar: custom_sidebar.html
-  #   footer: custom_footer.html
-  #   style: /css/custom_style.css
+  customFilePath:
+    sidebar: custom_sidebar.html
+    footer: custom_footer.html
+    style: /css/custom_style.css
 
   # 知识共享国际许可 4.0
   # 更多信息： https://creativecommons.org/about/cclicenses/

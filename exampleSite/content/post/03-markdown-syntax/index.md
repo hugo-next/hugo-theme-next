@@ -40,7 +40,7 @@ url: demo/markdown-syntax.html
 
 ## 段落格式
 
-根据[ W3C ](https://www.w3.org/)定义的[ HTML5 规范](https://www.w3.org/TR/html5/dom.html#elements)，**HTML 文档由元素和文本组成**。每个元素的组成都由一个[开始标记](https://www.w3.org/TR/html5/syntax.html#syntax-start-tags)表示，例如： `<body>` ，和[结束标记](https://www.w3.org/TR/html5/syntax.html#syntax-end-tags)表示，例如： `</body>` 。（*某些开始标记和结束标记在某些情况下可以省略，并由其他标记暗示。*）
+根据[W3C](https://www.w3.org/)定义的[HTML5 规范](https://www.w3.org/TR/html5/dom.html#elements)，**HTML 文档由元素和文本组成**。每个元素的组成都由一个[开始标记](https://www.w3.org/TR/html5/syntax.html#syntax-start-tags)表示，例如： `<body>` ，和[结束标记](https://www.w3.org/TR/html5/syntax.html#syntax-end-tags)表示，例如： `</body>` 。（*某些开始标记和结束标记在某些情况下可以省略，并由其他标记暗示。*）
 元素可以具有属性，这些属性控制元素的工作方式。例如：超链接是使用 `a` 元素及其 `href` 属性形成的。
 
 ### Markdown 语法
@@ -48,14 +48,14 @@ url: demo/markdown-syntax.html
 ```markdown
 ![图像说明](图像地址)
 ```
-![hugo-next-primary](//lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-primary.png)
+![hugo-next-primary](//hugo-next.github.io/imgs/logo/hugo-next-primary.png)
 
 ### HTML IMG 标签
 
 ```html
 <img src="图像地址" width="宽度" height="高度" />
 ```
-<img src="//lisenhui.gitee.io/imgs/hugo-next/logo/hugo-next-secondary.png" width="150"/>
+<img src="//hugo-next.github.io/imgs/logo/hugo-next-secondary.png" width="150"/>
 
 ### SVG 格式
 
@@ -113,7 +113,7 @@ url: demo/markdown-syntax.html
 <dl>
   <dt>Hugo 目录结构</dt>
   <dd>assets</dd>
-  <dd>config.toml</dd>
+  <dd>hugo.toml</dd>
   <dd>content</dd>
   <dd>data</dd>
   <dd>theme</dd>
@@ -167,6 +167,8 @@ url: demo/markdown-syntax.html
 
 ## Code
 
+使用 Markdown 语法书写代码块：
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -180,7 +182,9 @@ url: demo/markdown-syntax.html
 </html>
 ```
 
-{{< highlight html >}}
+使用Hugo自带的 `highlight` 短语标注代码块：
+
+{{< highlight html "hl_lines=2 5-7, linenostart=44" >}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -208,4 +212,4 @@ X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
 <mark>比特作为信息论中的信息单位，也被称为 shannon </mark>，以信息论领域的创始人 Claude shannon 的名字命名。
 
 参考：
-- 来自 **Mainroad** 主题的 [Basic Elements](https://mainroad-demo.netlify.app/demo/basic-elements/) 内容
+- 来自 **Mainroad** 主题的 [Basic Elements](https://mainroad-demo.netlify.app/post/basic-elements/) 内容

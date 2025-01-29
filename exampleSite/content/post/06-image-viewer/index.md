@@ -14,7 +14,7 @@ tags:
   - 相册
   - 浏览
 
-url: "demo/image-viewer.html"
+url: "/demo/image-viewer.html"
 toc: false
 expired: true
 ---
@@ -27,15 +27,14 @@ expired: true
 
 ## 动物
 
-![cute-scottish-fold-cat](/demo/image-viewer/preview_cute-scottish-fold-cat.jpg)
-![scottish-fold-kitten](/demo/image-viewer/preview_scottish-fold-kitten.jpg)
-![hourses](/demo/image-viewer/preview_horses.jpg)
-![owl-family-background](/demo/image-viewer/preview_owl-family-background.jpg)
+![cute-scottish-fold-cat](/demo/image-viewer/photos/preview_cute-scottish-fold-cat.jpg)
+![scottish-fold-kitten](/demo/image-viewer/photos/photos/preview_scottish-fold-kitten.jpg)
+![hourses](/demo/image-viewer/photos/preview_horses.jpg)
+![owl-family-background](/demo/image-viewer/photos/preview_owl-family-background.jpg)
 
 ## 风景
 
-![luxury-resort-in-maldives](/demo/image-viewer/preview_luxury-resort-in-maldives.jpg)
-![sea-shell](/demo/image-viewer/preview_sea-shell.jpg)
-![the-arch-sunset](/demo/image-viewer/preview_the-arch-sunset.jpg)
-![norway-autumn-landscape](/demo/image-viewer/preview_norway-autumn-landscape.jpg)
-
+![luxury-resort-in-maldives](/demo/image-viewer/photos/preview_luxury-resort-in-maldives.jpg)
+![sea-shell](/demo/image-viewer/photos/preview_sea-shell.jpg)
+![the-arch-sunset](/demo/image-viewer/photos/preview_the-arch-sunset.jpg)
+![norway-autumn-landscape](/demo/image-viewer/photos/preview_norway-autumn-landscape.jpg)

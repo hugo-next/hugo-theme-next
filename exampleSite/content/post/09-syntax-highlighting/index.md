@@ -165,21 +165,20 @@ WHERE column_name = "condition"
 ```
 .highlight {
 
-  // 其他代码
+  //Other codes
   ......
 
   > .chroma {
     position: relative;
+      
     
-   
-      // 修复代码块溢出问题
-      pre {
-        overflow-wrap: break-word;
-        white-space: pre-wrap;
-        line-break: anywhere;
-        word-break: break-all; 
-        overflow-x: auto;
-      }
+    //Fix code block overflow issue
+    pre {
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      line-break: anywhere;
+      word-break: break-all; 
+      overflow-x: auto;
     }
   }
 }

@@ -14,10 +14,7 @@ tags:
 
 expand: true
 extlink: https://gitee.com/hugo-next/hugo-theme-next/
-#comment:
-# enable: false
-#toc: false
-#url: "external-link.html"
+
 weight: 1
 ---
 
