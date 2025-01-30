@@ -1,6 +1,5 @@
 ---
 title: "Mermaid支持流程图"
-description: "mermaid-flow-chart"
 keywords: "mermaid,flow,chart"
 
 date: 2022-09-18T20:58:13+08:00

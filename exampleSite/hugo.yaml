@@ -40,17 +40,17 @@ languages:
       main:
         - identifier: home
           name: Home
-          pageref: /
+          pageRef: /
           pre: home
           weight: 1
         - identifier: about
           name: About
-          pageref: /about.html
+          pageRef: /about.html
           pre: user
           weight: 2
         - identifier: flinks
           name: Friend's Links
-          pageref: /flinks.html
+          pageRef: /flinks.html
           pre: thumbs-up
           weight: 3
         - identifier: example
@@ -59,28 +59,28 @@ languages:
           weight: 4
         - identifier: flow-charts
           name: Flow Charts
-          pageref: /post/mermaid-charts.html
+          pageRef: /demo/mermaid-charts.html
           weight: 1
           parent: example
         - identifier: math
           name: Math Formula
-          pageref: /post/math-formula.html
+          pageRef: /demo/math-formula.html
           weight: 2   
           parent: example
           parent: example
         - identifier: syntax
           name: Syntax Highlighting
-          pageref: /post/syntax-highlighting.html
+          pageRef: /demo/syntax-highlighting.html
           weight: 3   
           parent: example
         - identifier: archives
           name: Archives
-          pageref: /archives
+          pageRef: /archives
           pre: archive
           weight: 5
         - identifier: commonweal
           name: Commonweal404
-          url: /404.html
+          pageRef: /404.html
           pre: heartbeat
           weight: 6
     params:
@@ -201,29 +201,49 @@ menus:
   main:
     - identifier: home
       name: 首页
-      pageref: /
+      pageRef: /
       pre: home
       weight: 1
     - identifier: about
       name: 关于
-      pageref: /about.html
+      pageRef: /about.html
       pre: user
       weight: 2
     - identifier: flinks
-      name: 站点示例
-      pageref: /flinks.html
+      name: 友情链接
+      pageRef: /flinks.html
       pre: thumbs-up
       weight: 3
+    - identifier: example
+      name: 语法示例
+      pre: angles-down
+      weight: 4
+    - identifier: flow-charts
+      name: 流程图
+      pageRef: /demo/mermaid-charts.html
+      weight: 1
+      parent: example
+    - identifier: math
+      name: 数学公式
+      pageRef: /demo/math-formula.html
+      weight: 2   
+      parent: example
+      parent: example
+    - identifier: syntax
+      name: 语法高亮
+      pageRef: /demo/syntax-highlighting.html
+      weight: 3   
+      parent: example
     - identifier: archives
       name: 归档
-      pageref: /archives
+      pageRef: /archives
       pre: archive
-      weight: 4
+      weight: 5
     - identifier: commonweal
       name: 公益 404
-      url: /404.html
+      pageRef: /404.html
       pre: heartbeat
-      weight: 5
+      weight: 6
 
 #-----------------------------------------
 # Hugo NexT 主题参数配置
