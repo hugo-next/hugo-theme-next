@@ -57,21 +57,21 @@ languages:
           name: Example
           pre: angles-down
           weight: 4
-        - identifier: flow-charts
-          name: Flow Charts
-          pageRef: /demo/mermaid-charts.html
-          weight: 1
+        - identifier: syntax
+          name: Syntax Highlighting
+          pageRef: /post/09-syntax-highlighting
+          weight: 1   
           parent: example
         - identifier: math
           name: Math Formula
-          pageRef: /demo/math-formula.html
+          pageRef: /post/10-math-formula
           weight: 2   
           parent: example
           parent: example
-        - identifier: syntax
-          name: Syntax Highlighting
-          pageRef: /demo/syntax-highlighting.html
-          weight: 3   
+        - identifier: flow-charts
+          name: Flow Charts
+          pageRef: /post/11-mermaid-charts
+          weight: 3
           parent: example
         - identifier: archives
           name: Archives
@@ -184,7 +184,8 @@ minify:
 # 菜单配置说明
 # identifier ： 唯一标识不可重复
 # name       ： 菜单显示名称
-# pageref    ： 本站点链接地址，与 URL 选其一
+# pageRef    ： 文章在content目录下的相对路径, 更多信息请
+#               参考：https://gohugo.io/content-management/menus/#properties-site-configuration
 # url        ： 站点外部链接地址，以 http 或者 https 开头
 # pre        ： 菜单小图标
 # weight     ： 显示顺序，字数越小越靠前
@@ -192,7 +193,8 @@ minify:
 # Menus Settings
 # identifier : Unique ID cannot be repeated
 # name       : Menu name
-# pageref    : Link of webiste and not appeare same time with url
+# pageRef    : This article in content to director,more information
+#              ref:https://gohugo.io/content-management/menus/#properties-site-configuration
 # url        : Exteneral link out of website and start with http or https
 # pre        : Icon of menu
 # weight     : Order number and smaller is top
@@ -206,33 +208,33 @@ menus:
       weight: 1
     - identifier: about
       name: 关于
-      pageRef: /about.html
+      pageRef: /about
       pre: user
       weight: 2
     - identifier: flinks
       name: 友情链接
-      pageRef: /flinks.html
+      pageRef: /flinks
       pre: thumbs-up
       weight: 3
     - identifier: example
       name: 语法示例
       pre: angles-down
       weight: 4
-    - identifier: flow-charts
-      name: 流程图
-      pageRef: /demo/mermaid-charts.html
-      weight: 1
-      parent: example
-    - identifier: math
-      name: 数学公式
-      pageRef: /demo/math-formula.html
-      weight: 2   
-      parent: example
-      parent: example
     - identifier: syntax
       name: 语法高亮
-      pageRef: /demo/syntax-highlighting.html
-      weight: 3   
+      pageRef: /post/09-syntax-highlighting
+      weight: 1
+      parent: example
+    
+    - identifier: math
+      name: 数学公式
+      pageRef: /post/10-math-formula
+      weight: 2 
+      parent: example
+    - identifier: flow-charts
+      name: 流程图
+      url: /post/11-mermaid-charts
+      weight: 3
       parent: example
     - identifier: archives
       name: 归档
