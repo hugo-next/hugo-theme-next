@@ -15,9 +15,9 @@
       {{ if .HasChildren }}
       <ul class="menu-children">
       {{ range .Children }}
-      {{ $active = or ($curP.IsMenuCurrent .Menu .) ($curP.HasMenuCurrent .Menu .) }}
+      {{ $active = $curP.IsMenuCurrent .Menu . }}
         <li class="menu-child-item">
-          <a href="{{ .PageRef | relLangURL }}" class="hvr-icon-pulse {{if $active }}menu-item-active{{ end }}" rel="section">
+          <a href="{{ .URL | relLangURL }}" class="hvr-icon-pulse {{if $active }}menu-item-active{{ end }}" rel="section">
             <i class="fa hvr-icon"></i>{{ .Name }}
           </a>
         </li>
