@@ -11,7 +11,7 @@ originLink:  https://mainroad-demo.netlify.app/demo/basic-elements/
 
 categories:
   - Example
-  - Markdown Syntax
+  - MarkdownSyntax
  
 tags:
   - Markdown
@@ -40,7 +40,7 @@ Let's start with all possible headings, where the `<h1>` - `<h6>` elements in HT
 
 ## Paragraph format
 
-According to [W3C](https://www.w3.org/)Defined [HTML5 Specification](https://www.w3.org/TR/html5/dom.html#elements)，**HTML documents consist** of elements and text. The composition of each element consists of a [Start marker](https://www.w3.org/TR/html5/syntax.html#syntax), for example:`< body>` ， And [End Mark](https://www.w3.org/TR/html5/syntax.html#syntax), for example:`</ body>` . 
+According to [W3C](https://www.w3.org/)Defined [HTML5 Specification](https://www.w3.org/TR/html5/dom.html#elements)，**HTML documents consist** of elements and text. The composition of each element consists of a [Start marker](https://www.w3.org/TR/html5/syntax.html#syntax), for example:`<body>` ， And [End Mark](https://www.w3.org/TR/html5/syntax.html#syntax), for example:`</body>` . 
 
 (*Some start and end markers may be omitted in certain situations and implied by other markers*.)
 

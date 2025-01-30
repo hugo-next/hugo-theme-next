@@ -1,5 +1,5 @@
 ---
-title:  "Image browsing Tool"
+title:  "Image Browsing Tool"
 description:  "By default, images within the article will be browsed. Clicking on an image will display a larger image, while clicking on a blank space will close it."
 Keywords: "image, image, browser, photo album"
 

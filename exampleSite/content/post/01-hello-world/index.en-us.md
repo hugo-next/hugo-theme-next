@@ -6,7 +6,7 @@ date: 2025-01-25T19:12:32+08:00
 lastmod: 2025-01-25T19:12:32+08:00
 
 categories:
-  - Start building website
+  - StartBuilSite
 
 tags:
   - Hugo

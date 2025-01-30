@@ -7,10 +7,10 @@ lastmod: 2025-01-29T21:01:13+08:00
 
 categories:
   - ThirdParty
-  - Diagram sequence
+  - DiagramSequence
 tags:
-  - Process diagram
-  - Timing diagram
+  - ProcessDiagram
+  - TimingDiagram
 
 url: "demo/mermaid-charts.html"
 toc: true

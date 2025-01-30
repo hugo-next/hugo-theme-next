@@ -8,9 +8,9 @@ lastmod: 2025-01-29T20:50:02+08:00
 
 categories:
   - ThirdParty
-  - Mathematical formulas
+  - Mathematical
 tags:
-  - Mathematical formulas
+  - Mathematical
   - mathjax
   - katex
 
