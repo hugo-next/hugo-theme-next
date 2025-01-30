@@ -1,0 +1,36 @@
+
+@mixin alert-styles($type, $color) {
+  .post-alert-#{$type} {
+    padding: 0 0 0 10px;
+    border-left: 6px solid $color;
+    font-size: 0.825em;
+    color: $color;
+  }
+}
+
+@each $key, $color in $post_alert_colors {
+  @include alert-styles(#{$key}, $color);
+}
+
+.post-alert-title, .post-expired-title {
+
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  margin: 0;
+
+  i {
+    font-size: 1.25em;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  span {
+    margin: 0 0 0 8px;
+    letter-spacing: 0.08em;
+  }
+}
+
+.post-alert-content, .post-expired-content {
+  color: var(--text-color);
+}

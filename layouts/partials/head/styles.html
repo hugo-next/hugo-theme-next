@@ -1,0 +1,47 @@
+<!-- Plugin style files -->
+{{ $cssRes := .Site.Data.resources.css }}
+{{ $vendor := .Site.Params.vendors.plugins }}
+{{ $router := .Scratch.Get "router" }}
+
+{{ range $css := $cssRes }}
+  {{ $pluginCss := partial "_funs/get_cdn_res.html" (dict "res" . "vendor" $vendor "router" $router) }}
+  <link type="text/css" rel="stylesheet" href="{{ $pluginCss }}" /> 
+{{ end }}
+
+<!-- Main Style file -->
+{{ $scss := resources.Get "css/main.scss" }}
+{{ $scss = $scss | resources.ExecuteAsTemplate "main.scss" .  }}
+{{ $css := $scss | toCSS (dict "targetPath" "/css/main.css" "outputStyle" "expanded") }}
+{{ if hugo.IsProduction }}
+{{ $css = $css | minify }}
+{{ end }}
+{{ $unixHref := partial "_funs/add_unix_param.html" $css.RelPermalink }}
+<link rel="stylesheet" href="{{ $unixHref }}">
+
+<!-- Extend Style  -->
+<style type="text/css">
+  .post-footer hr:after {
+    content: "{{ .Site.Params.postFooter.endLineTip }}";
+  }
+
+  .flinks-list-footer hr:after {
+    content: "{{ .Site.Params.postFooter.endLineTip }}";
+  }
+
+  {{ $scParam := .Store.Get "scParams" }}
+  {{ if $scParam.mermaid }}
+  .post-block .post-body .mermaid {
+    background: var(--highlight-foreground);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  {{ end }}
+</style>
+
+<!-- Custom Style file -->
+{{ $custom := .Scratch.Get "style" }}
+{{ if $custom }}
+{{ $unixHref := partial "_funs/add_unix_param.html" $custom }}
+<link rel="stylesheet" type="text/css" href="{{ $unixHref }}">
+{{ end }}
+  

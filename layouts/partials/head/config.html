@@ -1,22 +1,68 @@
+
+{{/** Short code params **/}}
+{{ $scParam := .Store.Get "scParams" }}
+
 {{ $pageCfg := dict
   "isHome"    .IsHome
   "isPage"    .IsPage
   "comments"  (.Scratch.Get "isComment")
+  "toc"       (default .Site.Params.toc.enable .Params.Toc)
   "permalink" (.Page.Permalink | absURL)
   "path"      (.Page.Permalink | path.Base)
   "title"     .Page.Title
 }}
 
-{{/* Append waline pageview & comment plugin */}}
-{{ if or (eq .Site.Params.postMeta.views.plugin "waline") (eq .Site.Params.postMeta.comments.plugin "waline") }}
-{{ $counter := dict
-  "js"  .Site.Data.resources.plugins.waline.js
+{{/** Append clipboard plugin */}}
+{{ if .Store.Get "codeblock" }}
+{{ $clipboard := dict
+  "js"  $.Site.Data.resources.plugins.clipboard.js
 }}
-{{ $pageCfg = merge $pageCfg (dict "waline" $counter) }}
+{{ $pageCfg = merge $pageCfg (dict "clipboard" $clipboard) }}
+{{ end }}
+
+{{/** Append APlayer plugin */}}
+{{ if $scParam.music }}
+{{ $aplayer := dict
+  "js"  $.Site.Data.resources.plugins.music.js
+  "css" $.Site.Data.resources.plugins.music.css
+}}
+{{ $pageCfg = merge $pageCfg (dict "music" $aplayer) }}
+{{ end }}
+
+{{/* Append post expired config */}}
+{{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
+{{ $pageCfg = merge $pageCfg (dict "expired" $expired) }}
+{{ if $expired }}
+{{ $expiredTips := dict
+  "info" (T "PostMeta.expired.info")
+  "warn" (T "PostMeta.expired.warn")
+}}
+{{ $pageCfg = merge $pageCfg (dict "expiredTips" $expiredTips) }}
+{{ end }}
+
+{{/* Append waline pageview & comment plugin */}}
+{{ with .Site.Params.postMeta.views }}
+  {{ if and .enable (ne .plugin "busuanzi") }}
+    {{ $plugin := .plugin }}
+    {{ $counter := dict
+      "pagecnt" (index ($.Site.Data.resources.plugins) $plugin "js" 0)
+    }}
+    {{ $pageCfg = merge $pageCfg (dict $plugin $counter) }}
+  {{ end }}
+{{ end }}
+
+{{ with .Site.Params.postMeta.comments }}
+  {{ if .enable }}
+    {{ $plugin := .plugin }}
+    {{ $counter := dict
+      "commentcnt" (index ($.Site.Data.resources.plugins) $plugin "js" 1)
+    }}
+    {{ $pageCfg = merge $pageCfg (dict $plugin $counter) }}
+  {{ end }}
 {{ end }}
 
 {{/* Append mermaid plugin */}}
-{{ if .Params.mermaid }}
+{{ if $scParam.mermaid }}
 {{ $mermaid := dict
   "js"  .Site.Data.resources.plugins.mermaid.js
 }}

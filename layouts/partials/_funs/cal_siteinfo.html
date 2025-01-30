@@ -1,3 +1,4 @@
+{{/** Calculate some information for site operation **/}}
 {{ $scratch := newScratch }}
 {{ $pages := (where .Page.Site.RegularPages "Section" "in" .Site.Params.mainSections).ByLastmod.Reverse }}
 
@@ -7,10 +8,11 @@
 {{ end }}
 
 {{ range first 1 $pages }}
-  {{ $scratch.Set "first" (time.Format .Site.Params.timeFormat .Date) }}
+  {{ $lastMod := default .Date .Lastmod }}
+  {{ $scratch.Set "first" $lastMod }}
 {{ end }}
 {{ range last 1 $pages }}
-  {{ $scratch.Set "last" (time.Format .Site.Params.timeFormat .Date) }}
+  {{ $scratch.Set "last" .Date }}
 {{ end }}
 
 {{ return $scratch }}

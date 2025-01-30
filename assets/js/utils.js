@@ -7,15 +7,50 @@ HTMLElement.prototype.wrap = function (wrapper) {
 };
 
 NexT.utils = {
-  registerMenuClick: function() {
+  registerAPlayer: function () {
+    this.getStyle(
+      NexT.utils.getCDNResource(NexT.CONFIG.page.music.css)
+    );
+    
+    NexT.CONFIG.page.music.js.forEach(function(js) {
+      NexT.utils.getScript(NexT.utils.getCDNResource(js), true);
+    });
+    
+  },
+  calPostExpiredDate: function() {
+    const postMetaDom = document.querySelector('.post-meta-container');
+    let postTime = postMetaDom.querySelector('time[itemprop="dateCreated datePublished"]').getAttribute("datetime");
+    let postLastmodTime = postMetaDom.querySelector('time[itemprop="dateModified dateLastmod"]');
+
+    if (postLastmodTime != null) postTime = postLastmodTime.getAttribute("datetime");
+
+    let expiredTip = '';
+    const expireCfg = NexT.CONFIG.page.expiredTips;
+    let expiredTime = this.diffDate(postTime, 2);
+
+    if (expiredTime.indexOf(NexT.CONFIG.i18n.ds_years) > -1) {
+      expiredTip = expireCfg.warn.split('#');
+    } else {
+      let days = parseInt(expiredTime.replace(NexT.CONFIG.i18n.ds_days, '').trim(), 10);
+      if (days < 180)  return; 
+      expiredTip = expireCfg.info.split('#');
+    }
+
+    let expiredTipPre = expiredTip[0];
+    let expiredTipSuf = expiredTip[1];
+    expiredTip = expiredTipPre + '<span class="post-expired-times">' + expiredTime + '</span>' + expiredTipSuf;
+    document.getElementById('post-expired-content').innerHTML = expiredTip;
+    this.domAddClass('#post-expired-tip', 'show');
+  },
+  registerMenuClick: function () {
     const pMenus = document.querySelectorAll('.main-menu > li > a.menus-parent');
-    pMenus.forEach(function(item) {
+    pMenus.forEach(function (item) {
       const icon = item.querySelector('span > i');
-      var ul = item.nextElementSibling;  
-      
-      item.addEventListener('click', function(e) {
+      var ul = item.nextElementSibling;
+
+      item.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         ul.classList.toggle('expand');
         if (ul.classList.contains('expand')) {
           icon.className = 'fa fa-angle-down';
@@ -30,9 +65,9 @@ NexT.utils = {
       }
     });
   },
-  registerImageLoadEvent: function() {
+  registerImageLoadEvent: function () {
     const images = document.querySelectorAll('.sidebar img, .post-block img, .vendors-list img');
-			
+
     const callback = (entries) => {
       entries.forEach(item => {
         if (item.intersectionRatio > 0) {
@@ -40,7 +75,7 @@ NexT.utils = {
           let imgSrc = ele.getAttribute('data-src');
           if (imgSrc) {
             let img = new Image();
-            img.addEventListener('load', function() {
+            img.addEventListener('load', function () {
               ele.src = imgSrc;
             }, false);
             ele.src = imgSrc;
@@ -50,23 +85,23 @@ NexT.utils = {
         }
       })
     };
-      
+
     const observer = new IntersectionObserver(callback);
     images.forEach(img => {
       observer.observe(img);
     });
   },
 
-  registerImageViewer: function() {
+  registerImageViewer: function () {
     const post_body = document.querySelector('.post-body');
     if (post_body) {
-      new Viewer(post_body,{ navbar:2, toolbar:2 });
+      new Viewer(post_body, { navbar: 2, toolbar: 2 });
     }
   },
 
   registerToolButtons: function () {
     const buttons = document.querySelector('.tool-buttons');
-    
+
     const scrollbar_buttons = buttons.querySelectorAll('div:not(#toggle-theme)');
     scrollbar_buttons.forEach(button => {
       let targetId = button.id;
@@ -86,12 +121,12 @@ NexT.utils = {
 
   slidScrollBarAnime: function (targetId, easing = 'linear', duration = 500) {
     const targetObj = document.getElementById(targetId);
-   
+
     window.anime({
       targets: document.scrollingElement,
       duration: duration,
       easing: easing,
-      scrollTop:  targetId == '' || !targetObj ? 0 : targetObj.getBoundingClientRect().top + window.scrollY
+      scrollTop: targetId == '' || !targetObj ? 0 : targetObj.getBoundingClientRect().top + window.scrollY
     });
   },
 
@@ -147,8 +182,8 @@ NexT.utils = {
     }
   },
 
-  fmtLaWidget: function(){
-    setTimeout(function(){
+  fmtLaWidget: function () {
+    setTimeout(function () {
       const laWidget = document.querySelectorAll('#la-siteinfo-widget span');
       if (laWidget.length > 0) {
         const valIds = [0, 2, 4, 6];
@@ -162,8 +197,8 @@ NexT.utils = {
   },
 
   fmtBusuanzi: function () {
-    setTimeout(function(){
-      const bszUV = document.getElementById('busuanzi_value_site_uv');    
+    setTimeout(function () {
+      const bszUV = document.getElementById('busuanzi_value_site_uv');
       if (bszUV) {
         bszUV.innerText = NexT.utils.numberFormat(bszUV.innerText);
       }
@@ -171,7 +206,7 @@ NexT.utils = {
       if (bszPV) {
         bszPV.innerText = NexT.utils.numberFormat(bszPV.innerText);
       }
-    }, 800);  
+    }, 800);
   },
 
   numberFormat: function (number) {
@@ -244,14 +279,14 @@ NexT.utils = {
 
     let router = NexT.CONFIG.vendor.router;
     let { name, version, file, alias, alias_name } = res;
-   
+
     let res_src = '';
-  
+
     switch (router.type) {
       case "modern":
         if (alias_name) name = alias_name;
         let alias_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
-        if (alias_file.indexOf('min') == -1) {          
+        if (alias_file.indexOf('min') == -1) {
           alias_file = alias_file.replace(/\.js$/, '.min.js');
         }
         res_src = `${router.url}/${name}/${version}/${alias_file}`;
@@ -271,27 +306,57 @@ NexT.utils = {
   registerCopyCode: function () {
     if (!NexT.CONFIG.copybtn) return;
 
-    let figure = document.querySelectorAll('.highlight pre');
+   /** let figure = document.querySelectorAll('.highlight pre');
     if (figure.length === 0 || !NexT.CONFIG.copybtn) return;
     figure.forEach(element => {
-      let cn = element.querySelector('code').className;
-      // TODO seems hard code need find other ways fixed it.
-      if (cn == '') return;
-      element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+      let cn = element.querySelector('code').className;      
+      if (cn === '') return;
+      element.children[0].insertAdjacentHTML('beforebegin', '<div class="copy-btn" data-clipboard-snippe><i class="fa fa-copy fa-fw"></i></div>');
+      var clipboard = new ClipboardJS(element.children[0],
+        { 
+          text: function(trigger) {
+            return trigger.nextElementSibling.textContent.trim();
+          }
+        });
+      clipboard.on('success', function (e) {
+        e.clearSelection();
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        button.querySelector('i').className = 'fa fa-check-circle fa-fw';
+      });
+      clipboard.on('error', function (e) {
+        console.error('复制失败:', e);
+        button.querySelector('i').className = 'fa fa-times-circle fa-fw';
+      });
       const button = element.querySelector('.copy-btn');
-      button.addEventListener('click', () => {
+      element.addEventListener('mouseleave', () => {
+        setTimeout(() => {
+          button.querySelector('i').className = 'fa fa-copy fa-fw';
+        }, 300);
+      });
+    });**/
+   /** figure.forEach(element => {
+      let cn = element.querySelector('code').className;      
+      if (cn === '') return;
+     element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+      // element.insertAdjacentHTML('beforeend', '<div class="copy-btn"><i class="fa fa-copy fa-fw"></i></div>');
+      const button = element.querySelector('.copy-btn');
+      button.addEventListener('click', async () => {
         const lines = element.querySelector('.code') || element.querySelector('code');
-        const code = lines.innerText.replace(/(\n{2,})/g, '\n');
+        let code = lines.textContent.trim();
+        console.log('尝试复制代码:', code);
+
         if (navigator.clipboard) {
-          // https://caniuse.com/mdn-api_clipboard_writetext
           navigator.clipboard.writeText(code).then(() => {
+            console.log('复制成功');
             button.querySelector('i').className = 'fa fa-check-circle fa-fw';
-          }, () => {
+          }).catch((err) => {
+            console.error('复制失败:', err);
             button.querySelector('i').className = 'fa fa-times-circle fa-fw';
           });
         } else {
           const ta = document.createElement('textarea');
-          ta.style.top = window.scrollY + 'px'; // Prevent page scrolling
+          ta.style.top = window.scrollY + 'px';
           ta.style.position = 'absolute';
           ta.style.opacity = '0';
           ta.readOnly = true;
@@ -299,20 +364,22 @@ NexT.utils = {
           document.body.append(ta);
           ta.select();
           ta.setSelectionRange(0, code.length);
-          ta.readOnly = false;
-          const result = document.execCommand('copy');
-          button.querySelector('i').className = result ? 'fa fa-check-circle fa-fw' : 'fa fa-times-circle fa-fw';
-          ta.blur(); // For iOS
-          button.blur();
+          try {
+            const successful = document.execCommand('copy');
+            if (!successful) throw new Error('复制命令执行失败');
+          } catch (err) {
+            console.error('复制失败:', err);
+          }
           document.body.removeChild(ta);
         }
+       
       });
       element.addEventListener('mouseleave', () => {
         setTimeout(() => {
           button.querySelector('i').className = 'fa fa-copy fa-fw';
         }, 300);
       });
-    });
+    });**/
   },
 
   wrapTableWithBox: function () {
@@ -432,22 +499,58 @@ NexT.utils = {
       const isSubPath = !NexT.CONFIG.root.startsWith(target.pathname) && location.pathname.startsWith(target.pathname);
       target.classList.toggle('menu-item-active', target.hostname === location.hostname && (isSamePath || isSubPath));
     });
-  },
+  },*/
 	
   registerLangSelect: function() {
-    const selects = document.querySelectorAll('.lang-select');
-    selects.forEach(sel => {
-      sel.value = NexT.CONFIG.page.lang;
-      sel.addEventListener('change', () => {
-        const target = sel.options[sel.selectedIndex];
-        document.querySelectorAll('.lang-select-label span').forEach(span => {
-          span.innerText = target.text;
-        });
-        // Disable Pjax to force refresh translation of menu item
-        window.location.href = target.dataset.href;
+    let selects = document.getElementById('lang-select');
+    if (!selects) return;
+
+    let selected = selects.querySelector('#lang-selected');
+    let selectedVal = selected.querySelectorAll('span');
+    let flagIcon = selectedVal[0];
+    let langName = selectedVal[1];
+    let selectIcon = selected.querySelector('i');
+   
+
+    let options = selects.querySelectorAll('#lang-options>div');
+    let optionsDom = options[0].parentNode;
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        let langCode = option.getAttribute('lang-code');
+        flagIcon.className = 'flag-icon flag-icon-'+langCode;
+        langName.innerHTML = option.getAttribute('lang-name');
+        selectIcon.className = 'fa fa-chevron-down';
+        optionsDom.style.opacity = '0';
+        optionsDom.style.transform = 'translateY(-10px)';
+
+        let url = option.getAttribute('lang-url');
+        
+        setTimeout(() => {
+          optionsDom.style.display = 'none';
+          window.location.href = url;
+        }, 300);
       });
+    }); 
+
+    selected.addEventListener('mouseenter', function() {
+      selectIcon.className = 'fa fa-chevron-up';
+      optionsDom.style.display = 'block';
+      optionsDom.style.opacity = '1';
+      optionsDom.style.transform = 'translateY(0)';
+      
     });
-  },*/
+
+    optionsDom.addEventListener('mouseleave', function() {
+      selectIcon.className = 'fa fa-chevron-down';
+      optionsDom.style.opacity = '0';
+      optionsDom.style.transform = 'translateY(-10px)';
+      
+      setTimeout(() => {
+        optionsDom.style.display = 'none';
+      }, 300);
+    });
+    
+  },
 
   registerSidebarTOC: function () {
     const toc = document.getElementById('TableOfContents');
@@ -507,13 +610,6 @@ NexT.utils = {
         }
       });
     });
-  },
-
-  hideComments: function () {
-    let postComments = document.querySelector('.post-comments');
-    if (postComments !== null) {
-        postComments.style.display = 'none';
-    }
   },
 
   hiddeLodingCmp: function (selector) {
@@ -587,7 +683,7 @@ NexT.utils = {
     });
   },
 
-  getStyle: function (src, position='after', parent) {
+  getStyle: function (src, position = 'after', parent) {
     const link = document.createElement('link');
     link.setAttribute('rel', 'stylesheet');
     link.setAttribute('type', 'text/css');
@@ -607,8 +703,11 @@ NexT.utils = {
         condition: legacyCondition
       }).then(options);
     }
+
     const {
       condition = false,
+      module = false,
+      textContent = undefined,
       attributes: {
         id = '',
         async = false,
@@ -628,6 +727,8 @@ NexT.utils = {
 
         if (id) script.id = id;
         if (crossOrigin) script.crossOrigin = crossOrigin;
+        if (module) script.type = 'module';
+        if (textContent != undefined) script.textContent = textContent;
         script.async = async;
         script.defer = defer;
         Object.assign(script.dataset, dataset);
@@ -638,22 +739,25 @@ NexT.utils = {
         script.onload = resolve;
         script.onerror = reject;
 
-        if (typeof src === 'object') {
-          const { url, integrity } = src;
-          script.src = url;
-          if (integrity) {
-            script.integrity = integrity;
-            script.crossOrigin = 'anonymous';
+        if (src != null && src != undefined) {
+          if (typeof src === 'object') {
+            const { url, integrity } = src;
+            script.src = url;
+            if (integrity) {
+              script.integrity = integrity;
+              script.crossOrigin = 'anonymous';
+            }
+          } else {
+            script.src = src;
           }
-        } else {
-          script.src = src;
         }
+
         (parentNode || document.head).appendChild(script);
       }
     });
   },
 
-  lazyLoadComponent: function(selector, legacyCallback) {
+  lazyLoadComponent: function (selector, legacyCallback) {
     if (legacyCallback) {
       return this.lazyLoadComponent(selector).then(legacyCallback);
     }

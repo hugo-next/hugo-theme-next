@@ -33,7 +33,7 @@ vendors:
 
   - name: zstatic
     home: "https://www.zstatic.net"
-    logo: "https://www.zstatic.net/favicon/favicon-16x16.png"
+    logo: "https://www.zstatic.net/logo.png"
     type: "modern"
     url: "https://s4.zstatic.net/ajax/libs"
 
@@ -64,12 +64,12 @@ js:
 # CSS Resources
 css:
   - name: font-awesome
-    version: 6.6.0
+    version: 6.7.2
     file: css/all.min.css
     alias: '@fortawesome/fontawesome-free'
 
   - name: animate.css
-    version: 4.1.1
+    version: 3.7.2
     file: animate.min.css
 
   - name: viewerjs
@@ -90,8 +90,12 @@ analytics:
 
 # 文章分享
 # Share
-addthis:
-  js: https://s7.addthis.com/js/300/addthis_widget.js
+share:
+  sharethis:
+    js: https://platform-api.sharethis.com/js/sharethis.js#property=id&product=inline-share-buttons&source=platform
+
+  addtoany:
+    js: https://static.addtoany.com/menu/page.js
 
 # 评论组件
 # Comment component
@@ -106,6 +110,19 @@ waline:
     name: waline
     version: 2.15.8
     file: dist/waline.css
+    alias: "@waline/client"
+
+waline3:
+  js:
+    name: waline
+    version: 3.3.0
+    file: dist/waline.js
+    alias: "@waline/client"
+
+  css:
+    name: waline
+    version: 3.3.0
+    file: dist/waline.min.css
     alias: "@waline/client"
 
 artalk:
@@ -128,6 +145,7 @@ utterances:
 livere:
   js: https://cdn-city.livere.com/js/embed.dist.js
 
+
 # 全文搜索
 # Full text search
 algolia:
@@ -146,25 +164,25 @@ plugins:
     js:
       name: mathjax
       version: 3.2.2
-      file: es5/tex-mml-chtml.js
+      file: es5/tex-mml-svg.js
 
   katex:
     js:
       - name: katex
         alias_name: KaTeX
-        version: 0.16.9
+        version: 0.16.15
         file: dist/katex.min.js
         
       - name: auto-render
         alias: katex
         alias_name: KaTeX
-        version: 0.16.9
+        version: 0.16.15
         file: dist/contrib/auto-render.min.js
 
     css:
       name: katex
       alias_name: KaTeX
-      version: 0.16.9
+      version: 0.16.15
       file: dist/katex.min.css
 
   # 画图渲染
@@ -187,3 +205,37 @@ plugins:
         version: 2.15.8
         file: dist/comment.js
         alias: "@waline/client"
+  waline3:
+    js:
+      - name: pageview
+        alias_name: waline
+        version: 3.3.0
+        file: dist/pageview.js
+        alias: "@waline/client" 
+
+      - name: comment
+        alias_name: waline
+        version: 3.3.0
+        file: dist/comment.js
+        alias: "@waline/client"
+  # 音乐播放器
+  music:
+    js:
+      - name: aplayer
+        version: 1.10.1
+        file: dist/APlayer.min.js
+      
+      - name: meting
+        version: 2.0.1
+        file: dist/Meting.min.js
+
+    css:
+      name: aplayer
+      version: 1.10.1
+      file: dist/APlayer.min.css
+  # 复制到剪贴板
+  clipboard:
+    js: 
+      name: clipboard
+      version: 2.0.11
+      file: dist/clipboard.min.js

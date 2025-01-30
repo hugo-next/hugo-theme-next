@@ -1,0 +1,23 @@
+{{ if eq .Type "alert" }}
+{{ $postAlert := site.Params.postAlerts }}
+{{ $alertCfg := index $postAlert .AlertType }}
+  <div class="post-alert-{{ .AlertType }}">
+    <div class="post-alert-title">
+      <i class="fa-solid fa-{{ $alertCfg.icon }}"></i>
+      <span>
+        {{ with .AlertTitle }}
+          {{ . }}
+        {{ else }}
+          {{ or (T (printf "PostAlert.%s" .AlertType)) (title .AlertType) }}
+        {{ end }}
+      </span>
+    </div>
+    <div class="post-alert-content">
+      {{ .Text }}
+    </div>
+  </div>
+{{ else }}
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{ end }}

@@ -5,9 +5,16 @@
 {{ define "main" }}
 
 <div class="flinks-block">
-<h1 class="flinks-block-title">{{ .Title }}</h1>
+<h1 class="flinks-header">{{ .Title }}</h1>
+<div class="flinks-body">
 <div class="flinks-lists">
-  {{ range .Site.Data.flinks }}
+  {{ $flinksData := "" }}
+  {{ if .IsTranslated }}
+    {{ $flinksData = index .Site.Data.flinks .Lang }}
+  {{ else }}
+    {{ $flinksData = .Site.Data.flinks }}
+  {{ end }}
+  {{ range $flinksData }}
   <div class="flinks-list">
     <div class="flinks-list-title">{{ .FLinksTitle | safeHTML }}</div>
     <div class="flinks-list-desc">{{ .FLinksDesc | safeHTML }}</div>
@@ -32,5 +39,5 @@
 <div class="flinks-list-footer"><hr/></div>
 <div class="flinks-page-desc">{{ .Content }}</div>
 </div>
-
+</div>
 {{ end }}

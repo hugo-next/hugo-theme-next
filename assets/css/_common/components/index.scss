@@ -12,9 +12,17 @@
   z-index: $zindex-5;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
 @import 'tool-buttons';
 @import 'reading-progress';
 
 @import 'post';
 @import 'pages';
-@import 'third-party';
+@import '3rd';

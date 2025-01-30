@@ -1,11 +1,11 @@
 {{/* Get third party js plugins resource */}}
 
-{{ $pluginPath :=  printf "%s/%s/%s" "js/third-party" .class .plugin }}
+{{ $pluginPath :=  printf "%s/%s/%s" "js/3rd" .class .plugin }}
 {{ $targetPath := printf "js/%s" .plugin }}
 {{ $plugin := resources.Get $pluginPath | resources.ExecuteAsTemplate $targetPath .ctx }}
 
 {{ if hugo.IsProduction }}
-{{ $plugin = $plugin | minify | fingerprint }}
+{{ $plugin = $plugin | minify }}
 {{ end }}
-
-<script type="text/javascript" src="{{ $plugin.RelPermalink }}" defer></script>
+{{ $unixSrc := partial "_funs/add_unix_param.html" $plugin.RelPermalink }}
+<script type="text/javascript" src="{{ $unixSrc }}" defer></script>

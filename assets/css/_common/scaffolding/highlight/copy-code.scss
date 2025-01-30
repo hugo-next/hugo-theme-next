@@ -3,86 +3,182 @@
 
   background: var(--highlight-background);
   margin-bottom: 26px;
+  line-height: 1.25;
 
-  //TODO  Need fixed the copy button show position.
-  div:first-child {
-    overflow-x: auto;
-  }
+  > .code-header {
+    color:#f8f8f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .25rem 0;
+    width: 100%;
 
-  pre {
-    position: relative;
-    overflow-x: auto;
-  }
+    &:hover {
+      cursor: pointer;
+    }
 
-  table tbody tr {
-    //TODO Fixed the too long code line over
-    // layout background color.
-    background: #272822;    
-  }
+    .code-lang {
+      width: 100%;
+      text-align: center;
+      font-weight: bold;
 
-  /* pre > code span {
-    white-space: break-spaces;
-    overflow: hidden;
-    word-break: break-all;
-    word-wrap: break-word;
-  } */
-}
+      &::after {
+        content: "Code";
+      }
+    }
 
-@if $codeblock_copy_btn_enable {
-
-  .highlight:hover .copy-btn, pre:hover .copy-btn {
-    opacity: 1;
-  }
-
-  .copy-btn {
-    color: $black-dim;
-    cursor: pointer;
-    line-height: 1.6;
-    opacity: 0;
-    padding: 2px 6px;
-    position: absolute;
-    right: 8px;
-    top: 4px;
-    transition: opacity $transition-ease;
-    background: var(--highlight-background);
-
-    @if $codeblock_style == 'flat' {
-      background: white;
-      border: 0;
-      font-size: $font-size-smaller;
+    .collapse-btn {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      text-align: center;
+      width: 1.25em;
+      display: inline-block;
+      font-style: normal;
+      font-variant: normal;
+      line-height: 1;
+      text-rendering: auto;
+      padding-right: .25rem;      
+      transition: content 1s ease-in-out;
       
-    } @else if $codeblock_style == 'mac' {
-      color: var(--highlight-foreground);
-      font-size: 14px;
-      border-radius: 3px;
-    } @else {
-      background-color: $gainsboro;
-      background-image: linear-gradient(#fcfcfc, $gainsboro);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      font-size: $font-size-smaller;
-      
+      &::before {
+        content: "\f102";
+      }
+
+      &.collapse::before {
+        content: "\f103";
+      }
+    }
+
+    @each $type, $text in $code-type-list {
+      &.#{$type} .code-lang::after {
+        content: $text;
+      }
+    }
+
+    .ellipses-btn {
+      padding-right: .45rem;
     }
   }
-}
 
-@if $codeblock_style == 'mac' {
-  .highlight {
+  > .chroma {
+    position: relative;
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.8s ease-in-out, opacity 0.7s ease-in-out; 
+
+    &.hidden-code {
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+
+      animation-name: slideInUp;
+      animation-duration: 1s;
+    }
+    
+    pre {
+      padding: .45rem 0;
+    }
+
+    .lntd:first-child {
+      min-width: 1.6rem;
+      text-align: right;
+      background-color: #272822; 
+
+      a {
+        border-bottom: none;
+      }
+    }
+
+    .lntd:last-child {
+      width: 100%;
+
+      pre {
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+        line-break: anywhere;
+        word-break: break-all; 
+        overflow-x: auto;
+      }
+    }
+
+    > code > span {
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      line-break: anywhere;
+      word-break: break-all; 
+    }
+
+    @if $codeblock_copy_btn_enable {
+
+      &:hover .copy-btn {
+        opacity: 1;
+      }
+    
+      .copy-btn {
+        color: $black-dim;
+        cursor: pointer;
+        line-height: 1.6;
+        opacity: 0;
+        padding: 2px 6px;
+        position: absolute;
+        right: 8px;
+        top: 4px;
+        border-radius: 3px;
+        font-size: $font-size-medium;
+        transition: opacity $transition-ease;
+        background: var(--highlight-background);
+        
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        text-align: center;
+        width: 1.25em;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+
+        &::before {
+          content: "\f0c5";
+        }
+
+        &.copied::before {
+          content: "\f058";
+        }
+
+        &.uncopied::before {
+          content: "\f057";
+        }
+    
+        @if $codeblock_style == 'flat' {
+          background: white;
+          border: 0;
+        } @else if $codeblock_style == 'mac' {
+          color: var(--highlight-foreground);
+        } @else {
+          background-color: $gainsboro;
+          background-image: linear-gradient(#fcfcfc, $gainsboro);
+          border: 1px solid #d5d5d5;
+        }
+      }
+    }
+  }
+
+  
+  @if $codeblock_style == 'mac' {
+  
     border-radius: 5px;
     box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
-    padding-top: 30px;
 
-    .table-container {
-      border-radius: 0 0 5px 5px;
-    }
-
-    &::before {
-      background: #fc625d;
-      box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
-      margin-top: -20px;
-      margin-left: 10px;
-      position: absolute;
-      @include round-icon(12px);
-    }
+    .code-header {
+    
+      &::before {
+        background: #fc625d;
+        box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+        margin-left: 10px;
+        @include round-icon(12px);
+      }
+    } 
   }
+  
 }

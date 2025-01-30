@@ -1,3 +1,5 @@
 <div class="mermaid" align="{{ .Get "align" | default "center" }}"  {{  with .Get "bc" }} style="background: {{ . }}" {{ end }}> 
   {{ safeHTML .Inner }}
 </div>
+
+{{ .Page.Store.SetInMap "scParams" "mermaid" true }}

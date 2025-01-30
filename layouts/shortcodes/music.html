@@ -1,0 +1,24 @@
+{{- $theme := "#448aff" -}}
+{{- $theme = .Get "theme" | default $theme -}}
+
+<meting-js theme="{{ $theme }}"
+  {{ with .Get "id" }} id="{{ . }}" {{ end }}
+  {{ with .Get "server" }} server="{{ . }}" {{ end }}
+  {{ with .Get "type" }} type="{{ . }}" {{ end }}
+  {{ with .Get "auto" }} auto="{{ . }}" {{ end }}
+  {{ with .Get "url" }} url="{{ . }}" {{ end }}
+  {{ with .Get "name" }} name="{{ . }}" {{ end }}
+  {{ with .Get "artist" }} artist="{{ . }}" {{ end }}
+  {{ with .Get "cover" }} cover="{{ . }}" {{ end }}
+  {{ with .Get "fixed" }} fixed="{{ . }}" {{ end }}
+  {{ with .Get "mini" }} mini="{{ . }}" {{ end }}
+  {{ with .Get "autoplay" }} autoplay="{{ . }}" {{ end }}
+  {{ with .Get "loop" }} loop="{{ . }}" {{ end }}
+  {{ with .Get "order" }} order="{{ . }}" {{ end }}
+  {{ with .Get "volume" }} volume="{{ . }}" {{ end }}
+  {{ with .Get "mutex" }} mutex="{{ . }}" {{ end }}
+  {{ with .Get "list-folded" }} list-folded="{{ . }}" {{ end }}
+  {{ with .Get "list-max-height" }} list-max-height="{{ . }}px" {{ end }}
+  ></meting-js>
+
+{{ .Page.Store.SetInMap "scParams" "music" true }}

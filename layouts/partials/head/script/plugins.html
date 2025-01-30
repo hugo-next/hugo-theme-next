@@ -1,0 +1,22 @@
+{{/* Defind loading plugin scripts which only need in pages */}}
+{{ if .IsPage }}
+
+{{/** Append codeblack render action **/}}
+{{ if .Store.Get "codeblock" }}
+  {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "clipboard.js") }}
+{{ end }}
+
+{{/** Short code params **/}}
+{{ $scParam := .Store.Get "scParams" }}
+
+{{/** Append math render action **/}}
+{{ if or .Params.math .Site.Params.math }}
+  {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "math.js") }}
+{{ end }}
+
+{{/** Append mermaid render action **/}}
+{{ if $scParam.mermaid }}
+  {{ partial "_funs/get_plugin.html" (dict "ctx" . "class" "others" "plugin" "mermaid.js") }}
+{{ end }}
+
+{{ end }}

@@ -61,19 +61,26 @@ NexT.boot.refresh = function() {
 
   NexT.utils.fmtSiteInfo();
 
+  if (NexT.CONFIG.isMultiLang) {
+    NexT.utils.registerLangSelect();
+  }
+
   if (!NexT.CONFIG.page.isPage) return;
  
-  NexT.utils.registerSidebarTOC();
-  NexT.utils.registerCopyCode();
+  if (NexT.CONFIG.page.toc) NexT.utils.registerSidebarTOC();
+  if (NexT.CONFIG.page.expired) NexT.utils.calPostExpiredDate();
+  if (NexT.CONFIG.page.music) NexT.utils.registerAPlayer();
+
+  NexT.utils.registerImageViewer();
   NexT.utils.registerPostReward();
+
   if(NexT.CONFIG.page.comments) {    
     NexT.utils.initCommontesDispaly();
     NexT.utils.registerCommonSwitch();
-    NexT.utils.domAddClass('#goto-comments', 'goto-comments-on');
+    NexT.utils.domAddClass('#goto-comments', 'show');
   } else {
-    NexT.utils.hideComments();
+    NexT.utils.domAddClass('#goto-comments', 'hidden');
   }
-  NexT.utils.registerImageViewer();
 
   //TODO
    /**

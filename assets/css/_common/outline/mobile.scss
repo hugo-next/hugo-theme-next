@@ -20,7 +20,10 @@
     }
 
     .post-block {
-      margin-top: initial !important;
+      //margin-top: initial !important;
+      // https://github.com/hugo-next/hugo-theme-next/issues/154
+      // make the post block more clear in small screen
+      margin-top: 5px !important;
       // Inside posts blocks content padding (default 40px).
       padding: $content-mobile-padding 18px $content-mobile-padding !important;
     }

@@ -71,13 +71,21 @@ PostMeta:
   tags: 标签
   more: 阅读全文
   edit: 编辑
+  expired:
+    title: "温馨提醒"
+    info: "🕰️ 嗨，这篇文章已是#前的陈年佳酿，信息可能需要更新，阅读前请检查最佳赏味期限。"
+    warn: "🚀 注意啦！这篇文章来自#以前，可能已跟不上时代的步伐。阅读时请自备时光机，小心穿越哦！"
+  summary: 
+    title: 总结摘要
 
-Reward:
-  title: 赞赏
-  wechatpay: 微信
-  alipay: 支付宝
-  paypal: Paypal
-  bitcoin: 比特币
+PostAlert:
+  info     : "信息"
+  note     : "注意"
+  help     : "帮助"
+  error    : "错误"
+  warning  : "警告"
+  success  : "成功"
+  important: "重要"
 
 PostCopyRight:
   title: 文章标题
@@ -95,6 +103,13 @@ PostFollowMe:
 
 PostComments:
   title: 评论交流
+
+Reward:
+  title: 赞赏
+  wechatpay: 微信
+  alipay: 支付宝
+  paypal: Paypal
+  bitcoin: 比特币
 
 SiteInfoItems:
   title: "网站资讯"

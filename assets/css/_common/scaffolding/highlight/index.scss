@@ -1,4 +1,5 @@
 @import 'copy-code';
+@import 'monokai';
 
 %code-inline {
   background: var(--highlight-background);
@@ -8,7 +9,7 @@
 pre {
   padding: 18px;
   margin: 0;
-}
+} 
 
 p > code, li > code {
   @extend %code-inline;

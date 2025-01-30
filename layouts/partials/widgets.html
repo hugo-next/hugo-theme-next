@@ -3,9 +3,9 @@
   <div id="goto-comments" class="button goto-comments" title="{{ T "ToolBtns.comment" }}">
     <i class="fas fa-comments"></i>
   </div>
-  {{ end }}  
-  {{ if .Site.Params.footer.translate }}
-  <div id="goto-gtranslate" class="button"  title="{{ T "ToolBtns.lang" }}">
+  {{ end }}
+  {{ if hugo.IsMultilingual }}
+  <div id="goto-i18n-translate" class="button"  title="{{ T "ToolBtns.lang" }}">
     <i class="fas fa-globe"></i>
   </div> 
   {{ end }}

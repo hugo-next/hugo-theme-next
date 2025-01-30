@@ -1,0 +1,23 @@
+{{ if hugo.IsMultilingual}}
+<div id="i18n-translate" class="i18n-translate">
+  <i class="fa fa-language"></i>
+  <div id="lang-select" class="lang-select">
+    <div id="lang-selected" class="selected-option">
+      <span class="flag-icon flag-icon-{{$.Site.Language.Lang}}"></span>
+      <span class="selected-language">{{ .Site.Language.LanguageName }}</span>
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    <div id="lang-options" class="lang-options">
+      {{ with .AllTranslations }}
+      {{ range . }}
+      {{ $langCode := lower .Language.LanguageCode }}
+        <div class="lang-option" lang-code="{{ $langCode }}" lang-name="{{ .Language.LanguageName }}" lang-url="{{ .RelPermalink }}">
+          <span class="flag-icon flag-icon-{{ $langCode }}"></span>
+          <span class="lang-name">{{ .Language.LanguageName }}</span>
+        </div>
+      {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}

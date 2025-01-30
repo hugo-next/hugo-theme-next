@@ -6,6 +6,36 @@
   {{ .Summary }}
   {{ end }}
 {{ else }}
-  {{ .Content }}
+  {{/** Post expired tip message **/}}
+  {{ $expired := default .Site.Params.PostMeta.expired .Params.Expired }}
+  {{ if $expired }}
+  <div class="post-expired-tip" id="post-expired-tip">
+    <div class="post-expired-title">
+      <i class="fa-solid fa-hourglass-half"></i>
+      <span>{{ T "PostMeta.expired.title" }}</span>
+    </div>
+    <div id="post-expired-content" class="post-expired-content"></div>
+  </div>
+  {{ end }}
+  {{/** Post summary **/}}
+  {{ if .Site.Params.PostMeta.summary }}
+  {{ with .Params.Description }}
+  <div class="post-summary-wrapper">
+    <div class="summary-title">
+      <span><i class="fa-solid fa-list"></i></span>
+      <span>{{ T "PostMeta.summary.title" }}</span>
+    </div>
+    <div class="summary-content">
+      {{ . }}
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+  {{/** Started use the read more content anchor the need 
+    Hugo framework min marjo version greater than 0.134.0 **/}}
+  {{ .Summary }}
+  <!-- It's an anchor point to locate read more content start. -->
+  <a id="more"></a>
+  {{ .ContentWithoutSummary }}
 {{ end }}
 {{ end }}

@@ -27,7 +27,7 @@
       {{ end }}
     </header>
     <!-- Widgets -->
-    {{ partial "widgets.html" . }}
+    {{ partialCached "widgets.html" . }}
     <div class="main-inner {{ block "main_inner_class" . }}{{ end }}">
       <!-- Submenu,Content,Comment -->
       {{ block "main" . }}{{ end }}
@@ -38,10 +38,11 @@
   </main>
   <footer class="footer">
     <div class="footer-inner">
+      {{ partial "langs.html" . }}
       {{ partialCached "footer.html" . }}
     </div>
   </footer>
-
+  {{ partial "head/config.html" . }}
   {{ partial "scripts.html" . }}
 </body>
 

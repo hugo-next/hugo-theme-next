@@ -47,7 +47,7 @@
             
             {{ if not (in $allSecondaryCats $primaryCategory) }}
               <li class="category-list-item">
-                <a class="category-list-link" href="{{ "categories/" | relURL }}{{ $primaryCategory | urlize }}/">
+                <a class="category-list-link" href="{{ "categories/" | relLangURL }}{{ $primaryCategory | urlize }}/">
                   {{ $primaryCategory }}
                   <span class="category-list-count">{{ $primaryCount }}</span>
                 </a>
@@ -62,7 +62,7 @@
                     {{ end }}
                   {{ end }}
                   <li class="category-children-list-item">
-                    <a class="category-list-link" href="{{ "categories/" | relURL }}{{ . | urlize }}/">
+                    <a class="category-list-link" href="{{ "categories/" | relLangURL }}{{ . | urlize }}/">
                       {{ . }}
                       <span class="category-list-count">{{ $secondaryCount }}</span>
                     </a>
@@ -82,7 +82,7 @@
         <div class="tag-cloud-tags">
           {{ $randNums := (seq 10) }}
           {{- range $name, $items := $tags }}
-          <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize  }}/">{{ .Page.Title }}
+          <a class="tag-cloud-{{ index (shuffle $randNums) 0 }}" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}/">{{ .Page.Title }}
             <span class="tag-list-count">
               <sup>({{ len $items }})</sup>
             </span>

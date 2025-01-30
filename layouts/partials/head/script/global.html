@@ -1,0 +1,114 @@
+{{/* Loading all page need scripts */}}
+{{ $jsRes := .Site.Data.resources.js }}
+{{ $vendor := .Site.Params.vendors.plugins }}
+{{ $router := .Scratch.Get "router" }}
+{{ range $jsRes }} 
+  {{ $pluginJS := partial "_funs/get_cdn_res.html" (dict "res" . "vendor" $vendor "router" $router)  }}
+  <script type="text/javascript" src="{{ $pluginJS }}" crossorigin="anonymous" defer></script>
+{{ end }}
+
+<script class="next-config" data-name="main" type="application/json">{{ .Scratch.Get "config" }}</script>
+
+{{/* Core scripts */}}
+{{ $config := resources.Get "js/config.js" }}
+{{ $utils := resources.Get "js/utils.js" }}
+{{ $boot := resources.Get "js/next-boot.js" }}
+{{ $nextjs := slice $config $utils $boot }}
+
+{{/* Animation scripts */}}
+{{ if .Site.Params.motion.enable }}
+{{ $motionjs := resources.Get "js/motion.js" }}
+{{ $nextjs = $nextjs | append $motionjs }}
+{{ end }}
+
+{{/* Special scheme scripts */}}
+{{ if or (eq .Site.Params.shceme "Muse") (eq .Site.Params.shceme "Mist") }}
+{{ $musejs := resources.Get "js/schemes/muse.js" }}
+{{ $nextjs = $nextjs | append $musejs }}
+{{ end }}
+
+{{/* Bookmark scripts */}}
+{{ if .Site.Params.bookmark.enable }}
+{{ $bookmarkjs := resources.Get "js/bookmark.js" }}
+{{ $nextjs = $nextjs | append $bookmarkjs }}
+{{ end }}
+
+{{/* Pjax scripts */}}
+{{ if .Site.Params.pjax }}
+{{ $pjaxjs := resources.Get "js/pjax.js" }}
+{{ $nextjs = $nextjs | append $pjaxjs }}
+{{ end }}
+
+{{/* Share scripts */}}
+{{/** if and .Site.Params.share.enable (isset .Site.Params "sharethisid") }}
+{{ $sharethisjs := resources.Get "js/3rd/share/sharethis.js" }}
+{{ $nextjs = $nextjs | append $sharethisjs }}
+{{ end **/}}
+
+{{ with .Site.Params.share }}
+{{ if or .enable .Params.share }}
+  {{ if isset . "sharethis" }}
+    {{ $sharethisjs := resources.Get "js/3rd/share/sharethis.js" }}
+    {{ $nextjs = $nextjs | append $sharethisjs }}
+  {{ end }}
+  {{ if isset . "addtoany" }}
+    {{ $addtoanyjs := resources.Get "js/3rd/share/addtoany.js" }}
+    {{ $nextjs = $nextjs | append $addtoanyjs }}
+  {{ end }}
+{{ end }}  
+{{ end }}
+
+{{/* Comments scripts */}}
+{{ if isset .Site.Params "waline" }}
+  {{ $walinejs := resources.Get "js/3rd/comments/waline.js" }}
+  {{ $nextjs = $nextjs | append $walinejs }}
+{{ end }}
+{{ if isset .Site.Params "waline3" }}
+  {{ $walinejs3 := resources.Get "js/3rd/comments/waline3.js" }}
+  {{ $nextjs = $nextjs | append $walinejs3 }}
+{{ end }}
+{{ if or .Site.Params.postMeta.views.enable .Site.Params.postMeta.comments.enable }}
+  {{ $counterjs := resources.Get "js/3rd/others/counter.js" }}
+  {{ $nextjs = $nextjs | append $counterjs }}
+{{ end }}
+{{ if isset .Site.Params "giscus" }}
+{{ $giscusjs := resources.Get "js/3rd/comments/giscus.js" }}
+{{ $nextjs = $nextjs | append $giscusjs }}
+{{ end}}
+{{ if isset .Site.Params "livere" }}
+{{ $liverejs := resources.Get "js/3rd/comments/livere.js" }}
+{{ $nextjs = $nextjs | append $liverejs }}
+{{ end }}
+{{ if isset .Site.Params "artalk" }}
+{{ $artalkjs := resources.Get "js/3rd/comments/artalk.js" }}
+{{ $nextjs = $nextjs | append $artalkjs }}
+{{ end }}
+{{ if isset .Site.Params "utterances" }}
+{{ $utterancesjs := resources.Get "js/3rd/comments/utterances.js" }}
+{{ $nextjs = $nextjs | append $utterancesjs }}
+{{ end }}
+
+{{/* Search engin scripts */}}
+{{ if .Site.Params.localSearch.enable }}
+{{ $search := resources.Get "js/3rd/search/local.js" }}
+{{ $nextjs = $nextjs | append $search }}
+{{ end }}
+{{ if .Site.Params.algoliaSearch.enable }}
+{{ $search := resources.Get "js/3rd/search/algolia.js" }}
+{{ $nextjs = $nextjs | append $search }}
+{{ end }}
+
+{{/* Other not useful scripts, eg: 51la widget, translate */}}
+{{ with .Site.Params.siteState.views }}
+  {{ if and .enable (eq .plugin "51la") }}
+    {{ $lawt := resources.Get "js/3rd/others/lawidget.js" }}
+    {{ $nextjs = $nextjs | append $lawt }}
+  {{ end }}
+{{ end }}
+
+{{ $nextjs = $nextjs | resources.Concat "js/main.js"}}
+{{ if hugo.IsProduction }}
+{{ $nextjs = $nextjs | minify }}
+{{ end }}
+{{ $unixSrc := partial "_funs/add_unix_param.html" $nextjs.RelPermalink }}
+<script type="text/javascript" src="{{ $unixSrc }}" defer></script>
