@@ -35,6 +35,18 @@
 
 Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extened` software in your PC.
 
+### 📦 Install Hugo
+
+If you want to quickly preview the actual effect of the theme, you can directly clone the repository code of the current theme and run the example site:
+
+```shell
+$ git clone --single-branch -b main https://github.com/hugo-next/hugo-theme-next.git hugo-theme-next
+$ cd hugo-theme-next/exampleSite/
+$ sh startup.sh
+```
+
+Open a computer browser and enter `http://127.0.0.1:1414/`, then you can access and view it.
+
 ### 📰 Use Template
 
 If there your first time build blog site, Recommended use template of `Github` which can easily create your site code. Click & visit this repository: [hugo-theme-next-starter](https://github.com/hugo-next/hugo-theme-next-starter), then click the green button which name call `Use this template` upper right corner on the page. Just like below image:
@@ -48,26 +60,26 @@ After do that click the green button which name call `Create repository from tem
 If you had a blog site, then use `submodule` to lead into the theme, see below commands:
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ git submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next
-$ cp themes/hugo-theme-next/exampleSite/config.yaml .
-$ mv config.toml config.toml.backup
+$ cp themes/hugo-theme-next/exampleSite/hugo.yaml .
+$ mv hugo.toml hugo.toml.backup
 ```
 
 Or use `Hugo module` to lead into the theme, see below commands:
 
 ```shell
-$ cd hugo-next-exmaple
-$ hugo mod init hugo-next-exmaple
-$ wget -O config.yaml https://github.com/hugo-next/hugo-theme-next/raw/main/exampleSite/config.yaml
-$ sed -i 's/hugo-theme-next/github.com\/hugo-next\/hugo-theme-next\/v4/' config.yaml
-$ mv config.toml config.toml.backup
+$ cd hugo-next-example
+$ hugo mod init hugo-next-example
+$ wget -O hugo.yaml https://github.com/hugo-next/hugo-theme-next/raw/main/exampleSite/hugo.yaml
+$ sed -i 's/hugo-theme-next/github.com\/hugo-next\/hugo-theme-next\/v4/' hugo.yaml
+$ mv hugo.toml hugo.toml.backup
 ```
 
 ### 💻 Preview on Local
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ hugo server
 ```
 
@@ -81,14 +93,14 @@ Done that input adrress http://127.0.0.1:1313/ on browser will see the effect & 
 Execute command as below in your site directory when the theme upgrade.
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ git submodule update --remote
 ```
 
 Execute command as below if you are using `Hugo module`:
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ hugo mod get -u
 ```
 

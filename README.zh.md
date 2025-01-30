@@ -35,6 +35,18 @@
 
 在使用 `Hugo NexT` 主题之前，请确认你的电脑上已经安装 `Git` 和 `Hugo Extened` 两款软件。
 
+### 📦 快速预览
+
+如想快速预览主题实际效果，可直接克隆当前主题的仓库代码，然后运行示例站点：
+
+```shell
+$ git clone --single-branch -b main https://github.com/hugo-next/hugo-theme-next.git hugo-theme-next
+$ cd hugo-theme-next/exampleSite/
+$ sh startup.sh
+```
+
+打开电脑浏览器输入`http://127.0.0.1:1414/`即可访问查看。
+
 ### 📰 使用模板
 
 如果你是初次建站的话，可以使用 `Github` 的模板功能，一键生成你的站点仓库代码。访问 [hugo-theme-next-starter](https://github.com/hugo-next/hugo-theme-next-starter) 点击右上角的 `Use this template` 绿色按钮然后填写代码仓库的相关信息，参考如下：
@@ -48,26 +60,26 @@
 如果你已经有站点，可通过 `submodule` 模式引用本主题，参考如下命令：
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ git submodule add https://github.com/hugo-next/hugo-theme-next.git themes/hugo-theme-next
-$ cp themes/hugo-theme-next/exampleSite/config.yaml .
-$ mv config.toml config.toml.backup
+$ cp themes/hugo-theme-next/exampleSite/hugo.yaml .
+$ mv hugo.toml hugo.toml.backup
 ```
 
 或通过 `Hugo module` 模式引用本主题，参考如下命令：
 
 ```shell
-$ cd hugo-next-exmaple
-$ hugo mod init hugo-next-exmaple
-$ wget -O config.yaml https://github.com/hugo-next/hugo-theme-next/raw/main/exampleSite/config.yaml
-$ sed -i 's/hugo-theme-next/github.com\/hugo-next\/hugo-theme-next\/v4/' config.yaml
-$ mv config.toml config.toml.backup
+$ cd hugo-next-example
+$ hugo mod init hugo-next-example
+$ wget -O hugo.yaml https://github.com/hugo-next/hugo-theme-next/raw/main/exampleSite/hugo.yaml
+$ sed -i 's/hugo-theme-next/github.com\/hugo-next\/hugo-theme-next\/v4/' hugo.yaml
+$ mv hugo.toml hugo.toml.backup
 ```
 
 ### 💻 本地预览
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ hugo server
 ```
 
@@ -81,14 +93,14 @@ $ hugo server
 后续更新主题只需要在你的站点目录中，执行如下命令：
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ git submodule update --remote
 ```
 
 如使用 `Hugo module`，执行如下命令：
 
 ```shell
-$ cd hugo-next-exmaple
+$ cd hugo-next-example
 $ hugo mod get -u
 ```
 
