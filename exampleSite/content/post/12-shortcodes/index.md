@@ -141,7 +141,8 @@ toc: true
 {{</* music server="netease" type="playlist" id="1982066521" list-max-height="140" */>}}
 ```
 
-{{< music server="netease" type="playlist" id="1982066521" list-max-height="140px" >}}
+{{< music server="netease" type="playlist" id="1982066521" list-max-height="140" >}}
+
 ### 自定义音乐源
 
 ```markdown

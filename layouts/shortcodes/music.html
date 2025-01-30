@@ -10,15 +10,15 @@
   {{ with .Get "name" }} name="{{ . }}" {{ end }}
   {{ with .Get "artist" }} artist="{{ . }}" {{ end }}
   {{ with .Get "cover" }} cover="{{ . }}" {{ end }}
-  {{ with .Get "fixed" }} fixed="{{ . }}" {{ end  }}
-  {{ with .Get "mini" }} mini="{{ . }}" {{ end  }}
-  {{ with .Get "autoplay" }} autoplay="{{ . }}" {{ end  }}
-  {{ with .Get "loop" }} loop="{{ . }}" {{ end  }}
-  {{ with .Get "order" }} order="{{ . }}" {{ end  }}
-  {{ with .Get "volume" }} volume="{{ . }}" {{ end  }}
-  {{ with .Get "mutex" }} mutex="{{ . }}" {{ end  }}
-  {{ with .Get "list-folded" }} list-folded="{{ . }}" {{ end  }}
-  {{ with .Get "list-max-height" }} list-max-height="{{ . }}" {{ end  }}
+  {{ with .Get "fixed" }} fixed="{{ . }}" {{ end }}
+  {{ with .Get "mini" }} mini="{{ . }}" {{ end }}
+  {{ with .Get "autoplay" }} autoplay="{{ . }}" {{ end }}
+  {{ with .Get "loop" }} loop="{{ . }}" {{ end }}
+  {{ with .Get "order" }} order="{{ . }}" {{ end }}
+  {{ with .Get "volume" }} volume="{{ . }}" {{ end }}
+  {{ with .Get "mutex" }} mutex="{{ . }}" {{ end }}
+  {{ with .Get "list-folded" }} list-folded="{{ . }}" {{ end }}
+  {{ with .Get "list-max-height" }} list-max-height="{{ . }}px" {{ end }}
   ></meting-js>
 
 {{ .Page.Store.SetInMap "scParams" "music" true }}

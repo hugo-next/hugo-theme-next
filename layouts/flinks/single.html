@@ -5,7 +5,8 @@
 {{ define "main" }}
 
 <div class="flinks-block">
-<h1 class="flinks-block-title">{{ .Title }}</h1>
+<h1 class="flinks-header">{{ .Title }}</h1>
+<div class="flinks-body">
 <div class="flinks-lists">
   {{ $flinksData := "" }}
   {{ if .IsTranslated }}
@@ -38,5 +39,5 @@
 <div class="flinks-list-footer"><hr/></div>
 <div class="flinks-page-desc">{{ .Content }}</div>
 </div>
-
+</div>
 {{ end }}

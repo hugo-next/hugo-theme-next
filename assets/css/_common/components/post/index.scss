@@ -24,13 +24,13 @@
   }
 
   @if $motion_trans_post_header {
-    .post-header {
+    .post-header, .flinks-header {
       visibility: hidden;
     }
   }
 
   @if $motion_trans_post_body {
-    .post-body {
+    .post-body, .flinks-body  {
       visibility: hidden;
     }
   }

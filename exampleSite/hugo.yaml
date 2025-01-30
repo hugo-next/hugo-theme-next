@@ -1189,11 +1189,10 @@ params:
     enable: true
     async: true
     transition:
-      # All available transition variants: https://theme-next.js.org/animate/
       postBlock: fadeIn
       postHeader: fadeInDown
       postBody: fadeInDown
-      collHeader: fadeInLeft
+      collHeader: slideInRight
       # 侧边样效果 只有在 Pisces | Gemini 模式下才支持
       # Only for Pisces | Gemini.
       sidebar: fadeInUp

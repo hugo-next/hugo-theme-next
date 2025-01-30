@@ -1,6 +1,5 @@
 ---
 title: "关于 Hugo NexT 组织"
-description: "Hugo NexT 组织介绍说明。"
 
 date: 2022-06-09T20:12:52+08:00
 lastmod: 2022-06-09T20:12:52+08:00
@@ -27,4 +26,4 @@ url: about.html
 > [!INFO]
 > 同时国内用户也可加入 QQ 群交流： 604710815
 
-{{< music server="netease" type="playlist" id="1982066521" list-max-height="140" >}}
+{{< music url="/music/sky.mp3" name="天空之城" artist="宫崎骏" cover="/music/gongqijun.jpg" autoplay="true" >}}

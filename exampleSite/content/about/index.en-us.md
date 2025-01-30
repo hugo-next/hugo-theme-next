@@ -26,4 +26,4 @@ Continuing the classic black-and-white color scheme of `NexT`, it maintains simp
 > [!INFO]
 > Chinese's users can also join the QQ group for communication: 604710815
 
-{{< music server="netease" type="playlist" id="1982066521" list-max-height="140" >}}
+{{< music url="/music/sky.mp3" name="City of the Sky" artist="Hayao Miyazaki" cover="/music/gongqijun.jpg" autoplay="true" >}}

@@ -63,37 +63,37 @@ Actual effect:
 
 ###  Default Header without icon
 
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 {{< note default >}}
 ###  Default Header
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 {{< note primary >}}
 ###  Primary Header
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 {{< note info >}}
 ###  Info Header
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 {{< note success >}}
 ###  Success Header
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 {{< note warning >}}
 ###  Warning Header
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 {{< note danger >}}
 ###  Danger Header
-**Welcome** to [Hugo NexT!]( https://preview.hugo-next.eu.org )
+**Welcome** to [Hugo NexT!](https://preview.hugo-next.eu.org)
 {{< /note >}}
 
 
@@ -145,7 +145,7 @@ Based on [Player](https://github.com/DIYgod/APlayer) And [MatingJS](https://gith
 {{</* music server="netease" type="playlist" id="1982066521" list-max-height="140" */>}}
 ```
 
-{{< music server="netease" type="playlist" id="1982066521" list-max-height="140px" >}}
+{{< music server="netease" type="playlist" id="1982066521" list-max-height="140" >}}
 
 ### Customize music source
 
