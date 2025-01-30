@@ -1,5 +1,5 @@
 ---
-title:  Custom phrase example
+title:  "Custom shortcode example"
 description:  "Set commonly used block references, label cards, buttons, and other information as short codes for quick referencing"
 Keywords: "short code, short code"
 

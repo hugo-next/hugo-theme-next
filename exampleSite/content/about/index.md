@@ -26,3 +26,5 @@ url: about.html
 
 > [!INFO]
 > 同时国内用户也可加入 QQ 群交流： 604710815
+
+{{< music server="netease" type="playlist" id="1982066521" list-max-height="140" >}}

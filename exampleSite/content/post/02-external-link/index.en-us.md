@@ -18,7 +18,7 @@ extlink:  https://gitee.com/hugo-next/hugo-theme-next/
 weight: 1
 ---
 
-Welcome to the Hugo NexT documentation site! It is from [Theme NexT](https://theme-next.js.org/) The transplanted one is [Hugo](https://gohugo.io/) The high- quality and elegant theme created maintains its easy- to- use features and powerful functionality.
+Welcome to the Hugo NexT documentation site! It is from [Theme NexT](https://theme-next.js.org/) The transplanted one is [Hugo](https://gohugo.io/) The high-quality and elegant theme created maintains its easy-to-use features and powerful functionality.
 
 
 

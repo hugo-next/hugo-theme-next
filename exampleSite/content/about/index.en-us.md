@@ -25,3 +25,5 @@ Continuing the classic black-and-white color scheme of `NexT`, it maintains simp
 
 > [!INFO]
 > Chinese's users can also join the QQ group for communication: 604710815
+
+{{< music server="netease" type="playlist" id="1982066521" list-max-height="140" >}}
