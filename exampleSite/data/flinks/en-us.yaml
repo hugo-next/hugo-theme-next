@@ -1,0 +1,37 @@
+# 友情链接
+# Friend's links
+
+- FLinksTitle: Office Demo Site
+  FLinksDesc: Example content from the official theme.
+  FLinksList:
+    - name: Hugo
+      desc: The fastest website construction framework in the world!
+      avatar: https://gohugo.io/favicon-32x32.png
+      link: https://gohugo.io
+      timeout: 2
+      visible: true
+
+    - name: Hugo-NexT
+      desc: Hugo NexT Official Site
+      avatar: https://hugo-next.eu.org/imgs/hugo_next_avatar.png
+      link: https://hugo-next.eu.org
+      timeout: 2
+      visible: true
+
+    - name: Fanmeng Star Dust Space Station
+      desc: Even ordinary people have their own dreams!
+      avatar: https://elkan1788.github.io/imgs/avatar.png
+      link: https://lisenhui.cn
+      timeout: 2
+      visible: true
+
+    
+- FLinksTitle: Hugo NexT Fan Groups
+  FLinksDesc: Exciting presentation from Hugo NexT theme enthusiasts!
+  FLinksList:
+    - name: Ahaji
+      desc: The first Hugo NexT loyal fan user on the entire network!
+      avatar: https://a.happy2008.top/imgs/stayhome-small.png
+      link: https://a.happy2008.top/
+      timeout: 2
+      visible: true

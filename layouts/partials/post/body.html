@@ -18,17 +18,18 @@
   </div>
   {{ end }}
   {{/** Post summary **/}}
-  {{ $summary := default .Site.Params.PostMeta.summary .Params.Summary }}
-  {{ if $summary }}
+  {{ if .Site.Params.PostMeta.summary }}
+  {{ with .Params.Description }}
   <div class="post-summary-wrapper">
     <div class="summary-title">
       <span><i class="fa-solid fa-list"></i></span>
       <span>{{ T "PostMeta.summary.title" }}</span>
     </div>
     <div class="summary-content">
-      {{ default .Summary .Params.Summary }}
+      {{ . }}
     </div>
   </div>
+  {{ end }}
   {{ end }}
   {{/** Started use the read more content anchor the need 
     Hugo framework min marjo version greater than 0.134.0 **/}}

@@ -95,10 +95,10 @@ NexT.motion.middleWares = {
       });
     }
 
-    animate(postblock, '.post-block,.flinks-block, .pagination, .post-comments');
+    animate(postblock, '.post-block, .flinks-block, .pagination, .post-comments');
     animate(collheader, '.collection-header');
-    animate(postheader, '.post-header');
-    animate(postbody, '.post-body');
+    animate(postheader, '.post-header, .flinks-header');
+    animate(postbody, '.post-body, .flinks-body');
 
     return sequence;
   },

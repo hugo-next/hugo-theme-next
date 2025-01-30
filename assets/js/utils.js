@@ -12,7 +12,7 @@ NexT.utils = {
       NexT.utils.getCDNResource(NexT.CONFIG.page.music.css)
     );
     
-    NexT.CONFIG.page.music.js.forEach(function (js) {
+    NexT.CONFIG.page.music.js.forEach(function(js) {
       NexT.utils.getScript(NexT.utils.getCDNResource(js), true);
     });
     
