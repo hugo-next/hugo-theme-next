@@ -87,6 +87,7 @@ analytics:
   baidu: https://hm.baidu.com/hm.js?
   google: https://www.googletagmanager.com/gtag/js?id=
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+  cloudflare: https://static.cloudflareinsights.com/beacon.min.js
 
 # 文章分享
 # Share
