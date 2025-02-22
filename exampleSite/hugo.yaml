@@ -1092,7 +1092,6 @@ params:
     # 谷歌统计
     # Google Analytics
     #google: #<anaytics_id>
-    # 谷歌统计
     # Cloudflare Analytics
     #cloudflare: #<cloudflare_id>
     # 不蒜子统计
