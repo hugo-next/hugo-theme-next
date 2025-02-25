@@ -36,7 +36,8 @@
         {{ $langCode = "zh-hant" }}
       {{ end }}
       {{/* 计算文本内容 */}}
-      {{ $ccText := .Site.Params.creativeCommons.license | upper }}
+      {{ $cc := cond (isset .Params "license") .Params.license .Site.Params.creativeCommons.license }}
+      {{ $ccText := $cc | upper }}
       {{ $ccLink := printf "<a target='_blank' href='https://creativecommons.org/licenses/%s/4.0/deed.%s'>%s</a>" ( $ccText | lower) $langCode $ccText }}
       {{ if eq $ccText "CC0" "CC-ZERO" }}
         {{ $ccText = "CC0" }}
