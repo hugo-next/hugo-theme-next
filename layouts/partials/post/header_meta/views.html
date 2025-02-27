@@ -4,6 +4,8 @@
 {{ $pageViewId = "leancloud-visitors-count" }}  
 {{ else if eq .Site.Params.postMeta.views.plugin "busuanzi" }}
 {{ $pageViewId = "busuanzi_value_page_pv" }}
+{{ else if eq .Site.Params.postMeta.views.plugin "twikoo" }}
+{{ $pageViewId = "twikoo_visitors" }}
 {{ end }}
 <span class="post-meta-item" title="{{ T "PostMeta.views" }}">
   <span class="post-meta-item-icon">
