@@ -713,6 +713,9 @@ params:
     # 在代码块上添加拷贝按钮
     # Add copy button on codeblock
     copyBtn: true
+    # 代码块的默认显示行高
+    # Default max height of codeblock.
+    maxHeight: 200
 
   # 返回顶部设置
   # Backtop settings

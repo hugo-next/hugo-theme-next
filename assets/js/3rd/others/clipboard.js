@@ -24,10 +24,13 @@ NexT.plugins.others.clipboard = function () {
     ch.classList.add(lang);
     ch.insertAdjacentHTML('afterbegin', 
       '<span class="code-lang"></span><span class="collapse-btn"></span>');
-    ch.addEventListener('click', function () {       
-      element.classList.toggle('hidden-code');       
-      ch.querySelector('.collapse-btn').classList.toggle('collapse');
-    }, false);
+
+    if (element.scrollHeight > element.clientHeight+10) {
+      ch.addEventListener('click', function () {       
+        element.classList.toggle('hidden-code');       
+        ch.querySelector('.collapse-btn').classList.toggle('collapse');
+      }, false);
+    }
 
     element.parentNode.insertBefore(ch, element);
   });
