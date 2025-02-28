@@ -4,8 +4,8 @@
 exampleSite/public/
 exampleSite/resources/
 exampleSite/.hugo_build.lock
-exampleSite/config.dev.yaml
-exampleSite/config.release.yaml
+exampleSite/hugo.dev.yaml
+exampleSite/hugo.release.yaml
 exampleSite/dev-startup.sh
 
 
