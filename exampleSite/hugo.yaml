@@ -1055,9 +1055,6 @@ params:
     # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；其他可以不填写
     # Region, default is ap-shanghai, fill in ap-shanghai or ap-guangzhou for Tencent Cloud environment; others can be left blank
     region: 'ap-guangzhou'
-    # twikoo 的版本号
-    # Twikoo version
-    version: 1.6.41
 
 
   # ---------------------------------------------------------------
