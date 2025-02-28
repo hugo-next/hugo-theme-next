@@ -67,7 +67,6 @@ languages:
           pageRef: /post/10-math-formula
           weight: 2   
           parent: example
-          parent: example
         - identifier: flow-charts
           name: Flow Charts
           pageRef: /post/11-mermaid-charts
@@ -318,6 +317,13 @@ params:
     # 文章底部显示
     # Show in post footer
     post: true
+    # 是否为 AI 撰写
+    # Is AI write or not
+    byai: false
+    # NotByAI icon 颜色，可选配置 black | white
+    # NotByAI icon color. Available values: black | white
+    notByAiIconColor: "white"
+
 
   # OG SEO 配置
   # Open graph settings
@@ -585,8 +591,8 @@ params:
     # 是否开启页面访问数显示
     views:
       enable: true
-      # 页面访问统计插件，支持busuanzi, waline, waline3
-      # Page views counter plugin, support: busuanzi, waline, waline3
+      # 页面访问统计插件，支持busuanzi, waline, waline3, twikoo
+      # Page views counter plugin, support: busuanzi, waline, waline3, twikoo
       plugin: busuanzi
     # 是否开启过期提示
     # Expired tip
@@ -1044,6 +1050,21 @@ params:
     # 主题可选值： light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
     # Available values: light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
     theme: preferred_color_scheme
+
+  # twikoo 评论插件
+  # 更多配置信息请参考：https://twikoo.js.org
+  # Twikoo comments system
+  # For more information: https://twikoo.js.org
+  twikoo:
+    # 必填项，腾讯云环境填 envId；其他填写自己的后端地址
+    # Required, fill in envId for Tencent Cloud environment; fill in your own backend address for others
+    envid: 'http://192.168.31.50:8080'
+    # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；其他可以不填写
+    # Region, default is ap-shanghai, fill in ap-shanghai or ap-guangzhou for Tencent Cloud environment; others can be left blank
+    region: 'ap-guangzhou'
+    # twikoo 的版本号
+    # Twikoo version
+    version: 1.6.41
 
 
   # ---------------------------------------------------------------

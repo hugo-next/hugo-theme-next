@@ -145,6 +145,9 @@ utterances:
 livere:
   js: https://cdn-city.livere.com/js/embed.dist.js
 
+twikoo:
+  js: https://registry.npmmirror.com/twikoo/<version>/files/dist/twikoo.all.min.js
+
 
 # 全文搜索
 # Full text search
