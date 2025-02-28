@@ -87,6 +87,10 @@
 {{ $utterancesjs := resources.Get "js/3rd/comments/utterances.js" }}
 {{ $nextjs = $nextjs | append $utterancesjs }}
 {{ end }}
+{{ if isset .Site.Params "twikoo" }}
+{{ $twikoojs := resources.Get "js/3rd/comments/twikoo.js" }}
+{{ $nextjs = $nextjs | append $twikoojs }}
+{{ end }}
 
 {{/* Search engin scripts */}}
 {{ if .Site.Params.localSearch.enable }}
