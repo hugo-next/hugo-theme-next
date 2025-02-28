@@ -42,7 +42,7 @@
     border-left: 3px solid #ff2a2a;
     background: var(--card-bg-color);
 
-    img {
+    img.cc-icon {
       margin: 8px;
       opacity: .8;
       filter: blur(.08em);
@@ -62,6 +62,21 @@
 
       li {
         word-break: break-all;
+      }
+
+      .license-icons {
+        margin-top: .5em;
+        text-align: center;
+
+        a {
+          border-bottom: none;
+
+          img {
+            width: auto;
+            height: 35px;
+            display: inline-block;
+          }
+        }
       }
     }
   }

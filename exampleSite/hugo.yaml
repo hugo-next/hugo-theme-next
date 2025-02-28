@@ -318,6 +318,13 @@ params:
     # 文章底部显示
     # Show in post footer
     post: true
+    # 是否为 AI 撰写
+    # Is AI write or not
+    byai: false
+    # NotByAI icon 颜色，可选配置 black | white
+    # NotByAI icon color. Available values: black | white
+    notByAiIconColor: "white"
+
 
   # OG SEO 配置
   # Open graph settings
