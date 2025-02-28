@@ -7,7 +7,7 @@ NexT.plugins.comments.twikoo = function () {
 
     const twikoo_js = NexT.utils.getCDNResource(NexT.CONFIG.twikoo.js);
 
-    NexT.utils.lazyLoadComponent(element, function() {
+    NexT.utils.lazyLoadComponent("#twikoo", function() {
         NexT.utils.getScript(twikoo_js, function(){
             twikoo.init({
                 envId: NexT.CONFIG.twikoo.cfg.envid,
