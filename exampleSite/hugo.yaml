@@ -585,14 +585,14 @@ params:
     # 是否开启评论数显示
     comments: 
       enable: true
-      # 评论统计插件，暂只支持waline和waline3
-      # Comment counter plugin, only support waline and waline3
+      # 评论统计插件，暂只支持waline | waline3 | twikoo
+      # Comment counter plugin, only support waline | waline3 | twikoo
       plugin: waline
     # 是否开启页面访问数显示
     views:
       enable: true
-      # 页面访问统计插件，支持busuanzi, waline, waline3, twikoo
-      # Page views counter plugin, support: busuanzi, waline, waline3, twikoo
+      # 页面访问统计插件，支持busuanzi, waline, waline3, twikoo (其中 twikoo 仅支持文章页显示)
+      # Page views counter plugin, support: busuanzi, waline, waline3, twikoo (twikoo only support in post page)
       plugin: busuanzi
     # 是否开启过期提示
     # Expired tip
