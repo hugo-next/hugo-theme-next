@@ -242,6 +242,7 @@ plugins:
   # 复制到剪贴板
   clipboard:
     js: 
-      name: clipboard
+      name: "clipboard.js"
       version: 2.0.11
       file: dist/clipboard.min.js
+      alias: clipboard
