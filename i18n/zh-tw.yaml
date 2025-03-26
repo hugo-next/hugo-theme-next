@@ -95,7 +95,7 @@ PostCopyRight:
     link: 原文鏈接
   license:
     title: 版權聲明
-    content: "本博客所有文章除特別聲明外，均採用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 許可協議。轉載請註明出處！"
+    content: "本作品採用 <i class=\"fab fa-fw fa-creative-commons\"></i>%s 授權協議。轉載請註明出處！"
 
 PostFollowMe:
   other: 歡迎關注我的其它發布渠道

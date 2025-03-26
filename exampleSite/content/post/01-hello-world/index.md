@@ -12,6 +12,7 @@ tags:
   - Hugo
   - 开始
 
+byAi: true
 url: demo/hello-world.html
 toc: true
 weight: 2

@@ -1,6 +1,6 @@
 
 .highlight {
-
+  position: relative;
   background: var(--highlight-background);
   margin-bottom: 26px;
   line-height: 1.25;
@@ -41,11 +41,11 @@
       transition: content 1s ease-in-out;
       
       &::before {
-        content: "\f102";
+        content: "\f103";
       }
 
       &.collapse::before {
-        content: "\f103";
+        content: "\f102";
       }
     }
 
@@ -61,19 +61,17 @@
   }
 
   > .chroma {
-    position: relative;
-    max-height: 500px;
+    
+    max-height: #{$codeblock_max_height}px;
+    overflow-y: scroll;
     opacity: 1;
     visibility: visible;
-    transition: max-height 0.8s ease-in-out, opacity 0.7s ease-in-out; 
 
     &.hidden-code {
-      max-height: 0;
-      opacity: 0;
-      visibility: hidden;
+      max-height: none;
 
-      animation-name: slideInUp;
-      animation-duration: 1s;
+      animation-name: fadeInDown;
+      animation-duration: 0.5s;
     }
     
     pre {
@@ -122,8 +120,8 @@
         opacity: 0;
         padding: 2px 6px;
         position: absolute;
-        right: 8px;
-        top: 4px;
+        right: 24px;
+        top: 32px;
         border-radius: 3px;
         font-size: $font-size-medium;
         transition: opacity $transition-ease;

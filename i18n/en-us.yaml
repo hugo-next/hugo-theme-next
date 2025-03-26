@@ -96,7 +96,7 @@ PostCopyRight:
     link: Originally From
   license:
     title: Copyright Notice
-    content: "All articles in this blog are licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s unless stating additionally."
+    content: "This work is licensed under <i class=\"fab fa-fw fa-creative-commons\"></i>%s ."
 
 PostFollowMe:
   other: Welcome to my other publishing channels
