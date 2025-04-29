@@ -29,7 +29,7 @@
     {{ partial "post/header_meta/update_date.html" . }}
     {{ partial "post/header_meta/categories.html" . }}
     {{ if and $.IsHome (not (isset .Params "extlink")) }}
-      {{ if and .Site.Params.postMeta.views.enable (ne .Site.Params.postMeta.views.plugin "busuanzi") }}
+      {{ if and .Site.Params.postMeta.views.enable (ne .Site.Params.postMeta.views.plugin "busuanzi") (ne .Site.Params.postMeta.views.plugin "twikoo") }}
         {{ partial "post/header_meta/views.html" . }}
       {{ end }}
       {{ if $isComment }}
