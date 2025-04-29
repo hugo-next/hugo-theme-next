@@ -63,7 +63,7 @@
   > .chroma {
     
     max-height: #{$codeblock_max_height}px;
-    overflow-y: scroll;
+    overflow-y: auto;
     opacity: 1;
     visibility: visible;
 
