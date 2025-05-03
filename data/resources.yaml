@@ -87,13 +87,13 @@ analytics:
   baidu: https://hm.baidu.com/hm.js?
   google: https://www.googletagmanager.com/gtag/js?id=
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+  cloudflare: https://static.cloudflareinsights.com/beacon.min.js
 
 # 文章分享
 # Share
 share:
   sharethis:
     js: https://platform-api.sharethis.com/js/sharethis.js#property=id&product=inline-share-buttons&source=platform
-
   addtoany:
     js: https://static.addtoany.com/menu/page.js
 
@@ -115,13 +115,13 @@ waline:
 waline3:
   js:
     name: waline
-    version: 3.3.0
+    version: 3.5.6
     file: dist/waline.js
     alias: "@waline/client"
 
   css:
     name: waline
-    version: 3.3.0
+    version: 3.5.6
     file: dist/waline.min.css
     alias: "@waline/client"
 
