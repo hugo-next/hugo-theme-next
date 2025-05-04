@@ -232,7 +232,7 @@ menus:
       parent: example
     - identifier: flow-charts
       name: 流程图
-      url: /post/11-mermaid-charts
+      pageRef: /post/11-mermaid-charts
       weight: 3
       parent: example
     - identifier: archives
