@@ -1,4 +1,5 @@
 .table-container {
+  width: 100%;
   overflow: auto;
 }
 
@@ -6,8 +7,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: $table-font-size;
-  margin: 0 0 20px;
+  margin: 0 0 20px 0;
   width: 100%;
+  // Not sure it work better.
+  //table-layout: fixed;
+  word-wrap: anywhere;
 }
 
 tbody tr {
