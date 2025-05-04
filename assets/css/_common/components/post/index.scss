@@ -44,6 +44,8 @@
 
 @if $toc_number {
 .autonumber {
+  counter-reset: h2;
+  
   h2 {
     counter-reset: h3;
     &:before{
