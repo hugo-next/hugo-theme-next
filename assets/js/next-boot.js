@@ -60,6 +60,7 @@ NexT.boot.registerEvents = function() {
 NexT.boot.refresh = function() {
 
   NexT.utils.fmtSiteInfo();
+  NexT.utils.wrapTableWithBox();
 
   if (NexT.CONFIG.isMultiLang) {
     NexT.utils.registerLangSelect();
@@ -95,8 +96,8 @@ NexT.boot.refresh = function() {
   // NexT.CONFIG.pangu && window.pangu.spacingPage();
   /*NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
-  NexT.utils.registerLangSelect();*/
-  /*NexT.utils.wrapTableWithBox();
+  NexT.utils.registerLangSelect();
+  NexT.utils.wrapTableWithBox();
   NexT.utils.registerVideoIframe();*/
 
 };

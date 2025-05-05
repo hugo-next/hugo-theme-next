@@ -1,7 +1,7 @@
 /* clipboard plugin */
-NexT.plugins.others.clipboard = function () {
+NexT.plugins.others.clipboard = () => {
 
-  let chromaDiv = document.querySelectorAll('div.highlight div.chroma');
+  let chromaDiv = document.querySelectorAll('div.highlight > .chroma');
   if (chromaDiv.length === 0) return;
 
   chromaDiv.forEach(element => {
@@ -24,10 +24,17 @@ NexT.plugins.others.clipboard = function () {
     ch.classList.add(lang);
     ch.insertAdjacentHTML('afterbegin', 
       '<span class="code-lang"></span><span class="collapse-btn"></span>');
-    ch.addEventListener('click', function () {       
-      element.classList.toggle('hidden-code');       
-      ch.querySelector('.collapse-btn').classList.toggle('collapse');
-    }, false);
+
+    var collBtn = ch.querySelector('.collapse-btn');
+    if (element.scrollHeight > element.clientHeight+10) {
+      ch.addEventListener('click', () => {       
+        element.classList.toggle('hidden-code');       
+        collBtn.classList.toggle('collapse');
+      }, false);
+    } else {
+      ch.style.cursor = 'default'; 
+      ch.removeChild(collBtn);
+    }
 
     element.parentNode.insertBefore(ch, element);
   });
@@ -35,7 +42,7 @@ NexT.plugins.others.clipboard = function () {
   if (!NexT.CONFIG.copybtn || !NexT.CONFIG.page.clipboard) return;
 
   const clipboard_js = NexT.utils.getCDNResource(NexT.CONFIG.page.clipboard.js);
-  NexT.utils.getScript(clipboard_js, function () {   
+  NexT.utils.getScript(clipboard_js, () => {   
     // Register the clipboard event. 
     var clipboard = new ClipboardJS('.copy-btn', {
       text: function (trigger) {

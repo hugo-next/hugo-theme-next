@@ -42,7 +42,7 @@
     border-left: 3px solid #ff2a2a;
     background: var(--card-bg-color);
 
-    img {
+    img.cc-icon {
       margin: 8px;
       opacity: .8;
       filter: blur(.08em);
@@ -55,13 +55,30 @@
 
     ul {
       list-style: none;
-      padding: .5em 1em;
+      padding: .5em 1em 0em 1em;
       @include post-card();
       border: none;
       background: none;
 
       li {
         word-break: break-all;
+      }
+
+      .license-icons {
+        margin-top: .5em;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        a {
+          border-bottom: none;
+
+          img {
+            margin-left: .5em;
+            width: auto;
+            height: 34px;
+          }
+        }
       }
     }
   }

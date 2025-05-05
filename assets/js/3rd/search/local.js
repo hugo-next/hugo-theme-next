@@ -271,7 +271,46 @@ NexT.plugins.search.localsearch = function() {
       container.classList.remove('no-result');
       container.innerHTML = `<div class="search-stats">${stats}</div>
         <hr>
-        <ul class="search-result-list">${resultItems.map(result => result.item).join('')}</ul>`;
+        <ul class="search-result-list"></ul>`;
+      (function () {
+        const ul = container.querySelector('.search-result-list');
+        const itemLimit = 1;
+        const subitemLimit = 20;
+        const appendItem = () => {
+          let count = 0;
+          for (const result of resultItems.splice(0, itemLimit)) {
+            const div = document.createElement('div');
+            div.innerHTML = result.item;
+            const li = div.firstElementChild;
+            // Should the title be considered a subitem? Perhaps it should.
+            // count += Math.max(1, li.childElementCount - 1);
+            count += li.childElementCount;
+            ul.append(li);
+          };
+          return count;
+        };
+        // Count subitems instead of items.
+        const appendItems = () => {
+          let count = 0;
+          while (count < subitemLimit && resultItems.length > 0) {
+            const incr = appendItem();
+            if (!incr) {
+              console.log('local.js: cannot push items to the result list.')
+              break;
+            }
+            count += incr;
+          }
+        };
+        appendItems();
+        // Use onscroll instead of addEventListener('scroll', ...),
+        // and let the new event handler replace the old one.
+        container.onscroll = () => {
+          const scrollBottom = container.scrollTop + container.clientHeight;
+          if (container.scrollHeight - scrollBottom < 50) {
+            appendItems();
+          }
+        };
+      })();
       if (typeof pjax === 'object') pjax.refresh(container);
     }
   };
