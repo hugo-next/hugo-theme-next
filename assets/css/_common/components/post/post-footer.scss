@@ -55,7 +55,7 @@
 
     ul {
       list-style: none;
-      padding: .5em 1em;
+      padding: .5em 1em 0em 1em;
       @include post-card();
       border: none;
       background: none;
@@ -67,14 +67,16 @@
       .license-icons {
         margin-top: .5em;
         text-align: center;
+        display: flex;
+        justify-content: center;
 
         a {
           border-bottom: none;
 
           img {
+            margin-left: .5em;
             width: auto;
-            height: 35px;
-            display: inline-block;
+            height: 34px;
           }
         }
       }

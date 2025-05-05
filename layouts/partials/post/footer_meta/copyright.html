@@ -1,6 +1,6 @@
 {{ if .Site.Params.creativeCommons.post }}
 <div class="post-copyright">
-  <img src="/imgs/cc/cc.svg" class="cc-icon" width="75" height="75" align="right" alt="{{ T "Sidebar.label.ccommons" }}"/>
+  <img src="/imgs/cc/cc.svg" class="cc-icon" width="75" height="75" align="right" alt="{{ T "Sidebar.label.ccommons" }}" title="{{ T "Sidebar.label.ccommons" }}"/>
   <ul>
     <li class="post-copyright-title">
       <strong>{{ print (T "PostCopyRight.title") (T "Symbol.colon") }}</strong>
@@ -51,12 +51,12 @@
     <li>
       <div class="license-icons">
         <a href="{{ $ccUrl }}" target="_blank">
-          <img src="/imgs/cc/big/{{ $imgName }}.svg" alt="{{ $ccText }}">
+          <img src="/imgs/cc/big/{{ $imgName }}.svg" alt="{{ $ccText }}" title="{{ $ccText }}">
         </a>
         {{ $byAi := cond (isset .Params "byai") .Params.byAi .Site.Params.creativeCommons.byAi }}
         {{ if not $byAi }}
         <a href="https://notbyai.fyi" target="_blank">
-          <img src="/imgs/notbyai/{{ $langCode }}/{{ .Site.Params.creativeCommons.notByAiIconColor }}.svg">
+          <img src="/imgs/notbyai/{{ $langCode }}/{{ .Site.Params.creativeCommons.notByAiIconColor }}.svg" title="Not By AI">
         </a>
         {{ end }}
       </div>

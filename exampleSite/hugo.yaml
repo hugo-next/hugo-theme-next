@@ -668,7 +668,7 @@ params:
     #channel0: Twitter || https://twitter.com/username || fab fa-twitter
     #channel1: Telegram || https://t.me/channel_name || fab fa-telegram
     channel2: WeChat || /images/wechat_channel.jpg || fab fa-weixin
-    channel3: RSS || /atom.xml || fa fa-rss
+    channel3: RSS || /rss.xml || fa fa-rss
 
   # 文章的在线编辑
   # Post edit
