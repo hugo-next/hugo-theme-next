@@ -1,11 +1,12 @@
 /* clipboard plugin */
 NexT.plugins.others.clipboard = () => {
 
-  let chromaDiv = document.querySelectorAll('div.highlight div.chroma');
+  let chromaDiv = document.querySelectorAll('div.highlight > .chroma');
   if (chromaDiv.length === 0) return;
 
   chromaDiv.forEach(element => {
     // Add copy button DOM.
+    console.log(element);
     let codeblock = element.querySelector('code[class]:not([class=""]');
     let lang = codeblock.className;
     let copyBtn = document.createElement('div');
