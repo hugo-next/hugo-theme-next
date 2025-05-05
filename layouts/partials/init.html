@@ -138,6 +138,14 @@
 {{ $config = merge $config (dict "utterances" $utterances) }}
 {{ end }}
 
+{{ with .Site.Params.twikoo }}
+{{ $twikoo := dict
+  "js"  $.Site.Data.resources.twikoo.js
+  "cfg" .
+}}
+{{ $config = merge $config (dict "twikoo" $twikoo) }}
+{{ end }}
+
 {{ with .Site.Params.share }}
 
 {{ $share := dict "enable" .enable }}

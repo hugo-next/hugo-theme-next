@@ -61,6 +61,34 @@ NexT.plugins.others.counter = function () {
           `;
         NexT.utils.getScript(null, { module: true, textContent: comment_script });
         break;
+      case 'twikoo':
+        comment_js = NexT.utils.getCDNResource(NexT.CONFIG.twikoo.js);
+        NexT.utils.lazyLoadComponent("#twikoo", function () {
+          NexT.utils.getScript(comment_js, function () {
+            ele_list = document.querySelectorAll(comments_el);
+            let paths = [];
+            ele_list.forEach(ele => {
+              paths.push(ele.getAttribute('data-path'));
+            });
+            twikoo.getCommentsCount({
+              envId: NexT.CONFIG.twikoo.cfg.envid,
+              region: NexT.CONFIG.twikoo.cfg.region ? NexT.CONFIG.twikoo.cfg.region : 'ap-shanghai',
+              urls: paths,
+              includeReply: true,
+            }).then(function (res) {
+              let count_map = {};
+              res.forEach(item => {
+                count_map[item.url] = item.count;
+              });
+              ele_list.forEach(ele => {
+                ele.innerHTML = count_map[ele.getAttribute('data-path')];
+              });
+            }).catch(function (err) {
+              console.error(err);
+            });;
+          });
+        });
+        break;
     }
   }
 }

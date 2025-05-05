@@ -28,8 +28,10 @@
 {{ if .enable }}
 <div class="beian">
   <a href="https://beian.miit.gov.cn" target="_blank">{{ .icp }}</a>
+  {{ if .gonganNum }}
   <img src="/imgs/gongan.png" alt="{{ .provinceAbbr }}公网安备">
   <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode={{ .gonganNum }}" target="_blank">{{ .provinceAbbr }}公网安备 {{ .gonganNum }} 号</a>
+  {{ end }}
 </div>
 {{ end }}
 {{ end }}

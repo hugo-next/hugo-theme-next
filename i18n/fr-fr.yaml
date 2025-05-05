@@ -95,7 +95,7 @@ PostCopyRight:
     link: Originellement de
   license:
     title: Note de Copyright
-    content: "Tous les articles sont sous licence <i class=\"fab fa-fw fa-creative-commons\"></i>%s."
+    content: "Cette œuvre est sous licence <i class=\"fab fa-fw fa-creative-commons\"></i>%s."
 
 PostFollowMe:
   other: "Autres réseaux sociaux"

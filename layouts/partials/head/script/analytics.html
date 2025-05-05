@@ -10,3 +10,6 @@
 {{ if or (isset .Site.Params.analytics "busuanzi") (eq .Site.Params.postMeta.views.plugin "busuanzi") }}
   {{ partial "_thirdparty/analytics/busuanzi.html" . }}  
 {{ end }}
+{{ if isset .Site.Params.analytics "cloudflare" }}
+  {{ partial "_thirdparty/analytics/cloudflare.html" . }}  
+{{ end }}

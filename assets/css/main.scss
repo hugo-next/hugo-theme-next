@@ -47,6 +47,7 @@ $highlight_light_foreground : #fff;
 
 $codeblock_copy_btn_enable   : {{ $P.codeblock.copyBtn }};
 $codeblock_style             : {{ $P.codeblock.style }};
+$codeblock_max_height        : {{ default $P.codeblock.maxHeight 200 }};
 
 // Sidebar
 $sidebar_offset             : {{ $P.sidebar.offset }};

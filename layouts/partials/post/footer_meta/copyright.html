@@ -1,6 +1,6 @@
 {{ if .Site.Params.creativeCommons.post }}
 <div class="post-copyright">
-  <img src="/imgs/cc/cc.svg" width="75" height="75" align="right" alt="{{ T "Sidebar.label.ccommons" }}"/>
+  <img src="/imgs/cc/cc.svg" class="cc-icon" width="75" height="75" align="right" alt="{{ T "Sidebar.label.ccommons" }}" title="{{ T "Sidebar.label.ccommons" }}"/>
   <ul>
     <li class="post-copyright-title">
       <strong>{{ print (T "PostCopyRight.title") (T "Symbol.colon") }}</strong>
@@ -24,11 +24,42 @@
         <a id="post-cr-link" href="{{ .Permalink | absLangURL }}" title="{{ .Title }}">{{ .Permalink | absLangURL }}</a>
       {{ end }}
     </li>
+    {{/* 计算链接中的语言 */}}
+    {{ $lang := .Site.LanguageCode | upper }}
+    {{ $langCode := substr .Site.LanguageCode 0 2 }}
+    {{ if eq $lang "ZH-CN" "ZH" "ZH-CHS" }}
+      {{ $langCode = "zh-hans" }}
+    {{ end }}
+    {{ if eq $lang "ZH-CHT" "ZH-HK" "ZH-MO" "ZH-TW" "ZH-SG" }}
+      {{ $langCode = "zh-hant" }}
+    {{ end }}
+    {{/* 计算文本内容 */}}
+    {{ $cc := cond (isset .Params "license") .Params.license .Site.Params.creativeCommons.license }}
+    {{ $ccText := $cc | upper }}
+    {{ $ccUrl := printf "https://creativecommons.org/licenses/%s/4.0/deed.%s" ( $ccText | lower) $langCode }}
+    {{ $imgName := replace $cc "-" "_" }}
+    {{ if eq $ccText "CC0" "CC-ZERO" }}
+      {{ $ccText = "CC0" }}
+      {{ $imgName = "cc_zero" }}
+      {{ $ccUrl = printf "https://creativecommons.org/publicdomain/zero/1.0/deed.%s" $langCode }}
+    {{ end }}
     <li class="post-copyright-license">
       <strong>{{ print (T "PostCopyRight.license.title") (T "Symbol.colon") }} </strong>
-      {{ $ccText := .Site.Params.creativeCommons.license | upper }}
-      {{ $ccLink := printf "<a target='_blank' href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.%s'>%s</a>" (substr .Site.LanguageCode 0 2) $ccText }}
+      {{ $ccLink := printf "<a target='_blank' href='%s'>%s</a>" $ccUrl $ccText }}
       {{ printf (T "PostCopyRight.license.content") $ccLink | safeHTML }}
+    </li>
+    <li>
+      <div class="license-icons">
+        <a href="{{ $ccUrl }}" target="_blank">
+          <img src="/imgs/cc/big/{{ $imgName }}.svg" alt="{{ $ccText }}" title="{{ $ccText }}">
+        </a>
+        {{ $byAi := cond (isset .Params "byai") .Params.byAi .Site.Params.creativeCommons.byAi }}
+        {{ if not $byAi }}
+        <a href="https://notbyai.fyi" target="_blank">
+          <img src="/imgs/notbyai/{{ $langCode }}/{{ .Site.Params.creativeCommons.notByAiIconColor }}.svg" title="Not By AI">
+        </a>
+        {{ end }}
+      </div>
     </li>
   </ul>
 </div>
