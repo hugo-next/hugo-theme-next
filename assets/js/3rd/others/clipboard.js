@@ -6,7 +6,6 @@ NexT.plugins.others.clipboard = () => {
 
   chromaDiv.forEach(element => {
     // Add copy button DOM.
-    console.log(element);
     let codeblock = element.querySelector('code[class]:not([class=""]');
     let lang = codeblock.className;
     let copyBtn = document.createElement('div');
