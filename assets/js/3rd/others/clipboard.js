@@ -25,13 +25,15 @@ NexT.plugins.others.clipboard = () => {
     ch.insertAdjacentHTML('afterbegin', 
       '<span class="code-lang"></span><span class="collapse-btn"></span>');
 
+    var collBtn = ch.querySelector('.collapse-btn');
     if (element.scrollHeight > element.clientHeight+10) {
       ch.addEventListener('click', () => {       
         element.classList.toggle('hidden-code');       
-        ch.querySelector('.collapse-btn').classList.toggle('collapse');
+        collBtn.classList.toggle('collapse');
       }, false);
     } else {
       ch.style.cursor = 'default'; 
+      ch.removeChild(collBtn);
     }
 
     element.parentNode.insertBefore(ch, element);
