@@ -1,4 +1,4 @@
-/* boot starup */
+/* boot startup */
 
 (function () {
   const onPageLoaded = () => document.dispatchEvent(

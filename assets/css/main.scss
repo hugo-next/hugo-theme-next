@@ -89,7 +89,7 @@ $post_share_enable          : {{ $P.share.enable }};
 $post_sharethis_set         : {{ isset $P.share "sharethis" }};
 $post_alert_colors          : ({{ range $key, $value := $P.postAlerts }} {{ $key }}: {{ $value.color }}, {{ end }});
 
-// TODO find the paramters
+// TODO find the parameters
 $text_align_desktop         : {{ $P.textAlign.desktop }};
 $text_align_mobile          : {{ $P.textAlign.mobile }};
 

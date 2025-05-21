@@ -86,18 +86,18 @@
     visibility: hidden;
   }
 
-  /** Defined speical border properties for top card of post **/
-  $speical-border-width: 5px;
-  $speical-border-radius: 8px;
+  /** Defined special border properties for top card of post **/
+  $special-border-width: 5px;
+  $special-border-radius: 8px;
   .post-expired-tip {
 
     $expired-color: #4A90E2;
 
     font-size: var(--font-size-small);
     border: 1px solid #4A90E2;
-    border-radius: $speical-border-radius;
-    border-left: $speical-border-width solid #4A90E2;
-    border-top:  $speical-border-width solid #4A90E2;
+    border-radius: $special-border-radius;
+    border-left: $special-border-width solid #4A90E2;
+    border-top:  $special-border-width solid #4A90E2;
     box-shadow: .6rem .5rem 0.3rem var(--body-bg-color);
     margin: .85em .05em;
     padding: 0.65em 0.15em 0.65em 0.95em;
@@ -120,10 +120,10 @@
     $summary-color: #ea6733;
 
     margin: .85em .05em;
-    border-radius: $speical-border-radius;
+    border-radius: $special-border-radius;
     border: 1px solid $summary-color;
-    border-right: $speical-border-width solid $summary-color;
-    border-bottom: $speical-border-width solid $summary-color;
+    border-right: $special-border-width solid $summary-color;
+    border-bottom: $special-border-width solid $summary-color;
     box-shadow: .6rem .5rem 0.3rem var(--body-bg-color);
 
     .summary-title {
@@ -134,7 +134,7 @@
 
     .summary-content {
       background-color: var(--card-bg-color);
-      border-radius: $speical-border-radius;
+      border-radius: $special-border-radius;
       box-shadow: .08rem .06rem 0.03rem var(--body-bg-color);
       margin: .85em;
       padding: .85em .95em;
