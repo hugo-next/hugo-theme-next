@@ -33,7 +33,7 @@
 
 ## 👣 Quick Start
 
-Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extened` software in your PC.
+Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extended` software in your PC.
 
 ### 📦 Install Hugo
 
@@ -83,7 +83,7 @@ $ cd hugo-next-example
 $ hugo server
 ```
 
-Done that input adrress http://127.0.0.1:1313/ on browser will see the effect & good luck for you! :tada::tada::tada:
+Done that input address http://127.0.0.1:1313/ on browser will see the effect & good luck for you! :tada::tada::tada:
 
 > **Note**
 > Don't use `hugo server` command deploy your site and enable internet visit, it just used to preview when you develop on local environment. Recommended use `hugo` command build static files all site, then deploy them into Web server such as `Nginx`.
@@ -113,7 +113,7 @@ $ hugo new posts/hello-world.md
 ```
 
 > **Note**
-> By defalut `hugo new` command will create new post under `content` root directory, so in here `posts` were you custom subfolder in `content` directory.
+> By default `hugo new` command will create new post under `content` root directory, so in here `posts` were you custom subfolder in `content` directory.
 
 All front matter parameters's description in post as below:
 
@@ -151,7 +151,7 @@ tags:
 #toc: false
 # Absolute link for visit
 #url: "{{ lower .Name }}.html"
-# Sticky post set-top in home page and the smaller nubmer will more forward.
+# Sticky post set-top in home page and the smaller number will more forward.
 #weight: 1
 # Support Math Formulas render, options: mathjax, katex
 #math: mathjax
@@ -169,7 +169,7 @@ tags:
 - [Zero's Record](https://izeroo.cn/)
 - [More Cases](https://hugo-next.eu.org/flinks.html)
 
-Hope could submmit your site information in this file [flinks.yaml](https://github.com/hugo-next/hugo-next-docs/blob/develop/data/flinks.yaml) end line such as below code sytle when you use `Hugo NexT` theme, thanks.
+Hope could submit your site information in this file [flinks.yaml](https://github.com/hugo-next/hugo-next-docs/blob/develop/data/flinks.yaml) end line such as below code style when you use `Hugo NexT` theme, thanks.
 
 ```yaml
 - name: NexT 主题
@@ -186,7 +186,7 @@ Hope could submmit your site information in this file [flinks.yaml](https://gith
 
 ## 👨‍👩‍👧‍👦 Join us
 
-All features development progress and new request in [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9), welcome to join us and compelete it together.
+All features development progress and new request in [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9), welcome to join us and complete it together.
 
 [![Contributors](https://contrib.rocks/image?repo=hugo-next/hugo-theme-next)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors)
 
@@ -200,7 +200,7 @@ Copyright (c) 2022, hugo-next teams.
 
 ## 💖 Thanks
 
-That's my hobby to develop `Hugo NexT` theme, thanks all people who gived the donate, and let we follow it growth up.
+It's my hobby to develop `Hugo NexT` theme, thanks all people who donated, and let we follow it growth up.
 
 List of Donors(Order desc by Date):
 
@@ -216,4 +216,3 @@ List of Donors(Order desc by Date):
 |  2022.05.08  | *泉    | wechat pay    | RMB 6.60         | Good luck with next develop.                                               |
 |  2022.02.28  | *娇    | wechat pay    | RMB 5.00         | /                                                                          |
 |  2021.12.21  | z*y    | wechat pay    | RMB 18.88        | /                                                                          |
-

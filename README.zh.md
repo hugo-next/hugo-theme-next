@@ -33,7 +33,7 @@
 
 ## 👣 快速开始
 
-在使用 `Hugo NexT` 主题之前，请确认你的电脑上已经安装 `Git` 和 `Hugo Extened` 两款软件。
+在使用 `Hugo NexT` 主题之前，请确认你的电脑上已经安装 `Git` 和 `Hugo Extended` 两款软件。
 
 ### 📦 快速预览
 
