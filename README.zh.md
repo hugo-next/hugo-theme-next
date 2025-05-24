@@ -24,10 +24,10 @@
 
 ## 👀 在线预览
 
-|   环境   |           :gemini: (**Default**)           |               :heart_decoration:               |               :six_pointed_star:               |                      :pisces:                      |                                            状态                                            |
-| :------: | :-----------------------------------------: | :--------------------------------------------: | :--------------------------------------------: | :------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
+| 演示环境 | :gemini: (**Default**) | :heart_decoration: | :six_pointed_star: | :pisces: | 运行状态 |
+| :-----: | :--------------------: | :----------------: | :----------------: | :------: | :----: |
 | 开发版本 | [双子座](https://preview.hugo-next.eu.org/) | [冥想](https://preview.hugo-next.eu.org/muse/) | [迷雾](https://preview.hugo-next.eu.org/mist/) | [双鱼座](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
-| 正式版本 |     [双子座](https://hugo-next.eu.org/)     |     [冥想](https://hugo-next.eu.org/muse/)     |     [迷雾](https://hugo-next.eu.org/mist/)     |     [双鱼座](https://hugo-next.eu.org/pisces/)     | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
+| 正式版本 | [双子座](https://hugo-next.eu.org/) | [冥想](https://hugo-next.eu.org/muse/) | [迷雾](https://hugo-next.eu.org/mist/) | [双鱼座](https://hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
 > [!NOTE]
 > - 开发版本： 所有的新功能开发都会在此第一时间发布预览
@@ -117,8 +117,9 @@ $ hugo mod get -u
 $ hugo new posts/hello-world.md
 ```
 
-> [!NOTE]
-> 其中 `posts` 路径是 `content` 根目录下的子文件夹，可依据自己的文件管理形态调整。
+> [!IMPORTANT]
+> 其中 `posts` 路径是 `content` 根目录下的子文件夹，可依据自己的文件管理形态调整。同时你也可以增加不同的文件夹进行分类管理，比如：`content/life/` 、`content/blog/` 、`content/docs/` 等，并要把这些文件夹加入到 `hugo.yaml` 文件的 `mainSections` 配置项中。
+> 另外要保留 `content/archives` 文件夹及在里面创建一个`_index.md`文件，它将作为文章归档的默认页面。
 
 关于文章头部那些参数作用的说明参考如下：
 
@@ -164,8 +165,6 @@ tags:
 #weight: 1
 # 开启数学公式渲染，可选值： mathjax, katex
 #math: mathjax
-# 开启各种图渲染，如流程图、时序图、类图等
-#mermaid: true
 ---
 ```
 
