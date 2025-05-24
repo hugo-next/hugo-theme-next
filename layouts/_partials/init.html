@@ -1,14 +1,16 @@
 {{/* Use to define global variables */}}
 
-{{ $majorVer := int (index (split hugo.Version ".") 1) }}
-{{ if lt $majorVer 134 }}
-  {{ errorf "当前 Hugo 版本为 %s 小于 0.134.0，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases" hugo.Version }}  
-  {{ errorf "Current Hugo version is %s less then 0.134.0, Please download the Hugo latest version from offical site: https://github.com/gohugoio/hugo/releases" hugo.Version }}  
+{{ $curMajorVer := int (index (split hugo.Version ".") 1) }}
+{{ $requreVer := .Site.Data.config.hugoVersion }}
+{{ $minMajorVer := int (index (split $requreVer ".") 1) }}
+{{ if lt $curMajorVer $minMajorVer }}
+  {{ errorf "当前 Hugo 版本为 %s 小于 %s，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases 。" hugo.Version $requreVer }}  
+  {{ errorf "Current Hugo version is %s less then %s, Please download the Hugo latest version from offical site: https://github.com/gohugoio/hugo/releases ." hugo.Version $requreVer }}  
   {{ end }}
   
 {{ if not hugo.IsExtended }}
-  {{ errorf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases" }}  
-  {{ errorf "Because that use SCSS framework in Hugo NexT, Please download the Hugo extended version from offical site: https://github.com/gohugoio/hugo/releases" }}  
+  {{ errorf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases 。" }}  
+  {{ errorf "The Hugo NexT theme uses the SCSS framework, Please download the Hugo Extended version from the official site: https://github.com/gohugoio/hugo/releases." }}  
 {{ end }}
 {{ $globalVars := newScratch }}
 
