@@ -10,7 +10,7 @@
 
 > All page designs & configuration compatibility with Hexo NexT, it's very easy migrate your site from Hexo to Hugo and enjoy yourself.
 
-[![Gitter](https://img.shields.io/gitter/room/hugo-next/hugo-them-next?logo=gitter&style=flat-square&label=Gitter)](https://app.gitter.im/#/room/#hugo-next_community:gitter.im) [![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.134.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
+[![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.146.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
 
 ![Screenshot](images/screenshot.png)
 
@@ -23,17 +23,17 @@
 
 ## 👀 Live Preview
 
-| Environment |           :gemini: (**Default**)           |               :heart_decoration:               |               :six_pointed_star:               |                      :pisces:                      |                                               Status                                               |
-| :---------: | :-----------------------------------------: | :--------------------------------------------: | :--------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------------------------------------------------------: |
+| Environment | :gemini: (**Default**) | :heart_decoration: | :six_pointed_star: | :pisces: | Status |
+| :---------: | :--------------------: | :----------------: | :----------------: | :------: | :----: |
 | Preliminary | [Gemini](https://preview.hugo-next.eu.org/) | [Muse](https://preview.hugo-next.eu.org/muse/) | [Mist](https://preview.hugo-next.eu.org/mist/) | [Pisces](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=preview-hugo-next&style=for-the-badge) |
-| Production |     [Gemini](https://hugo-next.eu.org/)     |     [Muse](https://hugo-next.eu.org/muse/)     |     [Mist](https://hugo-next.eu.org/mist/)     |     [Pisces](https://hugo-next.eu.org/pisces/)     |     ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge)     |
+| Production |  [Gemini](https://hugo-next.eu.org/) | [Muse](https://hugo-next.eu.org/muse/) | [Mist](https://hugo-next.eu.org/mist/) | [Pisces](https://hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
 > - Preliminary: all new feature developments will be previewed as soon as possible.
 > - Production: Only the features that are tested stably and meet the requirements will be officially released.
 
 ## 👣 Quick Start
 
-Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extened` software in your PC.
+Before use `Hugo NexT` theme, please make sure installed `Git` & `Hugo Extended` software in your PC.
 
 ### 📦 Install Hugo
 
@@ -83,9 +83,9 @@ $ cd hugo-next-example
 $ hugo server
 ```
 
-Done that input adrress http://127.0.0.1:1313/ on browser will see the effect & good luck for you! :tada::tada::tada:
+Done that input address http://127.0.0.1:1313/ on browser will see the effect & good luck for you! :tada::tada::tada:
 
-> **Note**
+> [!NOTE]
 > Don't use `hugo server` command deploy your site and enable internet visit, it just used to preview when you develop on local environment. Recommended use `hugo` command build static files all site, then deploy them into Web server such as `Nginx`.
 
 ### 🔄 Upgrade Theme
@@ -112,8 +112,9 @@ There had ready a new post template for you,  It is recommended to use the follo
 $ hugo new posts/hello-world.md
 ```
 
-> **Note**
-> By defalut `hugo new` command will create new post under `content` root directory, so in here `posts` were you custom subfolder in `content` directory.
+> [!NOTE]
+> By default `hugo new` command will create new post under `content` root directory, so in here `posts` were you custom subfolder in `content` root directory. At the same time, you can also add different folders for classification management. For example: ` content/life/`, ` content/blog/`, ` content/docs/` etc, And add these folders to the `mainSections` configuration item in the `hugo.yaml` file.
+> Additionally, it is necessary to keep the 'content/archives' folder and create a' _index. md 'file within it, which will serve as the default page for article archiving.
 
 All front matter parameters's description in post as below:
 
@@ -151,12 +152,10 @@ tags:
 #toc: false
 # Absolute link for visit
 #url: "{{ lower .Name }}.html"
-# Sticky post set-top in home page and the smaller nubmer will more forward.
+# Sticky post set-top in home page and the smaller number will more forward.
 #weight: 1
 # Support Math Formulas render, options: mathjax, katex
 #math: mathjax
-# Enable chart render, such as: flow, sequence, classes etc
-#mermaid: true
 ---
 ```
 
@@ -169,7 +168,7 @@ tags:
 - [Zero's Record](https://izeroo.cn/)
 - [More Cases](https://hugo-next.eu.org/flinks.html)
 
-Hope could submmit your site information in this file [flinks.yaml](https://github.com/hugo-next/hugo-next-docs/blob/develop/data/flinks.yaml) end line such as below code sytle when you use `Hugo NexT` theme, thanks.
+Hope could submit your site information in this file [flinks.yaml](https://github.com/hugo-next/hugo-next-docs/blob/develop/data/flinks.yaml) end line such as below code style when you use `Hugo NexT` theme, thanks.
 
 ```yaml
 - name: NexT 主题
@@ -186,7 +185,7 @@ Hope could submmit your site information in this file [flinks.yaml](https://gith
 
 ## 👨‍👩‍👧‍👦 Join us
 
-All features development progress and new request in [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9), welcome to join us and compelete it together.
+All features development progress and new request in [Hugo NexT V4 Roadmap](https://github.com/hugo-next/hugo-theme-next/issues/9), welcome to join us and complete it together.
 
 [![Contributors](https://contrib.rocks/image?repo=hugo-next/hugo-theme-next)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors)
 
@@ -200,7 +199,7 @@ Copyright (c) 2022, hugo-next teams.
 
 ## 💖 Thanks
 
-That's my hobby to develop `Hugo NexT` theme, thanks all people who gived the donate, and let we follow it growth up.
+It's my hobby to develop `Hugo NexT` theme, thanks all people who donated, and let we follow it growth up.
 
 List of Donors(Order desc by Date):
 
@@ -216,4 +215,3 @@ List of Donors(Order desc by Date):
 |  2022.05.08  | *泉    | wechat pay    | RMB 6.60         | Good luck with next develop.                                               |
 |  2022.02.28  | *娇    | wechat pay    | RMB 5.00         | /                                                                          |
 |  2021.12.21  | z*y    | wechat pay    | RMB 18.88        | /                                                                          |
-

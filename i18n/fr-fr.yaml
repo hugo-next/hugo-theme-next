@@ -84,11 +84,11 @@ PostAlert:
   error    : "Erreur"
   warning  : "Avertissement"
   success  : "Succès"
-  important: "Inportant"
+  important: "Important"
 
 PostCopyRight:
   title:  Titre du billet
-  author: Autheur du billet
+  author: Auteur du billet
   link: Lien du billet
   origin:
     author: Écrit par

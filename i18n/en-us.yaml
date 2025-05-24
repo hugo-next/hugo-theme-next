@@ -47,7 +47,7 @@ PostArchive:
     ok: Ok
     nice: Nice
     good: Good
-    great: Greate
+    great: Great
     excellent: Excellent
   keepOn: Keep on posting.╰(*°▽°*)╯
 
@@ -57,7 +57,7 @@ PostMeta:
     date: "Publish on"
     time: "Create Time"
   lastmod:
-    date: "Update on"
+    date: "Updated on"
     time: "Modify Time"
   category: "Classify at"
   words: 
@@ -65,7 +65,7 @@ PostMeta:
     count: "{{- .WordCount -}}"
   reading:
     title: Read
-    time: "{{- .ReadingTime -}}mins"
+    time: "{{- .ReadingTime -}} min"
   views: Views
   comments: Comments
   tags: Tags
@@ -125,7 +125,7 @@ SiteInfoItems:
   lastUpdate: "Last Update:"
 
 Footer:
-  powerby: "Power by %s"
+  powerby: "Powered by %s"
 
 Search:
   placeholder: Searching...
