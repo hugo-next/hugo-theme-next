@@ -8,9 +8,10 @@
 
 «Hugo NexT» 是一款高质量且优雅的 [Hugo](https://gohugo.io) 主题，从原来 `Hexo` 引擎的 [`NexT`](https://github.com/next-theme/hexo-theme-next) 主题中移植过来，继续保留其经典的设计和 4 种不同页面布局模式，一切因 :heart: 重新出发愿你也能喜欢。
 
+> [!NOTE]
 > 本主题的所有页面设计和配置项都与原来 `Hexo` 引擎的 `NexT` 主题保持了良好的兼容性，可以非常平滑的从 `Hexo` 迁移至 `Hugo` 引擎，欢迎大家使用并反馈。
 
-[![Gitter](https://img.shields.io/gitter/room/hugo-next/hugo-them-next?logo=gitter&style=flat-square&label=Gitter)](https://app.gitter.im/#/room/#hugo-next_community:gitter.im) [![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.134.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
+[![Build Hugo Version](https://img.shields.io/badge/Hugo-%3E=0.146.0-red?style=flat-square&logo=hugo&color=%23FF4088&&label=Hugo%20Extended)](https://github.com/gohugoio/hugo/releases/latest) [![GitHub deployments](https://img.shields.io/github/deployments/hugo-next/hugo-next.github.io/github-pages?style=flat-square&logo=GitHub&label=Github%20Pages)](https://github.com/hugo-next/hugo-theme-next)  [![Contributors](https://img.shields.io/github/contributors/hugo-next/hugo-theme-next?style=flat-square&color=%235E0D73&logo=contributorcovenant&label=Contributors)](https://github.com/hugo-next/hugo-theme-next/graphs/contributors) [![Latest Release](https://img.shields.io/github/v/release/hugo-next/hugo-theme-next?include_prereleases&style=flat-square&color=%23DD2C00&logo=semanticrelease&label=Latest%20Release)](https://github.com/hugo-next/hugo-theme-next/releases)  [![Repos Size](https://img.shields.io/github/repo-size/hugo-next/hugo-theme-next?style=flat-square&color=%23FFBF3B&logo=Files&label=Repo%20Size)](https://github.com/hugo-next/hugo-theme-next/find/main) [![GitHub](https://img.shields.io/github/license/hugo-next/hugo-theme-next?logo=webauthn&style=flat-square&label=License)](https://github.com/hugo-next/hugo-theme-next/blob/main/LICENSE)
 
 ![截图](images/screenshot.png)
 
@@ -28,6 +29,7 @@
 | 开发版本 | [双子座](https://preview.hugo-next.eu.org/) | [冥想](https://preview.hugo-next.eu.org/muse/) | [迷雾](https://preview.hugo-next.eu.org/mist/) | [双鱼座](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 | 正式版本 |     [双子座](https://hugo-next.eu.org/)     |     [冥想](https://hugo-next.eu.org/muse/)     |     [迷雾](https://hugo-next.eu.org/mist/)     |     [双鱼座](https://hugo-next.eu.org/pisces/)     | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
+> [!NOTE]
 > - 开发版本： 所有的新功能开发都会在此第一时间发布预览
 > - 正式版本： 只有测试稳定且符合要求的功能才会正式发布
 
@@ -85,7 +87,7 @@ $ hugo server
 
 打开浏览器，在地址栏输入 http://127.0.0.1:1313/ 查看主题效果，祝你好运！:tada::tada::tada:
 
-> **Note**
+> [!NOTE]
 > 要注意下 `hugo server` 命令只是用于本地开发或写文章时预览，并非是将其直接对外网开放访问。在正式发布时，可通过 `hugo` 命令生成全站静态文件，然后部署到类似 `Nginx` 的 Web 服务器即可。
 
 ### 🔄 主题更新
@@ -104,7 +106,7 @@ $ cd hugo-next-example
 $ hugo mod get -u
 ```
 
-> **Note**
+> [!NOTE]
 > 本主题的代码同时也同步到 `Gitee` 仓库，在国内环境可切换用 [https://gitee.com/hugo-next/hugo-theme-next.git](https://gitee.com/hugo-next/hugo-theme-next.git) 镜像速度更快，也更稳定。
 
 ## 📝 发表新文章
@@ -115,7 +117,7 @@ $ hugo mod get -u
 $ hugo new posts/hello-world.md
 ```
 
-> **Note**
+> [!NOTE]
 > 其中 `posts` 路径是 `content` 根目录下的子文件夹，可依据自己的文件管理形态调整。
 
 关于文章头部那些参数作用的说明参考如下：
@@ -225,4 +227,3 @@ Copyright (c) 2022， hugo-next 团队
 | 2022.05.08 | *泉    | 微信支付 | ¥6.60   | 祝开发next顺利                   |
 | 2022.02.28 | *娇    | 微信支付 | ¥5.00   | /                                |
 | 2021.12.21 | z*y    | 微信支付 | ¥18.88  | /                                |
-
