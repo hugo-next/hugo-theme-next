@@ -26,9 +26,13 @@ This theme now supports the use of `Mermaid` to draw flowcharts, sequence diagra
 {{< note info >}}
 
 - Create a new article using the `hugo new` command
+- Add `mermaid` short code to the article, and support Markdown code syntax to write the language as `mermaid`
 - Write various types of diagrams using short code, with 2 built-in parameters: Align and bc (background color) can refer to the following usage examples
 
 {{< /note >}}
+
+> [!WARNING]
+> It is recommended to add textual descriptions in the two `Mermaid` codes to avoid initialization recognition errors and incomplete display of legend content.
 
 ## Process diagram
 
@@ -52,35 +56,40 @@ C-->D;
 
 ## Timing diagram
 
-```shell
-{{</* mermaid bc="#eee"  */>}}
+
+```markdown
+<!-- 注意把//去掉 -->
+// ```mermaid { bc="#eee" }
 sequenceDiagram
-participant Alice
-participant Bob
-Alice->>John: Hello John, how are you?
-loop Healthcheck
-John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts <br/>prevail!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
-{{</* /mermaid */>}}
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+
+// ```
+
 ```
 
-{{< mermaid bc="#eee" >}}
+```mermaid { bc="#eee" }
 sequenceDiagram
-participant Alice
-participant Bob
-Alice->>John: Hello John, how are you?
-loop Healthcheck
-John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts <br/>prevail!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
-{{< /mermaid >}}
+    participant Alice
+    participant Bob
+    Alice->>John: Hello John, how are you?
+    loop Healthcheck
+        John->>John: Fight against hypochondria
+    end
+    Note right of John: Rational thoughts <br/>prevail!
+    John-->>Alice: Great!
+    John->>Bob: How about you?
+    Bob-->>John: Jolly good!
+
+```
 
 ## Class diagram
 
