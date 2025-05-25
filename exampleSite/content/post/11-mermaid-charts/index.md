@@ -26,9 +26,14 @@ toc: true
 {{< note info >}}
 
 - 通过 `hugo new` 命令创建一篇新的文章
+- 在文章中添加`mermaid`短代码，同时支持Markdown代码语法，将语言写成`mermaid`
 - 使用短代码书写各种类型的图，自带2个参数： align（对齐） 和 bc（背景色），可参考如下使用示例
 
 {{< /note >}}
+
+> [!WARNING]
+> 在两个 `Mermaid` 代码中建议增加文字描述说明，避免被初始化识别错误，不能完整的显示图例内容。
+
 
 ## 流程图
 
@@ -52,8 +57,9 @@ graph TD;
 
 ## 时序图
 
-```shell
-{{</* mermaid bc="#eee"  */>}}
+```markdown
+<!-- 注意把//去掉 -->
+// ```mermaid { bc="#eee" }
 sequenceDiagram
     participant Alice
     participant Bob
@@ -65,10 +71,12 @@ sequenceDiagram
     John-->>Alice: Great!
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
-{{</* /mermaid */>}}
+
+// ```
+
 ```
 
-{{< mermaid bc="#eee" >}}
+```mermaid { bc="#eee" }
 sequenceDiagram
     participant Alice
     participant Bob
@@ -80,7 +88,8 @@ sequenceDiagram
     John-->>Alice: Great!
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
-{{< /mermaid >}}
+
+```
 
 ## 类图
 
@@ -102,6 +111,7 @@ Class01 : int gorilla
 Class08 <--> C2: Cool label
 {{</* /mermaid */>}}
 ```
+
 {{< mermaid >}}
 classDiagram
 Class01 <|-- AveryLongClass : Cool

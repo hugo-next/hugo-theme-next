@@ -1,5 +1,7 @@
 # Hugo NexT theme's custom config
 
-version: 4.7.3
+hugoVersion: 0.146.0
+
+version: 4.8.0
 
 domain: hugo-next.eu.org
