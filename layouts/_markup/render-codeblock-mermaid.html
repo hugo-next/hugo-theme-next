@@ -1,0 +1,7 @@
+
+{{ $align := default "center" (.Attributes.align) }}
+{{ $bc := default "#ffffff" (.Attributes.bc) }}
+<div class="mermaid" align="{{ $align}}" style="background: {{ $bc }};">
+  {{ .Inner | htmlEscape | safeHTML }}
+</div>
+{{ .Page.Store.SetInMap "scParams" "mermaid" true }}

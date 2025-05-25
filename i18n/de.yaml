@@ -1,0 +1,153 @@
+#--------------------------------------
+# German version
+#--------------------------------------
+archives:
+  other: Posts
+tag:
+  other: Tag
+tags:
+  other: Tags
+TagTitle:
+  other: Sammlung von Tags
+category:
+  other: Kategorie
+categories:
+  other: Kategorien
+CateTitle:
+  other: Klassifizierungselemente
+AllSome:
+  other: "All {{ .Some }}"
+
+
+Symbol:
+  colon: ":"
+  comma: ","
+  period: "."
+
+Sidebar:
+  label:
+    posts: Posts
+    categories: Kategorien
+    tags: Tags
+    rss: RSS
+    ccommons: "Creative Commons"
+    toc: Inhaltsverzeichnis
+    overview: Übersicht
+    navToggle: "Navigationsleiste umschalten"
+    search: Suche
+
+Terms:
+  archives: "Insgesamt {{ .Count }} Posts"
+  categories: "Insgesamt {{ .Count }} Kategorien"
+  tags: "Insgesamt {{ .Count }} Tags"
+
+PostArchive:
+  cheers:
+    um: Um...
+    ok: Ok
+    nice: Nett
+    good: Gut
+    great: Großartig
+    excellent: Exzellent
+  keepOn: Verfassen Sie weitere Posts! ╰(*°▽°*)╯
+
+PostMeta:
+  sticky: Stickys
+  publish:
+    date: "Publiziert am"
+    time: "Zeit der Erstellung"
+  lastmod:
+    date: "Aktualisiert on"
+    time: "Zeit der Änderung"
+  category: "Einordnen bei"
+  words: 
+    title: Wörter
+    count: "{{- .WordCount -}}"
+  reading:
+    title: Lesen
+    time: "{{- .ReadingTime -}} min"
+  views: Views
+  comments: Kommentare
+  tags: Tags
+  more: "Mehr lesen"
+  edit: "Diesen Post bearbeiten"
+  expired:
+    title: "Hinweis"
+
+    info: "🕰️ Hey，Dieser Artikel ist ein älterer Wein von über #. Die Information muss möglicherweise aktualisiert werden, überprüfen Sie bitte vor dem Lesen das Mindesthaltbarkeitsdatum.
+"
+    warn: "🚀 Achtung! Dieser Artikel ist von vor # und hält vielleicht nicht mit dem Tempo der Zeit mit. Bringen Sie Ihre eigene Zeitmaschine zum Lesen mit, nehmen Sie sich in Acht auf der Zeitreise!"
+  summary: 
+    title: Zusammenfassung
+
+PostAlert:
+  info     : "Info"
+  note     : "Notiz"
+  help     : "Hilfe"
+  error    : "Fehler"
+  warning  : "Warnung"
+  success  : "Erfolg"
+  important: "Wichtig"
+
+PostCopyRight:
+  title:  Titel des Posts 
+  author:  Autor des Posts
+  link: Post Link
+  origin:
+    author: Verfasst von
+    link: Ursprünglich von
+  license:
+    title: Hinweis zum Copyright 
+    content: "Dieses Werk ist lizenziert unter <i class=\"fab fa-fw fa-creative-commons\"></i>%s ."
+
+PostFollowMe:
+  other: Willkommen auf den anderen Kanälen, auf denen ich publiziere
+
+PostComments:
+  title: Kommentare
+
+Reward:
+  title: Spenden
+  wechatpay: WechatPay
+  alipay: Alipay
+  paypal: Paypal
+  bitcoin: Bitcoin
+
+SiteInfoItems:
+  title: "Web Status"
+  runTimes: "Läuft:"
+  words: "Wörter:"
+  readTimes: "Lesezeit:"
+  visitors: "Visitors:"
+  pageViews: "Besucher:"
+  todayViews: "Heutige Aufrufe:"
+  yesterdayViews: "Gestrige Aufrufe:"
+  monthViews: "Aufruf im Monat:"
+  totalViews: "Aufrufe insgesamt"
+  lastUpdate: "Zuletzt aktualisiert:"
+
+Footer:
+  powerby: "Powered by %s"
+
+Search:
+  placeholder: Suche läuft...
+  empty: "Für den Suchbegriff: ${query} konnten keine Treffer gefunden werden"
+  hits: "${hits} Treffer gefunden"
+  time: "${hits} Treffer gefunden in ${time} ms"
+
+DateSuffix:
+  years: " Jahren "
+  days: " Tagen "
+  hours: " Stunden "
+  mins: " Minuten"
+  month: " Monate zurück"
+  day: " Tage zurück"
+  hour: " Stunden zurück"
+  min: " Minuten zurück"
+  just: "Soeben"
+
+ToolBtns:
+  comment: "Zum Kommentar springen"
+  theme: "Theme wechseln"
+  lang: "Mehrsprachige Übersetzung"
+  backTop: "Zurück zum Seitenanfang"
