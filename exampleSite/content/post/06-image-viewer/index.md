@@ -28,7 +28,7 @@ expired: true
 ## 动物
 
 ![cute-scottish-fold-cat](/demo/image-viewer/photos/preview_cute-scottish-fold-cat.jpg)
-![scottish-fold-kitten](/demo/image-viewer/photos/photos/preview_scottish-fold-kitten.jpg)
+![scottish-fold-kitten](/demo/image-viewer/photos/preview_scottish-fold-kitten.jpg)
 ![hourses](/demo/image-viewer/photos/preview_horses.jpg)
 ![owl-family-background](/demo/image-viewer/photos/preview_owl-family-background.jpg)
 
