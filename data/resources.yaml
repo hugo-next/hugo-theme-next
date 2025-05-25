@@ -9,7 +9,7 @@ vendors:
 
   - name: unpkg
     home: "https://unpkg.com"
-    logo: "https://unpkg.fly.dev/_client/b870d5fb04d2854d.png"
+    logo: "https://static-production.npmjs.com/b0f1a8318363185cc2ea6a40ac23eeb2.png"
     type: "nodejs"
     url: "https://unpkg.com"
 
@@ -115,14 +115,14 @@ waline:
 waline3:
   js:
     name: waline
-    version: 3.5.6
+    version: 3.5.7
     file: dist/waline.js
     alias: "@waline/client"
 
   css:
     name: waline
-    version: 3.5.6
-    file: dist/waline.min.css
+    version: 3.5.7
+    file: dist/waline.css
     alias: "@waline/client"
 
 artalk:
@@ -148,7 +148,7 @@ livere:
 twikoo:
   js:
     name: twikoo
-    version: 1.6.41
+    version: 1.6.44
     file: dist/twikoo.all.min.js
 
 
@@ -215,13 +215,13 @@ plugins:
     js:
       - name: pageview
         alias_name: waline
-        version: 3.3.0
+        version: 3.5.7
         file: dist/pageview.js
         alias: "@waline/client" 
 
       - name: comment
         alias_name: waline
-        version: 3.3.0
+        version: 3.5.7
         file: dist/comment.js
         alias: "@waline/client"
   # 音乐播放器

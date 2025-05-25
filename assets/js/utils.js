@@ -287,7 +287,7 @@ NexT.utils = {
         if (alias_name) name = alias_name;
         let alias_file = file.replace(/^(dist|lib|source|\/js|)\/(browser\/|)/, '');
         if (alias_file.indexOf('min') == -1) {
-          alias_file = alias_file.replace(/\.js$/, '.min.js');
+          alias_file = alias_file.replace(/\.(js|css)$/, '.min.$1');
         }
         res_src = `${router.url}/${name}/${version}/${alias_file}`;
         break;
