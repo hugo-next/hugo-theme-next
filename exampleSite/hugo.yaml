@@ -933,7 +933,7 @@ params:
     # 可选值：livere | waline | utterances | artalk | giscus
     # Choose a comment system to be displayed by default.
     # Available values: livere | waline | utterances | artalk | giscus 
-    active: giscus
+    active: waline
     # 让用户自己选择使用评论插件留言
     # 如果设置为 false，将采用 active 参数的那个插件
     # Setting `true` means remembering the comment system selected by 
@@ -945,15 +945,15 @@ params:
     # 设置你要显示的2个评论插件，`weight` 数字越小越靠前
     # `name` 参数名可选值：livere | waline | waline3 | utterances | artalk | giscus
     # Modify texts or order for any naves, here are some examples.
-    nav:
-      - name: waline
-        title: Waline
-        color: "#27ae60"
-        weight: 1
-      - name: giscus
-        title: Giscus
-        color: "#886ce4"
-        weight: 2
+    # nav:
+    #   - name: waline
+    #     title: Waline
+    #     color: "#27ae60"
+    #     weight: 1
+    #   - name: giscus
+    #     title: Giscus
+    #     color: "#886ce4"
+    #     weight: 2
 
   # Waline 评论插件
   # 更多配置信息请参考：https://waline.js.org/
@@ -1023,48 +1023,48 @@ params:
   # 更多配置信息请参考：https://giscus.app
   # Giscus comments system
   # For more information: https://giscus.app
-  giscus:
-    # Github 仓库地址，格式：用户名/仓库名称
-    # Github repository owner and name
-    repo: username/repo-name
-    # Giscus 生成的仓库 Id
-    # Generate repository Id from Giscus
-    repoId: #<repo-id>
-    # 讨论区的分类名称
-    # Github discussions category
-    category: Comments
-    # 讨论区分类 ID
-    # Generate category Id from Giscus
-    categoryId: #<category-id>
-    # 帖子上的反应将会显示在评论前
-    # The reactions for post will be shown before the comments
-    reactions: false
-    # 将元数据定期被发送到父页面（被嵌入的页面或控制台，用于调试）
-    # Metadata will be sent periodically to the parent window
-    emit: false
-    # 评论输入框的位置，可选值： top | bottom
-    # Aavilable value: top | bottom
-    # 讨论区帖子标题，可选值： pathname | url | title | og:title | 自定义
-    # Available values: pathname | url | title | og:title | custom
-    mapping: title
-    # 评论输入框的位置，可选值： top | bottom
-    # Aavilable value: top | bottom
-    inputPosition: top
-    # 主题可选值： light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
-    # Available values: light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
-    theme: preferred_color_scheme
+  # giscus:
+  #   # Github 仓库地址，格式：用户名/仓库名称
+  #   # Github repository owner and name
+  #   repo: username/repo-name
+  #   # Giscus 生成的仓库 Id
+  #   # Generate repository Id from Giscus
+  #   repoId: #<repo-id>
+  #   # 讨论区的分类名称
+  #   # Github discussions category
+  #   category: Comments
+  #   # 讨论区分类 ID
+  #   # Generate category Id from Giscus
+  #   categoryId: #<category-id>
+  #   # 帖子上的反应将会显示在评论前
+  #   # The reactions for post will be shown before the comments
+  #   reactions: false
+  #   # 将元数据定期被发送到父页面（被嵌入的页面或控制台，用于调试）
+  #   # Metadata will be sent periodically to the parent window
+  #   emit: false
+  #   # 评论输入框的位置，可选值： top | bottom
+  #   # Aavilable value: top | bottom
+  #   # 讨论区帖子标题，可选值： pathname | url | title | og:title | 自定义
+  #   # Available values: pathname | url | title | og:title | custom
+  #   mapping: title
+  #   # 评论输入框的位置，可选值： top | bottom
+  #   # Aavilable value: top | bottom
+  #   inputPosition: top
+  #   # 主题可选值： light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
+  #   # Available values: light | light_high_contrast | light_protanopia | light_tritanopia | dark | dark_high_contrast | dark_protanopia | dark_tritanopia | dark_dimmed | transparent_dark | preferred_color_scheme
+  #   theme: preferred_color_scheme
 
-  # twikoo 评论插件
-  # 更多配置信息请参考：https://twikoo.js.org
-  # Twikoo comments system
-  # For more information: https://twikoo.js.org
-  twikoo:
-    # 必填项，腾讯云环境填 envId；其他填写自己的后端地址
-    # Required, fill in envId for Tencent Cloud environment; fill in your own backend address for others
-    envid: 'http://192.168.31.50:8080'
-    # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；其他可以不填写
-    # Region, default is ap-shanghai, fill in ap-shanghai or ap-guangzhou for Tencent Cloud environment; others can be left blank
-    region: 'ap-guangzhou'
+  # # twikoo 评论插件
+  # # 更多配置信息请参考：https://twikoo.js.org
+  # # Twikoo comments system
+  # # For more information: https://twikoo.js.org
+  # twikoo:
+  #   # 必填项，腾讯云环境填 envId；其他填写自己的后端地址
+  #   # Required, fill in envId for Tencent Cloud environment; fill in your own backend address for others
+  #   envid: 'http://192.168.31.50:8080'
+  #   # 环境地域，默认为 ap-shanghai，腾讯云环境填 ap-shanghai 或 ap-guangzhou；其他可以不填写
+  #   # Region, default is ap-shanghai, fill in ap-shanghai or ap-guangzhou for Tencent Cloud environment; others can be left blank
+  #   region: 'ap-guangzhou'
 
 
   # ---------------------------------------------------------------
@@ -1183,7 +1183,7 @@ params:
   # Gitter Support
   # For more information: https://gitter.im
   gitter:
-    enable: true
+    enable: false
     room: hugo-next/community
 
 
