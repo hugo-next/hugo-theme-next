@@ -118,7 +118,9 @@ $ hugo new posts/hello-world.md
 ```
 
 > [!IMPORTANT]
-> 其中 `posts` 路径是 `content` 根目录下的子文件夹，可依据自己的文件管理形态调整。同时你也可以增加不同的文件夹进行分类管理，比如：`content/life/` 、`content/blog/` 、`content/docs/` 等，并要把这些文件夹加入到 `hugo.yaml` 文件的 `mainSections` 配置项中。
+> 其中 `posts` 路径是 `content` 根目录下的子文件夹，可依据自己的文件管理形态调整。
+> 同时你也可以增加不同的文件夹进行分类管理，比如：`content/life/` 、`content/blog/` 、`content/docs/` 等，
+> 并要把这些文件夹加入到 `hugo.yaml` 文件的 `mainSections` 配置项中。
 > 另外要保留 `content/archives` 文件夹及在里面创建一个`_index.md`文件，它将作为文章归档的默认页面。
 
 关于文章头部那些参数作用的说明参考如下：
