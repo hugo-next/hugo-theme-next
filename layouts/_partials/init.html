@@ -5,7 +5,7 @@
 {{ $minMajorVer := int (index (split $requreVer ".") 1) }}
 {{ if lt $curMajorVer $minMajorVer }}
   {{ errorf "当前 Hugo 版本为 %s 小于 %s，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases 。" hugo.Version $requreVer }}  
-  {{ errorf "Current Hugo version is %s less then %s, Please download the Hugo latest version from offical site: https://github.com/gohugoio/hugo/releases ." hugo.Version $requreVer }}  
+  {{ errorf "Current Hugo version is %s less then %s, Please download the Hugo latest version from official site: https://github.com/gohugoio/hugo/releases ." hugo.Version $requreVer }}  
   {{ end }}
   
 {{ if not hugo.IsExtended }}
