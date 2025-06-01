@@ -28,6 +28,7 @@
 | Preliminary | [Gemini](https://preview.hugo-next.eu.org/) | [Muse](https://preview.hugo-next.eu.org/muse/) | [Mist](https://preview.hugo-next.eu.org/mist/) | [Pisces](https://preview.hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=preview-hugo-next&style=for-the-badge) |
 | Production |  [Gemini](https://hugo-next.eu.org/) | [Muse](https://hugo-next.eu.org/muse/) | [Mist](https://hugo-next.eu.org/mist/) | [Pisces](https://hugo-next.eu.org/pisces/) | ![Vercel](https://therealsujitk-vercel-badge.vercel.app/?app=hugo-next&style=for-the-badge) |
 
+> [!NOTE]
 > - Preliminary: all new feature developments will be previewed as soon as possible.
 > - Production: Only the features that are tested stably and meet the requirements will be officially released.
 
@@ -113,8 +114,10 @@ $ hugo new posts/hello-world.md
 ```
 
 > [!NOTE]
-> By default `hugo new` command will create new post under `content` root directory, so in here `posts` were you custom subfolder in `content` root directory. At the same time, you can also add different folders for classification management. For example: ` content/life/`, ` content/blog/`, ` content/docs/` etc, And add these folders to the `mainSections` configuration item in the `hugo.yaml` file.
-> Additionally, it is necessary to keep the 'content/archives' folder and create a' _index. md 'file within it, which will serve as the default page for article archiving.
+> By default `hugo new` command will create new post under `content` root directory, so in here `posts` were you custom subfolder in `content` root directory.
+> At the same time, you can also add different folders for classification management. For example: `content/life/`, `content/blog/`, `content/docs/` etc,
+> And add these folders to the `mainSections` configuration item in the `hugo.yaml` file.
+> Additionally, it is necessary to keep the `content/archives` folder and create a `_index. md` file within it, which will serve as the default page for article archiving.
 
 All front matter parameters's description in post as below:
 
