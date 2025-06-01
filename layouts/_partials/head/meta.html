@@ -29,3 +29,10 @@
 {{ .Scratch.Set "metaImg" $img }}
 <meta itemprop="image" content="{{ $img | absURL }}" />
 <meta itemprop="keywords" content="{{ if and .IsPage (isset .Params "tags")}}{{ delimit .Params.tags "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
+{{- $canonical := "" -}}
+{{- if and .IsNode .Paginator -}}
+  {{- $canonical = .Paginator.URL | absURL -}}
+{{- else -}}
+  {{- $canonical = .Permalink -}}
+{{- end }}
+<link rel="canonical" href="{{ $canonical | safeURL }}" />
