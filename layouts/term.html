@@ -1,0 +1,22 @@
+{{ define "title" }}
+  {{ .Title }} - {{ T .Data.Singular | default .Data.Singular }} - {{ .Site.Title }}
+{{ end }}
+{{ define "main_inner_class" }}{{ .Data.Plural }} posts-collapse{{ end }}
+{{ define "main" }}
+<div class="post-block">
+  <div class="post-content">
+    <div class="collection-title">
+      <span class="collection-header">
+        <h2>
+        {{ .Title }}
+        <small>{{ T .Data.Singular | default .Data.Singular }}</small>
+      </h2>
+      </span>
+    </div>
+
+    {{ .Render "list" }} 
+    
+  </div>
+</div>
+{{ partial "pagination.html" . }}
+{{ end }}
