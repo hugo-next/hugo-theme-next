@@ -92,19 +92,19 @@
       width: 100%;
 
       pre {
-        overflow-wrap: break-word;
-        white-space: pre-wrap;
-        line-break: anywhere;
-        word-break: break-all; 
+        overflow-wrap: normal;
+        white-space: pre;
+        word-break: normal;
+        line-break: auto;
         overflow-x: auto;
       }
     }
 
     > code > span {
-      overflow-wrap: break-word;
-      white-space: pre-wrap;
-      line-break: anywhere;
-      word-break: break-all; 
+      overflow-wrap: normal;
+      white-space: pre;
+      word-break: normal;
+      line-break: auto;
     }
 
     @if $codeblock_copy_btn_enable {
