@@ -29,14 +29,8 @@
 {{ .Scratch.Set "metaImg" $img }}
 <meta itemprop="image" content="{{ $img | absURL }}" />
 <meta itemprop="keywords" content="{{ if and .IsPage (isset .Params "tags")}}{{ delimit .Params.tags "," }}{{ else }}{{ .Site.Params.keywords }}{{ end }}" />
-{{/**
- // TODO: there would make a bug for archives page list
- https://discourse.gohugo.io/t/why-there-not-list-posts-in-custom-layout-list-page/55033
-{{- $canonical := "" -}}
-{{- if and .IsNode .Paginator -}}
-  {{- $canonical = .Paginator.URL | absURL -}}
-{{- else -}}
+{{- $canonical := .Scratch.Get "canonical" -}}
+{{- if not $canonical }}
   {{- $canonical = .Permalink -}}
 {{- end }}
 <link rel="canonical" href="{{ $canonical | safeURL }}" />
-**/}}

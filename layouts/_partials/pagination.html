@@ -1,3 +1,10 @@
+{{ $paginator := .Paginate (where .Site.RegularPages "Section" "==" .Section) }}
+{{ $canonical := .Permalink }}
+{{ if gt $paginator.PageNumber 1 }}
+  {{ $canonical = printf "%spage/%d/" .Permalink $paginator.PageNumber | absURL }}
+{{ end }}
+{{ .Scratch.Set "canonical" $canonical }}
+
 {{ $pag := .Paginator }}
 {{ $tps := $pag.TotalPages }}
 
