@@ -89,6 +89,11 @@ analytics:
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
   cloudflare: https://static.cloudflareinsights.com/beacon.min.js
 
+# 广告组件
+# Ad component
+ads:
+  googlead: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=
+
 # 文章分享
 # Share
 share:

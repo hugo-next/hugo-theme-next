@@ -1,0 +1,10 @@
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  var script = document.createElement('script');
+  script.type     = "text/javascript";
+  script.src     = "{{- .Site.Data.resources.ads.googlead -}}{{- .Site.Params.ads.googleAdId -}}";
+  script.async   = "true"
+  script.crossOrigin = "anonymous";
+  document.head.appendChild(script);
+});
+</script>
