@@ -289,8 +289,12 @@ params:
     medium: /imgs/icons/favicon_32_32_next.png
     appleTouchIcon: /imgs/icons/apple_touch_icon_next.png
 
-  # 自定义 Logo （目前只支持 Mist 页面模式）
-  # Custom Logo (Warning: Only support scheme Mist)
+  # 自定义 Logo （目前只支持 Muse,Gemini,Pisces 页面模式） 
+  # Muse模式下，图片是在站点标题上面
+  # Gemini和Pisces模式下，图片是在站点标题下面
+  # Custom Logo (Warning: Only support scheme Muse,Gemini,Pisces)
+  # Muse mode: Logo is above site title
+  # Gemini and Pisces mode: Logo is below site title
   customLogo: #/imgs/hugo_next_logo.png
 
   # 用户自定义文件配置
