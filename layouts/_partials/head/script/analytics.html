@@ -13,3 +13,6 @@
 {{ if isset .Site.Params.analytics "cloudflare" }}
   {{ partial "_thirdparty/analytics/cloudflare.html" . }}  
 {{ end }}
+{{ if isset .Site.Params.analytics "umami" }}
+  {{ partial "_thirdparty/analytics/umami.html" . }}  
+{{ end }}
