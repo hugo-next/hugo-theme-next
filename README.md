@@ -160,6 +160,28 @@ tags:
 # Support Math Formulas render, options: mathjax, katex
 #math: mathjax
 ---
+
+## 📊 Analytics Integration
+
+Hugo NexT theme supports multiple analytics services to track website traffic and user behavior. 
+
+Currently supported analytics services:
+- 51La Analytics
+- Baidu Analytics
+- Google Analytics
+- Cloudflare Analytics
+- Busuanzi Count
+- **Umami Analytics** (newly added)
+
+To enable Umami Analytics, add the following configuration to your `hugo.yaml`:
+
+```yaml
+params:
+  analytics:
+    umami:
+      enable: true
+      websiteId: '<your-umami-website-id>'
+      scriptUrl: 'https://<your-umami-domain>/script.js'
 ```
 
 ## 🎉 User's Cases

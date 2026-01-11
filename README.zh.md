@@ -168,6 +168,30 @@ tags:
 # 开启数学公式渲染，可选值： mathjax, katex
 #math: mathjax
 ---
+
+## 📊 统计分析集成
+
+Hugo NexT 主题支持多种分析服务，用于跟踪网站流量和用户行为。
+
+目前支持的分析服务包括：
+- 51La 统计
+- 百度统计
+- Google Analytics
+- Cloudflare Analytics
+- Busuanzi Count
+- **Umami Analytics** (新增)
+
+要启用 Umami Analytics，请在您的 `hugo.yaml` 中添加以下配置：
+
+```yaml
+params:
+  analytics:
+    umami:
+      enable: true
+      websiteId: '<your-umami-website-id>'
+      scriptUrl: 'https://<your-umami-domain>/script.js'
+```
+
 ```
 
 ## 🎉 用户案例

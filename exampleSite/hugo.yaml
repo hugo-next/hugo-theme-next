@@ -528,7 +528,7 @@ params:
       icp: 粤ICP备 18047355-1 号
       # 公安网备的省份简称
       provinceAbbr: 沪
-      # 公安网备案号
+      # 公安网备号
       gonganNum: 31011402009770
 
     # 站点支持供应商列表
@@ -1126,6 +1126,13 @@ params:
     busuanzi:
       visitorsIcon: fa fa-user
       viewsIcon: fa fa-eye
+    # Umami 统计
+    # Umami Analytics
+    # More information: https://umami.is/
+    umami:
+      enable: false
+      websiteId: '<your-umami-website-id>'
+      scriptUrl: 'https://<your-umami-domain>/script.js'
 
   # ---------------------------------------------------------------
   # 广告服务
