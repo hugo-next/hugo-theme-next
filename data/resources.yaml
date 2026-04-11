@@ -170,6 +170,13 @@ instant:
   file: dist/instantsearch.production.min.js
 
 plugins:
+  # 中英文排版空格
+  pangu:
+    js:
+      name: pangu
+      version: 7.2.1
+      file: dist/pangu.min.js
+
   # 数学公式渲染
   mathjax:
     js:

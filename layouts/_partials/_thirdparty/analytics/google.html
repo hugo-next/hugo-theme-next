@@ -1,9 +1,9 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
   var script = document.createElement('script');
-    
+
   script.charset = "UTF-8";
-  script.src     = "{{ .Site.Data.resources.analytics.google }}{{ .Site.Params.analytics.google }}";
+  script.src     = "{{ hugo.Data.resources.analytics.google }}{{ .Site.Params.analytics.google }}";
   script.async   = "true"
   script.onload = function() {
     window.dataLayer = window.dataLayer || [];

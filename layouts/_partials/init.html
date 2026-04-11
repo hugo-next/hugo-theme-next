@@ -1,16 +1,16 @@
 {{/* Use to define global variables */}}
 
 {{ $curMajorVer := int (index (split hugo.Version ".") 1) }}
-{{ $requreVer := .Site.Data.config.hugoVersion }}
+{{ $requreVer := hugo.Data.config.hugoVersion }}
 {{ $minMajorVer := int (index (split $requreVer ".") 1) }}
 {{ if lt $curMajorVer $minMajorVer }}
   {{ errorf "当前 Hugo 版本为 %s 小于 %s，请到官方地址下载 Hugo 最新版本：https://github.com/gohugoio/hugo/releases 。" hugo.Version $requreVer }}  
   {{ errorf "Current Hugo version is %s less then %s, Please download the Hugo latest version from official site: https://github.com/gohugoio/hugo/releases ." hugo.Version $requreVer }}  
   {{ end }}
-  
+
 {{ if not hugo.IsExtended }}
-  {{ errorf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases 。" }}  
-  {{ errorf "The Hugo NexT theme uses the SCSS framework, Please download the Hugo Extended version from the official site: https://github.com/gohugoio/hugo/releases." }}  
+  {{ errorf "Hugo NexT 主题使用了 SCSS 框架，请到官方地址下载 Hugo Extended 版本：https://github.com/gohugoio/hugo/releases 。" }}
+  {{ errorf "The Hugo NexT theme uses the SCSS framework, Please download the Hugo Extended version from the official site: https://github.com/gohugoio/hugo/releases." }}
 {{ end }}
 {{ $globalVars := newScratch }}
 
@@ -26,7 +26,7 @@
 {{ if eq $vendor "local" }}
   {{ $router = dict "url" (printf "%sjs/3rd" .Site.BaseURL) "name" $vendor "type" "modern" }}
 {{ else }}
-  {{ range .Site.Data.resources.vendors }}
+  {{ range hugo.Data.resources.vendors }}
     {{ if eq .name $vendor }}
       {{ $router = . }}
       {{ break }}
@@ -43,7 +43,7 @@
   "lang"        .Site.LanguageCode
   "vendor"      (dict "plugins" $vendor "router" $router)
   "darkmode"    .Site.Params.darkmode
-  "version"     .Site.Data.config.version
+  "version"     hugo.Data.config.version
   "scheme"      .Site.Params.scheme
   "sidebar"     .Site.Params.sidebar
   "copybtn"     .Site.Params.codeblock.copyBtn
@@ -51,7 +51,7 @@
   "lazyload"    .Site.Params.lazyload
   "motion"      .Site.Params.motion
   "isMultiLang" hugo.IsMultilingual
-  "i18n"        (dict 
+  "i18n"        (dict
     "placeholder" (T "Search.placeholder")
     "empty"       (T "Search.empty")
     "hits_time"   (T "Search.time")
@@ -74,67 +74,67 @@
 {{ end }}
 
 {{ with .Site.Params.postMeta }}
-  {{ $postmeta := dict 
+  {{ $postmeta := dict
     "views" .views
     "comments" .comments
   }}
   {{ $config = merge $config (dict "postmeta" $postmeta) }}
 {{ else }}
-  
+
 {{ end }}
 
 {{ if .Site.Params.algoliaSearch.enable }}
-  {{ $algoliaSearch := dict 
-    "js"        .Site.Data.resources.algolia
-    "instantjs" .Site.Data.resources.instant
+  {{ $algoliaSearch := dict
+    "js"        hugo.Data.resources.algolia
+    "instantjs" hugo.Data.resources.instant
     "cfg"       .Site.Params.algoliaSearch
   }}
   {{ $config = merge $config (dict "algolia" $algoliaSearch) }}
 {{ end }}
 
 {{ with .Site.Params.waline }}
-{{ $waline := dict 
-  "js"  $.Site.Data.resources.waline.js
-  "css" $.Site.Data.resources.waline.css
+{{ $waline := dict
+  "js"  hugo.Data.resources.waline.js
+  "css" hugo.Data.resources.waline.css
   "cfg" .
 }}
 {{ $config = merge $config (dict "waline" $waline) }}
-{{ end }} 
+{{ end }}
 
 {{ with .Site.Params.waline3 }}
-{{ $waline := dict 
-  "js"  $.Site.Data.resources.waline3.js
-  "css" $.Site.Data.resources.waline3.css
+{{ $waline := dict
+  "js"  hugo.Data.resources.waline3.js
+  "css" hugo.Data.resources.waline3.css
   "cfg" .
 }}
 {{ $config = merge $config (dict "waline3" $waline) }}
-{{ end }} 
+{{ end }}
 
 {{ with .Site.Params.giscus }}
-{{ $giscus := dict 
-  "js"  $.Site.Data.resources.giscus.js
+{{ $giscus := dict
+  "js"  hugo.Data.resources.giscus.js
   "cfg" .
 }}
-{{ $config = merge $config (dict "giscus" $giscus) }}  
+{{ $config = merge $config (dict "giscus" $giscus) }}
 {{ end }}
 
 {{ with .Site.Params.artalk }}
-{{ $artalk := dict 
-  "js"  $.Site.Data.resources.artalk.js
-  "css" $.Site.Data.resources.artalk.css
+{{ $artalk := dict
+  "js"  hugo.Data.resources.artalk.js
+  "css" hugo.Data.resources.artalk.css
   "cfg" .
 }}
 {{ $config = merge $config (dict "artalk" $artalk) }}
 {{ end }}
 
 {{ with .Site.Params.livere }}
-{{ $livere := dict "js" $.Site.Data.resources.livere.js }}
+{{ $livere := dict "js" hugo.Data.resources.livere.js }}
 {{ $config = merge $config (dict "livere" $livere) }}
 {{ end }}
 
 {{ with .Site.Params.utterances }}
-{{ $utterances := dict 
-  "js"  $.Site.Data.resources.utterances.js
+{{ $utterances := dict
+  "js"  hugo.Data.resources.utterances.js
   "cfg" .
 }}
 {{ $config = merge $config (dict "utterances" $utterances) }}
@@ -142,7 +142,7 @@
 
 {{ with .Site.Params.twikoo }}
 {{ $twikoo := dict
-  "js"  $.Site.Data.resources.twikoo.js
+  "js"  hugo.Data.resources.twikoo.js
   "cfg" .
 }}
 {{ $config = merge $config (dict "twikoo" $twikoo) }}
@@ -154,7 +154,7 @@
 
 {{ if isset . "sharethis" }}
   {{ $sharethis := dict
-    "js" $.Site.Data.resources.share.sharethis.js
+    "js" hugo.Data.resources.share.sharethis.js
     "id" .sharethis.id
   }}
   {{ $share = merge $share (dict "sharethis" $sharethis) }}
@@ -162,11 +162,11 @@
 
 {{ if isset . "addtoany" }}
   {{ $addtoany := dict
-    "js" $.Site.Data.resources.share.addtoany.js
+    "js" hugo.Data.resources.share.addtoany.js
     "locale" .addtoany.locale
     "num" .addtoany.num_services
   }}
-  
+
   {{ $share = merge $share (dict "addtoany" $addtoany) }}
 {{ end }}
 
@@ -180,10 +180,18 @@
 
 {{ with .Site.Params.analytics.laId }}
 {{ $lawidget := dict
-  "js" $.Site.Data.resources.analytics.laWidget
+  "js" hugo.Data.resources.analytics.laWidget
   "id" .
 }}
 {{ $config = merge $config (dict "lawidget" $lawidget) }}
+{{ end }}
+
+{{/* Pangu plugin for Chinese-English spacing */}}
+{{ if .Site.Params.pangu }}
+{{ $pangu := dict
+  "js" hugo.Data.resources.plugins.pangu.js
+}}
+{{ $config = merge $config (dict "pangu" $pangu) }}
 {{ end }}
 
 {{ $globalVars.Set "config" $config }}

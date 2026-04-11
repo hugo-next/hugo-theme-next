@@ -20,7 +20,7 @@
 </div>
 {{ if $ft.powered }}
 <div class="powered-by">
-  {{ $pb := printf "<a href='https://gohugo.io' title='%s' target='_blank'>Hugo</a> &amp; <a href='https://github.com/hugo-next/hugo-theme-next' title='%s' target='_blank'>Hugo NexT.%s</a>" hugo.Version .Site.Data.config.version .Site.Params.scheme }}
+  {{ $pb := printf "<a href='https://gohugo.io' title='%s' target='_blank'>Hugo</a> &amp; <a href='https://github.com/hugo-next/hugo-theme-next' title='%s' target='_blank'>Hugo NexT.%s</a>" hugo.Version hugo.Data.config.version .Site.Params.scheme }}
   {{ printf (T "Footer.powerby") $pb | safeHTML }}
 </div>
 {{ end }}
@@ -40,7 +40,7 @@
 <div class="vendors-list">
   {{ range .list }}
   <a target="_blank" href="{{ .link }}" title="{{ .name }}">
-    {{ if .image }}        
+    {{ if .image }}
       <img src="/imgs/img-lazy-loading.gif" data-src="{{ .image.url }}" alt="{{ .name }}" />
     {{ else }}
       {{ .name }}
@@ -55,7 +55,7 @@
   {{ end }}
   <span>{{ .title }}</span>
 </div>
-{{ end }} 
+{{ end }}
 {{ end }}
 
 {{ $custom := .Scratch.Get "footer" }}

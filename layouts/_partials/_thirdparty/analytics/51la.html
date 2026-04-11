@@ -1,10 +1,10 @@
 <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
   var script = document.createElement('script');
-    
+
   script.charset = "UTF-8";
   script.id      = "LA_COLLECT";
-  script.src     = "{{ .Site.Data.resources.analytics.la }}";
+  script.src     = "{{ hugo.Data.resources.analytics.la }}";
   script.async   = "true"
   script.onload = function() {
   {{ with .Site.Params.analytics.laId }}

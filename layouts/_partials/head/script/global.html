@@ -1,8 +1,8 @@
 {{/* Loading all page need scripts */}}
-{{ $jsRes := .Site.Data.resources.js }}
+{{ $jsRes := hugo.Data.resources.js }}
 {{ $vendor := .Site.Params.vendors.plugins }}
 {{ $router := .Scratch.Get "router" }}
-{{ range $jsRes }} 
+{{ range $jsRes }}
   {{ $pluginJS := partial "_funs/get_cdn_res.html" (dict "res" . "vendor" $vendor "router" $router)  }}
   <script type="text/javascript" src="{{ $pluginJS }}" crossorigin="anonymous" defer></script>
 {{ end }}
@@ -55,7 +55,7 @@
     {{ $addtoanyjs := resources.Get "js/3rd/share/addtoany.js" }}
     {{ $nextjs = $nextjs | append $addtoanyjs }}
   {{ end }}
-{{ end }}  
+{{ end }}
 {{ end }}
 
 {{/* Comments scripts */}}
@@ -108,6 +108,12 @@
     {{ $lawt := resources.Get "js/3rd/others/lawidget.js" }}
     {{ $nextjs = $nextjs | append $lawt }}
   {{ end }}
+{{ end }}
+
+{{/* Pangu script for Chinese-English spacing */}}
+{{ if .Site.Params.pangu }}
+{{ $pangujs := resources.Get "js/3rd/plugins/pangu.js" }}
+{{ $nextjs = $nextjs | append $pangujs }}
 {{ end }}
 
 {{ $nextjs = $nextjs | resources.Concat "js/main.js"}}

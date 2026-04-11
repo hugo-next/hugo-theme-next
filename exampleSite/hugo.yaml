@@ -896,7 +896,6 @@ params:
   # For more information: https://apoorv.pro/lozad.js/demo/
   lazyload: false
 
-  # TODO
   # Pangu Support
   # For more information: https://github.com/vinta/pangu.js
   # Server-side plugin: https://github.com/next-theme/hexo-pangu

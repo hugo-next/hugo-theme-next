@@ -93,7 +93,6 @@ NexT.boot.refresh = function() {
     background: 'var(--content-bg-color)'
   });*/
   // NexT.CONFIG.lazyload && window.lozad('.post-body img').observe();
-  // NexT.CONFIG.pangu && window.pangu.spacingPage();
   /*NexT.utils.registerTabsTag();
   NexT.utils.registerActiveMenuItem();
   NexT.utils.registerLangSelect();

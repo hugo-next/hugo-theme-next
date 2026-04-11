@@ -15,7 +15,7 @@
 {{/** Append clipboard plugin */}}
 {{ if .Store.Get "codeblock" }}
 {{ $clipboard := dict
-  "js"  $.Site.Data.resources.plugins.clipboard.js
+  "js"  hugo.Data.resources.plugins.clipboard.js
 }}
 {{ $pageCfg = merge $pageCfg (dict "clipboard" $clipboard) }}
 {{ end }}
@@ -23,8 +23,8 @@
 {{/** Append APlayer plugin */}}
 {{ if $scParam.music }}
 {{ $aplayer := dict
-  "js"  $.Site.Data.resources.plugins.music.js
-  "css" $.Site.Data.resources.plugins.music.css
+  "js"  hugo.Data.resources.plugins.music.js
+  "css" hugo.Data.resources.plugins.music.css
 }}
 {{ $pageCfg = merge $pageCfg (dict "music" $aplayer) }}
 {{ end }}
@@ -45,7 +45,7 @@
   {{ if and .enable (ne .plugin "busuanzi") }}
     {{ $plugin := .plugin }}
     {{ $counter := dict
-      "pagecnt" (index ($.Site.Data.resources.plugins) $plugin "js" 0)
+      "pagecnt" (index (hugo.Data.resources.plugins) $plugin "js" 0)
     }}
     {{ $pageCfg = merge $pageCfg (dict $plugin $counter) }}
   {{ end }}
@@ -55,7 +55,7 @@
   {{ if .enable }}
     {{ $plugin := .plugin }}
     {{ $counter := dict
-      "commentcnt" (index ($.Site.Data.resources.plugins) $plugin "js" 1)
+      "commentcnt" (index (hugo.Data.resources.plugins) $plugin "js" 1)
     }}
     {{ $pageCfg = merge $pageCfg (dict $plugin $counter) }}
   {{ end }}
@@ -64,7 +64,7 @@
 {{/* Append mermaid plugin */}}
 {{ if $scParam.mermaid }}
 {{ $mermaid := dict
-  "js"  .Site.Data.resources.plugins.mermaid.js
+  "js"  hugo.Data.resources.plugins.mermaid.js
 }}
 {{ $pageCfg = merge $pageCfg (dict "mermaid" $mermaid) }}
 {{ end }}
@@ -73,11 +73,11 @@
 {{ with or .Params.math .Site.Params.math }}
 {{ $math := dict
   "render" .
-  "js"  (index $.Site.Data.resources.plugins .).js
+  "js"  (index hugo.Data.resources.plugins .).js
 }}
 
 {{ if eq . "katex" }}
-  {{ $math = merge $math ( dict "css" $.Site.Data.resources.plugins.katex.css ) }}
+  {{ $math = merge $math ( dict "css" hugo.Data.resources.plugins.katex.css ) }}
 {{ end }}
 
 {{ $pageCfg = merge $pageCfg (dict "math" $math) }}

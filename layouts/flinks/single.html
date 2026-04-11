@@ -10,9 +10,9 @@
 <div class="flinks-lists">
   {{ $flinksData := "" }}
   {{ if .IsTranslated }}
-    {{ $flinksData = index .Site.Data.flinks .Lang }}
+    {{ $flinksData = index hugo.Data.flinks .Lang }}
   {{ else }}
-    {{ $flinksData = .Site.Data.flinks }}
+    {{ $flinksData = hugo.Data.flinks }}
   {{ end }}
   {{ range $flinksData }}
   <div class="flinks-list">
